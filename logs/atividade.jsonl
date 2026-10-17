@@ -1,4 +1,0 @@
-{"quando": "2026-10-17T19:11:27", "categoria": "tcglive", "mensagem": "log guardado: 2026-10-17_191127_cdierkens_vs_Flyfrod.txt", "jogadores": ["cdierkens", "Flyfrod"], "origem": "tests/fixtures/ptcgl_logs/dipplin-vs-mega-excadrill.log"}
-{"quando": "2026-10-17T19:11:27", "categoria": "tcglive", "mensagem": "log guardado: 2026-10-17_191127_Wonder_Squid_vs_cdierkens.txt", "jogadores": ["Wonder_Squid", "cdierkens"], "origem": "tests/fixtures/ptcgl_logs/slowking-vs-beedrill.log"}
-{"quando": "2026-10-17T19:11:36", "categoria": "tcglive", "mensagem": "log guardado: 2026-10-17_191136_cdierkens_vs_TSLAUJ.txt", "jogadores": ["cdierkens", "TSLAUJ"], "origem": "tests/fixtures/ptcgl_logs/slowking-vs-froslass-mill.log"}
-{"quando": "2026-10-17T19:11:36", "categoria": "tcglive", "mensagem": "log guardado: 2026-10-17_191136_cdierkens_vs_Kingofslowbros.txt", "jogadores": ["cdierkens", "Kingofslowbros"], "origem": "tests/fixtures/ptcgl_logs/slowking-vs-greninja.log"}
