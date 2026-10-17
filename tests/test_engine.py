@@ -13,7 +13,7 @@ from ptcg.decks import list_decks, load_deck  # noqa: E402
 from ptcg.engine import Game  # noqa: E402
 from tests.fuzz import check as check_invariants  # noqa: E402
 
-DECKS = {n: load_deck(n).cards for n in list_decks()}
+DECKS = {n: load_deck(n).cards for n in list_decks('tests')}   # decks fixos em decks/tests/
 
 
 def run(agent_cls, n_games, seed0=0, check=True):

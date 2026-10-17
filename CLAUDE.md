@@ -58,7 +58,8 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
 ## Estado atual (2026-10-17)
 - Cobertura: 1.628 cartas completas, 389 parciais, 66 pendentes (`python cartas.py resumo`;
   `python cartas.py listar --pendentes`; a ficha de cada carta mostra a frase não implementada).
-  Todos os Treinadores/Ferramentas/Estádios/Energias e os 12 decks top 8 em `decks/limitless/` estão 100%.
+  Todos os Treinadores/Ferramentas/Estádios/Energias e os 12 decks fixos de `decks/tests/` (usados por `tests/test_engine.py`) estão 100%.
+  `decks/limitless/` é local (gitignore): importe com `import_limitless.py` e limpe com `limpar_decks.py`; guia em `DECKS.md`.
 - Replays: 4/4 logs de exemplo reproduzidos por completo. No log slowking-vs-beedrill o TCG Live deu 300 de dano
   com Metallic Hammer copiado por Seek Inspiration sem descartar Energias Metal (suspeita de bug do cliente);
   o replay ajusta o dano ao log e anota.

@@ -57,8 +57,8 @@ Se `pip install pytest` estiver disponível, `python -m pytest -q tests` roda os
 | `python cartas.py resumo` | na 1ª vez: `Biblioteca ainda não gerada; criando…` (gera `cartas/cartas.db`); depois a contagem por pasta e `Total: 2083 cartas` |
 | `python cartas.py mostrar TWM-130` | ficha do Dragapult ex, com os ataques em inglês e português |
 | `python cartas.py buscar "Ultra Bola"` | `MEG-131  Ultra Ball  Ultra Bola  Treinadores/Itens` |
-| `python gerenciar_decks.py validar --todos` | `12/12 válidos` |
-| `python gerenciar_decks.py mostrar 01_hedrick_dragapult` | lista do 1º lugar do Mundial e `✔ deck válido` |
+| `python gerenciar_decks.py validar --todos` | `N/N válidos` (inclui os 12 decks fixos de `decks/tests/`; decks de torneios fora da rotação aparecem inválidos — use `limpar_decks.py`) |
+| `python gerenciar_decks.py mostrar 01_hedrick_dragapult` | lista do 1º lugar do Mundial (`decks/tests/`) e `✔ deck válido` |
 | `python gerenciar_logs.py listar` | 4 partidas do TCG Live com `✔` |
 | `python simulate.py 01_hedrick_dragapult 05_heiremans_crustle --games 50` | taxa de vitória do confronto (a IA heurística ainda é simples: números indicativos) |
 

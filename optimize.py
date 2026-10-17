@@ -6,7 +6,7 @@ o que reduz bastante o ruído da comparação. Candidatos promissores são confi
 mais partidas antes de serem aceitos.
 
 Exemplos:
-    python optimize.py 2026-08-worlds/05_heiremans_crustle --gauntlet 2026-08-worlds/01_hedrick_dragapult 2026-08-worlds/02_cassiraga_alakazam_dudunsparce --iters 60
+    python optimize.py tests/05_heiremans_crustle --gauntlet tests/01_hedrick_dragapult tests/02_cassiraga_alakazam_dudunsparce --iters 60
     python optimize.py meus/meu_deck --gauntlet 01_hedrick_dragapult --pool "Maximum Belt" "Night Stretcher" --games 120
     python optimize.py meus/meu_deck --gauntlet 01_hedrick_dragapult --agent model:checkpoints/best.pt
 

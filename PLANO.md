@@ -21,7 +21,7 @@ Atualizado em: 2026-10-17
 ## Fase 2 — Cartas do formato (TEF–30C, marcas H/I/J) 🟡
 - ✅ Base com as 2.083 cartas legais (textos oficiais em inglês e português)
 - ✅ Todos os Treinadores (Itens, Apoiadores), Ferramentas, Estádios e Energias Especiais
-- ✅ Todas as cartas dos 12 decks top 8 importados
+- ✅ Todas as cartas dos 12 decks de teste (`decks/tests/`, top 8 do Mundial e de Louisville 2026)
 - 🟡 Pokémon: **1.628 completas · 389 parciais · 66 pendentes**
   (`python cartas.py resumo`; a lista do que falta: `python cartas.py listar --pendentes`)
 - ⬜ **Próximo:** cartas competitivas que ainda faltam — Bloodmoon Ursaluna ex (Seasoned Skill),
@@ -38,7 +38,8 @@ Atualizado em: 2026-10-17
 - ✅ Leitura de listas do TCG Live e da Limitless (nomes em inglês ou português, com ou sem coleção/número)
 - ✅ Validação (60 cartas, até 4 cópias, ≥1 Básico, ≤1 ACE SPEC) + aviso de cartas com efeito parcial
 - ✅ Importador da Limitless: top 8 de Regionais, Internacionais e Mundial (`import_limitless.py`)
-- ✅ 12 decks importados (Mundial 2026 e Regional de Louisville 2026)
+- ✅ 12 decks fixos em `decks/tests/` (Mundial 2026 e Regional de Louisville 2026) usados pelos testes; `decks/limitless/` fica fora do git
+- ✅ `limpar_decks.py`: separa decks com cartas fora da rotação (guia em `DECKS.md`)
 - ✅ Gerenciador: criar, montar (interativo), importar, editar, copiar, exportar, validar, apagar (`gerenciar_decks.py`)
 - ⬜ Baixar mais torneios recentes (Regionais/Internacionais de 2026) para ampliar o gauntlet
 - ⬜ Testar o importador com o site atual da Limitless no seu computador (no ambiente anterior a rede era restrita)

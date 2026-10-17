@@ -8,11 +8,13 @@ Nomes de cartas em inglês ou português, com ou sem coleção/número: `4 Ultra
 |---|---|
 | `decks/meus/` | seus decks (`criar`, `montar`, `copiar`, interface) |
 | `decks/importados/` | listas importadas de arquivos |
+| `decks/tests/` | 12 decks fixos (Mundial e Louisville 2026) usados pelos testes — versionados, não mexa |
 | `decks/limitless/<torneio>/` | top N de torneios da Limitless (+ `index.json` com o resumo) |
 | `decks/_lixeira/` | decks apagados com `apagar` (recuperáveis) |
 | `decks/_fora_da_rotacao/` | decks movidos por `limpar_decks.py` (recuperáveis) |
 
-Pastas que começam com `_` são ignoradas em listagens e simulações.
+Pastas que começam com `_` são ignoradas em listagens e simulações. `decks/limitless/`, `_lixeira/` e `_fora_da_rotacao/`
+estão no `.gitignore`; `tests/test_engine.py` usa só `decks/tests/`, então não depende do que você importou.
 
 ## 1. Importar
 
@@ -87,7 +89,7 @@ Use `--sobrescrever` para trocar um deck existente. A interface (`python server.
 ```
 python gerenciar_decks.py validar meu_deck
 python gerenciar_decks.py validar --todos
-python simulate.py meus/meu_deck limitless/2026-08-worlds/01_hedrick_dragapult --games 200
+python simulate.py meus/meu_deck tests/01_hedrick_dragapult --games 200
 ```
 
 Regras checadas: 60 cartas, no máximo 4 cópias por nome (exceto Energia Básica), ao menos 1 Pokémon Básico,
