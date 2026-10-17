@@ -83,6 +83,8 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
 3. IA: imitação a partir dos logs (`gerenciar_logs.py imitacao`) + PPO self-play (`train.py`).
 
 ## Convenções
+- **Mantenha `PLANO.md` atualizado** (status das fases, números de cobertura, próximos passos) ao concluir uma etapa;
+  `INSTALACAO.md` é o guia de instalação/testes do usuário — atualize se comandos ou resultados esperados mudarem.
 - Não reescrever arquivos gerados à mão: `cartas/` vem de `tools/export_cartas.py`; `ptcg/data/*.json` de `tools/`.
 - Correções de texto oficial vão em `ptcg/data/errata.json` (só com fonte confiável — já houve um falso positivo).
 - Novos efeitos: preferir padrão genérico no compilador (`@pattern`) a código por carta; escrever à mão
