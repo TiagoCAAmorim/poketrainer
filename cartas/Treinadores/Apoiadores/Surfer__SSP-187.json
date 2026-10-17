@@ -1,0 +1,40 @@
+{
+  "id": "SSP-187",
+  "nome": "Surfer",
+  "nome_pt": "Surfista",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Switch your Active Pokémon with 1 of your Benched Pokémon. If you do, draw cards until you have 5 cards in your hand.",
+  "texto_pt": "Troque o seu Pokémon Ativo por 1 dos seus Pokémon no Banco. Se fizer isto, compre cartas até ter 5 cartas na sua mão.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-187",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-235",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "ASC-200",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-293",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "PR-SV-152",
+  "nome": "Chien-Pao",
+  "nome_pt": "Chien-Pao",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Snow Sink",
+      "nome_pt": "Afundar na Neve",
+      "texto": "When you play this Pokémon from your hand onto your Bench during your turn, you may discard a Stadium in play.",
+      "texto_pt": "Quando você jogar este Pokémon da sua mão para o seu Banco durante o seu turno, você poderá descartar um Estádio em jogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Icicle Loop",
+      "nome_pt": "Loop Geladinho",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Put an Energy attached to this Pokémon into your hand.",
+      "texto_pt": "Coloque uma Energia ligada a este Pokémon na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-152",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "SSP-56",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

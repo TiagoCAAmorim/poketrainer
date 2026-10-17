@@ -1,0 +1,30 @@
+{
+  "id": "JTG-146",
+  "nome": "Brock's Scouting",
+  "nome_pt": "Busca do Brock",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Search your deck for up to 2 Basic Pokémon or 1 Evolution Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+  "texto_pt": "Procure por até 2 Pokémon Básicos ou 1 Pokémon de Evolução no seu baralho, revele-os e coloque-os na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-146",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-179",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

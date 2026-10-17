@@ -1,0 +1,47 @@
+{
+  "id": "SCR-37",
+  "nome": "Tirtouga",
+  "nome_pt": "Tirtouga",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Antique Cover Fossil",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Splashing Turn",
+      "nome_pt": "Giro Borrifante",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "70",
+      "texto": "Switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Troque este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-37",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "TEF-134",
+  "nome": "Tranquill",
+  "nome_pt": "Tranquill",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Pidove",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Speed Dive",
+      "nome_pt": "Mergulho Veloz",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Jet Wing",
+      "nome_pt": "Asa a Jato",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-134",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

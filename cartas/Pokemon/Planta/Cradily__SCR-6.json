@@ -1,0 +1,56 @@
+{
+  "id": "SCR-6",
+  "nome": "Cradily",
+  "nome_pt": "Cradily",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Lileep",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Selective Slime",
+      "nome_pt": "Meleca Seletiva",
+      "texto": "Once during your turn, you may flip a coin. If heads, choose Burned, Confused, or Poisoned. Your opponent's Active Pokémon is now affected by that Special Condition.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá jogar uma moeda. Se sair cara, escolha entre Confuso, Envenenado e Queimado. O Pokémon Ativo do seu oponente agora está afetado por aquela Condição Especial.",
+      "simulador": "parcial"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Miasma Wind",
+      "nome_pt": "Vento Miasma",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "100×",
+      "texto": "This attack does 100 damage for each Special Condition affecting your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 100 pontos de dano para cada Condição Especial afetando o Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-6",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Selective Slime: If heads, choose Burned, Confused, or Poisoned.; Your opponent's Active Pokémon is now affected by that Special Condition."
+    ]
+  }
+}

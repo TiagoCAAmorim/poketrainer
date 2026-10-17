@@ -1,0 +1,63 @@
+{
+  "id": "PBL-8",
+  "nome": "Mega Delphox ex",
+  "nome_pt": "Mega Delphox ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 350,
+  "estagio": "Estágio 2",
+  "evolui_de": "Braixen",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Trick Portal",
+      "nome_pt": "Teletransportal",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Look at the top 9 cards of your deck, and you may put any number of Pokémon you find there onto your Bench. Shuffle the other cards back into your deck.",
+      "texto_pt": "Olhe as 9 cartas de cima do seu baralho, e você pode colocar qualquer número de Pokémon que você encontrar lá no seu Banco. Embaralhe as outras cartas de volta no seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Eerie Glow",
+      "nome_pt": "Brilho Misterioso",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "Your opponent's Active Pokémon is now Burned and Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso e Queimado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-8",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Trick Portal: Look at the top 9 cards of your deck, and you may put any number of Pokémon you find there onto your Bench."
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "SSP-96",
+  "nome": "Flutter Mane",
+  "nome_pt": "Juba Sopro",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Perplexing Transfer",
+      "nome_pt": "Transferência Marota",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Move all damage counters from 1 of your Benched Ancient Pokémon to your opponent's Active Pokémon.",
+      "texto_pt": "Mova todos os contadores de dano de 1 dos seus Pokémon Ancestrais no Banco para o Pokémon Ativo do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Moonblast",
+      "nome_pt": "Explosão Lunar",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "70",
+      "texto": "During your opponent's next turn, attacks used by the Defending Pokémon do 30 less damage (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, os ataques usados pelo Pokémon Defensor causarão 30 pontos de dano a menos (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-96",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Perplexing Transfer: Move all damage counters from 1 of your Benched Ancient Pokémon to your opponent's Active Pokémon."
+    ]
+  }
+}

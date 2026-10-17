@@ -1,0 +1,46 @@
+{
+  "id": "DRI-158",
+  "nome": "Arven's Skwovet",
+  "nome_pt": "Skwovet do Arven",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gnaw Through",
+      "nome_pt": "Roída Interrupta",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10",
+      "texto": "Before doing damage, discard all Pokémon Tools from your opponent's Active Pokémon.",
+      "texto_pt": "Antes de causar dano, descarte todas as Ferramentas Pokémon do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-158",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

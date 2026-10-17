@@ -1,0 +1,58 @@
+{
+  "id": "ASC-156",
+  "nome": "Noibat",
+  "nome_pt": "Noibat",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Knickknack Carrying",
+      "nome_pt": "Carregando Tranqueira",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for a Pokémon Tool card, reveal it, and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Procure por uma carta de Ferramenta Pokémon no seu baralho, revele-a e coloque-a na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bite",
+      "nome_pt": "Mordida",
+      "custo": [
+        "Psíquico",
+        "Escuridão"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-156",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

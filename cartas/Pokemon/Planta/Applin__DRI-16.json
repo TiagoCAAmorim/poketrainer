@@ -1,0 +1,46 @@
+{
+  "id": "DRI-16",
+  "nome": "Applin",
+  "nome_pt": "Applin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 40,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mini Drain",
+      "nome_pt": "Minidreno",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10",
+      "texto": "Heal 10 damage from this Pokémon.",
+      "texto_pt": "Cure 10 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-16",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

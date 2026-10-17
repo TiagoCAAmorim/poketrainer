@@ -1,0 +1,60 @@
+{
+  "id": "MEG-17",
+  "nome": "Ninjask",
+  "nome_pt": "Ninjask",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Nincada",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Cast-Off Shell",
+      "nome_pt": "Concha Descartada",
+      "texto": "Once during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. Search your deck for a Shedinja and put it onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, quando você jogar este Pokémon da sua mão para evoluir 1 dos seus Pokémon, você poderá usar esta Habilidade. Procure por um Shedinja no seu baralho e coloque-o no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "U-turn",
+      "nome_pt": "Fazer Retorno",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "Switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Troque este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-17",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-137",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

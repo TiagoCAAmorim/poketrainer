@@ -1,0 +1,25 @@
+{
+  "id": "TWM-152",
+  "nome": "Hyper Aroma",
+  "nome_pt": "Hiperaroma",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Search your deck for up to 3 Stage 1 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+  "texto_pt": "Procure por até 3 Pokémon Estágio 1 no seu baralho, revele-os e coloque-os na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-152",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "PFL-46",
+  "nome": "Bramblin",
+  "nome_pt": "Bramblin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 50,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Sneaky Placement",
+      "nome_pt": "Posição Sorrateira",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Place 1 damage counter on 1 of your opponent's Pokémon.",
+      "texto_pt": "Coloque 1 contador de dano em 1 dos Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-46",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

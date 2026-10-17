@@ -1,0 +1,61 @@
+{
+  "id": "BLK-63",
+  "nome": "Klinklang",
+  "nome_pt": "Klinklang",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Klang",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Gear Coating",
+      "nome_pt": "Blindagem de Engrenagem",
+      "texto": "All of your Pokémon that have any Metal Energy attached take 20 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance).",
+      "texto_pt": "Todos os seus Pokémon que têm alguma Energia Metal ligada a eles recebem 20 pontos de dano a menos de ataques dos Pokémon do seu oponente (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Hammer In",
+      "nome_pt": "Martelada",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-63",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-141",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "PR-ME-95",
+  "nome": "Lucario",
+  "nome_pt": "Lucario",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Riolu",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aura Sphere",
+      "nome_pt": "Aura Esférica",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "This attack also does 60 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 60 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-95",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "30C-83",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

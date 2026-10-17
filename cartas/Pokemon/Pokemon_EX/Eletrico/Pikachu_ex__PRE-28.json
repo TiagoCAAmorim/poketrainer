@@ -1,0 +1,62 @@
+{
+  "id": "PRE-28",
+  "nome": "Pikachu ex",
+  "nome_pt": "Pikachu ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 190,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tail Whap",
+      "nome_pt": "Surra de Cauda",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Thunder",
+      "nome_pt": "Trovão",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "220",
+      "texto": "This Pokémon also does 30 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 30 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-28",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

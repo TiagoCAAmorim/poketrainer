@@ -1,0 +1,71 @@
+{
+  "id": "WHT-5",
+  "nome": "Whimsicott ex",
+  "nome_pt": "Whimsicott ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 230,
+  "estagio": "Estágio 1",
+  "evolui_de": "Cottonee",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Energy Gift",
+      "nome_pt": "Presente de Energia",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 3 Basic Energy cards and attach them to your Pokémon in any way you like. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 3 cartas de Energia Básica no seu baralho e ligue-as aos seus Pokémon como desejar. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Wondrous Cotton",
+      "nome_pt": "Algodão Encantado",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "50×",
+      "texto": "Your opponent reveals their hand. This attack does 50 damage for each Trainer card you find there.",
+      "texto_pt": "Seu oponente revela a mão dele. Este ataque causa 50 pontos de dano para cada carta de Treinador que encontrar lá.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-5",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-157",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-165",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Wondrous Cotton: This attack does 50 damage for each Trainer card you find there."
+    ]
+  }
+}

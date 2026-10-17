@@ -1,0 +1,58 @@
+{
+  "id": "MEG-53",
+  "nome": "Heliolisk",
+  "nome_pt": "Heliolisk",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Helioptile",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dazzle Blast",
+      "nome_pt": "Explosão Fascinante",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Head Bolt",
+      "nome_pt": "Raio de Cabeça",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-53",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "TEF-40",
+  "nome": "Croconaw",
+  "nome_pt": "Croconaw",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Totodile",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Reverse Thrust",
+      "nome_pt": "Impulso Reverso",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30",
+      "texto": "Switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Troque este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-40",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

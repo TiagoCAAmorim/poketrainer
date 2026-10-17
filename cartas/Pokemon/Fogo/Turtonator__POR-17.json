@@ -1,0 +1,58 @@
+{
+  "id": "POR-17",
+  "nome": "Turtonator",
+  "nome_pt": "Turtonator",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Shell Spikes",
+      "nome_pt": "Espinhos de Carapaça",
+      "texto": "If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), discard an Energy from the Attacking Pokémon.",
+      "texto_pt": "Se este Pokémon estiver no Campo Ativo e for danificado por um ataque dos Pokémon do seu oponente (mesmo que este Pokémon seja Nocauteado), descarte uma Energia do Pokémon Atacante.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Heat Breath",
+      "nome_pt": "Bafo de Calor",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "Flip a coin. If heads, this attack does 80 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-17",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Shell Spikes: If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon, discard an Energy from the Attacking Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "CRI-56",
+  "nome": "Trubbish",
+  "nome_pt": "Trubbish",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Acid Spray",
+      "nome_pt": "Spray Ácido",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10",
+      "texto": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-56",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

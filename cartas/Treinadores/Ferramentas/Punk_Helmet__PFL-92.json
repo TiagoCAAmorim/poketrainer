@@ -1,0 +1,30 @@
+{
+  "id": "PFL-92",
+  "nome": "Punk Helmet",
+  "nome_pt": "Capacete Punk",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "If the Darkness Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), place 4 damage counters on the Attacking Pokémon.",
+  "texto_pt": "Se o Pokémon Escuridão ao qual esta carta está ligada estiver no Campo Ativo e for danificado por um ataque dos Pokémon do seu oponente (mesmo que este Pokémon seja Nocauteado), coloque 4 contadores de dano no Pokémon Atacante.",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-92",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-121",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

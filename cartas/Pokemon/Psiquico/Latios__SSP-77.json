@@ -1,0 +1,65 @@
+{
+  "id": "SSP-77",
+  "nome": "Latios",
+  "nome_pt": "Latios",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Skill Dive",
+      "nome_pt": "Mergulho Habilidoso",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "This attack does 50 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque causa 50 pontos de dano a 1 dos Pokémon do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Jet Headbutt",
+      "nome_pt": "Cabeçada a Jato",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-77",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-203",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

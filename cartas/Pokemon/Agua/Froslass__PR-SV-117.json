@@ -1,0 +1,65 @@
+{
+  "id": "PR-SV-117",
+  "nome": "Froslass",
+  "nome_pt": "Froslass",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Snorunt",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Freezing Shroud",
+      "nome_pt": "Manto Congelante",
+      "texto": "During Pokémon Checkup, put 1 damage counter on each Pokémon that has an Ability (both yours and your opponent's), except any Froslass.",
+      "texto_pt": "Durante o Checape Pokémon, coloque 1 contador de dano em cada Pokémon que tem uma Habilidade (seus e do seu oponente), exceto por quaisquer Froslass.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Frost Smash",
+      "nome_pt": "Pancada Congelada",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-117",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "TWM-53",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-174",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

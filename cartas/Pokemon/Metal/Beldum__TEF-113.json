@@ -1,0 +1,59 @@
+{
+  "id": "TEF-113",
+  "nome": "Beldum",
+  "nome_pt": "Beldum",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dig Claws",
+      "nome_pt": "Fincar Garras",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Iron Tackle",
+      "nome_pt": "Golpe de Colisão Férreo",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "This Pokémon also does 10 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 10 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-113",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

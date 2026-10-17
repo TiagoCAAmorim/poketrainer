@@ -1,0 +1,70 @@
+{
+  "id": "DRI-127",
+  "nome": "Team Rocket's Murkrow",
+  "nome_pt": "Murkrow da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Deceit",
+      "nome_pt": "Traição",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Procure por uma carta de Apoiador no seu baralho, revele-a e coloque-a na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Torment",
+      "nome_pt": "Atormentar",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Choose 1 of your opponent's Active Pokémon's attacks. During your opponent's next turn, that Pokémon can't use that attack.",
+      "texto_pt": "Escolha 1 dos ataques do Pokémon Ativo do seu oponente. Durante o próximo turno do seu oponente, aquele Pokémon não poderá usar aquele ataque.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-127",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-200",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-126",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Torment: Choose 1 of your opponent's Active Pokémon's attacks.; During your opponent's next turn, that Pokémon can't use that attack."
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "PR-SV-91",
+  "nome": "Koraidon",
+  "nome_pt": "Koraidon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 140,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Primordial Beatdown",
+      "nome_pt": "Abater Primordial",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each of your Ancient Pokémon in play.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada um dos seus Pokémon Ancestrais em jogo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Shred",
+      "nome_pt": "Triturar",
+      "custo": [
+        "Fogo",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-91",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "TEF-119",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

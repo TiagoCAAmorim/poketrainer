@@ -1,0 +1,63 @@
+{
+  "id": "WHT-31",
+  "nome": "Blitzle",
+  "nome_pt": "Blitzle",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Smash Kick",
+      "nome_pt": "Chute Poderoso",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Zap Kick",
+      "nome_pt": "Chute Zap",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-31",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-114",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

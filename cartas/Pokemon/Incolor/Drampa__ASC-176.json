@@ -1,0 +1,60 @@
+{
+  "id": "ASC-176",
+  "nome": "Drampa",
+  "nome_pt": "Drampa",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gentle Slap",
+      "nome_pt": "Tapinha",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dragon Strike",
+      "nome_pt": "Ataque de Dragão",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "During your next turn, this Pokémon can't use Dragon Strike.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Ataque de Dragão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-176",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "SCR-139",
+  "nome": "Lacey",
+  "nome_pt": "Tarsila",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Shuffle your hand into your deck. Then, draw 4 cards. If your opponent has 3 or fewer Prize cards remaining, draw 8 cards instead.",
+  "texto_pt": "Embaralhe a sua mão no seu baralho. Em seguida, compre 4 cartas. Se o seu oponente tiver 3 ou menos cartas de Prêmio restantes, compre 8 cartas ao invés de 4.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-139",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-166",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-172",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "PRE-114",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-175",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

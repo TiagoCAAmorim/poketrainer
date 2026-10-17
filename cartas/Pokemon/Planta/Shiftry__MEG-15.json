@@ -1,0 +1,60 @@
+{
+  "id": "MEG-15",
+  "nome": "Shiftry",
+  "nome_pt": "Shiftry",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Nuzleaf",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Reversing Gust",
+      "nome_pt": "Lufada Reversa",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, choose 1 of your opponent's Pokémon. Shuffle that Pokémon and all attached cards into their deck.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, escolha 1 dos Pokémon do seu oponente. Embaralhe aquele Pokémon e todas as cartas ligadas a ele no baralho dele.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Perplex",
+      "nome_pt": "Perplexo",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-15",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Reversing Gust: If heads, choose 1 of your opponent's Pokémon.; Shuffle that Pokémon and all attached cards into their deck."
+    ]
+  }
+}

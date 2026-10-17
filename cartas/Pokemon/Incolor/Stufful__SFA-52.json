@@ -1,0 +1,46 @@
+{
+  "id": "SFA-52",
+  "nome": "Stufful",
+  "nome_pt": "Stufful",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Take Down",
+      "nome_pt": "Desmantelar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "This Pokémon also does 10 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 10 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-52",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

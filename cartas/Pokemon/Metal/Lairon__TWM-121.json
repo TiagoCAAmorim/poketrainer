@@ -1,0 +1,64 @@
+{
+  "id": "TWM-121",
+  "nome": "Lairon",
+  "nome_pt": "Lairon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Aron",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Steel Tackle",
+      "nome_pt": "Colisão de Aço",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "40",
+      "texto": "This Pokémon also does 20 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 20 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Metal Claw",
+      "nome_pt": "Garra de Metal",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-121",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-184",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "WHT-1",
+  "nome": "Sewaddle",
+  "nome_pt": "Sewaddle",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 50,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bug Bite",
+      "nome_pt": "Picada",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-1",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-87",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

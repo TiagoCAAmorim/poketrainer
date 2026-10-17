@@ -1,0 +1,48 @@
+{
+  "id": "PR-ME-48",
+  "nome": "Totodile",
+  "nome_pt": "Totodile",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bite",
+      "nome_pt": "Mordida",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-48",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

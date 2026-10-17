@@ -1,0 +1,58 @@
+{
+  "id": "JTG-128",
+  "nome": "Noivern",
+  "nome_pt": "Noivern",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Noibat",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Tuning Echo",
+      "nome_pt": "Eco Sintonizador",
+      "texto": "If you have the same number of cards in your hand as your opponent, ignore all Energy in the cost of Frightening Howl used by this Pokémon.",
+      "texto_pt": "Se você tiver o mesmo número de cartas na sua mão do que seu oponente, ignore todas as Energias no custo de Uivo Pavoroso usado por este Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Frightening Howl",
+      "nome_pt": "Uivo Pavoroso",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-128",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Tuning Echo: If you have the same number of cards in your hand as your opponent, ignore all Energy in the cost of Frightening Howl used by this Pokémon."
+    ]
+  }
+}

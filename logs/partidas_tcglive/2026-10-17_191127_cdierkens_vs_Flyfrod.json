@@ -1,0 +1,58 @@
+{
+ "acoes": [
+  89,
+  89
+ ],
+ "turnos": [
+  12,
+  12
+ ],
+ "completo": true,
+ "divergencia": null,
+ "danos_conferidos": [
+  [
+   6,
+   "Flyfrod's Mega Excadrill ex used Maximum Drilling on cdierkens’s Seaking for 200 damage.",
+   200,
+   200
+  ],
+  [
+   8,
+   "Flyfrod's Mega Excadrill ex used Undermine on cdierkens’s Applin for 90 damage.",
+   90,
+   90
+  ],
+  [
+   8,
+   "cdierkens's Dipplin used Do the Wave on Flyfrod’s Mega Excadrill ex for 180 damage. Flyfrod's Mega Excadrill ex took -30 less damage because of Grass Resistance.",
+   180,
+   180
+  ],
+  [
+   10,
+   "Flyfrod's Mega Excadrill ex used Undermine on cdierkens’s Dipplin for 90 damage.",
+   90,
+   90
+  ],
+  [
+   10,
+   "cdierkens's Dipplin used Do the Wave on Flyfrod’s Fezandipiti ex for 130 damage.",
+   130,
+   130
+  ],
+  [
+   12,
+   "Flyfrod's Mega Excadrill ex used Undermine on cdierkens’s Dipplin for 90 damage.",
+   90,
+   90
+  ]
+ ],
+ "notas": [
+  "versão de Goldeen ajustada para TWM-44",
+  "mão de cdierkens reconciliada: Gladion's Final Battle → Festival Grounds",
+  "mão de cdierkens reconciliada: Festival Grounds → Gladion's Final Battle",
+  "tentativas: 1"
+ ],
+ "hash": "b263c4bbe7f5",
+ "resumo": "Jogadores: cdierkens x Flyfrod\nAções reproduzidas: 89/89  (turnos 12/12)\nDanos conferidos: 6/6 iguais ao log oficial\nPartida reproduzida até o fim sem divergências.\n  nota: versão de Goldeen ajustada para TWM-44\n  nota: mão de cdierkens reconciliada: Gladion's Final Battle → Festival Grounds\n  nota: mão de cdierkens reconciliada: Festival Grounds → Gladion's Final Battle\n  nota: tentativas: 1"
+}

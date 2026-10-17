@@ -1,0 +1,58 @@
+{
+  "id": "SFA-28",
+  "nome": "Golbat",
+  "nome_pt": "Golbat",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Zubat",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Speed Dive",
+      "nome_pt": "Mergulho Veloz",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Pitch-Black Blade",
+      "nome_pt": "Lâmina do Breu",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-28",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

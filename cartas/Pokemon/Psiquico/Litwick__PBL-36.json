@@ -1,0 +1,46 @@
+{
+  "id": "PBL-36",
+  "nome": "Litwick",
+  "nome_pt": "Litwick",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Will-O-Wisp",
+      "nome_pt": "Fogo Fátuo",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-36",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

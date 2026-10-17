@@ -1,0 +1,54 @@
+{
+  "id": "SSP-64",
+  "nome": "Stunfisk",
+  "nome_pt": "Stunfisk",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Paralyzing Crackle",
+      "nome_pt": "Estalo Paralisante",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed, and discard an Energy from that Pokémon.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado, e descarte uma Energia daquele Pokémon.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-64",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-202",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Paralyzing Crackle: If heads, your opponent's Active Pokémon is now Paralyzed, and discard an Energy from that Pokémon."
+    ]
+  }
+}

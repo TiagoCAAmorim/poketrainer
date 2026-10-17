@@ -1,0 +1,25 @@
+{
+  "id": "PR-SV-114",
+  "nome": "Picnicker",
+  "nome_pt": "Fã de Piquenique",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Flip a coin. If heads, draw 4 cards. If tails, draw 2 cards.",
+  "texto_pt": "Jogue uma moeda. Se sair cara, compre 4 cartas. Se sair coroa, compre 2 cartas.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-114",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

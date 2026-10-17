@@ -1,0 +1,46 @@
+{
+  "id": "PBL-66",
+  "nome": "Pikipek",
+  "nome_pt": "Pikipek",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Stab",
+      "nome_pt": "Facada Dupla",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10×",
+      "texto": "Flip 2 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-66",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

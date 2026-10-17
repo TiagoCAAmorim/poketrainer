@@ -1,0 +1,60 @@
+{
+  "id": "ASC-174",
+  "nome": "Larry's Braviary",
+  "nome_pt": "Braviary do Lauro",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Larry's Rufflet",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Clutch",
+      "nome_pt": "Agarramento",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Brave Bird",
+      "nome_pt": "Pássaro Bravo",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "This Pokémon also does 30 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 30 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-174",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

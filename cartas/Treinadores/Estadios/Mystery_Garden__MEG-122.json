@@ -1,0 +1,35 @@
+{
+  "id": "MEG-122",
+  "nome": "Mystery Garden",
+  "nome_pt": "Jardim Misterioso",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Once during each player's turn, that player may discard an Energy card from their hand in order to draw cards until they have as many cards in their hand as they have Psychic Pokémon in play.",
+  "texto_pt": "Uma vez durante o turno de cada jogador, aquele jogador poderá descartar uma carta de Energia da própria mão para comprar cartas até ter o mesmo número de cartas na própria mão do que os Pokémon Psíquico que ele tem em jogo.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-122",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-172",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-194",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

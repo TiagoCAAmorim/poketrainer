@@ -1,0 +1,25 @@
+{
+  "id": "TWM-147",
+  "nome": "Cook",
+  "nome_pt": "Chef",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Heal 70 damage from your Active Pokémon.",
+  "texto_pt": "Cure 70 pontos de dano do seu Pokémon Ativo.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-147",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

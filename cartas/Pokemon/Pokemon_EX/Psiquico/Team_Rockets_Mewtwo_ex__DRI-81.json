@@ -1,0 +1,86 @@
+{
+  "id": "DRI-81",
+  "nome": "Team Rocket's Mewtwo ex",
+  "nome_pt": "Mewtwo ex da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 280,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Power Saver",
+      "nome_pt": "Economizador de Energia",
+      "texto": "This Pokémon can't attack unless you have 4 or more Team Rocket's Pokémon in play.",
+      "texto_pt": "Este Pokémon não pode atacar a não ser que você tenha 4 ou mais Pokémon da Equipe Rocket em jogo.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Erasure Ball",
+      "nome_pt": "Bola de Supressão",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "160+",
+      "texto": "You may discard up to 2 Energy from your Benched Pokémon. This attack does 60 more damage for each card you discarded in this way.",
+      "texto_pt": "Você pode descartar até 2 Energias dos seus Pokémon no Banco. Este ataque causa 60 pontos de dano a mais para cada carta descartada desta forma.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-81",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-213",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-231",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-240",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-79",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-281",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Erasure Ball: You may discard up to 2 Energy from your Benched Pokémon.",
+      "Habilidade Power Saver: This Pokémon can't attack unless you have 4 or more Team Rocket's Pokémon in play."
+    ]
+  }
+}

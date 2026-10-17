@@ -1,0 +1,59 @@
+{
+  "id": "TWM-119",
+  "nome": "Skarmory",
+  "nome_pt": "Skarmory",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cutting Wind",
+      "nome_pt": "Vento Dilacerante",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Big Storm",
+      "nome_pt": "Tempestade Enorme",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "Discard a Stadium in play.",
+      "texto_pt": "Descarte um Estádio em jogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-119",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

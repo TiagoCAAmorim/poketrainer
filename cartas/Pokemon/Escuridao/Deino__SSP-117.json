@@ -1,0 +1,58 @@
+{
+  "id": "SSP-117",
+  "nome": "Deino",
+  "nome_pt": "Deino",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Stomp Off",
+      "nome_pt": "Sair Irritado",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Discard the top card of your opponent's deck.",
+      "texto_pt": "Descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bite",
+      "nome_pt": "Mordida",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-117",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

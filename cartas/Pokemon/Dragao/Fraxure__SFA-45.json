@@ -1,0 +1,62 @@
+{
+  "id": "SFA-45",
+  "nome": "Fraxure",
+  "nome_pt": "Fraxure",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Axew",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Unnerve",
+      "nome_pt": "Enervar",
+      "texto": "Whenever your opponent plays an Item or Supporter card from their hand, prevent all effects of that card done to this Pokémon.",
+      "texto_pt": "Sempre que seu oponente jogar uma carta de Item ou de Apoiador da mão dele, previna todos os efeitos daquela carta causados a este Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Dragon Pulse",
+      "nome_pt": "Pulso do Dragão",
+      "custo": [
+        "Lutador",
+        "Metal"
+      ],
+      "dano": "80",
+      "texto": "Discard the top card of your deck.",
+      "texto_pt": "Descarte a carta de cima do seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-45",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-77",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Unnerve: Whenever your opponent plays an Item or Supporter card from their hand, prevent all effects of that card done to this Pokémon."
+    ]
+  }
+}

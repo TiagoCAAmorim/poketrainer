@@ -1,0 +1,30 @@
+{
+  "id": "DRI-163",
+  "nome": "Emcee's Hype",
+  "nome_pt": "Hype da Emcee",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Draw 2 cards. If your opponent has 3 or fewer Prize cards remaining, draw 2 more cards.",
+  "texto_pt": "Compre 2 cartas. Se o seu oponente tiver 3 ou menos cartas de Prêmio restantes, compre 2 cartas a mais.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-163",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-220",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

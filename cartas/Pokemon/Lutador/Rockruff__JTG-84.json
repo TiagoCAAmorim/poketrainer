@@ -1,0 +1,60 @@
+{
+  "id": "JTG-84",
+  "nome": "Rockruff",
+  "nome_pt": "Rockruff",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dig It Up",
+      "nome_pt": "Desaterrar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Look at the top card of your deck. You may discard that card.",
+      "texto_pt": "Olhe a carta de cima do seu baralho. Você pode descartar aquela carta.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Stampede",
+      "nome_pt": "Estouro",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-84",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Dig It Up: Look at the top card of your deck.; You may discard that card."
+    ]
+  }
+}

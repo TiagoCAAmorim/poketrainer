@@ -1,0 +1,51 @@
+{
+  "id": "JTG-93",
+  "nome": "Paldean Wooper",
+  "nome_pt": "Wooper de Paldea",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Trip Over",
+      "nome_pt": "Tropeção",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10+",
+      "texto": "Flip a coin. If heads, this attack does 20 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 20 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-93",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "PFL-102",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

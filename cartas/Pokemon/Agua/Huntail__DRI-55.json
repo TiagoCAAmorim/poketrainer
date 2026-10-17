@@ -1,0 +1,58 @@
+{
+  "id": "DRI-55",
+  "nome": "Huntail",
+  "nome_pt": "Huntail",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Clamperl",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Diver's Catch",
+      "nome_pt": "Tesouro do Mergulhador",
+      "texto": "When 1 of your Water Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, you may put all Basic Water Energy attached to that Pokémon into your hand instead of the discard pile.",
+      "texto_pt": "Quando 1 dos seus Pokémon Água for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, você poderá colocar todas as Energias Água Básicas ligadas àquele Pokémon na sua mão ao invés da pilha de descarte.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Wave Splash",
+      "nome_pt": "Onda Borrifante",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-55",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Diver's Catch: When 1 of your Water Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, you may put all Basic Water Energy attached to that Pokémon into your hand instead of the discard pile."
+    ]
+  }
+}

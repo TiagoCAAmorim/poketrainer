@@ -1,0 +1,48 @@
+{
+  "id": "PBL-35",
+  "nome": "Spiritomb",
+  "nome_pt": "Spiritomb",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spiritual End",
+      "nome_pt": "Desfecho Espiritual",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "If you have 13 or more Pokémon that have the Hide 'n' Sneak Ability in your discard pile, choose 2 of your opponent's Pokémon and quadruple the number of damage counters on each of them.",
+      "texto_pt": "Se você tiver 13 ou mais Pokémon que têm a Habilidade Esconde-some na sua pilha de descarte, escolha 2 dos Pokémon do seu oponente e quadruplique o número de contadores de dano em cada um deles.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-35",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Spiritual End: If you have 13 or more Pokémon that have the Hide 'n' Sneak Ability in your discard pile, choose 2 of your opponent's Pokémon and quadruple the number of damage counters on each of them."
+    ]
+  }
+}

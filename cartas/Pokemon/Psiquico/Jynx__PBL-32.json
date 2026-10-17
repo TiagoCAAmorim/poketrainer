@@ -1,0 +1,60 @@
+{
+  "id": "PBL-32",
+  "nome": "Jynx",
+  "nome_pt": "Jynx",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Intense Kiss",
+      "nome_pt": "Beijão",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "At the end of your opponent's next turn, discard the Defending Pokémon and all attached cards.",
+      "texto_pt": "No final do próximo turno do seu oponente, descarte o Pokémon Defensor e todas as cartas ligadas a ele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Psy Bolt",
+      "nome_pt": "Raio Psíquico",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-32",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Intense Kiss: At the end of your opponent's next turn, discard the Defending Pokémon and all attached cards."
+    ]
+  }
+}

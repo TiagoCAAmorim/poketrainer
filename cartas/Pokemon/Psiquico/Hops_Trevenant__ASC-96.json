@@ -1,0 +1,66 @@
+{
+  "id": "ASC-96",
+  "nome": "Hop's Trevenant",
+  "nome_pt": "Trevenant do Lupo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Hop's Phantump",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Horrifying Revenge",
+      "nome_pt": "Vingança Aterrorizante",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30+",
+      "texto": "If any of your Hop's Pokémon were Knocked Out by damage from an attack during your opponent's last turn, this attack does 100 more damage.",
+      "texto_pt": "Se algum dos seus Pokémon do Lupo tiver sido Nocauteado pelo dano de um ataque durante o último turno do seu oponente, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Corner",
+      "nome_pt": "Quina",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-96",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-237",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Horrifying Revenge: If any of your Hop's Pokémon were Knocked Out by damage from an attack during your opponent's last turn, this attack does 100 more damage."
+    ]
+  }
+}

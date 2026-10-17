@@ -1,0 +1,46 @@
+{
+  "id": "TEF-70",
+  "nome": "Solosis",
+  "nome_pt": "Solosis",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 40,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Surprise Attack",
+      "nome_pt": "Ataque Surpresa",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Flip a coin. If tails, this attack does nothing.",
+      "texto_pt": "Jogue uma moeda. Se sair coroa, este ataque não fará nada.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-70",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

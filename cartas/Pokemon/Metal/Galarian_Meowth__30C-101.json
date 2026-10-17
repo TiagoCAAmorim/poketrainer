@@ -1,0 +1,62 @@
+{
+  "id": "30C-101",
+  "nome": "Galarian Meowth",
+  "nome_pt": "Meowth de Galar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pay Day",
+      "nome_pt": "Dia de Pagamento",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10",
+      "texto": "Draw a card.",
+      "texto_pt": "Compre uma carta.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Treasure Rush",
+      "nome_pt": "Corrida ao Tesouro 10×",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "10×",
+      "texto": "This attack does 10 damage for each card in your hand.",
+      "texto_pt": "Este ataque causa 10 pontos de dano para cada carta na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-101",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-141",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

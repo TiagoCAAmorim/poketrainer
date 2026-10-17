@@ -1,0 +1,23 @@
+{
+  "id": "PRE-127",
+  "nome": "Roto-Stick",
+  "nome_pt": "Roto-bastão",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Look at the top 4 cards of your deck. You may reveal any number of Supporter cards you find there and put them into your hand. Shuffle the other cards back into your deck.",
+  "texto_pt": "Olhe as 4 cartas de cima do seu baralho. Você pode revelar qualquer número de cartas de Apoiador que encontrar lá e colocá-las na sua mão. Embaralhe as outras cartas de volta no seu baralho.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-127",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "TEF-130",
+  "nome": "Skitty",
+  "nome_pt": "Skitty",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Call for Family",
+      "nome_pt": "Chamar a Família",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Procure por um Pokémon Básico no seu baralho e coloque-o no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Tackle",
+      "nome_pt": "Investida",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-130",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

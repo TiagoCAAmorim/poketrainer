@@ -1,0 +1,62 @@
+{
+  "id": "CRI-24",
+  "nome": "Avalugg",
+  "nome_pt": "Avalugg",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 1",
+  "evolui_de": "Bergmite",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Iceberg Breaker",
+      "nome_pt": "Quebra-iceberg",
+      "custo": [
+        "Água"
+      ],
+      "dano": "60×",
+      "texto": "Discard the top 6 cards of your deck, and this attack does 60 damage for each Basic Water Energy card you discarded in this way.",
+      "texto_pt": "Descarte as 6 cartas de cima do seu baralho, e este ataque causa 60 pontos de dano para cada carta de Energia Água Básica descartada desta forma.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Frost Stamp",
+      "nome_pt": "Selo Congelante",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-24",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Iceberg Breaker: Discard the top 6 cards of your deck, and this attack does 60 damage for each Basic Water Energy card you discarded in this way."
+    ]
+  }
+}

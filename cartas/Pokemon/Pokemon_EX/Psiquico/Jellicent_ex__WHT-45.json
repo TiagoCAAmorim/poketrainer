@@ -1,0 +1,67 @@
+{
+  "id": "WHT-45",
+  "nome": "Jellicent ex",
+  "nome_pt": "Jellicent ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Frillish",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Oceanic Curse",
+      "nome_pt": "Maldição Oceânica",
+      "texto": "As long as this Pokémon is in the Active Spot, your opponent can't play any Item cards or Pokémon Tool cards from their hand.",
+      "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, seu oponente não poderá jogar nenhuma carta de Item ou carta de Ferramenta Pokémon da mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Power Press",
+      "nome_pt": "Compressão Poderosa",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "If this Pokémon has at least 2 extra Energy attached (in addition to this attack's cost), this attack does 80 more damage.",
+      "texto_pt": "Se este Pokémon tiver pelo menos 2 Energias adicionais ligadas a ele (além do custo deste ataque), este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-45",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-160",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-168",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

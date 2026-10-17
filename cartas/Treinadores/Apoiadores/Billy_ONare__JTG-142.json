@@ -1,0 +1,25 @@
+{
+  "id": "JTG-142",
+  "nome": "Billy & O'Nare",
+  "nome_pt": "Abílio e Onara",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Draw 2 cards. Then, if you have 10 or more cards in your hand, draw 2 more cards.",
+  "texto_pt": "Compre 2 cartas. Em seguida, se você tiver 10 ou mais cartas na sua mão, compre 2 cartas a mais.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-142",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

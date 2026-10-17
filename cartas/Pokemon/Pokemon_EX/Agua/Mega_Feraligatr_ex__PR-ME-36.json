@@ -1,0 +1,60 @@
+{
+  "id": "PR-ME-36",
+  "nome": "Mega Feraligatr ex",
+  "nome_pt": "Mega Feraligatr ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 370,
+  "estagio": "Estágio 2",
+  "evolui_de": "Croconaw",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mortal Crunch",
+      "nome_pt": "Mastigada Mortal",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "200+",
+      "texto": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 200 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente já tiver algum contador de dano nele, este ataque causará 200 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-36",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-43",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-274",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

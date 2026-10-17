@@ -1,0 +1,57 @@
+{
+  "id": "JTG-65",
+  "nome": "Oricorio",
+  "nome_pt": "Oricorio",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Call for Family",
+      "nome_pt": "Chamar a Família",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 2 Pokémon Básicos no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Spooky Shot",
+      "nome_pt": "Tiro Assustador",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-65",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

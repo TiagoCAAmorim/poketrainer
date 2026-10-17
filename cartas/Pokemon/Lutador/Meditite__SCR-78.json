@@ -1,0 +1,64 @@
+{
+  "id": "SCR-78",
+  "nome": "Meditite",
+  "nome_pt": "Meditite",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Calm Mind",
+      "nome_pt": "Mente Calma",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Heal 20 damage from this Pokémon.",
+      "texto_pt": "Cure 20 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Chop",
+      "nome_pt": "Trincar",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-78",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-153",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

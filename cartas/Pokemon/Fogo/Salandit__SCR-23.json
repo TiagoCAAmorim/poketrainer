@@ -1,0 +1,51 @@
+{
+  "id": "SCR-23",
+  "nome": "Salandit",
+  "nome_pt": "Salandit",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ember",
+      "nome_pt": "Brasa",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "30",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-23",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "ASC-34",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

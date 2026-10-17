@@ -1,0 +1,48 @@
+{
+  "id": "DRI-100",
+  "nome": "Medicham",
+  "nome_pt": "Medicham",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Meditite",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Harmonious Spirit Palm",
+      "nome_pt": "Palma do Espírito Harmonioso",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "50+",
+      "texto": "If this Pokémon and your opponent's Active Pokémon have the same amount of Energy attached, this attack does 120 more damage.",
+      "texto_pt": "Se este Pokémon e o Pokémon Ativo do seu oponente tiverem a mesma quantidade de Energia ligada a eles, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-100",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Harmonious Spirit Palm: If this Pokémon and your opponent's Active Pokémon have the same amount of Energy attached, this attack does 120 more damage."
+    ]
+  }
+}

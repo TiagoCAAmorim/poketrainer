@@ -1,0 +1,50 @@
+{
+  "id": "PR-SV-162",
+  "nome": "Houndstone ex",
+  "nome_pt": "Houndstone ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Greavard",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Horrifying Fang",
+      "nome_pt": "Caninos Aterrorizantes",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "Flip a coin until you get tails. This attack does 20 more damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 20 pontos de dano a mais para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-162",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

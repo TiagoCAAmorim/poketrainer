@@ -1,0 +1,57 @@
+{
+  "id": "30C-4",
+  "nome": "Illumise",
+  "nome_pt": "Genesect EX",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Supereffective Pheromones",
+      "nome_pt": "Sinal Vermelho",
+      "texto": "If you have Volbeat in play, apply Weakness for both Active Pokémon as x3",
+      "texto_pt": "Ao ligar uma Energia de Plasma da sua mão a este Pokémon, você pode trocar 1 dos Pokémon do Banco do oponente pelo Pokémon Ativo dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Ram",
+      "nome_pt": "Megalocanhão",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "Causa 20 de dano a 1 dos Pokémon no Banco do seu oponente. <em>(Não aplique Fraqueza e Resistência a Pokémon no Banco.)</em>",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-4",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Supereffective Pheromones: If you have Volbeat in play, apply Weakness for both Active Pokémon as x3"
+    ]
+  }
+}

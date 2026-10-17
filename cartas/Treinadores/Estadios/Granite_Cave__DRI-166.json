@@ -1,0 +1,25 @@
+{
+  "id": "DRI-166",
+  "nome": "Granite Cave",
+  "nome_pt": "Caverna de Granito",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Steven's Pokémon (both yours and your opponent's) take 30 less damage from attacks from the opponent's Pokémon (after applying Weakness and Resistance).",
+  "texto_pt": "Os Pokémon do Steven (seus e do seu oponente) recebem 30 pontos de dano a menos de ataques dos Pokémon do oponente (depois de aplicar Fraqueza e Resistência).",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-166",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

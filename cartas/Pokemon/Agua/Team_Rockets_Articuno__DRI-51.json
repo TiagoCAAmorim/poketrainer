@@ -1,0 +1,56 @@
+{
+  "id": "DRI-51",
+  "nome": "Team Rocket's Articuno",
+  "nome_pt": "Articuno da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Repelling Veil",
+      "nome_pt": "Véu Repelente",
+      "texto": "Prevent all effects of attacks used by your opponent's Pokémon done to your Basic Team Rocket's Pokémon. (Existing effects are not removed. Damage is not an effect.)",
+      "texto_pt": "Previna todos os efeitos de ataques usados pelos Pokémon do seu oponente causados aos seus Pokémon da Equipe Rocket Básicos. (Efeitos existentes não são removidos e dano não é um efeito.)",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Dark Frost",
+      "nome_pt": "Geada Sombria",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "If this Pokémon has any Team Rocket's Energy attached, this attack does 60 more damage.",
+      "texto_pt": "Se este Pokémon tiver alguma Energia da Equipe Rocket ligada a ele, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-51",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

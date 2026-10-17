@@ -1,0 +1,51 @@
+{
+  "id": "DRI-35",
+  "nome": "Ethan's Slugma",
+  "nome_pt": "Slugma do Ethan",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Steady Firebreathing",
+      "nome_pt": "Hálito de Fogo Constante",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-35",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-23",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

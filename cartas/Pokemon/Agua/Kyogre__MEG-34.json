@@ -1,0 +1,61 @@
+{
+  "id": "MEG-34",
+  "nome": "Kyogre",
+  "nome_pt": "Kyogre",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 150,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Riptide",
+      "nome_pt": "Rebentação",
+      "custo": [
+        "Água"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each Basic Water Energy card in your discard pile. Then, shuffle those cards into your deck.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada carta de Energia Água Básica na sua pilha de descarte. Em seguida, embaralhe aquelas cartas no seu baralho.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Swirling Waves",
+      "nome_pt": "Turbilhão de Ondas",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-34",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Riptide: Then, shuffle those cards into your deck."
+    ]
+  }
+}

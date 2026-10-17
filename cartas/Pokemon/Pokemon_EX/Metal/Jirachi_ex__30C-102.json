@@ -1,0 +1,66 @@
+{
+  "id": "30C-102",
+  "nome": "Jirachi ex",
+  "nome_pt": "Jirachi ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 160,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -20",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wish Granter",
+      "nome_pt": "Conceder Desejo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw cards until you have 7 cards in your hand.",
+      "texto_pt": "Compre cartas até ter 7 cartas na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Swift",
+      "nome_pt": "Ataque Veloz",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "This attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por Fraqueza ou Resistência, ou por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-102",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-155",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

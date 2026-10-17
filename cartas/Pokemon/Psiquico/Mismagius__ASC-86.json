@@ -1,0 +1,47 @@
+{
+  "id": "ASC-86",
+  "nome": "Mismagius",
+  "nome_pt": "Mismagius",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Misdreavus",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Assassin's Magic",
+      "nome_pt": "Magia do Assassino",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "If your opponent's Active Pokémon is affected by a Special Condition, place 6 damage counters on 1 of your opponent's Benched Pokémon.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente estiver afetado por uma Condição Especial, coloque 6 contadores de dano em 1 dos Pokémon no Banco do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-86",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

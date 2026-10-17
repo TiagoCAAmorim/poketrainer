@@ -1,0 +1,57 @@
+{
+  "id": "PBL-28",
+  "nome": "Miraidon",
+  "nome_pt": "Miraidon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Photon Cord",
+      "nome_pt": "Fiação de Fótons",
+      "texto": "If this Pokémon is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon, move up to 2 Basic Lightning Energy cards from this Pokémon to 1 of your Benched Pokémon.",
+      "texto_pt": "Se este Pokémon estiver no Campo Ativo e for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, mova até 2 cartas de Energia Elétrico Básica deste Pokémon para 1 dos seus Pokémon no Banco.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Thunder",
+      "nome_pt": "Trovão",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "90",
+      "texto": "This Pokémon also does 30 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 30 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-28",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Photon Cord: If this Pokémon is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon, move up to 2 Basic Lightning Energy cards from this Pokémon to 1 of your Benched Pokémon."
+    ]
+  }
+}

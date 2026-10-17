@@ -1,0 +1,48 @@
+{
+  "id": "PFL-74",
+  "nome": "Duraludon",
+  "nome_pt": "Duraludon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hyper Beam",
+      "nome_pt": "Hiper-raio",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Metal"
+      ],
+      "dano": "70",
+      "texto": "Discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-74",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

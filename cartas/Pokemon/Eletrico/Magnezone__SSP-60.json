@@ -1,0 +1,62 @@
+{
+  "id": "SSP-60",
+  "nome": "Magnezone",
+  "nome_pt": "Magnezone",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Magneton",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mighty Magnetism",
+      "nome_pt": "Magnetismo Magnífico",
+      "custo": [
+        "Elétrico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "Your opponent's Active Pokémon is now Confused. During your opponent's next turn, that Pokémon can't retreat.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso. Durante o próximo turno do seu oponente, aquele Pokémon não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Zap Cannon",
+      "nome_pt": "Canhão Zap",
+      "custo": [
+        "Elétrico",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "180",
+      "texto": "During your next turn, this Pokémon can't use Zap Cannon.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Canhão Zap.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-60",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

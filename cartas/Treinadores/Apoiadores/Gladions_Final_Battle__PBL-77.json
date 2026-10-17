@@ -1,0 +1,35 @@
+{
+  "id": "PBL-77",
+  "nome": "Gladion's Final Battle",
+  "nome_pt": "Batalha Decisiva do Gladio",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "You can use this card only when it is the last card in your hand. During this turn, attacks used by your Pokémon that don't have a Rule Box do 80 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance). (Pokémon ex, Pokémon V_atk, etc. have Rule Boxes.)",
+  "texto_pt": "Você só poderá usar esta carta se ela for a última carta na sua mão. Durante este turno, os ataques usados pelos seus Pokémon que não têm uma Caixa de Regras causarão 80 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência). (Pokémon ex, Pokémon V, etc. têm Caixas de Regras.)",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-77",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-108",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-118",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

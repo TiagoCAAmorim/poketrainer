@@ -1,0 +1,69 @@
+{
+  "id": "BLK-3",
+  "nome": "Serperior ex",
+  "nome_pt": "Serperior ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 320,
+  "estagio": "Estágio 2",
+  "evolui_de": "Servine",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Regal Cheer",
+      "nome_pt": "Torcida Real",
+      "texto": "Attacks used by your Pokémon do 20 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+      "texto_pt": "Os ataques usados pelos seus Pokémon causam 20 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Command the Grass",
+      "nome_pt": "Comandar a Grama",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "You may search your deck for up to 3 cards and put them into your hand. Then, shuffle your deck.",
+      "texto_pt": "Você pode procurar por até 3 cartas no seu baralho e colocá-las na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-3",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-156",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-164",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

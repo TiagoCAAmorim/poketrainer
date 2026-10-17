@@ -1,0 +1,51 @@
+{
+  "id": "SSP-1",
+  "nome": "Exeggcute",
+  "nome_pt": "Exeggcute",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 30,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Precocious Evolution",
+      "nome_pt": "Evolução Prematura",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "If you go first, you can use this attack during your first turn. Search your deck for a card that evolves from this Pokémon and put it onto this Pokémon to evolve it. Then, shuffle your deck.",
+      "texto_pt": "Se você for o primeiro a jogar, poderá usar este ataque durante o seu primeiro turno. Procure por uma carta no seu baralho que evolua deste Pokémon e coloque-a sobre este Pokémon para evoluí-lo. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-1",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-192",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

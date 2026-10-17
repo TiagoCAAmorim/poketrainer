@@ -1,0 +1,65 @@
+{
+  "id": "CRI-41",
+  "nome": "Gourgeist ex",
+  "nome_pt": "Gourgeist ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Pumpkaboo",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Horrifying Rondo",
+      "nome_pt": "Cântico Horripilante",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30+",
+      "texto": "This attack does 50 more damage for each of your Benched Pokémon that has any damage counters on it.",
+      "texto_pt": "Este ataque causa 50 pontos de dano a mais para cada um dos seus Pokémon no Banco que tiver algum contador de dano nele.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Ghostly Touch",
+      "nome_pt": "Toque Fantasmagórico",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "140",
+      "texto": "Discard a random card from your opponent's hand.",
+      "texto_pt": "Descarte uma carta aleatória da mão do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-41",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-102",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

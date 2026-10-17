@@ -1,0 +1,62 @@
+{
+  "id": "PR-ME-80",
+  "nome": "Fennekin",
+  "nome_pt": "Fennekin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Call for Family",
+      "nome_pt": "Chamar a Família",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 2 Pokémon Básicos no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Steady Firebreathing",
+      "nome_pt": "Hálito de Fogo Constante",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-80",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "CRI-11",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

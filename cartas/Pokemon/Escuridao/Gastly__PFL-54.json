@@ -1,0 +1,51 @@
+{
+  "id": "PFL-54",
+  "nome": "Gastly",
+  "nome_pt": "Gastly",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Petty Grudge",
+      "nome_pt": "Rancinho",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-54",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "ASC-123",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

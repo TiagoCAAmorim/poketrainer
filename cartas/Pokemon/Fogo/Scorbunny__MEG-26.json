@@ -1,0 +1,46 @@
+{
+  "id": "MEG-26",
+  "nome": "Scorbunny",
+  "nome_pt": "Scorbunny",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wild Kick",
+      "nome_pt": "Chute sem Pontaria",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Flip a coin. If tails, this attack does nothing.",
+      "texto_pt": "Jogue uma moeda. Se sair coroa, este ataque não fará nada.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-26",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "PFL-7",
+  "nome": "Ludicolo",
+  "nome_pt": "Ludicolo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Lombre",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Excited Heal",
+      "nome_pt": "Cura Animada",
+      "texto": "Once during your turn, if you have any Grass Mega Evolution Pokémon ex in play, you may use this Ability. Heal 60 damage from 1 of your Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, se você tiver algum Pokémon ex de Megaevolução Planta em jogo, você poderá usar esta Habilidade. Cure 60 pontos de dano de 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Lunge Out",
+      "nome_pt": "Bote",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-7",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-95",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

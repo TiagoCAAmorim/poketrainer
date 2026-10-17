@@ -1,0 +1,47 @@
+{
+  "id": "JTG-36",
+  "nome": "Lombre",
+  "nome_pt": "Lombre",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Lotad",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aqua Slash",
+      "nome_pt": "Aqua Corte",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "70",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-36",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "SFA-24",
+  "nome": "Toxicroak",
+  "nome_pt": "Toxicroak",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Croagunk",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Corkscrew Punch",
+      "nome_pt": "Soco Saca-rolha",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Clean Hit",
+      "nome_pt": "Golpe Certeiro",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90+",
+      "texto": "If your opponent's Active Pokémon is an Evolution Pokémon, this attack does 90 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon de Evolução, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-24",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

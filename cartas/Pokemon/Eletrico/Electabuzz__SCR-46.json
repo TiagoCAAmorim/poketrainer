@@ -1,0 +1,58 @@
+{
+  "id": "SCR-46",
+  "nome": "Electabuzz",
+  "nome_pt": "Electabuzz",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Collect",
+      "nome_pt": "Coleta",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "—",
+      "texto": "Draw a card.",
+      "texto_pt": "Compre uma carta.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Magnum Punch",
+      "nome_pt": "Soco Magnum",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-46",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

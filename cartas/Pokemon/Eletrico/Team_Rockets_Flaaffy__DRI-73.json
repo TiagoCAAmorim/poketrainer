@@ -1,0 +1,47 @@
+{
+  "id": "DRI-73",
+  "nome": "Team Rocket's Flaaffy",
+  "nome_pt": "Flaaffy da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Mareep",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Thunder Shock",
+      "nome_pt": "Trovoada de Choques",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-73",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

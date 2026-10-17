@@ -1,0 +1,35 @@
+{
+  "id": "PBL-78",
+  "nome": "Gwynn",
+  "nome_pt": "Clarita",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Discard up to 2 Pokémon that don't have a Rule Box from your hand, and draw 3 cards for each card you discarded in this way. (Pokémon ex, Pokémon V_atk, etc. have Rule Boxes.)",
+  "texto_pt": "Descarte até 2 Pokémon que não têm uma Caixa de Regras da sua mão e compre 3 cartas para cada carta descartada desta forma. (Pokémon ex, Pokémon V, etc. têm Caixa de Regras.)",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-78",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-109",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-119",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

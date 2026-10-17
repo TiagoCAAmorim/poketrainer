@@ -1,0 +1,59 @@
+{
+  "id": "DRI-103",
+  "nome": "Cynthia's Gabite",
+  "nome_pt": "Gabite da Cíntia",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Cynthia's Gible",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Champion's Call",
+      "nome_pt": "Chamado de Campeão",
+      "texto": "Once during your turn, you may search your deck for a Cynthia's Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá procurar por um Pokémon da Cíntia no seu baralho, revelá-lo e colocá-lo na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Dragonslice",
+      "nome_pt": "Talhada do Dragão",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-103",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-110",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

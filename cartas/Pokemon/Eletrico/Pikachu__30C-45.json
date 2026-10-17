@@ -1,0 +1,58 @@
+{
+  "id": "30C-45",
+  "nome": "Pikachu",
+  "nome_pt": "Pikachu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Nightime Stroll",
+      "nome_pt": "Caminhada Noturna",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw a card.",
+      "texto_pt": "Compre uma carta.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Static Shock",
+      "nome_pt": "Choque de Estática",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-45",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

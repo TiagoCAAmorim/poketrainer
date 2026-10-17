@@ -1,0 +1,60 @@
+{
+  "id": "BLK-56",
+  "nome": "Scolipede",
+  "nome_pt": "Scolipede",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Whirlipede",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Poison Point",
+      "nome_pt": "Ponto Venenoso",
+      "texto": "If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), the Attacking Pokémon is now Poisoned.",
+      "texto_pt": "Se este Pokémon estiver no Campo Ativo e for danificado por um ataque dos Pokémon do seu oponente (mesmo que este Pokémon seja Nocauteado), o Pokémon Atacante agora estará Envenenado.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Venoshock",
+      "nome_pt": "Venochoque",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "90+",
+      "texto": "If your opponent's Active Pokémon is Poisoned, this attack does 90 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente estiver Envenenado, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-56",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-134",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

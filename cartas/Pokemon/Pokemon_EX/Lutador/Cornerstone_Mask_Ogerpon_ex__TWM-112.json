@@ -1,0 +1,79 @@
+{
+  "id": "TWM-112",
+  "nome": "Cornerstone Mask Ogerpon ex",
+  "nome_pt": "Ogerpon Máscara Alicerce ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Cornerstone Stance",
+      "nome_pt": "Postura de Alicerce",
+      "texto": "Prevent all damage from attacks done to this Pokémon by your opponent's Pokémon that have an Ability.",
+      "texto_pt": "Previna todo o dano de ataques causado a este Pokémon pelos Pokémon do seu oponente que têm uma Habilidade.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Demolish",
+      "nome_pt": "Demolir",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "This attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por Fraqueza ou Resistência, ou por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-112",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-199",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-215",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "PRE-58",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-160",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

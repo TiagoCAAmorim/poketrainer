@@ -1,0 +1,57 @@
+{
+  "id": "TWM-21",
+  "nome": "Poltchageist",
+  "nome_pt": "Poltchageist",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 40,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tea Server",
+      "nome_pt": "Serviço de Chá",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Put a Basic Grass Energy card from your discard pile into your hand.",
+      "texto_pt": "Coloque uma carta de Energia Planta Básica da sua pilha de descarte na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Surprise Attack",
+      "nome_pt": "Ataque Surpresa",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "30",
+      "texto": "Flip a coin. If tails, this attack does nothing.",
+      "texto_pt": "Jogue uma moeda. Se sair coroa, este ataque não fará nada.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-21",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "PR-ME-41",
+  "nome": "Chimchar",
+  "nome_pt": "Chimchar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fury Swipes",
+      "nome_pt": "Golpes de Fúria",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "Flip 3 coins. This attack does 20 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 20 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-41",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

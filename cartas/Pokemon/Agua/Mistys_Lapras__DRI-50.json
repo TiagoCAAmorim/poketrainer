@@ -1,0 +1,63 @@
+{
+  "id": "DRI-50",
+  "nome": "Misty's Lapras",
+  "nome_pt": "Lapras da Misty",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Swim Together",
+      "nome_pt": "Nadar Juntos",
+      "custo": [
+        "Água"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 3 Misty's Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 3 Pokémon da Misty no seu baralho, revele-os e coloque-os na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Surf",
+      "nome_pt": "Surfar",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-50",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-194",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

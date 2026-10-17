@@ -1,0 +1,68 @@
+{
+  "id": "SSP-76",
+  "nome": "Latias ex",
+  "nome_pt": "Latias ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Skyliner",
+      "nome_pt": "Carona Aérea",
+      "texto": "Your Basic Pokémon in play have no Retreat Cost.",
+      "texto_pt": "Seus Pokémon Básicos em jogo não têm custo de Recuo.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Eon Blade",
+      "nome_pt": "Lâmina da Eternidade",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-76",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-220",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-239",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

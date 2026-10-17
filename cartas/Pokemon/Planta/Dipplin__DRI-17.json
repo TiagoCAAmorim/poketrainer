@@ -1,0 +1,46 @@
+{
+  "id": "DRI-17",
+  "nome": "Dipplin",
+  "nome_pt": "Dipplin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Applin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Energy Loop",
+      "nome_pt": "Loop de Energia",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "50",
+      "texto": "Put an Energy attached to this Pokémon into your hand.",
+      "texto_pt": "Coloque uma Energia ligada a este Pokémon na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-17",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

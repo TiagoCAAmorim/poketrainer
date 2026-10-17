@@ -1,0 +1,47 @@
+{
+  "id": "SSP-53",
+  "nome": "Cetoddle",
+  "nome_pt": "Cetoddle",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Draining Fin",
+      "nome_pt": "Barbatana Drenante",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Heal 20 damage from this Pokémon.",
+      "texto_pt": "Cure 20 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-53",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

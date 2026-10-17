@@ -1,0 +1,55 @@
+{
+  "id": "PR-SV-106",
+  "nome": "Pikachu ex",
+  "nome_pt": "Pikachu ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 200,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Thunderbolt",
+      "nome_pt": "Relâmpago",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-106",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "ASC-276",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

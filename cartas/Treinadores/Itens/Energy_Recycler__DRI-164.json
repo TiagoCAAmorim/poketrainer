@@ -1,0 +1,28 @@
+{
+  "id": "DRI-164",
+  "nome": "Energy Recycler",
+  "nome_pt": "Reciclador de Energia",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Shuffle up to 5 Basic Energy cards from your discard pile into your deck.",
+  "texto_pt": "Embaralhe até 5 cartas de Energia Básica da sua pilha de descarte no seu baralho.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-164",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "POR-108",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

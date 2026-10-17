@@ -1,0 +1,62 @@
+{
+  "id": "SSP-101",
+  "nome": "Paldean Tauros",
+  "nome_pt": "Tauros de Paldea",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Smash Kick",
+      "nome_pt": "Chute Poderoso",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Blocking Stomp",
+      "nome_pt": "Pisoteada Bloqueadora",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "If the Defending Pokémon is a Basic Pokémon, it can't attack during your opponent's next turn.",
+      "texto_pt": "Se o Pokémon Defensor for um Pokémon Básico, ele não poderá atacar durante o próximo turno do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-101",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Blocking Stomp: If the Defending Pokémon is a Basic Pokémon, it can't attack during your opponent's next turn."
+    ]
+  }
+}

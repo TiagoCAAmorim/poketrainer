@@ -1,0 +1,57 @@
+{
+  "id": "TWM-56",
+  "nome": "Froakie",
+  "nome_pt": "Froakie",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flock",
+      "nome_pt": "Bando",
+      "custo": [
+        "Água"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 Froakie and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 2 Froakie no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Flop",
+      "nome_pt": "Baque",
+      "custo": [
+        "Água"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-56",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

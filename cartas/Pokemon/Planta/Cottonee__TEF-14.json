@@ -1,0 +1,51 @@
+{
+  "id": "TEF-14",
+  "nome": "Cottonee",
+  "nome_pt": "Cottonee",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Triple Spin",
+      "nome_pt": "Giro Triplo",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10×",
+      "texto": "Flip 3 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-14",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "PRE-7",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

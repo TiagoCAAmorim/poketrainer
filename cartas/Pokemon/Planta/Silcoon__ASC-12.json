@@ -1,0 +1,54 @@
+{
+  "id": "ASC-12",
+  "nome": "Silcoon",
+  "nome_pt": "Silcoon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Wurmple",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Multiplying Cocoon",
+      "nome_pt": "Casulo Proliferante",
+      "texto": "Once during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. Search your deck for a Silcoon or a Cascoon and put it onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, quando você jogar este Pokémon da sua mão para evoluir 1 dos seus Pokémon, você poderá usar esta Habilidade. Procure por um Silcoon ou um Cascoon no seu baralho e coloque-o no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Tackle",
+      "nome_pt": "Investida",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-12",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

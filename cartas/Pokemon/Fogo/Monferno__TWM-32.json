@@ -1,0 +1,60 @@
+{
+  "id": "TWM-32",
+  "nome": "Monferno",
+  "nome_pt": "Monferno",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Chimchar",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Chop",
+      "nome_pt": "Trincar",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Heat Blow",
+      "nome_pt": "Golpe de Calor",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-32",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

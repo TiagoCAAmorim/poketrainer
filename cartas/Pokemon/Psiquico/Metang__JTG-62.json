@@ -1,0 +1,58 @@
+{
+  "id": "JTG-62",
+  "nome": "Metang",
+  "nome_pt": "Metang",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Beldum",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Psypunch",
+      "nome_pt": "Soco Psíquico",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Zen Headbutt",
+      "nome_pt": "Cabeçada Zen",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-62",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

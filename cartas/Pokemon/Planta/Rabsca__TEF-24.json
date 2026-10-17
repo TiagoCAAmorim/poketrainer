@@ -1,0 +1,54 @@
+{
+  "id": "TEF-24",
+  "nome": "Rabsca",
+  "nome_pt": "Rabsca",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 70,
+  "estagio": "Estágio 1",
+  "evolui_de": "Rellor",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Spherical Shield",
+      "nome_pt": "Escudo Esférico",
+      "texto": "Prevent all damage from and effects of attacks from your opponent's Pokémon done to your Benched Pokémon.",
+      "texto_pt": "Previna todo o dano e os efeitos de ataques dos Pokémon do seu oponente causados aos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Psychic",
+      "nome_pt": "Psíquico",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10+",
+      "texto": "This attack does 30 more damage for each Energy attached to your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a mais para cada Energia ligada ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-24",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

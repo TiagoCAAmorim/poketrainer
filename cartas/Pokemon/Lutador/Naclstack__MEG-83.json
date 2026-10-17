@@ -1,0 +1,47 @@
+{
+  "id": "MEG-83",
+  "nome": "Naclstack",
+  "nome_pt": "Naclstack",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Nacli",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rock Hurl",
+      "nome_pt": "Lançamento de Pedras",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "This attack's damage isn't affected by Resistance.",
+      "texto_pt": "O dano deste ataque não é afetado por Resistência.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-83",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

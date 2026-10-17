@@ -1,0 +1,59 @@
+{
+  "id": "SFA-5",
+  "nome": "Decidueye",
+  "nome_pt": "Decidueye",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Dartrix",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Stock Up on Feathers",
+      "nome_pt": "Estoque de Penas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw cards until you have 7 cards in your hand.",
+      "texto_pt": "Compre cartas até ter 7 cartas na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Power Shot",
+      "nome_pt": "Disparo Poderoso",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "170",
+      "texto": "Discard a Basic Grass Energy card from your hand. If you can't, this attack does nothing.",
+      "texto_pt": "Descarte uma carta de Energia Planta Básica da sua mão. Se não puder fazer isto, este ataque não fará nada.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-5",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Power Shot: Discard a Basic Grass Energy card from your hand.; If you can't, this attack does nothing."
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "TWM-125",
+  "nome": "Revavroom",
+  "nome_pt": "Revavroom",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Varoom",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rally Back",
+      "nome_pt": "Responder à Altura",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30+",
+      "texto": "If any of your Pokémon were Knocked Out by damage from an attack during your opponent's last turn, this attack does 90 more damage.",
+      "texto_pt": "Se algum dos seus Pokémon tiver sido Nocauteado pelo dano de um ataque durante o último turno do seu oponente, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Running Charge",
+      "nome_pt": "Carga em Disparada",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100×",
+      "texto": "Flip a coin until you get tails. This attack does 100 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 100 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-125",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

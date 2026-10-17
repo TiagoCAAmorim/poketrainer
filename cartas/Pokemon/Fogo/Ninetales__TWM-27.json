@@ -1,0 +1,47 @@
+{
+  "id": "TWM-27",
+  "nome": "Ninetales",
+  "nome_pt": "Ninetales",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Vulpix",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Eerie Glow",
+      "nome_pt": "Brilho Misterioso",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "90",
+      "texto": "Your opponent's Active Pokémon is now Burned and Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso e Queimado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-27",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

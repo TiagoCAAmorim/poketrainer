@@ -1,0 +1,58 @@
+{
+  "id": "ASC-131",
+  "nome": "Galarian Linoone",
+  "nome_pt": "Linoone de Galar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Galarian Zigzagoon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gnaw",
+      "nome_pt": "Roída",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Claw Slash",
+      "nome_pt": "Golpe de Garra",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-131",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

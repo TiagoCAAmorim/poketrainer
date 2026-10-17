@@ -1,0 +1,51 @@
+{
+  "id": "WHT-44",
+  "nome": "Frillish",
+  "nome_pt": "Frillish",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Oceanic Gloom",
+      "nome_pt": "Trevas Oceânicas",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20",
+      "texto": "During your opponent's next turn, they can't play any Item cards from their hand.",
+      "texto_pt": "Durante o próximo turno do seu oponente, ele não poderá jogar nenhuma carta de Item da mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-44",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-126",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

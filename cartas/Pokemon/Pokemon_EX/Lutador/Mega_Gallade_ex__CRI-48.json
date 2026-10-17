@@ -1,0 +1,61 @@
+{
+  "id": "CRI-48",
+  "nome": "Mega Gallade ex",
+  "nome_pt": "Mega Gallade ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 350,
+  "estagio": "Estágio 2",
+  "evolui_de": "Kirlia",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gale Slash",
+      "nome_pt": "Talho Vendaval",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "50+",
+      "texto": "If this Pokémon has no damage counters on it, this attack does 150 more damage.",
+      "texto_pt": "Se este Pokémon não tiver nenhum contador de dano nele, este ataque causará 150 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Marvelous Edge",
+      "nome_pt": "Gume Maravilhoso",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "240",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-48",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

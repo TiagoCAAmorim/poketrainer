@@ -1,0 +1,57 @@
+{
+  "id": "POR-35",
+  "nome": "Spritzee",
+  "nome_pt": "Spritzee",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Sweet Scent",
+      "nome_pt": "Aroma Doce",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Heal 30 damage from 1 of your Pokémon.",
+      "texto_pt": "Cure 30 pontos de dano de 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Ram",
+      "nome_pt": "Aríete",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-35",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

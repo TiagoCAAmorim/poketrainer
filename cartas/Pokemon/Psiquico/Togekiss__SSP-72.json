@@ -1,0 +1,68 @@
+{
+  "id": "SSP-72",
+  "nome": "Togekiss",
+  "nome_pt": "Togekiss",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Togetic",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Wonder Kiss",
+      "nome_pt": "Kiss Surpresa",
+      "texto": "When your opponent's Active Pokémon is Knocked Out, flip a coin. If heads, take 1 more Prize card. The effect of Wonder Kiss doesn't stack.",
+      "texto_pt": "Quando o Pokémon Ativo do seu oponente for Nocauteado, jogue uma moeda. Se sair cara, pegue 1 carta de Prêmio a mais. O efeito de Kiss Surpresa não acumula.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Speed Wing",
+      "nome_pt": "Asa da Velocidade",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-72",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "ASC-82",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-235",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Wonder Kiss: When your opponent's Active Pokémon is Knocked Out, flip a coin. If heads, take 1 more Prize card. The effect of Wonder Kiss doesn't stack."
+    ]
+  }
+}

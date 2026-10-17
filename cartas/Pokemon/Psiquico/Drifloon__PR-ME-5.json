@@ -1,0 +1,48 @@
+{
+  "id": "PR-ME-5",
+  "nome": "Drifloon",
+  "nome_pt": "Drifloon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pull",
+      "nome_pt": null,
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, switch 1 of your opponent's Benched Pokémon with their Active Pokémon.",
+      "texto_pt": null,
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-5",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Pull: If heads, switch 1 of your opponent's Benched Pokémon with their Active Pokémon."
+    ]
+  }
+}

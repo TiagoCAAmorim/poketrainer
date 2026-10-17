@@ -1,0 +1,67 @@
+{
+  "id": "TWM-102",
+  "nome": "Probopass",
+  "nome_pt": "Probopass",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Nosepass",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Assault Laser",
+      "nome_pt": "Laser de Ataque",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "If your opponent's Active Pokémon has a Pokémon Tool attached, this attack does 80 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente tiver uma Ferramenta Pokémon ligada a ele, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Land Crush",
+      "nome_pt": "Aperto de Terra",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-102",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-182",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

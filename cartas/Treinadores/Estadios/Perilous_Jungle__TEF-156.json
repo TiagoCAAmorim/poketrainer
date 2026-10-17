@@ -1,0 +1,25 @@
+{
+  "id": "TEF-156",
+  "nome": "Perilous Jungle",
+  "nome_pt": "Selva Perigosa",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "During Pokémon Checkup, put 2 more damage counters on each Poisoned non-Darkness Pokémon (both yours and your opponent's).",
+  "texto_pt": "Durante o Checape Pokémon, coloque 2 contadores de dano a mais em cada Pokémon Envenenado que não seja de tipo Escuridão (seus e do seu oponente).",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-156",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

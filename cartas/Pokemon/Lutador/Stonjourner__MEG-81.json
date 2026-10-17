@@ -1,0 +1,59 @@
+{
+  "id": "MEG-81",
+  "nome": "Stonjourner",
+  "nome_pt": "Stonjourner",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Stony Kick",
+      "nome_pt": "Pontapé Pétreo",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "20",
+      "texto": "This attack also does 20 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 20 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Boundless Power",
+      "nome_pt": "Poder Ilimitado",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "During your next turn, this Pokémon can't use attacks.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar ataques.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-81",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

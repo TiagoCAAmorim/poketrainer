@@ -1,0 +1,59 @@
+{
+  "id": "PBL-68",
+  "nome": "Toucannon",
+  "nome_pt": "Toucannon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Trumbeak",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Aerial Draw",
+      "nome_pt": "Compra Aérea",
+      "texto": "Once during your turn, you may use this Ability. Draw a card.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Compre uma carta.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Feather Rondo",
+      "nome_pt": "Cântico Plumado",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "This attack does 20 more damage for each Benched Pokémon (both yours and your opponent's).",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada Pokémon no Banco (seus e do seu oponente).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-68",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-94",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

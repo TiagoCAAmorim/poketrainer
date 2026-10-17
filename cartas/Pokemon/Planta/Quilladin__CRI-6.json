@@ -1,0 +1,59 @@
+{
+  "id": "CRI-6",
+  "nome": "Quilladin",
+  "nome_pt": "Quilladin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Chespin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Leafy Charge",
+      "nome_pt": "Carga Folhosa",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "20",
+      "texto": "Search your deck for a Basic Grass Energy card and attach it to this Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Procure por uma carta de Energia Planta Básica no seu baralho e ligue-a a este Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Vine Whip",
+      "nome_pt": "Chicote de Vinha",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-6",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

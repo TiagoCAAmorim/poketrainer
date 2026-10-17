@@ -1,0 +1,46 @@
+{
+  "id": "PBL-17",
+  "nome": "Relicanth",
+  "nome_pt": "Relicanth",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fossil Beatdown",
+      "nome_pt": "Surra de Fóssil",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10+",
+      "texto": "This attack does 30 more damage for each of your Benched Pokémon that has \"Antique\" in its name.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a mais para cada um dos seus Pokémon no Banco que tem \"Arcaico\" em seu nome.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-17",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

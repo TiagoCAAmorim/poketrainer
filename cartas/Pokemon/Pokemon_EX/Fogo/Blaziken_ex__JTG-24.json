@@ -1,0 +1,57 @@
+{
+  "id": "JTG-24",
+  "nome": "Blaziken ex",
+  "nome_pt": "Blaziken ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 320,
+  "estagio": "Estágio 2",
+  "evolui_de": "Combusken",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Seething Spirit",
+      "nome_pt": "Espírito Furioso",
+      "texto": "Once during your turn, you may attach a Basic Energy card from your discard pile to 1 of your Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá ligar uma carta de Energia Básica da sua pilha de descarte a 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Smolder-sault",
+      "nome_pt": "Queima-lhota",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-24",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

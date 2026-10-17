@@ -1,0 +1,35 @@
+{
+  "id": "CRI-81",
+  "nome": "Roxie's Performance",
+  "nome_pt": "Show da Roxie",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "During your opponent's next turn, their Poisoned Pokémon can't retreat. (This includes newly Poisoned Pokémon.)",
+  "texto_pt": "Durante o próximo turno do seu oponente, os Pokémon Envenenados dele não poderão recuar. (Isso inclui Pokémon recém-Envenenados.)",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-81",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-112",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-121",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

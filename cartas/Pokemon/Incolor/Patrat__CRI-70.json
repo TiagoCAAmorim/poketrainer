@@ -1,0 +1,54 @@
+{
+  "id": "CRI-70",
+  "nome": "Patrat",
+  "nome_pt": "Patrat",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Watchful Eye",
+      "nome_pt": "Olhar Atento",
+      "texto": "Damage counters on each Pokémon (both yours and your opponent's) can't be moved to other Pokémon.",
+      "texto_pt": "Os contadores de dano em cada Pokémon (seus e do seu oponente) não podem ser movidos para outros Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Bite",
+      "nome_pt": "Mordida",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-70",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "TWM-136",
+  "nome": "Snorlax",
+  "nome_pt": "Snorlax",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 160,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "But First, Food",
+      "nome_pt": "Primeiro, a Refeição",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach an Energy card from your hand to this Pokémon. If you do, heal 60 damage from this Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia da sua mão a este Pokémon. Se fizer isto, cure 60 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Heavy Impact",
+      "nome_pt": "Impacto Pesado",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-136",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

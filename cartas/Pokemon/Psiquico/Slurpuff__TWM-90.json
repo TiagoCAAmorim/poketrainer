@@ -1,0 +1,49 @@
+{
+  "id": "TWM-90",
+  "nome": "Slurpuff",
+  "nome_pt": "Slurpuff",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Swirlix",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Slurp Slurp",
+      "nome_pt": "Lambança",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "90×",
+      "texto": "Flip 2 coins. This attack does 90 damage for each heads. If both of them are tails, your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 90 pontos de dano para cada cara. Se as duas saírem coroa, o Pokémon Ativo do seu oponente agora estará Confuso.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-90",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Slurp Slurp: If both of them are tails, your opponent's Active Pokémon is now Confused."
+    ]
+  }
+}

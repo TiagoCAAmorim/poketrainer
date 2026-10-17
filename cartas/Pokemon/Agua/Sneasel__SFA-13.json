@@ -1,0 +1,63 @@
+{
+  "id": "SFA-13",
+  "nome": "Sneasel",
+  "nome_pt": "Sneasel",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cut",
+      "nome_pt": "Cortar",
+      "custo": [
+        "Água"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Beset",
+      "nome_pt": "Atazanar",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "30",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-13",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "ASC-44",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

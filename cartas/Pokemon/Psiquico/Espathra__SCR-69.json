@@ -1,0 +1,46 @@
+{
+  "id": "SCR-69",
+  "nome": "Espathra",
+  "nome_pt": "Espathra",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Flittle",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Psychic Flash",
+      "nome_pt": "Clarão Psíquico",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-69",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

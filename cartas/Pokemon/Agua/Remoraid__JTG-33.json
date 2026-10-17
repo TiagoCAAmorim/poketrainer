@@ -1,0 +1,58 @@
+{
+  "id": "JTG-33",
+  "nome": "Remoraid",
+  "nome_pt": "Remoraid",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flail",
+      "nome_pt": "Mangual",
+      "custo": [
+        "Água"
+      ],
+      "dano": "10×",
+      "texto": "This attack does 10 damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Rain Splash",
+      "nome_pt": "Chuva Borrifante",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-33",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

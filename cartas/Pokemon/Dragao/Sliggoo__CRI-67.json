@@ -1,0 +1,52 @@
+{
+  "id": "CRI-67",
+  "nome": "Sliggoo",
+  "nome_pt": "Sliggoo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Goomy",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gentle Slap",
+      "nome_pt": "Tapinha",
+      "custo": [
+        "Água",
+        "Psíquico"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-67",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-95",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

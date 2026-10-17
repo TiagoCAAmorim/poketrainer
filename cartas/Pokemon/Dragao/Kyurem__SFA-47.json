@@ -1,0 +1,60 @@
+{
+  "id": "SFA-47",
+  "nome": "Kyurem",
+  "nome_pt": "Kyurem",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Plasma Bane",
+      "nome_pt": "Maldição de Plasma",
+      "texto": "If your opponent has any cards in their discard pile that have \"Colress\" in the name, this Pokémon can use the Trifrost attack for Colorless.",
+      "texto_pt": "Se o seu oponente tiver alguma carta na pilha de descarte dele que tem \"Colress\" em seu nome, este Pokémon poderá usar o ataque Geada Tripla por Incolor.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Trifrost",
+      "nome_pt": "Geada Tripla",
+      "custo": [
+        "Água",
+        "Água",
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard all Energy from this Pokémon. This attack does 110 damage to 3 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Descarte todas as Energias deste Pokémon. Este ataque causa 110 pontos de dano a 3 dos Pokémon do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-47",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Plasma Bane: If your opponent has any cards in their discard pile that have \"Colress\" in the name, this Pokémon can use the Trifrost attack for Colorless."
+    ]
+  }
+}

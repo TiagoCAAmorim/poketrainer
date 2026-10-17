@@ -1,0 +1,23 @@
+{
+  "id": "SSP-165",
+  "nome": "Call Bell",
+  "nome_pt": "Sininho de Mesa",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "You can use this card only if you go second, and only during your first turn. Search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck.",
+  "texto_pt": "Você só pode usar esta carta se for o segundo a jogar e somente durante o seu primeiro turno. Procure por uma carta de Apoiador no seu baralho, revele-a e coloque-a na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-165",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

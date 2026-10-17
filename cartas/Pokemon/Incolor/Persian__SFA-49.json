@@ -1,0 +1,65 @@
+{
+  "id": "SFA-49",
+  "nome": "Persian",
+  "nome_pt": "Persian",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Meowth",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fury Swipes",
+      "nome_pt": "Golpes de Fúria",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50×",
+      "texto": "Flip 3 coins. This attack does 50 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 50 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Slashing Claw",
+      "nome_pt": "Garra Cortadora",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-49",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-78",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

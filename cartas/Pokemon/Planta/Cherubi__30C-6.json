@@ -1,0 +1,57 @@
+{
+  "id": "30C-6",
+  "nome": "Cherubi",
+  "nome_pt": "Tyranitar Sombrio",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 40,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hide",
+      "nome_pt": "Moer",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon.",
+      "texto_pt": "Causa 10 de dano mais 10 de dano adicionais para cada Energia ligada ao Tyranitar Sombrio.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Flop",
+      "nome_pt": "Cauda Giratória",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "Causa 20 de dano a cada um dos Pokémon do seu oponente. <em>(Fraqueza e Resistência não são aplicadas para Pokémon no Banco.)</em>",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-6",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

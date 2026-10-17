@@ -1,0 +1,60 @@
+{
+  "id": "JTG-87",
+  "nome": "Hop's Sandaconda",
+  "nome_pt": "Sandaconda do Lupo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Hop's Silicobra",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rumble",
+      "nome_pt": "Estrondo",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Break Ground",
+      "nome_pt": "Quebra Chão",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "This attack also does 20 damage to each of your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 20 pontos de dano a cada um dos seus Pokémon no Banco. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-87",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "WHT-25",
+  "nome": "Ducklett",
+  "nome_pt": "Ducklett",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Firefighting",
+      "nome_pt": "Apagar Incêndios",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard a Fire Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia Fogo do Pokémon Ativo do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Wing Attack",
+      "nome_pt": "Ataque de Asa",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-25",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-109",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Firefighting: Discard a Fire Energy from your opponent's Active Pokémon."
+    ]
+  }
+}

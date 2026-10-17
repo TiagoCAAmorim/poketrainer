@@ -1,0 +1,51 @@
+{
+  "id": "WHT-34",
+  "nome": "Galvantula",
+  "nome_pt": "Galvantula",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Joltik",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Discharge",
+      "nome_pt": "Descarga",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "50×",
+      "texto": "Discard all Lightning Energy from this Pokémon. This attack does 50 damage for each card you discarded in this way.",
+      "texto_pt": "Descarte todas as Energias Elétrico deste Pokémon. Este ataque causa 50 pontos de dano para cada carta descartada desta forma.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-34",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-117",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

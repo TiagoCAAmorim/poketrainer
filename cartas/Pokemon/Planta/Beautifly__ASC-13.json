@@ -1,0 +1,64 @@
+{
+  "id": "ASC-13",
+  "nome": "Beautifly",
+  "nome_pt": "Beautifly",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 2",
+  "evolui_de": "Silcoon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Stun Spore",
+      "nome_pt": "Esporos Atordoantes",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "40",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Energy Straw",
+      "nome_pt": "Canudo de Energia",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "80×",
+      "texto": "Your opponent reveals their hand, and this attack does 80 damage for each Energy card you find there.",
+      "texto_pt": "Seu oponente revela a mão dele, e este ataque causa 80 pontos de dano para cada carta de Energia que você encontrar lá.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-13",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-219",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Energy Straw: Your opponent reveals their hand, and this attack does 80 damage for each Energy card you find there."
+    ]
+  }
+}

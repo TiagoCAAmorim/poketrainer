@@ -1,0 +1,58 @@
+{
+  "id": "DRI-74",
+  "nome": "Team Rocket's Ampharos",
+  "nome_pt": "Ampharos da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Team Rocket's Flaaffy",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Darkest Impulse",
+      "nome_pt": "Impulso Mais Sombrio",
+      "texto": "Whenever your opponent plays a Pokémon from their hand to evolve 1 of their Pokémon, put 4 damage counters on that Pokémon. The effect of Darkest Impulse doesn't stack.",
+      "texto_pt": "Sempre que seu oponente jogar um Pokémon da mão dele para evoluir 1 dos Pokémon dele, coloque 4 contadores de dano naquele Pokémon. O efeito de Impulso Mais Sombrio não acumula.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Head Bolt",
+      "nome_pt": "Raio de Cabeça",
+      "custo": [
+        "Elétrico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-74",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Darkest Impulse: Whenever your opponent plays a Pokémon from their hand to evolve 1 of their Pokémon, put 4 damage counters on that Pokémon. The effect of Darkest Impulse doesn't stack."
+    ]
+  }
+}

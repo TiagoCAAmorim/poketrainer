@@ -1,0 +1,48 @@
+{
+  "id": "SCR-109",
+  "nome": "Revavroom",
+  "nome_pt": "Revavroom",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Varoom",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Outta-Control Dash",
+      "nome_pt": "Investida Desgovernada",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-109",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

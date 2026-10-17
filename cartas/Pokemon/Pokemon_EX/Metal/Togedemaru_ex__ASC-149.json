@@ -1,0 +1,62 @@
+{
+  "id": "ASC-149",
+  "nome": "Togedemaru ex",
+  "nome_pt": "Togedemaru ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 190,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Stun Needle",
+      "nome_pt": "Agulha Estonteante",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "20",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Spiky Rolling",
+      "nome_pt": "Giro Espinhoso",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "If this Pokémon used Spiky Rolling during your last turn, this attack does 80 more damage.",
+      "texto_pt": "Se este Pokémon usou Giro Espinhoso durante o seu último turno, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-149",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Spiky Rolling: If this Pokémon used Spiky Rolling during your last turn, this attack does 80 more damage."
+    ]
+  }
+}

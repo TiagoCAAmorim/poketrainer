@@ -1,0 +1,62 @@
+{
+  "id": "POR-63",
+  "nome": "Snorlax",
+  "nome_pt": "Snorlax",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 160,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gormandizer",
+      "nome_pt": "Glutão",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin until you get tails. Search your deck for an amount of Basic Energy up to the number of heads and attach it to this Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Procure por uma quantidade de Energia Básica no seu baralho até o número de caras e ligue-as a este Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Collapse",
+      "nome_pt": "Colapso",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "This Pokémon is now Asleep.",
+      "texto_pt": "Este Pokémon agora está Adormecido.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-63",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Gormandizer: Search your deck for an amount of Basic Energy up to the number of heads and attach it to this Pokémon."
+    ]
+  }
+}

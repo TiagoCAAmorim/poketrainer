@@ -1,0 +1,63 @@
+{
+  "id": "WHT-64",
+  "nome": "Mandibuzz",
+  "nome_pt": "Mandibuzz",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Vullaby",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Look for Prey",
+      "nome_pt": "Acossar Presas",
+      "texto": "Once during your turn, you may use this Ability. Your opponent reveals their hand, and you put a Basic Pokémon with 70 HP or less that you find there onto your opponent's Bench.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Seu oponente revela a mão dele, e você coloca um Pokémon Básico com 70 PS ou menos que encontrar lá no Banco do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Cutting Wind",
+      "nome_pt": "Vento Dilacerante",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-64",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-145",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Look for Prey: Your opponent reveals their hand, and you put a Basic Pokémon with 70 HP or less that you find there onto your opponent's Bench."
+    ]
+  }
+}

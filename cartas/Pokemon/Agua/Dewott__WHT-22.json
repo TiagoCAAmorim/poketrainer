@@ -1,0 +1,51 @@
+{
+  "id": "WHT-22",
+  "nome": "Dewott",
+  "nome_pt": "Dewott",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Oshawott",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Energized Shell",
+      "nome_pt": "Concha Energizada",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada Energia ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-22",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-106",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

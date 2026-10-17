@@ -1,0 +1,59 @@
+{
+  "id": "POR-54",
+  "nome": "Chien-Pao",
+  "nome_pt": "Chien-Pao",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Strafe",
+      "nome_pt": "Bombardear",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "20",
+      "texto": "You may switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Você pode trocar este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Rising Blade",
+      "nome_pt": "Lâmina Crescente",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 80 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-54",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "SSP-136",
+  "nome": "Palkia",
+  "nome_pt": "Palkia",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Space Crash",
+      "nome_pt": "Colisão do Espaço",
+      "custo": [
+        "Planta",
+        "Água"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each Basic Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada Energia Básica ligada a este Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-136",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Space Crash: This attack does 40 damage for each Basic Energy attached to this Pokémon."
+    ]
+  }
+}

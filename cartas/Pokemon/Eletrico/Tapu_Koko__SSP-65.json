@@ -1,0 +1,59 @@
+{
+  "id": "SSP-65",
+  "nome": "Tapu Koko",
+  "nome_pt": "Tapu Koko",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Summon Lightning",
+      "nome_pt": "Invocar Relâmpagos",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 Lightning Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 2 Pokémon Elétrico no seu baralho, revele-os e coloque-os na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Prize Count",
+      "nome_pt": "Contagem de Prêmios",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "90+",
+      "texto": "If you have more Prize cards remaining than your opponent, this attack does 90 more damage.",
+      "texto_pt": "Se você tiver mais cartas de Prêmio restantes do que seu oponente, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-65",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

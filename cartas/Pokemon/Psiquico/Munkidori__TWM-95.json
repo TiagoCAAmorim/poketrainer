@@ -1,0 +1,70 @@
+{
+  "id": "TWM-95",
+  "nome": "Munkidori",
+  "nome_pt": "Munkidori",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Adrena-Brain",
+      "nome_pt": "Adrena-cérebro",
+      "texto": "Once during your turn, if this Pokémon has any Darkness Energy attached, you may move up to 3 damage counters from 1 of your Pokémon to 1 of your opponent's Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, se este Pokémon tiver alguma Energia Escuridão ligada a ele, você poderá mover até 3 contadores de dano de 1 dos seus Pokémon para 1 dos Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mind Bend",
+      "nome_pt": "Dobra Mentes",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-95",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "SFA-72",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "PRE-44",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "ASC-99",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

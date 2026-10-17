@@ -1,0 +1,62 @@
+{
+  "id": "30C-69",
+  "nome": "Espeon",
+  "nome_pt": "Espeon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Miraculous Shine",
+      "nome_pt": "Brilho Milagroso",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Devolve each of your opponent's evolved Pokémon by putting the highest Stage Evolution card on it into your opponent's hand.",
+      "texto_pt": "Involua cada um dos Pokémon evoluídos do seu oponente colocando a carta de Evolução de Estágio mais alto sobre ele na mão do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Super Psy Bolt",
+      "nome_pt": "Super-raio Psíquico",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-69",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Miraculous Shine: Devolve each of your opponent's evolved Pokémon by putting the highest Stage Evolution card on it into your opponent's hand."
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "CRI-66",
+  "nome": "Goomy",
+  "nome_pt": "Goomy",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Absorb",
+      "nome_pt": "Absorção",
+      "custo": [
+        "Água",
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "Heal 30 damage from this Pokémon.",
+      "texto_pt": "Cure 30 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-66",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

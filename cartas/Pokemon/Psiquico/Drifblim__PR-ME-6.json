@@ -1,0 +1,58 @@
+{
+  "id": "PR-ME-6",
+  "nome": "Drifblim",
+  "nome_pt": "Drifblim",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Drifloon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Disruptive Wind",
+      "nome_pt": null,
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Balloon Return",
+      "nome_pt": null,
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "110",
+      "texto": "Put this Pokémon and all attached cards into your hand.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-6",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

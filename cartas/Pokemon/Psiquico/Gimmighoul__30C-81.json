@@ -1,0 +1,46 @@
+{
+  "id": "30C-81",
+  "nome": "Gimmighoul",
+  "nome_pt": "Gimmighoul",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Strolls So Much",
+      "nome_pt": "Bater Perna",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, search your deck for a card and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, procure por uma carta no seu baralho e coloque-a na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-81",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

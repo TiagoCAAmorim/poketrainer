@@ -1,0 +1,64 @@
+{
+  "id": "BLK-38",
+  "nome": "Duosion",
+  "nome_pt": "Duosion",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Estágio 1",
+  "evolui_de": "Solosis",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cellular Evolution",
+      "nome_pt": "Evolução Celular",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for a card that evolves from 1 of your Pokémon and put it onto that Pokémon to evolve it. Then, shuffle your deck.",
+      "texto_pt": "Procure por uma carta no seu baralho que evolua de 1 dos seus Pokémon e coloque-a sobre aquele Pokémon para evoluí-lo. Em seguida, embaralhe o seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Spray Fluid",
+      "nome_pt": "Fluido Spray",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-38",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-119",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Cellular Evolution: Search your deck for a card that evolves from 1 of your Pokémon and put it onto that Pokémon to evolve it."
+    ]
+  }
+}

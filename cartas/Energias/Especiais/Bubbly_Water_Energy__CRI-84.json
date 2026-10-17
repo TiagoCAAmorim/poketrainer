@@ -1,0 +1,24 @@
+{
+  "id": "CRI-84",
+  "nome": "Bubbly Water Energy",
+  "nome_pt": "Energia Water Borbulhante",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": false,
+  "fornece": null,
+  "texto": "As long as this card is attached to a Pokémon, it provides Water Energy. The Water Pokémon this card is attached to recovers from all Special Conditions and can't be affected by any Special Conditions.",
+  "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Água. O Pokémon Água ao qual esta carta está ligada se recupera de todas as Condições Especiais e não pode ser afetado por quaisquer Condições Especiais.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-84",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

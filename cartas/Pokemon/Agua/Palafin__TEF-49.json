@@ -1,0 +1,59 @@
+{
+  "id": "TEF-49",
+  "nome": "Palafin",
+  "nome_pt": "Palafin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Finizen",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Vanguard Punch",
+      "nome_pt": "Soco de Vanguarda",
+      "custo": [
+        "Água"
+      ],
+      "dano": "130",
+      "texto": "This Pokémon also does 10 damage to itself for each damage counter on it.",
+      "texto_pt": "Este Pokémon também causa 10 pontos de dano a si mesmo para cada contador de dano nele.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Double Hit",
+      "nome_pt": "Golpe Duplo",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90×",
+      "texto": "Flip 2 coins. This attack does 90 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 90 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-49",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

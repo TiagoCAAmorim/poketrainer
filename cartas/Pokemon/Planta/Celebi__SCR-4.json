@@ -1,0 +1,57 @@
+{
+  "id": "SCR-4",
+  "nome": "Celebi",
+  "nome_pt": "Celebi",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Collect",
+      "nome_pt": "Coleta",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw a card.",
+      "texto_pt": "Compre uma carta.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Leaf Step",
+      "nome_pt": "Passo de Folha",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-4",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

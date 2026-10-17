@@ -1,0 +1,63 @@
+{
+  "id": "TEF-102",
+  "nome": "Gastly",
+  "nome_pt": "Gastly",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mysterious Beam",
+      "nome_pt": "Raio Misterioso",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Suffocating Gas",
+      "nome_pt": "Gás Asfixiante",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-102",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-177",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

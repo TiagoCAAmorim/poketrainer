@@ -1,0 +1,25 @@
+{
+  "id": "TEF-141",
+  "nome": "Awakening Drum",
+  "nome_pt": "Tambor do Despertar",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Draw a card for each of your Ancient Pokémon in play.",
+  "texto_pt": "Compre uma carta para cada um dos seus Pokémon Ancestrais em jogo.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-141",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

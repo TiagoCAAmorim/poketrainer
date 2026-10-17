@@ -1,0 +1,49 @@
+{
+  "id": "SVE-2",
+  "nome": "Basic Fire Energy",
+  "nome_pt": "Energia de Fogo",
+  "categoria": "Energia",
+  "subtipo": "Energia Básica",
+  "ace_spec": false,
+  "fornece": "Fogo",
+  "texto": "Fornece 1 Energia de Fogo.",
+  "texto_pt": "Fornece 1 Energia de Fogo.",
+  "regras": [],
+  "regulamento": null,
+  "impressoes": [
+    {
+      "codigo": "SVE-2",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+    },
+    {
+      "codigo": "SVE-10",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+    },
+    {
+      "codigo": "OBF-230",
+      "colecao": "Obsidian Flames",
+      "data": "2023-08-11"
+    },
+    {
+      "codigo": "MFB-16",
+      "colecao": "My First Battle",
+      "data": "2023-09-29"
+    },
+    {
+      "codigo": "MEE-2",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+    },
+    {
+      "codigo": "MEE-10",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

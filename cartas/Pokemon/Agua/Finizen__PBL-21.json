@@ -1,0 +1,47 @@
+{
+  "id": "PBL-21",
+  "nome": "Finizen",
+  "nome_pt": "Finizen",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Draining Fin",
+      "nome_pt": "Barbatana Drenante",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "20",
+      "texto": "Heal 20 damage from this Pokémon.",
+      "texto_pt": "Cure 20 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-21",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

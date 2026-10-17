@@ -1,0 +1,61 @@
+{
+  "id": "ASC-122",
+  "nome": "Okidogi",
+  "nome_pt": "Okidogi",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 140,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Light Punch",
+      "nome_pt": "Soco de Luz",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Settle the Score",
+      "nome_pt": "Acerto de Contas",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "This attack does 60 more damage for each Prize card your opponent took during their last turn.",
+      "texto_pt": "Este ataque causa 60 pontos de dano a mais para cada carta de Prêmio que seu oponente pegou durante o último turno dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-122",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Settle the Score: This attack does 60 more damage for each Prize card your opponent took during their last turn."
+    ]
+  }
+}

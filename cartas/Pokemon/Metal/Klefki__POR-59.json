@@ -1,0 +1,48 @@
+{
+  "id": "POR-59",
+  "nome": "Klefki",
+  "nome_pt": "Klefki",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Memory Lock",
+      "nome_pt": "Fechadura da Memória",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "30",
+      "texto": "Choose 1 of your opponent's Active Pokémon's attacks. During your opponent's next turn, that Pokémon can't use that attack.",
+      "texto_pt": "Escolha 1 dos ataques do Pokémon Ativo do seu oponente. Durante o próximo turno do seu oponente, aquele Pokémon não poderá usar aquele ataque.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-59",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Memory Lock: Choose 1 of your opponent's Active Pokémon's attacks.; During your opponent's next turn, that Pokémon can't use that attack."
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "SSP-129",
+  "nome": "Duraludon",
+  "nome_pt": "Duraludon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Confront",
+      "nome_pt": "Confrontar",
+      "custo": [
+        "Metal",
+        "Metal"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Duralubeam",
+      "nome_pt": "Duralurraio",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Metal"
+      ],
+      "dano": "130",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-129",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

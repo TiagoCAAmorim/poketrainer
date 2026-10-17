@@ -1,0 +1,66 @@
+{
+  "id": "WHT-62",
+  "nome": "Zoroark",
+  "nome_pt": "Zoroark",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Zorua",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mind Jack",
+      "nome_pt": "Tomada Mental",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each of your opponent's Benched Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada Pokémon no Banco do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Foul Play",
+      "nome_pt": "Jogo Sujo",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Choose 1 of your opponent's Active Pokémon's attacks and use it as this attack.",
+      "texto_pt": "Escolha 1 dos ataques do Pokémon Ativo do seu oponente e use-o como este ataque.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-62",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-143",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Foul Play: Choose 1 of your opponent's Active Pokémon's attacks and use it as this attack."
+    ]
+  }
+}

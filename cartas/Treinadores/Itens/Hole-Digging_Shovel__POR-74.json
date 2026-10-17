@@ -1,0 +1,23 @@
+{
+  "id": "POR-74",
+  "nome": "Hole-Digging Shovel",
+  "nome_pt": "Pá de Cavar",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Discard the top 2 cards of your deck.",
+  "texto_pt": "Descarte as 2 cartas de cima do seu baralho.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "POR-74",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

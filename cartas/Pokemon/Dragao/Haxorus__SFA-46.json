@@ -1,0 +1,60 @@
+{
+  "id": "SFA-46",
+  "nome": "Haxorus",
+  "nome_pt": "Haxorus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Fraxure",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bring Down the Axe",
+      "nome_pt": "Descer o Machado",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "—",
+      "texto": "If your opponent's Active Pokémon has any Special Energy attached, it is Knocked Out.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente tiver alguma Energia Especial ligada a ele, ele será Nocauteado.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Dragon Pulse",
+      "nome_pt": "Pulso do Dragão",
+      "custo": [
+        "Lutador",
+        "Metal"
+      ],
+      "dano": "230",
+      "texto": "Discard the top 3 cards of your deck.",
+      "texto_pt": "Descarte as 3 cartas de cima do seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-46",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Bring Down the Axe: If your opponent's Active Pokémon has any Special Energy attached, it is Knocked Out."
+    ]
+  }
+}

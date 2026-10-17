@@ -1,0 +1,58 @@
+{
+  "id": "JTG-21",
+  "nome": "Magmortar",
+  "nome_pt": "Magmortar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Magmar",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Magma Surge",
+      "nome_pt": "Rebentação de Magma",
+      "texto": "During Pokémon Checkup, put 3 more damage counters on your opponent's Burned Pokémon.",
+      "texto_pt": "Durante o Checape Pokémon, coloque 3 contadores de dano a mais nos Pokémon Queimados do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Searing Flame",
+      "nome_pt": "Chama Cauterizante",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Burned.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Queimado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-21",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Magma Surge: During Pokémon Checkup, put 3 more damage counters on your opponent's Burned Pokémon."
+    ]
+  }
+}

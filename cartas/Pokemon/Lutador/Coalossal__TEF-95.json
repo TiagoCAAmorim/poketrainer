@@ -1,0 +1,60 @@
+{
+  "id": "TEF-95",
+  "nome": "Coalossal",
+  "nome_pt": "Coalossal",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Carkol",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gatling Tar",
+      "nome_pt": "Disparador de Piche",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "40+",
+      "texto": "This attack does 80 more damage for each Fire Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 80 pontos de dano a mais para cada Energia Fogo ligada a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Cragalanche",
+      "nome_pt": "Rochavalanche",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "Discard the top 2 cards of your opponent's deck.",
+      "texto_pt": "Descarte as 2 cartas de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-95",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

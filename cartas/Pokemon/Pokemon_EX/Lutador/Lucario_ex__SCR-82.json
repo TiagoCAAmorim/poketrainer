@@ -1,0 +1,62 @@
+{
+  "id": "SCR-82",
+  "nome": "Lucario ex",
+  "nome_pt": "Lucario ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 250,
+  "estagio": "Estágio 1",
+  "evolui_de": "Riolu",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Low Kick",
+      "nome_pt": "Rasteira",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Aura Knuckle",
+      "nome_pt": "Punho de Aura",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-82",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

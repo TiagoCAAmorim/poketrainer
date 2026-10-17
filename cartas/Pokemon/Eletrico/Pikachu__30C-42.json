@@ -1,0 +1,61 @@
+{
+  "id": "30C-42",
+  "nome": "Pikachu",
+  "nome_pt": "Pikachu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Charge-Up Dash",
+      "nome_pt": "Disparada Carregada",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin until you get tails. Search your deck for an amount of Basic Lightning Energy up to the number of heads and attach it to this Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Procure por uma quantidade de Energia Lightning Básica no seu baralho até o número de caras e ligue-as a este Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Pika Bolt",
+      "nome_pt": "Relâmpagochu",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-42",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Charge-Up Dash: Search your deck for an amount of Basic Lightning Energy up to the number of heads and attach it to this Pokémon."
+    ]
+  }
+}

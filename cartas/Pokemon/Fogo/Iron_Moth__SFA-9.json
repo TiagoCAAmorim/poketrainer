@@ -1,0 +1,64 @@
+{
+  "id": "SFA-9",
+  "nome": "Iron Moth",
+  "nome_pt": "Mariposa Férrea",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Suction",
+      "nome_pt": "Sucção",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Heal from this Pokémon the same amount of damage you did to your opponent's Active Pokémon.",
+      "texto_pt": "Cure deste Pokémon a mesma quantidade de dano que você causou ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Anachronism Repulsor",
+      "nome_pt": "Repulsor de Anacronismo",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Ancient Pokémon.",
+      "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a este Pokémon por ataques de Pokémon Ancestrais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-9",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Anachronism Repulsor: During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Ancient Pokémon."
+    ]
+  }
+}

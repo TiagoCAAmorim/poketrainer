@@ -1,0 +1,23 @@
+{
+  "id": "POR-72",
+  "nome": "Energy Search",
+  "nome_pt": "Busca de Energia",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Search your deck for a Basic Energy card, reveal it, and put it into your hand. Then, shuffle your deck.",
+  "texto_pt": "Procure por uma carta de Energia Básica no seu baralho, revele-a e coloque-a na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-72",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

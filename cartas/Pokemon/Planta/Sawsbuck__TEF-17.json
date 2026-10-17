@@ -1,0 +1,61 @@
+{
+  "id": "TEF-17",
+  "nome": "Sawsbuck",
+  "nome_pt": "Sawsbuck",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Deerling",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Changing Seasons",
+      "nome_pt": "Mudança de Estações",
+      "texto": "Once during your turn, you may search your deck for a Stadium card, reveal it, and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá procurar por uma carta de Estádio no seu baralho, revelá-la e colocá-la na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Superpowered Horns",
+      "nome_pt": "Chifres Superpoderosos",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-17",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-166",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

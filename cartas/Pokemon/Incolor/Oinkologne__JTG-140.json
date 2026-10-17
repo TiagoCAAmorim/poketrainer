@@ -1,0 +1,60 @@
+{
+  "id": "JTG-140",
+  "nome": "Oinkologne",
+  "nome_pt": "Oinkologne",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Lechonk",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aromatic Stomps",
+      "nome_pt": "Pisada Aromática",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Flip a coin. If heads, during your opponent's next turn, the Defending Pokémon can't attack.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, durante o próximo turno do seu oponente, o Pokémon Defensor não poderá atacar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Headbutt Bounce",
+      "nome_pt": "Cabeçada Ricochete",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-140",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

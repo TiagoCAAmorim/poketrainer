@@ -1,0 +1,25 @@
+{
+  "id": "POR-76",
+  "nome": "Judge",
+  "nome_pt": "Juiz",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Each player shuffles their hand into their deck and draws 4 cards.",
+  "texto_pt": "Cada jogador embaralha a própria mão no próprio baralho e compra 4 cartas.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-76",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

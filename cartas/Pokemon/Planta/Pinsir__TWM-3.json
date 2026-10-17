@@ -1,0 +1,67 @@
+{
+  "id": "TWM-3",
+  "nome": "Pinsir",
+  "nome_pt": "Pinsir",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Slow Crunch",
+      "nome_pt": "Esmagada Lenta",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard all Energy from this Pokémon. At the end of your opponent's next turn, the Defending Pokémon will be Knocked Out.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon. No final do próximo turno do seu oponente, o Pokémon Defensor será Nocauteado.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Superpowered Horns",
+      "nome_pt": "Chifres Superpoderosos",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-3",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-168",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Slow Crunch: At the end of your opponent's next turn, the Defending Pokémon will be Knocked Out."
+    ]
+  }
+}

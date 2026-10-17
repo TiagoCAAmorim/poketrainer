@@ -1,0 +1,27 @@
+{
+  "id": "SSP-188",
+  "nome": "Technical Machine: Fluorite",
+  "nome_pt": "Máquina Técnica: Fluorita",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "The Pokémon this card is attached to can use the attack on this card. (You still need the necessary Energy to use this attack.) If this card is attached to 1 of your Pokémon, discard it at the end of your turn.",
+  "texto_pt": "O Pokémon ao qual esta carta está ligada pode usar o ataque desta carta. (Você ainda precisa da Energia necessária para usar este ataque.) Se esta carta estiver ligada a 1 dos seus Pokémon, descarte-a no final do seu turno.",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-188",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "o ataque concedido não consta na base de dados"
+    ]
+  }
+}

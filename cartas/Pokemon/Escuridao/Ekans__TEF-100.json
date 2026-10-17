@@ -1,0 +1,58 @@
+{
+  "id": "TEF-100",
+  "nome": "Ekans",
+  "nome_pt": "Ekans",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Poison Blend",
+      "nome_pt": "Mistura Venenosa",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Confused and Poisoned.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Confuso e Envenenado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bite",
+      "nome_pt": "Mordida",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-100",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "BLK-62",
+  "nome": "Klang",
+  "nome_pt": "Klang",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Klink",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hard Gears",
+      "nome_pt": "Engrenagens Sólidas",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "During your opponent's next turn, this Pokémon takes 20 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 20 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-62",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-140",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

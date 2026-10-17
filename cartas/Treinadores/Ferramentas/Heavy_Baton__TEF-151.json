@@ -1,0 +1,25 @@
+{
+  "id": "TEF-151",
+  "nome": "Heavy Baton",
+  "nome_pt": "Bastão Pesado",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "If the Pokémon this card is attached to has a Retreat Cost of exactly 4, is in the Active Spot, and is Knocked Out by damage from an attack from your opponent's Pokémon, move up to 3 Basic Energy cards from that Pokémon to your Benched Pokémon in any way you like.",
+  "texto_pt": "Se o Pokémon ao qual esta carta está ligada tiver um custo de Recuo de exatamente 4, estiver no Campo Ativo e for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, mova até 3 cartas de Energia Básica daquele Pokémon para os seus Pokémon no Banco como desejar.",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-151",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

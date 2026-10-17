@@ -1,0 +1,61 @@
+{
+  "id": "MEG-25",
+  "nome": "Volcanion",
+  "nome_pt": "Volcanion",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Singe",
+      "nome_pt": "Chamuscada",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Burned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Queimado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Backfire",
+      "nome_pt": "Saindo Pela Culatra",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "Put 2 Fire Energy attached to this Pokémon into your hand.",
+      "texto_pt": "Coloque 2 Energias Fogo ligadas a este Pokémon na sua mão.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-25",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Backfire: Put 2 Fire Energy attached to this Pokémon into your hand."
+    ]
+  }
+}

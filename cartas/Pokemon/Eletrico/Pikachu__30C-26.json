@@ -1,0 +1,46 @@
+{
+  "id": "30C-26",
+  "nome": "Pikachu",
+  "nome_pt": "Mew VMAX",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Peer At",
+      "nome_pt": "Golpe Fusão Cruzado",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Your opponent reveals their hand.",
+      "texto_pt": "Escolha 1 dos ataques dos seus Pokémon Golpe Fusão no Banco e use-o como este ataque.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-26",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

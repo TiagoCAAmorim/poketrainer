@@ -1,0 +1,61 @@
+{
+  "id": "PR-ME-21",
+  "nome": "Weavile",
+  "nome_pt": "Weavile",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sneasel",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Retaliatory Claw",
+      "nome_pt": "Garra Retaliatória",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "20+",
+      "texto": "If this Pokémon's remaining HP is 50 or less, this attack does 170 more damage.",
+      "texto_pt": "Se o PS restante deste Pokémon for 50 ou menos, este ataque causará 170 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Cut",
+      "nome_pt": "Cortar",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-21",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Retaliatory Claw: If this Pokémon's remaining HP is 50 or less, this attack does 170 more damage."
+    ]
+  }
+}

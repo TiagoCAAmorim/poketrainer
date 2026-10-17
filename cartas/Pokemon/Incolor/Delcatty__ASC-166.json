@@ -1,0 +1,58 @@
+{
+  "id": "ASC-166",
+  "nome": "Delcatty",
+  "nome_pt": "Delcatty",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Skitty",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cat Kick",
+      "nome_pt": "Chute do Gato",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Energy Crush",
+      "nome_pt": "Esmagamento de Energia",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each Energy attached to all of your opponent's Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada Energia ligada a todos os Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-166",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

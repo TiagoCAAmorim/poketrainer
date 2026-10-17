@@ -1,0 +1,58 @@
+{
+  "id": "TWM-113",
+  "nome": "Poochyena",
+  "nome_pt": "Poochyena",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Continuous Steps",
+      "nome_pt": "Passos Contínuos",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10×",
+      "texto": "Flip a coin until you get tails. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Darkness Fang",
+      "nome_pt": "Presa Sombria",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-113",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

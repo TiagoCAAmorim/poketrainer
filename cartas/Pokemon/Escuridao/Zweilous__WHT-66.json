@@ -1,0 +1,66 @@
+{
+  "id": "WHT-66",
+  "nome": "Zweilous",
+  "nome_pt": "Zweilous",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Deino",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Hit",
+      "nome_pt": "Golpe Duplo",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40×",
+      "texto": "Flip 2 coins. This attack does 40 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 40 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Pitch-Black Fangs",
+      "nome_pt": "Presas do Breu",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-66",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-147",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

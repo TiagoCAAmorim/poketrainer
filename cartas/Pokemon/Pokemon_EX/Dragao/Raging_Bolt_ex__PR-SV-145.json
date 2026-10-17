@@ -1,0 +1,86 @@
+{
+  "id": "PR-SV-145",
+  "nome": "Raging Bolt ex",
+  "nome_pt": "Raio Fúria ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 240,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Burst Roar",
+      "nome_pt": "Rugido Disruptivo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard your hand and draw 6 cards.",
+      "texto_pt": "Descarte a sua mão e compre 6 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bellowing Thunder",
+      "nome_pt": "Trovão Estrondoso",
+      "custo": [
+        "Elétrico",
+        "Lutador"
+      ],
+      "dano": "70×",
+      "texto": "You may discard any amount of Basic Energy from your Pokémon. This attack does 70 damage for each card you discarded in this way.",
+      "texto_pt": "Você pode descartar qualquer quantidade de Energia Básica dos seus Pokémon. Este ataque causa 70 pontos de dano para cada carta descartada desta forma.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-145",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "TEF-123",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-196",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-208",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-218",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "PRE-166",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

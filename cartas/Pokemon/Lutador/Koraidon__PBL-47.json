@@ -1,0 +1,59 @@
+{
+  "id": "PBL-47",
+  "nome": "Koraidon",
+  "nome_pt": "Koraidon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Battle Claw",
+      "nome_pt": "Garra de Batalha",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30+",
+      "texto": "If your opponent's Active Pokémon is an Evolution Pokémon, this attack does 30 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon de Evolução, este ataque causará 30 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Gaia Impact",
+      "nome_pt": "Impacto Gaia",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "190",
+      "texto": "Discard all Energy from this Pokémon.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-47",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

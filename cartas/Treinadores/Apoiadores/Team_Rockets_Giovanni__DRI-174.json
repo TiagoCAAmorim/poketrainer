@@ -1,0 +1,40 @@
+{
+  "id": "DRI-174",
+  "nome": "Team Rocket's Giovanni",
+  "nome_pt": "Giovanni da Equipe Rocket",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Switch your Active Team Rocket's Pokémon with 1 of your Benched Team Rocket's Pokémon. If you do, switch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+  "texto_pt": "Troque o seu Pokémon da Equipe Rocket Ativo por 1 dos seus Pokémon da Equipe Rocket no Banco. Se fizer isto, mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-174",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-225",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-238",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-204",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

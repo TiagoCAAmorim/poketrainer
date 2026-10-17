@@ -1,0 +1,60 @@
+{
+  "id": "PBL-10",
+  "nome": "Centiskorch",
+  "nome_pt": "Centiskorch",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sizzlipede",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Controlled Burn",
+      "nome_pt": "Fogo Controlado",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Discard the top 2 cards of your opponent's deck.",
+      "texto_pt": "Descarte as 2 cartas de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Heat Tackle",
+      "nome_pt": "Golpe de Colisão Aquecido",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "This Pokémon also does 30 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 30 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-10",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

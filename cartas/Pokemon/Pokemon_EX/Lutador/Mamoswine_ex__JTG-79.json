@@ -1,0 +1,64 @@
+{
+  "id": "JTG-79",
+  "nome": "Mamoswine ex",
+  "nome_pt": "Mamoswine ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 2",
+  "evolui_de": "Piloswine",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Mammoth Hauler",
+      "nome_pt": "Reboque Mastodôntico",
+      "texto": "Once during your turn, you may search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá procurar por um Pokémon no seu baralho, revelá-lo e colocá-lo na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Rumbling March",
+      "nome_pt": "Marcha Estrondosa",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "180+",
+      "texto": "This attack does 40 more damage for each Stage 2 Pokémon on your Bench.",
+      "texto_pt": "Este ataque causa 40 pontos de dano a mais para cada Pokémon Estágio 2 no seu Banco.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-79",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-174",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Rumbling March: This attack does 40 more damage for each Stage 2 Pokémon on your Bench."
+    ]
+  }
+}

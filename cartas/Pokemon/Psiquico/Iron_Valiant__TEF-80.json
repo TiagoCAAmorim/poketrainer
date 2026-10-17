@@ -1,0 +1,61 @@
+{
+  "id": "TEF-80",
+  "nome": "Iron Valiant",
+  "nome_pt": "Valentia Férrea",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Calculation",
+      "nome_pt": "Cálculo",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Look at the top 4 cards of your deck and put them back in any order.",
+      "texto_pt": "Olhe as 4 cartas de cima do seu baralho e coloque-as de volta em qualquer ordem.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Majestic Sword",
+      "nome_pt": "Espada Majestosa",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "If you played a Future Supporter card from your hand during this turn, this attack does 100 more damage.",
+      "texto_pt": "Se você jogou uma carta de Apoiador Futurista da sua mão durante este turno, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-80",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

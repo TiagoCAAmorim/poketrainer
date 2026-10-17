@@ -1,0 +1,71 @@
+{
+  "id": "POR-21",
+  "nome": "Mega Starmie ex",
+  "nome_pt": "Mega Starmie ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 1",
+  "evolui_de": "Staryu",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Jetting Blow",
+      "nome_pt": "Golpe a Jato",
+      "custo": [
+        "Água"
+      ],
+      "dano": "120",
+      "texto": "This attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 50 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Nebula Beam",
+      "nome_pt": "Feixe Celestial",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "210",
+      "texto": "This attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por Fraqueza ou Resistência, ou por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-21",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-102",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-118",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

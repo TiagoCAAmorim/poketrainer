@@ -1,0 +1,40 @@
+{
+  "id": "MEG-113",
+  "nome": "Acerola's Mischief",
+  "nome_pt": "Traquinagem da Acerola",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "You can use this card only if your opponent has 2 or fewer Prize cards remaining. Choose 1 of your Pokémon in play. During your opponent's next turn, prevent all damage from and effects of attacks done to that Pokémon by your opponent's Pokémon ex.",
+  "texto_pt": "Você só poderá usar esta carta se o seu oponente tiver 2 ou menos cartas de Prêmio restantes. Escolha 1 dos seus Pokémon em jogo. Durante o próximo turno do seu oponente, previna todo o dano e os efeitos de ataques causados àquele Pokémon pelos Pokémon ex do seu oponente.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-113",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-165",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-183",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-180",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

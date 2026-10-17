@@ -1,0 +1,47 @@
+{
+  "id": "SSP-125",
+  "nome": "Registeel",
+  "nome_pt": "Registeel",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Raging Hammer",
+      "nome_pt": "Martelo Feroz",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "This attack does 10 more damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano a mais para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-125",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "WHT-71",
+  "nome": "Druddigon",
+  "nome_pt": "Druddigon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Shred",
+      "nome_pt": "Triturar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Ambush",
+      "nome_pt": "Emboscada",
+      "custo": [
+        "Fogo",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "90+",
+      "texto": "Flip a coin. If heads, this attack does 60 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-71",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-151",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

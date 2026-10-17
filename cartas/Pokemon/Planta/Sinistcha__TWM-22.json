@@ -1,0 +1,59 @@
+{
+  "id": "TWM-22",
+  "nome": "Sinistcha",
+  "nome_pt": "Sinistcha",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 70,
+  "estagio": "Estágio 1",
+  "evolui_de": "Poltchageist",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cursed Drop",
+      "nome_pt": "Queda Amaldiçoada",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Put 4 damage counters on your opponent's Pokémon in any way you like.",
+      "texto_pt": "Coloque 4 contadores de dano nos Pokémon do seu oponente como desejar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Spill the Tea",
+      "nome_pt": "Chá de Sumiço",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "70×",
+      "texto": "Discard up to 3 Grass Energy cards from your Pokémon. This attack does 70 damage for each card you discarded in this way.",
+      "texto_pt": "Descarte até 3 cartas de Energia Planta dos seus Pokémon. Este ataque causa 70 pontos de dano para cada carta descartada desta forma.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-22",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Spill the Tea: Discard up to 3 Grass Energy cards from your Pokémon."
+    ]
+  }
+}

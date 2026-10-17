@@ -1,0 +1,30 @@
+{
+  "id": "DRI-180",
+  "nome": "Team Rocket's Watchtower",
+  "nome_pt": "Torre de Vigia da Equipe Rocket",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Colorless Pokémon in play (both yours and your opponent's) have no Abilities.",
+  "texto_pt": "Pokémon Incolor em jogo (seus e do seu oponente) não têm Habilidades.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-180",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-210",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

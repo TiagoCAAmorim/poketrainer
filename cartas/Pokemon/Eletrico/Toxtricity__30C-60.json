@@ -1,0 +1,64 @@
+{
+  "id": "30C-60",
+  "nome": "Toxtricity",
+  "nome_pt": "Toxtricity",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Toxel",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Light Punch",
+      "nome_pt": "Soco de Luz",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Thunderous Bolt",
+      "nome_pt": "Raio Estrondoso",
+      "custo": [
+        "Elétrico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "During your next turn, this Pokémon can't use attacks.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar ataques.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-60",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-134",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

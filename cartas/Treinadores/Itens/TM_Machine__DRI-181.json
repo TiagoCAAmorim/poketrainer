@@ -1,0 +1,23 @@
+{
+  "id": "DRI-181",
+  "nome": "TM Machine",
+  "nome_pt": "Máquina de MT",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Search your deck for up to 3 Pokémon Tool cards that have \"Technical Machine\" in their name, reveal them, and put them into your hand. Then, shuffle your deck.",
+  "texto_pt": "Procure por até 3 cartas de Ferramenta Pokémon no seu baralho que tenham \"Máquina Técnica\" em seu nome, revele-as e coloque-as na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "DRI-181",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

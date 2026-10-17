@@ -1,0 +1,47 @@
+{
+  "id": "TEF-46",
+  "nome": "Frosmoth",
+  "nome_pt": "Frosmoth",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Snom",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Freezing Chill",
+      "nome_pt": "Frio de Arrepiar",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "100",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't attack.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-46",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

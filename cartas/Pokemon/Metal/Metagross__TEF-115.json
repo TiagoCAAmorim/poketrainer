@@ -1,0 +1,65 @@
+{
+  "id": "TEF-115",
+  "nome": "Metagross",
+  "nome_pt": "Metagross",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Metang",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Meteor Mash",
+      "nome_pt": "Meteoro Esmagador",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "60",
+      "texto": "During your next turn, this Pokémon's Meteor Mash attack does 60 more damage (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o seu próximo turno, o ataque Meteoro Esmagador deste Pokémon causará 60 pontos de dano a mais (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Luster Blast",
+      "nome_pt": "Lustre Explosivo",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-115",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-178",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "BLK-53",
+  "nome": "Landorus",
+  "nome_pt": "Landorus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Abundant Harvest",
+      "nome_pt": "Colheita Abundante",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach a Basic Fighting Energy card from your discard pile to this Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia Lutador Básica da sua pilha de descarte a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Earthquake",
+      "nome_pt": "Terremoto",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "This attack also does 10 damage to each of your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 10 pontos de dano a cada um dos seus Pokémon no Banco. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-53",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-131",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "MEG-72",
+  "nome": "Makuhita",
+  "nome_pt": "Makuhita",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Corkscrew Punch",
+      "nome_pt": "Soco Saca-rolha",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Confront",
+      "nome_pt": "Confrontar",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-72",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PR-ME-68",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

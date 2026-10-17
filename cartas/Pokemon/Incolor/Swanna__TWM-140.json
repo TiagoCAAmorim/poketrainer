@@ -1,0 +1,58 @@
+{
+  "id": "TWM-140",
+  "nome": "Swanna",
+  "nome_pt": "Swanna",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Ducklett",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fighting Wings",
+      "nome_pt": "Asas de Luta",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex or Pokémon V, this attack does 90 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex ou um Pokémon V, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Gust",
+      "nome_pt": "Lufada de Vento",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-140",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

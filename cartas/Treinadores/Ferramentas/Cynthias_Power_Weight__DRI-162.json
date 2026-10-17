@@ -1,0 +1,25 @@
+{
+  "id": "DRI-162",
+  "nome": "Cynthia's Power Weight",
+  "nome_pt": "Peso de Poder da Cíntia",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "The Cynthia's Pokémon this card is attached to gets +70 HP.",
+  "texto_pt": "O Pokémon da Cíntia ao qual esta carta está ligada recebe 70 PS a mais.",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-162",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

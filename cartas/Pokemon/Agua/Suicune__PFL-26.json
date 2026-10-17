@@ -1,0 +1,47 @@
+{
+  "id": "PFL-26",
+  "nome": "Suicune",
+  "nome_pt": "Suicune",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Crystal Fall",
+      "nome_pt": "Queda Cristalina",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "30+",
+      "texto": "If you have at least 4 Water Energy in play, this attack does 90 more damage.",
+      "texto_pt": "Se você tiver pelo menos 4 Energias Água em jogo, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-26",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

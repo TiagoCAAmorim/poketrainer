@@ -1,0 +1,67 @@
+{
+  "id": "TWM-111",
+  "nome": "Okidogi",
+  "nome_pt": "Okidogi",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Adrena-Power",
+      "nome_pt": "Adrena-poder",
+      "texto": "If this Pokémon has any Darkness Energy attached, it gets +100 HP, and the attacks it uses do 100 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+      "texto_pt": "Se este Pokémon tiver alguma Energia Escuridão ligada a ele, ele receberá 100 PS a mais, e os ataques que ele usar causarão 100 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Good Punch",
+      "nome_pt": "Baita Soco",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-111",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "SFA-74",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "PRE-57",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Adrena-Power: If this Pokémon has any Darkness Energy attached, it gets +100 HP, and the attacks it uses do 100 more damage to your opponent's Active Pokémon."
+    ]
+  }
+}

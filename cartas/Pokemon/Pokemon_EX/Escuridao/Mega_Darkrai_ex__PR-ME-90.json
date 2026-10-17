@@ -1,0 +1,84 @@
+{
+  "id": "PR-ME-90",
+  "nome": "Mega Darkrai ex",
+  "nome_pt": "Mega Darkrai ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 280,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dusk Raid",
+      "nome_pt": "Investida Noturna",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "110+",
+      "texto": "If your Benched Pokémon have any damage counters on them, this attack does 110 more damage.",
+      "texto_pt": "Se os seus Pokémon no Banco tiverem algum contador de dano neles, este ataque causará 110 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Abyss Eye",
+      "nome_pt": "Olhar Abissal",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "If your opponent's Active Pokémon is affected by a Special Condition, it is Knocked Out.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente estiver afetado por uma Condição Especial, ele será Nocauteado.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-90",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PBL-48",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-101",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-116",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-120",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Abyss Eye: If your opponent's Active Pokémon is affected by a Special Condition, it is Knocked Out."
+    ]
+  }
+}

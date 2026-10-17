@@ -1,0 +1,64 @@
+{
+  "id": "BLK-49",
+  "nome": "Conkeldurr",
+  "nome_pt": "Conkeldurr",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Gurdurr",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Craftsmanship",
+      "nome_pt": "Manufatura",
+      "texto": "This Pokémon gets +40 HP for each Fighting Energy attached to it.",
+      "texto_pt": "Este Pokémon recebe 40 PS a mais para cada Energia Lutador ligada a ele.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Swing Around",
+      "nome_pt": "Balanço",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "Flip 2 coins. This attack does 50 more damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 50 pontos de dano a mais para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-49",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-127",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Craftsmanship: This Pokémon gets +40 HP for each Fighting Energy attached to it."
+    ]
+  }
+}

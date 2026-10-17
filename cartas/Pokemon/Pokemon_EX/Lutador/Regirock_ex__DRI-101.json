@@ -1,0 +1,72 @@
+{
+  "id": "DRI-101",
+  "nome": "Regirock ex",
+  "nome_pt": "Regirock ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 230,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Regi Charge",
+      "nome_pt": "Carga Regi",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 2 Basic Fighting Energy cards from your discard pile to this Pokémon.",
+      "texto_pt": "Ligue até 2 cartas de Energia Lutador Básica da sua pilha de descarte a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Giant Rock",
+      "nome_pt": "Pedregulho",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140+",
+      "texto": "If your opponent's Active Pokémon is a Stage 2 Pokémon, this attack does 140 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon Estágio 2, este ataque causará 140 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-101",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-214",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-107",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "WHT-28",
+  "nome": "Vanillish",
+  "nome_pt": "Vanillish",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Vanillite",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ram",
+      "nome_pt": "Aríete",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Ice Beam",
+      "nome_pt": "Raio Congelante",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-28",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-112",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

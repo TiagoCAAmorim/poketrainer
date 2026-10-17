@@ -1,0 +1,63 @@
+{
+  "id": "CRI-5",
+  "nome": "Chespin",
+  "nome_pt": "Chespin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Beat",
+      "nome_pt": "Pulso",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Spike Sting",
+      "nome_pt": "Ferroada de Espinhos",
+      "custo": [
+        "Planta",
+        "Planta"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-5",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-87",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

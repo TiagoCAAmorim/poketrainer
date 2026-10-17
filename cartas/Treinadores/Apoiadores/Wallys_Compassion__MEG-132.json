@@ -1,0 +1,35 @@
+{
+  "id": "MEG-132",
+  "nome": "Wally's Compassion",
+  "nome_pt": "Compaixão do Wally",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Heal all damage from 1 of your Mega Evolution Pokémon ex. If you healed any damage in this way, put all Energy attached to that Pokémon into your hand.",
+  "texto_pt": "Cure todo o dano de 1 dos seus Pokémon ex de Megaevolução. Se você curou qualquer dano desta forma, coloque todas as Energias ligadas àquele Pokémon na sua mão.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-132",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-176",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-186",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

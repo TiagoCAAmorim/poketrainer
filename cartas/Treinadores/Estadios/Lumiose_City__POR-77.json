@@ -1,0 +1,30 @@
+{
+  "id": "POR-77",
+  "nome": "Lumiose City",
+  "nome_pt": "Cidade de Lumiose",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Once during each player's turn, that player may search their deck for a Basic Pokémon and put it onto their Bench. Then, that player shuffles their deck. If a player searches their deck in this way, their turn ends.",
+  "texto_pt": "Uma vez durante o turno de cada jogador, aquele jogador poderá procurar no próprio baralho por um Pokémon Básico e colocá-lo no próprio Banco. Em seguida, aquele jogador embaralha o próprio baralho. Se um jogador procurar no próprio baralho desta forma, o turno dele acabará.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-77",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-111",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "DRI-121",
+  "nome": "Team Rocket's Golbat",
+  "nome_pt": "Golbat da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Zubat",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Sneaky Bite",
+      "nome_pt": "Mordida Traiçoeira",
+      "texto": "When you play this Pokémon from your hand to evolve 1 of your Pokémon during your turn, you may put 2 damage counters on 1 of your opponent's Pokémon.",
+      "texto_pt": "Quando você jogar este Pokémon da sua mão para evoluir 1 dos seus Pokémon durante o seu turno, você poderá colocar 2 contadores de dano em 1 dos Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Confuse Ray",
+      "nome_pt": "Raio da Confusão",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "30",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-121",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

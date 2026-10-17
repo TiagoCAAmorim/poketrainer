@@ -1,0 +1,51 @@
+{
+  "id": "BLK-54",
+  "nome": "Venipede",
+  "nome_pt": "Venipede",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Poison Spray",
+      "nome_pt": "Spray de Veneno",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-54",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-132",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

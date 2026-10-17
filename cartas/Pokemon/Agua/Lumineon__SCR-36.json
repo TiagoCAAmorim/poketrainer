@@ -1,0 +1,58 @@
+{
+  "id": "SCR-36",
+  "nome": "Lumineon",
+  "nome_pt": "Lumineon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Finneon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Return",
+      "nome_pt": "Retorno",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "You may draw cards until you have 6 cards in your hand.",
+      "texto_pt": "Você pode comprar cartas até ter 6 cartas na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Razor Fin",
+      "nome_pt": "Barbatana Cortante",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-36",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

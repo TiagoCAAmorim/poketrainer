@@ -1,0 +1,65 @@
+{
+  "id": "DRI-145",
+  "nome": "Steven's Metagross ex",
+  "nome_pt": "Metagross ex do Steven",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 2",
+  "evolui_de": "Steven's Metang",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "X-Boot",
+      "nome_pt": "Inicialização X",
+      "texto": "Once during your turn, you may search your deck for a Basic Psychic Energy card, a Basic Metal Energy card, or 1 of each and attach them to your Psychic Pokémon and Metal Pokémon in any way you like. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá procurar por uma carta de Energia Psíquico Básica, uma carta de Energia Metal Básica ou 1 de cada no seu baralho e ligá-las aos seus Pokémon Psíquico e Pokémon Metal como desejar. Em seguida, embaralhe o seu baralho.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Metal Stomp",
+      "nome_pt": "Pisada Metálica",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-145",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-289",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade X-Boot: Search your deck for a Basic Psychic Energy card, a Basic Metal Energy card, or 1 of each and attach them to your Psychic Pokémon and Metal Pokémon in any way you like."
+    ]
+  }
+}

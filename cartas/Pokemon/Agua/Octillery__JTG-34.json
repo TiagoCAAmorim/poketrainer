@@ -1,0 +1,59 @@
+{
+  "id": "JTG-34",
+  "nome": "Octillery",
+  "nome_pt": "Octillery",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Remoraid",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aqua Wash",
+      "nome_pt": "Limpeza Aquática",
+      "custo": [
+        "Água"
+      ],
+      "dano": "20",
+      "texto": "You may put an Energy attached to your opponent's Active Pokémon into their hand.",
+      "texto_pt": "Você pode colocar uma Energia ligada ao Pokémon Ativo do seu oponente na mão dele.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Octo Beatdown",
+      "nome_pt": "Soco Tentacular",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90×",
+      "texto": "Flip a coin until you get tails. This attack does 90 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 90 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-34",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

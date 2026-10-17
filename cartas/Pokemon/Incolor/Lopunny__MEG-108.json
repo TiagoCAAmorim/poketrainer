@@ -1,0 +1,58 @@
+{
+  "id": "MEG-108",
+  "nome": "Lopunny",
+  "nome_pt": "Lopunny",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Buneary",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dashing Kick",
+      "nome_pt": "Chute Veloz",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "This attack does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque causa 50 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Spiral Kick",
+      "nome_pt": "Chute Espiral",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-108",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

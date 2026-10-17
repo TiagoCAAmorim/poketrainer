@@ -1,0 +1,52 @@
+{
+  "id": "MEG-91",
+  "nome": "Shroodle",
+  "nome_pt": "Shroodle",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Poison Jab",
+      "nome_pt": "Golpe Envenenado",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Your opponent's Active Pokémon is now Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-91",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-149",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

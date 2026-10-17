@@ -1,0 +1,56 @@
+{
+  "id": "CRI-7",
+  "nome": "Chesnaught",
+  "nome_pt": "Chesnaught",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Quilladin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Needly Armor",
+      "nome_pt": "Blindagem Espinhosa",
+      "texto": "If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), place 3 damage counters on the Attacking Pokémon for each Grass Energy attached to this Pokémon.",
+      "texto_pt": "Se este Pokémon estiver no Campo Ativo e for danificado por um ataque dos Pokémon do seu oponente (mesmo que este Pokémon seja Nocauteado), coloque 3 contadores de dano no Pokémon Atacante para cada Energia Planta ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Impound",
+      "nome_pt": "Apreensão",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-7",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

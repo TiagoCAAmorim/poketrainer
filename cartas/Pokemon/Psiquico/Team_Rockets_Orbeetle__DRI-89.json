@@ -1,0 +1,63 @@
+{
+  "id": "DRI-89",
+  "nome": "Team Rocket's Orbeetle",
+  "nome_pt": "Orbeetle da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 2",
+  "evolui_de": "Team Rocket's Dottler",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Rocket Brain",
+      "nome_pt": "Cérebro Rocket",
+      "texto": "As often as you like during your turn, you may move 1 damage counter from 1 of your Team Rocket's Pokémon to another of your Pokémon.",
+      "texto_pt": "Quantas vezes desejar durante o seu turno, você poderá mover 1 contador de dano de 1 dos seus Pokémon da Equipe Rocket para outro Pokémon seu.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Psychic",
+      "nome_pt": "Psíquico",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40+",
+      "texto": "This attack does 40 more damage for each Energy attached to your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano a mais para cada Energia ligada ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-89",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-198",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Rocket Brain: Move 1 damage counter from 1 of your Team Rocket's Pokémon to another of your Pokémon."
+    ]
+  }
+}

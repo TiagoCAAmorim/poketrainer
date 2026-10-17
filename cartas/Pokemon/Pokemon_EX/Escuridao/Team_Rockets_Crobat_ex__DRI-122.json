@@ -1,0 +1,75 @@
+{
+  "id": "DRI-122",
+  "nome": "Team Rocket's Crobat ex",
+  "nome_pt": "Crobat ex da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 310,
+  "estagio": "Estágio 2",
+  "evolui_de": "Team Rocket's Golbat",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Biting Spree",
+      "nome_pt": "Mordidas Frenéticas",
+      "texto": "When you play this Pokémon from your hand to evolve 1 of your Pokémon during your turn, you may choose 2 of your opponent's Pokémon and put 2 damage counters on each of them.",
+      "texto_pt": "Quando você jogar este Pokémon da sua mão para evoluir 1 dos seus Pokémon durante o seu turno, você poderá escolher 2 dos Pokémon do seu oponente e colocar 2 contadores de dano em cada um deles.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Assassin's Return",
+      "nome_pt": "Retorno do Assassino",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "120",
+      "texto": "You may put this Pokémon into your hand. (Discard all cards attached to this Pokémon.)",
+      "texto_pt": "Você pode colocar este Pokémon na sua mão. (Descarte todas as cartas ligadas a este Pokémon.)",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-122",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-217",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-234",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-242",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Assassin's Return: You may put this Pokémon into your hand.",
+      "Habilidade Biting Spree: Choose 2 of your opponent's Pokémon and put 2 damage counters on each of them."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "POR-75",
+  "nome": "Jacinthe",
+  "nome_pt": "Jaci",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Heal 150 damage from 1 of your Psychic Pokémon.",
+  "texto_pt": "Cure 150 pontos de dano de 1 dos seus Pokémon Psíquico.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-75",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-110",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-122",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

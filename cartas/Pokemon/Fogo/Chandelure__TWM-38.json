@@ -1,0 +1,56 @@
+{
+  "id": "TWM-38",
+  "nome": "Chandelure",
+  "nome_pt": "Chandelure",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 2",
+  "evolui_de": "Lampent",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Alluring Light",
+      "nome_pt": "Luz Cativante",
+      "texto": "Once during your turn, you may have each player draw a card.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá fazer com que cada jogador compre uma carta.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mind Ruler",
+      "nome_pt": "Comando Mental",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each card in your opponent's hand.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada carta na mão do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-38",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Alluring Light: Have each player draw a card."
+    ]
+  }
+}

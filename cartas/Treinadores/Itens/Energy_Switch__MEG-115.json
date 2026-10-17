@@ -1,0 +1,28 @@
+{
+  "id": "MEG-115",
+  "nome": "Energy Switch",
+  "nome_pt": "Substituição de Energia",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Move a Basic Energy from 1 of your Pokémon to another of your Pokémon.",
+  "texto_pt": "Mova uma Energia Básica de 1 dos seus Pokémon para outro Pokémon seu.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-115",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PBL-107",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

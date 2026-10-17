@@ -1,0 +1,49 @@
+{
+  "id": "SVE-1",
+  "nome": "Basic Grass Energy",
+  "nome_pt": "Energia de Grama",
+  "categoria": "Energia",
+  "subtipo": "Energia Básica",
+  "ace_spec": false,
+  "fornece": "Planta",
+  "texto": "Fornece 1 Energia de Planta.",
+  "texto_pt": "Fornece 1 Energia de Planta.",
+  "regras": [],
+  "regulamento": null,
+  "impressoes": [
+    {
+      "codigo": "SVE-1",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+    },
+    {
+      "codigo": "SVE-9",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+    },
+    {
+      "codigo": "PAL-278",
+      "colecao": "Paldea Evolved",
+      "data": "2023-06-09"
+    },
+    {
+      "codigo": "MFB-8",
+      "colecao": "My First Battle",
+      "data": "2023-09-29"
+    },
+    {
+      "codigo": "MEE-1",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+    },
+    {
+      "codigo": "MEE-9",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

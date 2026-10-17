@@ -1,0 +1,46 @@
+{
+  "id": "MEG-49",
+  "nome": "Electrike",
+  "nome_pt": "Electrike",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Thunder Jolt",
+      "nome_pt": "Choque do Trovão",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "30",
+      "texto": "This Pokémon also does 10 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 10 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-49",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

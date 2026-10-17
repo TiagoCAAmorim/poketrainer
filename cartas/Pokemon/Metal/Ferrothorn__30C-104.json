@@ -1,0 +1,59 @@
+{
+  "id": "30C-104",
+  "nome": "Ferrothorn",
+  "nome_pt": "Ferrothorn",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Ferroseed",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spike Sting",
+      "nome_pt": "Ferroada de Espinhos",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Kaboom Needles",
+      "nome_pt": "Espetos Explosivos",
+      "custo": [
+        "Metal",
+        "Metal"
+      ],
+      "dano": "—",
+      "texto": "This attack does 50 damage to each of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.) This Pokémon also does 130 damage to itself.",
+      "texto_pt": "Este ataque causa 50 pontos de dano a cada um dos Pokémon do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.) Este Pokémon também causa 130 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-104",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

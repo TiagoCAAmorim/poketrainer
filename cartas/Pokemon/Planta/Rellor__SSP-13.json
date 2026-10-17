@@ -1,0 +1,62 @@
+{
+  "id": "SSP-13",
+  "nome": "Rellor",
+  "nome_pt": "Rellor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 40,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Collect",
+      "nome_pt": "Coleta",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw a card.",
+      "texto_pt": "Compre uma carta.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Rollout",
+      "nome_pt": "Rolagem",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-13",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "DRI-24",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

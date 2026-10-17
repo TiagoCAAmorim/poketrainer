@@ -1,0 +1,35 @@
+{
+  "id": "MEG-120",
+  "nome": "Lt. Surge's Bargain",
+  "nome_pt": "Barganha do Ten. Surge",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Ask your opponent if each player may take a Prize card. If yes, each player takes a Prize card. If no, you draw 4 cards.",
+  "texto_pt": "Pergunte ao seu oponente se cada jogador pode pegar uma carta de Prêmio. Se sim, cada jogador pegará uma carta de Prêmio. Se não, você comprará 4 cartas.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-120",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-170",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-185",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

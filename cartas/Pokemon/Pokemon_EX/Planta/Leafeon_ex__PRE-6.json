@@ -1,0 +1,68 @@
+{
+  "id": "PRE-6",
+  "nome": "Leafeon ex",
+  "nome_pt": "Leafeon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Verdant Storm",
+      "nome_pt": "Tempestade Verdejante",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "60×",
+      "texto": "This attack does 60 damage for each Energy attached to all of your opponent's Pokémon.",
+      "texto_pt": "Este ataque causa 60 pontos de dano para cada Energia ligada a todos os Pokémon do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Moss Agate",
+      "nome_pt": "Ágata Musgo",
+      "custo": [
+        "Planta",
+        "Fogo",
+        "Água"
+      ],
+      "dano": "230",
+      "texto": "Heal 100 damage from each of your Benched Pokémon.",
+      "texto_pt": "Cure 100 pontos de dano de cada um dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-6",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-144",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

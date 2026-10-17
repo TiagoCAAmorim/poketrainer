@@ -1,0 +1,57 @@
+{
+  "id": "POR-19",
+  "nome": "Dewgong",
+  "nome_pt": "Dewgong",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Seel",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Wash Out",
+      "nome_pt": "Lavagem",
+      "texto": "As often as you like during your turn, you may use this Ability. Move a Water Energy from 1 of your Benched Pokémon to your Active Pokémon.",
+      "texto_pt": "Quantas vezes desejar durante o seu turno, você poderá usar esta Habilidade. Mova uma Energia Água de 1 dos seus Pokémon no Banco para o seu Pokémon Ativo.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Wave Splash",
+      "nome_pt": "Onda Borrifante",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-19",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Wash Out: Move a Water Energy from 1 of your Benched Pokémon to your Active Pokémon."
+    ]
+  }
+}

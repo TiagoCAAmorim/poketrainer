@@ -1,0 +1,65 @@
+{
+  "id": "SSP-160",
+  "nome": "Flamigo ex",
+  "nome_pt": "Flamigo ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 200,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Precise Beak",
+      "nome_pt": "Bico de Precisão",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30+",
+      "texto": "If this Pokémon and your opponent's Active Pokémon have the same amount of Energy attached, this attack does 100 more damage.",
+      "texto_pt": "Se este Pokémon e o Pokémon Ativo do seu oponente tiverem a mesma quantidade de Energia ligada a eles, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Brave Bird",
+      "nome_pt": "Pássaro Bravo",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "This Pokémon also does 30 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 30 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-160",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Precise Beak: If this Pokémon and your opponent's Active Pokémon have the same amount of Energy attached, this attack does 100 more damage."
+    ]
+  }
+}

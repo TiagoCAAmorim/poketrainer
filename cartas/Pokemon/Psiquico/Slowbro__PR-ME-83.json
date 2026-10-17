@@ -1,0 +1,71 @@
+{
+  "id": "PR-ME-83",
+  "nome": "Slowbro",
+  "nome_pt": "Slowbro",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Slowpoke",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "All Out",
+      "nome_pt": "Esgotado",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "50+",
+      "texto": "If you have no cards in your hand, this attack does 160 more damage.",
+      "texto_pt": "Se você não tiver cartas na sua mão, este ataque causará 160 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Zen Headbutt",
+      "nome_pt": "Cabeçada Zen",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-83",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PBL-30",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-90",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque All Out: If you have no cards in your hand, this attack does 160 more damage."
+    ]
+  }
+}

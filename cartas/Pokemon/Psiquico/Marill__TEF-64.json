@@ -1,0 +1,59 @@
+{
+  "id": "TEF-64",
+  "nome": "Marill",
+  "nome_pt": "Marill",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ball Roll",
+      "nome_pt": "Rolo Bola",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10×",
+      "texto": "Flip a coin until you get tails. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Magical Shot",
+      "nome_pt": "Tiro Mágico",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-64",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

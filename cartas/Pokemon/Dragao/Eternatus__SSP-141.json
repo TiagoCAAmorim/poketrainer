@@ -1,0 +1,61 @@
+{
+  "id": "SSP-141",
+  "nome": "Eternatus",
+  "nome_pt": "Eternatus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 150,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dyna-Blast",
+      "nome_pt": "Dinaexplosão",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 80 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "World Ender",
+      "nome_pt": "Emissário do Apocalipse",
+      "custo": [
+        "Fogo",
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "230",
+      "texto": "Discard a Stadium in play. If you can't, this attack does nothing.",
+      "texto_pt": "Descarte um Estádio em jogo. Se não puder fazer isto, este ataque não fará nada.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-141",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque World Ender: If you can't, this attack does nothing."
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "TWM-226",
+  "nome": "Luminous Energy",
+  "nome_pt": "Energia Luminosa",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": false,
+  "fornece": null,
+  "texto": "As long as this card is attached to a Pokémon, it provides every type of Energy but provides only 1 Energy at a time. If the Pokémon this card is attached to has any other Special Energy attached, this card provides Colorless Energy instead.",
+  "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá todo tipo de Energia, mas fornecerá 1 Energia por vez. Se o Pokémon ao qual esta carta está ligada tiver qualquer outra Energia Especial ligada a ele, esta carta fornecerá Energia Incolor.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-226",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

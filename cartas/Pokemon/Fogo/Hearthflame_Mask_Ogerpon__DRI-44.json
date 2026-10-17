@@ -1,0 +1,59 @@
+{
+  "id": "DRI-44",
+  "nome": "Hearthflame Mask Ogerpon",
+  "nome_pt": "Ogerpon Máscara Fornalha",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fire Kagura",
+      "nome_pt": "Kagura de Fogo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for a Basic Fire Energy card and attach it to 1 of your Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Procure por uma carta de Energia Fogo Básica no seu baralho e ligue-a a 1 dos seus Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Searing Flame",
+      "nome_pt": "Chama Cauterizante",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "Your opponent's Active Pokémon is now Burned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Queimado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-44",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

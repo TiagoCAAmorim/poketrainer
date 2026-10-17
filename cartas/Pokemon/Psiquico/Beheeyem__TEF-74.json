@@ -1,0 +1,46 @@
+{
+  "id": "TEF-74",
+  "nome": "Beheeyem",
+  "nome_pt": "Beheeyem",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Elgyem",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cosmic Beatdown",
+      "nome_pt": "Abater Cósmico",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each of your Pokémon in play.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada um dos seus Pokémon em jogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-74",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

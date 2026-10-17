@@ -1,0 +1,66 @@
+{
+  "id": "PR-ME-64",
+  "nome": "Serperior",
+  "nome_pt": "Serperior",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Servine",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Regal Command",
+      "nome_pt": "Comando Real",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each of your Pokémon in play.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada um dos seus Pokémon em jogo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Solar Coiling",
+      "nome_pt": "Enrolada Solar",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Planta"
+      ],
+      "dano": "100+",
+      "texto": "If Rosa's Encouragement is in your discard pile, this attack does 150 more damage.",
+      "texto_pt": "Se Encorajamento da Rose estiver na sua pilha de descarte, este ataque causará 150 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-64",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "POR-6",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Solar Coiling: If Rosa's Encouragement is in your discard pile, this attack does 150 more damage."
+    ]
+  }
+}

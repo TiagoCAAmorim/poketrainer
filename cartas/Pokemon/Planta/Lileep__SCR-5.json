@@ -1,0 +1,51 @@
+{
+  "id": "SCR-5",
+  "nome": "Lileep",
+  "nome_pt": "Lileep",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Antique Root Fossil",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bind Down",
+      "nome_pt": "Aprisionamento",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "50",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-5",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-145",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

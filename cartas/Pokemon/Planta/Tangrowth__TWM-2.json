@@ -1,0 +1,56 @@
+{
+  "id": "TWM-2",
+  "nome": "Tangrowth",
+  "nome_pt": "Tangrowth",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Tangela",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Thicket Body",
+      "nome_pt": "Corpo de Mato",
+      "texto": "This Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Este Pokémon recebe 30 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Loom Over",
+      "nome_pt": "Pairar Sobre",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150-",
+      "texto": "This attack does 10 less damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano a menos para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-2",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

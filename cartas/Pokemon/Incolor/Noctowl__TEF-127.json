@@ -1,0 +1,47 @@
+{
+  "id": "TEF-127",
+  "nome": "Noctowl",
+  "nome_pt": "Noctowl",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Hoothoot",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Talon Hunt",
+      "nome_pt": "Grifas de Caça",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "You may search your deck for up to 2 cards and put them into your hand. Then, shuffle your deck.",
+      "texto_pt": "Você pode procurar por até 2 cartas no seu baralho e colocá-las na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-127",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "ASC-64",
+  "nome": "Heliolisk",
+  "nome_pt": "Heliolisk",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Helioptile",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Frilled Generator",
+      "nome_pt": "Gerador Babado",
+      "texto": "Once during your turn, if you played Canari from your hand this turn, you may use this Ability. Search your deck for up to 2 Basic Lightning Energy cards and attach them to this Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, se você jogou Canari da sua mão neste turno, você poderá usar esta Habilidade. Procure por até 2 cartas de Energia Elétrico Básica no seu baralho e ligue-as a este Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Powerful Bolt",
+      "nome_pt": "Centelha Suprema",
+      "custo": [
+        "Elétrico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70×",
+      "texto": "Flip a coin for each Energy attached to this Pokémon. This attack does 70 damage for each heads.",
+      "texto_pt": "Jogue uma moeda para cada Energia ligada a este Pokémon. Este ataque causa 70 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-64",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-229",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

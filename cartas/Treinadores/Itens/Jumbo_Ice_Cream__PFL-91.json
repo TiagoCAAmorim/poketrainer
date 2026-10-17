@@ -1,0 +1,28 @@
+{
+  "id": "PFL-91",
+  "nome": "Jumbo Ice Cream",
+  "nome_pt": "Sorvetão Jumbo",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Heal 80 damage from your Active Pokémon that has 3 or more Energy attached.",
+  "texto_pt": "Cure 80 pontos de dano do seu Pokémon Ativo que tiver 3 ou mais Energias ligadas a ele.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-91",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "CRI-109",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

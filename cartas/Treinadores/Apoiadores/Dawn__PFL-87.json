@@ -1,0 +1,35 @@
+{
+  "id": "PFL-87",
+  "nome": "Dawn",
+  "nome_pt": "Dawn",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Search your deck for a Basic Pokémon, a Stage 1 Pokémon, and a Stage 2 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+  "texto_pt": "Procure por um Pokémon Básico, um Pokémon Estágio 1 e um Pokémon Estágio 2 no seu baralho, revele-os e coloque-os na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-87",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-118",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-129",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

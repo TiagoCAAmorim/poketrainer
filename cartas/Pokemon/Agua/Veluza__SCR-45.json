@@ -1,0 +1,59 @@
+{
+  "id": "SCR-45",
+  "nome": "Veluza",
+  "nome_pt": "Veluza",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Food Prep",
+      "nome_pt": "Preparação de Marmitas",
+      "texto": "Attacks used by this Pokémon cost Colorless less for each Kofu card in your discard pile.",
+      "texto_pt": "Os ataques usados por este Pokémon custam Incolor a menos para cada carta Álgaro na sua pilha de descarte.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Sonic Edge",
+      "nome_pt": "Gume Sônico",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-45",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Food Prep: Attacks used by this Pokémon cost Colorless less for each Kofu card in your discard pile."
+    ]
+  }
+}

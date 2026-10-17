@@ -1,0 +1,60 @@
+{
+  "id": "SSP-121",
+  "nome": "Grafaiai",
+  "nome_pt": "Grafaiai",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Shroodle",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mischievous Painting",
+      "nome_pt": "Pintura Maliciosa",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 3 Energy cards from your opponent's discard pile to their Pokémon in any way you like.",
+      "texto_pt": "Ligue até 3 cartas de Energia da pilha de descarte do seu oponente aos Pokémon dele como desejar.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Energized Graffiti",
+      "nome_pt": "Grafite Energizado",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each Energy attached to all of your opponent's Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada Energia ligada a todos os Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-121",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Mischievous Painting: Attach up to 3 Energy cards from your opponent's discard pile to their Pokémon in any way you like."
+    ]
+  }
+}

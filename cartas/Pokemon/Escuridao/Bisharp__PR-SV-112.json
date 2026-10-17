@@ -1,0 +1,46 @@
+{
+  "id": "PR-SV-112",
+  "nome": "Bisharp",
+  "nome_pt": "Bisharp",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Pawniard",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cut",
+      "nome_pt": "Cortar",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-112",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

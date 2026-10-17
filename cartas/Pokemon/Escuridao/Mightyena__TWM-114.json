@@ -1,0 +1,60 @@
+{
+  "id": "TWM-114",
+  "nome": "Mightyena",
+  "nome_pt": "Mightyena",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Poochyena",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hunting Pack",
+      "nome_pt": "Caça em Bando",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "30+",
+      "texto": "If Mightyena is on your Bench, this attack does 90 more damage.",
+      "texto_pt": "Se Mightyena estiver no seu Banco, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Corner",
+      "nome_pt": "Quina",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-114",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Hunting Pack: If Mightyena is on your Bench, this attack does 90 more damage."
+    ]
+  }
+}

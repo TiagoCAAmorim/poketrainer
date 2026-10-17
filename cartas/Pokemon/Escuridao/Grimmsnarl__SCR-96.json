@@ -1,0 +1,60 @@
+{
+  "id": "SCR-96",
+  "nome": "Grimmsnarl",
+  "nome_pt": "Grimmsnarl",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Morgrem",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Goad 'n' Grab",
+      "nome_pt": "Chamar na Chincha",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.) If you do, this attack does 160 damage to the new Active Pokémon.",
+      "texto_pt": "Mande o Pokémon Ativo do seu oponente para o Banco. (O seu oponente escolhe o novo Pokémon Ativo.) Se fizer isto, este ataque causará 160 pontos de dano ao novo Pokémon Ativo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Knuckle Sandwich",
+      "nome_pt": "Soco Falso",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-96",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

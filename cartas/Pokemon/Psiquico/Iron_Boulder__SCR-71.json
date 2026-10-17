@@ -1,0 +1,56 @@
+{
+  "id": "SCR-71",
+  "nome": "Iron Boulder",
+  "nome_pt": "Rocha Férrea",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 140,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Adjusted Horn",
+      "nome_pt": "Chifre Ajustado",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "170",
+      "texto": "If you don't have the same number of cards in your hand as your opponent, this attack does nothing.",
+      "texto_pt": "Se você não tiver o mesmo número de cartas na sua mão do que seu oponente, este ataque não fará nada.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-71",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "PRE-46",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Adjusted Horn: If you don't have the same number of cards in your hand as your opponent, this attack does nothing."
+    ]
+  }
+}

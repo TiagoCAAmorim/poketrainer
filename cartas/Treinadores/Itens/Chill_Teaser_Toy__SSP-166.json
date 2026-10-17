@@ -1,0 +1,23 @@
+{
+  "id": "SSP-166",
+  "nome": "Chill Teaser Toy",
+  "nome_pt": "Varinha Relaxante",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "You can use this card only if you go second, and only during your first turn. Put an Energy attached to 1 of your opponent's Pokémon into their hand.",
+  "texto_pt": "Você só pode usar esta carta se for o segundo a jogar e somente durante o seu primeiro turno. Coloque uma Energia ligada a 1 dos Pokémon do seu oponente na mão dele.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-166",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

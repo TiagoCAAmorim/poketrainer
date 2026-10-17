@@ -1,0 +1,23 @@
+{
+  "id": "POR-78",
+  "nome": "Lumiose Galette",
+  "nome_pt": "Crepe de Lumiose",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Heal 20 damage and remove a Special Condition from your Active Pokémon.",
+  "texto_pt": "Cure 20 pontos de dano e remova uma Condição Especial do seu Pokémon Ativo.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-78",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

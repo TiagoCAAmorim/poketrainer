@@ -1,0 +1,46 @@
+{
+  "id": "PFL-59",
+  "nome": "Sableye",
+  "nome_pt": "Sableye",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cocky Claw",
+      "nome_pt": "Garra da Marra",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "20+",
+      "texto": "If you have any Stage 2 Darkness Pokémon on your Bench, this attack does 70 more damage.",
+      "texto_pt": "Se você tiver algum Pokémon Escuridão Estágio 2 no seu Banco, este ataque causará 70 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-59",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

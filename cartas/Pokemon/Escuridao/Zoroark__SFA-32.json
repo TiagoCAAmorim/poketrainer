@@ -1,0 +1,60 @@
+{
+  "id": "SFA-32",
+  "nome": "Zoroark",
+  "nome_pt": "Zoroark",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Zorua",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Illusory Hijacking",
+      "nome_pt": "Apropriação Ilusória",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60×",
+      "texto": "This attack does 60 damage for each of your opponent's Pokémon ex and Pokémon V in play.",
+      "texto_pt": "Este ataque causa 60 pontos de dano para cada Pokémon ex e Pokémon V do seu oponente em jogo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Claw Slash",
+      "nome_pt": "Golpe de Garra",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-32",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

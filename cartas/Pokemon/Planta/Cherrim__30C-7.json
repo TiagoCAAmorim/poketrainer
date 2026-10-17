@@ -1,0 +1,58 @@
+{
+  "id": "30C-7",
+  "nome": "Cherrim",
+  "nome_pt": "Sneasel",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Cherubi",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Energy Gift",
+      "nome_pt": "Golpes de Fúria",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 Basic Energy cards and attach them to your Pokémon in any way you like. Then, shuffle your deck.",
+      "texto_pt": "Tire \"cara ou coroa\" 3 vezes. Este ataque causa 10 pts. de dano vezes o número de \"caras\".",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Leafage",
+      "nome_pt": "Espancar",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "Tire \"cara ou coroa\" para cada um dos seus Pokémon em jogo (incluindo este). Este ataque causa 20 pts. de dano vezes o número de \"caras\".",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-7",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "30C-52",
+  "nome": "Pikachu",
+  "nome_pt": "Pikachu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Angry Bolt",
+      "nome_pt": "Raio Brabo",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "10+",
+      "texto": "This attack does 10 more damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano a mais para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-52",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

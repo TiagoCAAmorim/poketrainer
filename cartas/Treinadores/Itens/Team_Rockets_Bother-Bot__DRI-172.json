@@ -1,0 +1,23 @@
+{
+  "id": "DRI-172",
+  "nome": "Team Rocket's Bother-Bot",
+  "nome_pt": "Azucrinabot da Equipe Rocket",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Turn 1 of your opponent's face-down Prize cards face up and choose a random card from your opponent's hand. Your opponent reveals that card. You may have your opponent switch those cards. (That Prize card remains face up for the rest of the game.)",
+  "texto_pt": "Vire para cima 1 das cartas de Prêmio viradas para baixo do seu oponente e escolha uma carta aleatória da mão do seu oponente. Seu oponente revela aquela carta. Você pode fazer com que o seu oponente troque aquelas cartas. (Aquela carta de Prêmio permanecerá virada para cima pelo resto do jogo.)",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-172",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

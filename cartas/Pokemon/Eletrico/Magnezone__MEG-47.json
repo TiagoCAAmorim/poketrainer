@@ -1,0 +1,58 @@
+{
+  "id": "MEG-47",
+  "nome": "Magnezone",
+  "nome_pt": "Magnezone",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Magneton",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Upper Spark",
+      "nome_pt": "Centelha Superior",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "50+",
+      "texto": "If this Pokémon evolved from Magneton during this turn, this attack does 120 more damage.",
+      "texto_pt": "Se este Pokémon evoluiu de Magneton durante este turno, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Flashing Bolt",
+      "nome_pt": "Raio Piscante",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "160",
+      "texto": "During your next turn, this Pokémon can't use Flashing Bolt.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Raio Piscante.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-47",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "SCR-97",
+  "nome": "Bombirdier",
+  "nome_pt": "Bombirdier",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Reckless Charge",
+      "nome_pt": "Carga Indomável",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "This Pokémon also does 20 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 20 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-97",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

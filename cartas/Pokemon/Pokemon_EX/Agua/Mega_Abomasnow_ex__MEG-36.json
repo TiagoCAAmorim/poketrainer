@@ -1,0 +1,69 @@
+{
+  "id": "MEG-36",
+  "nome": "Mega Abomasnow ex",
+  "nome_pt": "Mega Abomasnow ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 350,
+  "estagio": "Estágio 1",
+  "evolui_de": "Snover",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hammer-lanche",
+      "nome_pt": "Paulada Avalanche",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "100×",
+      "texto": "Discard the top 6 cards of your deck, and this attack does 100 damage for each Basic Water Energy card that you discarded in this way.",
+      "texto_pt": "Descarte as 6 cartas de cima do seu baralho, e este ataque causa 100 pontos de dano para cada carta de Energia Água Básica descartada desta forma.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Frost Barrier",
+      "nome_pt": "Barreira Congelada",
+      "custo": [
+        "Água",
+        "Água",
+        "Água"
+      ],
+      "dano": "200",
+      "texto": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 30 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-36",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-157",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Hammer-lanche: Discard the top 6 cards of your deck, and this attack does 100 damage for each Basic Water Energy card that you discarded in this way."
+    ]
+  }
+}

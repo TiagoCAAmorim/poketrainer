@@ -1,0 +1,64 @@
+{
+  "id": "SCR-91",
+  "nome": "Gulpin",
+  "nome_pt": "Gulpin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Drool",
+      "nome_pt": "Babar",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Super Poison Breath",
+      "nome_pt": "Super-hálito Venenoso",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Your opponent's Active Pokémon is now Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-91",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-154",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "SCR-49",
+  "nome": "Lanturn",
+  "nome_pt": "Lanturn",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Chinchou",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Disorienting Flash",
+      "nome_pt": "Clarão Atordoante",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Confused. Put 8 damage counters instead of 3 on that Pokémon for this Special Condition.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso. Coloque 8 contadores de dano ao invés de 3 naquele Pokémon para esta Condição Especial.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Thunderous Bolt",
+      "nome_pt": "Raio Estrondoso",
+      "custo": [
+        "Elétrico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-49",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Disorienting Flash: Put 8 damage counters instead of 3 on that Pokémon for this Special Condition."
+    ]
+  }
+}

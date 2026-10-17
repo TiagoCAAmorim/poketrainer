@@ -1,0 +1,54 @@
+{
+  "id": "DRI-33",
+  "nome": "Ethan's Quilava",
+  "nome_pt": "Quilava do Ethan",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Ethan's Cyndaquil",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Bonded by the Journey",
+      "nome_pt": "Unidos pela Jornada",
+      "texto": "Once during your turn, you may search your deck for an Ethan's Adventure card, reveal it, and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá procurar por uma carta Aventura do Ethan no seu baralho, revelá-la e colocá-la na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Combustion",
+      "nome_pt": "Combustão",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-33",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

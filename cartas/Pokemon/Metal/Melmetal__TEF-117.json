@@ -1,0 +1,63 @@
+{
+  "id": "TEF-117",
+  "nome": "Melmetal",
+  "nome_pt": "Melmetal",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 1",
+  "evolui_de": "Meltan",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hammer In",
+      "nome_pt": "Martelada",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Iron Bash",
+      "nome_pt": "Pancada de Ferro",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "230",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-117",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

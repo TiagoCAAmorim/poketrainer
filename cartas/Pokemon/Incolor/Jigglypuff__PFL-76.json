@@ -1,0 +1,46 @@
+{
+  "id": "PFL-76",
+  "nome": "Jigglypuff",
+  "nome_pt": "Jigglypuff",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ball Roll",
+      "nome_pt": "Rolo Bola",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "Flip a coin until you get tails. This attack does 20 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 20 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-76",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

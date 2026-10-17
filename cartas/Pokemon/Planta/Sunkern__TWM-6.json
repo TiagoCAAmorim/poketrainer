@@ -1,0 +1,46 @@
+{
+  "id": "TWM-6",
+  "nome": "Sunkern",
+  "nome_pt": "Sunkern",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 40,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bullet Seed",
+      "nome_pt": "Projétil de Semente",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10×",
+      "texto": "Flip 4 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue 4 moedas. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-6",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

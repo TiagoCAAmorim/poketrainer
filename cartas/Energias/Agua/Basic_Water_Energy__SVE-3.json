@@ -1,0 +1,49 @@
+{
+  "id": "SVE-3",
+  "nome": "Basic Water Energy",
+  "nome_pt": "Energia de Água",
+  "categoria": "Energia",
+  "subtipo": "Energia Básica",
+  "ace_spec": false,
+  "fornece": "Água",
+  "texto": "Fornece 1 Energia de Água.",
+  "texto_pt": "Fornece 1 Energia de Água.",
+  "regras": [],
+  "regulamento": null,
+  "impressoes": [
+    {
+      "codigo": "SVE-3",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+    },
+    {
+      "codigo": "SVE-11",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+    },
+    {
+      "codigo": "PAL-279",
+      "colecao": "Paldea Evolved",
+      "data": "2023-06-09"
+    },
+    {
+      "codigo": "MFB-32",
+      "colecao": "My First Battle",
+      "data": "2023-09-29"
+    },
+    {
+      "codigo": "MEE-3",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+    },
+    {
+      "codigo": "MEE-11",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

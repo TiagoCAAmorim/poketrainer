@@ -1,0 +1,55 @@
+{
+  "id": "30C-88",
+  "nome": "Nidorina",
+  "nome_pt": "Nidorina",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Nidoran ♀",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Share Happiness",
+      "nome_pt": "Compartilhar Felicidade",
+      "texto": "Once during your turn, you may use this Ability. Heal 30 damage from 1 of your Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Cure 30 pontos de dano de 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Bite",
+      "nome_pt": "Mordida",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-88",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

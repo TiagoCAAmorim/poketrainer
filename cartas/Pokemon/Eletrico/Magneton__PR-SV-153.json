@@ -1,0 +1,65 @@
+{
+  "id": "PR-SV-153",
+  "nome": "Magneton",
+  "nome_pt": "Magneton",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Magnemite",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Overvolt Discharge",
+      "nome_pt": "Descarga Supervoltaica",
+      "texto": "Once during your turn, you may attach up to 3 Basic Energy cards from your discard pile to your Lightning Pokémon in any way you like. If you use this Ability, this Pokémon is Knocked Out.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá ligar até 3 cartas de Energia Básica da sua pilha de descarte aos seus Pokémon Elétrico como desejar. Se você usar esta Habilidade, este Pokémon será Nocauteado.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Electric Ball",
+      "nome_pt": "Bola de Eletricidade",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-153",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "PR-SV-159",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "SSP-59",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

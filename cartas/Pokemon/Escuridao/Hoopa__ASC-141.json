@@ -1,0 +1,59 @@
+{
+  "id": "ASC-141",
+  "nome": "Hoopa",
+  "nome_pt": "Hoopa",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Filch",
+      "nome_pt": "Furtar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw 2 cards.",
+      "texto_pt": "Compre 2 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Knuckle Impact",
+      "nome_pt": "Impacto Ossudo",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "During your next turn, this Pokémon can't use attacks.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar ataques.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-141",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

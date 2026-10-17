@@ -1,0 +1,60 @@
+{
+  "id": "CRI-9",
+  "nome": "Ninetales",
+  "nome_pt": "Ninetales",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Vulpix",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Nine-Tailed Transfer",
+      "nome_pt": "Transferência de Nove Caudas",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Move all damage counters from 1 of your Benched Pokémon to your opponent's Active Pokémon.",
+      "texto_pt": "Mova todos os contadores de dano de 1 dos seus Pokémon no Banco para o Pokémon Ativo do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Will-O-Wisp",
+      "nome_pt": "Fogo Fátuo",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-9",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Nine-Tailed Transfer: Move all damage counters from 1 of your Benched Pokémon to your opponent's Active Pokémon."
+    ]
+  }
+}

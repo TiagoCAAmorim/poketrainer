@@ -1,0 +1,65 @@
+{
+  "id": "CRI-64",
+  "nome": "Cobalion ex",
+  "nome_pt": "Cobalion ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Metal Road",
+      "nome_pt": "Estrada de Metal",
+      "texto": "Once during your turn, when this Pokémon moves from your Bench to the Active Spot, you may use this Ability. Move any amount of Metal Energy from your other Pokémon to this Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, quando este Pokémon for movido do seu Banco para o Campo Ativo, você poderá usar esta Habilidade. Mova qualquer quantidade de Energia Metal dos seus outros Pokémon para este Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Power Tackle",
+      "nome_pt": "Investida Poderosa",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "During your next turn, this Pokémon can't use attacks.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar ataques.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-64",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-103",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Metal Road: Once during your turn, when this Pokémon moves from your Bench to the Active Spot, you may use this Ability. Move any amount of Metal Energy from your other Pokémon to this Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "BLK-73",
+  "nome": "Unfezant",
+  "nome_pt": "Unfezant",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Tranquill",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Add On",
+      "nome_pt": "Adicionar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw 4 cards.",
+      "texto_pt": "Compre 4 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Swift Flight",
+      "nome_pt": "Voo Veloz",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Flip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, durante o próximo turno do seu oponente, previna todo o dano e os efeitos de ataques causados a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-73",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-150",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

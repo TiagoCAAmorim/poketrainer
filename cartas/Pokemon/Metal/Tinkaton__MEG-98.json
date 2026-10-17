@@ -1,0 +1,46 @@
+{
+  "id": "MEG-98",
+  "nome": "Tinkaton",
+  "nome_pt": "Tinkaton",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Tinkatuff",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Windup Swing",
+      "nome_pt": "Impulsão de Corda",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "240-",
+      "texto": "This attack does 60 less damage for each Energy attached to your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 60 pontos de dano a menos para cada Energia ligada ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-98",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "TWM-85",
+  "nome": "Chimecho",
+  "nome_pt": "Chimecho",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hyper Voice",
+      "nome_pt": "Hipervoz",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Homeward Chime",
+      "nome_pt": "Sino de Boas-vindas",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Shuffle 1 of your Benched Pokémon and all attached cards into your deck.",
+      "texto_pt": "Embaralhe 1 dos seus Pokémon no Banco e todas as cartas ligadas a ele no seu baralho.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-85",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-179",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Homeward Chime: Shuffle 1 of your Benched Pokémon and all attached cards into your deck."
+    ]
+  }
+}

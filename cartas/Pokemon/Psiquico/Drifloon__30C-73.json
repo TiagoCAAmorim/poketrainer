@@ -1,0 +1,51 @@
+{
+  "id": "30C-73",
+  "nome": "Drifloon",
+  "nome_pt": "Drifloon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Float Up",
+      "nome_pt": "Voo Flutuante",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20",
+      "texto": "You may shuffle this Pokémon and all attached cards into your deck.",
+      "texto_pt": "Você pode embaralhar este Pokémon e todas as cartas ligadas a ele no seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-73",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-136",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

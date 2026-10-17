@@ -1,0 +1,66 @@
+{
+  "id": "BLK-40",
+  "nome": "Elgyem",
+  "nome_pt": "Elgyem",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Slight Shift",
+      "nome_pt": "Deslocamento Discreto",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Move an Energy from 1 of your opponent's Pokémon to another of their Pokémon.",
+      "texto_pt": "Mova uma Energia de 1 dos Pokémon do seu oponente para outro Pokémon dele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Beam",
+      "nome_pt": "Feixe",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-40",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-120",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Slight Shift: Move an Energy from 1 of your opponent's Pokémon to another of their Pokémon."
+    ]
+  }
+}

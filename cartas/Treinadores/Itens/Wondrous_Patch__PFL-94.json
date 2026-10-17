@@ -1,0 +1,28 @@
+{
+  "id": "PFL-94",
+  "nome": "Wondrous Patch",
+  "nome_pt": "Fragmento Encantado",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Attach a Basic Psychic Energy card from your discard pile to 1 of your Benched Psychic Pokémon.",
+  "texto_pt": "Ligue uma carta de Energia Psíquico Básica da sua pilha de descarte a 1 dos seus Pokémon Psíquico no Banco.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-94",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "POR-117",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

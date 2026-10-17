@@ -1,0 +1,68 @@
+{
+  "id": "DRI-36",
+  "nome": "Ethan's Magcargo",
+  "nome_pt": "Magcargo do Ethan",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Ethan's Slugma",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Melt Away",
+      "nome_pt": "Chega Derrete",
+      "texto": "If this Pokémon has no Energy attached, it has no Retreat Cost.",
+      "texto_pt": "Se este Pokémon não tiver nenhuma Energia ligada a ele, não terá custo de Recuo.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Lava Burst",
+      "nome_pt": "Erupção de Lava",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "70×",
+      "texto": "Discard up to 5 Fire Energy from this Pokémon. This attack does 70 damage for each card you discarded in this way.",
+      "texto_pt": "Descarte até 5 Energias Fogo deste Pokémon. Este ataque causa 70 pontos de dano para cada carta descartada desta forma.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-36",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-24",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-222",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Lava Burst: Discard up to 5 Fire Energy from this Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "TEF-37",
+  "nome": "Centiskorch",
+  "nome_pt": "Centiskorch",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sizzlipede",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Singe",
+      "nome_pt": "Chamuscada",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Burned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Queimado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Charring Breath",
+      "nome_pt": "Hálito Carbonizador",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "180",
+      "texto": "If your opponent's Active Pokémon isn't Burned, this attack does nothing.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente não estiver Queimado, este ataque não fará nada.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-37",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

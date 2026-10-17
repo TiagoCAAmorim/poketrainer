@@ -1,0 +1,26 @@
+{
+  "id": "TWM-164",
+  "nome": "Survival Brace",
+  "nome_pt": "Cinta de Sobrevivência",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": true,
+  "texto": "If the Pokémon this card is attached to has full HP and would be Knocked Out by damage from an attack from your opponent's Pokémon, it is not Knocked Out, and its remaining HP becomes 10. Then, discard this card.",
+  "texto_pt": "Se o Pokémon ao qual esta carta está ligada tiver PS cheio e estiver prestes a ser Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, ele não será Nocauteado e o PS restante dele será 10. Em seguida, descarte esta carta.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho.",
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-164",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

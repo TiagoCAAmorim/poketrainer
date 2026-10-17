@@ -1,0 +1,46 @@
+{
+  "id": "CRI-34",
+  "nome": "Deoxys",
+  "nome_pt": "Deoxys",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Psyspeed",
+      "nome_pt": "Velocidade Psíquica",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "You may draw cards until you have 5 cards in your hand.",
+      "texto_pt": "Você pode comprar cartas até ter 5 cartas na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-34",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

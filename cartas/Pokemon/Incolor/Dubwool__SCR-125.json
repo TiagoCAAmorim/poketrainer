@@ -1,0 +1,55 @@
+{
+  "id": "SCR-125",
+  "nome": "Dubwool",
+  "nome_pt": "Dubwool",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Wooloo",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Soft Wool",
+      "nome_pt": "Lã Fofinha",
+      "texto": "This Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Este Pokémon recebe 30 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Knock Over",
+      "nome_pt": "Arrebatar",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "You may discard a Stadium in play.",
+      "texto_pt": "Você pode descartar um Estádio em jogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-125",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

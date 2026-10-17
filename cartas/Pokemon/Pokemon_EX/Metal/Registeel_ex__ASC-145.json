@@ -1,0 +1,62 @@
+{
+  "id": "ASC-145",
+  "nome": "Registeel ex",
+  "nome_pt": "Registeel ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 230,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Regi Charge",
+      "nome_pt": "Carga Regi",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 2 Basic Metal Energy cards from your discard pile to this Pokémon.",
+      "texto_pt": "Ligue até 2 cartas de Energia Metal Básica da sua pilha de descarte a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Protecting Steel",
+      "nome_pt": "Protegidaço",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "During your opponent's next turn, this Pokémon takes 50 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 50 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-145",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

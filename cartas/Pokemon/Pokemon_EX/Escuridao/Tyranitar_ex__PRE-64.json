@@ -1,0 +1,61 @@
+{
+  "id": "PRE-64",
+  "nome": "Tyranitar ex",
+  "nome_pt": "Tyranitar ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 2",
+  "evolui_de": "Pupitar",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Grind",
+      "nome_pt": "Moer",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "50×",
+      "texto": "This attack does 50 damage for each Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 50 pontos de dano para cada Energia ligada a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Tyrannical Crush",
+      "nome_pt": "Esmagamento Tirânico",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "Discard a random card from your opponent's hand.",
+      "texto_pt": "Descarte uma carta aleatória da mão do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-64",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

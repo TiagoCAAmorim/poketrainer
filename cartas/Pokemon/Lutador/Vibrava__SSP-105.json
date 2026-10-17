@@ -1,0 +1,63 @@
+{
+  "id": "SSP-105",
+  "nome": "Vibrava",
+  "nome_pt": "Vibrava",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Trapinch",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Screech",
+      "nome_pt": "Agudo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "During your next turn, the Defending Pokémon takes 50 more damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o seu próximo turno, o Pokémon Defensor receberá 50 pontos de dano a mais de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Cutting Wind",
+      "nome_pt": "Vento Dilacerante",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-105",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-206",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

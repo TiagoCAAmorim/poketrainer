@@ -1,0 +1,60 @@
+{
+  "id": "PRE-96",
+  "nome": "Black Belt's Training",
+  "nome_pt": "Treino de Faixa Preta",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).",
+  "texto_pt": "Durante este turno, os ataques usados pelos seus Pokémon causarão 40 pontos de dano a mais ao Pokémon ex Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-96",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-97",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-98",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-99",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "JTG-143",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-144",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-145",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "ASC-255",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

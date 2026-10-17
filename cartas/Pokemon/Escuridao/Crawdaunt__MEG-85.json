@@ -1,0 +1,61 @@
+{
+  "id": "MEG-85",
+  "nome": "Crawdaunt",
+  "nome_pt": "Crawdaunt",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Corphish",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Vise Grip",
+      "nome_pt": "Agarramento Compressor",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Cutting Riposte",
+      "nome_pt": "Retaliação Cortante",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "If this Pokémon has any damage counters on it, this attack can be used for Darkness.",
+      "texto_pt": "Se este Pokémon tiver algum contador de dano nele, este ataque poderá ser usado por Escuridão.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-85",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Cutting Riposte: If this Pokémon has any damage counters on it, this attack can be used for Darkness."
+    ]
+  }
+}

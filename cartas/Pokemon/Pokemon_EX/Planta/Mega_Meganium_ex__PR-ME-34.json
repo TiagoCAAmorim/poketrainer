@@ -1,0 +1,60 @@
+{
+  "id": "PR-ME-34",
+  "nome": "Mega Meganium ex",
+  "nome_pt": "Mega Meganium ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 360,
+  "estagio": "Estágio 2",
+  "evolui_de": "Bayleef",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Giant Bouquet",
+      "nome_pt": "Buquê Gigante",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70+",
+      "texto": "This attack does 50 more damage for each Grass Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 50 pontos de dano a mais para cada Energia Planta ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-34",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-10",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-272",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

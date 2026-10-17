@@ -1,0 +1,30 @@
+{
+  "id": "PR-SV-150",
+  "nome": "Paradise Resort",
+  "nome_pt": "Resort Paraíso",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.",
+  "texto_pt": "O custo de Recuo de cada Psyduck em jogo (seus e do seu oponente) é Incolor a menos.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-150",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "PR-ME-92",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

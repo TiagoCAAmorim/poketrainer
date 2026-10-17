@@ -1,0 +1,46 @@
+{
+  "id": "DRI-90",
+  "nome": "Mankey",
+  "nome_pt": "Mankey",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wild Kick",
+      "nome_pt": "Chute sem Pontaria",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30",
+      "texto": "Flip a coin. If tails, this attack does nothing.",
+      "texto_pt": "Jogue uma moeda. Se sair coroa, este ataque não fará nada.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-90",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

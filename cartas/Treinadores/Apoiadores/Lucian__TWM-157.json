@@ -1,0 +1,30 @@
+{
+  "id": "TWM-157",
+  "nome": "Lucian",
+  "nome_pt": "Lucian",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player flips a coin. If heads, that player draws 6 cards. If tails, they draw 3 cards.",
+  "texto_pt": "Cada jogador embaralha a própria mão e coloca-a como as cartas de baixo do próprio baralho. Se qualquer um dos jogadores tiver colocado qualquer carta como a carta de baixo do próprio baralho desta forma, cada jogador jogará uma moeda. Se sair cara, aquele jogador comprará 6 cartas. Se sair coroa, ele comprará 3 cartas.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-157",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-208",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

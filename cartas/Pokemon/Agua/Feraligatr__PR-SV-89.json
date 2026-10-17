@@ -1,0 +1,62 @@
+{
+  "id": "PR-SV-89",
+  "nome": "Feraligatr",
+  "nome_pt": "Feraligatr",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Croconaw",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Torrential Heart",
+      "nome_pt": "Âmago Torrencial",
+      "texto": "Once during your turn, you may put 5 damage counters on this Pokémon. If you do, during this turn, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+      "texto_pt": "Uma vez durante o seu turno, você poderá colocar 5 contadores de dano neste Pokémon. Se fizer isto, durante este turno, os ataques usados por este Pokémon causarão 120 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Giant Wave",
+      "nome_pt": "Onda Gigante",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "160",
+      "texto": "During your next turn, this Pokémon can't use Giant Wave.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Onda Gigante.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-89",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "TEF-41",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Torrential Heart: Put 5 damage counters on this Pokémon.; If you do, during this turn, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon."
+    ]
+  }
+}

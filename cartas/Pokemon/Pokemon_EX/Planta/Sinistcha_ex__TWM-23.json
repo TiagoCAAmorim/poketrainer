@@ -1,0 +1,72 @@
+{
+  "id": "TWM-23",
+  "nome": "Sinistcha ex",
+  "nome_pt": "Sinistcha ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 240,
+  "estagio": "Estágio 1",
+  "evolui_de": "Poltchageist",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Re-Brew",
+      "nome_pt": "Reinfusão",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Put 2 damage counters on 1 of your opponent's Pokémon for each Basic Grass Energy card in your discard pile. Then, shuffle those Energy cards into your deck.",
+      "texto_pt": "Coloque 2 contadores de dano em 1 dos Pokémon do seu oponente para cada carta de Energia Planta Básica na sua pilha de descarte. Em seguida, embaralhe aquelas cartas de Energia no seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Matcha Splash",
+      "nome_pt": "Salpicar Matcha",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Heal 30 damage from each of your Pokémon.",
+      "texto_pt": "Cure 30 pontos de dano de cada um dos seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-23",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-189",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-210",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Re-Brew: Put 2 damage counters on 1 of your opponent's Pokémon for each Basic Grass Energy card in your discard pile.; Then, shuffle those Energy cards into your deck."
+    ]
+  }
+}

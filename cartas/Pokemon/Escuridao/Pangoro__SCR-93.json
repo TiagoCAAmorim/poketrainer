@@ -1,0 +1,59 @@
+{
+  "id": "SCR-93",
+  "nome": "Pangoro",
+  "nome_pt": "Pangoro",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Pancham",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pull",
+      "nome_pt": "Puxar",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+      "texto_pt": "Mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Tantrum",
+      "nome_pt": "Petulância",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "This Pokémon is now Confused.",
+      "texto_pt": "Este Pokémon agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-93",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

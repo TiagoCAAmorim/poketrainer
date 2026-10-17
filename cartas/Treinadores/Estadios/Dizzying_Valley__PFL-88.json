@@ -1,0 +1,27 @@
+{
+  "id": "PFL-88",
+  "nome": "Dizzying Valley",
+  "nome_pt": "Vale Vertiginoso",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Confused Pokémon (both yours and your opponent's) don't recover from that Special Condition when they evolve or devolve.",
+  "texto_pt": "Os Pokémon Confusos (seus e do seu oponente) não se recuperarão daquela Condição Especial quando eles evoluírem ou involuírem.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-88",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Confusão persiste ao evoluir: não implementado"
+    ]
+  }
+}

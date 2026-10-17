@@ -1,0 +1,74 @@
+{
+  "id": "SSP-119",
+  "nome": "Hydreigon ex",
+  "nome_pt": "Hydreigon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 2",
+  "evolui_de": "Zweilous",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Crashing Headbutt",
+      "nome_pt": "Cabeçada Estrondosa",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "Discard the top 3 cards of your opponent's deck.",
+      "texto_pt": "Descarte as 3 cartas de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Obsidian",
+      "nome_pt": "Obsidiana",
+      "custo": [
+        "Psíquico",
+        "Escuridão",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "This attack also does 130 damage to 2 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 130 pontos de dano a 2 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-119",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-223",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-240",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

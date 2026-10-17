@@ -1,0 +1,46 @@
+{
+  "id": "PFL-14",
+  "nome": "Moltres",
+  "nome_pt": "Moltres",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fighting Wings",
+      "nome_pt": "Asas de Luta",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "20+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 90 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-14",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

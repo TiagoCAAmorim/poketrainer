@@ -1,0 +1,25 @@
+{
+  "id": "TEF-149",
+  "nome": "Future Booster Energy Capsule",
+  "nome_pt": "Cápsula Energética de Melhoria Futurista",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "The Future Pokémon this card is attached to has no Retreat Cost, and the attacks it uses do 20 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+  "texto_pt": "O Pokémon Futurista ao qual esta carta está ligada não tem custo de Recuo, e os ataques que ele usa causam 20 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-149",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

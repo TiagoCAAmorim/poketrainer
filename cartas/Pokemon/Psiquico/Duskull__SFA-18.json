@@ -1,0 +1,68 @@
+{
+  "id": "SFA-18",
+  "nome": "Duskull",
+  "nome_pt": "Duskull",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Come and Get You",
+      "nome_pt": "Vim te Buscar",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Put up to 3 Duskull from your discard pile onto your Bench.",
+      "texto_pt": "Coloque até 3 Duskull da sua pilha de descarte no seu Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Mumble",
+      "nome_pt": "Resmungo",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-18",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-68",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "PRE-35",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

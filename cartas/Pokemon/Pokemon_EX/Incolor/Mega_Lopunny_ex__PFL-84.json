@@ -1,0 +1,70 @@
+{
+  "id": "PFL-84",
+  "nome": "Mega Lopunny ex",
+  "nome_pt": "Mega Lopunny ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 1",
+  "evolui_de": "Buneary",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gale Thrust",
+      "nome_pt": "Propulsão de Tempestade",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "If this Pokémon moved from your Bench to the Active Spot this turn, this attack does 170 more damage.",
+      "texto_pt": "Se este Pokémon foi movido do seu Banco para o Campo Ativo neste turno, este ataque causará 170 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Spiky Hopper",
+      "nome_pt": "Saltar Farpas",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-84",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-115",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-128",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

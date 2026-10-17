@@ -1,0 +1,49 @@
+{
+  "id": "JTG-47",
+  "nome": "Iono's Voltorb",
+  "nome_pt": "Voltorb da Kissera",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Voltaic Chain",
+      "nome_pt": "Corrente Voltaica",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 20 more damage for each Lightning Energy attached to all of your Iono's Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada Energia Elétrico ligada a todos os seus Pokémon da Kissera.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-47",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Voltaic Chain: This attack does 20 more damage for each Lightning Energy attached to all of your Iono's Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "30C-9",
+  "nome": "Vulpix",
+  "nome_pt": "Greninja TURBO",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wild Kick",
+      "nome_pt": null,
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "30",
+      "texto": "Flip a coin. If tails, this attack does nothing.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-9",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

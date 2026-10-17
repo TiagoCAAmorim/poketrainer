@@ -1,0 +1,72 @@
+{
+  "id": "JTG-111",
+  "nome": "Hop's Zacian ex",
+  "nome_pt": "Zacian ex do Lupo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 230,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Insta-Strike",
+      "nome_pt": "Golpe Instantâneo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "This attack also does 30 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 30 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Brave Slash",
+      "nome_pt": "Talho Impávido",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "240",
+      "texto": "During your next turn, this Pokémon can't use Brave Slash.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Talho Impávido.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-111",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-176",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-186",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

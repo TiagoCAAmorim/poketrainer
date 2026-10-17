@@ -1,0 +1,61 @@
+{
+  "id": "POR-22",
+  "nome": "Lapras ex",
+  "nome_pt": "Lapras ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hydro Turn",
+      "nome_pt": "Revira Água",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each Water Energy attached to this Pokémon. Switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada Energia Água ligada a este Pokémon. Troque este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Surf",
+      "nome_pt": "Surfar",
+      "custo": [
+        "Água",
+        "Água",
+        "Água"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "POR-22",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

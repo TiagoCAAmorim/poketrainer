@@ -1,0 +1,63 @@
+{
+  "id": "ASC-102",
+  "nome": "Hitmontop",
+  "nome_pt": "Hitmontop",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spin and Draw",
+      "nome_pt": "Girar e Comprar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Shuffle your hand into your deck. Then, draw 6 cards.",
+      "texto_pt": "Embaralhe a sua mão no seu baralho. Em seguida, compre 6 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Low Kick",
+      "nome_pt": "Rasteira",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-102",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-240",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

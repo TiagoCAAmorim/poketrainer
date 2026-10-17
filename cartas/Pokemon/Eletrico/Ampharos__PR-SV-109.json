@@ -1,0 +1,47 @@
+{
+  "id": "PR-SV-109",
+  "nome": "Ampharos",
+  "nome_pt": "Ampharos",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Flaaffy",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Electric Ball",
+      "nome_pt": "Bola de Eletricidade",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-109",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

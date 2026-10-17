@@ -1,0 +1,60 @@
+{
+  "id": "CRI-45",
+  "nome": "Donphan",
+  "nome_pt": "Donphan",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Phanpy",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "No Reprieve",
+      "nome_pt": "Sem Trégua",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "20",
+      "texto": "During your next turn, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o seu próximo turno, os ataques usados por este Pokémon causarão 120 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Smashing Headbutt",
+      "nome_pt": "Cabeçada Destruidora",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "180",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-45",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

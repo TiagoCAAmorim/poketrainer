@@ -1,0 +1,61 @@
+{
+  "id": "TEF-31",
+  "nome": "Heatmor",
+  "nome_pt": "Heatmor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Live Coal",
+      "nome_pt": "Carvão Vivo",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Licking Flames",
+      "nome_pt": "Lambidas Flamejantes",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "Flip 3 coins. For each tails, discard an Energy from this Pokémon.",
+      "texto_pt": "Jogue 3 moedas. Para cada coroa, descarte uma Energia deste Pokémon.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-31",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Licking Flames: For each tails, discard an Energy from this Pokémon."
+    ]
+  }
+}

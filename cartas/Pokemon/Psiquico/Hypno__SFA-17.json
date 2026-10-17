@@ -1,0 +1,49 @@
+{
+  "id": "SFA-17",
+  "nome": "Hypno",
+  "nome_pt": "Hypno",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Drowzee",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Daydream",
+      "nome_pt": "Devaneio",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "During your opponent's next turn, if they attach an Energy card from their hand to the Defending Pokémon, their turn ends.",
+      "texto_pt": "Durante o próximo turno do seu oponente, se ele ligar uma carta de Energia da mão dele ao Pokémon Defensor, o turno dele acabará.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-17",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Daydream: During your opponent's next turn, if they attach an Energy card from their hand to the Defending Pokémon, their turn ends."
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "PR-SV-113",
+  "nome": "Kingambit",
+  "nome_pt": "Kingambit",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Bisharp",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Elbow Strike",
+      "nome_pt": "Golpe de Cotovelo",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Slicing Blade",
+      "nome_pt": "Lâmina Fatiante",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-113",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

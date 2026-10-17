@@ -1,0 +1,70 @@
+{
+  "id": "PRE-26",
+  "nome": "Glaceon ex",
+  "nome_pt": "Glaceon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Frost Bullet",
+      "nome_pt": "Projétil Congelado",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "110",
+      "texto": "This attack also does 30 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 30 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Euclase",
+      "nome_pt": "Euclásio",
+      "custo": [
+        "Planta",
+        "Água",
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Knock Out 1 of your opponent's Pokémon that has exactly 6 damage counters on it.",
+      "texto_pt": "Nocauteie 1 dos Pokémon do seu oponente que tiver exatamente 6 contadores de dano nele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-26",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-150",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Euclase: Knock Out 1 of your opponent's Pokémon that has exactly 6 damage counters on it."
+    ]
+  }
+}

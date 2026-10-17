@@ -1,0 +1,48 @@
+{
+  "id": "JTG-3",
+  "nome": "Butterfree",
+  "nome_pt": "Butterfree",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 2",
+  "evolui_de": "Metapod",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Scale Hurricane",
+      "nome_pt": "Furacão de Escamas",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "60×",
+      "texto": "Flip 4 coins. This attack does 60 damage for each heads. If at least 2 of them are heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue 4 moedas. Este ataque causa 60 pontos de dano para cada cara. Se pelo menos 2 delas saírem cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-3",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Scale Hurricane: If at least 2 of them are heads, your opponent's Active Pokémon is now Paralyzed."
+    ]
+  }
+}

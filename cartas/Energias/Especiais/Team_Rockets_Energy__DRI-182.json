@@ -1,0 +1,29 @@
+{
+  "id": "DRI-182",
+  "nome": "Team Rocket's Energy",
+  "nome_pt": "Energia da Equipe Rocket",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": false,
+  "fornece": null,
+  "texto": "This card can only be attached to a Team Rocket's Pokémon. If this card is attached to anything other than a Team Rocket's Pokémon, discard this card. As long as this card is attached to a Pokémon, it provides 2 in any combination of Psychic Energy and Darkness Energy.",
+  "texto_pt": "Esta carta só pode ser ligada a um Pokémon da Equipe Rocket. Se esta carta estiver ligada a qualquer coisa além de um Pokémon da Equipe Rocket, descarte esta carta. Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá 2 Energias em qualquer combinação de Energia Psíquico e Energia Escuridão.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-182",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-217",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

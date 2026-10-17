@@ -1,0 +1,71 @@
+{
+  "id": "ASC-47",
+  "nome": "Mega Froslass ex",
+  "nome_pt": "Mega Froslass ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 310,
+  "estagio": "Estágio 1",
+  "evolui_de": "Snorunt",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Resentful Refrain",
+      "nome_pt": "Refrão Ressentido",
+      "custo": [
+        "Água"
+      ],
+      "dano": "50×",
+      "texto": "This attack does 50 damage for each card in your opponent's hand.",
+      "texto_pt": "Este ataque causa 50 pontos de dano para cada carta na mão do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Absolute Snow",
+      "nome_pt": "Neve Absoluta",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "Your opponent's Active Pokémon is now Asleep.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Adormecido.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-47",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-265",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-275",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

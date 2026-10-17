@@ -1,0 +1,47 @@
+{
+  "id": "CRI-12",
+  "nome": "Braixen",
+  "nome_pt": "Braixen",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Fennekin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flamethrower",
+      "nome_pt": "Lança-chamas",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "80",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-12",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "BLK-20",
+  "nome": "Palpitoad",
+  "nome_pt": "Palpitoad",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Tympole",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Round",
+      "nome_pt": "Circular",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each of your Pokémon in play that has the Round attack.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada um dos seus Pokémon em jogo que tiver o ataque Circular.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Wave Splash",
+      "nome_pt": "Onda Borrifante",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-20",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-104",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Round: This attack does 40 damage for each of your Pokémon in play that has the Round attack."
+    ]
+  }
+}

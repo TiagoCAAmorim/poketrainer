@@ -1,0 +1,76 @@
+{
+  "id": "PR-ME-89",
+  "nome": "Mega Zeraora ex",
+  "nome_pt": "Mega Zeraora ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 270,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Thunderous Fist",
+      "nome_pt": "Murro Trovejante",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "60×",
+      "texto": "This attack does 60 damage for each Lightning Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 60 pontos de dano para cada Energia Elétrico ligada a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Zepto Turn",
+      "nome_pt": "Volta Veloz",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "150",
+      "texto": "Switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Troque este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-89",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PBL-27",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-98",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-114",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

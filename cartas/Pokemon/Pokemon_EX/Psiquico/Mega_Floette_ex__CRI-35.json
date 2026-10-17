@@ -1,0 +1,73 @@
+{
+  "id": "CRI-35",
+  "nome": "Mega Floette ex",
+  "nome_pt": "Mega Floette ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 250,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gentle Light",
+      "nome_pt": "Luz Gentil",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Heal 30 damage from each Pokémon (both yours and your opponent's).",
+      "texto_pt": "Cure 30 pontos de dano de cada Pokémon (seus e do seu oponente).",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Eternity Bloom",
+      "nome_pt": "Flor da Eternidade",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "200",
+      "texto": "Search your deck for up to 4 Basic Psychic Energy cards and attach them to your Benched Pokémon in any way you like. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 4 cartas de Energia Psíquico Básica no seu baralho e ligue-as aos seus Pokémon no Banco como desejar. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-35",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-101",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-117",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Gentle Light: Heal 30 damage from each Pokémon."
+    ]
+  }
+}

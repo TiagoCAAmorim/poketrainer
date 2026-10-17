@@ -1,0 +1,28 @@
+{
+  "id": "DRI-175",
+  "nome": "Team Rocket's Great Ball",
+  "nome_pt": "Grande Bola da Equipe Rocket",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Flip a coin. If heads, search your deck for an Evolution Team Rocket's Pokémon, reveal it, and put it into your hand. If tails, search your deck for a Basic Team Rocket's Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+  "texto_pt": "Jogue uma moeda. Se sair cara, procure por um Pokémon da Equipe Rocket de Evolução no seu baralho, revele-o e coloque-o na sua mão. Se sair coroa, procure por um Pokémon da Equipe Rocket Básico no seu baralho, revele-o e coloque-o na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-175",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-205",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

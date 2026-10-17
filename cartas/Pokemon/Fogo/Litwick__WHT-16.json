@@ -1,0 +1,53 @@
+{
+  "id": "WHT-16",
+  "nome": "Litwick",
+  "nome_pt": "Litwick",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Brighten and Burn",
+      "nome_pt": "Clarear e Queimar",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Look at the top card of your deck. You may discard that card.",
+      "texto_pt": "Olhe a carta de cima do seu baralho. Você pode descartar aquela carta.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-16",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-101",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Brighten and Burn: Look at the top card of your deck.; You may discard that card."
+    ]
+  }
+}

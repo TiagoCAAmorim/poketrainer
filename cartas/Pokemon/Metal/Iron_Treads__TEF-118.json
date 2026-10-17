@@ -1,0 +1,59 @@
+{
+  "id": "TEF-118",
+  "nome": "Iron Treads",
+  "nome_pt": "Trilho Férreo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Dual Core",
+      "nome_pt": "Dual Core",
+      "texto": "As long as this Pokémon has a Future Booster Energy Capsule attached, it is Fighting and Metal type.",
+      "texto_pt": "Enquanto este Pokémon tiver uma Cápsula Energética de Melhoria Futurista ligada a ele, será de tipo Lutador e Metal.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Wheel Pass",
+      "nome_pt": "Passe de Roda",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "Move an Energy from this Pokémon to 1 of your Benched Pokémon.",
+      "texto_pt": "Mova uma Energia deste Pokémon para 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-118",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Dual Core: As long as this Pokémon has a Future Booster Energy Capsule attached, it is Fighting and Metal type."
+    ]
+  }
+}

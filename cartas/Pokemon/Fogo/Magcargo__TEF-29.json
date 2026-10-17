@@ -1,0 +1,58 @@
+{
+  "id": "TEF-29",
+  "nome": "Magcargo",
+  "nome_pt": "Magcargo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Slugma",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Lava Zone",
+      "nome_pt": "Zona de Lava",
+      "texto": "Whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Burned.",
+      "texto_pt": "Sempre que o Pokémon Ativo do seu oponente for movido para o Banco durante o turno dele, o novo Pokémon Ativo dele agora estará Queimado.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Heat Blast",
+      "nome_pt": "Raio de Calor",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-29",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Lava Zone: Whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Burned."
+    ]
+  }
+}

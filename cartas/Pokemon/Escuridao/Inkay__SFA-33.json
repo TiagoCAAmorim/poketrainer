@@ -1,0 +1,59 @@
+{
+  "id": "SFA-33",
+  "nome": "Inkay",
+  "nome_pt": "Inkay",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mischievous Tentacles",
+      "nome_pt": "Tentáculos Maliciosos",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Look at the top card of your opponent's deck. You may have your opponent shuffle their deck.",
+      "texto_pt": "Olhe a carta de cima do baralho do seu oponente. Você pode fazer com que o seu oponente embaralhe o baralho dele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Peck",
+      "nome_pt": "Bicada",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-33",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Mischievous Tentacles: Look at the top card of your opponent's deck.; You may have your opponent shuffle their deck."
+    ]
+  }
+}

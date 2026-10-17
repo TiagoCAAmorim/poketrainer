@@ -1,0 +1,59 @@
+{
+  "id": "TEF-110",
+  "nome": "Forretress",
+  "nome_pt": "Forretress",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Pineco",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spike Cannon",
+      "nome_pt": "Canhão de Espinhos",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "30×",
+      "texto": "Flip 3 coins. This attack does 30 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 30 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Steel Tackle",
+      "nome_pt": "Colisão de Aço",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "This Pokémon also does 40 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 40 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-110",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

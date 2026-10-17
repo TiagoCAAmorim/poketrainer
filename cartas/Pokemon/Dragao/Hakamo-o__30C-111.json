@@ -1,0 +1,58 @@
+{
+  "id": "30C-111",
+  "nome": "Hakamo-o",
+  "nome_pt": "Hakamo-o",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Jangmo-o",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Sharp Fang",
+      "nome_pt": "Presa Afiada",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dragon Claw",
+      "nome_pt": "Garra de Dragão",
+      "custo": [
+        "Elétrico",
+        "Lutador"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-111",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

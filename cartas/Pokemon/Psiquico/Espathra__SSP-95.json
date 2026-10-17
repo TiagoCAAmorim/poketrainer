@@ -1,0 +1,60 @@
+{
+  "id": "SSP-95",
+  "nome": "Espathra",
+  "nome_pt": "Espathra",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Flittle",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mystical Eyes",
+      "nome_pt": "Olhos Místicos",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Devolve 1 of your opponent's evolved Pokémon by putting the highest Stage Evolution card on it into your opponent's hand.",
+      "texto_pt": "Reverta a evolução de 1 dos Pokémon evoluídos do seu oponente colocando a carta de Evolução de Estágio mais alto sobre ele na mão do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Spiral Drain",
+      "nome_pt": "Dreno Espiral",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "Heal 30 damage from this Pokémon.",
+      "texto_pt": "Cure 30 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-95",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Mystical Eyes: Devolve 1 of your opponent's evolved Pokémon by putting the highest Stage Evolution card on it into your opponent's hand."
+    ]
+  }
+}

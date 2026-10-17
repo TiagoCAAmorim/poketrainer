@@ -1,0 +1,27 @@
+{
+  "id": "POR-70",
+  "nome": "Core Memory",
+  "nome_pt": "Núcleo de Memória",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "The Mega Zygarde ex this card is attached to can use the attack on this card. (You still need the necessary Energy to use this attack.)",
+  "texto_pt": "O Mega Zygarde ex ao qual esta carta está ligada pode usar o ataque desta carta. (Você ainda precisa da Energia necessária para usar este ataque.)",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-70",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "o ataque concedido não consta na base de dados"
+    ]
+  }
+}

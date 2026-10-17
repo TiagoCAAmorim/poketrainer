@@ -1,0 +1,65 @@
+{
+  "id": "POR-16",
+  "nome": "Salazzle ex",
+  "nome_pt": "Salazzle ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Salandit",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Nasty Plot",
+      "nome_pt": "Trama Maldosa",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 cards and put them into your hand. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 2 cartas no seu baralho e coloque-as na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dire Nails",
+      "nome_pt": "Unhas Perniciosas",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "100",
+      "texto": "Your opponent's Active Pokémon is now Burned and Poisoned. Switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado e Queimado. Troque este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-16",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-101",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

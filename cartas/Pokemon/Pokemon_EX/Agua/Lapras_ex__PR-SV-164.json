@@ -1,0 +1,72 @@
+{
+  "id": "PR-SV-164",
+  "nome": "Lapras ex",
+  "nome_pt": "Lapras ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 220,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Power Splash",
+      "nome_pt": "Esguicho Poderoso",
+      "custo": [
+        "Água"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada Energia ligada a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Larimar Rain",
+      "nome_pt": "Chuva de Larimar",
+      "custo": [
+        "Água",
+        "Psíquico",
+        "Metal"
+      ],
+      "dano": "—",
+      "texto": "Look at the top 20 cards of your deck and attach any number of Energy cards you find there to your Pokémon in any way you like. Shuffle the other cards back into your deck.",
+      "texto_pt": "Olhe as 20 cartas de cima do seu baralho e ligue qualquer número de cartas de Energia que encontrar lá aos seus Pokémon como desejar. Embaralhe as outras cartas de volta no seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-164",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "SCR-32",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-158",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

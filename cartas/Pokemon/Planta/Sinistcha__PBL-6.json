@@ -1,0 +1,54 @@
+{
+  "id": "PBL-6",
+  "nome": "Sinistcha",
+  "nome_pt": "Sinistcha",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 60,
+  "estagio": "Estágio 1",
+  "evolui_de": "Poltchageist",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Hide 'n' Sneak",
+      "nome_pt": "Esconde-some",
+      "texto": "Prevent all effects of your opponent's Pokémon's attacks and Abilities done to this Pokémon. (Damage is not an effect.)",
+      "texto_pt": "Previna todos os efeitos de ataques e Habilidades dos Pokémon do seu oponente causados a este Pokémon. (Dano não é um efeito.)",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Matcha Spin",
+      "nome_pt": "Giro Matcha",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "If you have 6 or more Pokémon that have the Hide 'n' Sneak Ability in your discard pile, place 4 damage counters on each of your opponent's Pokémon.",
+      "texto_pt": "Se você tiver 6 ou mais Pokémon que têm a Habilidade Esconde-some na sua pilha de descarte, coloque 4 contadores de dano em cada um dos Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-6",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

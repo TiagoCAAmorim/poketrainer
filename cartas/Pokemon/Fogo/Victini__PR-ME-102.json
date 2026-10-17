@@ -1,0 +1,63 @@
+{
+  "id": "PR-ME-102",
+  "nome": "Victini",
+  "nome_pt": "Buzzwole GX",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Call for Family",
+      "nome_pt": "Soco Jato",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a 1 dos Pokémon no Banco do seu oponente <em>(não aplique Fraqueza e Resistência aos Pokémon no Banco).</em>",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "V-Flame",
+      "nome_pt": "Impacto Ossudo",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "Este Pokémon não poderá atacar durante a sua próxima vez de jogar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-102",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "30C-13",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "DRI-131",
+  "nome": "Marnie's Liepard",
+  "nome_pt": "Liepard da Marine",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Marnie's Purrloin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pointy Claws",
+      "nome_pt": "Garras Pontiagudas",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "70+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 70 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex, este ataque causará 70 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-131",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

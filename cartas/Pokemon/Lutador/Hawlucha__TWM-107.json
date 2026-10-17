@@ -1,0 +1,47 @@
+{
+  "id": "TWM-107",
+  "nome": "Hawlucha",
+  "nome_pt": "Hawlucha",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Prize Count",
+      "nome_pt": "Contagem de Prêmios",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "50+",
+      "texto": "If you have more Prize cards remaining than your opponent, this attack does 90 more damage.",
+      "texto_pt": "Se você tiver mais cartas de Prêmio restantes do que seu oponente, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-107",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

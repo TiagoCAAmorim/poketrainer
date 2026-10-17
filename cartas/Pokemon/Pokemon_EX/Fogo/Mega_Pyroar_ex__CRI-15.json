@@ -1,0 +1,67 @@
+{
+  "id": "CRI-15",
+  "nome": "Mega Pyroar ex",
+  "nome_pt": "Mega Pyroar ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 1",
+  "evolui_de": "Litleo",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ferocious Bellow",
+      "nome_pt": "Rugido Feroz",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "During your opponent's next turn, attacks used by the Defending Pokémon do 50 less damage (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, os ataques usados pelo Pokémon Defensor causarão 50 pontos de dano a menos (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Fiery Big Bang",
+      "nome_pt": "Big Bang Incinerador",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "290-",
+      "texto": "This attack does 10 less damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano a menos para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-15",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-99",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

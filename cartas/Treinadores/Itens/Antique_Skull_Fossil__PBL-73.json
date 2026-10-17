@@ -1,0 +1,26 @@
+{
+  "id": "PBL-73",
+  "nome": "Antique Skull Fossil",
+  "nome_pt": "Fóssil Crânio Arcaico",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat. At any time during your turn, you may discard this card from play.",
+  "texto_pt": "Jogue esta carta como se fosse um Pokémon Incolor Básico com PS 60. Esta carta não pode ser afetada por quaisquer Condições Especiais e não pode recuar. A qualquer momento durante o seu turno, você poderá descartar esta carta do jogo.",
+  "fossil": {
+    "hp": 60
+  },
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-73",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

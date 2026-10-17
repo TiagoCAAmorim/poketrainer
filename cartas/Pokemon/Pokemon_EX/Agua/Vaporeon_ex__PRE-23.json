@@ -1,0 +1,68 @@
+{
+  "id": "PRE-23",
+  "nome": "Vaporeon ex",
+  "nome_pt": "Vaporeon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Severe Squall",
+      "nome_pt": "Ventania Intensa",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "This attack does 60 damage to each of your opponent's Pokémon ex. This attack's damage isn't affected by Weakness or Resistance.",
+      "texto_pt": "Este ataque causa 60 pontos de dano a cada um dos Pokémon ex do seu oponente. O dano deste ataque não é afetado por Fraqueza ou Resistência.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Aquamarine",
+      "nome_pt": "Água-marinha",
+      "custo": [
+        "Fogo",
+        "Água",
+        "Elétrico"
+      ],
+      "dano": "280",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-23",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-149",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

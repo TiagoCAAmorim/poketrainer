@@ -1,0 +1,46 @@
+{
+  "id": "SCR-52",
+  "nome": "Charjabug",
+  "nome_pt": "Charjabug",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Grubbin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Parallel Placement",
+      "nome_pt": "Posicionamento Paralelo",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 3 Charjabug and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 3 Charjabug no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-52",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

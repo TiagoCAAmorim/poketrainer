@@ -1,0 +1,71 @@
+{
+  "id": "SSP-91",
+  "nome": "Palossand ex",
+  "nome_pt": "Palossand ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sandygast",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Sand Tomb",
+      "nome_pt": "Fosso de Areia",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Barite Jail",
+      "nome_pt": "Prisão de Barita",
+      "custo": [
+        "Água",
+        "Psíquico",
+        "Lutador"
+      ],
+      "dano": "—",
+      "texto": "Put damage counters on each of your opponent's Benched Pokémon until its remaining HP is 100.",
+      "texto_pt": "Coloque contadores de dano em cada um dos Pokémon no Banco do seu oponente até o PS restante dele ser 100.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-91",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-221",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Barite Jail: Put damage counters on each of your opponent's Benched Pokémon until its remaining HP is 100."
+    ]
+  }
+}

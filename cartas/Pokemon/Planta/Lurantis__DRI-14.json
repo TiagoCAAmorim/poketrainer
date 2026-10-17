@@ -1,0 +1,59 @@
+{
+  "id": "DRI-14",
+  "nome": "Lurantis",
+  "nome_pt": "Lurantis",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Fomantis",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Razor Leaf",
+      "nome_pt": "Folha Navalha",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Petal Blade Dance",
+      "nome_pt": "Dança Cortante de Pétalas",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "130",
+      "texto": "Discard 2 Basic Grass Energy cards from your hand. If you can't discard 2 cards in this way, this attack does nothing.",
+      "texto_pt": "Descarte 2 cartas de Energia Planta Básica da sua mão. Se não puder descartar 2 cartas desta forma, este ataque não fará nada.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-14",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Petal Blade Dance: Discard 2 Basic Grass Energy cards from your hand.; If you can't discard 2 cards in this way, this attack does nothing."
+    ]
+  }
+}

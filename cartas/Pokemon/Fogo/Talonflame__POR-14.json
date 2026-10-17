@@ -1,0 +1,60 @@
+{
+  "id": "POR-14",
+  "nome": "Talonflame",
+  "nome_pt": "Talonflame",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Fletchinder",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Sky Hunt",
+      "nome_pt": "Rapina Aérea",
+      "texto": "Once during your turn, you may use this Ability. Flip a coin. If heads, discard a random card from your opponent's hand.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Jogue uma moeda. Se sair cara, descarte uma carta aleatória da mão do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Fire Wing",
+      "nome_pt": "Asa de Fogo",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "110",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-14",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-91",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "PBL-74",
+  "nome": "Backtrack Badge",
+  "nome_pt": "Distintivo de Recomeço",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "Once during your turn, after you flip any coins for an attack of the Colorless Pokémon this card is attached to, you may ignore all results of those coin flips and begin flipping those coins again.",
+  "texto_pt": "Uma vez durante o seu turno, após jogar moedas para um ataque do Pokémon Incolor ao qual esta carta está ligada, você poderá ignorar todos os resultados das moedas e jogá-las novamente.",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-74",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "refazer moedas não implementado"
+    ]
+  }
+}

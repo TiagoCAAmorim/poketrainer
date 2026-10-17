@@ -1,0 +1,61 @@
+{
+  "id": "MEG-7",
+  "nome": "Tangrowth",
+  "nome_pt": "Tangrowth",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Tangela",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Absorb",
+      "nome_pt": "Absorção",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Heal 30 damage from this Pokémon.",
+      "texto_pt": "Cure 30 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Pumped-Up Whip",
+      "nome_pt": "Chicotada Bombada",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120+",
+      "texto": "If this Pokémon has at least 2 extra Energy attached (in addition to this attack's cost), this attack does 140 more damage.",
+      "texto_pt": "Se este Pokémon tiver pelo menos 2 Energias adicionais ligadas a ele (além do custo deste ataque), este ataque causará 140 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-7",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "SCR-73",
+  "nome": "Marowak",
+  "nome_pt": "Marowak",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Cubone",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Growl",
+      "nome_pt": "Rosnadura",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "—",
+      "texto": "During your opponent's next turn, attacks used by the Defending Pokémon do 40 less damage (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, os ataques usados pelo Pokémon Defensor causarão 40 pontos de dano a menos (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bone Vengeance",
+      "nome_pt": "Vingança Óssea",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "If any of your Benched Cubone have any damage counters on them, this attack does 120 more damage.",
+      "texto_pt": "Se algum dos seus Cubone no Banco tiver algum contador de dano nele, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-73",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Bone Vengeance: If any of your Benched Cubone have any damage counters on them, this attack does 120 more damage."
+    ]
+  }
+}

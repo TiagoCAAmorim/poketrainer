@@ -1,0 +1,63 @@
+{
+  "id": "BLK-69",
+  "nome": "Fraxure",
+  "nome_pt": "Fraxure",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Axew",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bite",
+      "nome_pt": "Mordida",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Boundless Power",
+      "nome_pt": "Poder Ilimitado",
+      "custo": [
+        "Lutador",
+        "Metal"
+      ],
+      "dano": "90",
+      "texto": "During your next turn, this Pokémon can't use attacks.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar ataques.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-69",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-146",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "TWM-84",
+  "nome": "Farigiraf",
+  "nome_pt": "Farigiraf",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Girafarig",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "One-derful Rumble",
+      "nome_pt": "Arranca-rabo Incom-um",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each of your Stage 1 Pokémon in play.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada um dos seus Pokémon Estágio 1 em jogo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Eerie Wave",
+      "nome_pt": "Onda Misteriosa",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-84",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

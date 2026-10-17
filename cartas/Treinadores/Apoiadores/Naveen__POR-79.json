@@ -1,0 +1,30 @@
+{
+  "id": "POR-79",
+  "nome": "Naveen",
+  "nome_pt": "Naveen",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Draw cards until you have 5 cards in your hand. Before drawing cards, you may discard any number of cards from your hand. (If you can't draw any cards in this way, you can't use this card.)",
+  "texto_pt": "Compre cartas até ter 5 cartas na sua mão. Antes de comprar cartas, você pode descartar qualquer número de cartas da sua mão. (Se você não puder comprar carta alguma desta forma, você não poderá usar esta carta.)",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-79",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-112",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

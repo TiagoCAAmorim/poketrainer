@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PTCG Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1512; --felt:#14201a; --felt2:#182822; --line:#2a3b33; --ink:#e7eee9; --mute:#8ea398;
+  --accent:#f2c94c; --danger:#ff5c5c; --ok:#5bd38a; --warn:#f0a048; --panel:#111a16; --card:#1c2a24; --card2:#22332c;
+  --G:#5bb85c; --R:#e8613c; --W:#4a9fe0; --L:#f2c94c; --P:#a768d6; --F:#c0794a; --D:#56677a; --M:#9aa5b1; --N:#c9a227; --C:#cfc9bb; --Y:#e88ac0; --any:conic-gradient(var(--G),var(--R),var(--W),var(--L),var(--P),var(--F),var(--D),var(--M),var(--G));
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.35 'Space Grotesk',system-ui,sans-serif}
+button,select,input,textarea{font:inherit;color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
+header{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);background:#0c120f}
+header h1{font-size:17px;margin:0 8px 0 0;letter-spacing:.5px}
+header h1 b{color:var(--accent)}
+.grp{display:flex;gap:6px;align-items:center;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:#101814}
+.grp label{color:var(--mute);font-size:12px}
+select,input[type=text],input[type=number]{background:#0b100d;border:1px solid var(--line);border-radius:6px;padding:4px 6px}
+select{max-width:270px}
+input[type=number]{width:84px}
+.btn{background:#1c2a24;border:1px solid #33493f;border-radius:7px;padding:5px 11px;cursor:pointer}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:#1a1405;border-color:var(--accent);font-weight:700}
+.cov{font-size:12px;color:var(--mute);margin-left:auto}
+.cov b{color:var(--ok)}
+main{display:grid;grid-template-columns:minmax(0,1fr) 390px;height:calc(100% - 52px)}
+#board{position:relative;overflow:auto;background:radial-gradient(ellipse at center,var(--felt2),var(--felt) 70%);padding:10px 16px;display:flex;flex-direction:column;gap:6px}
+.side{display:flex;flex-direction:column;gap:6px}
+.side.opp{flex-direction:column-reverse}
+.row{display:flex;gap:10px;align-items:flex-start;justify-content:center}
+.field{display:grid;grid-template-columns:150px 1fr 150px;gap:10px;align-items:center}
+.piles{display:flex;flex-direction:column;gap:5px}
+.pile{border:1px dashed #3a5047;border-radius:8px;padding:5px 8px;font-size:12px;color:var(--mute);background:#0f1713aa}
+.pile b{color:var(--ink);font-size:15px}
+.pile.click{cursor:pointer}
+.prizes{display:flex;gap:3px;flex-wrap:wrap}
+.prize{width:13px;height:18px;border-radius:3px;background:linear-gradient(135deg,#2f4a3f,#1d2e27);border:1px solid #476a5b}
+.bench{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;min-height:112px}
+.midline{display:flex;justify-content:space-between;align-items:center;padding:5px 12px;border-top:1px solid #ffffff12;border-bottom:1px solid #ffffff12;color:var(--mute);font-size:13px;gap:10px}
+.midline .stad{color:var(--ink)}
+.pname{font-weight:700;color:var(--ink);overflow-wrap:anywhere}
+.pname.turn::before{content:'●';color:var(--accent);margin-right:6px}
+.flags{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}
+.flags span{font-size:11px;padding:1px 6px;border-radius:10px;border:1px solid var(--line)}
+.flags span.on{border-color:var(--accent);color:var(--accent)}
+.pk{position:relative;width:124px;min-height:108px;border-radius:10px;background:var(--card);border:2px solid #2f453b;padding:6px 7px 7px;cursor:pointer;transition:transform .12s,border-color .12s,box-shadow .12s}
+.pk.active{width:172px;min-height:128px}
+.pk:hover{transform:translateY(-2px)}
+.pk.target{border-color:var(--accent);box-shadow:0 0 0 3px #f2c94c33}
+.pk.empty{background:transparent;border:2px dashed #2c4038;cursor:default}
+.pk .band{position:absolute;left:0;top:0;right:0;height:5px;border-radius:8px 8px 0 0}
+.pk .nm{font-weight:700;font-size:13px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pk.active .nm{font-size:15px}
+.pk .sub{font-size:11px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hpbar{height:6px;background:#0b100d;border-radius:4px;margin:5px 0 4px;overflow:hidden}
+.hpbar i{display:block;height:100%;background:var(--ok)}
+.hpbar i.mid{background:var(--accent)} .hpbar i.low{background:var(--danger)}
+.hptxt{font-family:'IBM Plex Mono',monospace;font-size:11px}
+.pips{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
+.pip{width:15px;height:15px;border-radius:50%;font-size:9px;font-weight:700;display:grid;place-items:center;color:#111;border:1px solid #0006}
+.pip.sp{outline:2px solid #fff6;outline-offset:-1px}
+.chip{display:inline-block;font-size:10px;padding:1px 5px;border-radius:8px;background:#0b100d;border:1px solid var(--line);margin:3px 3px 0 0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip.cond{border-color:var(--danger);color:var(--danger)}
+.dmg{position:absolute;right:-8px;top:-8px;min-width:30px;height:30px;padding:0 4px;border-radius:15px;background:var(--danger);color:#fff;font-weight:700;font-size:12px;display:grid;place-items:center;border:2px solid #0f1512}
+.exbadge{font-size:10px;font-weight:700;color:#1a1405;background:var(--accent);border-radius:4px;padding:0 4px;margin-left:4px}
+.warnbadge{position:absolute;left:-7px;top:-7px;width:18px;height:18px;border-radius:9px;background:var(--warn);color:#1a1405;font-weight:700;font-size:11px;display:grid;place-items:center}
+.hand{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;min-height:60px}
+.hc{width:92px;height:60px;border-radius:7px;background:var(--card2);border:1px solid #3a5047;padding:5px 6px;font-size:11px;cursor:pointer;position:relative;overflow:hidden;transition:transform .1s}
+.hc:hover{transform:translateY(-3px);border-color:var(--accent)}
+.hc .k{font-size:9px;text-transform:uppercase;letter-spacing:.6px;color:var(--mute)}
+.hc .n{font-weight:600;line-height:1.15;margin-top:2px}
+.hc .stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
+.hc.playable{border-color:#6c8f5f}
+.hc.back{background:repeating-linear-gradient(45deg,#1f3029,#1f3029 6px,#24372f 6px,#24372f 12px);cursor:default}
+aside{border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0}
+#promptBox{padding:12px 14px;border-bottom:1px solid var(--line);max-height:60%;overflow:auto}
+#promptBox h2{font-size:15px;margin:0 0 4px}
+#promptBox .ptext{color:var(--mute);margin-bottom:8px}
+.ogroup{margin-top:8px}
+.ogroup .gt{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--mute);margin-bottom:4px}
+.opt{display:block;width:100%;text-align:left;margin:3px 0;padding:6px 9px;border-radius:7px;background:#17241e;border:1px solid #2e443a;cursor:pointer;position:relative;overflow:hidden}
+.opt:hover{border-color:var(--accent)}
+.opt.hl{border-color:var(--accent);background:#2a2a15}
+.opt.k-attack{border-left:3px solid var(--R)} .opt.k-end{border-left:3px solid var(--mute)}
+.opt .prob{position:absolute;left:0;bottom:0;height:3px;background:var(--accent)}
+.opt .pv{float:right;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent)}
+.opt:disabled{cursor:default;opacity:.85}
+#evalBar{margin:8px 0 2px;font-size:12px;color:var(--mute)}
+#evalBar .meter{height:6px;border-radius:4px;background:linear-gradient(90deg,var(--danger),#444 50%,var(--ok));position:relative;margin-top:4px}
+#evalBar .meter i{position:absolute;top:-3px;width:3px;height:12px;background:#fff;border-radius:2px}
+#log{flex:1;overflow:auto;padding:10px 14px;font-size:12.5px;min-height:0}
+#log div{padding:2px 0;color:#c7d3cc}
+#log .l-turn{color:var(--accent);font-weight:700;margin-top:8px;border-top:1px solid #ffffff10;padding-top:6px}
+#log .l-ko{color:var(--danger);font-weight:600} #log .l-prize{color:var(--ok)} #log .l-end{color:var(--accent);font-weight:700;font-size:14px}
+#log .l-attack{color:#ffb38f} #log .l-damage{color:#ff9d9d} #log .l-ability{color:#c9a6ff} #log .l-coin{color:var(--mute)}
+#tip{position:fixed;z-index:50;pointer-events:none;width:300px;background:#0b110e;border:1px solid #3b5248;border-radius:10px;padding:10px 12px;box-shadow:0 10px 30px #000a;display:none;font-size:12.5px}
+#tip h3{margin:0 0 2px;font-size:15px}
+#tip .meta{color:var(--mute);font-size:11.5px;margin-bottom:6px}
+#tip .atk{margin-top:6px}
+#tip .cost{display:inline-flex;gap:2px;vertical-align:middle;margin-right:4px}
+#tip .cost .pip{width:13px;height:13px;font-size:8px}
+#tip p{margin:2px 0;color:#b9c7bf}
+#tip .st{font-size:11px;color:var(--warn)}
+#banner{position:absolute;inset:0;display:none;place-items:center;background:#000a;z-index:5}
+#banner div{background:#101a15;border:2px solid var(--accent);border-radius:14px;padding:24px 34px;text-align:center}
+#banner h2{margin:0 0 6px;font-size:26px;color:var(--accent)}
+.modal{position:fixed;inset:0;background:#000b;display:none;place-items:center;z-index:40}
+.modal .box{background:#101a15;border:1px solid var(--line);border-radius:12px;padding:16px;width:min(760px,94vw);max-height:88vh;overflow:auto}
+.modal textarea{width:100%;height:300px;background:#0b100d;border:1px solid var(--line);border-radius:8px;padding:8px;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.err{white-space:pre-wrap;font-size:12px}
+.empty-state{margin:auto;text-align:center;color:var(--mute);max-width:460px}
+.empty-state h2{color:var(--ink)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#3a1717;border:1px solid var(--danger);padding:8px 14px;border-radius:8px;display:none;z-index:60;white-space:pre-wrap;max-width:80vw}
+.timeline{display:flex;gap:8px;align-items:center;margin:8px 0}
+.timeline input{flex:1}
+.replaybar{display:none;padding:8px 14px;border-bottom:1px solid var(--line);background:#0e1612}
+pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
+@media (max-width:1100px){main{grid-template-columns:1fr}aside{border-left:none;border-top:1px solid var(--line);max-height:50vh}}
+</style>
+</head>
+<body>
+<header>
+  <h1>PTCG <b>Lab</b></h1>
+  <div class="grp"><label>J1</label><select id="deck0"></select><select id="ctrl0"></select></div>
+  <div class="grp"><label>J2</label><select id="deck1"></select><select id="ctrl1"></select></div>
+  <div class="grp"><label>Semente</label><input id="seed" type="number" placeholder="aleatória"></div>
+  <button class="btn primary" id="newBtn">Nova partida</button>
+  <div class="grp">
+    <button class="btn" id="playBtn" title="Reproduzir/pausar a IA">⏸</button>
+    <button class="btn" id="stepBtn" title="Avançar uma decisão da IA">⏭</button>
+    <label>Vel.</label><input id="speed" type="range" min="0" max="1500" value="450" style="width:80px">
+  </div>
+  <div class="grp"><label><input type="checkbox" id="reveal"> Revelar mãos</label></div>
+  <button class="btn" id="undoBtn" title="Desfazer até sua última decisão">↶</button>
+  <button class="btn" id="deckBtn">Decks…</button>
+  <button class="btn" id="replayBtn">Log do TCG Live…</button>
+  <span class="cov" id="cov"></span>
+</header>
+<main>
+  <section id="board">
+    <div class="empty-state" id="empty"><h2>Monte uma partida</h2>
+      <p>Escolha os decks (inclusive os top 8 importados da Limitless) e quem controla cada lado, e clique em <b>Nova partida</b>.</p>
+      <p>Ou cole um log do Pokémon TCG Live em <b>Log do TCG Live…</b> para ver a partida reproduzida jogada a jogada pelo motor.</p></div>
+    <div id="game" style="display:none;flex-direction:column;gap:6px;min-height:100%">
+      <div class="side opp" id="side1"></div>
+      <div class="midline" id="mid"></div>
+      <div class="side me" id="side0"></div>
+    </div>
+    <div id="banner"><div><h2 id="bannerT"></h2><div id="bannerS" style="color:var(--mute)"></div><br><button class="btn" onclick="document.getElementById('banner').style.display='none'">Ver tabuleiro</button></div></div>
+  </section>
+  <aside>
+    <div class="replaybar" id="replaybar">
+      <div style="display:flex;justify-content:space-between;align-items:center"><b>Reprodução de log</b><button class="btn" id="exitReplay">Sair</button></div>
+      <div class="timeline"><button class="btn" id="rPrev">◀</button><input type="range" id="rSlider" min="0" value="0"><button class="btn" id="rNext">▶</button><button class="btn" id="rPlay">▶▶</button></div>
+      <div id="rLabel" style="font-size:12.5px"></div>
+      <pre class="sum" id="rSum"></pre>
+    </div>
+    <div id="promptBox"><h2>—</h2></div>
+    <div id="log"></div>
+  </aside>
+</main>
+<div id="tip"></div>
+<div class="toast" id="toast"></div>
+<div class="modal" id="deckModal"><div class="box">
+  <h2 style="margin-top:0">Decks</h2>
+  <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap"><select id="deckView" style="flex:1;max-width:none"></select><input type="text" id="deckName" placeholder="nome_do_deck"></div>
+  <p style="color:var(--mute);margin:4px 0 8px">Cole uma lista exportada do Pokémon TCG Live ou da Limitless (ex.: <span class="mono">3 Dragapult ex TWM 130</span>). Novos decks vão para <span class="mono">decks/meus/</span>. Para baixar top 8 de torneios: <span class="mono">python import_limitless.py import --latest 5</span>.</p>
+  <textarea id="deckText"></textarea>
+  <div class="err" id="deckErr"></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn" id="deckClose">Fechar</button><button class="btn primary" id="deckSave">Salvar deck</button></div>
+</div></div>
+<div class="modal" id="replayModal"><div class="box">
+  <h2 style="margin-top:0">Reproduzir partida do Pokémon TCG Live</h2>
+  <p style="color:var(--mute);margin-top:0">No TCG Live, abra o registro da partida e use <b>Copy Log</b>; cole aqui (inglês ou português). O motor refaz cada jogada, confere os danos com o log oficial e mostra onde as regras divergem.</p>
+  <textarea id="replayText" placeholder="Setup&#10;Fulano chose heads for the opening coin flip.&#10;..."></textarea>
+  <div class="err" id="replayErr"></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn" id="replayClose">Fechar</button><button class="btn primary" id="replayGo">Reproduzir</button></div>
+</div></div>
+<div class="modal" id="pileModal"><div class="box"><h2 id="pileT" style="margin-top:0"></h2><div id="pileL"></div><div style="text-align:right;margin-top:10px"><button class="btn" onclick="pileModal.style.display='none'">Fechar</button></div></div></div>
+<script>
+const $=id=>document.getElementById(id);
+let META=null, ST=null, CARDS={}, playing=true, timer=null, highlight=null, REPLAY=null, rTimer=null;
+const TYPE_LABEL={G:'Grama',R:'Fogo',W:'Água',L:'Elétrico',P:'Psíquico',F:'Lutador',D:'Escuridão',M:'Metal',N:'Dragão',C:'Incolor',Y:'Fada'};
+const KIND_LABEL={pokemon:'Pokémon',energy:'Energia',item:'Item',supporter:'Apoiador',stadium:'Estádio',tool:'Ferramenta',basic:'Energia',special:'Energia especial'};
+const COND={asleep:'Adormecido',paralyzed:'Paralisado',confused:'Confuso',poisoned:'Envenenado',burned:'Queimado'};
+const GROUPS=[['attack','Atacar'],['ability','Habilidades'],['evolve','Evoluir'],['play_basic','Banco'],['trainer','Treinadores'],['tool','Ferramentas'],['attach','Energia'],['stadium','Estádio'],['retreat','Recuar'],['discard_fossil','Outros'],['end','Turno']];
+const tcol=t=>t==='*'?'var(--any)':`var(--${t||'C'})`;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cname=id=>(CARDS[id]&&CARDS[id].name)||id;
+
+async function api(path,body){
+  const opt=body===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)};
+  const r=await fetch(path,opt); const j=await r.json();
+  if(!r.ok) throw new Error(j.error||r.statusText); return j;
+}
+function toast(msg){const t=$('toast');t.textContent=msg;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',6000)}
+const reveal=()=>$('reveal').checked;
+
+function deckLabel(d){ const base=d.name.split('/').pop(); const m=d.archetype?`${d.place?d.place+'º ':''}${d.archetype}${d.player?' — '+d.player:''}`:base; return m+(d.ok?'':' ⚠')+(d.pending&&d.pending.length?' *':'') }
+async function loadMeta(){
+  META=await api('/api/meta');
+  const c=META.coverage||{}; $('cov').innerHTML=`Cartas: <b>${c.ok||0}</b> completas · ${c.partial||0} parciais · ${c.missing||0} pendentes (de ${META.total_cards})`;
+  for(const id of ['deck0','deck1','deckView']){
+    const s=$(id), keep=s.value; s.innerHTML='';
+    const groups={};
+    META.decks.forEach(d=>{ const g=d.name.includes('/')?d.name.split('/').slice(0,-1).join('/'):'decks'; (groups[g]=groups[g]||[]).push(d) });
+    for(const [g,ds] of Object.entries(groups)){ const og=document.createElement('optgroup'); og.label=g; ds.forEach(d=>og.appendChild(new Option(deckLabel(d),d.name))); s.appendChild(og) }
+    if(keep) s.value=keep;
+  }
+  if(!$('deck1').dataset.init&&META.decks.length>1){$('deck1').selectedIndex=1;$('deck1').dataset.init=1}
+  for(const id of ['ctrl0','ctrl1']){
+    const s=$(id), keep=s.value; s.innerHTML='';
+    META.controllers.forEach(c=>s.add(new Option(c.label,c.id)));
+    s.value=keep||(id==='ctrl0'?'human':'heuristic');
+  }
+}
+
+function pips(energy){ return energy.map(e=>{ const sp=CARDS[e.id]&&CARDS[e.id].subtype==='special';
+  return e.types.map(t=>`<span class="pip ${sp?'sp':''}" style="background:${tcol(t)}" data-card="${esc(e.id)}">${t==='*'?'':t}</span>`).join('') }).join('') }
+function pokeHTML(s,owner,pos,targets){
+  if(!s) return `<div class="pk empty ${pos===0?'active':''}"></div>`;
+  const d=CARDS[s.id]||{}; const left=s.hp-s.damage; const pct=Math.max(0,left/s.hp*100);
+  const cls=pct<30?'low':pct<60?'mid':''; const isT=targets.has(owner+':'+pos);
+  const ty=(s.types&&s.types[0])||(d.types||[])[0];
+  return `<div class="pk ${pos===0?'active':''} ${isT?'target':''}" data-owner="${owner}" data-pos="${pos}" data-card="${esc(s.id)}" data-uid="${s.uid}">
+    <div class="band" style="background:${tcol(ty)}"></div>
+    ${d.status&&d.status!=='ok'?'<div class="warnbadge" title="efeito parcialmente implementado">!</div>':''}
+    ${s.damage?`<div class="dmg">${s.damage}</div>`:''}
+    <div class="nm">${esc(s.name)}${(d.tags||[]).includes('ex')||(d.tags||[]).includes('mega')?`<span class="exbadge">${(d.tags||[]).includes('mega')?'MEGA':'ex'}</span>`:''}</div>
+    <div class="sub">${d.kind==='pokemon'?['Básico','Estágio 1','Estágio 2'][d.stage||0]:'Fóssil'} · ${(s.types||[]).map(t=>TYPE_LABEL[t]).join('/')}${s.new?' · novo':''}</div>
+    <div class="hpbar"><i class="${cls}" style="width:${pct}%"></i></div>
+    <div class="hptxt">${left}/${s.hp} HP<span style="float:right;color:var(--mute)" title="custo de recuo">↩${s.retreat}</span></div>
+    <div class="pips">${pips(s.energy)}</div>
+    ${s.tools.map(t=>`<span class="chip" data-card="${esc(t.id)}">🔧 ${esc(t.name)}</span>`).join('')}${s.conditions.map(c=>`<span class="chip cond">${COND[c]||c}</span>`).join('')}
+  </div>`;
+}
+function handCardHTML(c,playable){
+  const d=CARDS[c.id]||{}; const k=d.kind==='trainer'?d.subtype:(d.kind==='energy'?d.subtype:d.kind);
+  const col=d.kind==='pokemon'?tcol((d.types||[])[0]):d.kind==='energy'?tcol(d.provides||'C'):'#8a7cc4';
+  return `<div class="hc ${playable?'playable':''}" data-uid="${c.uid}" data-card="${esc(c.id)}"><span class="stripe" style="background:${col}"></span><div class="k">${KIND_LABEL[k]||k||''}</div><div class="n">${esc(c.name)}</div></div>`;
+}
+function sideHTML(S,p,isOpp,targets,playableUids){
+  const P=S.players[p]; const turn=S.current===p&&S.setup_done&&!S.done;
+  const hand=P.hand?P.hand.map(c=>handCardHTML(c,playableUids.has(c.uid))).join(''):Array.from({length:P.hand_count},()=>'<div class="hc back"></div>').join('');
+  const n=Math.max(5,P.bench.length);
+  const bench=Array.from({length:n},(_,i)=>pokeHTML(P.bench[i],p,i+1,targets)).join('');
+  const piles=`<div class="piles">
+      <div class="pile">Baralho <b>${P.deck}</b></div>
+      <div class="pile click" data-discard="${p}">Descarte <b>${P.discard.length}</b></div>
+      <div class="pile">Prêmios <b>${P.prizes}</b><div class="prizes">${Array.from({length:P.prizes},()=>'<span class="prize"></span>').join('')}</div></div></div>`;
+  const info=`<div class="piles" style="text-align:right"><div class="pname ${turn?'turn':''}">${esc(P.name)}</div>
+      <div class="flags"><span class="${P.flags.energy?'on':''}">Energia</span><span class="${P.flags.supporter?'on':''}">Apoiador</span><span class="${P.flags.retreat?'on':''}">Recuo</span></div>
+      <div style="color:var(--mute);font-size:12px">Mão: ${P.hand_count}${P.bench_max>5?' · banco '+P.bench_max:''}</div></div>`;
+  return `<div class="row">${pokeHTML(P.active,p,0,targets)}</div>
+    <div class="field">${isOpp?info:piles}<div class="bench">${bench}</div>${isOpp?piles:info}</div>
+    <div class="hand">${hand}</div>`;
+}
+function renderBoard(S){
+  $('empty').style.display='none'; $('game').style.display='flex';
+  const bottom=S.viewer==='all'||S.viewer===undefined?0:S.viewer, top=1-bottom;
+  const pr=REPLAY?null:S.prompt, opts=pr&&pr.options?pr.options:[];
+  const targets=new Set(), playable=new Set();
+  opts.forEach(o=>{ if(o.target) targets.add(o.target[0]+':'+o.target[1]); if(o.uid!=null) playable.add(o.uid) });
+  $('side0').innerHTML=sideHTML(S,bottom,false,targets,playable);
+  $('side1').innerHTML=sideHTML(S,top,true,targets,playable);
+  const st=S.stadium?`Estádio: <span class="stad" data-card="${esc(S.stadium.id)}">${esc(S.stadium.name)}</span>`:'Sem Estádio';
+  $('mid').innerHTML=`<span>Turno <b style="color:var(--ink)">${S.turn}</b> · semente <span class="mono">${S.seed}</span></span><span>${st}</span><span>${S.done?'Partida encerrada':S.setup_done?'Vez de '+esc(S.players[S.current].name):'Preparação'}</span>`;
+  const el=$('log'); const atBottom=el.scrollHeight-el.scrollTop-el.clientHeight<40;
+  el.innerHTML=S.log.map(e=>`<div class="l-${e.kind}">${esc(e.msg)}</div>`).join('');
+  if(atBottom||REPLAY) el.scrollTop=el.scrollHeight;
+}
+function render(){
+  if(REPLAY) return renderReplay();
+  if(!ST||!ST.players){ $('empty').style.display='block'; $('game').style.display='none'; return }
+  renderBoard(ST); renderPrompt(ST.prompt);
+  const b=$('banner');
+  if(ST.done&&!b.dataset.shown){ b.dataset.shown=1; b.style.display='grid';
+    $('bannerT').textContent=ST.winner===-1?'Empate':`${ST.players[ST.winner].name} venceu!`; $('bannerS').textContent=ST.end_reason }
+  if(!ST.done){ b.dataset.shown=''; b.style.display='none' }
+}
+function renderPrompt(pr){
+  const box=$('promptBox');
+  if(!pr){ box.innerHTML=`<h2>${ST.done?'Fim de jogo':'—'}</h2>`; return }
+  const who=ST.players[pr.player].name; const human=ST.ctrl[pr.player]==='human';
+  let html=`<h2>${human?'Sua decisão':'Vez de '+esc(who)}</h2><div class="ptext">${esc(pr.text)}${pr.source?` <span class="chip">${esc(pr.source)}</span>`:''}</div>`;
+  const ev=ST.ai_eval;
+  if(ev){ const x=(ev.value+1)/2*100; html+=`<div id="evalBar">Avaliação da rede para ${esc(who)}: <b style="color:var(--ink)">${(ev.value>=0?'+':'')+ev.value.toFixed(2)}</b><div class="meter"><i style="left:calc(${x}% - 1px)"></i></div></div>` }
+  const opts=pr.options||[]; const filt=highlight?new Set(highlight):null;
+  const btn=o=>{ const p=ev?ev.probs[o.i]:null;
+    return `<button class="opt k-${o.kind} ${filt&&filt.has(o.i)?'hl':''}" data-i="${o.i}" ${o.card?`data-card="${esc(o.card)}"`:''} ${human?'':'disabled'}>${p!=null?`<span class="pv">${(p*100).toFixed(0)}%</span>`:''}${esc(o.label)}${p!=null?`<span class="prob" style="width:${p*100}%"></span>`:''}</button>` };
+  if(pr.hint==='main'){
+    for(const [k,label] of GROUPS){ const g=opts.filter(o=>o.kind===k); if(!g.length) continue;
+      html+=`<div class="ogroup"><div class="gt">${label}</div>${g.map(btn).join('')}</div>` }
+  } else html+=opts.map(btn).join('');
+  if(highlight) html+=`<div style="margin-top:8px"><button class="btn" id="clearHl">Mostrar todas as opções</button></div>`;
+  box.innerHTML=html;
+  box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>act(+b.dataset.i));
+  const ch=$('clearHl'); if(ch) ch.onclick=()=>{highlight=null;render()};
+}
+
+async function act(i){ highlight=null; try{ ST=await api('/api/act',{index:i,reveal:reveal()}); render(); schedule() }catch(e){ toast(e.message) } }
+function schedule(){
+  clearTimeout(timer);
+  if(REPLAY||!ST||!ST.prompt||ST.done||!playing) return;
+  if(ST.ctrl[ST.prompt.player]==='human') return;
+  timer=setTimeout(stepAI,+$('speed').value);
+}
+async function stepAI(n=1){ try{ ST=await api('/api/step',{n,reveal:reveal()}); render(); schedule() }catch(e){ toast(e.message) } }
+async function refresh(){ const s=await api('/api/state?cards=1&reveal='+(reveal()?1:0)); if(s.cards) Object.assign(CARDS,s.cards); ST=s; render(); schedule() }
+
+// ---------------- reprodução de log
+function renderReplay(){
+  const f=REPLAY.frames[REPLAY.i]; if(!f) return;
+  renderBoard(f.state);
+  $('rLabel').innerHTML=`<b>${REPLAY.i+1}/${REPLAY.frames.length}</b> · turno ${f.turn} · ${esc(f.player)}<br><span style="color:var(--mute)">${esc(f.label)}</span>`;
+  $('rSlider').value=REPLAY.i;
+  $('promptBox').innerHTML='<h2>Jogada do log</h2><div class="ptext">'+esc(f.label)+'</div>';
+}
+function startReplay(r){
+  REPLAY={frames:r.frames,i:0}; Object.assign(CARDS,r.cards);
+  $('replaybar').style.display='block'; $('rSum').textContent=r.summary;
+  $('rSlider').max=Math.max(0,r.frames.length-1); render();
+}
+$('replayBtn').onclick=()=>{ replayModal.style.display='grid'; $('replayErr').textContent='' };
+$('replayClose').onclick=()=>replayModal.style.display='none';
+$('replayGo').onclick=async()=>{
+  $('replayErr').style.color='var(--mute)'; $('replayErr').textContent='Reproduzindo… (pode levar alguns segundos)';
+  try{ const r=await api('/api/replay',{log:$('replayText').value});
+    replayModal.style.display='none'; clearTimeout(timer);
+    if(!r.frames.length){ toast('Nenhuma jogada reproduzida:\n'+r.summary); return }
+    startReplay(r) }
+  catch(e){ $('replayErr').style.color='var(--danger)'; $('replayErr').textContent=e.message }
+};
+$('rPrev').onclick=()=>{ if(REPLAY&&REPLAY.i>0){REPLAY.i--;render()} };
+$('rNext').onclick=()=>{ if(REPLAY&&REPLAY.i<REPLAY.frames.length-1){REPLAY.i++;render()} };
+$('rSlider').oninput=e=>{ if(REPLAY){REPLAY.i=+e.target.value;render()} };
+$('rPlay').onclick=()=>{ clearInterval(rTimer); rTimer=setInterval(()=>{ if(!REPLAY||REPLAY.i>=REPLAY.frames.length-1) return clearInterval(rTimer); REPLAY.i++; render() },+$('speed').value+150) };
+$('exitReplay').onclick=()=>{ clearInterval(rTimer); REPLAY=null; $('replaybar').style.display='none'; refresh() };
+
+// clique em cartas → filtra opções que usam aquela carta
+document.addEventListener('click',e=>{
+  const pile=e.target.closest('[data-discard]');
+  if(pile){ const S=REPLAY?REPLAY.frames[REPLAY.i].state:ST; const P=S.players[+pile.dataset.discard]; $('pileT').textContent='Descarte — '+P.name;
+    const cnt={}; P.discard.forEach(c=>cnt[c.name]=(cnt[c.name]||0)+1);
+    $('pileL').innerHTML=Object.entries(cnt).map(([n,c])=>`<div>${c}× ${esc(n)}</div>`).join('')||'<i>vazio</i>'; pileModal.style.display='grid'; return }
+  if(REPLAY) return;
+  const el=e.target.closest('.hc[data-uid], .pk[data-owner]');
+  if(!el||!ST||!ST.prompt||!ST.prompt.options) return;
+  if(ST.ctrl[ST.prompt.player]!=='human') return;
+  let m=[];
+  if(el.classList.contains('hc')) m=ST.prompt.options.filter(o=>o.uid===+el.dataset.uid);
+  else { const ow=+el.dataset.owner, pos=+el.dataset.pos, uid=+el.dataset.uid;
+    m=ST.prompt.options.filter(o=>(o.target&&o.target[0]===ow&&o.target[1]===pos)||(o.kind==='attack'&&pos===0&&o.uid===uid)||(o.kind==='ability'&&o.uid===uid)) }
+  if(m.length===1) act(m[0].i); else if(m.length){ highlight=m.map(o=>o.i); render() }
+});
+// tooltip
+document.addEventListener('mousemove',e=>{
+  const el=e.target.closest('[data-card]'); const tip=$('tip');
+  if(!el){ tip.style.display='none'; return }
+  const d=CARDS[el.dataset.card]; if(!d){ tip.style.display='none'; return }
+  const cost=c=>`<span class="cost">${c.map(t=>`<span class="pip" style="background:${tcol(t)}">${t}</span>`).join('')}</span>`;
+  const stt=s=>s&&s!=='ok'?` <span class="st">(${s==='partial'?'parcial':'não implementado'})</span>`:'';
+  let h=`<h3>${esc(d.name)}</h3>${d.name_pt?`<div class="meta">${esc(d.name_pt)} · ${esc((d.prints||[])[0]||d.id)}</div>`:''}`;
+  if(d.kind==='pokemon'){
+    h+=`<div class="meta">${['Básico','Estágio 1','Estágio 2'][d.stage]}${d.evolves_from?' (de '+esc(d.evolves_from)+')':''} · ${(d.types||[]).map(t=>TYPE_LABEL[t]).join('/')} · ${d.hp} HP${d.tags.length?' · '+d.tags.join(', '):''}<br>Fraqueza: ${d.weakness?TYPE_LABEL[d.weakness]+' ×2':'—'} · Resistência: ${d.resistance?TYPE_LABEL[d.resistance]+' −'+d.resistance_value:'—'} · Recuo ${d.retreat}</div>`;
+    d.abilities.forEach(a=>h+=`<div class="atk"><b style="color:#c9a6ff">Habilidade: ${esc(a.name)}</b>${stt(a.status)}<p>${esc(a.text)}</p></div>`);
+    d.attacks.forEach(a=>h+=`<div class="atk">${cost(a.cost)}<b>${esc(a.name)}</b> <span class="mono">${a.damage||''}${a.suffix}</span>${stt(a.status)}${a.text?`<p>${esc(a.text)}</p>`:''}</div>`);
+  } else h+=`<div class="meta">${KIND_LABEL[d.kind==='trainer'?d.subtype:d.subtype]||d.kind}${d.tags.includes('ace_spec')?' · ACE SPEC':''}${stt(d.status)}</div><p>${esc(d.text)}</p>`;
+  tip.innerHTML=h; tip.style.display='block';
+  const x=Math.min(e.clientX+16,innerWidth-320), y=Math.min(e.clientY+14,innerHeight-tip.offsetHeight-10);
+  tip.style.left=x+'px'; tip.style.top=y+'px';
+});
+
+$('newBtn').onclick=async()=>{
+  try{ highlight=null; $('banner').dataset.shown=''; if(REPLAY){ REPLAY=null; $('replaybar').style.display='none' }
+    const s=await api('/api/new',{deck0:$('deck0').value,deck1:$('deck1').value,ctrl0:$('ctrl0').value,ctrl1:$('ctrl1').value,seed:$('seed').value,reveal:reveal()});
+    if(s.cards) Object.assign(CARDS,s.cards); ST=s; render(); schedule() }catch(e){ toast(e.message) }
+};
+$('playBtn').onclick=()=>{ playing=!playing; $('playBtn').textContent=playing?'⏸':'▶'; schedule() };
+$('stepBtn').onclick=()=>stepAI(1);
+$('reveal').onchange=refresh;
+$('undoBtn').onclick=async()=>{ try{ ST=await api('/api/undo',{reveal:reveal()}); highlight=null; render(); schedule() }catch(e){ toast(e.message) } };
+$('speed').oninput=schedule;
+$('deckBtn').onclick=()=>{ deckModal.style.display='grid'; showDeck() };
+$('deckClose').onclick=()=>deckModal.style.display='none';
+$('deckView').onchange=showDeck;
+async function showDeck(){
+  $('deckErr').textContent='';
+  try{ const d=await api('/api/deck?name='+encodeURIComponent($('deckView').value));
+    $('deckText').value=d.text; $('deckName').value=d.name.split('/').pop();
+    const msgs=[...d.errors.map(x=>'✘ '+x), ...d.pending.map(x=>'⚠ '+x)];
+    $('deckErr').style.color=msgs.length?'var(--warn)':'var(--ok)'; $('deckErr').textContent=msgs.join('\n')||'✔ Todas as cartas deste deck estão implementadas.' }catch(e){ $('deckErr').textContent=e.message }
+}
+$('deckSave').onclick=async()=>{
+  try{ const r=await api('/api/deck',{name:$('deckName').value,text:$('deckText').value}); await loadMeta(); $('deckView').value=r.name;
+    $('deckErr').style.color='var(--ok)'; $('deckErr').textContent='Deck salvo: '+r.name+(r.pending.length?'\n⚠ '+r.pending.join('\n⚠ '):'') }
+  catch(e){ $('deckErr').style.color='var(--danger)'; $('deckErr').textContent=e.message }
+};
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){ highlight=null; render(); deckModal.style.display='none'; pileModal.style.display='none'; replayModal.style.display='none' }
+  if(REPLAY&&e.key==='ArrowRight') $('rNext').click(); if(REPLAY&&e.key==='ArrowLeft') $('rPrev').click();
+});
+const deckModal=$('deckModal'), pileModal=$('pileModal'), replayModal=$('replayModal');
+loadMeta().then(refresh).catch(e=>toast('Servidor indisponível: '+e.message));
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "id": "SCR-10",
+  "nome": "Gossifleur",
+  "nome_pt": "Gossifleur",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Spin",
+      "nome_pt": "Giro Duplo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10×",
+      "texto": "Flip 2 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-10",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

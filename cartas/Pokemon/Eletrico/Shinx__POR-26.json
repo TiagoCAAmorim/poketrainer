@@ -1,0 +1,46 @@
+{
+  "id": "POR-26",
+  "nome": "Shinx",
+  "nome_pt": "Shinx",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Scratch",
+      "nome_pt": "Arranhão Duplo",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "10×",
+      "texto": "Flip 2 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-26",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "PBL-75",
+  "nome": "Dark Bell",
+  "nome_pt": "Sino Sombrio",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Both Active non-Darkness Pokémon are now Confused.",
+  "texto_pt": "Qualquer Pokémon Ativo que não seja de tipo Escuridão agora está Confuso.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-75",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-106",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

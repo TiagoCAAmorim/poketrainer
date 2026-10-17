@@ -1,0 +1,65 @@
+{
+  "id": "DRI-20",
+  "nome": "Team Rocket's Spidops",
+  "nome_pt": "Spidops da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Tarountula",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Charging Up",
+      "nome_pt": "Carregando",
+      "texto": "Once during your turn, you may attach a Basic Energy card from your discard pile to this Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá ligar uma carta de Energia Básica da sua pilha de descarte a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Rocket Rush",
+      "nome_pt": "Raiva Rocket",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each of your Team Rocket's Pokémon in play.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada um dos seus Pokémon da Equipe Rocket em jogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-20",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-187",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-19",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ASC-92",
+  "nome": "Rotom",
+  "nome_pt": "Rotom",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Roto Call",
+      "nome_pt": "Chamada Rotom",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "You may search your deck for any number of Pokémon that have \"Rotom\" in their name and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Você pode procurar por qualquer número de Pokémon no seu baralho que têm \"Rotom\" em seu nome e colocá-los no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Gadget Show",
+      "nome_pt": "Show de Bugigangas",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each Pokémon Tool attached to all of your Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada Ferramenta Pokémon ligada a todos os seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-92",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

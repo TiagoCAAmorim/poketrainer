@@ -1,0 +1,56 @@
+{
+  "id": "TWM-72",
+  "nome": "Morpeko",
+  "nome_pt": "Morpeko",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Snack Seek",
+      "nome_pt": "Caçar Lanches",
+      "texto": "Once during your turn, you may look at the top card of your deck. You may discard that card.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá olhar a carta de cima do seu baralho. Você pode descartar aquela carta.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Pick and Stick",
+      "nome_pt": "Pegar pra Mim",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 2 Basic Energy cards from your discard pile to your Pokémon in any way you like.",
+      "texto_pt": "Ligue até 2 cartas de Energia Básica da sua pilha de descarte aos seus Pokémon como desejar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-72",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Snack Seek: Look at the top card of your deck.; You may discard that card."
+    ]
+  }
+}

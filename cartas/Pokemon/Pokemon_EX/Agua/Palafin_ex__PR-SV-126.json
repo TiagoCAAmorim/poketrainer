@@ -1,0 +1,73 @@
+{
+  "id": "PR-SV-126",
+  "nome": "Palafin ex",
+  "nome_pt": "Palafin ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 1",
+  "evolui_de": "Finizen",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Hero's Spirit",
+      "nome_pt": "Espírito de Herói",
+      "texto": "Put this Pokémon into play only with the effect of Palafin's Zero to Hero Ability.",
+      "texto_pt": "Coloque este Pokémon em jogo somente com o efeito da Habilidade Do Abismo ao Heroísmo de Palafin.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Giga Impact",
+      "nome_pt": "Gigaimpacto",
+      "custo": [
+        "Água"
+      ],
+      "dano": "250",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-126",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "TWM-61",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-193",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "PRE-151",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Hero's Spirit: Put this Pokémon into play only with the effect of Palafin's Zero to Hero Ability."
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "PFL-31",
+  "nome": "Boltund",
+  "nome_pt": "Boltund",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Yamper",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Electric Run",
+      "nome_pt": "Corrida Eletrizante",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "70+",
+      "texto": "Flip a coin. If heads, this attack does 70 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 70 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-31",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

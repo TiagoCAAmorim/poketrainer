@@ -1,0 +1,61 @@
+{
+  "id": "PBL-50",
+  "nome": "Mandibuzz",
+  "nome_pt": "Mandibuzz",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Vullaby",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bone Sniper",
+      "nome_pt": "Atirador de Ossos",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "This attack does 70 damage to 1 of your opponent's Pokémon that has any Special Energy attached. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque causa 70 pontos de dano a 1 dos Pokémon do seu oponente que tem alguma Energia Especial ligada a ele. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Blasting Wind",
+      "nome_pt": "Vendaval Avassalador",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-50",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Bone Sniper: This attack does 70 damage to 1 of your opponent's Pokémon that has any Special Energy attached."
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "SSP-126",
+  "nome": "Bronzor",
+  "nome_pt": "Bronzor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Shield Attack",
+      "nome_pt": "Ataque Escudo",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "Flip a coin. If heads, this attack does 20 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 20 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-126",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

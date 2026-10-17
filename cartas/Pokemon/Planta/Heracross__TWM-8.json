@@ -1,0 +1,62 @@
+{
+  "id": "TWM-8",
+  "nome": "Heracross",
+  "nome_pt": "Heracross",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Body Slam",
+      "nome_pt": "Pancada Corporal",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Seismic Toss",
+      "nome_pt": "Arremesso Sísmico",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-8",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

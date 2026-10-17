@@ -1,0 +1,55 @@
+{
+  "id": "30C-8",
+  "nome": "Vivillon",
+  "nome_pt": "Pikachu e Zekrom GX",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 2",
+  "evolui_de": "Spewpa",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Guiding Dance",
+      "nome_pt": null,
+      "texto": "Once during your turn, you may use this Ability. Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Poison Powder",
+      "nome_pt": "Bombardeio Geral",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "Your opponent's Active Pokémon is now Poisoned.",
+      "texto_pt": "Procure por até 3 cartas de Energia <span class=\"energy-symbol Lightning\" title=\"Raios\">Lightning</span> no seu baralho e ligue-as a 1 dos seus Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-8",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

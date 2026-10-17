@@ -1,0 +1,58 @@
+{
+  "id": "SCR-76",
+  "nome": "Rhyperior",
+  "nome_pt": "Rhyperior",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 200,
+  "estagio": "Estágio 2",
+  "evolui_de": "Rhydon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Wide Wall",
+      "nome_pt": "Paredão",
+      "texto": "As long as this Pokémon is in the Active Spot, whenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to all of your Pokémon.",
+      "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, sempre que seu oponente jogar uma carta de Apoiador da mão dele, previna todos os efeitos daquela carta causados a todos os seus Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Drill Run",
+      "nome_pt": "Furação",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "180",
+      "texto": "Discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-76",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Wide Wall: As long as this Pokémon is in the Active Spot, whenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to all of your Pokémon."
+    ]
+  }
+}

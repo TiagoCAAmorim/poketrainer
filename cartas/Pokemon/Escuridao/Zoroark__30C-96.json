@@ -1,0 +1,56 @@
+{
+  "id": "30C-96",
+  "nome": "Zoroark",
+  "nome_pt": "Zoroark",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Nighttime Byway",
+      "nome_pt": "Atalho Noturno",
+      "texto": "As long as this Pokémon is on your Bench, your Active Pokémon's Retreat Cost is 2 less.",
+      "texto_pt": "Enquanto este Pokémon estiver no seu Banco, o Custo de Recuo do seu Pokémon Ativo será ColorlessColorless a menos.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Slashing Claw",
+      "nome_pt": "Garra Cortadora",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-96",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

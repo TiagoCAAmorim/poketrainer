@@ -1,0 +1,63 @@
+{
+  "id": "DRI-38",
+  "nome": "Team Rocket's Houndoom",
+  "nome_pt": "Houndoom da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Houndour",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cruel Coal",
+      "nome_pt": "Carvão Cruel",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Burned and Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso e Queimado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Scorching Fire",
+      "nome_pt": "Fogo Ardente",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-38",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-191",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

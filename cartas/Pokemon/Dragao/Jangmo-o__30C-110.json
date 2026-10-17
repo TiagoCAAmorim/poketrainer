@@ -1,0 +1,58 @@
+{
+  "id": "30C-110",
+  "nome": "Jangmo-o",
+  "nome_pt": "Jangmo-o",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Screech",
+      "nome_pt": "Agudo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "During your next turn, the Defending Pokémon takes 30 more damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o seu próximo turno, o Pokémon Defensor receberá 30 pontos de dano a mais de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dragon Claw",
+      "nome_pt": "Garra de Dragão",
+      "custo": [
+        "Elétrico",
+        "Lutador"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-110",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

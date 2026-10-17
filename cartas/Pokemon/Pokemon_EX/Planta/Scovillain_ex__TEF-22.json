@@ -1,0 +1,60 @@
+{
+  "id": "TEF-22",
+  "nome": "Scovillain ex",
+  "nome_pt": "Scovillain ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Capsakid",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Chili Snapper Bind",
+      "nome_pt": "Abocanhada Picante",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Burned. During your opponent's next turn, that Pokémon can't retreat.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Queimado. Durante o próximo turno do seu oponente, aquele Pokémon não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Two-Headed Crushing",
+      "nome_pt": "Cabeça Dupla Esmagadora",
+      "custo": [
+        "Planta",
+        "Planta"
+      ],
+      "dano": "140",
+      "texto": "Discard a random card from your opponent's hand. Discard the top card of your opponent's deck.",
+      "texto_pt": "Descarte uma carta aleatória da mão do seu oponente. Descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-22",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

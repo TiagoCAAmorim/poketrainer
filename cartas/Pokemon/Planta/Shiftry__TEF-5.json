@@ -1,0 +1,65 @@
+{
+  "id": "TEF-5",
+  "nome": "Shiftry",
+  "nome_pt": "Shiftry",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Nuzleaf",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Expelling Tornado",
+      "nome_pt": "Tornado Repulsor",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Choose 3 of your opponent's Benched Pokémon. If you do, shuffle all of your opponent's Benched Pokémon that you didn't choose, and all cards attached to those Pokémon, into their deck.",
+      "texto_pt": "Escolha 3 dos Pokémon no Banco do seu oponente. Se fizer isto, embaralhe todos os Pokémon no Banco do seu oponente que você não escolheu, e todas as cartas ligadas àqueles Pokémon, de volta no baralho dele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Energy Loop",
+      "nome_pt": "Loop de Energia",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "Put an Energy attached to this Pokémon into your hand.",
+      "texto_pt": "Coloque uma Energia ligada a este Pokémon na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-5",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-163",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Expelling Tornado: Choose 3 of your opponent's Benched Pokémon.; If you do, shuffle all of your opponent's Benched Pokémon that you didn't choose, and all cards attached to those Pokémon, into their deck."
+    ]
+  }
+}

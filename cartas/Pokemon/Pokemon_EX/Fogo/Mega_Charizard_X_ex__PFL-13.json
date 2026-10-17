@@ -1,0 +1,66 @@
+{
+  "id": "PFL-13",
+  "nome": "Mega Charizard X ex",
+  "nome_pt": "Mega Charizard X ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 360,
+  "estagio": "Estágio 2",
+  "evolui_de": "Charmeleon",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Inferno X",
+      "nome_pt": "Inferno X",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "90×",
+      "texto": "Discard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way.",
+      "texto_pt": "Descarte qualquer quantidade de Energia Fogo dentre seus Pokémon, e este ataque causa 90 pontos de dano para cada carta descartada desta forma.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-13",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-109",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-125",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-130",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Inferno X: Discard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way."
+    ]
+  }
+}

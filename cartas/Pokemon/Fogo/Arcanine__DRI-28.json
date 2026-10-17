@@ -1,0 +1,60 @@
+{
+  "id": "DRI-28",
+  "nome": "Arcanine",
+  "nome_pt": "Arcanine",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Growlithe",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flare",
+      "nome_pt": "Chama",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Punishing Fang",
+      "nome_pt": "Caninos Punitivos",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "If your opponent's Active Pokémon is a Darkness Pokémon, this attack does 100 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon Escuridão, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-28",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "30C-100",
+  "nome": "Yveltal",
+  "nome_pt": "Yveltal",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Life-Locked",
+      "nome_pt": "Travar Vida",
+      "texto": "Your opponent's Active Pokémon can't be healed.",
+      "texto_pt": "O Pokémon Ativo do seu oponente não pode ser curado.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Dark Cutter",
+      "nome_pt": "Cortador de Escuridão",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-100",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Life-Locked: Your opponent's Active Pokémon can't be healed."
+    ]
+  }
+}

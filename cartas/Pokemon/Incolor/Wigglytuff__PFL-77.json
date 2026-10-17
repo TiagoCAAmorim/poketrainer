@@ -1,0 +1,67 @@
+{
+  "id": "PFL-77",
+  "nome": "Wigglytuff",
+  "nome_pt": "Wigglytuff",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Jigglypuff",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Round",
+      "nome_pt": "Circular",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each of your Pokémon in play that has the Round attack.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada um dos seus Pokémon em jogo que tiver o ataque Circular.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Seismic Toss",
+      "nome_pt": "Arremesso Sísmico",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-77",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-105",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Round: This attack does 40 damage for each of your Pokémon in play that has the Round attack."
+    ]
+  }
+}

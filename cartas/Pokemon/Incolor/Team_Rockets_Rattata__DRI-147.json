@@ -1,0 +1,46 @@
+{
+  "id": "DRI-147",
+  "nome": "Team Rocket's Rattata",
+  "nome_pt": "Rattata da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 50,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dangerous Incisors",
+      "nome_pt": "Incisivos Perigosos",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10",
+      "texto": "Your opponent's Active Pokémon is now Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-147",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

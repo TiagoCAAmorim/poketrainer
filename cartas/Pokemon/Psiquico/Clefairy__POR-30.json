@@ -1,0 +1,63 @@
+{
+  "id": "POR-30",
+  "nome": "Clefairy",
+  "nome_pt": "Clefairy",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Follow Me",
+      "nome_pt": "Isca-viva",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+      "texto_pt": "Mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Flop",
+      "nome_pt": "Baque",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-30",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-94",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

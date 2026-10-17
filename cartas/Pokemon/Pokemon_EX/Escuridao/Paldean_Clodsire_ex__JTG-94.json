@@ -1,0 +1,62 @@
+{
+  "id": "JTG-94",
+  "nome": "Paldean Clodsire ex",
+  "nome_pt": "Clodsire de Paldea ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 1",
+  "evolui_de": "Paldean Wooper",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Poison Ring",
+      "nome_pt": "Anel de Veneno",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "Your opponent's Active Pokémon is now Poisoned. During your opponent's next turn, that Pokémon can't retreat.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado. Durante o próximo turno do seu oponente, aquele Pokémon não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Giga Impact",
+      "nome_pt": "Gigaimpacto",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "220",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-94",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

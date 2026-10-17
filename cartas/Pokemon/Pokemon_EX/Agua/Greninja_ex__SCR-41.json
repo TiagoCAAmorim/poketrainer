@@ -1,0 +1,49 @@
+{
+  "id": "SCR-41",
+  "nome": "Greninja ex",
+  "nome_pt": "Greninja ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 300,
+  "estagio": "Estágio 2",
+  "evolui_de": "Frogadier",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Shifting Shuriken",
+      "nome_pt": "Estrela Ninja Mutável",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "Flip a coin. If heads, this attack does 100 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-41",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

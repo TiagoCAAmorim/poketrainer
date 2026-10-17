@@ -1,0 +1,60 @@
+{
+  "id": "PBL-29",
+  "nome": "Slowpoke",
+  "nome_pt": "Slowpoke",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "All-You-Can-Yeet",
+      "nome_pt": "Taca à Vontade",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "You may discard any number of cards from your hand.",
+      "texto_pt": "Você pode descartar qualquer número de cartas da sua mão.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Headbutt",
+      "nome_pt": "Cabeçada",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-29",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque All-You-Can-Yeet: You may discard any number of cards from your hand."
+    ]
+  }
+}

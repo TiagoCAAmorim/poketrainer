@@ -1,0 +1,71 @@
+{
+  "id": "SSP-48",
+  "nome": "Black Kyurem ex",
+  "nome_pt": "Kyurem Preto ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 230,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ice Age",
+      "nome_pt": "Era do Gelo",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "If your opponent's Active Pokémon is a Dragon Pokémon, it is now Paralyzed.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon Dragão, ele agora estará Paralisado.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Black Frost",
+      "nome_pt": "Geada Negra",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "250",
+      "texto": "This Pokémon also does 30 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 30 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-48",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-218",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Ice Age: If your opponent's Active Pokémon is a Dragon Pokémon, it is now Paralyzed."
+    ]
+  }
+}

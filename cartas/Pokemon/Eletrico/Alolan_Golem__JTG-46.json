@@ -1,0 +1,58 @@
+{
+  "id": "JTG-46",
+  "nome": "Alolan Golem",
+  "nome_pt": "Golem de Alola",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Alolan Graveler",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Electromagnetic Catapult",
+      "nome_pt": "Catapulta Eletromagnética",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "70×",
+      "texto": "Flip a coin until you get tails. This attack does 70 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 70 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Megaton Fall",
+      "nome_pt": "Queda do Megaton",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "This Pokémon also does 40 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 40 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-46",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

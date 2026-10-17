@@ -1,0 +1,49 @@
+{
+  "id": "JTG-96",
+  "nome": "N's Purrloin",
+  "nome_pt": "Purrloin do N",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Thieving Swipe",
+      "nome_pt": "Gatunar",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Your opponent reveals their hand, and you choose a card you find there and put it on the bottom of their deck.",
+      "texto_pt": "Seu oponente revela a mão dele, e você escolhe uma carta que encontrar lá e a coloca como a carta de baixo do baralho dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-96",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Thieving Swipe: Your opponent reveals their hand, and you choose a card you find there and put it on the bottom of their deck."
+    ]
+  }
+}

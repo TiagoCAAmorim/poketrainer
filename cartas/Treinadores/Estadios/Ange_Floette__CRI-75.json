@@ -1,0 +1,25 @@
+{
+  "id": "CRI-75",
+  "nome": "Ange Floette",
+  "nome_pt": "Floette Ange",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "You can put this card into play only if you discard a Prism Tower in play, and you can put this card into play during the same turn you play Prism Tower. Each Mega Floette ex in play (both yours and your opponent's) gets +150 HP.",
+  "texto_pt": "Você só pode colocar esta carta em jogo se descartar uma Torre Prisma em jogo, e você pode colocar esta carta em jogo durante o mesmo turno que jogar Torre Prisma. Cada Mega Floette ex em jogo (seus e do seu oponente) recebe +150 PS.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-75",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

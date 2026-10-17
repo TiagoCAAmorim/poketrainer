@@ -1,0 +1,62 @@
+{
+  "id": "TWM-92",
+  "nome": "Palossand",
+  "nome_pt": "Palossand",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sandygast",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Sand Attack",
+      "nome_pt": "Ataque de Areia",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "During your opponent's next turn, if the Defending Pokémon tries to use an attack, your opponent flips a coin. If tails, that attack doesn't happen.",
+      "texto_pt": "Durante o próximo turno do seu oponente, se o Pokémon Defensor tentar usar um ataque, seu oponente jogará uma moeda. Se sair coroa, aquele ataque não acontecerá.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Spooky Sand",
+      "nome_pt": "Areia Assustadora",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-92",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

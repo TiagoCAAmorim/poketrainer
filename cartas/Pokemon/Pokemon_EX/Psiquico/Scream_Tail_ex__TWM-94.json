@@ -1,0 +1,69 @@
+{
+  "id": "TWM-94",
+  "nome": "Scream Tail ex",
+  "nome_pt": "Cauda Brado ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 190,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Scream",
+      "nome_pt": "Berro",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "You can use this attack only if you go second, and only during your first turn. Your opponent can't play any Supporter cards from their hand during their next turn.",
+      "texto_pt": "Você só pode usar este ataque se for o segundo a jogar e somente durante o seu primeiro turno. Seu oponente não poderá jogar nenhuma carta de Apoiador da mão dele durante o próximo turno dele.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Crunch",
+      "nome_pt": "Mastigada",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-94",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-197",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Scream: Your opponent can't play any Supporter cards from their hand during their next turn."
+    ]
+  }
+}

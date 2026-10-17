@@ -1,0 +1,69 @@
+{
+  "id": "SFA-15",
+  "nome": "Revavroom ex",
+  "nome_pt": "Revavroom ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 1",
+  "evolui_de": "Varoom",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Accelerator Flash",
+      "nome_pt": "Clarão do Acelerador",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "20+",
+      "texto": "If this Pokémon moved from your Bench to the Active Spot this turn, this attack does 120 more damage.",
+      "texto_pt": "Se este Pokémon foi movido do seu Banco para o Campo Ativo neste turno, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Shattering Speed",
+      "nome_pt": "Velocidade Desintegradora",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Metal"
+      ],
+      "dano": "250",
+      "texto": "Discard this Pokémon and all attached cards.",
+      "texto_pt": "Descarte este Pokémon e todas as cartas ligadas a ele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-15",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-81",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Shattering Speed: Discard this Pokémon and all attached cards."
+    ]
+  }
+}

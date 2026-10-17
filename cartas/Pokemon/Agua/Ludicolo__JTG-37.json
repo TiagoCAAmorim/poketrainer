@@ -1,0 +1,58 @@
+{
+  "id": "JTG-37",
+  "nome": "Ludicolo",
+  "nome_pt": "Ludicolo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Lombre",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Vibrant Dance",
+      "nome_pt": "Samba da Vitalidade",
+      "texto": "All of your Pokémon in play get +40 HP. The effect of Vibrant Dance doesn't stack.",
+      "texto_pt": "Todos os seus Pokémon em jogo recebem 40 PS a mais. O efeito de Samba da Vitalidade não acumula.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Hydro Splash",
+      "nome_pt": "Hidroborrifada",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-37",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Vibrant Dance: All of your Pokémon in play get +40 HP. The effect of Vibrant Dance doesn't stack."
+    ]
+  }
+}

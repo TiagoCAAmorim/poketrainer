@@ -1,0 +1,56 @@
+{
+  "id": "PR-ME-86",
+  "nome": "Slowpoke",
+  "nome_pt": "Slowpoke",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Dopey Face",
+      "nome_pt": null,
+      "texto": "This Pokémon can't be Confused.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Super Psy Bolt",
+      "nome_pt": null,
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-86",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

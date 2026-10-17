@@ -1,0 +1,60 @@
+{
+  "id": "CRI-18",
+  "nome": "Delibird",
+  "nome_pt": "Delibird",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pleasing Present",
+      "nome_pt": "Presentão",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Each player may attach up to 3 Basic Energy cards from their hand to their Pokémon in any way they like. Your opponent does this first.",
+      "texto_pt": "Cada jogador pode ligar até 3 cartas de Energia Básica da própria mão aos próprios Pokémon como desejar. Seu oponente faz isso primeiro.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Flap",
+      "nome_pt": "Asa",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-18",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Pleasing Present: Each player may attach up to 3 Basic Energy cards from their hand to their Pokémon in any way they like.; Your opponent does this first."
+    ]
+  }
+}

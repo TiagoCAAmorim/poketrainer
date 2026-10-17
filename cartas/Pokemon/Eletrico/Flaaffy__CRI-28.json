@@ -1,0 +1,47 @@
+{
+  "id": "CRI-28",
+  "nome": "Flaaffy",
+  "nome_pt": "Flaaffy",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Mareep",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Disconnect",
+      "nome_pt": "Desconexão",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "During your opponent's next turn, they can't play any Item cards from their hand.",
+      "texto_pt": "Durante o próximo turno do seu oponente, ele não poderá jogar nenhuma carta de Item da mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-28",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

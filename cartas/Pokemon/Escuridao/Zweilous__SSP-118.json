@@ -1,0 +1,59 @@
+{
+  "id": "SSP-118",
+  "nome": "Zweilous",
+  "nome_pt": "Zweilous",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Deino",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Stomp Off",
+      "nome_pt": "Sair Irritado",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Discard the top 2 cards of your opponent's deck.",
+      "texto_pt": "Descarte as 2 cartas de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Darkness Fang",
+      "nome_pt": "Presa Sombria",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-118",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

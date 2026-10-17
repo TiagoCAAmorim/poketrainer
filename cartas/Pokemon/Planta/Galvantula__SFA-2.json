@@ -1,0 +1,55 @@
+{
+  "id": "SFA-2",
+  "nome": "Galvantula",
+  "nome_pt": "Galvantula",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Joltik",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Compound Eyes",
+      "nome_pt": "Olhos Compostos",
+      "texto": "Attacks used by this Pokémon do 50 more damage to your opponent's Active Pokémon that has an Ability (before applying Weakness and Resistance).",
+      "texto_pt": "Os ataques usados por este Pokémon causam 50 pontos de dano a mais ao Pokémon Ativo do seu oponente que tem uma Habilidade (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Shocking Web",
+      "nome_pt": "Teia Eletrizante",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "50+",
+      "texto": "If this Pokémon has any Lightning Energy attached, this attack does 80 more damage.",
+      "texto_pt": "Se este Pokémon tiver alguma Energia Elétrico ligada a ele, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-2",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

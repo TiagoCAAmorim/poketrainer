@@ -1,0 +1,58 @@
+{
+  "id": "TEF-4",
+  "nome": "Nuzleaf",
+  "nome_pt": "Nuzleaf",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Seedot",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Corkscrew Punch",
+      "nome_pt": "Soco Saca-rolha",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Comet Slap",
+      "nome_pt": "Tapa Cometa",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30×",
+      "texto": "Flip 3 coins. This attack does 30 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 30 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-4",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

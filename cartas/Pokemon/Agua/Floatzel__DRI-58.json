@@ -1,0 +1,60 @@
+{
+  "id": "DRI-58",
+  "nome": "Floatzel",
+  "nome_pt": "Floatzel",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Buizel",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Whirlpool",
+      "nome_pt": "Redemoinho",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Aqua Slash",
+      "nome_pt": "Aqua Corte",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-58",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

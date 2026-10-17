@@ -1,0 +1,62 @@
+{
+  "id": "CRI-55",
+  "nome": "Krookodile ex",
+  "nome_pt": "Krookodile ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 320,
+  "estagio": "Estágio 2",
+  "evolui_de": "Krokorok",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Corner",
+      "nome_pt": "Quina",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Strong Bite",
+      "nome_pt": "Mordida Mordaz",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "140+",
+      "texto": "If this Pokémon has a Pokémon Tool attached, this attack does 140 more damage.",
+      "texto_pt": "Se este Pokémon tiver uma Ferramenta Pokémon ligada a ele, este ataque causará 140 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "CRI-55",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

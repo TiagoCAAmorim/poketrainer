@@ -1,0 +1,62 @@
+{
+  "id": "TWM-105",
+  "nome": "Conkeldurr",
+  "nome_pt": "Conkeldurr",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Gurdurr",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tantrum",
+      "nome_pt": "Petulância",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "80",
+      "texto": "This Pokémon is now Confused.",
+      "texto_pt": "Este Pokémon agora está Confuso.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Gutsy Swing",
+      "nome_pt": "Balanço Destemido",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "250",
+      "texto": "If this Pokémon is affected by a Special Condition, ignore all Energy in this attack's cost.",
+      "texto_pt": "Se este Pokémon estiver afetado por uma Condição Especial, ignore todas as Energias no custo deste ataque.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-105",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Gutsy Swing: If this Pokémon is affected by a Special Condition, ignore all Energy in this attack's cost."
+    ]
+  }
+}

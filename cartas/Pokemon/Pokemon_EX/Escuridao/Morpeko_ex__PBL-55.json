@@ -1,0 +1,70 @@
+{
+  "id": "PBL-55",
+  "nome": "Morpeko ex",
+  "nome_pt": "Morpeko ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 180,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wheely Draw",
+      "nome_pt": "Comprando e Rodando",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Shuffle your hand into your deck. Then, draw 6 cards.",
+      "texto_pt": "Embaralhe a sua mão no seu baralho. Em seguida, compre 6 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Hangry Blaster",
+      "nome_pt": "Detonador Voraz",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "40+",
+      "texto": "This attack does 40 more damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano a mais para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-55",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-102",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-117",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

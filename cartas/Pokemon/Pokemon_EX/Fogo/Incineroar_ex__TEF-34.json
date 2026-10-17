@@ -1,0 +1,67 @@
+{
+  "id": "TEF-34",
+  "nome": "Incineroar ex",
+  "nome_pt": "Incineroar ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 320,
+  "estagio": "Estágio 2",
+  "evolui_de": "Torracat",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Hustle Play",
+      "nome_pt": "Cair pra Dentro",
+      "texto": "Attacks used by this Pokémon cost Colorless less for each of your opponent's Benched Pokémon.",
+      "texto_pt": "Os ataques usados por este Pokémon custam Incolor a menos para cada Pokémon no Banco do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Blaze Blast",
+      "nome_pt": "Incêndio Explosivo",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "240",
+      "texto": "Your opponent's Active Pokémon is now Burned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Queimado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-34",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-187",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Hustle Play: Attacks used by this Pokémon cost Colorless less for each of your opponent's Benched Pokémon."
+    ]
+  }
+}

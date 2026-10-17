@@ -1,0 +1,66 @@
+{
+  "id": "PRE-75",
+  "nome": "Eevee ex",
+  "nome_pt": "Eevee ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 200,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Rainbow DNA",
+      "nome_pt": "DNA Arco-íris",
+      "texto": "This Pokémon can evolve into any Pokémon ex that evolves from Eevee if you play it from your hand onto this Pokémon. (This Pokémon can't evolve during your first turn or the turn you play it.)",
+      "texto_pt": "Este Pokémon poderá evoluir para qualquer Pokémon ex que evolua de Eevee se você jogar aquele Pokémon ex da sua mão sobre este Pokémon. (Este Pokémon não poderá evoluir durante o seu primeiro turno ou durante o turno em que for colocado em jogo.)",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Coruscating Quartz",
+      "nome_pt": "Quartzo Cintilante",
+      "custo": [
+        "Fogo",
+        "Água",
+        "Elétrico"
+      ],
+      "dano": "200",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-75",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-167",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Rainbow DNA: This Pokémon can evolve into any Pokémon ex that evolves from Eevee if you play it from your hand onto this Pokémon."
+    ]
+  }
+}

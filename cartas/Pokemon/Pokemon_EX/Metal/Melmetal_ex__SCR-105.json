@@ -1,0 +1,51 @@
+{
+  "id": "SCR-105",
+  "nome": "Melmetal ex",
+  "nome_pt": "Melmetal ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 1",
+  "evolui_de": "Meltan",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Iron Swing",
+      "nome_pt": "Giro Metálico",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100×",
+      "texto": "Flip 2 coins. This attack does 100 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 100 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-105",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

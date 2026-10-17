@@ -1,0 +1,35 @@
+{
+  "id": "BLK-79",
+  "nome": "Air Balloon",
+  "nome_pt": "Balão de Ar",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "The Retreat Cost of the Pokémon this card is attached to is ColorlessColorless less.",
+  "texto_pt": "O custo de Recuo do Pokémon ao qual esta carta está ligada é IncolorIncolor a menos.",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-79",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "MEG-166",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-181",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

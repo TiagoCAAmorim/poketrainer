@@ -1,0 +1,47 @@
+{
+  "id": "ASC-41",
+  "nome": "Totodile",
+  "nome_pt": "Totodile",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Slight Intrusion",
+      "nome_pt": "Leve Invasão",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "40",
+      "texto": "This Pokémon also does 10 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 10 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-41",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

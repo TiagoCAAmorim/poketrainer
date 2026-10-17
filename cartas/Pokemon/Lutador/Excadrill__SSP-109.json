@@ -1,0 +1,58 @@
+{
+  "id": "SSP-109",
+  "nome": "Excadrill",
+  "nome_pt": "Excadrill",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Drilbur",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Digging Claw",
+      "nome_pt": "Garras de Escavação",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Discard the top card of your opponent's deck.",
+      "texto_pt": "Descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Drill Smash",
+      "nome_pt": "Pancada Perfurante",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "If you have any Metal Pokémon on your Bench, this attack does 80 more damage.",
+      "texto_pt": "Se você tiver algum Pokémon Metal no seu Banco, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-109",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

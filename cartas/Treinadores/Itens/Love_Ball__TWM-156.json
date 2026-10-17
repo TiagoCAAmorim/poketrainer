@@ -1,0 +1,23 @@
+{
+  "id": "TWM-156",
+  "nome": "Love Ball",
+  "nome_pt": "Bola Amor",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Search your deck for a Pokémon with the same name as 1 of your opponent's Pokémon in play, reveal it, and put it into your hand. Then, shuffle your deck.",
+  "texto_pt": "Procure por um Pokémon no seu baralho que tenha o mesmo nome de 1 dos Pokémon do seu oponente em jogo, revele-o e coloque-o na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-156",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

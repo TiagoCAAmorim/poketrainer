@@ -1,0 +1,23 @@
+{
+  "id": "DRI-161",
+  "nome": "Arven's Sandwich",
+  "nome_pt": "Sanduíche do Arven",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Heal 30 damage from your Active Pokémon. If that Pokémon is an Arven's Pokémon, heal 100 damage from it instead.",
+  "texto_pt": "Cure 30 pontos de dano do seu Pokémon Ativo. Se aquele Pokémon for um Pokémon do Arven, cure 100 pontos de dano dele ao invés de 30.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-161",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

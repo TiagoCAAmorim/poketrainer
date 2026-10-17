@@ -1,0 +1,60 @@
+{
+  "id": "JTG-92",
+  "nome": "Weezing",
+  "nome_pt": "Weezing",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Koffing",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pervasive Gas",
+      "nome_pt": "Gás Pervasivo",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "30",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Crazy Blast",
+      "nome_pt": "Explosão Insana",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "50+",
+      "texto": "If this Pokémon used Pervasive Gas during your last turn, this attack does 120 more damage.",
+      "texto_pt": "Se este Pokémon usou Gás Pervasivo durante o seu último turno, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-92",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Crazy Blast: If this Pokémon used Pervasive Gas during your last turn, this attack does 120 more damage."
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "TWM-63",
+  "nome": "Walking Wake",
+  "nome_pt": "Onda Ando",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aurora Gain",
+      "nome_pt": "Aurora",
+      "custo": [
+        "Água"
+      ],
+      "dano": "20",
+      "texto": "Heal 20 damage from this Pokémon.",
+      "texto_pt": "Cure 20 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Undulating Slice",
+      "nome_pt": "Corte Ondulado",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "Put up to 9 damage counters on this Pokémon. This attack does 20 damage for each damage counter you placed in this way.",
+      "texto_pt": "Coloque até 9 contadores de dano neste Pokémon. Este ataque causa 20 pontos de dano para cada contador de dano colocado desta forma.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-63",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Undulating Slice: Put up to 9 damage counters on this Pokémon.; This attack does 20 damage for each damage counter you placed in this way."
+    ]
+  }
+}

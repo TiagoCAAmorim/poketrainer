@@ -1,0 +1,58 @@
+{
+  "id": "SCR-98",
+  "nome": "Jirachi",
+  "nome_pt": "Jirachi",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Swelling Wish",
+      "nome_pt": "Desejo Crescente",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach a Basic Energy card from your discard pile to 1 of your Benched Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia Básica da sua pilha de descarte a 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Slap",
+      "nome_pt": "Tapa",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-98",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "SSP-36",
+  "nome": "Ceruledge ex",
+  "nome_pt": "Ceruledge ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Charcadet",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Abyssal Flames",
+      "nome_pt": "Chamas Abissais",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "30+",
+      "texto": "This attack does 20 more damage for each Energy card in your discard pile.",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada carta de Energia na sua pilha de descarte.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Raging Amethyst",
+      "nome_pt": "Ametista Feroz",
+      "custo": [
+        "Fogo",
+        "Psíquico",
+        "Metal"
+      ],
+      "dano": "280",
+      "texto": "Discard all Energy from this Pokémon.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-36",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "PRE-147",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

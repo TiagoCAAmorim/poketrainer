@@ -1,0 +1,65 @@
+{
+  "id": "ASC-132",
+  "nome": "Galarian Obstagoon",
+  "nome_pt": "Obstagoon de Galar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Galarian Linoone",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Scarring Shout",
+      "nome_pt": "Grito Grosseirão",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "70×",
+      "texto": "This attack does 70 damage for each damage counter on your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 70 pontos de dano para cada contador de dano no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Punk Smash",
+      "nome_pt": "Esmagada Punk",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-132",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-245",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "TWM-117",
+  "nome": "Scolipede",
+  "nome_pt": "Scolipede",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Whirlipede",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dastardly Jab",
+      "nome_pt": "Punhalada Indecorosa",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Put damage counters on your opponent's Active Pokémon until its remaining HP is 10.",
+      "texto_pt": "Coloque contadores de dano no Pokémon Ativo do seu oponente até o PS restante dele ser 10.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Sludge Bomb",
+      "nome_pt": "Bomba de Lodo",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-117",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

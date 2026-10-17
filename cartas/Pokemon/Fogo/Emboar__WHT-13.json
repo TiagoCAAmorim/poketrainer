@@ -1,0 +1,62 @@
+{
+  "id": "WHT-13",
+  "nome": "Emboar",
+  "nome_pt": "Emboar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Pignite",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Inferno Fandango",
+      "nome_pt": "Inferno Fandango",
+      "texto": "As often as you like during your turn, you may attach a Basic Fire Energy card from your hand to 1 of your Pokémon.",
+      "texto_pt": "Quantas vezes desejar durante o seu turno, você poderá ligar uma carta de Energia Fogo Básica da sua mão a 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Heat Crash",
+      "nome_pt": "Choque de Calor",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-13",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-98",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

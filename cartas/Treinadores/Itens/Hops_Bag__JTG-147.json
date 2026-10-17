@@ -1,0 +1,23 @@
+{
+  "id": "JTG-147",
+  "nome": "Hop's Bag",
+  "nome_pt": "Bolsa do Lupo",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Search your deck for up to 2 Basic Hop's Pokémon and put them onto your Bench. Then, shuffle your deck.",
+  "texto_pt": "Procure por até 2 Pokémon do Lupo Básicos no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-147",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

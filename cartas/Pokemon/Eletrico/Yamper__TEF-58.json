@@ -1,0 +1,46 @@
+{
+  "id": "TEF-58",
+  "nome": "Yamper",
+  "nome_pt": "Yamper",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Whimsy Tackle",
+      "nome_pt": "Investida Fantástica",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Flip a coin. If tails, this attack does nothing.",
+      "texto_pt": "Jogue uma moeda. Se sair coroa, este ataque não fará nada.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-58",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

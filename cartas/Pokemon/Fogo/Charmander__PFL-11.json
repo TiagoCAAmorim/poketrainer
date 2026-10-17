@@ -1,0 +1,54 @@
+{
+  "id": "PFL-11",
+  "nome": "Charmander",
+  "nome_pt": "Charmander",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Agile",
+      "nome_pt": "Sagaz",
+      "texto": "If this Pokémon has no Energy attached, it has no Retreat Cost.",
+      "texto_pt": "Se este Pokémon não tiver nenhuma Energia ligada a ele, não terá Custo de Recuo.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Live Coal",
+      "nome_pt": "Carvão Vivo",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-11",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "MEG-125",
+  "nome": "Rare Candy",
+  "nome_pt": "Doce Raro",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it, skipping the Stage 1. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.",
+  "texto_pt": "Escolha 1 dos seus Pokémon Básicos em jogo. Se você tiver uma carta de Estágio 2 na sua mão que evolua daquele Pokémon, coloque-a sobre o Pokémon Básico para evoluí-lo, pulando o Estágio 1. Você não pode usar esta carta durante o seu primeiro turno ou em um Pokémon Básico que foi colocado em jogo neste turno.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-125",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-175",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

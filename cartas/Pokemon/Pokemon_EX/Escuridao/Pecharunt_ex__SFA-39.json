@@ -1,0 +1,77 @@
+{
+  "id": "SFA-39",
+  "nome": "Pecharunt ex",
+  "nome_pt": "Pecharunt ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 190,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Subjugating Chains",
+      "nome_pt": "Correntes da Submissão",
+      "texto": "Once during your turn, you may switch 1 of your Benched Darkness Pokémon, except any Pecharunt ex, with your Active Pokémon. If you do, the new Active Pokémon is now Poisoned. You can't use more than 1 Subjugating Chains Ability each turn.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá trocar 1 dos seus Pokémon Escuridão no Banco, exceto por quaisquer Pecharunt ex, pelo seu Pokémon Ativo. Se fizer isto, o novo Pokémon Ativo agora estará Envenenado. Você não pode usar mais de 1 Habilidade Correntes da Submissão por turno.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Irritated Outburst",
+      "nome_pt": "Chilique",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "60×",
+      "texto": "This attack does 60 damage for each Prize card your opponent has taken.",
+      "texto_pt": "Este ataque causa 60 pontos de dano para cada carta de Prêmio que seu oponente pegou.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-39",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-85",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-93",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-95",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "PRE-163",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

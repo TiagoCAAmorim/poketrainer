@@ -1,0 +1,28 @@
+{
+  "id": "PFL-86",
+  "nome": "Blowtorch",
+  "nome_pt": "Maçarico",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "You can use this card only if you discard a Basic Fire Energy card from your hand. Discard a Pokémon Tool or Special Energy card from 1 of your opponent's Pokémon, or discard a Stadium in play.",
+  "texto_pt": "Você só pode usar esta carta se descartar uma carta de Energia Fogo Básica da sua mão. Descarte uma carta de Ferramenta Pokémon ou Energia Especial de 1 dos Pokémon do seu oponente, ou descarte um Estádio em jogo.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-86",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-117",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

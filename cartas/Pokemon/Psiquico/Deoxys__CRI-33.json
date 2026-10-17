@@ -1,0 +1,50 @@
+{
+  "id": "CRI-33",
+  "nome": "Deoxys",
+  "nome_pt": "Deoxys",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Psy Protection",
+      "nome_pt": "Defesa Psíquica",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Pokémon that have an Ability.",
+      "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a este Pokémon por ataques de Pokémon que têm uma Habilidade.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-33",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Psy Protection: During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Pokémon that have an Ability."
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "CRI-43",
+  "nome": "Sudowoodo",
+  "nome_pt": "Sudowoodo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Trials and Trip-ulations",
+      "nome_pt": "Trancos e Travessias",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 Transformation Tome cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 2 cartas Tomo da Transformação no seu baralho, revele-as e coloque-as na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Rock Hurl",
+      "nome_pt": "Lançamento de Pedras",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30",
+      "texto": "This attack's damage isn't affected by Resistance.",
+      "texto_pt": "O dano deste ataque não é afetado por Resistência.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-43",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

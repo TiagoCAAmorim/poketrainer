@@ -1,0 +1,59 @@
+{
+  "id": "30C-80",
+  "nome": "Lunala",
+  "nome_pt": "Lunala",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Cosmoem",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Midnight Ray",
+      "nome_pt": "Feixe da Meia-noite",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 20 more damage for each Energy card in your discard pile.",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada carta de Energia na sua pilha de descarte.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Lunar Blast",
+      "nome_pt": "Detonação Lunar",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-80",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

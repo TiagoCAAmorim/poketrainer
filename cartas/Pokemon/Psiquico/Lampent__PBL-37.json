@@ -1,0 +1,46 @@
+{
+  "id": "PBL-37",
+  "nome": "Lampent",
+  "nome_pt": "Lampent",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Litwick",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spreading Light",
+      "nome_pt": "Alastrar Luz",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 3 Lampent and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 3 Lampent no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-37",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

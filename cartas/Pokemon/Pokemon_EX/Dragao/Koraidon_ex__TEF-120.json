@@ -1,0 +1,63 @@
+{
+  "id": "TEF-120",
+  "nome": "Koraidon ex",
+  "nome_pt": "Koraidon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 230,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Retribution Strike",
+      "nome_pt": "Golpe de Retribuição",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 10 more damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano a mais para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Kaiser Tackle",
+      "nome_pt": "Colisão do Imperador",
+      "custo": [
+        "Fogo",
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "280",
+      "texto": "This Pokémon also does 60 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 60 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-120",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

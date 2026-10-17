@@ -1,0 +1,58 @@
+{
+  "id": "PFL-63",
+  "nome": "Absol",
+  "nome_pt": "Absol",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Allure",
+      "nome_pt": "Fascinar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw 2 cards.",
+      "texto_pt": "Compre 2 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dark Cutter",
+      "nome_pt": "Cortador de Escuridão",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-63",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

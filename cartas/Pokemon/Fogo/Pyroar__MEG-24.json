@@ -1,0 +1,56 @@
+{
+  "id": "MEG-24",
+  "nome": "Pyroar",
+  "nome_pt": "Pyroar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Litleo",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Intimidating Fang",
+      "nome_pt": "Presa Intimidadora",
+      "texto": "As long as this Pokémon is in the Active Spot, attacks used by your opponent's Active Pokémon do 30 less damage (before applying Weakness and Resistance).",
+      "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, os ataques usados pelo Pokémon Ativo do seu oponente causarão 30 pontos de dano a menos (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Searing Flame",
+      "nome_pt": "Chama Cauterizante",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "Your opponent's Active Pokémon is now Burned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Queimado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-24",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

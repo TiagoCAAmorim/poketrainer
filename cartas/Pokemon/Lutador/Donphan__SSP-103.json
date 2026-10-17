@@ -1,0 +1,59 @@
+{
+  "id": "SSP-103",
+  "nome": "Donphan",
+  "nome_pt": "Donphan",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Phanpy",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Knock Flat",
+      "nome_pt": "Dar uma Sova",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "40",
+      "texto": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Guarded Rolling",
+      "nome_pt": "Proteção Rolante",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Discard 2 Energy from this Pokémon. During your opponent's next turn, this Pokémon takes 100 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Descarte 2 Energias deste Pokémon. Durante o próximo turno do seu oponente, este Pokémon receberá 100 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-103",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

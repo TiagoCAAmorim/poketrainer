@@ -1,0 +1,51 @@
+{
+  "id": "BLK-75",
+  "nome": "Minccino",
+  "nome_pt": "Minccino",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tail Slap",
+      "nome_pt": "Tapa de Cauda",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "Flip 2 coins. This attack does 20 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 20 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-75",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-152",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "PR-ME-26",
+  "nome": "Meloetta",
+  "nome_pt": "Meloetta",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Soothing Melody",
+      "nome_pt": "Melodia Salutífera",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Heal 120 damage from 1 of your Benched Psychic Pokémon.",
+      "texto_pt": "Cure 120 pontos de dano de 1 dos seus Pokémon Psíquico no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Magical Shot",
+      "nome_pt": "Tiro Mágico",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-26",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PFL-40",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

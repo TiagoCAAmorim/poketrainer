@@ -1,0 +1,53 @@
+{
+  "id": "ASC-104",
+  "nome": "Medicham",
+  "nome_pt": "Medicham",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Meditite",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Seventh Kick",
+      "nome_pt": "Sétimo Chute",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "150",
+      "texto": "If you don't have exactly 7 cards in your hand, this attack does nothing.",
+      "texto_pt": "Se você não tiver exatamente 7 cartas na sua mão, este ataque não fará nada.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-104",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-241",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Seventh Kick: If you don't have exactly 7 cards in your hand, this attack does nothing."
+    ]
+  }
+}

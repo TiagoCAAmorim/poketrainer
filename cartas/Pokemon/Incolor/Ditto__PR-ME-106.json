@@ -1,0 +1,54 @@
+{
+  "id": "PR-ME-106",
+  "nome": "Ditto",
+  "nome_pt": "Ditto",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Surprisingly Transform",
+      "nome_pt": "Transformação Surpresa",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, search your deck for a Pokémon and switch it with this Pokémon. Any attached cards, damage counters, Special Conditions, turns in play, and any other effects remain on the new Pokémon. If you switched a Pokémon in this way, put this card into your deck. Then, shuffle your deck.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, procure por um Pokémon no seu baralho e troque-o por este Pokémon. Quaisquer cartas ligadas, contadores de dano, Condições Especiais, turnos em jogo e quaisquer outros efeitos permanecem no novo Pokémon. Se você trocou um Pokémon desta forma, coloque esta carta no seu baralho. Em seguida, embaralhe o seu baralho.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-106",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "30C-115",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Surprisingly Transform: If heads, search your deck for a Pokémon and switch it with this Pokémon.; Any attached cards, damage counters, Special Conditions, turns in play, and any other effects remain on the new Pokémon.; If you switched a Pokémon in this way, put this card into your deck."
+    ]
+  }
+}

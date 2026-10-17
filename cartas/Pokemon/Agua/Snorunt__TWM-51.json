@@ -1,0 +1,49 @@
+{
+  "id": "TWM-51",
+  "nome": "Snorunt",
+  "nome_pt": "Snorunt",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Astonish",
+      "nome_pt": "Abismar",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Choose a random card from your opponent's hand. Your opponent reveals that card and shuffles it into their deck.",
+      "texto_pt": "Escolha uma carta aleatória da mão do seu oponente. Seu oponente revela aquela carta e a embaralha no baralho dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-51",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Astonish: Choose a random card from your opponent's hand.; Your opponent reveals that card and shuffles it into their deck."
+    ]
+  }
+}

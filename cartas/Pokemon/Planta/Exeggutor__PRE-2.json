@@ -1,0 +1,60 @@
+{
+  "id": "PRE-2",
+  "nome": "Exeggutor",
+  "nome_pt": "Exeggutor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Exeggcute",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mega Drain",
+      "nome_pt": "Megadreno",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Heal 30 damage from this Pokémon.",
+      "texto_pt": "Cure 30 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Solar Beam",
+      "nome_pt": "Raio Solar",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-2",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

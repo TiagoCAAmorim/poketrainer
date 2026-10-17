@@ -1,0 +1,60 @@
+{
+  "id": "PFL-22",
+  "nome": "Dewgong",
+  "nome_pt": "Dewgong",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Seel",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Thick Fat",
+      "nome_pt": "Gordura Espessa",
+      "texto": "This Pokémon takes 30 less damage from attacks from your opponent's Fire or Water Pokémon (after applying Weakness and Resistance).",
+      "texto_pt": "Este Pokémon recebe 30 pontos de dano a menos de ataques dos Pokémon Fogo ou Água do seu oponente (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Slam",
+      "nome_pt": "Pancada Brusca",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "70×",
+      "texto": "Flip 2 coins. This attack does 70 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 70 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-22",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-97",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

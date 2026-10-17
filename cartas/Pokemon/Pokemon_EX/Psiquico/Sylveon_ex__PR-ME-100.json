@@ -1,0 +1,62 @@
+{
+  "id": "PR-ME-100",
+  "nome": "Sylveon ex",
+  "nome_pt": "Sylveon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Colorful Harmony",
+      "nome_pt": "Harmonia Colorida 50×",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50×",
+      "texto": "This attack does 50 damage for each type of Basic Energy attached to all of your Pokémon.",
+      "texto_pt": "Este ataque causa 50 pontos de dano para cada tipo de Energia Básica ligada a todos os seus Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-100",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "30C-71",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-153",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Colorful Harmony: This attack does 50 damage for each type of Basic Energy attached to all of your Pokémon."
+    ]
+  }
+}

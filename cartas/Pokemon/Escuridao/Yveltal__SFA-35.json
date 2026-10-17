@@ -1,0 +1,61 @@
+{
+  "id": "SFA-35",
+  "nome": "Yveltal",
+  "nome_pt": "Yveltal",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Corrosive Winds",
+      "nome_pt": "Ventos Corrosivos",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Put 2 damage counters on each of your opponent's Pokémon that has any damage counters on it.",
+      "texto_pt": "Coloque 2 contadores de dano em cada um dos Pokémon do seu oponente que tem algum contador de dano nele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Destructive Beam",
+      "nome_pt": "Raio Destruidor",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-35",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Corrosive Winds: Put 2 damage counters on each of your opponent's Pokémon that has any damage counters on it."
+    ]
+  }
+}

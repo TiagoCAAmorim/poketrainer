@@ -1,0 +1,917 @@
+{
+ "formato": "TEF–30C (marcas de regulamento H, I e J)",
+ "categoria": "Energia",
+ "total": 27,
+ "pastas": {
+  "Agua": 1,
+  "Eletrico": 1,
+  "Escuridao": 1,
+  "Especiais": 19,
+  "Fogo": 1,
+  "Lutador": 1,
+  "Metal": 1,
+  "Planta": 1,
+  "Psiquico": 1
+ },
+ "cartas": {
+  "Agua": [
+   {
+    "id": "SVE-3",
+    "nome": "Basic Water Energy",
+    "nome_pt": "Energia de Água",
+    "categoria": "Energia",
+    "subtipo": "Energia Básica",
+    "ace_spec": false,
+    "fornece": "Água",
+    "texto": "Fornece 1 Energia de Água.",
+    "texto_pt": "Fornece 1 Energia de Água.",
+    "regras": [],
+    "regulamento": null,
+    "impressoes": [
+     {
+      "codigo": "SVE-3",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVE-11",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "PAL-279",
+      "colecao": "Paldea Evolved",
+      "data": "2023-06-09"
+     },
+     {
+      "codigo": "MFB-32",
+      "colecao": "My First Battle",
+      "data": "2023-09-29"
+     },
+     {
+      "codigo": "MEE-3",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     },
+     {
+      "codigo": "MEE-11",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Agua/Basic_Water_Energy__SVE-3.json"
+   }
+  ],
+  "Eletrico": [
+   {
+    "id": "SVE-4",
+    "nome": "Basic Lightning Energy",
+    "nome_pt": "Energia de Raios",
+    "categoria": "Energia",
+    "subtipo": "Energia Básica",
+    "ace_spec": false,
+    "fornece": "Elétrico",
+    "texto": "Fornece 1 Energia de Elétrico.",
+    "texto_pt": "Fornece 1 Energia de Elétrico.",
+    "regras": [],
+    "regulamento": null,
+    "impressoes": [
+     {
+      "codigo": "SVE-4",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVE-12",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVI-257",
+      "colecao": "Scarlet & Violet",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "MFB-24",
+      "colecao": "My First Battle",
+      "data": "2023-09-29"
+     },
+     {
+      "codigo": "MEE-4",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     },
+     {
+      "codigo": "MEE-12",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Eletrico/Basic_Lightning_Energy__SVE-4.json"
+   }
+  ],
+  "Escuridao": [
+   {
+    "id": "SVE-7",
+    "nome": "Basic Darkness Energy",
+    "nome_pt": "Energia de Escuridão",
+    "categoria": "Energia",
+    "subtipo": "Energia Básica",
+    "ace_spec": false,
+    "fornece": "Escuridão",
+    "texto": "Fornece 1 Energia de Escuridão.",
+    "texto_pt": "Fornece 1 Energia de Escuridão.",
+    "regras": [],
+    "regulamento": null,
+    "impressoes": [
+     {
+      "codigo": "SVE-7",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVE-15",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SFA-98",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+     },
+     {
+      "codigo": "MEE-7",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     },
+     {
+      "codigo": "MEE-15",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Escuridao/Basic_Darkness_Energy__SVE-7.json"
+   }
+  ],
+  "Especiais": [
+   {
+    "id": "TWM-166",
+    "nome": "Boomerang Energy",
+    "nome_pt": "Energia Bumerangue",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. If this card is discarded by an effect of an attack used by the Pokémon this card is attached to, attach this card from your discard pile to that Pokémon after attacking.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Se esta carta for descartada pelo efeito de um ataque usado pelo Pokémon ao qual esta carta está ligada, ligue esta carta da sua pilha de descarte àquele Pokémon após atacar.",
+    "regras": [],
+    "regulamento": "H",
+    "impressoes": [
+     {
+      "codigo": "TWM-166",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Boomerang_Energy__TWM-166.json"
+   },
+   {
+    "id": "CRI-84",
+    "nome": "Bubbly Water Energy",
+    "nome_pt": "Energia Water Borbulhante",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Water Energy. The Water Pokémon this card is attached to recovers from all Special Conditions and can't be affected by any Special Conditions.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Água. O Pokémon Água ao qual esta carta está ligada se recupera de todas as Condições Especiais e não pode ser afetado por quaisquer Condições Especiais.",
+    "regras": [],
+    "regulamento": "J",
+    "impressoes": [
+     {
+      "codigo": "CRI-84",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Bubbly_Water_Energy__CRI-84.json"
+   },
+   {
+    "id": "SSP-191",
+    "nome": "Enriching Energy",
+    "nome_pt": "Energia Enriquecedora",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": true,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. When you attach this card from your hand to a Pokémon, draw 4 cards. ACE SPEC: You can't have more than 1 ACE SPEC card in your deck.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Quando você ligar esta carta da sua mão a um Pokémon, compre 4 cartas.",
+    "regras": [
+     "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+    ],
+    "regulamento": "H",
+    "impressoes": [
+     {
+      "codigo": "SSP-191",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Enriching_Energy__SSP-191.json"
+   },
+   {
+    "id": "POR-86",
+    "nome": "Growing Grass Energy",
+    "nome_pt": "Energia Grass Crescente",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Grass Energy. The Grass Pokémon this card is attached to gets +20 HP.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Planta. O Pokémon Planta ao qual esta carta está ligada recebe +20 PS.",
+    "regras": [],
+    "regulamento": "J",
+    "impressoes": [
+     {
+      "codigo": "POR-86",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Growing_Grass_Energy__POR-86.json"
+   },
+   {
+    "id": "WHT-86",
+    "nome": "Ignition Energy",
+    "nome_pt": "Energia de Ignição",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "If this card is attached to 1 of your Pokémon, discard it at the end of your turn. As long as this card is attached to a Pokémon, it provides Colorless Energy. If this card is attached to an Evolution Pokémon, it provides ColorlessColorlessColorless Energy instead.",
+    "texto_pt": "Se esta carta estiver ligada a 1 dos seus Pokémon, descarte-a no final do seu turno. Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Se esta carta estiver ligada a um Pokémon de Evolução, ela fornecerá Energia IncolorIncolorIncolor.",
+    "regras": [],
+    "regulamento": "I",
+    "impressoes": [
+     {
+      "codigo": "WHT-86",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+     },
+     {
+      "codigo": "PFL-124",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Ignition_Energy__WHT-86.json"
+   },
+   {
+    "id": "SSP-252",
+    "nome": "Jet Energy",
+    "nome_pt": "Energia a Jato",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. When you attach this card from your hand to 1 of your Benched Pokémon, switch that Pokémon with your Active Pokémon.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Quando você ligar esta carta da sua mão a 1 dos seus Pokémon no Banco, troque aquele Pokémon pelo seu Pokémon Ativo.",
+    "regras": [],
+    "regulamento": "H",
+    "impressoes": [
+     {
+      "codigo": "SSP-252",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Jet_Energy__SSP-252.json"
+   },
+   {
+    "id": "TWM-167",
+    "nome": "Legacy Energy",
+    "nome_pt": "Energia Legado",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": true,
+    "fornece": null,
+    "texto": "You can't have more than 1 ACE SPEC card in your deck. As long as this card is attached to a Pokémon, it provides every type of Energy but provides only 1 Energy at a time. If the Pokémon this card is attached to is Knocked Out by damage from an attack from your opponent's Pokémon, that player takes 1 fewer Prize card. This effect of your Legacy Energy can't be applied more than once per game. ACE SPEC: You can't have more than 1 ACE SPEC card in your deck.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá todo tipo de Energia, mas fornecerá 1 Energia por vez. Se o Pokémon ao qual esta carta está ligada for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, aquele jogador pegará 1 carta de Prêmio a menos. Este efeito de sua Energia Legado não pode ser aplicado mais de uma vez por jogo.",
+    "regras": [
+     "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+    ],
+    "regulamento": "H",
+    "impressoes": [
+     {
+      "codigo": "TWM-167",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Legacy_Energy__TWM-167.json"
+   },
+   {
+    "id": "TWM-226",
+    "nome": "Luminous Energy",
+    "nome_pt": "Energia Luminosa",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides every type of Energy but provides only 1 Energy at a time. If the Pokémon this card is attached to has any other Special Energy attached, this card provides Colorless Energy instead.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá todo tipo de Energia, mas fornecerá 1 Energia por vez. Se o Pokémon ao qual esta carta está ligada tiver qualquer outra Energia Especial ligada a ele, esta carta fornecerá Energia Incolor.",
+    "regras": [],
+    "regulamento": "H",
+    "impressoes": [
+     {
+      "codigo": "TWM-226",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Luminous_Energy__TWM-226.json"
+   },
+   {
+    "id": "CRI-85",
+    "nome": "Magnetic Metal Energy",
+    "nome_pt": "Energia Metal Magnética",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Metal Energy. The Metal Pokémon this card is attached to has no Retreat Cost.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Metal. O Pokémon Metal ao qual esta carta está ligada não tem Custo de Recuo.",
+    "regras": [],
+    "regulamento": "J",
+    "impressoes": [
+     {
+      "codigo": "CRI-85",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Magnetic_Metal_Energy__CRI-85.json"
+   },
+   {
+    "id": "TEF-161",
+    "nome": "Mist Energy",
+    "nome_pt": "Energia Nebulosa",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. Prevent all effects of attacks used by your opponent's Pokémon done to the Pokémon this card is attached to. (Existing effects are not removed. Damage is not an effect.)",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Previna todos os efeitos de ataques usados pelos Pokémon do seu oponente causados ao Pokémon ao qual esta carta está ligada. (Efeitos existentes não são removidos e dano não é um efeito.)",
+    "regras": [],
+    "regulamento": "H",
+    "impressoes": [
+     {
+      "codigo": "TEF-161",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Mist_Energy__TEF-161.json"
+   },
+   {
+    "id": "TEF-162",
+    "nome": "Neo Upper Energy",
+    "nome_pt": "Energia Neossuperior",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": true,
+    "fornece": null,
+    "texto": "You can't have more than 1 ACE SPEC card in your deck. As long as this card is attached to a Pokémon, it provides Colorless Energy. If this card is attached to a Stage 2 Pokémon, this card provides every type of Energy but provides only 2 Energy at a time. ACE SPEC: You can't have more than 1 ACE SPEC card in your deck.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Se esta carta estiver ligada a um Pokémon Estágio 2, esta carta fornecerá todo tipo de Energia, mas fornecerá 2 Energias por vez.",
+    "regras": [
+     "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+    ],
+    "regulamento": "H",
+    "impressoes": [
+     {
+      "codigo": "TEF-162",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Neo_Upper_Energy__TEF-162.json"
+   },
+   {
+    "id": "CRI-86",
+    "nome": "Nitro Fire Energy",
+    "nome_pt": "Energia Fire Nitro",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Fire Energy. If this card is discarded by an effect of an attack used by the Fire Pokémon this card is attached to, put this card into your hand after attack damage and effects.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Fogo. Se esta carta for descartada pelo efeito de um ataque usado pelo Pokémon Fogo ao qual esta carta está ligada, coloque esta carta na sua mão após o dano e os efeitos do ataque.",
+    "regras": [],
+    "regulamento": "J",
+    "impressoes": [
+     {
+      "codigo": "CRI-86",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Nitro_Fire_Energy__CRI-86.json"
+   },
+   {
+    "id": "BLK-86",
+    "nome": "Prism Energy",
+    "nome_pt": "Energia de Prisma",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. If this card is attached to a Basic Pokémon, this card provides every type of Energy but provides only 1 Energy at a time.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Se esta carta estiver ligada a um Pokémon Básico, esta carta fornecerá todo tipo de Energia, mas fornecerá 1 Energia por vez.",
+    "regras": [],
+    "regulamento": "I",
+    "impressoes": [
+     {
+      "codigo": "BLK-86",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+     },
+     {
+      "codigo": "ASC-216",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Prism_Energy__BLK-86.json"
+   },
+   {
+    "id": "POR-87",
+    "nome": "Rocky Fighting Energy",
+    "nome_pt": "Energia Fighting Rochosa",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Fighting Energy. Prevent all effects of attacks used by your opponent's Pokémon done to the Fighting Pokémon this card is attached to. (Existing effects are not removed. Damage is not an effect.)",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Lutador. Previna todos os efeitos de ataques usados pelos Pokémon do seu oponente causados ao Pokémon Lutador ao qual esta carta está ligada. (Efeitos existentes não são removidos e dano não é um efeito.)",
+    "regras": [],
+    "regulamento": "J",
+    "impressoes": [
+     {
+      "codigo": "POR-87",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Rocky_Fighting_Energy__POR-87.json"
+   },
+   {
+    "id": "PBL-83",
+    "nome": "Shadowy Darkness Energy",
+    "nome_pt": "Energia Darkness Sombria",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Darkness Energy. As long as the Darkness Pokémon this card is attached to is on your Bench, prevent all damage done to it by attacks from your opponent's Pokémon.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Escuridão. Enquanto o Pokémon Escuridão ao qual esta carta está ligada estiver no seu Banco, previna todo o dano causado a ele por ataques dos Pokémon do seu oponente.",
+    "regras": [],
+    "regulamento": "J",
+    "impressoes": [
+     {
+      "codigo": "PBL-83",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Shadowy_Darkness_Energy__PBL-83.json"
+   },
+   {
+    "id": "JTG-159",
+    "nome": "Spiky Energy",
+    "nome_pt": "Energia Espinhosa",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. If the Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), put 2 damage counters on the Attacking Pokémon.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Se o Pokémon ao qual esta carta está ligada estiver no Campo Ativo e for danificado por um ataque dos Pokémon do seu oponente (mesmo que este Pokémon seja Nocauteado), coloque 2 contadores de dano no Pokémon Atacante.",
+    "regras": [],
+    "regulamento": "I",
+    "impressoes": [
+     {
+      "codigo": "JTG-159",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+     },
+     {
+      "codigo": "JTG-190",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Spiky_Energy__JTG-159.json"
+   },
+   {
+    "id": "DRI-182",
+    "nome": "Team Rocket's Energy",
+    "nome_pt": "Energia da Equipe Rocket",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "This card can only be attached to a Team Rocket's Pokémon. If this card is attached to anything other than a Team Rocket's Pokémon, discard this card. As long as this card is attached to a Pokémon, it provides 2 in any combination of Psychic Energy and Darkness Energy.",
+    "texto_pt": "Esta carta só pode ser ligada a um Pokémon da Equipe Rocket. Se esta carta estiver ligada a qualquer coisa além de um Pokémon da Equipe Rocket, descarte esta carta. Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá 2 Energias em qualquer combinação de Energia Psíquico e Energia Escuridão.",
+    "regras": [],
+    "regulamento": "I",
+    "impressoes": [
+     {
+      "codigo": "DRI-182",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+     },
+     {
+      "codigo": "ASC-217",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Team_Rockets_Energy__DRI-182.json"
+   },
+   {
+    "id": "POR-88",
+    "nome": "Telepathic Psychic Energy",
+    "nome_pt": "Energia Psychic Telepática",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Psychic Energy. When you attach this card from your hand to a Psychic Pokémon, search your deck for up to 2 Basic Psychic Pokémon and put them onto your Bench. Then, shuffle your deck.",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Psíquico. Quando você ligar esta carta da sua mão a um Pokémon Psíquico, procure por até 2 Pokémon Psíquico Básicos no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+    "regras": [],
+    "regulamento": "J",
+    "impressoes": [
+     {
+      "codigo": "POR-88",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Telepathic_Psychic_Energy__POR-88.json"
+   },
+   {
+    "id": "PBL-84",
+    "nome": "Voltaic Lightning Energy",
+    "nome_pt": "Energia Lightning Voltaica",
+    "categoria": "Energia",
+    "subtipo": "Energia Especial",
+    "ace_spec": false,
+    "fornece": null,
+    "texto": "As long as this card is attached to a Pokémon, it provides Lightning Energy. Attacks used by the Lightning Pokémon this card is attached to do 20 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+    "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Elétrico. Os ataques usados pelo Pokémon Elétrico ao qual esta carta está ligada causam 20 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+    "regras": [],
+    "regulamento": "J",
+    "impressoes": [
+     {
+      "codigo": "PBL-84",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Especiais/Voltaic_Lightning_Energy__PBL-84.json"
+   }
+  ],
+  "Fogo": [
+   {
+    "id": "SVE-2",
+    "nome": "Basic Fire Energy",
+    "nome_pt": "Energia de Fogo",
+    "categoria": "Energia",
+    "subtipo": "Energia Básica",
+    "ace_spec": false,
+    "fornece": "Fogo",
+    "texto": "Fornece 1 Energia de Fogo.",
+    "texto_pt": "Fornece 1 Energia de Fogo.",
+    "regras": [],
+    "regulamento": null,
+    "impressoes": [
+     {
+      "codigo": "SVE-2",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVE-10",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "OBF-230",
+      "colecao": "Obsidian Flames",
+      "data": "2023-08-11"
+     },
+     {
+      "codigo": "MFB-16",
+      "colecao": "My First Battle",
+      "data": "2023-09-29"
+     },
+     {
+      "codigo": "MEE-2",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     },
+     {
+      "codigo": "MEE-10",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Fogo/Basic_Fire_Energy__SVE-2.json"
+   }
+  ],
+  "Lutador": [
+   {
+    "id": "SVE-6",
+    "nome": "Basic Fighting Energy",
+    "nome_pt": "Energia de Luta",
+    "categoria": "Energia",
+    "subtipo": "Energia Básica",
+    "ace_spec": false,
+    "fornece": "Lutador",
+    "texto": "Fornece 1 Energia de Lutador.",
+    "texto_pt": "Fornece 1 Energia de Lutador.",
+    "regras": [],
+    "regulamento": null,
+    "impressoes": [
+     {
+      "codigo": "SVE-6",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVE-14",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVI-258",
+      "colecao": "Scarlet & Violet",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "MEE-6",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     },
+     {
+      "codigo": "MEE-14",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Lutador/Basic_Fighting_Energy__SVE-6.json"
+   }
+  ],
+  "Metal": [
+   {
+    "id": "SVE-8",
+    "nome": "Basic Metal Energy",
+    "nome_pt": "Energia de Metal",
+    "categoria": "Energia",
+    "subtipo": "Energia Básica",
+    "ace_spec": false,
+    "fornece": "Metal",
+    "texto": "Fornece 1 Energia de Metal.",
+    "texto_pt": "Fornece 1 Energia de Metal.",
+    "regras": [],
+    "regulamento": null,
+    "impressoes": [
+     {
+      "codigo": "SVE-8",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVE-16",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SFA-99",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+     },
+     {
+      "codigo": "MEE-8",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     },
+     {
+      "codigo": "MEE-16",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Metal/Basic_Metal_Energy__SVE-8.json"
+   }
+  ],
+  "Planta": [
+   {
+    "id": "SVE-1",
+    "nome": "Basic Grass Energy",
+    "nome_pt": "Energia de Grama",
+    "categoria": "Energia",
+    "subtipo": "Energia Básica",
+    "ace_spec": false,
+    "fornece": "Planta",
+    "texto": "Fornece 1 Energia de Planta.",
+    "texto_pt": "Fornece 1 Energia de Planta.",
+    "regras": [],
+    "regulamento": null,
+    "impressoes": [
+     {
+      "codigo": "SVE-1",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVE-9",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "PAL-278",
+      "colecao": "Paldea Evolved",
+      "data": "2023-06-09"
+     },
+     {
+      "codigo": "MFB-8",
+      "colecao": "My First Battle",
+      "data": "2023-09-29"
+     },
+     {
+      "codigo": "MEE-1",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     },
+     {
+      "codigo": "MEE-9",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Planta/Basic_Grass_Energy__SVE-1.json"
+   }
+  ],
+  "Psiquico": [
+   {
+    "id": "SVE-5",
+    "nome": "Basic Psychic Energy",
+    "nome_pt": "Energia Psíquica",
+    "categoria": "Energia",
+    "subtipo": "Energia Básica",
+    "ace_spec": false,
+    "fornece": "Psíquico",
+    "texto": "Fornece 1 Energia de Psíquico.",
+    "texto_pt": "Fornece 1 Energia de Psíquico.",
+    "regras": [],
+    "regulamento": null,
+    "impressoes": [
+     {
+      "codigo": "SVE-5",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "SVE-13",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+     },
+     {
+      "codigo": "MEW-207",
+      "colecao": "151",
+      "data": "2023-09-22"
+     },
+     {
+      "codigo": "MEE-5",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     },
+     {
+      "codigo": "MEE-13",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+     }
+    ],
+    "simulador": {
+     "status": "implementada",
+     "pendencias": []
+    },
+    "arquivo": "Energias/Psiquico/Basic_Psychic_Energy__SVE-5.json"
+   }
+  ]
+ }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "TEF-28",
+  "nome": "Slugma",
+  "nome_pt": "Slugma",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Roasting Heat",
+      "nome_pt": "Calor de Lascar",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "10+",
+      "texto": "If your opponent's Active Pokémon is Burned, this attack does 40 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente estiver Queimado, este ataque causará 40 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-28",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

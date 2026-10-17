@@ -1,0 +1,60 @@
+{
+  "id": "SSP-68",
+  "nome": "Kilowattrel ex",
+  "nome_pt": "Kilowattrel ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Wattrel",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Return Charge",
+      "nome_pt": "Carga de Retorno",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "—",
+      "texto": "Switch this Pokémon with 1 of your Benched Pokémon. If you do, attach up to 2 Basic Lightning Energy cards from your hand to this Pokémon.",
+      "texto_pt": "Troque este Pokémon por 1 dos seus Pokémon no Banco. Se fizer isto, ligue até 2 cartas de Energia Elétrico Básica da sua mão a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Thunder Lance",
+      "nome_pt": "Estaca do Trovão",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40+",
+      "texto": "This attack does 40 more damage for each Lightning Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano a mais para cada Energia Elétrico ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-68",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

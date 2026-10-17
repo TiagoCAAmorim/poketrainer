@@ -1,0 +1,61 @@
+{
+  "id": "MEG-87",
+  "nome": "Spiritomb",
+  "nome_pt": "Spiritomb",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Spiteful Swirl",
+      "nome_pt": "Rodopio Rancoroso",
+      "texto": "If your Active Darkness Pokémon is damaged by an attack from your opponent's Pokémon (even if your Active Darkness Pokémon is Knocked Out), place 1 damage counter on the Attacking Pokémon.",
+      "texto_pt": "Se o seu Pokémon Escuridão Ativo for danificado por um ataque dos Pokémon do seu oponente (mesmo que o seu Pokémon Escuridão Ativo seja Nocauteado), coloque 1 contador de dano no Pokémon Atacante.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mountain Breaker",
+      "nome_pt": "Quebra-monte",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10",
+      "texto": "Discard the top card of your opponent's deck.",
+      "texto_pt": "Descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-87",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-148",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Spiteful Swirl: If your Active Darkness Pokémon is damaged by an attack from your opponent's Pokémon, place 1 damage counter on the Attacking Pokémon."
+    ]
+  }
+}

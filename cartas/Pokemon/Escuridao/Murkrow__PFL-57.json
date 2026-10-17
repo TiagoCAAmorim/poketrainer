@@ -1,0 +1,46 @@
+{
+  "id": "PFL-57",
+  "nome": "Murkrow",
+  "nome_pt": "Murkrow",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ambush",
+      "nome_pt": "Emboscada",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10+",
+      "texto": "Flip a coin. If heads, this attack does 20 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 20 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-57",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "DRI-178",
+  "nome": "Team Rocket's Transceiver",
+  "nome_pt": "Transmissor da Equipe Rocket",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Search your deck for a Supporter card that has \"Team Rocket\" in its name, reveal it, and put it into your hand. Then, shuffle your deck.",
+  "texto_pt": "Procure por uma carta de Apoiador no seu baralho que tenha \"Equipe Rocket\" em seu nome, revele-a e coloque-a na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-178",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-209",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-263",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

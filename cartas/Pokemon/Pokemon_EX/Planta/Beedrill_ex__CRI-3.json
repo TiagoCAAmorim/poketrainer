@@ -1,0 +1,53 @@
+{
+  "id": "CRI-3",
+  "nome": "Beedrill ex",
+  "nome_pt": "Beedrill ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 310,
+  "estagio": "Estágio 2",
+  "evolui_de": "Kakuna",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rumbling Bees",
+      "nome_pt": "Abelhas Furiosas",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "110×",
+      "texto": "This attack does 110 damage for each of your Beedrill and Beedrill ex in play.",
+      "texto_pt": "Este ataque causa 110 pontos de dano para cada um dos seus Beedrill e Beedrill ex em jogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-3",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-98",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

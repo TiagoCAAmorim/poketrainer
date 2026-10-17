@@ -1,0 +1,61 @@
+{
+  "id": "TEF-54",
+  "nome": "Electivire",
+  "nome_pt": "Electivire",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Electabuzz",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Short-Circuit Knuckle",
+      "nome_pt": "Punho Curto-circuito",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40+",
+      "texto": "If your opponent has any Water Pokémon in play, this attack does 120 more damage.",
+      "texto_pt": "Se o seu oponente tiver algum Pokémon Água em jogo, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Electroslug",
+      "nome_pt": "Soco Elétrico",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-54",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "POR-82",
+  "nome": "Pokémon Catcher",
+  "nome_pt": "Pegador de Pokémon",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Flip a coin. If heads, switch in 1 of your opponent's Benched Pokémon to the Active Spot.",
+  "texto_pt": "Jogue uma moeda. Se sair cara, mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-82",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

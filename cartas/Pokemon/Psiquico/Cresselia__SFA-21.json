@@ -1,0 +1,66 @@
+{
+  "id": "SFA-21",
+  "nome": "Cresselia",
+  "nome_pt": "Cresselia",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Healing Pirouette",
+      "nome_pt": "Pirueta Curativa",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Heal 20 damage from each of your Pokémon.",
+      "texto_pt": "Cure 20 pontos de dano de cada um dos seus Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Crescent Purge",
+      "nome_pt": "Expiação Crescente",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "80+",
+      "texto": "You may turn 1 of your face-down Prize cards face up. If you do, this attack does 80 more damage. (That Prize card remains face up for the rest of the game.)",
+      "texto_pt": "Você pode virar para cima 1 das suas cartas de Prêmio viradas para baixo. Se fizer isto, este ataque causará 80 pontos de dano a mais. (Aquela carta de Prêmio permanecerá virada para cima pelo resto do jogo.)",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-21",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-71",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Crescent Purge: You may turn 1 of your face-down Prize cards face up."
+    ]
+  }
+}

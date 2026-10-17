@@ -1,0 +1,64 @@
+{
+  "id": "30C-125",
+  "nome": "Maushold",
+  "nome_pt": "Maushold",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Tandemaus",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gnaw Together",
+      "nome_pt": "Reunião de Roídas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin for each Maushold you have in play. For each heads, discard the top 2 cards of your opponent's deck.",
+      "texto_pt": "Jogue uma moeda para cada Maushold que você tem em jogo. Para cada cara, descarte as 2 cartas de cima do baralho do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Pound",
+      "nome_pt": "Pancada",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-125",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-146",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Gnaw Together: Flip a coin for each Maushold you have in play.; For each heads, discard the top 2 cards of your opponent's deck."
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "SSP-86",
+  "nome": "Sylveon ex",
+  "nome_pt": "Sylveon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Magical Charm",
+      "nome_pt": "Encanto Mágico",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "During your opponent's next turn, attacks used by the Defending Pokémon do 100 less damage (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, os ataques usados pelo Pokémon Defensor causarão 100 pontos de dano a menos (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Angelite",
+      "nome_pt": "Angelita",
+      "custo": [
+        "Água",
+        "Elétrico",
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Choose 2 of your opponent's Benched Pokémon. Shuffle those Pokémon and all attached cards into your opponent's deck. If 1 of your Pokémon used Angelite during your last turn, this attack can't be used.",
+      "texto_pt": "Escolha 2 dos Pokémon no Banco do seu oponente. Embaralhe aqueles Pokémon e todas as cartas ligadas a eles no baralho do seu oponente. Se 1 dos seus Pokémon usou Angelita durante o seu último turno, este ataque não poderá ser usado.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-86",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "PRE-41",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-156",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Angelite: Choose 2 of your opponent's Benched Pokémon.; Shuffle those Pokémon and all attached cards into your opponent's deck.; If 1 of your Pokémon used Angelite during your last turn, this attack can't be used."
+    ]
+  }
+}

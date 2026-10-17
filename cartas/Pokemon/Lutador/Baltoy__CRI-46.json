@@ -1,0 +1,46 @@
+{
+  "id": "CRI-46",
+  "nome": "Baltoy",
+  "nome_pt": "Baltoy",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Continuous Spin",
+      "nome_pt": "Giro Contínuo",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30×",
+      "texto": "Flip a coin until you get tails. This attack does 30 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 30 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-46",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

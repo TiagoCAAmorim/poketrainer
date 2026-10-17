@@ -1,0 +1,46 @@
+{
+  "id": "MEG-62",
+  "nome": "Spoink",
+  "nome_pt": "Spoink",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Triple Spin",
+      "nome_pt": "Giro Triplo",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "10×",
+      "texto": "Flip 3 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-62",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "ASC-15",
+  "nome": "Dustox",
+  "nome_pt": "Dustox",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Cascoon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Boisterous Wind",
+      "nome_pt": "Vento Turbulento",
+      "texto": "Once during your turn, you may use this Ability. Flip a coin. If heads, put an Energy attached to your opponent's Active Pokémon into their hand.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Jogue uma moeda. Se sair cara, coloque uma Energia ligada ao Pokémon Ativo do seu oponente na mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Twilight Poison",
+      "nome_pt": "Veneno do Crepúsculo",
+      "custo": [
+        "Planta",
+        "Planta"
+      ],
+      "dano": "100",
+      "texto": "Your opponent's Active Pokémon is now Asleep and Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Adormecido e Envenenado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-15",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-220",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

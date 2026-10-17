@@ -1,0 +1,59 @@
+{
+  "id": "30C-107",
+  "nome": "Zamazenta",
+  "nome_pt": "Zamazenta",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fend Off",
+      "nome_pt": "Repelir",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "20",
+      "texto": "Before doing damage, discard all Pokémon Tools from your opponent's Active Pokémon.",
+      "texto_pt": "Antes de causar dano, descarte todas as Ferramentas Pokémon do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Shield Press",
+      "nome_pt": "Compressão de Escudo",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "During your opponent's next turn, this Pokémon takes 50 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 50 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-107",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

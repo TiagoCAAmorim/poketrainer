@@ -1,0 +1,50 @@
+{
+  "id": "CRI-4",
+  "nome": "Carnivine",
+  "nome_pt": "Carnivine",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Chomp Whole",
+      "nome_pt": "Abocanhar Inteiro",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "If your opponent's Active Pokémon has no Retreat Cost, this attack does 80 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente não tiver Custo de Recuo, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-4",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Chomp Whole: If your opponent's Active Pokémon has no Retreat Cost, this attack does 80 more damage."
+    ]
+  }
+}

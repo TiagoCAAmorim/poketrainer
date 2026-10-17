@@ -1,0 +1,56 @@
+{
+  "id": "MEG-76",
+  "nome": "Riolu",
+  "nome_pt": "Riolu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Accelerating Stab",
+      "nome_pt": "Estocada Aceleratória",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30",
+      "texto": "During your next turn, this Pokémon can't use Accelerating Stab.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Estocada Aceleratória.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-76",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PR-ME-10",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-112",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

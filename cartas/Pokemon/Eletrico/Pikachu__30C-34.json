@@ -1,0 +1,48 @@
+{
+  "id": "30C-34",
+  "nome": "Pikachu",
+  "nome_pt": "Pikachu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pika Chain",
+      "nome_pt": "Corrente Pikachu 40×",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each of your Pikachu and Pikachu ex in play.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada um dos seus Pikachu e Pikachu ex em jogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-34",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

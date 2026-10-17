@@ -1,0 +1,65 @@
+{
+  "id": "PBL-24",
+  "nome": "Manectric",
+  "nome_pt": "Manectric",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Electrike",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flashing Barrier",
+      "nome_pt": "Barreira Elétrica",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "50",
+      "texto": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Evolution Pokémon.",
+      "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a este Pokémon por ataques de Pokémon de Evolução.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Sonic Edge",
+      "nome_pt": "Gume Sônico",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "110",
+      "texto": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-24",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-89",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

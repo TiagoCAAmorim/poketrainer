@@ -1,0 +1,70 @@
+{
+  "id": "PR-SV-98",
+  "nome": "Iron Thorns",
+  "nome_pt": "Espinhos Férreos",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 140,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Destructo-Press",
+      "nome_pt": "Aperto Destrutivo",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "70×",
+      "texto": "Reveal the top 5 cards of your deck. This attack does 70 damage for each Future card you find there. Then, discard those Future cards and shuffle the other cards back into your deck.",
+      "texto_pt": "Revele as 5 cartas de cima do seu baralho. Este ataque causa 70 pontos de dano para cada carta Futurista que encontrar lá. Em seguida, descarte aquelas cartas Futuristas e embaralhe as outras cartas de volta no seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Megaton Lariat",
+      "nome_pt": "Lariat Megaton",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-98",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "TEF-62",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Destructo-Press: Reveal the top 5 cards of your deck.; This attack does 70 damage for each Future card you find there.; Then, discard those Future cards and shuffle the other cards back into your deck."
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "SSP-87",
+  "nome": "Dedenne",
+  "nome_pt": "Dedenne",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Electromagnetic Sonar",
+      "nome_pt": "Sonar Eletromagnético",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Put a Trainer card from your discard pile into your hand.",
+      "texto_pt": "Coloque uma carta de Treinador da sua pilha de descarte na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Gnaw",
+      "nome_pt": "Roída",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-87",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

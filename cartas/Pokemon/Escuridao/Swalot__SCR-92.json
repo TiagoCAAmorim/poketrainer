@@ -1,0 +1,61 @@
+{
+  "id": "SCR-92",
+  "nome": "Swalot",
+  "nome_pt": "Swalot",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Gulpin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Devouring Mouth",
+      "nome_pt": "Bocona Devoradora",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "10+",
+      "texto": "If this Pokémon has more Energy attached than your opponent's Active Pokémon, this attack does 160 more damage.",
+      "texto_pt": "Se este Pokémon tiver mais Energia ligada a ele do que o Pokémon Ativo do seu oponente, este ataque causará 160 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Venomous Hit",
+      "nome_pt": "Golpe Venenoso",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "Your opponent's Active Pokémon is now Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-92",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Devouring Mouth: If this Pokémon has more Energy attached than your opponent's Active Pokémon, this attack does 160 more damage."
+    ]
+  }
+}

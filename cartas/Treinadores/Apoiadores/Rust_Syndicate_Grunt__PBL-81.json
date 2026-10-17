@@ -1,0 +1,30 @@
+{
+  "id": "PBL-81",
+  "nome": "Rust Syndicate Grunt",
+  "nome_pt": "Recruta do Clã Corrosão",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "You can use this card only if any of your Pokémon were Knocked Out during your opponent's last turn. Discard an Energy from 1 of your opponent's Pokémon.",
+  "texto_pt": "Você só poderá usar esta carta se algum dos seus Pokémon tiver sido Nocauteado durante o último turno do seu oponente. Descarte uma Energia de 1 dos Pokémon do seu oponente.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-81",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-112",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

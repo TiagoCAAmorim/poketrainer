@@ -1,0 +1,65 @@
+{
+  "id": "WHT-70",
+  "nome": "Durant",
+  "nome_pt": "Durant",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bite Together",
+      "nome_pt": "Mordida em Bando",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "If Durant is on your Bench, this attack does 20 more damage.",
+      "texto_pt": "Se Durant estiver no seu Banco, este ataque causará 20 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Vise Grip",
+      "nome_pt": "Agarramento Compressor",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-70",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-150",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Bite Together: If Durant is on your Bench, this attack does 20 more damage."
+    ]
+  }
+}

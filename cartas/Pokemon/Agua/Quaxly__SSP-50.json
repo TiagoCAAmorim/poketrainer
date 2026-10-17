@@ -1,0 +1,46 @@
+{
+  "id": "SSP-50",
+  "nome": "Quaxly",
+  "nome_pt": "Quaxly",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aerial Ace",
+      "nome_pt": "Ás dos Ares",
+      "custo": [
+        "Água"
+      ],
+      "dano": "10+",
+      "texto": "Flip a coin. If heads, this attack does 20 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 20 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-50",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

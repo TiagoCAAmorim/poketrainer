@@ -1,0 +1,46 @@
+{
+  "id": "ASC-100",
+  "nome": "Team Rocket's Diglett",
+  "nome_pt": "Diglett da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Relentless Burrowing",
+      "nome_pt": "Escavação Incansável",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin until you get tails. For each heads, discard the top card of your opponent's deck.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Para cada cara, descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-100",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

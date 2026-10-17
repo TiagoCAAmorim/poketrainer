@@ -1,0 +1,60 @@
+{
+  "id": "ASC-153",
+  "nome": "Rayquaza",
+  "nome_pt": "Rayquaza",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Breakthrough Assault",
+      "nome_pt": "Ofensiva Decisiva",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "If this Pokémon moved from your Bench to the Active Spot this turn, this attack does 90 more damage.",
+      "texto_pt": "Se este Pokémon foi movido do seu Banco para o Campo Ativo neste turno, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dragon Claw",
+      "nome_pt": "Garra de Dragão",
+      "custo": [
+        "Fogo",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-153",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

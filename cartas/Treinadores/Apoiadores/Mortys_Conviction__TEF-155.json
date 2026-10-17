@@ -1,0 +1,35 @@
+{
+  "id": "TEF-155",
+  "nome": "Morty's Conviction",
+  "nome_pt": "Convicção do Morty",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "You can use this card only if you discard another card from your hand. Draw a card for each of your opponent's Benched Pokémon.",
+  "texto_pt": "Você só pode usar esta carta se descartar outra carta da sua mão. Compre uma carta para cada um dos Pokémon no Banco do seu oponente.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-155",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-201",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-211",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

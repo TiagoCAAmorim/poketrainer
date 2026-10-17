@@ -1,0 +1,46 @@
+{
+  "id": "SSP-3",
+  "nome": "Exeggutor",
+  "nome_pt": "Exeggutor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Exeggcute",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Barrage O'Clock",
+      "nome_pt": "Rajada Cronometrada",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "60×",
+      "texto": "Flip a coin for each Energy attached to both Active Pokémon. This attack does 60 damage for each heads.",
+      "texto_pt": "Jogue uma moeda para cada Energia ligada a ambos os Pokémon Ativos. Este ataque causa 60 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-3",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

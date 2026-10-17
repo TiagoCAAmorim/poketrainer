@@ -1,0 +1,65 @@
+{
+  "id": "PBL-4",
+  "nome": "Lurantis ex",
+  "nome_pt": "Lurantis ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Fomantis",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Lively Cutter",
+      "nome_pt": "Cortador Vigoroso",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "60+",
+      "texto": "If this Pokémon was healed during this turn, this attack does 200 more damage.",
+      "texto_pt": "Se este Pokémon tiver sido curado durante este turno, este ataque causará 200 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Leaf Guard",
+      "nome_pt": "Guarda Folha",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "During your opponent's next turn, this Pokémon takes 50 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 50 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-4",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-96",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "PFL-29",
+  "nome": "Rotom ex",
+  "nome_pt": "Rotom ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 190,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Multi Adapter",
+      "nome_pt": "Adaptador Multiuso",
+      "texto": "Each of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each.",
+      "texto_pt": "Cada um dos seus Pokémon que tem \"Rotom\" em seu nome pode ter até 2 cartas de Ferramenta Pokémon ligadas a ele. Se esta Habilidade parar de funcionar, descarte Ferramentas Pokémon daqueles Pokémon até restar apenas 1 em cada.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Thunderbolt",
+      "nome_pt": "Relâmpago",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "Discard all Energy from this Pokémon.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-29",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-111",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-126",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Multi Adapter: Each of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each."
+    ]
+  }
+}

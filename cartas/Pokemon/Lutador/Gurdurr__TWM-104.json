@@ -1,0 +1,59 @@
+{
+  "id": "TWM-104",
+  "nome": "Gurdurr",
+  "nome_pt": "Gurdurr",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Timburr",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Knuckle Punch",
+      "nome_pt": "Soco com Punho",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Superpower",
+      "nome_pt": "Superpoder",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50+",
+      "texto": "You may do 30 more damage. If you do, this Pokémon also does 30 damage to itself.",
+      "texto_pt": "Você pode causar 30 pontos de dano a mais. Se fizer isto, este Pokémon também causará 30 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-104",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

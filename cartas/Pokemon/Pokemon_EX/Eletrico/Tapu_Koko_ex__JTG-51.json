@@ -1,0 +1,49 @@
+{
+  "id": "JTG-51",
+  "nome": "Tapu Koko ex",
+  "nome_pt": "Tapu Koko ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 200,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Linked Lightning",
+      "nome_pt": "Raios Reunidos",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "This attack does 20 more damage for each of your Benched Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada um dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-51",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

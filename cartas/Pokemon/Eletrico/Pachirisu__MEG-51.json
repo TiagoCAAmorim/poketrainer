@@ -1,0 +1,48 @@
+{
+  "id": "MEG-51",
+  "nome": "Pachirisu",
+  "nome_pt": "Pachirisu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Electrified Incisors",
+      "nome_pt": "Incisivos Eletrificados",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "10",
+      "texto": "During your opponent's next turn, whenever they attach an Energy card from their hand to the Defending Pokémon, place 8 damage counters on that Pokémon.",
+      "texto_pt": "Durante o próximo turno do seu oponente, sempre que ele ligar uma carta de Energia da mão dele ao Pokémon Defensor, coloque 8 contadores de dano naquele Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-51",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Electrified Incisors: During your opponent's next turn, whenever they attach an Energy card from their hand to the Defending Pokémon, place 8 damage counters on that Pokémon."
+    ]
+  }
+}

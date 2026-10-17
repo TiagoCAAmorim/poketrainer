@@ -1,0 +1,57 @@
+{
+  "id": "POR-34",
+  "nome": "Meowstic",
+  "nome_pt": "Meowstic",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Espurr",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Perplex",
+      "nome_pt": "Perplexo",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Psychic",
+      "nome_pt": "Psíquico",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30+",
+      "texto": "This attack does 30 more damage for each Energy attached to your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a mais para cada Energia ligada ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-34",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

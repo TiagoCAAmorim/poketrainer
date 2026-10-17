@@ -1,0 +1,66 @@
+{
+  "id": "SSP-161",
+  "nome": "Terapagos",
+  "nome_pt": "Terapagos",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Prism Charge",
+      "nome_pt": "Carga Prisma",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 3 Basic Energy cards of different types and attach them to your Tera Pokémon in any way you like. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 3 cartas de Energia Básica de tipos diferentes no seu baralho e ligue-as aos seus Pokémon Tera como desejar. Em seguida, embaralhe o seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Hard Tackle",
+      "nome_pt": "Investida Resistente",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-161",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "ASC-178",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Prism Charge: Search your deck for up to 3 Basic Energy cards of different types and attach them to your Tera Pokémon in any way you like."
+    ]
+  }
+}

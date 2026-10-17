@@ -1,0 +1,56 @@
+{
+  "id": "TWM-5",
+  "nome": "Ariados",
+  "nome_pt": "Ariados",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Spinarak",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Big Net",
+      "nome_pt": "Teia Grande",
+      "texto": "Your opponent's Active Evolution Pokémon's Retreat Cost is Colorless more.",
+      "texto_pt": "O custo de Recuo do Pokémon de Evolução Ativo do seu oponente é Incolor a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "String Bind",
+      "nome_pt": "Fio Aprisionante",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10+",
+      "texto": "This attack does 30 more damage for each Colorless in your opponent's Active Pokémon's Retreat Cost.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a mais para cada Incolor no custo de Recuo do Pokémon Ativo do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-5",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque String Bind: This attack does 30 more damage for each Colorless in your opponent's Active Pokémon's Retreat Cost."
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "ASC-67",
+  "nome": "Tapu Koko",
+  "nome_pt": "Tapu Koko",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fast Flight",
+      "nome_pt": "Voo Rápido",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "—",
+      "texto": "If you go first, you can use this attack during your first turn. Discard your hand and draw 5 cards.",
+      "texto_pt": "Se você for o primeiro a jogar, poderá usar este ataque durante o seu primeiro turno. Descarte a sua mão e compre 5 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Thunder Blast",
+      "nome_pt": "Explosão de Trovões",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-67",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

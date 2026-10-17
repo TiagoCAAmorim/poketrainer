@@ -1,0 +1,30 @@
+{
+  "id": "PBL-80",
+  "nome": "Misty's Vitality",
+  "nome_pt": "Vitalidade da Misty",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Search your deck for up to 4 Basic Water Energy cards and attach them to 1 of your Pokémon. Then, shuffle your deck. Your turn ends.",
+  "texto_pt": "Procure por até 4 cartas de Energia Água Básica no seu baralho e ligue-as a 1 dos seus Pokémon. Em seguida, embaralhe o seu baralho. O seu turno acaba.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-80",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-111",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

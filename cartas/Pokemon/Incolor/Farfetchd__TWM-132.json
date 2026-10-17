@@ -1,0 +1,54 @@
+{
+  "id": "TWM-132",
+  "nome": "Farfetch'd",
+  "nome_pt": "Farfetch'd",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Impromptu Carrier",
+      "nome_pt": "Transporte Improvisado",
+      "texto": "When you play this Pokémon from your hand onto your Bench during your turn, you may search your deck for a Pokémon Tool card and attach it to this Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Quando você jogar este Pokémon da sua mão para o seu Banco durante o seu turno, você poderá procurar por uma carta de Ferramenta Pokémon no seu baralho e ligá-la a este Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mach Cut",
+      "nome_pt": "Corte Supersônico",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Discard a Special Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia Especial do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-132",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

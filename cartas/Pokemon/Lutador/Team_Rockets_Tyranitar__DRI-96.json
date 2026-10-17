@@ -1,0 +1,59 @@
+{
+  "id": "DRI-96",
+  "nome": "Team Rocket's Tyranitar",
+  "nome_pt": "Tyranitar da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Team Rocket's Pupitar",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Sand Stream",
+      "nome_pt": "Fluxo de Areia",
+      "texto": "During Pokémon Checkup, if this Pokémon is in the Active Spot, put 2 damage counters on each of your opponent's Basic Pokémon.",
+      "texto_pt": "Durante o Checape Pokémon, se este Pokémon estiver no Campo Ativo, coloque 2 contadores de dano em cada um dos Pokémon Básicos do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Demolition Tackle",
+      "nome_pt": "Investida Demolidora",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "180",
+      "texto": "Discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-96",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Sand Stream: During Pokémon Checkup, if this Pokémon is in the Active Spot, put 2 damage counters on each of your opponent's Basic Pokémon."
+    ]
+  }
+}

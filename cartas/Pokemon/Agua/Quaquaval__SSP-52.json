@@ -1,0 +1,55 @@
+{
+  "id": "SSP-52",
+  "nome": "Quaquaval",
+  "nome_pt": "Quaquaval",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Quaxwell",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Up-Tempo",
+      "nome_pt": "Velocidade Cinco",
+      "texto": "You must put a card from your hand on the bottom of your deck in order to use this Ability. Once during your turn, you may draw cards until you have 5 cards in your hand.",
+      "texto_pt": "Você deve colocar uma carta da sua mão como a carta de baixo do seu baralho para usar esta Habilidade. Uma vez durante o seu turno, você poderá comprar cartas até ter 5 cartas na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Hydro Splash",
+      "nome_pt": "Hidroborrifada",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-52",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

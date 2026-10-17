@@ -1,0 +1,64 @@
+{
+  "id": "JTG-69",
+  "nome": "Mimikyu ex",
+  "nome_pt": "Mimikyu ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 190,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mischievous Hands",
+      "nome_pt": "Mãos Maliciosas",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Choose 2 of your opponent's Pokémon and put 3 damage counters on each of them.",
+      "texto_pt": "Escolha 2 dos Pokémon do seu oponente e coloque 3 contadores de dano em cada um deles.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Ghostly Trip",
+      "nome_pt": "Tropeço Fantasmagórico",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-69",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Mischievous Hands: Choose 2 of your opponent's Pokémon and put 3 damage counters on each of them."
+    ]
+  }
+}

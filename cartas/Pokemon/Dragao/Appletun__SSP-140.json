@@ -1,0 +1,64 @@
+{
+  "id": "SSP-140",
+  "nome": "Appletun",
+  "nome_pt": "Appletun",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Applin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Melting Sweetness",
+      "nome_pt": "Derretida Doce",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't attack.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá atacar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Wild Tackle",
+      "nome_pt": "Investida Feroz",
+      "custo": [
+        "Planta",
+        "Fogo"
+      ],
+      "dano": "130",
+      "texto": "This Pokémon also does 20 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 20 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-140",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-211",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

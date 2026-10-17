@@ -1,0 +1,69 @@
+{
+  "id": "PFL-4",
+  "nome": "Mega Heracross ex",
+  "nome_pt": "Mega Heracross ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 280,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Juggernaut Horn",
+      "nome_pt": "Chifre Maciço",
+      "custo": [
+        "Planta",
+        "Planta"
+      ],
+      "dano": "100+",
+      "texto": "If this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage.",
+      "texto_pt": "Se este Pokémon tiver sido danificado por um ataque durante o último turno do seu oponente, este ataque causará a mesma quantidade de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Mountain Ramming",
+      "nome_pt": "Colisão Montanhosa",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Planta"
+      ],
+      "dano": "170",
+      "texto": "Discard the top 2 cards of your opponent's deck.",
+      "texto_pt": "Descarte as 2 cartas de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-4",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-108",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Juggernaut Horn: If this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage."
+    ]
+  }
+}

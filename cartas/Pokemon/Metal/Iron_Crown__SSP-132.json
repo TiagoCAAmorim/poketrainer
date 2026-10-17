@@ -1,0 +1,64 @@
+{
+  "id": "SSP-132",
+  "nome": "Iron Crown",
+  "nome_pt": "Chifres Férreos",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Deleting Slash",
+      "nome_pt": "Talho Apagador",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "40+",
+      "texto": "If your opponent has 3 or more Benched Pokémon, this attack does 80 more damage.",
+      "texto_pt": "Se o seu oponente tiver 3 ou mais Pokémon no Banco, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Slicing Blade",
+      "nome_pt": "Lâmina Fatiante",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-132",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Deleting Slash: If your opponent has 3 or more Benched Pokémon, this attack does 80 more damage."
+    ]
+  }
+}

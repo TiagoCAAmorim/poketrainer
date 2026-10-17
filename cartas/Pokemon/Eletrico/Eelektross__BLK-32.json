@@ -1,0 +1,65 @@
+{
+  "id": "BLK-32",
+  "nome": "Eelektross",
+  "nome_pt": "Eelektross",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Eelektrik",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Thunder Fang",
+      "nome_pt": "Presa Trovejante",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "60",
+      "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Buzz Flip",
+      "nome_pt": "Virada Elétrica",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "100×",
+      "texto": "Flip 4 coins. This attack does 100 damage for each heads.",
+      "texto_pt": "Jogue 4 moedas. Este ataque causa 100 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-32",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-115",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "BLK-36",
+  "nome": "Musharna",
+  "nome_pt": "Musharna",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Munna",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dream Calling",
+      "nome_pt": "Chamado Onírico",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "You may search your deck for any number of Fennel cards, reveal them, and put them into your hand. Then, shuffle your deck.",
+      "texto_pt": "Você pode procurar por qualquer número de cartas Fennel no seu baralho, revelá-las e colocá-las na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Sleep Pulse",
+      "nome_pt": "Pulso Sonolento",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "50",
+      "texto": "Your opponent's Active Pokémon is now Asleep.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Adormecido.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-36",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-117",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

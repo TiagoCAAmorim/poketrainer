@@ -1,0 +1,60 @@
+{
+  "id": "SSP-127",
+  "nome": "Bronzong",
+  "nome_pt": "Bronzong",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Bronzor",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spinning Attack",
+      "nome_pt": "Ataque Giratório",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Double Impact",
+      "nome_pt": "Impacto Duplo",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100×",
+      "texto": "Flip 2 coins. This attack does 100 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 100 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-127",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

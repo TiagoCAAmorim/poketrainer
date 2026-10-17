@@ -1,0 +1,46 @@
+{
+  "id": "POR-46",
+  "nome": "Hawlucha",
+  "nome_pt": "Hawlucha",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Vengeful Kick",
+      "nome_pt": "Chute Vingativo",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30+",
+      "texto": "If your Benched Pokémon have any damage counters on them, this attack does 60 more damage.",
+      "texto_pt": "Se os seus Pokémon no Banco tiverem algum contador de dano neles, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-46",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

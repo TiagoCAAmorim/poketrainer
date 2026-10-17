@@ -1,0 +1,48 @@
+{
+  "id": "DRI-56",
+  "nome": "Gorebyss",
+  "nome_pt": "Gorebyss",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Clamperl",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Crescendo Wave",
+      "nome_pt": "Onda Crescente",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each Water Energy attached to this Pokémon. Before doing damage, you may attach any number of Basic Water Energy cards from your hand to this Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada Energia Água ligada a este Pokémon. Antes de causar dano, você poderá ligar qualquer número de cartas de Energia Água Básica da sua mão a este Pokémon.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-56",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Crescendo Wave: Before doing damage, you may attach any number of Basic Water Energy cards from your hand to this Pokémon."
+    ]
+  }
+}

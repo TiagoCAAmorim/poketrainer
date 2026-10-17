@@ -1,0 +1,61 @@
+{
+  "id": "TWM-19",
+  "nome": "Iron Leaves",
+  "nome_pt": "Folhas Férreas",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Recovery Net",
+      "nome_pt": "Rede de Recuperação",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Put up to 2 Pokémon from your discard pile into your hand.",
+      "texto_pt": "Coloque até 2 Pokémon da sua pilha de descarte na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Avenging Edge",
+      "nome_pt": "Gume Vingativo",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "If any of your Pokémon were Knocked Out by damage from an attack during your opponent's last turn, this attack does 60 more damage.",
+      "texto_pt": "Se algum dos seus Pokémon tiver sido Nocauteado pelo dano de um ataque durante o último turno do seu oponente, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-19",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

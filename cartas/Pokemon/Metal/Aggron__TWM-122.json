@@ -1,0 +1,61 @@
+{
+  "id": "TWM-122",
+  "nome": "Aggron",
+  "nome_pt": "Aggron",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Lairon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Angry Slam",
+      "nome_pt": "Pancada Raivosa",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "50×",
+      "texto": "This attack does 50 damage for each of your Pokémon that has any damage counters on it.",
+      "texto_pt": "Este ataque causa 50 pontos de dano para cada um dos seus Pokémon que tem algum contador de dano nele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Guard Claw",
+      "nome_pt": "Garra Protetora",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "During your opponent's next turn, this Pokémon takes 50 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 50 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-122",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Angry Slam: This attack does 50 damage for each of your Pokémon that has any damage counters on it."
+    ]
+  }
+}

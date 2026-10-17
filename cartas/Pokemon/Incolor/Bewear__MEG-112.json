@@ -1,0 +1,60 @@
+{
+  "id": "MEG-112",
+  "nome": "Bewear",
+  "nome_pt": "Bewear",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Stufful",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Knuckle Punch",
+      "nome_pt": "Soco com Punho",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Hyper Lariat",
+      "nome_pt": "Hiperlaço",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "Flip 2 coins. If both of them are heads, this attack does 100 more damage.",
+      "texto_pt": "Jogue 2 moedas. Se as duas saírem cara, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-112",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

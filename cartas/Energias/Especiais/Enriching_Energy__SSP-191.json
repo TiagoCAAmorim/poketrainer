@@ -1,0 +1,26 @@
+{
+  "id": "SSP-191",
+  "nome": "Enriching Energy",
+  "nome_pt": "Energia Enriquecedora",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": true,
+  "fornece": null,
+  "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. When you attach this card from your hand to a Pokémon, draw 4 cards. ACE SPEC: You can't have more than 1 ACE SPEC card in your deck.",
+  "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Quando você ligar esta carta da sua mão a um Pokémon, compre 4 cartas.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-191",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

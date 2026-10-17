@@ -1,0 +1,90 @@
+# CLAUDE.md — poketrainer (PTCG Lab)
+
+Motor de regras de Pokémon TCG (regras do Pokémon TCG Live) em Python, para testar e otimizar decks
+competitivos e, depois, treinar uma IA (PyTorch). **O usuário fala português (pt-BR): responda em português.**
+Mensagens do motor, logs e CLIs estão em português; nomes de cartas ficam em inglês (oficial) com nome pt ao lado.
+
+## Objetivos do usuário (em ordem de prioridade)
+1. **Motor**: todas as cartas do formato Padrão atual (TEF–30C, marcas H/I/J, 2.083 cartas) funcionando.
+2. **Decks**: montar vários, importar listas (TCG Live/Limitless) e baixar top 8 de Regionais/Internacionais/Mundial
+   da Limitless (`import_limitless.py`, `ptcg/limitless.py`).
+3. **Validação com partidas reais do TCG Live**: logs "Copy Log" reproduzidos jogada a jogada (`ptcg/replay/`).
+   Vídeos foram substituídos por esses logs (o usuário ainda vai enviar logs próprios).
+4. **Biblioteca de cartas** (`cartas/`), **gerenciador de decks** e **LOG** (`logs/`).
+5. Interface HTML local (`server.py` + `web/index.html`) e IA (`ptcg/agents.py`, `ptcg/ai/`) — secundárias por ora.
+
+## Arquitetura do motor (ptcg/)
+- `engine.py` — `Game`: a partida inteira é um **gerador** que produz `Prompt(player, hint, text, options)`;
+  `g.step(i)` escolhe a opção i. Prompts de opção única se resolvem sozinhos. Determinístico por `seed` +
+  `history` (lista de índices) → `Game.clone()` refaz por replay. `g.refresh()` recalcula as opções da fase principal.
+- **Ganchos** (`fold`/`allowed`/`anyhook`) e **eventos** (`emit`), vindos de Estádio, efeitos temporários
+  (`add_effect(..., duration='opp_next_turn'|'my_next_turn'|'this_turn', while_active=...)`), Habilidades,
+  Ferramentas e Energias Especiais. Lista de ganchos/eventos no topo de `engine.py`.
+  Assinaturas: `damage_out(g, src, dmg, ctx, target)`, `damage_in(g, src, dmg, ctx, target, active)`,
+  `can_attack(g, src, slot, attack)`, `can_play(g, src, player, card)`, `hp(g, src, value, slot)` etc.
+- Energia como unidades (`frozenset` de tipos); custo pago por backtracking (`can_pay`).
+- `carddb.py` — base (`ptcg/data/cards.json` + `cards_pt.json`), `db()` singleton, `resolve(nome, set, num)`,
+  `named()` aceita nomes em inglês ou português.
+- `effects/` — `trainers.py`, `tools.py`, `stadiums.py`, `energies.py` (todos escritos à mão),
+  `abilities.py` (biblioteca de passivas por regex + escritas à mão), `attacks.py` (à mão),
+  `compiler.py` (texto do ataque → passos `pre`/`post`; `count_expr`, `cond_expr`, `@pattern(regex, fase)`).
+  Ordem: implementação à mão → compilador. Frase não reconhecida → carta `partial`/`missing`.
+- `replay/` — `parse.py` (templates en/pt do log do TCG Live), `replay.py` (`ReplayGame` com cartas ocultas
+  "UNKNOWN" que viram a carta certa sob demanda, pontos de ambiguidade com retrocesso, conferência de dano e KO).
+- `decks.py`, `limitless.py`, `logbook.py` (LOG), `agents.py`, `encode.py` (observação p/ rede), `ai/`, `sim.py`, `view.py`.
+
+## Comandos
+```
+python cartas.py buscar|mostrar|listar|resumo|atualizar     # biblioteca (gera cartas/cartas.db se faltar)
+python gerenciar_decks.py listar|mostrar|criar|montar|importar|editar|copiar|exportar|validar|apagar|limitless
+python gerenciar_logs.py importar|listar|mostrar|rever|atividade|reprocessar|imitacao
+python replay_log.py tests/fixtures/ptcgl_logs/*.log
+python simulate.py <deck> <deck> --games 200 [--salvar-log]      python optimize.py <deck> --gauntlet ...
+python server.py                                                  # http://localhost:8765
+```
+Reconstruir a base quando sair coleção nova: `python tools/build_carddb.py` (clona pokemon-tcg-data e TCGdex em
+`.cache/`), `python tools/build_pt_texts.py`, `python cartas.py atualizar`.
+
+## Testes (rodar antes de commitar mudanças no motor)
+```
+python tests/test_rules.py      # cenários de regras (helpers em tests/helpers.py)
+python tests/test_engine.py     # partidas com os decks reais + invariantes + determinismo
+python tests/test_replay.py     # os 4 logs reais do TCG Live devem reproduzir 100%
+python tests/fuzz.py --games 300  # decks aleatórios legais, invariantes a cada decisão
+python tests/test_limitless.py
+```
+pytest não é necessário (cada arquivo roda sozinho), mas os testes são compatíveis com pytest.
+
+## Estado atual (2026-10-17)
+- Cobertura: 1.628 cartas completas, 389 parciais, 66 pendentes (`python cartas.py resumo`;
+  `python cartas.py listar --pendentes`; a ficha de cada carta mostra a frase não implementada).
+  Todos os Treinadores/Ferramentas/Estádios/Energias e os 12 decks top 8 em `decks/limitless/` estão 100%.
+- Replays: 4/4 logs de exemplo reproduzidos por completo. No log slowking-vs-beedrill o TCG Live deu 300 de dano
+  com Metallic Hammer copiado por Seek Inspiration sem descartar Energias Metal (suspeita de bug do cliente);
+  o replay ajusta o dano ao log e anota.
+- PyTorch não foi testado (o ambiente anterior não conseguia instalar torch); `ptcg/ai/` pode precisar de ajustes.
+
+## Próximos passos
+1. **Cobertura**: implementar as frases restantes (lista: script abaixo). Priorizar cartas competitivas
+   (Bloodmoon Ursaluna ex "Seasoned Skill", Iron Thorns ex "Initialization", Flutter Mane "Midnight Fluttering",
+   Gastrodon "Sticky Bind", Incineroar ex "Hustle Play", Munkidori ex, Kyurem "Plasma Bane", Hydreigon ex,
+   Gengar ex "Gnawing Curse", Palafin "Zero to Hero", Klinklang, Okidogi "Adrena-Power", Rotom ex "Multi Adapter").
+   Padrões genéricos que resolvem várias de uma vez: "Torment/Memory Lock" (escolher ataque que não pode ser usado),
+   "use opponent's attack as this attack" (Foul Play/Metronome), "Discard all Energy ... does N damage to 1 of
+   your opponent's Pokémon", "Round", contra-ataques "if this Pokémon is damaged ... put N damage counters",
+   "Choose a random card from your opponent's hand ... shuffles it into their deck", nocaute direto ("is Knocked Out").
+   ```
+   python -c "from ptcg.carddb import db
+   for d in db().cards.values():
+       for a in d.attacks + d.abilities:
+           if a.impl is None or a.impl.status != 'ok': print(d.id, d.name, '|', a.name, '|', a.impl.note if a.impl else '-')"
+   ```
+2. Reproduzir os logs próprios do usuário (`gerenciar_logs.py importar`) e corrigir divergências.
+3. IA: imitação a partir dos logs (`gerenciar_logs.py imitacao`) + PPO self-play (`train.py`).
+
+## Convenções
+- Não reescrever arquivos gerados à mão: `cartas/` vem de `tools/export_cartas.py`; `ptcg/data/*.json` de `tools/`.
+- Correções de texto oficial vão em `ptcg/data/errata.json` (só com fonte confiável — já houve um falso positivo).
+- Novos efeitos: preferir padrão genérico no compilador (`@pattern`) a código por carta; escrever à mão
+  (`@attack('Carta', 'Ataque')`, `@ability('Nome')`, `@trainer('Nome')`) quando o efeito é único.
+- Todo efeito novo deve passar no fuzz (`tests/fuzz.py`) e, se possível, ganhar um cenário em `tests/test_rules.py`.

@@ -1,0 +1,48 @@
+{
+  "id": "30C-24",
+  "nome": "Pikachu",
+  "nome_pt": "Celebi Luminescente",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Volt Tackle",
+      "nome_pt": "Água de Cura",
+      "custo": [
+        "Elétrico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "This Pokémon also does 30 damage to itself.",
+      "texto_pt": "Remova de um dos seus Pokémon no Banco um número de marcadores de dano igual ao número de cartas de Energia <span class=\"energy-symbol Water\" title=\"Água\">Water</span> ligadas ao Celebi Luminescente. Se o Pokémon tiver menos marcadores de dano do que isso, remova todos eles.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-24",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "TEF-19",
+  "nome": "Dhelmise",
+  "nome_pt": "Dhelmise",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spinning Attack",
+      "nome_pt": "Ataque Giratório",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Steel Anchor",
+      "nome_pt": "Âncora de Aço",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "If you have any Metal Pokémon on your Bench, this attack does 80 more damage.",
+      "texto_pt": "Se você tiver algum Pokémon Metal no seu Banco, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-19",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

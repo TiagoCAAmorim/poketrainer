@@ -1,0 +1,46 @@
+{
+  "id": "DRI-94",
+  "nome": "Team Rocket's Larvitar",
+  "nome_pt": "Larvitar da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mountain Munch",
+      "nome_pt": "Masca-montanhas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10",
+      "texto": "Discard the top card of your opponent's deck.",
+      "texto_pt": "Descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-94",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

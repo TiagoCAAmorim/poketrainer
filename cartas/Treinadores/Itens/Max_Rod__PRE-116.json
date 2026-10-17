@@ -1,0 +1,25 @@
+{
+  "id": "PRE-116",
+  "nome": "Max Rod",
+  "nome_pt": "Vara de Pescar Max",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Put up to 5 in any combination of Pokémon and Basic Energy cards from your discard pile into your hand.",
+  "texto_pt": "Coloque até 5 cartas de Pokémon e de Energia Básica da sua pilha de descarte na sua mão em qualquer combinação.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-116",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

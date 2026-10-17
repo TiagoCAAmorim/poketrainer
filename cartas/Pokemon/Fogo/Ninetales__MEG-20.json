@@ -1,0 +1,60 @@
+{
+  "id": "MEG-20",
+  "nome": "Ninetales",
+  "nome_pt": "Ninetales",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Vulpix",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Supernatural Shapeshifter",
+      "nome_pt": "Metamorfo Sobrenatural",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard the top card of your deck, and if that card is a Supporter card, use the effect of that card as the effect of this attack.",
+      "texto_pt": "Descarte a carta de cima do seu baralho e, se aquela carta for uma carta de Apoiador, use o efeito daquela carta como o efeito deste ataque.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Combustion",
+      "nome_pt": "Combustão",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-20",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Supernatural Shapeshifter: Discard the top card of your deck, and if that card is a Supporter card, use the effect of that card as the effect of this attack."
+    ]
+  }
+}

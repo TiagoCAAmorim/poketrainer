@@ -1,0 +1,25 @@
+{
+  "id": "MEG-127",
+  "nome": "Risky Ruins",
+  "nome_pt": "Ruínas Arriscadas",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Whenever any player puts a Basic non-Darkness Pokémon onto their Bench during their turn, place 2 damage counters on that Pokémon.",
+  "texto_pt": "Sempre que algum jogador colocar um Pokémon Básico que não seja de tipo Escuridão no próprio Banco durante o próprio turno, coloque 2 contadores de dano naquele Pokémon.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-127",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

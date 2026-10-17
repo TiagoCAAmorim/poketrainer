@@ -1,0 +1,55 @@
+{
+  "id": "PBL-41",
+  "nome": "Annihilape",
+  "nome_pt": "Annihilape",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Primeape",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Durable Body",
+      "nome_pt": "Corpo Durável",
+      "texto": "If this Pokémon would be Knocked Out by damage from an attack, flip a coin. If heads, this Pokémon is not Knocked Out, and its remaining HP becomes 10.",
+      "texto_pt": "Se este Pokémon estiver prestes a ser Nocauteado pelo dano de um ataque, jogue uma moeda. Se sair cara, este Pokémon não será Nocauteado e o PS restante dele será 10.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Ghostly Blow",
+      "nome_pt": "Sova Fantasma",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "100",
+      "texto": "Place 5 damage counters on 1 of your opponent's Benched Pokémon.",
+      "texto_pt": "Coloque 5 contadores de dano em 1 dos Pokémon no Banco do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-41",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

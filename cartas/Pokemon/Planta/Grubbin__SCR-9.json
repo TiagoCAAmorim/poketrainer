@@ -1,0 +1,52 @@
+{
+  "id": "SCR-9",
+  "nome": "Grubbin",
+  "nome_pt": "Grubbin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ambush",
+      "nome_pt": "Emboscada",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "10+",
+      "texto": "Flip a coin. If heads, this attack does 30 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 30 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-9",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "ASC-17",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

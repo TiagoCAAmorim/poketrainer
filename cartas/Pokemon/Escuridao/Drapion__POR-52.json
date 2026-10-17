@@ -1,0 +1,65 @@
+{
+  "id": "POR-52",
+  "nome": "Drapion",
+  "nome_pt": "Drapion",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Skorupi",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wrack Down",
+      "nome_pt": "Desmoronar",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Hazardous Tail",
+      "nome_pt": "Cauda Periculosa",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "100",
+      "texto": "This Pokémon also does 70 damage to itself. Your opponent's Active Pokémon is now Paralyzed and Poisoned.",
+      "texto_pt": "Este Pokémon também causa 70 pontos de dano a si mesmo. O Pokémon Ativo do seu oponente agora está Envenenado e Paralisado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-52",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-97",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

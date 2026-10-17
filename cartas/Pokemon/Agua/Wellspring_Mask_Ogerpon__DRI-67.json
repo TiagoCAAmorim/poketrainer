@@ -1,0 +1,59 @@
+{
+  "id": "DRI-67",
+  "nome": "Wellspring Mask Ogerpon",
+  "nome_pt": "Ogerpon Máscara Nascente",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Water Kagura",
+      "nome_pt": "Kagura de Água",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for a Basic Water Energy card and attach it to 1 of your Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Procure por uma carta de Energia Água Básica no seu baralho e ligue-a a 1 dos seus Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bubble Drain",
+      "nome_pt": "Dreno de Bolha",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "Heal 30 damage from this Pokémon.",
+      "texto_pt": "Cure 30 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-67",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

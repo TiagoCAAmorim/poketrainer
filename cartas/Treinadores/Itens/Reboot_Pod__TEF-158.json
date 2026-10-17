@@ -1,0 +1,25 @@
+{
+  "id": "TEF-158",
+  "nome": "Reboot Pod",
+  "nome_pt": "Cápsula do Reinício",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Attach a Basic Energy card from your discard pile to each of your Future Pokémon.",
+  "texto_pt": "Ligue uma carta de Energia Básica da sua pilha de descarte a cada um dos seus Pokémon Futuristas.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-158",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

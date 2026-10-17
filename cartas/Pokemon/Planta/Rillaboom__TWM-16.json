@@ -1,0 +1,60 @@
+{
+  "id": "TWM-16",
+  "nome": "Rillaboom",
+  "nome_pt": "Rillaboom",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Thwackey",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Drum Beating",
+      "nome_pt": "Toque do Tambor",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "60",
+      "texto": "During your opponent's next turn, attacks used by the Defending Pokémon cost Colorless more, and its Retreat Cost is Colorless more.",
+      "texto_pt": "Durante o próximo turno do seu oponente, os ataques usados pelo Pokémon Defensor custarão Incolor a mais e o seu custo de Recuo será Incolor a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Wood Hammer",
+      "nome_pt": "Martelo de Madeira",
+      "custo": [
+        "Planta",
+        "Planta"
+      ],
+      "dano": "180",
+      "texto": "This Pokémon also does 50 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 50 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-16",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Drum Beating: During your opponent's next turn, attacks used by the Defending Pokémon cost Colorless more, and its Retreat Cost is Colorless more."
+    ]
+  }
+}

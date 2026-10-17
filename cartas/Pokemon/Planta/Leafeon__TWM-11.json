@@ -1,0 +1,65 @@
+{
+  "id": "TWM-11",
+  "nome": "Leafeon",
+  "nome_pt": "Leafeon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Leaflet Blessings",
+      "nome_pt": "Bênçãos das Folhinhas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach a Basic Grass Energy card from your hand to 1 of your Benched Pokémon. If you do, heal all damage from that Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia Planta Básica da sua mão a 1 dos seus Pokémon no Banco. Se fizer isto, cure todo o dano daquele Pokémon.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Solar Beam",
+      "nome_pt": "Raio Solar",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-11",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "PRE-5",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Leaflet Blessings: If you do, heal all damage from that Pokémon."
+    ]
+  }
+}

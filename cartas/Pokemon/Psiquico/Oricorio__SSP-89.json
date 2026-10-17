@@ -1,0 +1,58 @@
+{
+  "id": "SSP-89",
+  "nome": "Oricorio",
+  "nome_pt": "Oricorio",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Energy Assist",
+      "nome_pt": "Socorro de Energia",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 2 Basic Energy cards from your discard pile to 1 of your Benched Pokémon.",
+      "texto_pt": "Ligue até 2 cartas de Energia Básica da sua pilha de descarte a 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dazzle Dance",
+      "nome_pt": "Dança Fascinante",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-89",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

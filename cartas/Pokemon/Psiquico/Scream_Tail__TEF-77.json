@@ -1,0 +1,60 @@
+{
+  "id": "TEF-77",
+  "nome": "Scream Tail",
+  "nome_pt": "Cauda Brado",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Supportive Singing",
+      "nome_pt": "Canto Encorajador",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Heal 100 damage from 1 of your Benched Ancient Pokémon.",
+      "texto_pt": "Cure 100 pontos de dano de 1 dos seus Pokémon Ancestrais no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Hyper Voice",
+      "nome_pt": "Hipervoz",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-77",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

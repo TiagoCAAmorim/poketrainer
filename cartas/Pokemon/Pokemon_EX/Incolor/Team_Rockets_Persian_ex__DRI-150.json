@@ -1,0 +1,69 @@
+{
+  "id": "DRI-150",
+  "nome": "Team Rocket's Persian ex",
+  "nome_pt": "Persian ex da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Meowth",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Haughty Order",
+      "nome_pt": "Ordem Arrogante",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Reveal the top 10 cards of your opponent's deck. You may choose an attack from a Pokémon you find there and use it as this attack. Shuffle the revealed cards into your opponent's deck.",
+      "texto_pt": "Revele as 10 cartas de cima do baralho do seu oponente. Você pode escolher um ataque de um Pokémon que encontrar lá e usá-lo como este ataque. Embaralhe as cartas reveladas no baralho do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Cruel Slash",
+      "nome_pt": "Talho Cruel",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-150",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-219",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Haughty Order: Reveal the top 10 cards of your opponent's deck.; You may choose an attack from a Pokémon you find there and use it as this attack.; Shuffle the revealed cards into your opponent's deck."
+    ]
+  }
+}

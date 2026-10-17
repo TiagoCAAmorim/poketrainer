@@ -1,0 +1,64 @@
+{
+  "id": "DRI-34",
+  "nome": "Ethan's Typhlosion",
+  "nome_pt": "Typhlosion do Ethan",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Ethan's Quilava",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Buddy Blast",
+      "nome_pt": "Rajada Amiga",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "40+",
+      "texto": "This attack does 60 more damage for each Ethan's Adventure card in your discard pile.",
+      "texto_pt": "Este ataque causa 60 pontos de dano a mais para cada carta Aventura do Ethan na sua pilha de descarte.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Steam Artillery",
+      "nome_pt": "Artilharia de Vapor",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-34",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-190",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

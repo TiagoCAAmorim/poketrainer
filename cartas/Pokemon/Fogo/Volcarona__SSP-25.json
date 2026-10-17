@@ -1,0 +1,59 @@
+{
+  "id": "SSP-25",
+  "nome": "Volcarona",
+  "nome_pt": "Volcarona",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Larvesta",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Leech Life",
+      "nome_pt": "Suga-vidas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Heal from this Pokémon the same amount of damage you did to your opponent's Active Pokémon.",
+      "texto_pt": "Cure deste Pokémon a mesma quantidade de dano que você causou ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Turbulent Wings",
+      "nome_pt": "Asas Turbulentas",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "This Pokémon also does 50 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 50 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-25",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

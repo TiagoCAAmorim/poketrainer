@@ -1,0 +1,58 @@
+{
+  "id": "TWM-139",
+  "nome": "Ducklett",
+  "nome_pt": "Ducklett",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Draw",
+      "nome_pt": "Compra Dupla",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw 2 cards.",
+      "texto_pt": "Compre 2 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Razor Wing",
+      "nome_pt": "Asa Cortante",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-139",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

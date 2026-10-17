@@ -1,0 +1,46 @@
+{
+  "id": "TWM-17",
+  "nome": "Applin",
+  "nome_pt": "Applin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 40,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tumbling Attack",
+      "nome_pt": "Ataque Cambalhota",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "10+",
+      "texto": "Flip a coin. If heads, this attack does 20 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 20 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-17",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

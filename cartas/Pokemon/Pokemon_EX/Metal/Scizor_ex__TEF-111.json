@@ -1,0 +1,68 @@
+{
+  "id": "TEF-111",
+  "nome": "Scizor ex",
+  "nome_pt": "Scizor ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Scyther",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Steel Wing",
+      "nome_pt": "Asa de Aço",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "During your opponent's next turn, this Pokémon takes 50 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 50 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Cross Breaker",
+      "nome_pt": "Cruzado Quebrador",
+      "custo": [
+        "Metal",
+        "Metal"
+      ],
+      "dano": "120×",
+      "texto": "Discard up to 2 Metal Energy from this Pokémon. This attack does 120 damage for each card you discarded in this way.",
+      "texto_pt": "Descarte até 2 Energias Metal deste Pokémon. Este ataque causa 120 pontos de dano para cada carta descartada desta forma.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-111",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-195",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Cross Breaker: Discard up to 2 Metal Energy from this Pokémon."
+    ]
+  }
+}

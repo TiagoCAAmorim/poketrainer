@@ -1,0 +1,77 @@
+{
+  "id": "JTG-56",
+  "nome": "Lillie's Clefairy ex",
+  "nome_pt": "Clefairy ex da Lílian",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 190,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Fairy Zone",
+      "nome_pt": "Zona de Fadas",
+      "texto": "The Weakness of each of your opponent's Dragon Pokémon in play is now Psychic. (Apply Weakness as ×2.)",
+      "texto_pt": "A Fraqueza de cada um dos Pokémon Dragão do seu oponente em jogo agora é Psíquico. (Aplique Fraqueza de ×2.)",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Full Moon Rondo",
+      "nome_pt": "Cântico da Lua Cheia",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 20 more damage for each Benched Pokémon (both yours and your opponent's).",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada Pokémon no Banco (seus e do seu oponente).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-56",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-173",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-184",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "ASC-76",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-280",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

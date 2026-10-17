@@ -1,0 +1,59 @@
+{
+  "id": "BLK-39",
+  "nome": "Reuniclus",
+  "nome_pt": "Reuniclus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Duosion",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cellular Ascension",
+      "nome_pt": "Ascensão Celular",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "For each of your Benched Pokémon, search your deck for a card that evolves from that Pokémon and put it onto that Pokémon to evolve it. Then, shuffle your deck.",
+      "texto_pt": "Para cada um dos seus Pokémon no Banco, procure por uma carta no seu baralho que evolua daquele Pokémon e coloque-a sobre aquele Pokémon para evoluí-lo. Em seguida, embaralhe o seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Evo-Lariat",
+      "nome_pt": "Lariat Evolutivo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40+",
+      "texto": "This attack does 40 more damage for each of your Evolution Pokémon in play.",
+      "texto_pt": "Este ataque causa 40 pontos de dano a mais para cada um dos seus Pokémon de Evolução em jogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-39",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Cellular Ascension: For each of your Benched Pokémon, search your deck for a card that evolves from that Pokémon and put it onto that Pokémon to evolve it."
+    ]
+  }
+}

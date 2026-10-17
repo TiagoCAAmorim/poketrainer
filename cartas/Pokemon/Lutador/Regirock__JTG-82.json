@@ -1,0 +1,56 @@
+{
+  "id": "JTG-82",
+  "nome": "Regirock",
+  "nome_pt": "Regirock",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Rock Armor",
+      "nome_pt": "Armadura de Pedra",
+      "texto": "If this Pokémon has any Energy attached, it takes 30 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Se este Pokémon tiver alguma Energia ligada a ele, receberá 30 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Breaching Lariat",
+      "nome_pt": "Laço Destruidor",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "120",
+      "texto": "This attack's damage isn't affected by Resistance.",
+      "texto_pt": "O dano deste ataque não é afetado por Resistência.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-82",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

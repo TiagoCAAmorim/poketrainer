@@ -1,0 +1,60 @@
+{
+  "id": "30C-114",
+  "nome": "Kangaskhan",
+  "nome_pt": "Kangaskhan",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rage",
+      "nome_pt": "Ira",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 10 more damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano a mais para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Mega Punch",
+      "nome_pt": "Megassoco",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-114",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

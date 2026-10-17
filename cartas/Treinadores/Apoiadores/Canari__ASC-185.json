@@ -1,0 +1,35 @@
+{
+  "id": "ASC-185",
+  "nome": "Canari",
+  "nome_pt": "Canari",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "You can use this card only if you discard another card from your hand. Search your deck for up to 4 Lightning Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.",
+  "texto_pt": "Você só poderá usar esta carta se descartar outra carta da sua mão. Procure por até 4 Pokémon Elétrico no seu baralho, revele-os e coloque-os na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-185",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-257",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-291",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "MEG-93",
+  "nome": "Steelix",
+  "nome_pt": "Steelix",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 200,
+  "estagio": "Estágio 1",
+  "evolui_de": "Onix",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Welcoming Tail",
+      "nome_pt": "Cauda de Boas-vindas",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40+",
+      "texto": "If you have exactly 6 Prize cards remaining, this attack does 200 more damage.",
+      "texto_pt": "Se você tiver exatamente 6 cartas de Prêmio restantes, este ataque causará 200 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Skull Bash",
+      "nome_pt": "Quebra-crânio",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-93",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-150",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Welcoming Tail: If you have exactly 6 Prize cards remaining, this attack does 200 more damage."
+    ]
+  }
+}

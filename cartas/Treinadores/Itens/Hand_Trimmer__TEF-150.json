@@ -1,0 +1,23 @@
+{
+  "id": "TEF-150",
+  "nome": "Hand Trimmer",
+  "nome_pt": "Aparador de Mão",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Each player discards cards from their hand until they have 5 cards in their hand. Your opponent discards first. (If a player has 5 or fewer cards in their hand, they do not discard.)",
+  "texto_pt": "Cada jogador descarta cartas da própria mão até ter 5 cartas na própria mão. Seu oponente descarta primeiro. (Se um jogador tiver 5 ou menos cartas na própria mão, ele não descartará.)",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-150",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "SFA-51",
+  "nome": "Furfrou",
+  "nome_pt": "Furfrou",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Energy Assist",
+      "nome_pt": "Socorro de Energia",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "Attach a Basic Energy card from your discard pile to 1 of your Benched Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia Básica da sua pilha de descarte a 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-51",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

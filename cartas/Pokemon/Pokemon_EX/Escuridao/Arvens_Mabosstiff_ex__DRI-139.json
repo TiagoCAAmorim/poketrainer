@@ -1,0 +1,71 @@
+{
+  "id": "DRI-139",
+  "nome": "Arven's Mabosstiff ex",
+  "nome_pt": "Mabosstiff ex do Arven",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Arven's Maschiff",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Vigorous Tackle",
+      "nome_pt": "Investida Vigorosa",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30+",
+      "texto": "If this Pokémon has no damage counters on it, this attack does 120 more damage.",
+      "texto_pt": "Se este Pokémon não tiver nenhum contador de dano nele, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Boss Headbutt",
+      "nome_pt": "Cabeçada do Chefão",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "210",
+      "texto": "During your next turn, this Pokémon can't use Boss Headbutt.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Cabeçada do Chefão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-139",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-218",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-235",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "ASC-121",
+  "nome": "Koraidon ex",
+  "nome_pt": "Koraidon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 230,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Orichalcum Fang",
+      "nome_pt": "Presas de Oricalco",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "50+",
+      "texto": "If any of your Pokémon were Knocked Out by damage from an attack during your opponent's last turn, this attack does 120 more damage.",
+      "texto_pt": "Se algum dos seus Pokémon tiver sido Nocauteado pelo dano de um ataque durante o último turno do seu oponente, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Impact Blow",
+      "nome_pt": "Golpe Impactante",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "During your next turn, this Pokémon can't use Impact Blow.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Golpe Impactante.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-121",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

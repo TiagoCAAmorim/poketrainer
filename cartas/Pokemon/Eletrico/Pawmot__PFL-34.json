@@ -1,0 +1,49 @@
+{
+  "id": "PFL-34",
+  "nome": "Pawmot",
+  "nome_pt": "Pawmot",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Pawmo",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Voltaic Fist",
+      "nome_pt": "Punho Voltaico",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "130",
+      "texto": "You may have this Pokémon also do 60 damage to itself and make your opponent's Active Pokémon Paralyzed.",
+      "texto_pt": "Você pode fazer este Pokémon também causar 60 pontos de dano a si mesmo e deixar o Pokémon Ativo do seu oponente Paralisado.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-34",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Voltaic Fist: You may have this Pokémon also do 60 damage to itself and make your opponent's Active Pokémon Paralyzed."
+    ]
+  }
+}

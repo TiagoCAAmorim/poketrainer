@@ -1,0 +1,49 @@
+{
+  "id": "SCR-123",
+  "nome": "Talonflame",
+  "nome_pt": "Talonflame",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Fletchinder",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aero Chase",
+      "nome_pt": "Caçada Aérea",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "110+",
+      "texto": "If the Retreat Cost of your opponent's Active Pokémon is ColorlessColorless or more, this attack does 110 more damage.",
+      "texto_pt": "Se o custo de Recuo do Pokémon Ativo do seu oponente for IncolorIncolor ou mais, este ataque causará 110 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-123",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Aero Chase: If the Retreat Cost of your opponent's Active Pokémon is ColorlessColorless or more, this attack does 110 more damage."
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "JTG-105",
+  "nome": "N's Klinklang",
+  "nome_pt": "Klinklang do N",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "N's Klang",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Magnetic Blast",
+      "nome_pt": "Explosão Magnética",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Triple Smash",
+      "nome_pt": "Pancada Tripla",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "120×",
+      "texto": "Flip 3 coins. This attack does 120 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 120 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-105",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

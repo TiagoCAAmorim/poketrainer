@@ -1,0 +1,66 @@
+{
+  "id": "30C-15",
+  "nome": "Fuecoco ex",
+  "nome_pt": "Jigglypuff da Érica",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Singe",
+      "nome_pt": "Terapia em Grupo",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Burned.",
+      "texto_pt": "Você e seu oponente removem 1 marcador de dano de cada um dos seus Pokémon com marcadores de dano neles.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Cheerful Flame",
+      "nome_pt": "Soco Contido",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "70×",
+      "texto": "This attack does 70 damage for each Prize card you have taken.",
+      "texto_pt": "Se o Pokémon Defensor não tiver marcadores de dano nele, este ataque causa 40 pts. de dano. Se ele tiver marcadores de dano nele, este ataque causa 10 pts. de dano.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-15",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-147",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

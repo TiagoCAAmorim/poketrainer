@@ -1,0 +1,50 @@
+{
+  "id": "PRE-19",
+  "nome": "Slowking",
+  "nome_pt": "Slowking",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Slowpoke",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wash the Slate Clean",
+      "nome_pt": "Águas Passadas",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "You may put 2 Energy attached to your opponent's Active Pokémon into their hand.",
+      "texto_pt": "Você pode colocar 2 Energias ligadas ao Pokémon Ativo do seu oponente na mão dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-19",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Wash the Slate Clean: You may put 2 Energy attached to your opponent's Active Pokémon into their hand."
+    ]
+  }
+}

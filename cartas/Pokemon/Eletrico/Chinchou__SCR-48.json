@@ -1,0 +1,47 @@
+{
+  "id": "SCR-48",
+  "nome": "Chinchou",
+  "nome_pt": "Chinchou",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Voltage",
+      "nome_pt": "Voltagem Dupla",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "Flip 2 coins. This attack does 20 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 20 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-48",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "BLK-58",
+  "nome": "Krokorok",
+  "nome_pt": "Krokorok",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sandile",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tighten Up",
+      "nome_pt": "Espremer",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "Your opponent discards 2 cards from their hand.",
+      "texto_pt": "Seu oponente descarta 2 cartas da mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-58",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-136",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

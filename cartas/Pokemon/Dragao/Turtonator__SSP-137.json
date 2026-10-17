@@ -1,0 +1,61 @@
+{
+  "id": "SSP-137",
+  "nome": "Turtonator",
+  "nome_pt": "Turtonator",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fully Singe",
+      "nome_pt": "Chamuscada Total",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Discard an Energy from your opponent's Active Pokémon ex.",
+      "texto_pt": "Descarte uma Energia do Pokémon ex Ativo do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Steaming Stomp",
+      "nome_pt": "Pisoteada Fumegante",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-137",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Fully Singe: Discard an Energy from your opponent's Active Pokémon ex."
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "PR-SV-155",
+  "nome": "Wooper",
+  "nome_pt": "Wooper",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Scoop Water",
+      "nome_pt": null,
+      "custo": [
+        "Água"
+      ],
+      "dano": "—",
+      "texto": "Shuffle up to 3 Basic Water Energy cards from your discard pile into your deck.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Headbutt",
+      "nome_pt": null,
+      "custo": [
+        "Água"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-155",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "TWM-133",
+  "nome": "Chansey",
+  "nome_pt": "Chansey",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Lucky Attachment",
+      "nome_pt": "Ligação Sortuda",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach a Basic Energy card from your hand to 1 of your Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia Básica da sua mão a 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Boundless Power",
+      "nome_pt": "Poder Ilimitado",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-133",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-187",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

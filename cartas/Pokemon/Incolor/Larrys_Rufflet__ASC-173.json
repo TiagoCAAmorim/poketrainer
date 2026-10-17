@@ -1,0 +1,47 @@
+{
+  "id": "ASC-173",
+  "nome": "Larry's Rufflet",
+  "nome_pt": "Rufflet do Lauro",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Peck the Wound",
+      "nome_pt": "Bicar a Ferida",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 80 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente já tiver algum contador de dano nele, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-173",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

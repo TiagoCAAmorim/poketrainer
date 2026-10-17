@@ -1,0 +1,59 @@
+{
+  "id": "ASC-157",
+  "nome": "Noivern",
+  "nome_pt": "Noivern",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Noibat",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Agility",
+      "nome_pt": "Agilidade",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "Flip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, durante o próximo turno do seu oponente, previna todo o dano e os efeitos de ataques causados a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Enhanced Blade",
+      "nome_pt": "Espada Melhorada",
+      "custo": [
+        "Psíquico",
+        "Escuridão"
+      ],
+      "dano": "70+",
+      "texto": "If this Pokémon has a Pokémon Tool attached, this attack does 70 more damage.",
+      "texto_pt": "Se este Pokémon tiver uma Ferramenta Pokémon ligada a ele, este ataque causará 70 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-157",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

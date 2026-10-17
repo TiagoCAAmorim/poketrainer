@@ -1,0 +1,51 @@
+{
+  "id": "TEF-45",
+  "nome": "Snom",
+  "nome_pt": "Snom",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 50,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Powder Snow",
+      "nome_pt": "Neve em Pó",
+      "custo": [
+        "Água"
+      ],
+      "dano": "10",
+      "texto": "Your opponent's Active Pokémon is now Asleep.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Adormecido.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-45",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-168",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

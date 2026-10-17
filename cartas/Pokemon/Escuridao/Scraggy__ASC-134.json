@@ -1,0 +1,47 @@
+{
+  "id": "ASC-134",
+  "nome": "Scraggy",
+  "nome_pt": "Scraggy",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Knock Off",
+      "nome_pt": "Derrubar",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Discard a random card from your opponent's hand.",
+      "texto_pt": "Descarte uma carta aleatória da mão do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-134",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

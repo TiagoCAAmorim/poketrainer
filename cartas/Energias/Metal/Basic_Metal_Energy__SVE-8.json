@@ -1,0 +1,44 @@
+{
+  "id": "SVE-8",
+  "nome": "Basic Metal Energy",
+  "nome_pt": "Energia de Metal",
+  "categoria": "Energia",
+  "subtipo": "Energia Básica",
+  "ace_spec": false,
+  "fornece": "Metal",
+  "texto": "Fornece 1 Energia de Metal.",
+  "texto_pt": "Fornece 1 Energia de Metal.",
+  "regras": [],
+  "regulamento": null,
+  "impressoes": [
+    {
+      "codigo": "SVE-8",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+    },
+    {
+      "codigo": "SVE-16",
+      "colecao": "Scarlet & Violet Energies",
+      "data": "2023-03-31"
+    },
+    {
+      "codigo": "SFA-99",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "MEE-8",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+    },
+    {
+      "codigo": "MEE-16",
+      "colecao": "Mega Evolution Energy",
+      "data": "2025-09-25"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

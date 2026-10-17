@@ -1,0 +1,66 @@
+{
+  "id": "BLK-22",
+  "nome": "Tirtouga",
+  "nome_pt": "Tirtouga",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Antique Cover Fossil",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ancient Seaweed",
+      "nome_pt": "Alga Ancestral",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each Item card in your opponent's discard pile.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada carta de Item na pilha de descarte do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Surf",
+      "nome_pt": "Surfar",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-22",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-106",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Ancient Seaweed: This attack does 30 damage for each Item card in your opponent's discard pile."
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "PR-SV-90",
+  "nome": "Metang",
+  "nome_pt": "Metang",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Beldum",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Metal Maker",
+      "nome_pt": "Fabricante de Metal",
+      "texto": "Once during your turn, you may look at the top 4 cards of your deck and attach any number of Basic Metal Energy cards you find there to your Pokémon in any way you like. Shuffle the other cards and put them on the bottom of your deck.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá olhar as 4 cartas de cima do seu baralho e ligar qualquer número de cartas de Energia Metal Básica que encontrar lá aos seus Pokémon como desejar. Embaralhe as outras cartas e coloque-as como as cartas de baixo do seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Beam",
+      "nome_pt": "Feixe",
+      "custo": [
+        "Metal",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-90",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "TEF-114",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

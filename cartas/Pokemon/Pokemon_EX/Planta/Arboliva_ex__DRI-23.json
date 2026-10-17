@@ -1,0 +1,68 @@
+{
+  "id": "DRI-23",
+  "nome": "Arboliva ex",
+  "nome_pt": "Arboliva ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 310,
+  "estagio": "Estágio 2",
+  "evolui_de": "Dolliv",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Oil Salvo",
+      "nome_pt": "Saraivada de Óleo",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Choose 1 of your opponent's Pokémon 6 times. (You can choose the same Pokémon more than once.) For each time you chose a Pokémon, do 20 damage to it. This damage isn't affected by Weakness or Resistance.",
+      "texto_pt": "Escolha 1 dos Pokémon do seu oponente 6 vezes. (Você pode escolher o mesmo Pokémon mais de uma vez). Para cada vez que você escolher um Pokémon, cause 20 pontos de dano a ele. Este dano não é afetado por Fraqueza ou Resistência.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Aroma Shot",
+      "nome_pt": "Disparo Aromático",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "This Pokémon recovers from all Special Conditions.",
+      "texto_pt": "Este Pokémon se recupera de todas as Condições Especiais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-23",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-207",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Oil Salvo: Choose 1 of your opponent's Pokémon 6 times.; For each time you chose a Pokémon, do 20 damage to it.; This damage isn't affected by Weakness or Resistance."
+    ]
+  }
+}

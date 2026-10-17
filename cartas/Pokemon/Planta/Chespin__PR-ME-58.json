@@ -1,0 +1,47 @@
+{
+  "id": "PR-ME-58",
+  "nome": "Chespin",
+  "nome_pt": "Chespin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pin Missile",
+      "nome_pt": "Pin Missile",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "10×",
+      "texto": "Flip 4 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Flip 4 coins. This attack does 10 damage for each heads.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-58",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

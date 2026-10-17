@@ -1,0 +1,69 @@
+{
+  "id": "SSP-106",
+  "nome": "Flygon ex",
+  "nome_pt": "Flygon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 310,
+  "estagio": "Estágio 2",
+  "evolui_de": "Vibrava",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Reversing Storm",
+      "nome_pt": "Tempestade Reversa",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "130",
+      "texto": "You may switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Você pode trocar este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Sonic Peridot",
+      "nome_pt": "Peridoto Sônico",
+      "custo": [
+        "Água",
+        "Lutador",
+        "Metal"
+      ],
+      "dano": "—",
+      "texto": "This attack does 100 damage to each of your opponent's Pokémon ex and Pokémon V. This attack's damage isn't affected by Weakness or Resistance.",
+      "texto_pt": "Este ataque causa 100 pontos de dano a cada um dos Pokémon ex e Pokémon V do seu oponente. O dano deste ataque não é afetado por Fraqueza ou Resistência.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-106",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-222",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Sonic Peridot: This attack does 100 damage to each of your opponent's Pokémon ex and Pokémon V."
+    ]
+  }
+}

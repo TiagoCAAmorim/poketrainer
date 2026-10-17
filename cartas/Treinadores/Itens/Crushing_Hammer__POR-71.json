@@ -1,0 +1,28 @@
+{
+  "id": "POR-71",
+  "nome": "Crushing Hammer",
+  "nome_pt": "Martelo Esmagador",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Flip a coin. If heads, discard an Energy from 1 of your opponent's Pokémon.",
+  "texto_pt": "Jogue uma moeda. Se sair cara, descarte uma Energia de 1 dos Pokémon do seu oponente.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-71",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "PBL-105",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "TEF-65",
+  "nome": "Azumarill",
+  "nome_pt": "Azumarill",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Marill",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Play Rough",
+      "nome_pt": "Jogo Duro",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30+",
+      "texto": "Flip a coin. If heads, this attack does 30 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 30 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Power Tackle",
+      "nome_pt": "Investida Poderosa",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-65",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

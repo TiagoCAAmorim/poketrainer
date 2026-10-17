@@ -1,0 +1,58 @@
+{
+  "id": "DRI-22",
+  "nome": "Dolliv",
+  "nome_pt": "Dolliv",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Smoliv",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Nutrients",
+      "nome_pt": "Nutrientes",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Heal 40 damage from 1 of your Pokémon.",
+      "texto_pt": "Cure 40 pontos de dano de 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Tackle",
+      "nome_pt": "Investida",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-22",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

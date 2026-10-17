@@ -1,0 +1,48 @@
+{
+  "id": "30C-40",
+  "nome": "Pikachu",
+  "nome_pt": "Pikachu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Overwriting Bolt",
+      "nome_pt": "Raio Sobrescritor",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "10",
+      "texto": "The Defending Pokémon's Weakness is now Lightning until the end of your next turn. (Apply Weakness as x2.)",
+      "texto_pt": "A Fraqueza do Pokémon Defensor agora é Lightning até o final do seu próximo turno. (Aplique Fraqueza de ×2.)",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-40",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Overwriting Bolt: The Defending Pokémon's Weakness is now Lightning until the end of your next turn."
+    ]
+  }
+}

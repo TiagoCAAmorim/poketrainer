@@ -1,0 +1,63 @@
+{
+  "id": "JTG-43",
+  "nome": "Veluza ex",
+  "nome_pt": "Veluza ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Razor Fin",
+      "nome_pt": "Barbatana Cortante",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Purging Strike",
+      "nome_pt": "Golpe do Desapego",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "120+",
+      "texto": "You may discard your hand. If you discarded any cards in this way, this attack does 120 more damage.",
+      "texto_pt": "Você pode descartar a sua mão. Se você descartou qualquer carta desta forma, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-43",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Purging Strike: You may discard your hand.; If you discarded any cards in this way, this attack does 120 more damage."
+    ]
+  }
+}

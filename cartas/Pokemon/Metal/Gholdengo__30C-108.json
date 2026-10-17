@@ -1,0 +1,64 @@
+{
+  "id": "30C-108",
+  "nome": "Gholdengo",
+  "nome_pt": "Gholdengo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Gimmighoul",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Celebration",
+      "nome_pt": "Celebrar",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "—",
+      "texto": "if you have exactly 30 cards in your hand, take 2 Prize cards. If you do, shuffle your hand into your deck.",
+      "texto_pt": "Se você tiver exatamente 30 cartas na sua mão, pegue 2 cartas de Prêmio. Se fizer isso, embaralhe a sua mão no seu baralho.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Triple Smash",
+      "nome_pt": "Pancada Tripla 50×",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "50×",
+      "texto": "Flip 3 coins. This attack does 50 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 50 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-108",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-142",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Celebration: if you have exactly 30 cards in your hand, take 2 Prize cards."
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "BLK-76",
+  "nome": "Cinccino",
+  "nome_pt": "Cinccino",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Minccino",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Do the Wave",
+      "nome_pt": "Fazer a Ola",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 20 more damage for each of your Benched Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada um dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-76",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-153",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

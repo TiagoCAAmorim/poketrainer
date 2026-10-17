@@ -1,0 +1,62 @@
+{
+  "id": "PFL-25",
+  "nome": "Mamoswine",
+  "nome_pt": "Mamoswine",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Piloswine",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wreck",
+      "nome_pt": "Destruir",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120+",
+      "texto": "If a Stadium is in play, this attack does 120 more damage. Then, discard that Stadium.",
+      "texto_pt": "Se um Estádio estiver em jogo, este ataque causará 120 pontos de dano a mais. Em seguida, descarte aquele Estádio.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Blizzard Edge",
+      "nome_pt": "Nevasca Afiada",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-25",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

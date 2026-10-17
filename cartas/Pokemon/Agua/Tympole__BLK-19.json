@@ -1,0 +1,54 @@
+{
+  "id": "BLK-19",
+  "nome": "Tympole",
+  "nome_pt": "Tympole",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Round",
+      "nome_pt": "Circular",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each of your Pokémon in play that has the Round attack.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada um dos seus Pokémon em jogo que tiver o ataque Circular.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-19",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-103",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Round: This attack does 20 damage for each of your Pokémon in play that has the Round attack."
+    ]
+  }
+}

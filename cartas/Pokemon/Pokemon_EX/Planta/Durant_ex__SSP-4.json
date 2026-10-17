@@ -1,0 +1,68 @@
+{
+  "id": "SSP-4",
+  "nome": "Durant ex",
+  "nome_pt": "Durant ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 190,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Sudden Shearing",
+      "nome_pt": "Corte Súbito",
+      "texto": "When you play this Pokémon from your hand onto your Bench during your turn, you may discard the top card of your opponent's deck.",
+      "texto_pt": "Quando você jogar este Pokémon da sua mão para o seu Banco durante o seu turno, você poderá descartar a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Vengeful Crush",
+      "nome_pt": "Esmagamento Vingativo",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120+",
+      "texto": "This attack does 30 more damage for each Prize card your opponent has taken.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a mais para cada carta de Prêmio que seu oponente pegou.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-4",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-215",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-236",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

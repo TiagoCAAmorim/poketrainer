@@ -1,0 +1,23 @@
+{
+  "id": "DRI-179",
+  "nome": "Team Rocket's Venture Bomb",
+  "nome_pt": "Bomba de Risco da Equipe Rocket",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Flip a coin. If heads, put 2 damage counters on 1 of your opponent's Pokémon. If tails, put 2 damage counters on your Active Pokémon.",
+  "texto_pt": "Jogue uma moeda. Se sair cara, coloque 2 contadores de dano em 1 dos Pokémon do seu oponente. Se sair coroa, coloque 2 contadores de dano no seu Pokémon Ativo.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-179",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

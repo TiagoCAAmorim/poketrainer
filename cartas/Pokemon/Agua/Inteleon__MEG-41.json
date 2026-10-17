@@ -1,0 +1,69 @@
+{
+  "id": "MEG-41",
+  "nome": "Inteleon",
+  "nome_pt": "Inteleon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Drizzile",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bring Down",
+      "nome_pt": "Trazer Abaixo",
+      "custo": [
+        "Água"
+      ],
+      "dano": "—",
+      "texto": "Choose a Pokémon in play (yours or your opponent's) that has the least HP remaining, except for this Pokémon, and it is Knocked Out.",
+      "texto_pt": "Escolha um Pokémon em jogo (seu ou do seu oponente) que tiver o menor PS restante, exceto este Pokémon, e ele será Nocauteado.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Water Shot",
+      "nome_pt": "Disparo d'Água",
+      "custo": [
+        "Água"
+      ],
+      "dano": "110",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-41",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-142",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PR-ME-2",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Bring Down: Choose a Pokémon in play that has the least HP remaining, except for this Pokémon, and it is Knocked Out."
+    ]
+  }
+}

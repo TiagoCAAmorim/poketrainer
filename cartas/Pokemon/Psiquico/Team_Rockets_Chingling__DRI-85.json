@@ -1,0 +1,44 @@
+{
+  "id": "DRI-85",
+  "nome": "Team Rocket's Chingling",
+  "nome_pt": "Chingling da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 30,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Chiming Commotion",
+      "nome_pt": "Badalo Barulhento",
+      "custo": [],
+      "dano": "—",
+      "texto": "Discard a random card from your opponent's hand.",
+      "texto_pt": "Descarte uma carta aleatória da mão do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-85",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

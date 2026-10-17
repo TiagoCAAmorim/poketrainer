@@ -1,0 +1,25 @@
+{
+  "id": "SSP-186",
+  "nome": "Scramble Switch",
+  "nome_pt": "Chave de Embaralhamento",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Switch your Active Pokémon with 1 of your Benched Pokémon. If you do, you may move any amount of Energy from the Pokémon you moved to your Bench to the new Active Pokémon.",
+  "texto_pt": "Troque o seu Pokémon Ativo por 1 dos seus Pokémon no Banco. Se fizer isto, você poderá mover qualquer quantidade de Energia do Pokémon que você moveu para o seu Banco para o novo Pokémon Ativo.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-186",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

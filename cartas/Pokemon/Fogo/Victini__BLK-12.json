@@ -1,0 +1,59 @@
+{
+  "id": "BLK-12",
+  "nome": "Victini",
+  "nome_pt": "Victini",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "V-Force",
+      "nome_pt": "Força V",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "120",
+      "texto": "If you have 4 or fewer Benched Pokémon, this attack does nothing.",
+      "texto_pt": "Se você tiver 4 ou menos Pokémon no Banco, este ataque não fará nada.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-12",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-171",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-172",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque V-Force: If you have 4 or fewer Benched Pokémon, this attack does nothing."
+    ]
+  }
+}

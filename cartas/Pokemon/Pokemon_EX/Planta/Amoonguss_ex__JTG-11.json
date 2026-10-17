@@ -1,0 +1,60 @@
+{
+  "id": "JTG-11",
+  "nome": "Amoonguss ex",
+  "nome_pt": "Amoonguss ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Foongus",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spore Ball",
+      "nome_pt": "Bola de Esporos",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "30",
+      "texto": "Your opponent's Active Pokémon is now Asleep.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Adormecido.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Champignon's Swing",
+      "nome_pt": "Balanço do Champignon",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "Flip a coin. If heads, this attack does 80 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-11",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

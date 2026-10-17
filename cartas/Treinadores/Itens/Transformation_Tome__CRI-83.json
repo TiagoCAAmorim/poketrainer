@@ -1,0 +1,23 @@
+{
+  "id": "CRI-83",
+  "nome": "Transformation Tome",
+  "nome_pt": "Tomo da Transformação",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "You must play 2 Transformation Tome cards at once. (This effect works one time for 2 cards.) Choose a Basic Pokémon in your discard pile and switch it with 1 of your Basic Pokémon in play. Any attached cards, damage counters, Special Conditions, turns in play, and any other effects remain on the new Pokémon.",
+  "texto_pt": "Você deve jogar 2 cartas Tomo da Transformação de uma vez. (Este efeito funciona uma vez para 2 cartas.) Escolha um Pokémon Básico da sua pilha de descarte e troque-o por 1 dos seus Pokémon Básicos em jogo. Quaisquer cartas ligadas, contadores de dano, Condições Especiais, turnos em jogo e quaisquer outros efeitos permanecem no novo Pokémon.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-83",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

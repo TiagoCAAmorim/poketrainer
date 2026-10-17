@@ -1,0 +1,84 @@
+{
+  "id": "JTG-98",
+  "nome": "N's Zoroark ex",
+  "nome_pt": "Zoroark ex do N",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 1",
+  "evolui_de": "N's Zorua",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Trade",
+      "nome_pt": "Troca",
+      "texto": "You must discard a card from your hand in order to use this Ability. Once during your turn, you may draw 2 cards.",
+      "texto_pt": "Você deve descartar uma carta da sua mão para usar esta Habilidade. Uma vez durante o seu turno, você poderá comprar 2 cartas.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Night Joker",
+      "nome_pt": "Curinga Noturno",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Choose 1 of your Benched N's Pokémon's attacks and use it as this attack.",
+      "texto_pt": "Escolha 1 dos ataques dos seus Pokémon do N no Banco e use-o como este ataque.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-98",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-175",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-185",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-189",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "ASC-137",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-286",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Night Joker: Choose 1 of your Benched N's Pokémon's attacks and use it as this attack."
+    ]
+  }
+}

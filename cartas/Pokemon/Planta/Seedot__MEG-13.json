@@ -1,0 +1,58 @@
+{
+  "id": "MEG-13",
+  "nome": "Seedot",
+  "nome_pt": "Seedot",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Nap",
+      "nome_pt": "Soneca",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Heal 20 damage from this Pokémon.",
+      "texto_pt": "Cure 20 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Seed Bomb",
+      "nome_pt": "Bomba de Sementes",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-13",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

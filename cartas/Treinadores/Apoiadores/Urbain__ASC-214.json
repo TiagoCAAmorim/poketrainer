@@ -1,0 +1,25 @@
+{
+  "id": "ASC-214",
+  "nome": "Urbain",
+  "nome_pt": "Urbano",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Draw 3 cards.",
+  "texto_pt": "Compre 3 cartas.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-214",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

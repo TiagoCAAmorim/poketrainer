@@ -1,0 +1,59 @@
+{
+  "id": "30C-106",
+  "nome": "Zacian",
+  "nome_pt": "Zacian",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hardened Blade",
+      "nome_pt": "Lâmina Endurecida",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "20+",
+      "texto": "If this Pokémon has a Pokémon Tool attached, this attack does 40 more damage.",
+      "texto_pt": "Se este Pokémon tiver uma Ferramenta Pokémon ligada a ele, este ataque causará 40 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Slashing Strike",
+      "nome_pt": "Ataque Cortante",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "During your next turn, this Pokémon can't use Slashing Strike",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Ataque Cortante.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-106",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

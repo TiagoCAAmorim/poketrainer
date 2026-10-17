@@ -1,0 +1,57 @@
+{
+  "id": "SFA-42",
+  "nome": "Copperajah",
+  "nome_pt": "Copperajah",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 200,
+  "estagio": "Estágio 1",
+  "evolui_de": "Cufant",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Massive Body",
+      "nome_pt": "Parrudo",
+      "texto": "As long as this Pokémon is in the Active Spot, your opponent can't play any Stadium cards from their hand.",
+      "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, seu oponente não poderá jogar nenhuma carta de Estádio da mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Nasal Lariat",
+      "nome_pt": "Laço Nasal",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "130+",
+      "texto": "You may do 100 more damage. If you do, during your next turn, this Pokémon can't attack.",
+      "texto_pt": "Você pode causar 100 pontos de dano a mais. Se fizer isto, durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-42",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

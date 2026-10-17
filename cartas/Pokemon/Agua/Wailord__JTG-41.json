@@ -1,0 +1,54 @@
+{
+  "id": "JTG-41",
+  "nome": "Wailord",
+  "nome_pt": "Wailord",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 240,
+  "estagio": "Estágio 1",
+  "evolui_de": "Wailmer",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hydro Pump",
+      "nome_pt": "Jato d'Água",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "10+",
+      "texto": "This attack does 50 more damage for each Water Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 50 pontos de dano a mais para cada Energia Água ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-41",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-162",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

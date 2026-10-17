@@ -1,0 +1,59 @@
+{
+  "id": "MEG-64",
+  "nome": "Xerneas",
+  "nome_pt": "Xerneas",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Geo Gate",
+      "nome_pt": "Geoportal",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 3 Basic Psychic Pokémon and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 3 Pokémon Psíquico Básicos no seu baralho e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bright Horns",
+      "nome_pt": "Chifres Luminosos",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "During your next turn, this Pokémon can't use Bright Horns.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Chifres Luminosos.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-64",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "SFA-58",
+  "nome": "Dangerous Laser",
+  "nome_pt": "Laser Perigoso",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Your opponent's Active Pokémon is now Burned and Confused.",
+  "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso e Queimado.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-58",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

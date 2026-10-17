@@ -1,0 +1,58 @@
+{
+  "id": "30C-119",
+  "nome": "Snorlax",
+  "nome_pt": "Snorlax",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 160,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Good Sleep",
+      "nome_pt": "Soninho Bom",
+      "texto": "If this Pokémon remains Asleep during Pokémon Checkup, heal all damage from this Pokémon.",
+      "texto_pt": "Se este Pokémon permanecer Adormecido durante o Checape Pokémon, cure todo o dano deste Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Collapse",
+      "nome_pt": "Colapso",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "This Pokémon is now Asleep.",
+      "texto_pt": "Este Pokémon agora está Adormecido.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-119",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Good Sleep: If this Pokémon remains Asleep during Pokémon Checkup, heal all damage from this Pokémon."
+    ]
+  }
+}

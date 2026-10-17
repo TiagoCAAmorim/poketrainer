@@ -1,0 +1,58 @@
+{
+  "id": "30C-16",
+  "nome": "Slowpoke",
+  "nome_pt": "Rayquaza EX",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Well-Hidden",
+      "nome_pt": "Rugido Celestial",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon.",
+      "texto_pt": "Descarte os 3 cards de cima do seu baralho. Se qualquer um desses cards for um card de Energia, ligue-o a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Water Gun",
+      "nome_pt": "Rajada do Dragão",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "Descarte todas as Energias <span class=\"energy-symbol Fire\" title=\"Fogo\">Fire</span> ou <span class=\"energy-symbol Lightning\" title=\"Raios\">Lightning</span> básicas ligadas a este Pokémon. Esse ataque causa 60 de danos vezes o número de cards de Energia descartados.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-16",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

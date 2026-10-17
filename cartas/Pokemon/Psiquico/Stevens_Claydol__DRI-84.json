@@ -1,0 +1,59 @@
+{
+  "id": "DRI-84",
+  "nome": "Steven's Claydol",
+  "nome_pt": "Claydol do Steven",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Steven's Baltoy",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Eerie Light",
+      "nome_pt": "Luz Misteriosa",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Clay Blast",
+      "nome_pt": "Explosão de Argila",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "220",
+      "texto": "Discard all Energy from this Pokémon.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-84",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

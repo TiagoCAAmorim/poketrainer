@@ -1,0 +1,64 @@
+{
+  "id": "BLK-66",
+  "nome": "Cobalion",
+  "nome_pt": "Cobalion",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Righteous Edge",
+      "nome_pt": "Gume Honrado",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "20",
+      "texto": "Discard a Special Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia Especial do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Metal Arms",
+      "nome_pt": "Braços Metálicos",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "If this Pokémon has a Pokémon Tool attached, this attack does 40 more damage.",
+      "texto_pt": "Se este Pokémon tiver uma Ferramenta Pokémon ligada a ele, este ataque causará 40 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-66",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-144",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

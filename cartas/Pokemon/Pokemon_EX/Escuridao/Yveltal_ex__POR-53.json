@@ -1,0 +1,70 @@
+{
+  "id": "POR-53",
+  "nome": "Yveltal ex",
+  "nome_pt": "Yveltal ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Soul Destroyer",
+      "nome_pt": "Destruidor de Almas",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Knock Out each of your opponent's Pokémon that has 50 HP or less remaining.",
+      "texto_pt": "Nocauteie cada um dos Pokémon do seu oponente que tiver PS restante de 50 ou menos.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Dark Strike",
+      "nome_pt": "Golpe de Escuridão",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "210",
+      "texto": "During your next turn, this Pokémon can't use Dark Strike.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Golpe de Escuridão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-53",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-105",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Soul Destroyer: Knock Out each of your opponent's Pokémon that has 50 HP or less remaining."
+    ]
+  }
+}

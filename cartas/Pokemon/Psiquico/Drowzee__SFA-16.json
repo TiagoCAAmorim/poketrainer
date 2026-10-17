@@ -1,0 +1,46 @@
+{
+  "id": "SFA-16",
+  "nome": "Drowzee",
+  "nome_pt": "Drowzee",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Eerie Gaze",
+      "nome_pt": "Olhar Perturbador",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "10",
+      "texto": "Your opponent reveals their hand.",
+      "texto_pt": "Seu oponente revela a mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-16",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

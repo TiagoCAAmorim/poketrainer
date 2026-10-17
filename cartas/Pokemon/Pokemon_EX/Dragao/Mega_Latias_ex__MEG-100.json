@@ -1,0 +1,76 @@
+{
+  "id": "MEG-100",
+  "nome": "Mega Latias ex",
+  "nome_pt": "Mega Latias ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 280,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Strafe",
+      "nome_pt": "Bombardear",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "You may switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Você pode trocar este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Illusory Impulse",
+      "nome_pt": "Impulso Ilusório",
+      "custo": [
+        "Fogo",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "300",
+      "texto": "Discard all Energy from this Pokémon.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-100",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-163",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-181",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PR-ME-11",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

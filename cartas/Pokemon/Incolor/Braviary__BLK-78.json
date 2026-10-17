@@ -1,0 +1,65 @@
+{
+  "id": "BLK-78",
+  "nome": "Braviary",
+  "nome_pt": "Braviary",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Rufflet",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aerial Ace",
+      "nome_pt": "Ás dos Ares",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40+",
+      "texto": "Flip a coin. If heads, this attack does 40 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 40 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Speed Wing",
+      "nome_pt": "Asa da Velocidade",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-78",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-155",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

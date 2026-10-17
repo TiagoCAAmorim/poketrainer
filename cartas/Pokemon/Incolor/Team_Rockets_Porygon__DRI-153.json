@@ -1,0 +1,46 @@
+{
+  "id": "DRI-153",
+  "nome": "Team Rocket's Porygon",
+  "nome_pt": "Porygon da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hacking",
+      "nome_pt": "Hackeamento",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard a card from your hand. If you do, your opponent discards a card from their hand.",
+      "texto_pt": "Descarte uma carta da sua mão. Se fizer isto, seu oponente descartará uma carta da mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-153",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

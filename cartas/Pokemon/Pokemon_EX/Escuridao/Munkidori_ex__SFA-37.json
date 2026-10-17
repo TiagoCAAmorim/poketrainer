@@ -1,0 +1,70 @@
+{
+  "id": "SFA-37",
+  "nome": "Munkidori ex",
+  "nome_pt": "Munkidori ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Oh No You Don't",
+      "nome_pt": "Nananinanão",
+      "texto": "If this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, and if you have any Pecharunt ex in play, your opponent takes 1 fewer Prize card.",
+      "texto_pt": "Se este Pokémon for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente e se você tiver algum Pecharunt ex em jogo, seu oponente pegará 1 carta de Prêmio a menos.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Dirty Headbutt",
+      "nome_pt": "Cabeçada Inescrupulosa",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "190",
+      "texto": "During your next turn, this Pokémon can't use Dirty Headbutt.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Cabeçada Inescrupulosa.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-37",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-83",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-91",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Oh No You Don't: If this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, and if you have any Pecharunt ex in play, your opponent takes 1 fewer Prize card."
+    ]
+  }
+}

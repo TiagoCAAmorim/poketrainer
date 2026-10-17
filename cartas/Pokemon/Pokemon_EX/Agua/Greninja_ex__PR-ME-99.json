@@ -1,0 +1,72 @@
+{
+  "id": "PR-ME-99",
+  "nome": "Greninja ex",
+  "nome_pt": "Greninja ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 300,
+  "estagio": "Estágio 2",
+  "evolui_de": "Frogadier",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Stealthy Slash",
+      "nome_pt": "Talho Furtivo",
+      "custo": [
+        "Água"
+      ],
+      "dano": "—",
+      "texto": "This attack does 30 damage to 1 of your opponent's Pokémon for each damage counter on that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque causa 30 pontos de dano a 1 dos Pokémon do seu oponente para cada contador de dano naquele Pokémon. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Aqua Edge",
+      "nome_pt": "Aqua Gume",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-99",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "30C-21",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-148",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Stealthy Slash: This attack does 30 damage to 1 of your opponent's Pokémon for each damage counter on that Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "JTG-2",
+  "nome": "Metapod",
+  "nome_pt": "Metapod",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Caterpie",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Harden",
+      "nome_pt": "Endurecer",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks if that damage is 60 or less.",
+      "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a este Pokémon por ataques se aquele dano for 60 ou menos.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-2",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

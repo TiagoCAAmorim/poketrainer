@@ -1,0 +1,57 @@
+{
+  "id": "SSP-158",
+  "nome": "Maushold",
+  "nome_pt": "Maushold",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Tandemaus",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Familial March",
+      "nome_pt": "Marcha em Família",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for up to 2 in any combination of Maushold and Maushold ex and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 2 Maushold e Maushold ex no seu baralho em qualquer combinação e coloque-os no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Incessant Incisors",
+      "nome_pt": "Incisivos Incessantes",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30×",
+      "texto": "Flip 4 coins. This attack does 30 damage for each heads.",
+      "texto_pt": "Jogue 4 moedas. Este ataque causa 30 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-158",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "PFL-78",
+  "nome": "Aipom",
+  "nome_pt": "Aipom",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Astonish",
+      "nome_pt": "Abismar",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Choose a random card from your opponent's hand, and your opponent reveals that card and shuffles it into their deck.",
+      "texto_pt": "Escolha uma carta aleatória da mão do seu oponente, e seu oponente revela aquela carta e a embaralha no baralho dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-78",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Astonish: Choose a random card from your opponent's hand, and your opponent reveals that card and shuffles it into their deck."
+    ]
+  }
+}

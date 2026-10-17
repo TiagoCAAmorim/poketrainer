@@ -1,0 +1,50 @@
+{
+  "id": "30C-121",
+  "nome": "Lugia",
+  "nome_pt": "Lugia",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Elemental Blast",
+      "nome_pt": "Explosão Elemental",
+      "custo": [
+        "Fogo",
+        "Água",
+        "Elétrico"
+      ],
+      "dano": "250",
+      "texto": "Discard a Fire Energy, a Water Energy, and a Lightning Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia Fire, uma Energia Water e uma Energia Lightning deste Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-121",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Elemental Blast: Discard a Fire Energy, a Water Energy, and a Lightning Energy from this Pokémon."
+    ]
+  }
+}

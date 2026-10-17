@@ -218,3 +218,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- poketrainer ---
+.cache/
+cartas/cartas.db
+checkpoints/
+dados/
+logs/simulacoes/
+optimized_deck*.txt
+optimized_deck*_history.json
+!tests/fixtures/ptcgl_logs/*.log
+!logs/atividade.log

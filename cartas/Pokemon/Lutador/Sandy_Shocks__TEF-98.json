@@ -1,0 +1,60 @@
+{
+  "id": "TEF-98",
+  "nome": "Sandy Shocks",
+  "nome_pt": "Choque Areia",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Magnetic Burst",
+      "nome_pt": "Ruptura Magnética",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "20+",
+      "texto": "If you have 3 or more Energy in play, this attack does 70 more damage. This attack's damage isn't affected by Weakness.",
+      "texto_pt": "Se você tiver 3 ou mais Energias em jogo, este ataque causará 70 pontos de dano a mais. O dano deste ataque não é afetado por Fraqueza.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Power Gem",
+      "nome_pt": "Gema Poderosa",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-98",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

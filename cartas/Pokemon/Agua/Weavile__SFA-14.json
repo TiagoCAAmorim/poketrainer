@@ -1,0 +1,68 @@
+{
+  "id": "SFA-14",
+  "nome": "Weavile",
+  "nome_pt": "Weavile",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sneasel",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Slash",
+      "nome_pt": "Talho",
+      "custo": [
+        "Água"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Hail Claw",
+      "nome_pt": "Garra de Granizo",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "70",
+      "texto": "Discard all Energy from this Pokémon. Your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon. O Pokémon Ativo do seu oponente agora está Paralisado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-14",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "ASC-45",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-228",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

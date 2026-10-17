@@ -1,0 +1,61 @@
+{
+  "id": "SSP-83",
+  "nome": "Cofagrigus",
+  "nome_pt": "Cofagrigus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Yamask",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Law of the Underworld",
+      "nome_pt": "Lei do Submundo",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Put 6 damage counters on each Pokémon that has an Ability (both yours and your opponent's).",
+      "texto_pt": "Coloque 6 contadores de dano em cada Pokémon que tem uma Habilidade (seus e do seu oponente).",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Spooky Shot",
+      "nome_pt": "Tiro Assustador",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-83",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Law of the Underworld: Put 6 damage counters on each Pokémon that has an Ability."
+    ]
+  }
+}

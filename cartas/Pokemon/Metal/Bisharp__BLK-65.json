@@ -1,0 +1,63 @@
+{
+  "id": "BLK-65",
+  "nome": "Bisharp",
+  "nome_pt": "Bisharp",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Pawniard",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cut Up",
+      "nome_pt": "Dilacerar",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Finishing Blow",
+      "nome_pt": "Golpe Final",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 60 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente já tiver algum contador de dano nele, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-65",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-143",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

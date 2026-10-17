@@ -1,0 +1,61 @@
+{
+  "id": "ASC-117",
+  "nome": "Carbink",
+  "nome_pt": "Carbink",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Double Type",
+      "nome_pt": "Tipo Duplo",
+      "texto": "As long as this Pokémon is in play, it is Fighting and Psychic type.",
+      "texto_pt": "Enquanto este Pokémon estiver em jogo, será um Pokémon de tipo Lutador e Psíquico.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Counter Jewel",
+      "nome_pt": "Contra-ataque Joia",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "70+",
+      "texto": "If your opponent has 2 or fewer Prize cards remaining, this attack does 100 more damage.",
+      "texto_pt": "Se o seu oponente tiver 2 ou menos cartas de Prêmio restantes, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-117",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-242",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

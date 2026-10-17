@@ -1,0 +1,68 @@
+{
+  "id": "SSP-42",
+  "nome": "Milotic ex",
+  "nome_pt": "Milotic ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Feebas",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Sparkling Scales",
+      "nome_pt": "Escamas Cintilantes",
+      "texto": "Prevent all damage from and effects of attacks from your opponent's Tera Pokémon done to this Pokémon.",
+      "texto_pt": "Previna todo o dano e os efeitos de ataques dos Pokémon Tera do seu oponente causados a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Hypno Splash",
+      "nome_pt": "Explosão Hipnótica",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "Your opponent's Active Pokémon is now Asleep.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Adormecido.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-42",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-217",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-237",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

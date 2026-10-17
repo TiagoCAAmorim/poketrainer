@@ -1,0 +1,65 @@
+{
+  "id": "TEF-101",
+  "nome": "Arbok",
+  "nome_pt": "Arbok",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Ekans",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Panic Poison",
+      "nome_pt": "Veneno do Pânico",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Burned, Confused, and Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso, Envenenado e Queimado.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Darkness Fang",
+      "nome_pt": "Presa Sombria",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-101",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-176",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Panic Poison: Your opponent's Active Pokémon is now Burned, Confused, and Poisoned."
+    ]
+  }
+}

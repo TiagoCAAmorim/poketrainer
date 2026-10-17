@@ -1,0 +1,62 @@
+{
+  "id": "BLK-27",
+  "nome": "Cryogonal",
+  "nome_pt": "Cryogonal",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Drag Off",
+      "nome_pt": "Arrastar para Fora",
+      "custo": [
+        "Água"
+      ],
+      "dano": "—",
+      "texto": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. This attack does 20 damage to the new Active Pokémon.",
+      "texto_pt": "Mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo. Este ataque causa 20 pontos de dano ao novo Pokémon Ativo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Icicle",
+      "nome_pt": "Pingente de Gelo",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-27",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-111",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

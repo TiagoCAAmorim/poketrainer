@@ -1,0 +1,61 @@
+{
+  "id": "SSP-156",
+  "nome": "Oranguru",
+  "nome_pt": "Oranguru",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Now You're in My Power",
+      "nome_pt": "Na Palma da Minha Mão",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Until the end of your next turn, the Defending Pokémon's Weakness is now Colorless. (The amount of Weakness doesn't change.)",
+      "texto_pt": "Até o final do seu próximo turno, a Fraqueza do Pokémon Defensor será Incolor. (A quantidade de Fraqueza não muda.)",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Smack",
+      "nome_pt": "Estalo",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-156",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Now You're in My Power: Until the end of your next turn, the Defending Pokémon's Weakness is now Colorless."
+    ]
+  }
+}

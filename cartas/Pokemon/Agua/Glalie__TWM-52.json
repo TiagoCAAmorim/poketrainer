@@ -1,0 +1,59 @@
+{
+  "id": "TWM-52",
+  "nome": "Glalie",
+  "nome_pt": "Glalie",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Snorunt",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Damage Beat",
+      "nome_pt": "Pancada Destruidora",
+      "custo": [
+        "Água"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each damage counter on your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada contador de dano no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Crazy Headbutt",
+      "nome_pt": "Cabeçada Louca",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-52",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

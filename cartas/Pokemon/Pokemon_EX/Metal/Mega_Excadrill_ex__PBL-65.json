@@ -1,0 +1,67 @@
+{
+  "id": "PBL-65",
+  "nome": "Mega Excadrill ex",
+  "nome_pt": "Mega Excadrill ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 1",
+  "evolui_de": "Drilbur",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Undermine",
+      "nome_pt": "Minar",
+      "custo": [
+        "Metal",
+        "Metal"
+      ],
+      "dano": "90",
+      "texto": "Discard the top 2 cards of your opponent's deck.",
+      "texto_pt": "Descarte as 2 cartas de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Maximum Drilling",
+      "nome_pt": "Perfuração Máxima",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Metal"
+      ],
+      "dano": "200+",
+      "texto": "If this Pokémon has at least 2 extra Energy attached (in addition to this attack's cost), this attack does 130 more damage.",
+      "texto_pt": "Se este Pokémon tiver pelo menos 2 Energias adicionais ligadas a ele (além do custo deste ataque), este ataque causará 130 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-65",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-103",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

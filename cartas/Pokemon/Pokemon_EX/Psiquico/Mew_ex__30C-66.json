@@ -1,0 +1,68 @@
+{
+  "id": "30C-66",
+  "nome": "Mew ex",
+  "nome_pt": "Mew ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 160,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Memory Helix",
+      "nome_pt": "Espiral de Memória",
+      "texto": "This Pokémon can use the attacks of any of your Benched Pokémon. (You still need the necessary Energy to use each attack.)",
+      "texto_pt": "Este Pokémon pode usar os ataques de qualquer um dos seus Pokémon no Banco. (Você ainda precisa da Energia necessária para usar cada ataque.)",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Teleportation Burst",
+      "nome_pt": "Teletransporte Explosivo",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "You may switch this Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Você pode trocar este Pokémon por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-66",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-152",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-158",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Memory Helix: This Pokémon can use the attacks of any of your Benched Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "TEF-124",
+  "nome": "Lickitung",
+  "nome_pt": "Lickitung",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tongue Pull",
+      "nome_pt": "Puxão de Língua",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Your opponent reveals their hand. Put up to 2 Basic Pokémon you find there onto your opponent's Bench.",
+      "texto_pt": "Seu oponente revela a mão dele. Coloque até 2 Pokémon Básicos que encontrar lá no Banco do seu oponente.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Strength",
+      "nome_pt": "Força",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-124",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-180",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Tongue Pull: Put up to 2 Basic Pokémon you find there onto your opponent's Bench."
+    ]
+  }
+}

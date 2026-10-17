@@ -1,0 +1,57 @@
+{
+  "id": "DRI-155",
+  "nome": "Team Rocket's Porygon-Z",
+  "nome_pt": "Porygon-Z da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Team Rocket's Porygon2",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Reconstitute",
+      "nome_pt": "Reconstituição",
+      "texto": "You must discard 2 cards from your hand in order to use this Ability. Once during your turn, you may draw a card.",
+      "texto_pt": "Você deve descartar 2 cartas da sua mão para usar esta Habilidade. Uma vez durante o seu turno, você poderá comprar uma carta.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "R Command",
+      "nome_pt": "Comando R",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each Supporter card that has \"Team Rocket\" in its name in your discard pile.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada carta de Apoiador que tenha \"Equipe Rocket\" em seu nome na sua pilha de descarte.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-155",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque R Command: This attack does 20 damage for each Supporter card that has \"Team Rocket\" in its name in your discard pile."
+    ]
+  }
+}

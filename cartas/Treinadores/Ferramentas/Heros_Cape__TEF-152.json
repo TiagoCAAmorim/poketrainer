@@ -1,0 +1,26 @@
+{
+  "id": "TEF-152",
+  "nome": "Hero's Cape",
+  "nome_pt": "Capa de Herói",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": true,
+  "texto": "The Pokémon this card is attached to gets +100 HP.",
+  "texto_pt": "O Pokémon ao qual esta carta está ligada recebe 100 PS a mais.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho.",
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-152",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "CRI-77",
+  "nome": "Emma",
+  "nome_pt": "Emma",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Your opponent reveals their hand, and you draw a card for each Pokémon you find there.",
+  "texto_pt": "Seu oponente revela a mão dele e você compra uma carta para cada Pokémon que você encontrar lá.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-77",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-107",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

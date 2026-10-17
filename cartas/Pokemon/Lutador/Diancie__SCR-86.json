@@ -1,0 +1,60 @@
+{
+  "id": "SCR-86",
+  "nome": "Diancie",
+  "nome_pt": "Diancie",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Diffuse Reflection",
+      "nome_pt": "Difusão de Reflexo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each Special Energy attached to all of your opponent's Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada Energia Especial ligada a todos os Pokémon do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Power Gem",
+      "nome_pt": "Gema Poderosa",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-86",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Diffuse Reflection: This attack does 40 damage for each Special Energy attached to all of your opponent's Pokémon."
+    ]
+  }
+}

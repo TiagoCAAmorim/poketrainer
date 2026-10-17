@@ -1,0 +1,30 @@
+{
+  "id": "TEF-157",
+  "nome": "Prime Catcher",
+  "nome_pt": "Pegador Superior",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. If you do, switch your Active Pokémon with 1 of your Benched Pokémon.",
+  "texto_pt": "Mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo. Se fizer isto, troque o seu Pokémon Ativo por 1 dos seus Pokémon no Banco.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-157",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "PRE-119",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

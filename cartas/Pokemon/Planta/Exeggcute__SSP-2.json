@@ -1,0 +1,46 @@
+{
+  "id": "SSP-2",
+  "nome": "Exeggcute",
+  "nome_pt": "Exeggcute",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 50,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Absorb",
+      "nome_pt": "Absorção",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10",
+      "texto": "Heal 10 damage from this Pokémon.",
+      "texto_pt": "Cure 10 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-2",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

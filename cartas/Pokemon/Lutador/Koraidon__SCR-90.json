@@ -1,0 +1,47 @@
+{
+  "id": "SCR-90",
+  "nome": "Koraidon",
+  "nome_pt": "Koraidon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Resolute Fang",
+      "nome_pt": "Presas Resolutas",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "50+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 70 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex, este ataque causará 70 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-90",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

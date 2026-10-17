@@ -1,0 +1,59 @@
+{
+  "id": "DRI-87",
+  "nome": "Team Rocket's Mimikyu",
+  "nome_pt": "Mimikyu da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gemstone Mimicry",
+      "nome_pt": "Mimetismo de Joias",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Choose 1 of your opponent's Active Tera Pokémon's attacks and use it as this attack.",
+      "texto_pt": "Escolha 1 dos ataques do Pokémon Tera Ativo do seu oponente e use-o como este ataque.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-87",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-97",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-238",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Gemstone Mimicry: Choose 1 of your opponent's Active Tera Pokémon's attacks and use it as this attack."
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "JTG-157",
+  "nome": "Ruffian",
+  "nome_pt": "Baderneiro",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Discard a Pokémon Tool and a Special Energy from 1 of your opponent's Pokémon.",
+  "texto_pt": "Descarte uma Ferramenta Pokémon e uma Energia Especial de 1 dos Pokémon do seu oponente.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-157",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-181",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

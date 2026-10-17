@@ -1,0 +1,64 @@
+{
+  "id": "WHT-73",
+  "nome": "Watchog",
+  "nome_pt": "Watchog",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Patrat",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Focus Energy",
+      "nome_pt": "Focalizar Energia",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "During your next turn, this Pokémon's Hyper Fang attack's base damage is 240.",
+      "texto_pt": "Durante o seu próximo turno, o dano base do ataque Hiperpresa deste Pokémon será 240.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Hyper Fang",
+      "nome_pt": "Hiperpresa",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "Flip a coin. If tails, this attack does nothing.",
+      "texto_pt": "Jogue uma moeda. Se sair coroa, este ataque não fará nada.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-73",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-153",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Focus Energy: During your next turn, this Pokémon's Hyper Fang attack's base damage is 240."
+    ]
+  }
+}

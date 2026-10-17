@@ -1,0 +1,54 @@
+{
+  "id": "ASC-143",
+  "nome": "Pecharunt",
+  "nome_pt": "Pecharunt",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Final Chain",
+      "nome_pt": "Corrente Final",
+      "texto": "If this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, search your deck for a card and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Se este Pokémon for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, procure por uma carta no seu baralho e coloque-a na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mochi Rush",
+      "nome_pt": "Moti aos Montes",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "20",
+      "texto": "During your next turn, this Pokémon's Mochi Rush attack does 50 more damage (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o seu próximo turno, o ataque Moti aos Montes deste Pokémon causará 50 pontos de dano a mais (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-143",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "WHT-37",
+  "nome": "Swoobat",
+  "nome_pt": "Swoobat",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Woobat",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Happy Return",
+      "nome_pt": "Retorno Auspicioso",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Put 1 of your Benched Pokémon and all attached cards into your hand.",
+      "texto_pt": "Coloque 1 dos seus Pokémon no Banco e todas as cartas ligadas a ele na sua mão.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Gust",
+      "nome_pt": "Lufada de Vento",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-37",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-120",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Happy Return: Put 1 of your Benched Pokémon and all attached cards into your hand."
+    ]
+  }
+}

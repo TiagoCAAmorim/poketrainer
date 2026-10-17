@@ -1,0 +1,58 @@
+{
+  "id": "CRI-57",
+  "nome": "Garbodor",
+  "nome_pt": "Garbodor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Trubbish",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Gloomy Garbage",
+      "nome_pt": "Lixo Lúgubre",
+      "texto": "Attacks used by your opponent's Active Pokémon that has a Pokémon Tool attached do 20 less damage (before applying Weakness and Resistance).",
+      "texto_pt": "Os ataques usados pelo Pokémon Ativo do seu oponente que tiver uma Ferramenta Pokémon ligada a ele causam 20 pontos de dano a menos (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Sludge Bomb",
+      "nome_pt": "Bomba de Lodo",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-57",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Gloomy Garbage: Attacks used by your opponent's Active Pokémon that has a Pokémon Tool attached do 20 less damage."
+    ]
+  }
+}

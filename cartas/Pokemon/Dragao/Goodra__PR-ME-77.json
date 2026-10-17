@@ -1,0 +1,62 @@
+{
+  "id": "PR-ME-77",
+  "nome": "Goodra",
+  "nome_pt": "Goodra",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Sliggoo",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Slimy Sliding",
+      "nome_pt": "Deslizamento Gosmento",
+      "texto": "When your opponent's Active Pokémon retreats, your opponent flips a coin. If tails, Energy for its Retreat Cost is not discarded, and they don't switch Pokémon. The effect of Slimy Sliding doesn't stack.",
+      "texto_pt": "Quando o Pokémon Ativo do seu oponente recuar, seu oponente jogará uma moeda. Se sair coroa, a Energia usada para o Custo de Recuo não será descartada e ele não trocará o Pokémon. O efeito de Deslizamento Gosmento não acumula.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Dragon Pulse",
+      "nome_pt": "Pulso do Dragão",
+      "custo": [
+        "Água",
+        "Psíquico"
+      ],
+      "dano": "160",
+      "texto": "Discard the top card of your deck.",
+      "texto_pt": "Descarte a carta de cima do seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-77",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "CRI-68",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Slimy Sliding: When your opponent's Active Pokémon retreats, your opponent flips a coin. If tails, Energy for its Retreat Cost is not discarded, and they don't switch Pokémon. The effect of Slimy Sliding doesn't stack."
+    ]
+  }
+}

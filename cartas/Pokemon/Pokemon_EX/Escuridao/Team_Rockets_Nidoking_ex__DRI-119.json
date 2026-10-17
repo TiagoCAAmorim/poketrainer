@@ -1,0 +1,76 @@
+{
+  "id": "DRI-119",
+  "nome": "Team Rocket's Nidoking ex",
+  "nome_pt": "Nidoking ex da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 2",
+  "evolui_de": "Team Rocket's Nidorino",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tainted Horn",
+      "nome_pt": "Chifre Contaminado",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "Your opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, put 8 damage counters on that Pokémon instead of 1.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado. Durante o Checape Pokémon, coloque 8 contadores de dano ao invés de 1 naquele Pokémon.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Kingly Impact",
+      "nome_pt": "Impacto Majestoso",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "240",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-119",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-216",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-233",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Tainted Horn: During Pokémon Checkup, put 8 damage counters on that Pokémon instead of 1."
+    ]
+  }
+}

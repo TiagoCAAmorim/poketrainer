@@ -1,0 +1,60 @@
+{
+  "id": "TEF-88",
+  "nome": "Golurk",
+  "nome_pt": "Golurk",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 1",
+  "evolui_de": "Golett",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Iron Defense",
+      "nome_pt": "Defesa de Ferro",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "—",
+      "texto": "Flip a coin. If heads, during your opponent's next turn, prevent all damage done to this Pokémon by attacks.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, durante o próximo turno do seu oponente, previna todo o dano causado a este Pokémon por ataques.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Fighting Fist",
+      "nome_pt": "Punhos de Guerreiro",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex or Pokémon V, this attack does 120 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex ou um Pokémon V, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-88",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "MEG-30",
+  "nome": "Centiskorch",
+  "nome_pt": "Centiskorch",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sizzlipede",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Coiling Crush",
+      "nome_pt": "Torção Triturante",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Flip 2 coins. For each heads, discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Jogue 2 moedas. Para cada cara, descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Heat Crawler",
+      "nome_pt": "Calor Rastejante",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-30",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,45 @@
+{
+ "acoes": [
+  61,
+  61
+ ],
+ "turnos": [
+  9,
+  9
+ ],
+ "completo": true,
+ "divergencia": null,
+ "danos_conferidos": [
+  [
+   4,
+   "Kingofslowbros's Budew used Itchy Pollen on cdierkens’s Mega Kangaskhan ex for 10 damage.",
+   10,
+   10
+  ],
+  [
+   6,
+   "Kingofslowbros's Mega Greninja ex used Ninja Spinner on cdierkens’s Slowking for 120 damage.",
+   120,
+   120
+  ],
+  [
+   8,
+   "Kingofslowbros's Greninja ex used Mirage Barrage on cdierkens’s Slowking for 90 damage. cdierkens's Slowking took -30 less damage because of Fighting Resistance.",
+   90,
+   90
+  ],
+  [
+   9,
+   "Kingofslowbros's Greninja ex used Shinobi Blade on cdierkens’s Mega Kangaskhan ex for 340 damage. cdierkens's Mega Kangaskhan ex took 170 more damage because of Fighting Weakness.",
+   340,
+   340
+  ]
+ ],
+ "notas": [
+  "mão de cdierkens reconciliada: Slowking → Poké Pad",
+  "mão de cdierkens reconciliada: Night Stretcher → Slowking",
+  "tentativas: 8"
+ ],
+ "hash": "c4ed8ce69e67",
+ "resumo": "Jogadores: cdierkens x Kingofslowbros\nAções reproduzidas: 61/61  (turnos 9/9)\nDanos conferidos: 4/4 iguais ao log oficial\nPartida reproduzida até o fim sem divergências.\n  nota: mão de cdierkens reconciliada: Slowking → Poké Pad\n  nota: mão de cdierkens reconciliada: Night Stretcher → Slowking\n  nota: tentativas: 8"
+}

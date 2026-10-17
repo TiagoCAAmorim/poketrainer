@@ -1,0 +1,28 @@
+{
+  "id": "TWM-148",
+  "nome": "Enhanced Hammer",
+  "nome_pt": "Martelo Avançado",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Discard a Special Energy from 1 of your opponent's Pokémon.",
+  "texto_pt": "Descarte uma Energia Especial de 1 dos Pokémon do seu oponente.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-148",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-224",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "PR-SV-156",
+  "nome": "Quagsire",
+  "nome_pt": "Quagsire",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Wooper",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rollout",
+      "nome_pt": "Rolagem",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Drenched Headbutt",
+      "nome_pt": "Cabeçada Encharcada",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80×",
+      "texto": "Discard the top 3 cards of your deck. This attack does 80 damage for each Energy card you discarded in this way.",
+      "texto_pt": "Descarte as 3 cartas de cima do seu baralho. Este ataque causa 80 pontos de dano para cada carta de Energia descartada desta forma.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-156",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

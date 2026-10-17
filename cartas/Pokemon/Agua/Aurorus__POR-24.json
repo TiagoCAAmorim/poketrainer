@@ -1,0 +1,63 @@
+{
+  "id": "POR-24",
+  "nome": "Aurorus",
+  "nome_pt": "Aurorus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Amaura",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Tundra Wall",
+      "nome_pt": "Parede de Tundra",
+      "texto": "All of your Pokémon that have any Water Energy attached take 50 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance). The effect of Tundra Wall doesn't stack.",
+      "texto_pt": "Todos os seus Pokémon que têm alguma Energia Água ligada a eles recebem 50 pontos de dano a menos de ataques dos Pokémon do seu oponente (depois de aplicar Fraqueza e Resistência). O efeito de Parede de Tundra não acumula.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Freezing Chill",
+      "nome_pt": "Frio de Arrepiar",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't use attacks.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá usar ataques.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-24",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-92",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Tundra Wall: All of your Pokémon that have any Water Energy attached take 50 less damage from attacks from your opponent's Pokémon. The effect of Tundra Wall doesn't stack."
+    ]
+  }
+}

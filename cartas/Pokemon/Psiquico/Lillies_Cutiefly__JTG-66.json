@@ -1,0 +1,46 @@
+{
+  "id": "JTG-66",
+  "nome": "Lillie's Cutiefly",
+  "nome_pt": "Cutiefly da Lílian",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 30,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Hold Still",
+      "nome_pt": "Ficar Parado",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Heal 10 damage from this Pokémon.",
+      "texto_pt": "Cure 10 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-66",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

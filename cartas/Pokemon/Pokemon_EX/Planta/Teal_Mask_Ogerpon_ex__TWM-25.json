@@ -1,0 +1,89 @@
+{
+  "id": "TWM-25",
+  "nome": "Teal Mask Ogerpon ex",
+  "nome_pt": "Ogerpon Máscara Turquesa ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 210,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Teal Dance",
+      "nome_pt": "Dança Turquesa",
+      "texto": "Once during your turn, you may attach a Basic Grass Energy card from your hand to this Pokémon. If you attached Energy to a Pokémon in this way, draw a card.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá ligar uma carta de Energia Planta Básica da sua mão a este Pokémon. Se você ligou Energia a um Pokémon desta forma, compre uma carta.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Myriad Leaf Shower",
+      "nome_pt": "Chuva Infinita de Folhas",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Planta"
+      ],
+      "dano": "30+",
+      "texto": "This attack does 30 more damage for each Energy attached to both Active Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a mais para cada Energia ligada a ambos os Pokémon Ativos.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-25",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-190",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-211",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-221",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "PRE-12",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-145",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-177",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "SSP-139",
+  "nome": "Flapple",
+  "nome_pt": "Flapple",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Applin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Acidic Spit",
+      "nome_pt": "Cusparada Ácida",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each damage counter on your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada contador de dano no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Speed Dive",
+      "nome_pt": "Mergulho Veloz",
+      "custo": [
+        "Planta",
+        "Fogo"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-139",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-210",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

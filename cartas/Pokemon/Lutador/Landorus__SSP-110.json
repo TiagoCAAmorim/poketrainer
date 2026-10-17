@@ -1,0 +1,60 @@
+{
+  "id": "SSP-110",
+  "nome": "Landorus",
+  "nome_pt": "Landorus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fist of Focus",
+      "nome_pt": "Punho do Foco",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30",
+      "texto": "Attach an Energy card from your discard pile to this Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia da sua pilha de descarte a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Buster Swing",
+      "nome_pt": "Gingado",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "This attack's damage isn't affected by Resistance.",
+      "texto_pt": "O dano deste ataque não é afetado por Resistência.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-110",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

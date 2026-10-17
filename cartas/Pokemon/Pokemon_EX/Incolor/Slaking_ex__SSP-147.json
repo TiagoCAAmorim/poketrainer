@@ -1,0 +1,64 @@
+{
+  "id": "SSP-147",
+  "nome": "Slaking ex",
+  "nome_pt": "Slaking ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 2",
+  "evolui_de": "Vigoroth",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Born to Slack",
+      "nome_pt": "Preguiça de Nascença",
+      "texto": "If your opponent has no Pokémon ex or Pokémon V in play, this Pokémon can't attack.",
+      "texto_pt": "Se o seu oponente não tiver Pokémon ex ou Pokémon V em jogo, este Pokémon não poderá atacar.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Great Swing",
+      "nome_pt": "Murrão",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "280",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-147",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-227",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Born to Slack: If your opponent has no Pokémon ex or Pokémon V in play, this Pokémon can't attack."
+    ]
+  }
+}

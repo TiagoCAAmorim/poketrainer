@@ -1,0 +1,61 @@
+{
+  "id": "MEG-95",
+  "nome": "Dialga",
+  "nome_pt": "Dialga",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 140,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Beam",
+      "nome_pt": "Feixe",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Chrono Burst",
+      "nome_pt": "Explosão Temporal",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "You may shuffle all Energy attached to this Pokémon into your deck and have this attack do 80 more damage.",
+      "texto_pt": "Você pode embaralhar todas as Energias ligadas a este Pokémon no seu baralho e fazer este ataque causar 80 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-95",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Chrono Burst: You may shuffle all Energy attached to this Pokémon into your deck and have this attack do 80 more damage."
+    ]
+  }
+}

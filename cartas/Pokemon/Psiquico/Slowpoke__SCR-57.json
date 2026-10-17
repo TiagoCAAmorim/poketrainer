@@ -1,0 +1,58 @@
+{
+  "id": "SCR-57",
+  "nome": "Slowpoke",
+  "nome_pt": "Slowpoke",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dangle Tail",
+      "nome_pt": "Cauda Atrapalhada",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Put a Pokémon from your discard pile into your hand.",
+      "texto_pt": "Coloque um Pokémon da sua pilha de descarte na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Tackle",
+      "nome_pt": "Investida",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-57",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

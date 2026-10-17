@@ -1,0 +1,25 @@
+{
+  "id": "ASC-215",
+  "nome": "Waitress",
+  "nome_pt": "Garçonete",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Look at the top 6 cards of your deck and attach a Basic Energy card you find there to 1 of your Pokémon. Shuffle the other cards back into your deck.",
+  "texto_pt": "Olhe as 6 cartas de cima do seu baralho e ligue uma carta de Energia Básica que você encontrar lá a 1 dos seus Pokémon. Embaralhe as outras cartas de volta no seu baralho.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-215",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

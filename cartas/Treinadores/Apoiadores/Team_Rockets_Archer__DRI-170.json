@@ -1,0 +1,35 @@
+{
+  "id": "DRI-170",
+  "nome": "Team Rocket's Archer",
+  "nome_pt": "Apollo da Equipe Rocket",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "You can use this card only if any of your Team Rocket's Pokémon were Knocked Out during your opponent's last turn. Each player shuffles their hand into their deck. Then, you draw 5 cards, and your opponent draws 3 cards.",
+  "texto_pt": "Você só pode usar esta carta se algum dos seus Pokémon da Equipe Rocket tiver sido Nocauteado durante o último turno do seu oponente. Cada jogador embaralha a própria mão no próprio baralho. Em seguida, você compra 5 cartas e o seu oponente compra 3 cartas.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-170",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-223",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-201",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

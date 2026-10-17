@@ -1,0 +1,61 @@
+{
+  "id": "ASC-98",
+  "nome": "Spectrier",
+  "nome_pt": "Spectrier",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spooky Shot",
+      "nome_pt": "Tiro Assustador",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Phantasmal Barrage",
+      "nome_pt": "Barricada Espectral",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard all Energy from this Pokémon and place 12 damage counters on 1 of your opponent's Pokémon.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon e coloque 12 contadores de dano em 1 dos Pokémon do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-98",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Phantasmal Barrage: Discard all Energy from this Pokémon and place 12 damage counters on 1 of your opponent's Pokémon."
+    ]
+  }
+}

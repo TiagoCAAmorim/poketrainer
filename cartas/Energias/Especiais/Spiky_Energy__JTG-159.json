@@ -1,0 +1,29 @@
+{
+  "id": "JTG-159",
+  "nome": "Spiky Energy",
+  "nome_pt": "Energia Espinhosa",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": false,
+  "fornece": null,
+  "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. If the Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), put 2 damage counters on the Attacking Pokémon.",
+  "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Se o Pokémon ao qual esta carta está ligada estiver no Campo Ativo e for danificado por um ataque dos Pokémon do seu oponente (mesmo que este Pokémon seja Nocauteado), coloque 2 contadores de dano no Pokémon Atacante.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-159",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-190",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

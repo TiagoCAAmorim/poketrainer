@@ -1,0 +1,30 @@
+{
+  "id": "SFA-63",
+  "nome": "Powerglass",
+  "nome_pt": "Ampulheta Poderosa",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "At the end of your turn (after your attack), if the Pokémon this card is attached to is in the Active Spot, you may attach a Basic Energy card from your discard pile to it.",
+  "texto_pt": "No final do seu turno (depois do seu ataque), se o Pokémon ao qual esta carta está ligada estiver no Campo Ativo, você poderá ligar uma carta de Energia Básica da sua pilha de descarte a ele.",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-63",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-97",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "CRI-37",
+  "nome": "Meowstic",
+  "nome_pt": "Meowstic",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Espurr",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tricky Steps",
+      "nome_pt": "Passos Ardilosos",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon.",
+      "texto_pt": "Você pode mover uma Energia do Pokémon Ativo do seu oponente para 1 dos Pokémon no Banco dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-37",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Tricky Steps: You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon."
+    ]
+  }
+}

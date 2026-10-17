@@ -1,0 +1,60 @@
+{
+  "id": "DRI-124",
+  "nome": "Team Rocket's Muk",
+  "nome_pt": "Muk da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Grimer",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gooped Up",
+      "nome_pt": "Melecado",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "Your opponent's Active Pokémon is now Confused. During your opponent's next turn, that Pokémon can't retreat.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso. Durante o próximo turno do seu oponente, aquele Pokémon não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Hazardous Venom",
+      "nome_pt": "Veneno Periculoso",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "100×",
+      "texto": "This attack does 100 damage for each Special Condition affecting your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 100 pontos de dano para cada Condição Especial afetando o Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-124",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

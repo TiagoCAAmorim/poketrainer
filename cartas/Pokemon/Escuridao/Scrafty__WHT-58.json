@@ -1,0 +1,54 @@
+{
+  "id": "WHT-58",
+  "nome": "Scrafty",
+  "nome_pt": "Scrafty",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Scraggy",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ruffians Attack",
+      "nome_pt": "Bando de Arruaceiros",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "60×",
+      "texto": "Flip a coin for each Darkness Pokémon you have in play. This attack does 60 damage for each heads.",
+      "texto_pt": "Jogue uma moeda para cada Pokémon Escuridão que você tem em jogo. Este ataque causa 60 pontos de dano para cada cara.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-58",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-139",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Ruffians Attack: Flip a coin for each Darkness Pokémon you have in play."
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "SSP-11",
+  "nome": "Zarude",
+  "nome_pt": "Zarude",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Leaf Drain",
+      "nome_pt": "Dreno Folha",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "20",
+      "texto": "Heal 20 damage from this Pokémon.",
+      "texto_pt": "Cure 20 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Jungle Whip",
+      "nome_pt": "Chicote da Selva",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "You may put all Energy attached to this Pokémon into your hand to have this attack do 80 more damage.",
+      "texto_pt": "Você pode colocar todas as Energias ligadas a este Pokémon na sua mão para fazer este ataque causar 80 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-11",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Jungle Whip: You may put all Energy attached to this Pokémon into your hand to have this attack do 80 more damage."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "BLK-86",
+  "nome": "Prism Energy",
+  "nome_pt": "Energia de Prisma",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": false,
+  "fornece": null,
+  "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. If this card is attached to a Basic Pokémon, this card provides every type of Energy but provides only 1 Energy at a time.",
+  "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Se esta carta estiver ligada a um Pokémon Básico, esta carta fornecerá todo tipo de Energia, mas fornecerá 1 Energia por vez.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-86",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "ASC-216",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "PFL-82",
+  "nome": "Linoone",
+  "nome_pt": "Linoone",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Zigzagoon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Excited Dash",
+      "nome_pt": "Disparada Animada",
+      "texto": "Once during your turn, if this Pokémon is on your Bench, and if you have any Mega Evolution Pokémon ex in play, you may use this Ability. Switch this Pokémon with your Active Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no seu Banco e se você tiver algum Pokémon ex de Megaevolução em jogo, você poderá usar esta Habilidade. Troque este Pokémon pelo seu Pokémon Ativo.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Slash",
+      "nome_pt": "Talho",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-82",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Excited Dash: Switch this Pokémon with your Active Pokémon."
+    ]
+  }
+}

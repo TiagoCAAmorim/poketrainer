@@ -1,0 +1,60 @@
+{
+  "id": "TWM-48",
+  "nome": "Crawdaunt",
+  "nome_pt": "Crawdaunt",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Corphish",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Snip Snip",
+      "nome_pt": "Corta e Recorta",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "Flip 2 coins. For each heads, discard the top card of your opponent's deck.",
+      "texto_pt": "Jogue 2 moedas. Para cada cara, descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Rampaging Hammer",
+      "nome_pt": "Martelo Furioso",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "180",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-48",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

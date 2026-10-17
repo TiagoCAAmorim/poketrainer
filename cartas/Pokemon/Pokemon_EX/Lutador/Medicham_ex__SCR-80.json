@@ -1,0 +1,67 @@
+{
+  "id": "SCR-80",
+  "nome": "Medicham ex",
+  "nome_pt": "Medicham ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Meditite",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Chi-Atsu",
+      "nome_pt": "Chi-Atsu",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Put damage counters on your opponent's Active Pokémon until its remaining HP is 50.",
+      "texto_pt": "Coloque contadores de dano no Pokémon Ativo do seu oponente até o PS restante dele ser 50.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Yoga Kick",
+      "nome_pt": "Chute Ioga",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "190",
+      "texto": "This attack's damage isn't affected by Weakness or Resistance.",
+      "texto_pt": "O dano deste ataque não é afetado por Fraqueza ou Resistência.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-80",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-161",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

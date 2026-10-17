@@ -1,0 +1,31 @@
+{
+  "id": "TEF-154",
+  "nome": "Maximum Belt",
+  "nome_pt": "Cinturão Máximo",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": true,
+  "texto": "Attacks used by the Pokémon this card is attached to do 50 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).",
+  "texto_pt": "Os ataques usados pelo Pokémon ao qual esta carta está ligada causam 50 pontos de dano a mais ao Pokémon ex Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho.",
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-154",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "PRE-117",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

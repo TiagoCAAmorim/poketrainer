@@ -1,0 +1,57 @@
+{
+  "id": "PR-ME-94",
+  "nome": "Alolan Exeggutor",
+  "nome_pt": "Alolan Exeggutor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Exeggcute",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Scale Up",
+      "nome_pt": null,
+      "texto": "If this Pokémon has 6 or more Grass Energy attached, it gets +250 HP.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mega Drain",
+      "nome_pt": null,
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "Heal 50 damage from this Pokémon.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-94",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

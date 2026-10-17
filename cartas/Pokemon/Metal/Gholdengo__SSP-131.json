@@ -1,0 +1,59 @@
+{
+  "id": "SSP-131",
+  "nome": "Gholdengo",
+  "nome_pt": "Gholdengo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Gimmighoul",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Strike It Rich",
+      "nome_pt": "Ganhar uma Bolada",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "30+",
+      "texto": "If this Pokémon evolved from Gimmighoul during this turn, this attack does 90 more damage.",
+      "texto_pt": "Se este Pokémon evoluiu de Gimmighoul durante este turno, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Surf Back",
+      "nome_pt": "Surfar de Volta",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "You may shuffle this Pokémon and all attached cards into your deck.",
+      "texto_pt": "Você pode embaralhar este Pokémon e todas as cartas ligadas a ele no seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-131",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

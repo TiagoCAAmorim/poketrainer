@@ -1,0 +1,60 @@
+{
+  "id": "SCR-58",
+  "nome": "Slowking",
+  "nome_pt": "Slowking",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Slowpoke",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Seek Inspiration",
+      "nome_pt": "Buscar Inspiração",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard the top card of your deck, and if that card is a Pokémon that doesn't have a Rule Box, choose 1 of its attacks and use it as this attack. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)",
+      "texto_pt": "Descarte a carta de cima do seu baralho, e se aquela carta for um Pokémon que não tiver uma Caixa de Regras, escolha 1 dos seus ataques e use-o como este ataque. (Pokémon ex, Pokémon V, etc. têm Caixas de Regras.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Super Psy Bolt",
+      "nome_pt": "Super-raio Psíquico",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-58",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

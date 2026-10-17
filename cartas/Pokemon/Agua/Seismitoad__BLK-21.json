@@ -1,0 +1,69 @@
+{
+  "id": "BLK-21",
+  "nome": "Seismitoad",
+  "nome_pt": "Seismitoad",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Palpitoad",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Round",
+      "nome_pt": "Circular",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "70×",
+      "texto": "This attack does 70 damage for each of your Pokémon in play that has the Round attack.",
+      "texto_pt": "Este ataque causa 70 pontos de dano para cada um dos seus Pokémon em jogo que tiver o ataque Circular.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Hyper Voice",
+      "nome_pt": "Hipervoz",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-21",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-105",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Round: This attack does 70 damage for each of your Pokémon in play that has the Round attack."
+    ]
+  }
+}

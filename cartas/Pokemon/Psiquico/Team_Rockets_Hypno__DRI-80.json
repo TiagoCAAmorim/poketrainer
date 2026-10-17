@@ -1,0 +1,61 @@
+{
+  "id": "DRI-80",
+  "nome": "Team Rocket's Hypno",
+  "nome_pt": "Hypno da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Drowzee",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Psyshot",
+      "nome_pt": "Tiro Psíquico",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bench Manipulation",
+      "nome_pt": "Manipulação de Banco",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "80×",
+      "texto": "Your opponent flips a coin for each of their Benched Pokémon. This attack does 80 damage to your opponent's Active Pokémon for each tails. This attack's damage isn't affected by Weakness or Resistance.",
+      "texto_pt": "Seu oponente joga uma moeda para cada um dos Pokémon no Banco dele. Este ataque causa 80 pontos de dano ao Pokémon Ativo do seu oponente para cada coroa. O dano deste ataque não é afetado por Fraqueza ou Resistência.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-80",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Bench Manipulation: Your opponent flips a coin for each of their Benched Pokémon.; This attack does 80 damage to your opponent's Active Pokémon for each tails."
+    ]
+  }
+}

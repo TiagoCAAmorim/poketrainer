@@ -1,0 +1,25 @@
+{
+  "id": "SSP-180",
+  "nome": "Lively Stadium",
+  "nome_pt": "Estádio Animado",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Each Basic Pokémon in play (both yours and your opponent's) gets +30 HP.",
+  "texto_pt": "Cada Pokémon Básico em jogo (seus e do seu oponente) recebe 30 PS a mais.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-180",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

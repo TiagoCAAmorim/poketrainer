@@ -1,0 +1,52 @@
+{
+ "acoes": [
+  73,
+  73
+ ],
+ "turnos": [
+  12,
+  12
+ ],
+ "completo": true,
+ "divergencia": null,
+ "danos_conferidos": [
+  [
+   6,
+   "TSLAUJ's Trevenant used Cursed Roots on cdierkens’s Slowpoke for 30 damage.",
+   30,
+   30
+  ],
+  [
+   8,
+   "TSLAUJ's Trevenant used Cursed Roots on cdierkens’s Slowpoke for 30 damage.",
+   30,
+   30
+  ],
+  [
+   10,
+   "TSLAUJ's Trevenant used Cursed Roots on cdierkens’s Mega Kangaskhan ex for 30 damage.",
+   30,
+   30
+  ],
+  [
+   11,
+   "cdierkens's Slowking used Seek Inspiration on TSLAUJ’s Trevenant for 110 damage.",
+   110,
+   110
+  ],
+  [
+   12,
+   "TSLAUJ's Trevenant used Cursed Roots on cdierkens’s Slowking for 30 damage.",
+   30,
+   30
+  ]
+ ],
+ "notas": [
+  "mão de cdierkens reconciliada: Kyurem → Telepathic Psychic Energy",
+  "mão de cdierkens reconciliada: Lillie's Determination → Fezandipiti ex",
+  "mão de cdierkens reconciliada: Fezandipiti ex → Lillie's Determination",
+  "tentativas: 241"
+ ],
+ "hash": "16813bf93357",
+ "resumo": "Jogadores: cdierkens x TSLAUJ\nAções reproduzidas: 73/73  (turnos 12/12)\nDanos conferidos: 5/5 iguais ao log oficial\nPartida reproduzida até o fim sem divergências.\n  nota: mão de cdierkens reconciliada: Kyurem → Telepathic Psychic Energy\n  nota: mão de cdierkens reconciliada: Lillie's Determination → Fezandipiti ex\n  nota: mão de cdierkens reconciliada: Fezandipiti ex → Lillie's Determination\n  nota: tentativas: 241"
+}

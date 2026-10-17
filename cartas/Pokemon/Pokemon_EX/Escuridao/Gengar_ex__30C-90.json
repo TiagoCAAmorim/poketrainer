@@ -1,0 +1,64 @@
+{
+  "id": "30C-90",
+  "nome": "Gengar ex",
+  "nome_pt": "Gengar ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 2",
+  "evolui_de": "Haunter",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Fainting Spell",
+      "nome_pt": "Feitiço do Abatimento",
+      "texto": "If this Pokémon is Knocket Out by damage from an attack from your opponent's Pokémon, flip a coin. If heads, the Attacking Pokémon is Knocket Out.",
+      "texto_pt": "Se este Pokémon for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, jogue uma moeda. Se sair cara, o Pokémon Atacante será Nocauteado.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Chaotic Pain",
+      "nome_pt": "Dor Caótica",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Place 13 damage counters on 1 of your opponent's Pokémon.",
+      "texto_pt": "Coloque 13 contadores de dano em 1 dos Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-90",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-154",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Fainting Spell: If this Pokémon is Knocket Out by damage from an attack from your opponent's Pokémon, flip a coin. If heads, the Attacking Pokémon is Knocket Out."
+    ]
+  }
+}

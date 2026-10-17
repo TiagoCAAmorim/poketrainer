@@ -1,0 +1,65 @@
+{
+  "id": "30C-85",
+  "nome": "Lycanroc",
+  "nome_pt": "Lycanroc",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Rockruff",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Counter",
+      "nome_pt": "Contra-atacar",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "10+",
+      "texto": "If this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage.",
+      "texto_pt": "Se este Pokémon tiver sido danificado por um ataque durante o último turno do seu oponente, este ataque causará a mesma quantidade de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Boulder Crush",
+      "nome_pt": "Rocha Esmagadora",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "80",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-85",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-138",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Counter: If this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage."
+    ]
+  }
+}

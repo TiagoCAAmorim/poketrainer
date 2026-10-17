@@ -1,0 +1,48 @@
+{
+  "id": "SCR-54",
+  "nome": "Togedemaru",
+  "nome_pt": "Togedemaru",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Electrifying Chance",
+      "nome_pt": "Sorte Elétrica",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "30",
+      "texto": "If you have exactly 1 Prize card remaining, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Se você tiver exatamente 1 carta de Prêmio restante, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-54",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Electrifying Chance: If you have exactly 1 Prize card remaining, your opponent's Active Pokémon is now Paralyzed."
+    ]
+  }
+}

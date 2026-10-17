@@ -1,0 +1,46 @@
+{
+  "id": "POR-49",
+  "nome": "Haunter",
+  "nome_pt": "Haunter",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Gastly",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Haunt",
+      "nome_pt": "Assombrar",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Place 3 damage counters on your opponent's Active Pokémon.",
+      "texto_pt": "Coloque 3 contadores de dano no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-49",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

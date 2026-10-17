@@ -1,0 +1,61 @@
+{
+  "id": "SFA-34",
+  "nome": "Malamar",
+  "nome_pt": "Malamar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Inkay",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Colluding Tentacles",
+      "nome_pt": "Tentáculos Conspiratórios",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. If you do, this attack does 120 damage to the new Active Pokémon. If you didn't play Xerosic's Machinations from your hand during this turn, this attack does nothing.",
+      "texto_pt": "Mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo. Se fizer isto, este ataque causará 120 pontos de dano ao novo Pokémon Ativo. Se você não jogou Tramoias do Xerosic da sua mão durante este turno, este ataque não fará nada.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Spinning Attack",
+      "nome_pt": "Ataque Giratório",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-34",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Colluding Tentacles: If you didn't play Xerosic's Machinations from your hand during this turn, this attack does nothing."
+    ]
+  }
+}

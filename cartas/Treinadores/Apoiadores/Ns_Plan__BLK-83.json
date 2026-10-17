@@ -1,0 +1,35 @@
+{
+  "id": "BLK-83",
+  "nome": "N's Plan",
+  "nome_pt": "Plano do N",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Move up to 2 Energy from your Benched Pokémon to your Active Pokémon.",
+  "texto_pt": "Mova até 2 Energias dos seus Pokémon no Banco para o seu Pokémon Ativo.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-83",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-163",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-170",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

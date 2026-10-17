@@ -1,0 +1,54 @@
+{
+  "id": "PBL-34",
+  "nome": "Banette",
+  "nome_pt": "Banette",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Shuppet",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Hide 'n' Sneak",
+      "nome_pt": "Esconde-some",
+      "texto": "Prevent all effects of your opponent's Pokémon's attacks and Abilities done to this Pokémon. (Damage is not an effect.)",
+      "texto_pt": "Previna todos os efeitos de ataques e Habilidades dos Pokémon do seu oponente causados a este Pokémon. (Dano não é um efeito.)",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Puppet Pull",
+      "nome_pt": "Puxão Fantoche",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "80",
+      "texto": "You may search your deck for a card and put it into your hand. Then, shuffle your deck.",
+      "texto_pt": "Você pode procurar por uma carta no seu baralho e colocá-la na sua mão. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-34",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

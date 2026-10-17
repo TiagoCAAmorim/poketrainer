@@ -1,0 +1,26 @@
+{
+  "id": "SSP-162",
+  "nome": "Amulet of Hope",
+  "nome_pt": "Amuleto da Esperança",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": true,
+  "texto": "If the Pokémon this card is attached to is Knocked Out by damage from an attack from your opponent's Pokémon, search your deck for up to 3 cards and put them into your hand. Then, shuffle your deck.",
+  "texto_pt": "Se o Pokémon ao qual esta carta está ligada for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, procure por até 3 cartas no seu baralho e coloque-as na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho.",
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-162",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

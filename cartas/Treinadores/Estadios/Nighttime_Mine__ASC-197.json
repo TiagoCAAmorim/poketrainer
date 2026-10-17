@@ -1,0 +1,25 @@
+{
+  "id": "ASC-197",
+  "nome": "Nighttime Mine",
+  "nome_pt": "Mina Noturna",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Attacks used by each Tera Pokémon in play (both yours and your opponent's) cost Colorless more.",
+  "texto_pt": "Os ataques usados por cada Pokémon Tera em jogo (seus e do seu oponente) custam Incolor a mais.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-197",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

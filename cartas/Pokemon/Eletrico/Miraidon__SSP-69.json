@@ -1,0 +1,64 @@
+{
+  "id": "SSP-69",
+  "nome": "Miraidon",
+  "nome_pt": "Miraidon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "C.O.D.E.: Protect",
+      "nome_pt": "C.O.D.E.: Proteção",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "During your opponent's next turn, prevent all damage done to each of your Future Pokémon by attacks from Pokémon ex. If this Pokémon is no longer your Active Pokémon, this effect ends.",
+      "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a cada um dos seus Pokémon Futuristas por ataques de Pokémon ex. Se este Pokémon não for mais o seu Pokémon Ativo, este efeito terminará.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Thunder Claws",
+      "nome_pt": "Garras Trovejantes",
+      "custo": [
+        "Elétrico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-69",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque C.O.D.E.: Protect: During your opponent's next turn, prevent all damage done to each of your Future Pokémon by attacks from Pokémon ex.; If this Pokémon is no longer your Active Pokémon, this effect ends."
+    ]
+  }
+}

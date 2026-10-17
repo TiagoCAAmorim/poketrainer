@@ -1,0 +1,25 @@
+{
+  "id": "SSP-182",
+  "nome": "Megaton Blower",
+  "nome_pt": "Ventilador Megaton",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Discard all Pokémon Tools and Special Energy from all of your opponent's Pokémon, and discard a Stadium in play.",
+  "texto_pt": "Descarte todas as Ferramentas Pokémon e Energias Especiais de todos os Pokémon do seu oponente, e descarte um Estádio em jogo.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-182",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "MEG-110",
+  "nome": "Gumshoos",
+  "nome_pt": "Gumshoos",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Yungoos",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Evidence Gathering",
+      "nome_pt": "Reunir Provas",
+      "texto": "Once during your turn, you may use this Ability. Switch a card from your hand with the top card of your deck.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Troque uma carta da sua mão pela carta de cima do seu baralho.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Bite",
+      "nome_pt": "Mordida",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-110",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-153",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Evidence Gathering: Switch a card from your hand with the top card of your deck."
+    ]
+  }
+}

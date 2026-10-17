@@ -1,0 +1,64 @@
+{
+  "id": "ASC-48",
+  "nome": "Regice ex",
+  "nome_pt": "Regice ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 230,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Regi Charge",
+      "nome_pt": "Carga Regi",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 2 Basic Water Energy cards from your discard pile to this Pokémon.",
+      "texto_pt": "Ligue até 2 cartas de Energia Água Básica da sua pilha de descarte a este Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Ice Prison",
+      "nome_pt": "Prisão Gélida",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "Discard 2 Energy from this Pokémon, and your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon, e o Pokémon Ativo do seu oponente agora está Paralisado.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-48",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Ice Prison: Discard 2 Energy from this Pokémon, and your opponent's Active Pokémon is now Paralyzed."
+    ]
+  }
+}

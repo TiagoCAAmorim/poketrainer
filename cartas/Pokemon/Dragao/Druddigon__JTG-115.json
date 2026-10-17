@@ -1,0 +1,59 @@
+{
+  "id": "JTG-115",
+  "nome": "Druddigon",
+  "nome_pt": "Druddigon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Dragon's Fury",
+      "nome_pt": "Cólera do Dragão",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Attach a Basic Fire Energy card from your discard pile to 1 of your Dragon Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia Fogo Básica da sua pilha de descarte a 1 dos seus Pokémon Dragão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Slashing Claw",
+      "nome_pt": "Garra Cortadora",
+      "custo": [
+        "Fogo",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-115",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "TWM-7",
+  "nome": "Sunflora",
+  "nome_pt": "Sunflora",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sunkern",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Redirected Sunlight",
+      "nome_pt": "Desvio de Luz Solar",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "60×",
+      "texto": "This attack does 60 damage for each Fire Energy attached to all of your opponent's Pokémon.",
+      "texto_pt": "Este ataque causa 60 pontos de dano para cada Energia Fogo ligada a todos os Pokémon do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Mega Drain",
+      "nome_pt": "Megadreno",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Heal 30 damage from this Pokémon.",
+      "texto_pt": "Cure 30 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-7",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-169",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

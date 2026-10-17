@@ -1,0 +1,25 @@
+{
+  "id": "TEF-140",
+  "nome": "Ancient Booster Energy Capsule",
+  "nome_pt": "Cápsula Energética de Melhoria Ancestral",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "The Ancient Pokémon this card is attached to gets +60 HP, recovers from all Special Conditions, and can't be affected by any Special Conditions.",
+  "texto_pt": "O Pokémon Ancestral ao qual esta carta está ligada recebe 60 PS a mais, recupera-se de todas as Condições Especiais e não pode ser afetado por quaisquer Condições Especiais.",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-140",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

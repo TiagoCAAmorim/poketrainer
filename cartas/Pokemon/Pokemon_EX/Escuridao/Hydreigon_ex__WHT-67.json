@@ -1,0 +1,72 @@
+{
+  "id": "WHT-67",
+  "nome": "Hydreigon ex",
+  "nome_pt": "Hydreigon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 2",
+  "evolui_de": "Zweilous",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Greedy Eater",
+      "nome_pt": "Fominha",
+      "texto": "If your opponent's Basic Pokémon is Knocked Out by damage from an attack used by this Pokémon, take 1 more Prize card.",
+      "texto_pt": "Se o Pokémon Básico do seu oponente for Nocauteado pelo dano de um ataque usado por este Pokémon, pegue 1 carta de Prêmio a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Dark Bite",
+      "nome_pt": "Mordida Sombria",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't retreat.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá recuar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-67",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-161",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-169",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Greedy Eater: If your opponent's Basic Pokémon is Knocked Out by damage from an attack used by this Pokémon, take 1 more Prize card."
+    ]
+  }
+}

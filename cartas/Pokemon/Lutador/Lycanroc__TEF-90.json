@@ -1,0 +1,46 @@
+{
+  "id": "TEF-90",
+  "nome": "Lycanroc",
+  "nome_pt": "Lycanroc",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Rockruff",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Turbo Edge",
+      "nome_pt": "Gume Turbo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Attach up to 2 Basic Fighting Energy cards from your discard pile to your Benched Pokémon in any way you like.",
+      "texto_pt": "Ligue até 2 cartas de Energia Lutador Básica da sua pilha de descarte aos seus Pokémon no Banco como desejar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-90",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

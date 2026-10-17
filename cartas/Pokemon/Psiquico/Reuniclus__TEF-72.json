@@ -1,0 +1,65 @@
+{
+  "id": "TEF-72",
+  "nome": "Reuniclus",
+  "nome_pt": "Reuniclus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 2",
+  "evolui_de": "Duosion",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Summoning Gate",
+      "nome_pt": "Portal da Invocação",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Look at the top 8 cards of your deck. You may put any number of Pokémon you find there onto your Bench. Shuffle the other cards back into your deck.",
+      "texto_pt": "Olhe as 8 cartas de cima do seu baralho. Você pode colocar qualquer número de Pokémon que encontrar lá no seu Banco. Embaralhe as outras cartas de volta no seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Brain Shake",
+      "nome_pt": "Chacoalhada Cerebral",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-72",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-171",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Summoning Gate: Look at the top 8 cards of your deck.; You may put any number of Pokémon you find there onto your Bench."
+    ]
+  }
+}

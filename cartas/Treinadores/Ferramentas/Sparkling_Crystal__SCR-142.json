@@ -1,0 +1,31 @@
+{
+  "id": "SCR-142",
+  "nome": "Sparkling Crystal",
+  "nome_pt": "Cristal Cintilante",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": true,
+  "texto": "When the Tera Pokémon this card is attached to uses an attack, that attack costs 1 Energy less. (The Energy can be of any type.)",
+  "texto_pt": "Quando o Pokémon Tera ao qual esta carta está ligada usar um ataque, aquele ataque custará 1 Energia a menos. (A Energia pode ser de qualquer tipo.)",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho.",
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-142",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "PRE-129",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

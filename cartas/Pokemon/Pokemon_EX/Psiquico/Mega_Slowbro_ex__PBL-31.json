@@ -1,0 +1,52 @@
+{
+  "id": "PBL-31",
+  "nome": "Mega Slowbro ex",
+  "nome_pt": "Mega Slowbro ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 1",
+  "evolui_de": "Slowpoke",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Shellnado Spin",
+      "nome_pt": "Cicloncha",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "180",
+      "texto": "During your opponent's next turn, if this Pokémon is damaged by an attack (even if this Pokémon is Knocked Out), place 12 damage counters on the Attacking Pokémon.",
+      "texto_pt": "Durante o próximo turno do seu oponente, se este Pokémon for danificado por um ataque (mesmo que este Pokémon seja Nocauteado), coloque 12 contadores de dano no Pokémon Atacante.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-31",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Shellnado Spin: During your opponent's next turn, if this Pokémon is damaged by an attack, place 12 damage counters on the Attacking Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "SSP-23",
+  "nome": "Simisear",
+  "nome_pt": "Simisear",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Pansear",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Smash",
+      "nome_pt": "Bordoada Dupla",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "70×",
+      "texto": "Flip 2 coins. This attack does 70 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 70 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-23",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

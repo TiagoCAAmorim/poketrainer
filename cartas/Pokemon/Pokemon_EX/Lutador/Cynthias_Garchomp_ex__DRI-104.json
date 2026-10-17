@@ -1,0 +1,80 @@
+{
+  "id": "DRI-104",
+  "nome": "Cynthia's Garchomp ex",
+  "nome_pt": "Garchomp ex da Cíntia",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 2",
+  "evolui_de": "Cynthia's Gabite",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Corkscrew Dive",
+      "nome_pt": "Mergulho Parafuso",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "100",
+      "texto": "You may draw cards until you have 6 cards in your hand.",
+      "texto_pt": "Você pode comprar cartas até ter 6 cartas na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Draconic Buster",
+      "nome_pt": "Aniquilação Dracônica",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "260",
+      "texto": "Discard all Energy from this Pokémon.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-104",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-215",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-232",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-241",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "ASC-111",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

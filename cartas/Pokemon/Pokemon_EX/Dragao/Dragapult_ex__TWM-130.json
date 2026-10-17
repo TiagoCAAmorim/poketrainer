@@ -1,0 +1,81 @@
+{
+  "id": "TWM-130",
+  "nome": "Dragapult ex",
+  "nome_pt": "Dragapult ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 320,
+  "estagio": "Estágio 2",
+  "evolui_de": "Drakloak",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Jet Headbutt",
+      "nome_pt": "Cabeçada a Jato",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Phantom Dive",
+      "nome_pt": "Mergulho Fantasma",
+      "custo": [
+        "Fogo",
+        "Psíquico"
+      ],
+      "dano": "200",
+      "texto": "Put 6 damage counters on your opponent's Benched Pokémon in any way you like.",
+      "texto_pt": "Coloque 6 contadores de dano nos Pokémon no Banco do seu oponente como desejar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-130",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-200",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "PRE-73",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-165",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "ASC-160",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

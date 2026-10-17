@@ -1,0 +1,65 @@
+{
+  "id": "30C-109",
+  "nome": "Salamence ex",
+  "nome_pt": "Salamence ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 2",
+  "evolui_de": "Shelgon",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Booming Call",
+      "nome_pt": "Chamado Estrondoso",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Put up to 3 Dragon Pokémon from your discard pile onto your Bench.",
+      "texto_pt": "Coloque até 3 Pokémon Dragon da sua pilha de descarte no seu Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dragon Pulse",
+      "nome_pt": "Pulso do Dragão",
+      "custo": [
+        "Fogo",
+        "Água"
+      ],
+      "dano": "240",
+      "texto": "Discard the top 2 cards of your deck.",
+      "texto_pt": "Descarte as 2 cartas de cima do seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-109",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-156",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "PR-SV-92",
+  "nome": "Miraidon",
+  "nome_pt": "Miraidon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Peak Acceleration",
+      "nome_pt": "Aceleração Máxima",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "Search your deck for up to 2 Basic Energy cards and attach them to your Future Pokémon in any way you like. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 2 cartas de Energia Básica no seu baralho e ligue-as aos seus Pokémon Futuristas como desejar. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Sparking Strike",
+      "nome_pt": "Golpe Cintilante",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Psíquico"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-92",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "TEF-121",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

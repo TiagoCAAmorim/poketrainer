@@ -1,0 +1,52 @@
+{
+  "id": "SSP-55",
+  "nome": "Iron Bundle",
+  "nome_pt": "Pacote Férreo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 100,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gusting Collision",
+      "nome_pt": "Colisão de Vento",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "200-",
+      "texto": "This attack does 50 less damage for each Colorless in your opponent's Active Pokémon's Retreat Cost.",
+      "texto_pt": "Este ataque causa 50 pontos de dano a menos para cada Incolor no custo de Recuo do Pokémon Ativo do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Futuro."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-55",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Gusting Collision: This attack does 50 less damage for each Colorless in your opponent's Active Pokémon's Retreat Cost."
+    ]
+  }
+}

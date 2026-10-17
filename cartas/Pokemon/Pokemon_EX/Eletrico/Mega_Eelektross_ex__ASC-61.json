@@ -1,0 +1,75 @@
+{
+  "id": "ASC-61",
+  "nome": "Mega Eelektross ex",
+  "nome_pt": "Mega Eelektross ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 350,
+  "estagio": "Estágio 2",
+  "evolui_de": "Eelektrik",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Split Bomb",
+      "nome_pt": "Bomba Dividida",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "—",
+      "texto": "This attack does 60 damage to each of 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque causa 60 pontos de dano a cada um de 2 dos Pokémon do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Disaster Shock",
+      "nome_pt": "Choque Catastrófico",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "190",
+      "texto": "You may discard 2 Lightning Energy from this Pokémon and make your opponent's Active Pokémon Paralyzed.",
+      "texto_pt": "Você pode descartar 2 Energias Elétrico deste Pokémon e deixar o Pokémon Ativo do seu oponente Paralisado.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-61",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-266",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-278",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Split Bomb: This attack does 60 damage to each of 2 of your opponent's Pokémon.",
+      "Ataque Disaster Shock: You may discard 2 Lightning Energy from this Pokémon and make your opponent's Active Pokémon Paralyzed."
+    ]
+  }
+}

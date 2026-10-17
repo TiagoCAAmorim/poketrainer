@@ -1,0 +1,59 @@
+{
+  "id": "SSP-14",
+  "nome": "Rabsca",
+  "nome_pt": "Rabsca",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 70,
+  "estagio": "Estágio 1",
+  "evolui_de": "Rellor",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Triple Draw",
+      "nome_pt": "Compra Tripla",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw 3 cards.",
+      "texto_pt": "Compre 3 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Counterturn",
+      "nome_pt": "Reviravolta",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "40+",
+      "texto": "If there are 3 or fewer cards in your deck, this attack does 200 more damage.",
+      "texto_pt": "Se houver 3 ou menos cartas no seu baralho, este ataque causará 200 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-14",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Counterturn: If there are 3 or fewer cards in your deck, this attack does 200 more damage."
+    ]
+  }
+}

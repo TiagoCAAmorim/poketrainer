@@ -1,0 +1,50 @@
+{
+  "id": "DRI-154",
+  "nome": "Team Rocket's Porygon2",
+  "nome_pt": "Porygon2 da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Porygon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "R Command",
+      "nome_pt": "Comando R",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each Supporter card that has \"Team Rocket\" in its name in your discard pile.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada carta de Apoiador que tenha \"Equipe Rocket\" em seu nome na sua pilha de descarte.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-154",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque R Command: This attack does 20 damage for each Supporter card that has \"Team Rocket\" in its name in your discard pile."
+    ]
+  }
+}

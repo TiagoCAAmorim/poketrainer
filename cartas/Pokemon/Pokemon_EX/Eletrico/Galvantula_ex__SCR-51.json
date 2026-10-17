@@ -1,0 +1,73 @@
+{
+  "id": "SCR-51",
+  "nome": "Galvantula ex",
+  "nome_pt": "Galvantula ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Joltik",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Charged Web",
+      "nome_pt": "Eletroteia",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "110+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex or Pokémon V, this attack does 110 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex ou um Pokémon V, este ataque causará 110 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Fulgurite",
+      "nome_pt": "Fulgurito",
+      "custo": [
+        "Planta",
+        "Elétrico",
+        "Lutador"
+      ],
+      "dano": "180",
+      "texto": "Discard all Energy from this Pokémon. During your opponent's next turn, they can't play any Item cards from their hand.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon. Durante o próximo turno do seu oponente, ele não poderá jogar nenhuma carta de Item da mão dele.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-51",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-159",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-168",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "SSP-35",
+  "nome": "Ceruledge",
+  "nome_pt": "Ceruledge",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Charcadet",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cursed Edge",
+      "nome_pt": "Gume Amaldiçoado",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard all Special Energy from all of your opponent's Pokémon.",
+      "texto_pt": "Descarte todas as Energias Especiais de todos os Pokémon do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Black Blaze Slash",
+      "nome_pt": "Talho de Chamas Negras",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "During your next turn, this Pokémon can't attack.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá atacar.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-35",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-197",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Cursed Edge: Discard all Special Energy from all of your opponent's Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "PFL-93",
+  "nome": "Sacred Charm",
+  "nome_pt": "Pingente Sagrado",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "The Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon that have an Ability (after applying Weakness and Resistance).",
+  "texto_pt": "O Pokémon ao qual esta carta está ligada recebe 30 pontos de dano a menos de ataques dos Pokémon do seu oponente que têm uma Habilidade (depois de aplicar Fraqueza e Resistência).",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-93",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-122",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "JTG-48",
+  "nome": "Iono's Electrode",
+  "nome_pt": "Electrode da Kissera",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Iono's Voltorb",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Thump-Thump Boom",
+      "nome_pt": "Tum Tum Bum",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "—",
+      "texto": "This Pokémon does 100 damage to itself. Flip a coin. If heads, your opponent's Active Pokémon is Knocked Out.",
+      "texto_pt": "Este Pokémon causa 100 pontos de dano a si mesmo. Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente será Nocauteado.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Electric Ball",
+      "nome_pt": "Bola de Eletricidade",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-48",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Thump-Thump Boom: If heads, your opponent's Active Pokémon is Knocked Out."
+    ]
+  }
+}

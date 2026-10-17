@@ -1,0 +1,68 @@
+{
+  "id": "TWM-68",
+  "nome": "Luxray ex",
+  "nome_pt": "Luxray ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 310,
+  "estagio": "Estágio 2",
+  "evolui_de": "Luxio",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Piercing Gaze",
+      "nome_pt": "Olhar Perfurante",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Your opponent reveals their hand. Discard a card you find there.",
+      "texto_pt": "Seu oponente revela a mão dele. Descarte uma carta que encontrar lá.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Volt Strike",
+      "nome_pt": "Golpe Voltaico",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "250",
+      "texto": "Discard all Energy from this Pokémon.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-68",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-195",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Piercing Gaze: Discard a card you find there."
+    ]
+  }
+}

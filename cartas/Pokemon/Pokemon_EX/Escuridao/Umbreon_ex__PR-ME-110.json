@@ -1,0 +1,54 @@
+{
+  "id": "PR-ME-110",
+  "nome": "Umbreon ex",
+  "nome_pt": "Umbreon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Lunatic Claw",
+      "nome_pt": "Garra Lunática",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "100+",
+      "texto": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 140 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente já tiver algum contador de dano nele, este ataque causará 140 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-110",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "30C-92",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

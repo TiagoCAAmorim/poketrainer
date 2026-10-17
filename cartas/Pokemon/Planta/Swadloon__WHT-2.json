@@ -1,0 +1,60 @@
+{
+  "id": "WHT-2",
+  "nome": "Swadloon",
+  "nome_pt": "Swadloon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Sewaddle",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Healing Leaves",
+      "nome_pt": "Folhas Curativas",
+      "texto": "Once during your turn, you may heal 20 damage from your Active Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá curar 20 pontos de dano do seu Pokémon Ativo.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Bug Buzz",
+      "nome_pt": "Zumbido de Inseto",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-2",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-88",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

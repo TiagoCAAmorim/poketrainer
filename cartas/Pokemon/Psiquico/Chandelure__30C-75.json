@@ -1,0 +1,52 @@
+{
+  "id": "30C-75",
+  "nome": "Chandelure",
+  "nome_pt": "Chandelure",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Lampent",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Eerie Glow",
+      "nome_pt": "Brilho Misterioso",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "130",
+      "texto": "Your opponent's Active Pokémon is now Burned and Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso e Queimado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-75",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-137",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

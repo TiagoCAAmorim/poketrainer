@@ -1,0 +1,52 @@
+{
+  "id": "PR-ME-70",
+  "nome": "Tyrunt",
+  "nome_pt": "Tyrunt",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Antique Jaw Fossil",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Get Angry",
+      "nome_pt": "Dar Piti",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-70",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "POR-44",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "WHT-40",
+  "nome": "Cofagrigus",
+  "nome_pt": "Cofagrigus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Yamask",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Extended Damagriiigus",
+      "nome_pt": "Danogrigus Ampliado",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Move all damage counters from 1 of your Benched Pokémon to 1 of your opponent's Pokémon.",
+      "texto_pt": "Mova todos os contadores de dano de 1 dos seus Pokémon no Banco para 1 dos Pokémon do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Perplex",
+      "nome_pt": "Perplexo",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-40",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-123",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Extended Damagriiigus: Move all damage counters from 1 of your Benched Pokémon to 1 of your opponent's Pokémon."
+    ]
+  }
+}

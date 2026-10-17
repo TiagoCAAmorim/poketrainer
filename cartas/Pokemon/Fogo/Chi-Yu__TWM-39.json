@@ -1,0 +1,58 @@
+{
+  "id": "TWM-39",
+  "nome": "Chi-Yu",
+  "nome_pt": "Chi-Yu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Allure",
+      "nome_pt": "Fascinar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw 2 cards.",
+      "texto_pt": "Compre 2 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Ground Melter",
+      "nome_pt": "Derretimento de Campo",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "If a Stadium is in play, this attack does 60 more damage. Then, discard that Stadium.",
+      "texto_pt": "Se um Estádio estiver em jogo, este ataque causará 60 pontos de dano a mais. Em seguida, descarte aquele Estádio.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-39",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

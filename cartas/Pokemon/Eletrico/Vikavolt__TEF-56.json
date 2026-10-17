@@ -1,0 +1,58 @@
+{
+  "id": "TEF-56",
+  "nome": "Vikavolt",
+  "nome_pt": "Vikavolt",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Charjabug",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mach Bolt",
+      "nome_pt": "Raio Supersônico",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Circuit Cannon",
+      "nome_pt": "Canhão Circuito",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "120+",
+      "texto": "This attack does 80 more damage for each of your Benched Charjabug.",
+      "texto_pt": "Este ataque causa 80 pontos de dano a mais para cada um dos seus Charjabug no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-56",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

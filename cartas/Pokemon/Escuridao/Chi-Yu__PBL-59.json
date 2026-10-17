@@ -1,0 +1,46 @@
+{
+  "id": "PBL-59",
+  "nome": "Chi-Yu",
+  "nome_pt": "Chi-Yu",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Whirling Envy",
+      "nome_pt": "Rodopiar de Inveja",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "20+",
+      "texto": "If this Pokémon has 2 or more damage counters on it, this attack does 90 more damage. This attack's damage isn't affected by Weakness.",
+      "texto_pt": "Se este Pokémon tiver 2 ou mais contadores de dano nele, este ataque causará 90 pontos de dano a mais. O dano deste ataque não é afetado por Fraqueza.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-59",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

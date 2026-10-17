@@ -1,0 +1,46 @@
+{
+  "id": "30C-30",
+  "nome": "Pikachu",
+  "nome_pt": "Magikarp",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mach Bolt",
+      "nome_pt": "Borrifador Experiente",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "Jogue 2 moedas. Se as duas saírem cara, este ataque causará 20 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-30",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

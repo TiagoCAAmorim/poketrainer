@@ -1,0 +1,69 @@
+{
+  "id": "PFL-41",
+  "nome": "Mega Diancie ex",
+  "nome_pt": "Mega Diancie ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 270,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [
+    {
+      "nome": "Diamond Coat",
+      "nome_pt": "Camada Diamantina",
+      "texto": "This Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Este Pokémon recebe 30 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Garland Ray",
+      "nome_pt": "Feixe Grinalda",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "120×",
+      "texto": "Discard up to 2 Energy cards from this Pokémon, and this attack does 120 damage for each card you discarded in this way.",
+      "texto_pt": "Descarte até 2 cartas de Energia deste Pokémon, e este ataque causa 120 pontos de dano para cada carta descartada desta forma.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-41",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "ASC-267",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-282",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Garland Ray: Discard up to 2 Energy cards from this Pokémon, and this attack does 120 damage for each card you discarded in this way."
+    ]
+  }
+}

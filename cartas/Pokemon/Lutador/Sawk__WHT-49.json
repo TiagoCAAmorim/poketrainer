@@ -1,0 +1,64 @@
+{
+  "id": "WHT-49",
+  "nome": "Sawk",
+  "nome_pt": "Sawk",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Elbow Strike",
+      "nome_pt": "Golpe de Cotovelo",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Rising Chop",
+      "nome_pt": "Golpe Ascendente",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "90",
+      "texto": "If your opponent's Active Pokémon isn't a Pokémon ex, this attack does nothing. This attack's damage isn't affected by Weakness or Resistance.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente não for um Pokémon ex, este ataque não fará nada. O dano deste ataque não é afetado por Fraqueza ou Resistência.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-49",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-130",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Rising Chop: If your opponent's Active Pokémon isn't a Pokémon ex, this attack does nothing."
+    ]
+  }
+}

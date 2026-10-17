@@ -1,0 +1,66 @@
+{
+  "id": "JTG-121",
+  "nome": "Dudunsparce ex",
+  "nome_pt": "Dudunsparce ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Dunsparce",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Tenacious Tail",
+      "nome_pt": "Cauda Tenaz",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "60×",
+      "texto": "This attack does 60 damage for each of your opponent's Pokémon ex in play.",
+      "texto_pt": "Este ataque causa 60 pontos de dano para cada Pokémon ex do seu oponente em jogo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Destructive Drill",
+      "nome_pt": "Broca Bruta",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon.",
+      "texto_pt": "O dano deste ataque não é afetado por quaisquer efeitos no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-121",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-178",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

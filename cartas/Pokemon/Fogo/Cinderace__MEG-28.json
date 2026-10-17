@@ -1,0 +1,56 @@
+{
+  "id": "MEG-28",
+  "nome": "Cinderace",
+  "nome_pt": "Cinderace",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Raboot",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Explosiveness",
+      "nome_pt": "Tendência Explosiva",
+      "texto": "If this Pokémon is in your hand when you are setting up to play, you may put it face down in the Active Spot.",
+      "texto_pt": "Se este Pokémon estiver na sua mão enquanto você estiver preparando o seu jogo, você poderá colocá-lo virado para baixo no Campo Ativo.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Turbo Flare",
+      "nome_pt": "Labareda Turbo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Search your deck for up to 3 Basic Energy cards and attach them to your Benched Pokémon in any way you like. Then, shuffle your deck.",
+      "texto_pt": "Procure por até 3 cartas de Energia Básica no seu baralho e ligue-as aos seus Pokémon no Banco como desejar. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-28",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Explosiveness: If this Pokémon is in your hand when you are setting up to play, you may put it face down in the Active Spot."
+    ]
+  }
+}

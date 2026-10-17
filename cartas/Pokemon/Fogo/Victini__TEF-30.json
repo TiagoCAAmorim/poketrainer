@@ -1,0 +1,57 @@
+{
+  "id": "TEF-30",
+  "nome": "Victini",
+  "nome_pt": "Victini",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flippity Flap",
+      "nome_pt": "Bater de Asas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Shuffle your hand into your deck. Then, draw 6 cards.",
+      "texto_pt": "Embaralhe a sua mão no seu baralho. Em seguida, compre 6 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Singe Off",
+      "nome_pt": "Calcinar",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "30",
+      "texto": "Discard a Special Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia Especial do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-30",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

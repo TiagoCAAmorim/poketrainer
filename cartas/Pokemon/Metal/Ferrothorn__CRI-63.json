@@ -1,0 +1,57 @@
+{
+  "id": "CRI-63",
+  "nome": "Ferrothorn",
+  "nome_pt": "Ferrothorn",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Ferroseed",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Startling Drop",
+      "nome_pt": "Queda Desconcertante",
+      "texto": "During your opponent's turn, if this Pokémon is discarded from your deck by an effect of an attack or Ability from your opponent's Pokémon, or by an effect of your opponent's Item or Supporter cards, discard the top 8 cards of your opponent's deck.",
+      "texto_pt": "Durante o turno do seu oponente, se este Pokémon for descartado do seu baralho pelo efeito de um ataque ou Habilidade dos Pokémon do seu oponente, ou pelo efeito das cartas de Item ou Apoiador do seu oponente, descarte as 8 cartas de cima do baralho do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Special Whip",
+      "nome_pt": "Chicotada Especial",
+      "custo": [
+        "Metal",
+        "Metal"
+      ],
+      "dano": "70+",
+      "texto": "If this Pokémon has any Special Energy attached, this attack does 70 more damage.",
+      "texto_pt": "Se este Pokémon tiver alguma Energia Especial ligada a ele, este ataque causará 70 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-63",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Startling Drop: During your opponent's turn, if this Pokémon is discarded from your deck by an effect of an attack or Ability from your opponent's Pokémon, or by an effect of your opponent's Item or Supporter cards, discard the top 8 cards of your opponent's deck."
+    ]
+  }
+}

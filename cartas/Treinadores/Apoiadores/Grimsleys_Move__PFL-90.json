@@ -1,0 +1,30 @@
+{
+  "id": "PFL-90",
+  "nome": "Grimsley's Move",
+  "nome_pt": "Artimanha do Funesto",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Look at the top 7 cards of your deck and put a Darkness Pokémon you find there onto your Bench. Shuffle the other cards and put them on the bottom of your deck. You can't use this card during your first turn.",
+  "texto_pt": "Olhe as 7 cartas de cima do seu baralho e coloque um Pokémon Escuridão que você encontrar lá no seu Banco. Embaralhe as outras cartas e coloque-as como as cartas de baixo do seu baralho. Você não pode usar esta carta durante o seu primeiro turno.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-90",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-120",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

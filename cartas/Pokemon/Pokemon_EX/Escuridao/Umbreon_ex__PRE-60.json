@@ -1,0 +1,71 @@
+{
+  "id": "PRE-60",
+  "nome": "Umbreon ex",
+  "nome_pt": "Umbreon ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 1",
+  "evolui_de": "Eevee",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Moon Mirage",
+      "nome_pt": "Miragem Lunar",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Onyx",
+      "nome_pt": "Ônix",
+      "custo": [
+        "Elétrico",
+        "Psíquico",
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Discard all Energy from this Pokémon, and take a Prize card.",
+      "texto_pt": "Descarte todas as Energias deste Pokémon e pegue uma carta de Prêmio.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-60",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "PRE-161",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Onyx: Discard all Energy from this Pokémon, and take a Prize card."
+    ]
+  }
+}

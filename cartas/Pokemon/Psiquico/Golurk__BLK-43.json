@@ -1,0 +1,68 @@
+{
+  "id": "BLK-43",
+  "nome": "Golurk",
+  "nome_pt": "Golurk",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 1",
+  "evolui_de": "Golett",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Smash",
+      "nome_pt": "Bordoada Dupla",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80×",
+      "texto": "Flip 2 coins. This attack does 80 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 80 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Golurk Hammer",
+      "nome_pt": "Martelo Golurk",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "200",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-43",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-123",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

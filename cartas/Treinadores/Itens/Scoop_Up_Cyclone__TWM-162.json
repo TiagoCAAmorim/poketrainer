@@ -1,0 +1,30 @@
+{
+  "id": "TWM-162",
+  "nome": "Scoop Up Cyclone",
+  "nome_pt": "Recolhida Ciclone",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Put 1 of your Pokémon and all attached cards into your hand.",
+  "texto_pt": "Coloque 1 dos seus Pokémon e todas as cartas ligadas a ele na sua mão.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-162",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "PRE-128",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

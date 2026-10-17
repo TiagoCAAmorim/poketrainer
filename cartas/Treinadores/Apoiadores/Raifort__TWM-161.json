@@ -1,0 +1,25 @@
+{
+  "id": "TWM-161",
+  "nome": "Raifort",
+  "nome_pt": "Moira",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Look at the top 5 cards of your deck and discard any number of them. Put the other cards back in any order.",
+  "texto_pt": "Olhe as 5 cartas de cima do seu baralho e descarte qualquer número delas. Coloque as outras cartas de volta em qualquer ordem.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-161",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "SSP-164",
+  "nome": "Brilliant Blender",
+  "nome_pt": "Liquidificador Perfeito",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Search your deck for up to 5 cards and discard them. Then, shuffle your deck.",
+  "texto_pt": "Procure por até 5 cartas no seu baralho e descarte-as. Em seguida, embaralhe o seu baralho.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-164",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

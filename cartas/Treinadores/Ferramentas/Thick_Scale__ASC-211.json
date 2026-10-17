@@ -1,0 +1,25 @@
+{
+  "id": "ASC-211",
+  "nome": "Thick Scale",
+  "nome_pt": "Escama Espessa",
+  "categoria": "Treinador",
+  "subtipo": "Ferramenta",
+  "ace_spec": false,
+  "texto": "The Dragon Pokémon this card is attached to takes 50 less damage from attacks from your opponent's Grass, Fire, Water, or Lightning Pokémon (after applying Weakness and Resistance).",
+  "texto_pt": "O Pokémon Dragão ao qual esta carta está ligada recebe 50 pontos de dano a menos de ataques dos Pokémon Planta, Fogo, Água ou Elétrico do seu oponente (depois de aplicar Fraqueza e Resistência).",
+  "regras": [
+    "Ferramenta: ligue a um dos seus Pokémon (1 por Pokémon); fica ligada."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-211",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

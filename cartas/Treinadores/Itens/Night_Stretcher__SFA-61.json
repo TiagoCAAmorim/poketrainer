@@ -1,0 +1,38 @@
+{
+  "id": "SFA-61",
+  "nome": "Night Stretcher",
+  "nome_pt": "Maca Noturna",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Put a Pokémon or a Basic Energy card from your discard pile into your hand.",
+  "texto_pt": "Coloque um Pokémon ou uma carta de Energia Básica da sua pilha de descarte na sua mão.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-61",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SSP-251",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "MEG-173",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-196",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "JTG-149",
+  "nome": "Iris's Fighting Spirit",
+  "nome_pt": "Espírito de Luta da Iris",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "You can use this card only if you discard another card from your hand. Draw cards until you have 6 cards in your hand.",
+  "texto_pt": "Você só pode usar esta carta se descartar outra carta da sua mão. Compre cartas até ter 6 cartas na sua mão.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-149",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-180",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "ASC-190",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-292",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

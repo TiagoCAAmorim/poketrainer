@@ -1,0 +1,64 @@
+{
+  "id": "PFL-36",
+  "nome": "Mismagius ex",
+  "nome_pt": "Mismagius ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Misdreavus",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Swirling Prose",
+      "nome_pt": "Prosa Rodopiante",
+      "texto": "As long as this Pokémon is in the Active Spot, whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Confused.",
+      "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, sempre que o Pokémon Ativo do seu oponente for movido para o Banco durante o turno dele, o novo Pokémon Ativo dele agora estará Confuso.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Hexa-Magic",
+      "nome_pt": "Hexamagia",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "150",
+      "texto": "You may draw cards until you have 6 cards in your hand.",
+      "texto_pt": "Você pode comprar cartas até ter 6 cartas na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-36",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-112",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Swirling Prose: As long as this Pokémon is in the Active Spot, whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Confused."
+    ]
+  }
+}

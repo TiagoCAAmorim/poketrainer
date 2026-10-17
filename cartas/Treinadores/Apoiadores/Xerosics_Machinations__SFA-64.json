@@ -1,0 +1,30 @@
+{
+  "id": "SFA-64",
+  "nome": "Xerosic's Machinations",
+  "nome_pt": "Tramoias do Xerosic",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Your opponent discards cards from their hand until they have 3 cards in their hand.",
+  "texto_pt": "Seu oponente descarta cartas da mão dele até ter 3 cartas na mão dele.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-64",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "SFA-89",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

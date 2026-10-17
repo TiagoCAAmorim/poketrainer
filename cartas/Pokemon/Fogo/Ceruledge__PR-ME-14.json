@@ -1,0 +1,53 @@
+{
+  "id": "PR-ME-14",
+  "nome": "Ceruledge",
+  "nome_pt": "Ceruledge",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Charcadet",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Infernal Slash",
+      "nome_pt": "Talho Infernal",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "220",
+      "texto": "Discard 4 Basic Fire Energy cards from your hand. If you can't discard 4 cards in this way, this attack does nothing.",
+      "texto_pt": "Descarte 4 cartas de Energia Fogo Básica da sua mão. Se você não puder descartar 4 cartas desta forma, este ataque não fará nada.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-14",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PFL-20",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Infernal Slash: Discard 4 Basic Fire Energy cards from your hand.; If you can't discard 4 cards in this way, this attack does nothing."
+    ]
+  }
+}

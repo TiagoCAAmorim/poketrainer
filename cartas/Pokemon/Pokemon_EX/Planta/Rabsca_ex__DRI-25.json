@@ -1,0 +1,63 @@
+{
+  "id": "DRI-25",
+  "nome": "Rabsca ex",
+  "nome_pt": "Rabsca ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 250,
+  "estagio": "Estágio 1",
+  "evolui_de": "Rellor",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Upside-Down Draw",
+      "nome_pt": "Compra às Avessas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Draw 3 cards from the bottom of your deck.",
+      "texto_pt": "Compre as 3 cartas de baixo do seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Psychic",
+      "nome_pt": "Psíquico",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 90 more damage for each Energy attached to your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 90 pontos de dano a mais para cada Energia ligada ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "DRI-25",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Upside-Down Draw: Draw 3 cards from the bottom of your deck."
+    ]
+  }
+}

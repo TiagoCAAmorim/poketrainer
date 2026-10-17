@@ -1,0 +1,67 @@
+{
+  "id": "WHT-29",
+  "nome": "Vanilluxe",
+  "nome_pt": "Vanilluxe",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Vanillish",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ram",
+      "nome_pt": "Aríete",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Double Freeze",
+      "nome_pt": "Congelamento Duplo",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90×",
+      "texto": "Flip 2 coins. This attack does 90 damage for each heads. If either of them is heads, your opponent's Active Pokémon is now Paralyzed.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 90 pontos de dano para cada cara. Se qualquer uma delas sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-29",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-113",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Double Freeze: If either of them is heads, your opponent's Active Pokémon is now Paralyzed."
+    ]
+  }
+}

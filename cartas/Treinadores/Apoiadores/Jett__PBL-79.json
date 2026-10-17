@@ -1,0 +1,25 @@
+{
+  "id": "PBL-79",
+  "nome": "Jett",
+  "nome_pt": "Jett",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Draw a card for each of your opponent's Mega Evolution Pokémon ex in play.",
+  "texto_pt": "Compre uma carta para cada um dos Pokémon ex de Megaevolução do seu oponente em jogo.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-79",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

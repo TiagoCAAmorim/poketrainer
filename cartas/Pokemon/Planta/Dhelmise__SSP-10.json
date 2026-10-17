@@ -1,0 +1,59 @@
+{
+  "id": "SSP-10",
+  "nome": "Dhelmise",
+  "nome_pt": "Dhelmise",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rescue Kedge",
+      "nome_pt": "Resgate Atracado",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Put up to 2 Pokémon from your discard pile into your hand.",
+      "texto_pt": "Coloque até 2 Pokémon da sua pilha de descarte na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Annihilating Anchor",
+      "nome_pt": "Âncora Aniquiladora",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "Before doing damage, discard all Pokémon Tools from your opponent's Active Pokémon.",
+      "texto_pt": "Antes de causar dano, descarte todas as Ferramentas Pokémon do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-10",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

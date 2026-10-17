@@ -1,0 +1,35 @@
+{
+  "id": "SSP-167",
+  "nome": "Clemont's Quick Wit",
+  "nome_pt": "Sagacidade do Clemont",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Heal 60 damage from each of your Lightning Pokémon.",
+  "texto_pt": "Cure 60 pontos de dano de cada um dos seus Pokémon Elétrico.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-167",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-229",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-243",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

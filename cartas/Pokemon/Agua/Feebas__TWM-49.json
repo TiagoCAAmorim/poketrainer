@@ -1,0 +1,46 @@
+{
+  "id": "TWM-49",
+  "nome": "Feebas",
+  "nome_pt": "Feebas",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 30,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flail",
+      "nome_pt": "Mangual",
+      "custo": [
+        "Água"
+      ],
+      "dano": "10×",
+      "texto": "This attack does 10 damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-49",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "PRE-87",
+  "nome": "Shaymin",
+  "nome_pt": "Shaymin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Reflect Energy",
+      "nome_pt": "Refletir Energia",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "Move an Energy from this Pokémon to 1 of your Benched Pokémon.",
+      "texto_pt": "Mova uma Energia deste Pokémon para 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-87",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

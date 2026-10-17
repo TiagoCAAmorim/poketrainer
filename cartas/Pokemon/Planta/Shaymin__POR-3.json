@@ -1,0 +1,57 @@
+{
+  "id": "POR-3",
+  "nome": "Shaymin",
+  "nome_pt": "Shaymin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Send Flowers",
+      "nome_pt": "Mandar Flores",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for an Energy card and attach it to 1 of your Benched Grass Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Procure por uma carta de Energia no seu baralho e ligue-a a 1 dos seus Pokémon Planta no Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Leaf Step",
+      "nome_pt": "Passo de Folha",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-3",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

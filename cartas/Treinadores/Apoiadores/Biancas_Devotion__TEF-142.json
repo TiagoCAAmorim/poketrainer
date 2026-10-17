@@ -1,0 +1,35 @@
+{
+  "id": "TEF-142",
+  "nome": "Bianca's Devotion",
+  "nome_pt": "Dedicação da Bianca",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Heal all damage from 1 of your Pokémon that has 30 HP or less remaining.",
+  "texto_pt": "Cure todo o dano de 1 dos seus Pokémon que tiver PS restante de 30 ou menos.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-142",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-197",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-209",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "MEG-22",
+  "nome": "Mega Camerupt ex",
+  "nome_pt": "Mega Camerupt ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 1",
+  "evolui_de": "Numel",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Roasting Heat",
+      "nome_pt": "Calor de Lascar",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "80+",
+      "texto": "If your opponent's Active Pokémon is Burned, this attack does 160 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente estiver Queimado, este ataque causará 160 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Volcanic Meteor",
+      "nome_pt": "Meteoro Vulcânico",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "280",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-22",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-156",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

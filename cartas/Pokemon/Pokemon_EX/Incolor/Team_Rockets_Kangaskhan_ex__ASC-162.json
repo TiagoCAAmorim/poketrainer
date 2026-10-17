@@ -1,0 +1,62 @@
+{
+  "id": "ASC-162",
+  "nome": "Team Rocket's Kangaskhan ex",
+  "nome_pt": "Kangaskhan ex da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 230,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Comet Punch",
+      "nome_pt": "Soco de Cometa",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30×",
+      "texto": "Flip 4 coins. This attack does 30 damage for each heads.",
+      "texto_pt": "Jogue 4 moedas. Este ataque causa 30 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Wicked Impact",
+      "nome_pt": "Impacto Perverso",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120+",
+      "texto": "If you played a Supporter card that has \"Team Rocket\" in its name from your hand during this turn, this attack does 100 more damage.",
+      "texto_pt": "Se você jogou uma carta de Apoiador que tem \"Equipe Rocket\" em seu nome da sua mão durante este turno, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-162",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

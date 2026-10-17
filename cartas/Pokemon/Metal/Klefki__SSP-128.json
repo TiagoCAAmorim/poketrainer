@@ -1,0 +1,57 @@
+{
+  "id": "SSP-128",
+  "nome": "Klefki",
+  "nome_pt": "Klefki",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Stick 'n' Draw",
+      "nome_pt": "Virada de Chave",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard a card from your hand. If you do, draw 2 cards.",
+      "texto_pt": "Descarte uma carta da sua mão. Se fizer isto, compre 2 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Hook",
+      "nome_pt": "Gancho",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-128",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

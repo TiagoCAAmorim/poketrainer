@@ -1,0 +1,66 @@
+{
+  "id": "DRI-65",
+  "nome": "Cetitan ex",
+  "nome_pt": "Cetitan ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 300,
+  "estagio": "Estágio 1",
+  "evolui_de": "Cetoddle",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Snow Camouflage",
+      "nome_pt": "Camuflagem de Neve",
+      "texto": "Whenever your opponent plays an Item or Supporter card from their hand, prevent all effects of that card done to this Pokémon.",
+      "texto_pt": "Sempre que seu oponente jogar uma carta de Item ou de Apoiador da mão dele, previna todos os efeitos daquela carta causados a este Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Crushing Press",
+      "nome_pt": "Compressão Esmagadora",
+      "custo": [
+        "Água",
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "140+",
+      "texto": "You may discard a Stadium in play. If you do, this attack does 140 more damage.",
+      "texto_pt": "Você pode descartar um Estádio em jogo. Se fizer isto, este ataque causará 140 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-65",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-210",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Snow Camouflage: Whenever your opponent plays an Item or Supporter card from their hand, prevent all effects of that card done to this Pokémon."
+    ]
+  }
+}

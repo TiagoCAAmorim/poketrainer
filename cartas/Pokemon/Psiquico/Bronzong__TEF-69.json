@@ -1,0 +1,61 @@
+{
+  "id": "TEF-69",
+  "nome": "Bronzong",
+  "nome_pt": "Bronzong",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Bronzor",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Evolution Jammer",
+      "nome_pt": "Atolador de Evolução",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "During your opponent's next turn, they can't play any Pokémon from their hand to evolve their Pokémon.",
+      "texto_pt": "Durante o próximo turno do seu oponente, ele não poderá jogar nenhum Pokémon da mão dele para evoluir os Pokémon dele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Super Psy Bolt",
+      "nome_pt": "Super-raio Psíquico",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-69",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Evolution Jammer: During your opponent's next turn, they can't play any Pokémon from their hand to evolve their Pokémon."
+    ]
+  }
+}

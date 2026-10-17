@@ -1,0 +1,57 @@
+{
+  "id": "PFL-3",
+  "nome": "Vileplume",
+  "nome_pt": "Vileplume",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Gloom",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pollen Bomb",
+      "nome_pt": "Bomba de Pólen",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "30",
+      "texto": "Your opponent's Active Pokémon is now Asleep and Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Adormecido e Envenenado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Lively Flower",
+      "nome_pt": "Flor Agitada",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "60+",
+      "texto": "If this Pokémon was healed during this turn, this attack does 120 more damage.",
+      "texto_pt": "Se este Pokémon tiver sido curado durante este turno, este ataque causará 120 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-3",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

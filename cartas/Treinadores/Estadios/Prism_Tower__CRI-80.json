@@ -1,0 +1,30 @@
+{
+  "id": "CRI-80",
+  "nome": "Prism Tower",
+  "nome_pt": "Torre Prisma",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Once during each player's turn, that player may discard 2 cards from their hand in order to draw a card.",
+  "texto_pt": "Uma vez durante o turno de cada jogador, aquele jogador poderá descartar 2 cartas da própria mão para comprar uma carta.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-80",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-111",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

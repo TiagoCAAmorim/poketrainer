@@ -1,0 +1,66 @@
+{
+  "id": "PR-ME-96",
+  "nome": "Moltres",
+  "nome_pt": "Crobat G",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Fiery Flapping",
+      "nome_pt": null,
+      "texto": "Once during your turn, if you have Articuno and Zapdos in play, you may use this Ability. Attach a Basic Fire Energy card from your hand to this Pokémon.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Fire Spin",
+      "nome_pt": "Presa Tóxica",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "O Pokémon Defensor agora está Envenenado. Coloque 2 marcadores de dano em vez de 1 no Pokémon Defensor entre os turnos.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-96",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "30C-11",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-130",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

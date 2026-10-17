@@ -1,0 +1,46 @@
+{
+  "id": "SSP-78",
+  "nome": "Uxie",
+  "nome_pt": "Uxie",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Painful Memories",
+      "nome_pt": "Lembranças Dolorosas",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Put 2 damage counters on each of your opponent's Pokémon.",
+      "texto_pt": "Coloque 2 contadores de dano em cada um dos Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-78",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

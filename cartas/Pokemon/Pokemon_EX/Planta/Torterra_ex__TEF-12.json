@@ -1,0 +1,66 @@
+{
+  "id": "TEF-12",
+  "nome": "Torterra ex",
+  "nome_pt": "Torterra ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 2",
+  "evolui_de": "Grotle",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Forest March",
+      "nome_pt": "Marcha Florestal",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each of your Grass Pokémon in play.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada um dos seus Pokémon Planta em jogo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Jungle Hammer",
+      "nome_pt": "Martelo da Selva",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "Heal 50 damage from this Pokémon.",
+      "texto_pt": "Cure 50 pontos de dano deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-12",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-185",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

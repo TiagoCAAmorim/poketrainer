@@ -1,0 +1,67 @@
+{
+  "id": "ASC-170",
+  "nome": "Larry's Staraptor",
+  "nome_pt": "Staraptor do Lauro",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Larry's Staravia",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Facade",
+      "nome_pt": "Fachada",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "If this Pokémon is Burned or Poisoned, this attack does 100 more damage.",
+      "texto_pt": "Se este Pokémon estiver Envenenado ou Queimado, este ataque causará 100 pontos de dano a mais.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Feathery Strike",
+      "nome_pt": "Golpe Plumoso",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "Discard 2 Energy from this Pokémon, and this attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Descarte 2 Energias deste Pokémon, e este ataque também causa 50 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-170",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-249",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Facade: If this Pokémon is Burned or Poisoned, this attack does 100 more damage.",
+      "Ataque Feathery Strike: Discard 2 Energy from this Pokémon, and this attack also does 50 damage to 1 of your opponent's Benched Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "SSP-114",
+  "nome": "Glimmet",
+  "nome_pt": "Glimmet",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rock Hurl",
+      "nome_pt": "Lançamento de Pedras",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "10",
+      "texto": "This attack's damage isn't affected by Resistance.",
+      "texto_pt": "O dano deste ataque não é afetado por Resistência.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-114",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

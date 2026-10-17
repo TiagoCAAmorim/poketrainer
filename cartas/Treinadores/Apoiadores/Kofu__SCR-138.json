@@ -1,0 +1,30 @@
+{
+  "id": "SCR-138",
+  "nome": "Kofu",
+  "nome_pt": "Álgaro",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Put 2 cards from your hand on the bottom of your deck in any order. If you put 2 cards on the bottom of your deck in this way, draw 4 cards. (If you can't put 2 cards from your hand on the bottom of your deck, you can't use this card.)",
+  "texto_pt": "Coloque 2 cartas da sua mão como as cartas de baixo do seu baralho em qualquer ordem. Se você colocou 2 cartas como as cartas de baixo do seu baralho desta forma, compre 4 cartas. (Se você não puder colocar 2 cartas da sua mão como as cartas de baixo do seu baralho, não poderá usar esta carta.)",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-138",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-165",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

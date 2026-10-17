@@ -1,0 +1,60 @@
+{
+  "id": "POR-25",
+  "nome": "Volcanion",
+  "nome_pt": "Volcanion",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Strength",
+      "nome_pt": "Força",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Powerful Steam",
+      "nome_pt": "Vaporderoso",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "90×",
+      "texto": "Flip a coin for each Water Energy attached to this Pokémon. This attack does 90 damage for each heads.",
+      "texto_pt": "Jogue uma moeda para cada Energia Água ligada a este Pokémon. Este ataque causa 90 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-25",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

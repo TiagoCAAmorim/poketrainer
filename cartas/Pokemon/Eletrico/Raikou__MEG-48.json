@@ -1,0 +1,47 @@
+{
+  "id": "MEG-48",
+  "nome": "Raikou",
+  "nome_pt": "Raikou",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Electro Fall",
+      "nome_pt": "Queda Elétrica",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "30+",
+      "texto": "If you have at least 4 Lightning Energy in play, this attack does 90 more damage.",
+      "texto_pt": "Se você tiver pelo menos 4 Energias Elétrico em jogo, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-48",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

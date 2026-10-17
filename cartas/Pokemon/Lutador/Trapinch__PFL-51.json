@@ -1,0 +1,46 @@
+{
+  "id": "PFL-51",
+  "nome": "Trapinch",
+  "nome_pt": "Trapinch",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Headbutt",
+      "nome_pt": "Cabeçada Dupla",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "10×",
+      "texto": "Flip 2 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-51",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

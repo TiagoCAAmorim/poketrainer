@@ -1,0 +1,66 @@
+{
+  "id": "PR-ME-76",
+  "nome": "Crobat",
+  "nome_pt": "Crobat",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 2",
+  "evolui_de": "Golbat",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Nighttime Maneuvers",
+      "nome_pt": "Manobras na Penumbra",
+      "texto": "Once during your turn, if this Pokémon is in the Active Spot, you may use this Ability. Search your deck for a card. Shuffle your deck, then put that card on top of it.",
+      "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no Campo Ativo, você poderá usar esta Habilidade. Procure por 1 carta no seu baralho. Embaralhe o seu baralho e, em seguida, coloque aquela carta como a carta de cima do seu baralho.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Poison Sound Wave",
+      "nome_pt": "Vibração Venenosa",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "80",
+      "texto": "Your opponent's Active Pokémon is now Confused and Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso e Envenenado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-76",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "CRI-51",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-93",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Nighttime Maneuvers: Search your deck for a card.; Shuffle your deck, then put that card on top of it."
+    ]
+  }
+}

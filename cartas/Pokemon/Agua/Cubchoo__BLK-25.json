@@ -1,0 +1,51 @@
+{
+  "id": "BLK-25",
+  "nome": "Cubchoo",
+  "nome_pt": "Cubchoo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Snotted Up",
+      "nome_pt": "Melequento",
+      "custo": [
+        "Água"
+      ],
+      "dano": "10",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't use attacks.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá usar ataques.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-25",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-109",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

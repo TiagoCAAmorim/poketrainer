@@ -1,0 +1,38 @@
+{
+  "id": "SCR-135",
+  "nome": "Glass Trumpet",
+  "nome_pt": "Trompete de Vidro",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "You can use this card only if you have any Tera Pokémon in play. Choose up to 2 of your Benched Colorless Pokémon and attach a Basic Energy card from your discard pile to each of them.",
+  "texto_pt": "Você só pode usar esta carta se tiver algum Pokémon Tera em jogo. Escolha até 2 dos seus Pokémon Incolor no Banco e ligue uma carta de Energia Básica da sua pilha de descarte a cada um deles.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-135",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "PRE-110",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    },
+    {
+      "codigo": "ASC-189",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-260",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

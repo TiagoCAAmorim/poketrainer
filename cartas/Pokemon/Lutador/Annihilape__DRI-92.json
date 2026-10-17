@@ -1,0 +1,57 @@
+{
+  "id": "DRI-92",
+  "nome": "Annihilape",
+  "nome_pt": "Annihilape",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Primeape",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Lose Cool",
+      "nome_pt": "Com a Macaca",
+      "texto": "If this Pokémon has 2 or more damage counters on it, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
+      "texto_pt": "Se este Pokémon tiver 2 ou mais contadores de dano nele, os ataques usados por este Pokémon causarão 120 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Impact Blow",
+      "nome_pt": "Golpe Impactante",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "160",
+      "texto": "During your next turn, this Pokémon can't use Impact Blow.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Golpe Impactante.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-92",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Lose Cool: If this Pokémon has 2 or more damage counters on it, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon."
+    ]
+  }
+}

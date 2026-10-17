@@ -1,0 +1,63 @@
+{
+  "id": "BLK-51",
+  "nome": "Dwebble",
+  "nome_pt": "Dwebble",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flail",
+      "nome_pt": "Mangual",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10×",
+      "texto": "This attack does 10 damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dig Claws",
+      "nome_pt": "Fincar Garras",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-51",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-129",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

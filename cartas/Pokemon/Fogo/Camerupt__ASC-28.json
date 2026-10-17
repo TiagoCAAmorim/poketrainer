@@ -1,0 +1,60 @@
+{
+  "id": "ASC-28",
+  "nome": "Camerupt",
+  "nome_pt": "Camerupt",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Numel",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Roasting Burn",
+      "nome_pt": "Torrefação Ardente",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "110",
+      "texto": "If your opponent's Active Pokémon isn't Burned, this attack does nothing.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente não estiver Queimado, este ataque não fará nada.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Power Stomp",
+      "nome_pt": "Pisoteada Poderosa",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "170",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-28",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

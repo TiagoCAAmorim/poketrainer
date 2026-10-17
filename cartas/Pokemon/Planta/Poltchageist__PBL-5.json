@@ -1,0 +1,54 @@
+{
+  "id": "PBL-5",
+  "nome": "Poltchageist",
+  "nome_pt": "Poltchageist",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 30,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Hide 'n' Sneak",
+      "nome_pt": "Esconde-some",
+      "texto": "Prevent all effects of your opponent's Pokémon's attacks and Abilities done to this Pokémon. (Damage is not an effect.)",
+      "texto_pt": "Previna todos os efeitos de ataques e Habilidades dos Pokémon do seu oponente causados a este Pokémon. (Dano não é um efeito.)",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Furtive Drop",
+      "nome_pt": "Gota Furtiva",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Place 1 damage counter on your opponent's Active Pokémon.",
+      "texto_pt": "Coloque 1 contador de dano no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-5",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

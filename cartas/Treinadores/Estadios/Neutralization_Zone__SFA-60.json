@@ -1,0 +1,26 @@
+{
+  "id": "SFA-60",
+  "nome": "Neutralization Zone",
+  "nome_pt": "Zona de Neutralização",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": true,
+  "texto": "Prevent all damage done to Pokémon that don't have a Rule Box (both yours and your opponent's) by attacks from the opponent's Pokémon ex and Pokémon V. (Pokémon ex, Pokémon V, etc. have Rule Boxes.) This card can't be put into your hand or deck from the discard pile.",
+  "texto_pt": "Previna todo o dano causado aos Pokémon que não têm uma Caixa de Regras (seus e do seu oponente) por ataques dos Pokémon ex e Pokémon V do oponente. (Pokémon ex, Pokémon V, etc. têm Caixas de Regras.) Esta carta não pode ser colocada da pilha de descarte na sua mão ou no seu baralho.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho.",
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-60",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "30C-72",
+  "nome": "Unown",
+  "nome_pt": "Unown",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mysterious Signal",
+      "nome_pt": "Sinal Misterioso",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "40",
+      "texto": "If your opponent's Pokémon is Knocked Out by damage from this attack, take 1 more Prize card.",
+      "texto_pt": "Se o Pokémon do seu oponente for Nocauteado pelo dano deste ataque, pegue 1 carta de Prêmio a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-72",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Mysterious Signal: If your opponent's Pokémon is Knocked Out by damage from this attack, take 1 more Prize card."
+    ]
+  }
+}

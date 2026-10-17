@@ -1,0 +1,49 @@
+{
+  "id": "MEG-92",
+  "nome": "Grafaiai",
+  "nome_pt": "Grafaiai",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Shroodle",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Miraculous Paint",
+      "nome_pt": "Tinta Miraculosa",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "Flip a coin. If heads, choose a Special Condition. Your opponent's Active Pokémon is now affected by that Special Condition.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, escolha uma Condição Especial. O Pokémon Ativo do seu oponente agora está afetado por aquela Condição Especial.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-92",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Miraculous Paint: If heads, choose a Special Condition.; Your opponent's Active Pokémon is now affected by that Special Condition."
+    ]
+  }
+}

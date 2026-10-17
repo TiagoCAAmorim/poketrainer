@@ -1,0 +1,59 @@
+{
+  "id": "TWM-46",
+  "nome": "Jynx",
+  "nome_pt": "Jynx",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Inviting Kiss",
+      "nome_pt": "Beija-me",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck. If you put any Pokémon onto your Bench in this way, move an Energy from this Pokémon to the new Benched Pokémon.",
+      "texto_pt": "Procure por um Pokémon Básico no seu baralho e coloque-o no seu Banco. Em seguida, embaralhe o seu baralho. Se você colocou qualquer Pokémon no seu Banco desta forma, mova uma Energia deste Pokémon para o novo Pokémon no Banco.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Icy Snow",
+      "nome_pt": "Neve Congelada",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-46",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Inviting Kiss: If you put any Pokémon onto your Bench in this way, move an Energy from this Pokémon to the new Benched Pokémon."
+    ]
+  }
+}

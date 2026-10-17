@@ -1,0 +1,23 @@
+{
+  "id": "SSP-181",
+  "nome": "Meddling Memo",
+  "nome_pt": "Memorando Intrometido",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Your opponent counts the cards in their hand, shuffles those cards, and puts them on the bottom of their deck. If they do, they draw that many cards.",
+  "texto_pt": "Seu oponente conta as cartas na mão dele, embaralha aquelas cartas e as coloca como as cartas de baixo do baralho dele. Se ele fizer isto, ele comprará aquele mesmo número de cartas.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-181",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "WHT-83",
+  "nome": "Harlequin",
+  "nome_pt": "Arlequim",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Each player shuffles their hand into their deck. Then, flip a coin. If heads, you draw 5 cards, and your opponent draws 3 cards. If tails, you draw 3 cards, and your opponent draws 5 cards.",
+  "texto_pt": "Cada jogador embaralha a própria mão no próprio baralho. Em seguida, jogue uma moeda. Se sair cara, você comprará 5 cartas e o seu oponente comprará 3 cartas. Se sair coroa, você comprará 3 cartas e o seu oponente comprará 5 cartas.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-83",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-163",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

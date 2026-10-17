@@ -1,0 +1,51 @@
+{
+  "id": "SSP-123",
+  "nome": "Alolan Dugtrio",
+  "nome_pt": "Dugtrio de Alola",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Alolan Diglett",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Trio-Cheehoo",
+      "nome_pt": "Trilegal",
+      "custo": [],
+      "dano": "120",
+      "texto": "If you don't have exactly 3 cards in your hand, this attack does nothing.",
+      "texto_pt": "Se você não tiver exatamente 3 cartas na sua mão, este ataque não fará nada.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-123",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-208",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Trio-Cheehoo: If you don't have exactly 3 cards in your hand, this attack does nothing."
+    ]
+  }
+}

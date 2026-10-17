@@ -1,0 +1,65 @@
+{
+  "id": "TEF-104",
+  "nome": "Gengar ex",
+  "nome_pt": "Gengar ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 310,
+  "estagio": "Estágio 2",
+  "evolui_de": "Haunter",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Gnawing Curse",
+      "nome_pt": "Maldição Corrosiva",
+      "texto": "Whenever your opponent attaches an Energy card from their hand to 1 of their Pokémon, put 2 damage counters on that Pokémon.",
+      "texto_pt": "Sempre que seu oponente ligar uma carta de Energia da mão dele a 1 dos Pokémon dele, coloque 2 contadores de dano naquele Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Tricky Steps",
+      "nome_pt": "Passos Ardilosos",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "160",
+      "texto": "You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon.",
+      "texto_pt": "Você pode mover uma Energia do Pokémon Ativo do seu oponente para 1 dos Pokémon no Banco dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-104",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-193",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Tricky Steps: You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon.",
+      "Habilidade Gnawing Curse: Whenever your opponent attaches an Energy card from their hand to 1 of their Pokémon, put 2 damage counters on that Pokémon."
+    ]
+  }
+}

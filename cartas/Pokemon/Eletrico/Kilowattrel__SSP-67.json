@@ -1,0 +1,62 @@
+{
+  "id": "SSP-67",
+  "nome": "Kilowattrel",
+  "nome_pt": "Kilowattrel",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Wattrel",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Glide",
+      "nome_pt": "Planeio",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Storm Bolt",
+      "nome_pt": "Temporal de Raios",
+      "custo": [
+        "Elétrico",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "Move all Energy from this Pokémon to your Benched Pokémon in any way you like.",
+      "texto_pt": "Mova todas as Energias deste Pokémon para os seus Pokémon no Banco como desejar.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-67",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Storm Bolt: Move all Energy from this Pokémon to your Benched Pokémon in any way you like."
+    ]
+  }
+}

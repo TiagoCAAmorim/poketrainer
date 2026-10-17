@@ -1,0 +1,68 @@
+{
+  "id": "BLK-44",
+  "nome": "Meloetta ex",
+  "nome_pt": "Meloetta ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 200,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Debut Performance",
+      "nome_pt": "Primeira Performance",
+      "texto": "If you go first, this Pokémon can use attacks during your first turn.",
+      "texto_pt": "Se você for o primeiro a jogar, este Pokémon poderá usar ataques durante o seu primeiro turno.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Echoed Voice",
+      "nome_pt": "Voz Ecoante",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "During your next turn, this Pokémon's Echoed Voice attack does 80 more damage (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o seu próximo turno, o ataque Voz Ecoante deste Pokémon causará 80 pontos de dano a mais (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-44",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-159",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-167",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Debut Performance: If you go first, this Pokémon can use attacks during your first turn."
+    ]
+  }
+}

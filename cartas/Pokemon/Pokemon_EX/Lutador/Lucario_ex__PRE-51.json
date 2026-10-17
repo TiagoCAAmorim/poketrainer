@@ -1,0 +1,60 @@
+{
+  "id": "PRE-51",
+  "nome": "Lucario ex",
+  "nome_pt": "Lucario ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Riolu",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aura Uppercut",
+      "nome_pt": "Gancho de Aura",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Tornado Rush",
+      "nome_pt": "Arremetida Tornado",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "During your next turn, this Pokémon's Tornado Rush attack does 100 more damage (before applying Weakness and Resistance).",
+      "texto_pt": "Durante o seu próximo turno, o ataque Arremetida Tornado deste Pokémon causará 100 pontos de dano a mais (antes de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PRE-51",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

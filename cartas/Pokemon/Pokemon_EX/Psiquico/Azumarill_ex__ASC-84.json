@@ -1,0 +1,60 @@
+{
+  "id": "ASC-84",
+  "nome": "Azumarill ex",
+  "nome_pt": "Azumarill ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 270,
+  "estagio": "Estágio 1",
+  "evolui_de": "Marill",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Bubble Gathering",
+      "nome_pt": "Buscar Bolhas",
+      "texto": "As often as you like during your turn, you may use this Ability. Move an Energy from 1 of your other Pokémon to this Pokémon.",
+      "texto_pt": "Quantas vezes desejar durante o seu turno, você poderá usar esta Habilidade. Mova uma Energia de 1 dos seus outros Pokémon para este Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Energized Balloon",
+      "nome_pt": "Balão Energizado",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "This attack does 40 more damage for each Psychic Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano a mais para cada Energia Psíquico ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "ASC-84",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Bubble Gathering: Move an Energy from 1 of your other Pokémon to this Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "POR-87",
+  "nome": "Rocky Fighting Energy",
+  "nome_pt": "Energia Fighting Rochosa",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": false,
+  "fornece": null,
+  "texto": "As long as this card is attached to a Pokémon, it provides Fighting Energy. Prevent all effects of attacks used by your opponent's Pokémon done to the Fighting Pokémon this card is attached to. (Existing effects are not removed. Damage is not an effect.)",
+  "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Lutador. Previna todos os efeitos de ataques usados pelos Pokémon do seu oponente causados ao Pokémon Lutador ao qual esta carta está ligada. (Efeitos existentes não são removidos e dano não é um efeito.)",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-87",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

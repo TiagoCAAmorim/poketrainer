@@ -1,0 +1,60 @@
+{
+  "id": "TWM-10",
+  "nome": "Illumise",
+  "nome_pt": "Illumise",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Slowing Perfume",
+      "nome_pt": "Fragrância Desaceleradora",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "You can use this attack only if you go second, and only during your first turn. Shuffle 1 of your opponent's Benched Pokémon and all attached cards into their deck.",
+      "texto_pt": "Você só pode usar este ataque se for o segundo a jogar e somente durante o seu primeiro turno. Embaralhe 1 dos Pokémon no Banco do seu oponente e todas as cartas ligadas a ele no baralho dele.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Glide",
+      "nome_pt": "Planeio",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-10",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Slowing Perfume: Shuffle 1 of your opponent's Benched Pokémon and all attached cards into their deck."
+    ]
+  }
+}

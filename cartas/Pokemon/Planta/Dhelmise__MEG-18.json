@@ -1,0 +1,47 @@
+{
+  "id": "MEG-18",
+  "nome": "Dhelmise",
+  "nome_pt": "Dhelmise",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Earthen Power",
+      "nome_pt": "Poder Terrestre",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "30+",
+      "texto": "If you have a Stadium in play, this attack does 50 more damage.",
+      "texto_pt": "Se você tiver um Estádio em jogo, este ataque causará 50 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-18",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

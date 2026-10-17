@@ -1,0 +1,58 @@
+{
+  "id": "DRI-141",
+  "nome": "Skarmory",
+  "nome_pt": "Skarmory",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Roost",
+      "nome_pt": "Poleiro",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Heal 50 damage from this Pokémon. During your next turn, this Pokémon can't retreat.",
+      "texto_pt": "Cure 50 pontos de dano deste Pokémon. Durante o seu próximo turno, este Pokémon não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Metal Claw",
+      "nome_pt": "Garra de Metal",
+      "custo": [
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-141",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

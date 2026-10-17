@@ -1,0 +1,59 @@
+{
+  "id": "SCR-63",
+  "nome": "Comfey",
+  "nome_pt": "Comfey",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flower Shower",
+      "nome_pt": "Fluxo de Flores",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Each player draws 3 cards.",
+      "texto_pt": "Cada jogador compra 3 cartas.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Play Rough",
+      "nome_pt": "Jogo Duro",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20+",
+      "texto": "Flip a coin. If heads, this attack does 20 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 20 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-63",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Flower Shower: Each player draws 3 cards."
+    ]
+  }
+}

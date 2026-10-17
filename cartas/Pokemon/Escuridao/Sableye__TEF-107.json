@@ -1,0 +1,60 @@
+{
+  "id": "TEF-107",
+  "nome": "Sableye",
+  "nome_pt": "Sableye",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Claw Slash",
+      "nome_pt": "Golpe de Garra",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Damage Collection",
+      "nome_pt": "Colecionar Dano",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "You may move any number of damage counters from your opponent's Benched Pokémon to their Active Pokémon.",
+      "texto_pt": "Você pode mover qualquer quantidade de contadores de dano dos Pokémon no Banco do seu oponente para o Pokémon Ativo dele.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-107",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Damage Collection: You may move any number of damage counters from your opponent's Benched Pokémon to their Active Pokémon."
+    ]
+  }
+}

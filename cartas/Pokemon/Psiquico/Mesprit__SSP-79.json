@@ -1,0 +1,65 @@
+{
+  "id": "SSP-79",
+  "nome": "Mesprit",
+  "nome_pt": "Mesprit",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Full Heart",
+      "nome_pt": "Coração Carregado",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 2 Basic Psychic Energy cards from your hand to your Pokémon in any way you like.",
+      "texto_pt": "Ligue até 2 cartas de Energia Psíquico Básica da sua mão aos seus Pokémon como desejar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Guardian Burst",
+      "nome_pt": "Explosão dos Guardiões",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "160",
+      "texto": "If you don't have Uxie and Azelf on your Bench, this attack does nothing.",
+      "texto_pt": "Se você não tiver Uxie e Azelf no seu Banco, este ataque não fará nada.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-79",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-204",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Guardian Burst: If you don't have Uxie and Azelf on your Bench, this attack does nothing."
+    ]
+  }
+}

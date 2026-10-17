@@ -1,0 +1,62 @@
+{
+  "id": "ASC-127",
+  "nome": "Team Rocket's Honchkrow",
+  "nome_pt": "Honchkrow da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Murkrow",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Rocket Feathers",
+      "nome_pt": "Penas Rocket",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60×",
+      "texto": "You may discard any number of Supporter cards that have \"Team Rocket\" in their name from your hand, and this attack does 60 damage for each card you discarded in this way.",
+      "texto_pt": "Você pode descartar qualquer número de cartas de Apoiador que têm \"Equipe Rocket\" em seu nome da sua mão, e este ataque causa 60 pontos de dano para cada carta descartada desta forma.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Hammer In",
+      "nome_pt": "Martelada",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-127",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Rocket Feathers: You may discard any number of Supporter cards that have \"Team Rocket\" in their name from your hand, and this attack does 60 damage for each card you discarded in this way."
+    ]
+  }
+}

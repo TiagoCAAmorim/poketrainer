@@ -1,0 +1,58 @@
+{
+  "id": "DRI-88",
+  "nome": "Team Rocket's Dottler",
+  "nome_pt": "Dottler da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Blipbug",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Disruptive Radar",
+      "nome_pt": "Radar Disruptivo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Look at the top 5 cards of your opponent's deck and put them back in any order.",
+      "texto_pt": "Olhe as 5 cartas de cima do baralho do seu oponente e coloque-as de volta em qualquer ordem.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Super Psy Bolt",
+      "nome_pt": "Super-raio Psíquico",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-88",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "TWM-66",
+  "nome": "Shinx",
+  "nome_pt": "Shinx",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Curiosity",
+      "nome_pt": "Curiosidade",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Your opponent reveals their hand.",
+      "texto_pt": "Seu oponente revela a mão dele.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Static Shock",
+      "nome_pt": "Choque de Estática",
+      "custo": [
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-66",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

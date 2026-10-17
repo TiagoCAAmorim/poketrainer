@@ -1,0 +1,23 @@
+{
+  "id": "SSP-172",
+  "nome": "Dragon Elixir",
+  "nome_pt": "Elixir do Dragão",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Heal 60 damage from your Active Dragon Pokémon.",
+  "texto_pt": "Cure 60 pontos de dano do seu Pokémon Dragão Ativo.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-172",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

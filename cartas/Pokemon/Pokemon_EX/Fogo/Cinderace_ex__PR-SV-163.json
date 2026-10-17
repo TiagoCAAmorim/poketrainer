@@ -1,0 +1,79 @@
+{
+  "id": "PR-SV-163",
+  "nome": "Cinderace ex",
+  "nome_pt": "Cinderace ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 320,
+  "estagio": "Estágio 2",
+  "evolui_de": "Raboot",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": true,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flare Strike",
+      "nome_pt": "Golpe de Chamas",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "280",
+      "texto": "During your next turn, this Pokémon can't use Flare Strike.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Golpe de Chamas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Garnet Volley",
+      "nome_pt": "Voleio de Granate",
+      "custo": [
+        "Fogo",
+        "Lutador",
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "This attack does 180 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque causa 180 pontos de dano a 1 dos Pokémon do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio.",
+    "Tera: enquanto estiver no Banco, não recebe dano de ataques."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-163",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "SCR-28",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-157",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "ASC-38",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

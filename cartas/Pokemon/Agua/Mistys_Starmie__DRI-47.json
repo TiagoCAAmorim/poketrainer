@@ -1,0 +1,46 @@
+{
+  "id": "DRI-47",
+  "nome": "Misty's Starmie",
+  "nome_pt": "Starmie da Misty",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Misty's Staryu",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Abrupt Flash",
+      "nome_pt": "Clarão Abrupto",
+      "custo": [
+        "Água"
+      ],
+      "dano": "60+",
+      "texto": "If this Pokémon evolved from Misty's Staryu during this turn, this attack does 80 more damage.",
+      "texto_pt": "Se este Pokémon evoluiu de Staryu da Misty durante este turno, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-47",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

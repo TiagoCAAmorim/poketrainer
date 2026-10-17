@@ -1,0 +1,64 @@
+{
+  "id": "POR-61",
+  "nome": "Raticate",
+  "nome_pt": "Raticate",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Rattata",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Scrape Off",
+      "nome_pt": "Raspar o Tacho",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "Before doing damage, discard all Pokémon Tools from your opponent's Active Pokémon.",
+      "texto_pt": "Antes de causar dano, descarte todas as Ferramentas Pokémon do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Retaliatory Incisors",
+      "nome_pt": "Incisivos Retaliatórios",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each damage counter on all of your Benched Rattata.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada contador de dano em todos os seus Rattata no Banco.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-61",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-99",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Retaliatory Incisors: This attack does 40 damage for each damage counter on all of your Benched Rattata."
+    ]
+  }
+}

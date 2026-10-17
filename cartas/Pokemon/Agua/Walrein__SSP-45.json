@@ -1,0 +1,60 @@
+{
+  "id": "SSP-45",
+  "nome": "Walrein",
+  "nome_pt": "Walrein",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Sealeo",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Frigid Fangs",
+      "nome_pt": "Presas Gélidas",
+      "custo": [
+        "Água"
+      ],
+      "dano": "60",
+      "texto": "During your opponent's next turn, Pokémon that have 2 or less Energy attached can't attack. (This includes new Pokémon that come into play.)",
+      "texto_pt": "Durante o próximo turno do seu oponente, os Pokémon que tiverem 2 ou menos Energias ligadas a eles não poderão atacar. (Isto inclui novos Pokémon que entrarem em jogo.)",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Megaton Fall",
+      "nome_pt": "Queda do Megaton",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "170",
+      "texto": "This Pokémon also does 50 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 50 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-45",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Frigid Fangs: During your opponent's next turn, Pokémon that have 2 or less Energy attached can't attack."
+    ]
+  }
+}

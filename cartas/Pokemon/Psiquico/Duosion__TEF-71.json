@@ -1,0 +1,46 @@
+{
+  "id": "TEF-71",
+  "nome": "Duosion",
+  "nome_pt": "Duosion",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 80,
+  "estagio": "Estágio 1",
+  "evolui_de": "Solosis",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Double Trick",
+      "nome_pt": "Travessura Dupla",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "30×",
+      "texto": "Flip 2 coins. This attack does 30 damage for each heads.",
+      "texto_pt": "Jogue 2 moedas. Este ataque causa 30 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-71",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

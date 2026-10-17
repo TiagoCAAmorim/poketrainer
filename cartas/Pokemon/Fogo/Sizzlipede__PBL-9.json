@@ -1,0 +1,61 @@
+{
+  "id": "PBL-9",
+  "nome": "Sizzlipede",
+  "nome_pt": "Sizzlipede",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Controlled Burn",
+      "nome_pt": "Fogo Controlado",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Discard the top card of your opponent's deck.",
+      "texto_pt": "Descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bug Out",
+      "nome_pt": "Insetofobia",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50×",
+      "texto": "Reveal the bottom 7 cards of your deck, and this attack does 50 damage for each Pokémon you find there that has the Bug Out attack. Then, shuffle any revealed Pokémon back into your deck. Discard the other cards.",
+      "texto_pt": "Revele as 7 cartas de baixo do seu baralho, e este ataque causa 50 pontos de dano para cada Pokémon que você encontrar lá que tem o ataque Insetofobia. Em seguida, embaralhe quaisquer Pokémon revelados de volta no seu baralho. Descarte as outras cartas.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-9",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Bug Out: Reveal the bottom 7 cards of your deck, and this attack does 50 damage for each Pokémon you find there that has the Bug Out attack.; Then, shuffle any revealed Pokémon back into your deck.; Discard the other cards."
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "JTG-116",
+  "nome": "N's Reshiram",
+  "nome_pt": "Reshiram do N",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Powerful Rage",
+      "nome_pt": "Ira Poderosa",
+      "custo": [
+        "Fogo",
+        "Elétrico"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Virtuous Flame",
+      "nome_pt": "Chama Inocente",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "170",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-116",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "JTG-167",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "ASC-154",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

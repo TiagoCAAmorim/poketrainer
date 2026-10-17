@@ -1,0 +1,33 @@
+{
+  "id": "JTG-153",
+  "nome": "N's PP Up",
+  "nome_pt": "PP Up do N",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Attach a Basic Energy card from your discard pile to 1 of your Benched N's Pokémon.",
+  "texto_pt": "Ligue uma carta de Energia Básica da sua pilha de descarte a 1 dos seus Pokémon do N no Banco.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-153",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "ASC-195",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-262",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "MEG-90",
+  "nome": "Thievul",
+  "nome_pt": "Thievul",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Nickit",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Greedy Hunt",
+      "nome_pt": "Caçada Gananciosa",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "20",
+      "texto": "You may draw cards until you have 6 cards in your hand.",
+      "texto_pt": "Você pode comprar cartas até ter 6 cartas na sua mão.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Pitch-Black Fangs",
+      "nome_pt": "Presas do Breu",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-90",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "CRI-38",
+  "nome": "Phantump",
+  "nome_pt": "Phantump",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Spiteful Evolution",
+      "nome_pt": "Evolução Rancorosa",
+      "texto": "Once during your turn, you may use this Ability. Choose a card in your hand that evolves from this Pokémon and put it onto this Pokémon to evolve it. If you do, place 2 damage counters on the Pokémon you evolved in this way. You can't use this Ability during your first turn.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Escolha uma carta na sua mão que evolua deste Pokémon e coloque-a sobre este Pokémon para evoluí-lo. Se fizer isso, coloque 2 contadores de dano no Pokémon que você evoluiu desta forma. Você não pode usar esta Habilidade durante o seu primeiro turno.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mumble",
+      "nome_pt": "Resmungo",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-38",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

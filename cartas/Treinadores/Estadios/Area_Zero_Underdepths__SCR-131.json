@@ -1,0 +1,35 @@
+{
+  "id": "SCR-131",
+  "nome": "Area Zero Underdepths",
+  "nome_pt": "Abismo da Área Zero",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Each player who has any Tera Pokémon in play can have up to 8 Pokémon on their Bench. If a player no longer has any Tera Pokémon in play, that player discards Pokémon from their Bench until they have 5. When this card leaves play, both players discard Pokémon from their Bench until they have 5, and the player who played this card discards first.",
+  "texto_pt": "Cada jogador que tiver algum Pokémon Tera em jogo poderá ter até 8 Pokémon no próprio Banco. Se um jogador não tiver mais algum Pokémon Tera em jogo, aquele jogador descartará Pokémon do próprio Banco até ter 5. Quando esta carta sair de jogo, ambos os jogadores descartarão Pokémon do próprio Banco até terem 5, e o jogador que jogou esta carta descartará primeiro.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-131",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-174",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "PRE-94",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

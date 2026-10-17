@@ -1,0 +1,72 @@
+{
+  "id": "SCR-14",
+  "nome": "Hydrapple ex",
+  "nome_pt": "Hydrapple ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 2",
+  "evolui_de": "Dipplin",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Ripening Charge",
+      "nome_pt": "Investida Madura",
+      "texto": "Once during your turn, you may attach a Basic Grass Energy card from your hand to 1 of your Pokémon. If you attached Energy to a Pokémon in this way, heal 30 damage from that Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá ligar uma carta de Energia Planta Básica da sua mão a 1 dos seus Pokémon. Se você ligou Energia a um Pokémon desta forma, cure 30 pontos de dano daquele Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Syrup Storm",
+      "nome_pt": "Tempestade Melada",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "30+",
+      "texto": "This attack does 30 more damage for each Grass Energy attached to all of your Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a mais para cada Energia Planta ligada a todos os seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-14",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-156",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-167",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "PRE-11",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

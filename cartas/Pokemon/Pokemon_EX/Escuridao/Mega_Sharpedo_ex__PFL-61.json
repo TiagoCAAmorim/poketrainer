@@ -1,0 +1,70 @@
+{
+  "id": "PFL-61",
+  "nome": "Mega Sharpedo ex",
+  "nome_pt": "Mega Sharpedo ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 1",
+  "evolui_de": "Carvanha",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Greedy Fang",
+      "nome_pt": "Presa Gananciosa",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "70",
+      "texto": "Draw 2 cards.",
+      "texto_pt": "Compre 2 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Hungry Jaws",
+      "nome_pt": "Bocarra Voraz",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "120+",
+      "texto": "If this Pokémon has any damage counters on it, this attack does 150 more damage.",
+      "texto_pt": "Se este Pokémon tiver algum contador de dano nele, este ataque causará 150 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-61",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-113",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "PFL-127",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

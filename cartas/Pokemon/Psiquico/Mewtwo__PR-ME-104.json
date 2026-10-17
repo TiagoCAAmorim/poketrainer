@@ -1,0 +1,64 @@
+{
+  "id": "PR-ME-104",
+  "nome": "Mewtwo",
+  "nome_pt": "Mewtwo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Empower",
+      "nome_pt": "Empoderar",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 2 Basic Energy cards from your discard pile to 1 of your Pokémon.",
+      "texto_pt": "Ligue até 2 cartas de Energia Básica da sua pilha de descarte a 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Psydrive",
+      "nome_pt": "Controle Psíquico",
+      "custo": [
+        "Psíquico",
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-104",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "30C-63",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "SSP-26",
+  "nome": "Oricorio",
+  "nome_pt": "Oricorio",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Energy Assist",
+      "nome_pt": "Socorro de Energia",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Attach up to 2 Basic Energy cards from your discard pile to 1 of your Benched Pokémon.",
+      "texto_pt": "Ligue até 2 cartas de Energia Básica da sua pilha de descarte a 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Fireworks",
+      "nome_pt": "Fogos de Artifício",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "30",
+      "texto": "Discard an Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-26",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

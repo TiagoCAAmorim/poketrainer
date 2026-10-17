@@ -1,0 +1,62 @@
+{
+  "id": "ASC-51",
+  "nome": "N's Vanilluxe",
+  "nome_pt": "Vanilluxe do N",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "N's Vanillish",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Snow Coating",
+      "nome_pt": "Camada de Neve",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Double the number of damage counters on each of your opponent's Pokémon.",
+      "texto_pt": "Duplique o número de contadores de dano em cada um dos Pokémon do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Blizzard",
+      "nome_pt": "Nevasca",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "This attack also does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 10 pontos de dano a cada um dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-51",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Snow Coating: Double the number of damage counters on each of your opponent's Pokémon."
+    ]
+  }
+}

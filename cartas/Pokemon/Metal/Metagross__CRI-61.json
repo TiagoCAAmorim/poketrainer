@@ -1,0 +1,60 @@
+{
+  "id": "CRI-61",
+  "nome": "Metagross",
+  "nome_pt": "Metagross",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Metang",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Bounce Back",
+      "nome_pt": "Ricochete de Retrocesso",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "60",
+      "texto": "Switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)",
+      "texto_pt": "Mande o Pokémon Ativo do seu oponente para o Banco. (O seu oponente escolhe o novo Pokémon Ativo.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Metallic Hammer",
+      "nome_pt": "Martelo Metálico",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "150+",
+      "texto": "You may discard 3 Metal Energy from this Pokémon and have this attack do 150 more damage.",
+      "texto_pt": "Você pode descartar 3 Energias Metal deste Pokémon e fazer este ataque causar 150 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-61",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

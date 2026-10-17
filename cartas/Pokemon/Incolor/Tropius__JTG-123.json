@@ -1,0 +1,58 @@
+{
+  "id": "JTG-123",
+  "nome": "Tropius",
+  "nome_pt": "Tropius",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fruit Bearing",
+      "nome_pt": "Safra das Frutas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard a card from your hand. If you do, draw 3 cards.",
+      "texto_pt": "Descarte uma carta da sua mão. Se fizer isto, compre 3 cartas.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Gust",
+      "nome_pt": "Lufada de Vento",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-123",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

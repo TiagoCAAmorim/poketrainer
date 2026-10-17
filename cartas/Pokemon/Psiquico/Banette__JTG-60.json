@@ -1,0 +1,70 @@
+{
+  "id": "JTG-60",
+  "nome": "Banette",
+  "nome_pt": "Banette",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Shuppet",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cursed Words",
+      "nome_pt": "Rogar Praga",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Your opponent chooses 3 cards from their hand and shuffles those cards into their deck.",
+      "texto_pt": "Seu oponente escolhe 3 cartas da mão dele e embaralha aquelas cartas no baralho dele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Spooky Shot",
+      "nome_pt": "Tiro Assustador",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "70",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-60",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    },
+    {
+      "codigo": "ASC-91",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-234",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Cursed Words: Your opponent chooses 3 cards from their hand and shuffles those cards into their deck."
+    ]
+  }
+}

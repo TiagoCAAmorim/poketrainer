@@ -1,0 +1,61 @@
+{
+  "id": "JTG-64",
+  "nome": "N's Sigilyph",
+  "nome_pt": "Sigilyph do N",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Psychic Sphere",
+      "nome_pt": "Esfera Psíquica",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Victory Symbol",
+      "nome_pt": "Símbolo da Vitória",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "If you use this attack when you have exactly 1 Prize card remaining, you win this game.",
+      "texto_pt": "Se você usar este ataque quando tiver exatamente 1 carta de Prêmio restante, você vencerá esta partida.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-64",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Victory Symbol: If you use this attack when you have exactly 1 Prize card remaining, you win this game."
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "POR-9",
+  "nome": "Vivillon",
+  "nome_pt": "Vivillon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 2",
+  "evolui_de": "Spewpa",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Grand Wing",
+      "nome_pt": "Asa Grandiosa",
+      "texto": "Once during your turn, you may use this Ability. Your opponent shuffles their hand and puts it on the bottom of their deck. If they put any cards on the bottom of their deck in this way, they draw 4 cards.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Seu oponente embaralha a mão dele e a coloca como as cartas de baixo do baralho dele. Se o seu oponente colocar quaisquer cartas como as cartas de baixo do baralho dele desta forma, ele comprará 4 cartas.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Blow Through",
+      "nome_pt": "Sopro Intenso",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "60+",
+      "texto": "If a Stadium is in play, this attack does 60 more damage.",
+      "texto_pt": "Se um Estádio estiver em jogo, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-9",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Grand Wing: Your opponent shuffles their hand and puts it on the bottom of their deck.; If they put any cards on the bottom of their deck in this way, they draw 4 cards."
+    ]
+  }
+}

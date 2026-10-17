@@ -1,0 +1,62 @@
+{
+  "id": "SSP-37",
+  "nome": "Scovillain ex",
+  "nome_pt": "Scovillain ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 260,
+  "estagio": "Estágio 1",
+  "evolui_de": "Capsakid",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Double Type",
+      "nome_pt": "Tipo Duplo",
+      "texto": "As long as this Pokémon is in play, it is Grass and Fire type.",
+      "texto_pt": "Enquanto este Pokémon estiver em jogo, será um Pokémon de tipo Planta e Fogo.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Spicy Rage",
+      "nome_pt": "Ira Apimentada",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "10+",
+      "texto": "This attack does 70 more damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 70 pontos de dano a mais para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-37",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-216",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

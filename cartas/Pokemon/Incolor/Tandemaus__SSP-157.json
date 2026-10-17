@@ -1,0 +1,46 @@
+{
+  "id": "SSP-157",
+  "nome": "Tandemaus",
+  "nome_pt": "Tandemaus",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 40,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Play Rough",
+      "nome_pt": "Jogo Duro",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10+",
+      "texto": "Flip a coin. If heads, this attack does 10 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 10 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-157",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

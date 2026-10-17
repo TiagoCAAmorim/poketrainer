@@ -1,0 +1,66 @@
+{
+  "id": "PR-ME-88",
+  "nome": "Zarude",
+  "nome_pt": "Zarude",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Overhead Throw",
+      "nome_pt": "Arremessar por Cima",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "30",
+      "texto": "This attack also does 30 damage to 1 of your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 30 pontos de dano a 1 dos seus Pokémon no Banco (não aplique Fraqueza e Resistência aos Pokémon no Banco).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Shadowy Whip",
+      "nome_pt": "Chicote Sombrio",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "100+",
+      "texto": "If your Benched Pokémon have any Shadowy Darkness Energy attached, this attack does 70 more damage.",
+      "texto_pt": "Se os seus Pokémon no Banco tiverem alguma Energia Escuridão Sombria ligadas a eles, este ataque causará 70 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-88",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PBL-56",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Shadowy Whip: If your Benched Pokémon have any Shadowy Darkness Energy attached, this attack does 70 more damage."
+    ]
+  }
+}

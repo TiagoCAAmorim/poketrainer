@@ -1,0 +1,60 @@
+{
+  "id": "30C-12",
+  "nome": "Ho-Oh",
+  "nome_pt": "Raikou",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Sacred Breath",
+      "nome_pt": "Disparo Incrível",
+      "custo": [
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Discard all Energy from this Pokémon. Heal all damage from 1 of your Benched Pokémon.",
+      "texto_pt": "Este ataque também causa 120 pontos de dano a 1 dos Pokémon no Banco do seu oponente <em>(não aplique Fraqueza e Resistência aos Pokémon no Banco).</em>",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Fire Wing",
+      "nome_pt": null,
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-12",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

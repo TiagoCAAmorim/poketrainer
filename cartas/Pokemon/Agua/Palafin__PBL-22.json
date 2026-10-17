@@ -1,0 +1,49 @@
+{
+  "id": "PBL-22",
+  "nome": "Palafin",
+  "nome_pt": "Palafin",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Finizen",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Knuckle Justice",
+      "nome_pt": "Punho da Justiça",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "80+",
+      "texto": "If your opponent has exactly 1 Prize card remaining, this attack does 200 more damage.",
+      "texto_pt": "Se o seu oponente tiver exatamente 1 carta de Prêmio restante, este ataque causará 200 pontos de dano a mais.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-22",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Knuckle Justice: If your opponent has exactly 1 Prize card remaining, this attack does 200 more damage."
+    ]
+  }
+}

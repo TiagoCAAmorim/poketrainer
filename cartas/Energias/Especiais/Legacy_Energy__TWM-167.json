@@ -1,0 +1,26 @@
+{
+  "id": "TWM-167",
+  "nome": "Legacy Energy",
+  "nome_pt": "Energia Legado",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": true,
+  "fornece": null,
+  "texto": "You can't have more than 1 ACE SPEC card in your deck. As long as this card is attached to a Pokémon, it provides every type of Energy but provides only 1 Energy at a time. If the Pokémon this card is attached to is Knocked Out by damage from an attack from your opponent's Pokémon, that player takes 1 fewer Prize card. This effect of your Legacy Energy can't be applied more than once per game. ACE SPEC: You can't have more than 1 ACE SPEC card in your deck.",
+  "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá todo tipo de Energia, mas fornecerá 1 Energia por vez. Se o Pokémon ao qual esta carta está ligada for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, aquele jogador pegará 1 carta de Prêmio a menos. Este efeito de sua Energia Legado não pode ser aplicado mais de uma vez por jogo.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-167",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

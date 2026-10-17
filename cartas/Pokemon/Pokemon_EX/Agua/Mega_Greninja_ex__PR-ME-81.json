@@ -1,0 +1,77 @@
+{
+  "id": "PR-ME-81",
+  "nome": "Mega Greninja ex",
+  "nome_pt": "Mega Greninja ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 350,
+  "estagio": "Estágio 2",
+  "evolui_de": "Frogadier",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [
+    {
+      "nome": "Mortal Shuriken",
+      "nome_pt": "Estrela Ninja Mortal",
+      "texto": "Once during your turn, if this Pokémon is in the Active Spot, you may discard a Basic Water Energy card from your hand in order to use this Ability. Place 6 damage counters on 1 of your opponent's Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no Campo Ativo, você poderá descartar uma carta de Energia Água Básica da sua mão para usar esta Habilidade. Coloque 6 contadores de dano em 1 dos Pokémon do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Ninja Spinner",
+      "nome_pt": "Giro Ninja",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "120+",
+      "texto": "You may put a Water Energy attached to this Pokémon into your hand and have this attack do 80 more damage.",
+      "texto_pt": "Você pode colocar uma Energia Água ligada a este Pokémon na sua mão e fazer este ataque causar 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-81",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "CRI-22",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-100",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-116",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-122",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

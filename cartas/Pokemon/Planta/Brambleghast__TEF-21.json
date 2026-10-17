@@ -1,0 +1,58 @@
+{
+  "id": "TEF-21",
+  "nome": "Brambleghast",
+  "nome_pt": "Brambleghast",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 100,
+  "estagio": "Estágio 1",
+  "evolui_de": "Bramblin",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Resilient Soul",
+      "nome_pt": "Alma Resiliente",
+      "texto": "This Pokémon gets +50 HP for each Prize card your opponent has taken.",
+      "texto_pt": "Este Pokémon recebe 50 PS a mais para cada carta de Prêmio que seu oponente pegou.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Powerful Needles",
+      "nome_pt": "Espinhos Poderosos",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80×",
+      "texto": "Flip a coin for each Energy attached to this Pokémon. This attack does 80 damage for each heads.",
+      "texto_pt": "Jogue uma moeda para cada Energia ligada a este Pokémon. Este ataque causa 80 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-21",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Resilient Soul: This Pokémon gets +50 HP for each Prize card your opponent has taken."
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "TWM-82",
+  "nome": "Alakazam",
+  "nome_pt": "Alakazam",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 2",
+  "evolui_de": "Kadabra",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Strange Hacking",
+      "nome_pt": "Hackeamento Estranho",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Confused. You may move any number of damage counters from your opponent's Pokémon to their other Pokémon in any way you like.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso. Você pode mover qualquer número de contadores de dano dos Pokémon do seu oponente para os outros Pokémon dele como desejar.",
+      "simulador": "parcial"
+    },
+    {
+      "nome": "Psychic",
+      "nome_pt": "Psíquico",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "10+",
+      "texto": "This attack does 50 more damage for each Energy attached to your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 50 pontos de dano a mais para cada Energia ligada ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-82",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Strange Hacking: You may move any number of damage counters from your opponent's Pokémon to their other Pokémon in any way you like."
+    ]
+  }
+}

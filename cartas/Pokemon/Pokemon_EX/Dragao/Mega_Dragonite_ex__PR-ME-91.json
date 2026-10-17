@@ -1,0 +1,78 @@
+{
+  "id": "PR-ME-91",
+  "nome": "Mega Dragonite ex",
+  "nome_pt": "Mega Dragonite ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 370,
+  "estagio": "Estágio 2",
+  "evolui_de": "Dragonair",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [
+    {
+      "nome": "Sky Transport",
+      "nome_pt": "Transporte Aéreo",
+      "texto": "Once during your turn, you may use this Ability. Switch your Active Pokémon with 1 of your Benched Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Troque o seu Pokémon Ativo por 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Ryuno Glide",
+      "nome_pt": "Rasante do Dragão",
+      "custo": [
+        "Água",
+        "Elétrico",
+        "Elétrico"
+      ],
+      "dano": "330",
+      "texto": "Discard 2 Energy from this Pokémon.",
+      "texto_pt": "Descarte 2 Energias deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-91",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-152",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-271",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-290",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-295",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

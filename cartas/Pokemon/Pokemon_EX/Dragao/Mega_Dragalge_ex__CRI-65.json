@@ -1,0 +1,74 @@
+{
+  "id": "CRI-65",
+  "nome": "Mega Dragalge ex",
+  "nome_pt": "Mega Dragalge ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 330,
+  "estagio": "Estágio 1",
+  "evolui_de": "Skrelp",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Corrosive Liquid",
+      "nome_pt": "Líquido Corrosivo",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard all Pokémon Tools and Special Energy from all of your opponent's Pokémon.",
+      "texto_pt": "Descarte todas as Ferramentas Pokémon e Energias Especiais de todos os Pokémon do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Pernicious Poison",
+      "nome_pt": "Veneno Pernicioso",
+      "custo": [
+        "Água",
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado. Durante o Checape Pokémon, coloque 16 contadores de dano em vez de 1 naquele Pokémon.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-65",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-104",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    },
+    {
+      "codigo": "CRI-118",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Corrosive Liquid: Discard all Pokémon Tools and Special Energy from all of your opponent's Pokémon.",
+      "Ataque Pernicious Poison: During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1."
+    ]
+  }
+}

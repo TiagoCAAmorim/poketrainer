@@ -1,0 +1,59 @@
+{
+  "id": "DRI-26",
+  "nome": "Teal Mask Ogerpon",
+  "nome_pt": "Ogerpon Máscara Turquesa",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Grass Kagura",
+      "nome_pt": "Kagura de Planta",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for a Basic Grass Energy card and attach it to 1 of your Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Procure por uma carta de Energia Planta Básica no seu baralho e ligue-a a 1 dos seus Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Ogre's Hammer",
+      "nome_pt": "Martelo do Ogro",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "During your next turn, this Pokémon can't use Ogre's Hammer.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Martelo do Ogro.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-26",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

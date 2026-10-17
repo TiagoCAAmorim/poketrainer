@@ -1,0 +1,67 @@
+{
+  "id": "SCR-25",
+  "nome": "Turtonator",
+  "nome_pt": "Turtonator",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ring of Fire",
+      "nome_pt": "Anel de Fogo",
+      "custo": [
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Your opponent's Active Pokémon is now Burned. During your opponent's next turn, that Pokémon can't retreat.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Queimado. Durante o próximo turno do seu oponente, aquele Pokémon não poderá recuar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Inferno Onrush",
+      "nome_pt": "Investida Infernal",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "180",
+      "texto": "This Pokémon also does 60 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 60 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-25",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-146",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

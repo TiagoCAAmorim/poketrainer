@@ -1,0 +1,61 @@
+{
+  "id": "TWM-118",
+  "nome": "Brute Bonnet",
+  "nome_pt": "Capuz Bruto",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Poison Spray",
+      "nome_pt": "Spray de Veneno",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Poisoned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Relentless Punches",
+      "nome_pt": "Socos Implacáveis",
+      "custo": [
+        "Escuridão",
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "50+",
+      "texto": "This attack does 50 more damage for each damage counter on your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 50 pontos de dano a mais para cada contador de dano no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-118",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

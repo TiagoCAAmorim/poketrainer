@@ -1,0 +1,53 @@
+{
+  "id": "30C-112",
+  "nome": "Kommo-o",
+  "nome_pt": "Kommo-o",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Hakamo-o",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Blazing Uppercut",
+      "nome_pt": "Gancho Flamejante",
+      "custo": [
+        "Elétrico",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "250",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-112",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-143",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

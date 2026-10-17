@@ -1,0 +1,58 @@
+{
+  "id": "TEF-1",
+  "nome": "Scyther",
+  "nome_pt": "Scyther",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 90,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Cut Up",
+      "nome_pt": "Dilacerar",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Slashing Strike",
+      "nome_pt": "Ataque Cortante",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "During your next turn, this Pokémon can't use Slashing Strike.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Ataque Cortante.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-1",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

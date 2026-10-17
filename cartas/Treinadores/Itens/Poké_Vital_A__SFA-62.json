@@ -1,0 +1,25 @@
+{
+  "id": "SFA-62",
+  "nome": "Poké Vital A",
+  "nome_pt": "Poké Vital A",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Heal 150 damage from 1 of your Pokémon. This card can't be put into your hand or deck from the discard pile.",
+  "texto_pt": "Cure 150 pontos de dano de 1 dos seus Pokémon. Esta carta não pode ser colocada da pilha de descarte na sua mão ou no seu baralho.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SFA-62",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

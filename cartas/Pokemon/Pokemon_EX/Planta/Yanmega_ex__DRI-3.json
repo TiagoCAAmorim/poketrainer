@@ -1,0 +1,71 @@
+{
+  "id": "DRI-3",
+  "nome": "Yanmega ex",
+  "nome_pt": "Yanmega ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 280,
+  "estagio": "Estágio 1",
+  "evolui_de": "Yanma",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Buzzing Boost",
+      "nome_pt": "Zumbido Impulsor",
+      "texto": "Once during your turn, when this Pokémon moves from your Bench to the Active Spot, you may search your deck for up to 3 Basic Grass Energy cards and attach them to this Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Uma vez durante o seu turno, quando este Pokémon for movido do seu Banco para o Campo Ativo, você poderá procurar por até 3 cartas de Energia Planta Básica no seu baralho e ligá-las a este Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Jet Cyclone",
+      "nome_pt": "Jato Ciclone",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "210",
+      "texto": "Move 3 Energy from this Pokémon to 1 of your Benched Pokémon.",
+      "texto_pt": "Mova 3 Energias deste Pokémon para 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-3",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-206",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-228",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Buzzing Boost: Once during your turn, when this Pokémon moves from your Bench to the Active Spot, you may search your deck for up to 3 Basic Grass Energy cards and attach them to this Pokémon. Then, shuffle your deck."
+    ]
+  }
+}

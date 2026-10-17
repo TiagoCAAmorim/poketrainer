@@ -1,0 +1,46 @@
+{
+  "id": "CRI-36",
+  "nome": "Espurr",
+  "nome_pt": "Espurr",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Buddy Attack",
+      "nome_pt": "Golpe Amigo",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "10+",
+      "texto": "If you played Emma from your hand during this turn, this attack does 60 more damage.",
+      "texto_pt": "Se você jogou Emma da sua mão durante este turno, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-36",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "DRI-66",
+  "nome": "Dondozo ex",
+  "nome_pt": "Dondozo ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 260,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Avenging Billow",
+      "nome_pt": "Maremoto Vingativo",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "30+",
+      "texto": "This attack does 10 more damage for each damage counter on this Pokémon.",
+      "texto_pt": "Este ataque causa 10 pontos de dano a mais para cada contador de dano neste Pokémon.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Dynamic Dive",
+      "nome_pt": "Mergulho Dinâmico",
+      "custo": [
+        "Água",
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120+",
+      "texto": "You may do 120 more damage. If you do, this Pokémon also does 50 damage to itself.",
+      "texto_pt": "Você pode causar 120 pontos de dano a mais. Se fizer isto, este Pokémon também causará 50 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-66",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-211",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

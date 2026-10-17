@@ -1,0 +1,58 @@
+{
+  "id": "SSP-107",
+  "nome": "Gastrodon",
+  "nome_pt": "Gastrodon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Shellos",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Sticky Bind",
+      "nome_pt": "Aprisionamento Pegajoso",
+      "texto": "As long as this Pokémon is on your Bench, Benched Stage 2 Pokémon (both yours and your opponent's) have no Abilities.",
+      "texto_pt": "Enquanto este Pokémon estiver no seu Banco, os Pokémon Estágio 2 no Banco (seus e do seu oponente) não terão Habilidades.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mud Shot",
+      "nome_pt": "Tiro de Lama",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-107",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Sticky Bind: As long as this Pokémon is on your Bench, Benched Stage 2 Pokémon have no Abilities."
+    ]
+  }
+}

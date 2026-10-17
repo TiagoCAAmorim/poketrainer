@@ -1,0 +1,58 @@
+{
+  "id": "CRI-19",
+  "nome": "Keldeo",
+  "nome_pt": "Keldeo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Shoot Through",
+      "nome_pt": "Tiro Vazante",
+      "custo": [
+        "Água"
+      ],
+      "dano": "20",
+      "texto": "This attack also does 20 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 20 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Reflect Energy",
+      "nome_pt": "Refletir Energia",
+      "custo": [
+        "Água",
+        "Água"
+      ],
+      "dano": "70",
+      "texto": "Move an Energy from this Pokémon to 1 of your Benched Pokémon.",
+      "texto_pt": "Mova uma Energia deste Pokémon para 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-19",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

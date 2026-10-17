@@ -1,0 +1,53 @@
+{
+  "id": "DRI-148",
+  "nome": "Team Rocket's Raticate",
+  "nome_pt": "Raticate da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Team Rocket's Rattata",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Reckless Abandon",
+      "nome_pt": "Abandono Imprudente",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "Flip 2 coins. If both of them are tails, this Pokémon also does 90 damage to itself.",
+      "texto_pt": "Jogue 2 moedas. Se as duas saírem coroa, este Pokémon também causará 90 pontos de dano a si mesmo.",
+      "simulador": "parcial"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-148",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-202",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Reckless Abandon: If both of them are tails, this Pokémon also does 90 damage to itself."
+    ]
+  }
+}

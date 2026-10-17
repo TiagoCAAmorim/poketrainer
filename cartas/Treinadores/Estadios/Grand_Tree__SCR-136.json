@@ -1,0 +1,26 @@
+{
+  "id": "SCR-136",
+  "nome": "Grand Tree",
+  "nome_pt": "Árvore Grandiosa",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": true,
+  "texto": "Once during each player's turn, that player may search their deck for a Stage 1 Pokémon that evolves from 1 of their Basic Pokémon and put it onto that Pokémon to evolve it. If that Pokémon was evolved in this way, that player may search their deck for a Stage 2 Pokémon that evolves from that Pokémon and put it onto that Pokémon to evolve it. Then, that player shuffles their deck. (Players can't evolve a Basic Pokémon during their first turn or a Basic Pokémon that was put into play this turn.)",
+  "texto_pt": "Uma vez durante o turno de cada jogador, aquele jogador poderá procurar no próprio baralho por um Pokémon Estágio 1 que evolua de 1 dos seus Pokémon Básicos e colocá-lo sobre aquele Pokémon para evoluí-lo. Se aquele Pokémon foi evoluído desta forma, aquele jogador poderá procurar no próprio baralho por um Pokémon Estágio 2 que evolua daquele Pokémon e colocá-lo sobre aquele Pokémon para evoluí-lo. Em seguida, aquele jogador embaralha o próprio baralho. (Os jogadores não podem evoluir um Pokémon Básico durante o primeiro turno deles ou um Pokémon Básico que foi colocado em jogo neste turno.)",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho.",
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-136",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

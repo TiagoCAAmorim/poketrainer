@@ -1,0 +1,48 @@
+{
+  "id": "DRI-137",
+  "nome": "Marnie's Morpeko",
+  "nome_pt": "Morpeko da Marine",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Spiky Wheel",
+      "nome_pt": "Roda Espinhosa",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 40 more damage for each Darkness Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 40 pontos de dano a mais para cada Energia Escuridão ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-137",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

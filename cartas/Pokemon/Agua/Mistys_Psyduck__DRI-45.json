@@ -1,0 +1,61 @@
+{
+  "id": "DRI-45",
+  "nome": "Misty's Psyduck",
+  "nome_pt": "Psyduck da Misty",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Flustered Leap",
+      "nome_pt": "Salto Afobado",
+      "texto": "Once during your turn, if this Pokémon is on your Bench, you may discard the bottom card of your deck. If you do, discard all cards from this Pokémon and put this Pokémon on top of your deck.",
+      "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no seu Banco, você poderá descartar a carta de baixo do seu baralho. Se fizer isto, descarte todas as cartas deste Pokémon e coloque este Pokémon como a carta de cima do seu baralho.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Sprinkle Water",
+      "nome_pt": "Aspergir Água",
+      "custo": [
+        "Água"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-45",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    },
+    {
+      "codigo": "DRI-193",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Flustered Leap: Discard the bottom card of your deck.; If you do, discard all cards from this Pokémon and put this Pokémon on top of your deck."
+    ]
+  }
+}

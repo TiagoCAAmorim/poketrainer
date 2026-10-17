@@ -1,0 +1,48 @@
+{
+  "id": "DRI-15",
+  "nome": "Team Rocket's Blipbug",
+  "nome_pt": "Blipbug da Equipe Rocket",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 60,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Searching Eyes",
+      "nome_pt": "Olhar Minucioso",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Look at 1 of your opponent's face-down Prize cards.",
+      "texto_pt": "Olhe 1 das cartas de Prêmio viradas para baixo do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "DRI-15",
+      "colecao": "Destined Rivals",
+      "data": "2025-05-30"
+    }
+  ],
+  "simulador": {
+    "status": "pendente",
+    "pendencias": [
+      "Ataque Searching Eyes: Look at 1 of your opponent's face-down Prize cards."
+    ]
+  }
+}

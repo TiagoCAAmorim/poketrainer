@@ -1,0 +1,47 @@
+{
+  "id": "JTG-137",
+  "nome": "Cramorant",
+  "nome_pt": "Cramorant",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ceaseless Spitting",
+      "nome_pt": "Cusparada Incessante",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "50×",
+      "texto": "Flip a coin until you get tails. This attack does 50 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 50 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-137",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

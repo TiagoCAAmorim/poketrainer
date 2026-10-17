@@ -1,0 +1,65 @@
+{
+  "id": "TWM-134",
+  "nome": "Blissey ex",
+  "nome_pt": "Blissey ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 300,
+  "estagio": "Estágio 1",
+  "evolui_de": "Chansey",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Happy Switch",
+      "nome_pt": "Substituição Animada",
+      "texto": "Once during your turn, you may move a Basic Energy from 1 of your Pokémon to another of your Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá mover uma Energia Básica de 1 dos seus Pokémon para outro Pokémon seu.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Return",
+      "nome_pt": "Retorno",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "180",
+      "texto": "You may draw cards until you have 6 cards in your hand.",
+      "texto_pt": "Você pode comprar cartas até ter 6 cartas na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-134",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-201",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Happy Switch: Move a Basic Energy from 1 of your Pokémon to another of your Pokémon."
+    ]
+  }
+}

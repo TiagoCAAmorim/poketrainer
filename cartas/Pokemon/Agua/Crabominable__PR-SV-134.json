@@ -1,0 +1,70 @@
+{
+  "id": "PR-SV-134",
+  "nome": "Crabominable",
+  "nome_pt": "Crabominable",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 1",
+  "evolui_de": "Crabrawler",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Food Prep",
+      "nome_pt": "Preparação de Marmitas",
+      "texto": "Attacks used by this Pokémon cost Colorless less for each Kofu card in your discard pile.",
+      "texto_pt": "Os ataques usados por este Pokémon custam Incolor a menos para cada carta Álgaro na sua pilha de descarte.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Haymaker",
+      "nome_pt": "Golpe Arrasador",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "250",
+      "texto": "During your next turn, this Pokémon can't use Haymaker.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Golpe Arrasador.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "PR-SV-134",
+      "colecao": "Scarlet & Violet Black Star Promos",
+      "data": "2023-01-01"
+    },
+    {
+      "codigo": "SCR-42",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-149",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Food Prep: Attacks used by this Pokémon cost Colorless less for each Kofu card in your discard pile."
+    ]
+  }
+}

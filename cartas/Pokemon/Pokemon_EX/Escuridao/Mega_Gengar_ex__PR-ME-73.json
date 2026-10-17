@@ -1,0 +1,79 @@
+{
+  "id": "PR-ME-73",
+  "nome": "Mega Gengar ex",
+  "nome_pt": "Mega Gengar ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 350,
+  "estagio": "Estágio 2",
+  "evolui_de": "Haunter",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [
+    {
+      "nome": "Shadowy Concealment",
+      "nome_pt": "Ocultação Sombria",
+      "texto": "If 1 of your Darkness Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon ex, that player takes 1 fewer Prize card. The effect of Shadowy Concealment doesn't stack.",
+      "texto_pt": "Se 1 dos seus Pokémon Escuridão for Nocauteado pelo dano de um ataque dos Pokémon ex do seu oponente, aquele jogador pegará 1 carta de Prêmio a menos. O efeito de Ocultação Sombria não acumula.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Void Gale",
+      "nome_pt": "Vendaval Abissal",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "230",
+      "texto": "Move an Energy from this Pokémon to 1 of your Benched Pokémon.",
+      "texto_pt": "Mova uma Energia deste Pokémon para 1 dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-73",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PFL-56",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "ASC-125",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-269",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-284",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Shadowy Concealment: If 1 of your Darkness Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon ex, that player takes 1 fewer Prize card. The effect of Shadowy Concealment doesn't stack."
+    ]
+  }
+}

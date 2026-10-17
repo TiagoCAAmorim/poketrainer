@@ -1,0 +1,62 @@
+{
+  "id": "POR-40",
+  "nome": "Hippowdon",
+  "nome_pt": "Hippowdon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Hippopotas",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Twister Spewing",
+      "nome_pt": "Lança Tornado",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "80",
+      "texto": "If you played Tarragon from your hand during this turn, discard the top 3 cards of your opponent's deck.",
+      "texto_pt": "Se você jogou Tarragon da sua mão durante este turno, descarte as 3 cartas de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Heavy Impact",
+      "nome_pt": "Impacto Pesado",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-40",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

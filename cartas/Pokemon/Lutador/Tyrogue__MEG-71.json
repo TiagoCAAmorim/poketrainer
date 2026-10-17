@@ -1,0 +1,44 @@
+{
+  "id": "MEG-71",
+  "nome": "Tyrogue",
+  "nome_pt": "Tyrogue",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 30,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Pow-Pow Punching",
+      "nome_pt": "Soco Soco Bate Bate",
+      "custo": [],
+      "dano": "10+",
+      "texto": "Flip a coin until you get tails. This attack does 30 more damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 30 pontos de dano a mais para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-71",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

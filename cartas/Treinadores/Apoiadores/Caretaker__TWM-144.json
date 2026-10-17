@@ -1,0 +1,30 @@
+{
+  "id": "TWM-144",
+  "nome": "Caretaker",
+  "nome_pt": "Zelador",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Draw 2 cards. If you drew any cards in this way and if Community Center is in play, shuffle this Caretaker into your deck instead of discarding it.",
+  "texto_pt": "Compre 2 cartas. Se você comprou qualquer carta desta forma e se Centro Comunitário estiver em jogo, embaralhe este Zelador no seu baralho ao invés de descartá-lo.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-144",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-203",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+ "acoes": [
+  83,
+  83
+ ],
+ "turnos": [
+  9,
+  9
+ ],
+ "completo": true,
+ "divergencia": null,
+ "danos_conferidos": [
+  [
+   4,
+   "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Celebi for 110 damage.",
+   110,
+   110
+  ],
+  [
+   5,
+   "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Slowking for 220 damage.",
+   220,
+   220
+  ],
+  [
+   7,
+   "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Smoochum for 330 damage.",
+   330,
+   330
+  ],
+  [
+   8,
+   "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Beedrill ex for 300 damage.",
+   300,
+   150
+  ],
+  [
+   9,
+   "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Slowking for 330 damage.",
+   330,
+   330
+  ],
+  [
+   9,
+   "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Beedrill ex for 140 damage.",
+   140,
+   140
+  ]
+ ],
+ "notas": [
+  "turno 8: dano em Beedrill ex ajustado ao log (150 → 300)",
+  "mão de cdierkens reconciliada: Night Stretcher → Slowking",
+  "mão de cdierkens reconciliada: Wondrous Patch → Night Stretcher",
+  "mão de cdierkens reconciliada: Slowking → Slowpoke",
+  "mão de cdierkens reconciliada: Switch → Wondrous Patch",
+  "tentativas: 9"
+ ],
+ "hash": "3810feca2d0f",
+ "resumo": "Jogadores: Wonder_Squid x cdierkens\nAções reproduzidas: 83/83  (turnos 9/9)\nDanos conferidos: 5/6 iguais ao log oficial\n  ✘ turno 8: log=300 motor=150 — cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Beedrill ex for 300 damage.\nPartida reproduzida até o fim sem divergências.\n  nota: turno 8: dano em Beedrill ex ajustado ao log (150 → 300)\n  nota: mão de cdierkens reconciliada: Night Stretcher → Slowking\n  nota: mão de cdierkens reconciliada: Wondrous Patch → Night Stretcher\n  nota: mão de cdierkens reconciliada: Slowking → Slowpoke\n  nota: mão de cdierkens reconciliada: Switch → Wondrous Patch\n  nota: tentativas: 9"
+}

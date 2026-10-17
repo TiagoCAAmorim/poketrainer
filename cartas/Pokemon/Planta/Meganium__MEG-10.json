@@ -1,0 +1,62 @@
+{
+  "id": "MEG-10",
+  "nome": "Meganium",
+  "nome_pt": "Meganium",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Bayleef",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Wild Growth",
+      "nome_pt": "Espichada Selvagem",
+      "texto": "Each Basic Grass Energy attached to all of your Pokémon provides GrassGrass Energy. The effect of Wild Growth doesn't stack.",
+      "texto_pt": "Cada Energia Planta Básica ligada a todos os seus Pokémon fornece Energia PlantaPlanta. O efeito de Espichada Selvagem não acumula.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Solar Beam",
+      "nome_pt": "Raio Solar",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-10",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PR-ME-1",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

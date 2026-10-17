@@ -1,0 +1,63 @@
+{
+  "id": "WHT-42",
+  "nome": "Gothorita",
+  "nome_pt": "Gothorita",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Gothita",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fortunate Eye",
+      "nome_pt": "Olho da Sorte",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "Look at the top 5 cards of your opponent's deck and put them back in any order.",
+      "texto_pt": "Olhe as 5 cartas de cima do baralho do seu oponente e coloque-as de volta em qualquer ordem.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Psyshot",
+      "nome_pt": "Tiro Psíquico",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-42",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-125",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

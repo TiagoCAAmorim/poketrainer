@@ -1,0 +1,60 @@
+{
+  "id": "JTG-73",
+  "nome": "Grimmsnarl",
+  "nome_pt": "Grimmsnarl",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Morgrem",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Shadowy Knot",
+      "nome_pt": "Nó Sombrio",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "50×",
+      "texto": "This attack does 50 damage for each Colorless in your opponent's Active Pokémon's Retreat Cost.",
+      "texto_pt": "Este ataque causa 50 pontos de dano para cada Incolor no custo de Recuo do Pokémon Ativo do seu oponente.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Mega Punch",
+      "nome_pt": "Megassoco",
+      "custo": [
+        "Psíquico",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-73",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Shadowy Knot: This attack does 50 damage for each Colorless in your opponent's Active Pokémon's Retreat Cost."
+    ]
+  }
+}

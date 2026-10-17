@@ -1,0 +1,46 @@
+{
+  "id": "SCR-84",
+  "nome": "Mienshao",
+  "nome_pt": "Mienshao",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 90,
+  "estagio": "Estágio 1",
+  "evolui_de": "Mienfoo",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gale Roundhouse",
+      "nome_pt": "Chute Vendaval",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "30+",
+      "texto": "If your opponent has 5 or fewer cards in their hand, this attack does 60 more damage.",
+      "texto_pt": "Se o seu oponente tiver 5 ou menos cartas na mão dele, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-84",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

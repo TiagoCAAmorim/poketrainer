@@ -1,0 +1,52 @@
+{
+  "id": "SCR-55",
+  "nome": "Zeraora",
+  "nome_pt": "Zeraora",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Combat Thunder",
+      "nome_pt": "Trovão Combatente",
+      "custo": [
+        "Elétrico",
+        "Incolor"
+      ],
+      "dano": "20+",
+      "texto": "This attack does 20 more damage for each of your opponent's Benched Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada Pokémon no Banco do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-55",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    },
+    {
+      "codigo": "SCR-151",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

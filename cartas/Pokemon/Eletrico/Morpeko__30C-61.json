@@ -1,0 +1,64 @@
+{
+  "id": "30C-61",
+  "nome": "Morpeko",
+  "nome_pt": "Morpeko",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Elétrico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Lutador ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Select a Snack",
+      "nome_pt": "Escolher Lanchinho",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Discard the top 3 cards of your deck and put 1 of them into your hand.",
+      "texto_pt": "Descarte as 3 cartas de cima do seu baralho e coloque 1 delas na sua mão.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Slap",
+      "nome_pt": "Tapa",
+      "custo": [
+        "Elétrico"
+      ],
+      "dano": "30",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-61",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-135",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Select a Snack: Discard the top 3 cards of your deck and put 1 of them into your hand."
+    ]
+  }
+}

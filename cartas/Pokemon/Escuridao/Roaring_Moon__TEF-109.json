@@ -1,0 +1,68 @@
+{
+  "id": "TEF-109",
+  "nome": "Roaring Moon",
+  "nome_pt": "Lua Estrondo",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 140,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Vengeance Fletching",
+      "nome_pt": "Flechas da Vingança",
+      "custo": [
+        "Escuridão",
+        "Escuridão"
+      ],
+      "dano": "70+",
+      "texto": "This attack does 10 more damage for each Ancient card in your discard pile.",
+      "texto_pt": "Este ataque causa 10 pontos de dano a mais para cada carta Ancestral na sua pilha de descarte.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Speed Wing",
+      "nome_pt": "Asa da Velocidade",
+      "custo": [
+        "Escuridão",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Antigo."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-109",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "PRE-65",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

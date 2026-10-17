@@ -1,0 +1,56 @@
+{
+  "id": "SCR-44",
+  "nome": "Drednaw",
+  "nome_pt": "Drednaw",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Chewtle",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Impervious Shell",
+      "nome_pt": "Casco Impenetrável",
+      "texto": "Prevent all damage done to this Pokémon by attacks from your opponent's Pokémon if that damage is 200 or more.",
+      "texto_pt": "Previna todo o dano causado a este Pokémon por ataques dos Pokémon do seu oponente se aquele dano for 200 ou mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Hard Crunch",
+      "nome_pt": "Mastigada Bruta",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "80+",
+      "texto": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 80 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente já tiver algum contador de dano nele, este ataque causará 80 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-44",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

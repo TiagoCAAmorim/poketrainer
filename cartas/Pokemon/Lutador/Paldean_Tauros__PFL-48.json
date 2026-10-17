@@ -1,0 +1,60 @@
+{
+  "id": "PFL-48",
+  "nome": "Paldean Tauros",
+  "nome_pt": "Tauros de Paldea",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Raging Charge",
+      "nome_pt": "Estouro Enfezado",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "40×",
+      "texto": "This attack does 40 damage for each of your Pokémon that has \"Tauros\" in its name that has any damage counters on it.",
+      "texto_pt": "Este ataque causa 40 pontos de dano para cada um dos seus Pokémon que tem \"Tauros\" em seu nome que tiver algum contador de dano nele.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Double-Edge",
+      "nome_pt": "Faca de Dois Gumes",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "70",
+      "texto": "This Pokémon also does 20 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 20 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "PFL-48",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Raging Charge: This attack does 40 damage for each of your Pokémon that has \"Tauros\" in its name that has any damage counters on it."
+    ]
+  }
+}

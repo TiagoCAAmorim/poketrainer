@@ -1,0 +1,58 @@
+{
+  "id": "TWM-50",
+  "nome": "Milotic",
+  "nome_pt": "Milotic",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Feebas",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Mentally Calm",
+      "nome_pt": "Calmaria Mental",
+      "texto": "Your opponent's Pokémon in play and all attached cards can't be put into your opponent's hand.",
+      "texto_pt": "Os Pokémon do seu oponente em jogo e todas as cartas ligadas a eles não podem ser colocados na mão do seu oponente.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Hydro Splash",
+      "nome_pt": "Hidroborrifada",
+      "custo": [
+        "Água",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "100",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-50",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Mentally Calm: Your opponent's Pokémon in play and all attached cards can't be put into your opponent's hand."
+    ]
+  }
+}

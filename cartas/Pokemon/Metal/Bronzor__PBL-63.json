@@ -1,0 +1,46 @@
+{
+  "id": "PBL-63",
+  "nome": "Bronzor",
+  "nome_pt": "Bronzor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mirror Attack",
+      "nome_pt": "Golpe Espelhado",
+      "custo": [
+        "Metal"
+      ],
+      "dano": "10+",
+      "texto": "If your opponent's Active Pokémon is a Metal Pokémon, this attack does 30 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon Metal, este ataque causará 30 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-63",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "30C-2",
+  "nome": "Alolan Exeggutor",
+  "nome_pt": "Delcatty",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Exeggcute",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Scale Up",
+      "nome_pt": null,
+      "texto": "If this Pokémon has 6 or more Grass Energy attached, it gets +250 HP.",
+      "texto_pt": null,
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Mega Drain",
+      "nome_pt": "Fonte Máxima de Energia",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "Heal 50 damage from this Pokémon",
+      "texto_pt": "Este ataque causa 10 de dano vezes a quantidade total de Energias ligadas a todos os seus Pokémon Ativos.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-2",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    },
+    {
+      "codigo": "30C-129",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

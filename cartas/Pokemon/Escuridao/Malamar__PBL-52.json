@@ -1,0 +1,57 @@
+{
+  "id": "PBL-52",
+  "nome": "Malamar",
+  "nome_pt": "Malamar",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Inkay",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Perplex",
+      "nome_pt": "Perplexo",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Your opponent's Active Pokémon is now Confused.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Brain Crush",
+      "nome_pt": "Colapso Cerebral",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "130",
+      "texto": "If your opponent's Active Pokémon isn't Confused, this attack does nothing.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente não estiver Confuso, este ataque não fará nada.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-52",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "SSP-183",
+  "nome": "Miracle Headset",
+  "nome_pt": "Fone de Ouvido Milagroso",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": true,
+  "texto": "Put up to 2 Supporter cards from your discard pile into your hand.",
+  "texto_pt": "Coloque até 2 cartas de Apoiador da sua pilha de descarte na sua mão.",
+  "regras": [
+    "ACE SPEC: só pode haver 1 carta ACE SPEC no baralho."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-183",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

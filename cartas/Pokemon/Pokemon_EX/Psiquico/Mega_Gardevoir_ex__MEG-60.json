@@ -1,0 +1,86 @@
+{
+  "id": "MEG-60",
+  "nome": "Mega Gardevoir ex",
+  "nome_pt": "Mega Gardevoir ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 360,
+  "estagio": "Estágio 2",
+  "evolui_de": "Kirlia",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Overflowing Wishes",
+      "nome_pt": "Desejos Transbordantes",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "—",
+      "texto": "For each of your Benched Pokémon, search your deck for a Basic Psychic Energy card and attach it to that Pokémon. Then, shuffle your deck.",
+      "texto_pt": "Para cada um dos seus Pokémon no Banco, procure por uma carta de Energia Psíquico Básica no seu baralho e ligue-a àquele Pokémon. Em seguida, embaralhe o seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Mega Symphonia",
+      "nome_pt": "Megassinfonia",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "50×",
+      "texto": "This attack does 50 damage for each Psychic Energy attached to all of your Pokémon.",
+      "texto_pt": "Este ataque causa 50 pontos de dano para cada Energia Psíquico ligada a todos os seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-60",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-159",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-178",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-187",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PR-ME-32",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-89",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Overflowing Wishes: For each of your Benched Pokémon, search your deck for a Basic Psychic Energy card and attach it to that Pokémon."
+    ]
+  }
+}

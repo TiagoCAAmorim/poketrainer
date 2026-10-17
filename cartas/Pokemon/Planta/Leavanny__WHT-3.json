@@ -1,0 +1,63 @@
+{
+  "id": "WHT-3",
+  "nome": "Leavanny",
+  "nome_pt": "Leavanny",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 2",
+  "evolui_de": "Swadloon",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Healing Wrapping",
+      "nome_pt": "Bandagem Curativa",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Heal 100 damage from each of your Basic Pokémon.",
+      "texto_pt": "Cure 100 pontos de dano de cada um dos seus Pokémon Básicos.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "X-Scissor",
+      "nome_pt": "Tesoura X",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "90+",
+      "texto": "Flip a coin. If heads, this attack does 40 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 40 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "WHT-3",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "WHT-89",
+      "colecao": "White Flare",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

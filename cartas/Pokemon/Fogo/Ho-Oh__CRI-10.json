@@ -1,0 +1,59 @@
+{
+  "id": "CRI-10",
+  "nome": "Ho-Oh",
+  "nome_pt": "Ho-Oh",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flames of Revival",
+      "nome_pt": "Chamas do Reviver",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "—",
+      "texto": "Put up to 3 Basic Pokémon from your discard pile onto your Bench.",
+      "texto_pt": "Coloque até 3 Pokémon Básicos da sua pilha de descarte no seu Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Bright Wing",
+      "nome_pt": "Asa Brilhante",
+      "custo": [
+        "Fogo",
+        "Fogo",
+        "Fogo"
+      ],
+      "dano": "130",
+      "texto": "Discard a Fire Energy from this Pokémon.",
+      "texto_pt": "Descarte uma Energia Fogo deste Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-10",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

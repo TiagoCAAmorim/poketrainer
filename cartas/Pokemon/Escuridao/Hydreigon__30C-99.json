@@ -1,0 +1,58 @@
+{
+  "id": "30C-99",
+  "nome": "Hydreigon",
+  "nome_pt": "Hydreigon",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Escuridão"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Zweilous",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Three-Headed Bite",
+      "nome_pt": "Mordida Tricéfala",
+      "custo": [
+        "Escuridão"
+      ],
+      "dano": "—",
+      "texto": "Flip 3 coins. For each heads, discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Jogue 3 moedas. Para cada cara, descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Pitch-Black Fangs",
+      "nome_pt": "Presas do Breu",
+      "custo": [
+        "Escuridão",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-99",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

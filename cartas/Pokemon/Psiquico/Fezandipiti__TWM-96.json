@@ -1,0 +1,64 @@
+{
+  "id": "TWM-96",
+  "nome": "Fezandipiti",
+  "nome_pt": "Fezandipiti",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 120,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Adrena-Pheromone",
+      "nome_pt": "Adrena-feromônio",
+      "texto": "If this Pokémon has any Darkness Energy attached and is damaged by an attack, flip a coin. If heads, prevent that damage.",
+      "texto_pt": "Se este Pokémon tiver alguma Energia Escuridão ligada a ele e for danificado por um ataque, jogue uma moeda. Se sair cara, previna aquele dano.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Energy Feather",
+      "nome_pt": "Pluma de Energia",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30×",
+      "texto": "This attack does 30 damage for each Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano para cada Energia ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-96",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "SFA-73",
+      "colecao": "Shrouded Fable",
+      "data": "2024-08-02"
+    },
+    {
+      "codigo": "PRE-45",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

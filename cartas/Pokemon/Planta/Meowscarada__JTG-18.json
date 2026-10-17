@@ -1,0 +1,57 @@
+{
+  "id": "JTG-18",
+  "nome": "Meowscarada",
+  "nome_pt": "Meowscarada",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 160,
+  "estagio": "Estágio 2",
+  "evolui_de": "Floragato",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Showtime",
+      "nome_pt": "Hora do Show",
+      "texto": "Once during your turn, if this Pokémon is on your Bench, you may switch it with your Active Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no seu Banco, você poderá trocá-lo pelo seu Pokémon Ativo.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Rising Bloom",
+      "nome_pt": "Florescer Crescente",
+      "custo": [
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "90+",
+      "texto": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 90 more damage.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon ex, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-18",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Showtime: Switch it with your Active Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "PBL-1",
+  "nome": "Tropius",
+  "nome_pt": "Tropius",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 110,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Fruity Aroma",
+      "nome_pt": "Aroma Frutado",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Look at the top 6 cards of your deck, and you may reveal any number of Pokémon you find there and put them into your hand. Shuffle the other cards back into your deck.",
+      "texto_pt": "Olhe as 6 cartas de cima do seu baralho, e você pode revelar qualquer número de Pokémon que você encontrar lá e colocá-los na sua mão. Embaralhe as outras cartas de volta no seu baralho.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Solar Beam",
+      "nome_pt": "Raio Solar",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-1",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Fruity Aroma: Look at the top 6 cards of your deck, and you may reveal any number of Pokémon you find there and put them into your hand."
+    ]
+  }
+}

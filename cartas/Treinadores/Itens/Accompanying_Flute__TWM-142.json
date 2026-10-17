@@ -1,0 +1,23 @@
+{
+  "id": "TWM-142",
+  "nome": "Accompanying Flute",
+  "nome_pt": "Flauta de Acompanhamento",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Reveal the top 5 cards of your opponent's deck. You may choose any number of Basic Pokémon you find there and put those Pokémon onto their Bench. Your opponent shuffles the other cards back into their deck.",
+  "texto_pt": "Revele as 5 cartas de cima do baralho do seu oponente. Você pode escolher qualquer número de Pokémon Básicos que encontrar lá e colocar aqueles Pokémon no Banco dele. Seu oponente embaralha as outras cartas de volta no baralho dele.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-142",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

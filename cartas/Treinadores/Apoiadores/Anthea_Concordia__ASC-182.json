@@ -1,0 +1,30 @@
+{
+  "id": "ASC-182",
+  "nome": "Anthea & Concordia",
+  "nome_pt": "Amor e Paz",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "You can use this card only if you have N's Darmanitan, N's Zoroark ex, N's Vanilluxe, N's Klinklang, N's Reshiram, and N's Zekrom in play. During this turn, if your opponent's Active Pokémon is Knocked Out by damage from an attack used by your N's Pokémon, take 3 more Prize cards.",
+  "texto_pt": "Você só poderá usar esta carta se tiver Darmanitan do N, Zoroark ex do N, Vanilluxe do N, Klinklang do N, Reshiram do N e Zekrom do N em jogo. Durante este turno, se o Pokémon Ativo do seu oponente for Nocauteado pelo dano de um ataque usado pelos seus Pokémon do N, pegue 3 cartas de Prêmio a mais.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-182",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    },
+    {
+      "codigo": "ASC-254",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

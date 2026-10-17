@@ -1,0 +1,90 @@
+{
+  "id": "MEG-77",
+  "nome": "Mega Lucario ex",
+  "nome_pt": "Mega Lucario ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 340,
+  "estagio": "Estágio 1",
+  "evolui_de": "Riolu",
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Aura Jab",
+      "nome_pt": "Soco Aura",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "130",
+      "texto": "Attach up to 3 Basic Fighting Energy cards from your discard pile to your Benched Pokémon in any way you like.",
+      "texto_pt": "Ligue até 3 cartas de Energia Lutador Básica da sua pilha de descarte aos seus Pokémon no Banco como desejar.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Mega Brave",
+      "nome_pt": "Megavalentia",
+      "custo": [
+        "Lutador",
+        "Lutador"
+      ],
+      "dano": "270",
+      "texto": "During your next turn, this Pokémon can't use Mega Brave.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Megavalentia.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-77",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-160",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-179",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-188",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PR-ME-12",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PR-ME-33",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "ASC-113",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

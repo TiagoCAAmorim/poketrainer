@@ -1,0 +1,23 @@
+{
+  "id": "POR-83",
+  "nome": "Potion",
+  "nome_pt": "Poção",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Heal 30 damage from 1 of your Pokémon.",
+  "texto_pt": "Cure 30 pontos de dano de 1 dos seus Pokémon.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-83",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "CRI-78",
+  "nome": "Great Haul Net",
+  "nome_pt": "Rede Grande de Arrasto",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Choose 1 or both: • Shuffle up to 3 Water Pokémon from your discard pile into your deck. • Shuffle up to 3 Basic Water Energy cards from your discard pile into your deck.",
+  "texto_pt": "Escolha 1 ou ambas: • Embaralhe até 3 Pokémon Água da sua pilha de descarte no seu baralho. • Embaralhe até 3 cartas de Energia Água Básica da sua pilha de descarte no seu baralho.",
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "CRI-78",
+      "colecao": "Chaos Rising",
+      "data": "2026-05-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

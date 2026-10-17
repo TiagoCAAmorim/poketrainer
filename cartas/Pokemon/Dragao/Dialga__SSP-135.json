@@ -1,0 +1,61 @@
+{
+  "id": "SSP-135",
+  "nome": "Dialga",
+  "nome_pt": "Dialga",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Dragão"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": null,
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Time Manipulation",
+      "nome_pt": "Manipulação do Tempo",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "Search your deck for 2 cards, shuffle your deck, then put those cards on top of it in any order.",
+      "texto_pt": "Procure por 2 cartas no seu baralho, embaralhe o seu baralho e, em seguida, coloque aquelas cartas como as cartas de cima do seu baralho em qualquer ordem.",
+      "simulador": "pendente"
+    },
+    {
+      "nome": "Buster Tail",
+      "nome_pt": "Cauda Aniquiladora",
+      "custo": [
+        "Psíquico",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-135",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Time Manipulation: Search your deck for 2 cards, shuffle your deck, then put those cards on top of it in any order."
+    ]
+  }
+}

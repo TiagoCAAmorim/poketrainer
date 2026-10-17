@@ -1,0 +1,61 @@
+{
+  "id": "MEG-61",
+  "nome": "Shedinja",
+  "nome_pt": "Shedinja",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 60,
+  "estagio": "Estágio 1",
+  "evolui_de": "Nincada",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 0,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Fragile Husk",
+      "nome_pt": "Casca Fraca",
+      "texto": "If this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon ex, your opponent can't take any Prize cards for it.",
+      "texto_pt": "Se este Pokémon for Nocauteado pelo dano de um ataque dos Pokémon ex do seu oponente, seu oponente não poderá pegar cartas de Prêmio por isso.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Damage Beat",
+      "nome_pt": "Pancada Destruidora",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "20×",
+      "texto": "This attack does 20 damage for each damage counter on your opponent's Active Pokémon.",
+      "texto_pt": "Este ataque causa 20 pontos de dano para cada contador de dano no Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-61",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-144",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Fragile Husk: If this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon ex, your opponent can't take any Prize cards for it."
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "PBL-20",
+  "nome": "Primarina",
+  "nome_pt": "Primarina",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 2",
+  "evolui_de": "Brionne",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Enriching Melody",
+      "nome_pt": "Musicoterapia",
+      "texto": "Once during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. Heal all damage from 1 of your Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, quando você jogar este Pokémon da sua mão para evoluir 1 dos seus Pokémon, você poderá usar esta Habilidade. Cure todo o dano de 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Aqua Return",
+      "nome_pt": "Retorno Aquático",
+      "custo": [
+        "Água",
+        "Incolor"
+      ],
+      "dano": "120",
+      "texto": "Shuffle this Pokémon and all attached cards into your deck.",
+      "texto_pt": "Embaralhe este Pokémon e todas as cartas ligadas a ele no seu baralho.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-20",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-88",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

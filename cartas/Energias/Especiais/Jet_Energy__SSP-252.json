@@ -1,0 +1,24 @@
+{
+  "id": "SSP-252",
+  "nome": "Jet Energy",
+  "nome_pt": "Energia a Jato",
+  "categoria": "Energia",
+  "subtipo": "Energia Especial",
+  "ace_spec": false,
+  "fornece": null,
+  "texto": "As long as this card is attached to a Pokémon, it provides Colorless Energy. When you attach this card from your hand to 1 of your Benched Pokémon, switch that Pokémon with your Active Pokémon.",
+  "texto_pt": "Enquanto esta carta estiver ligada a um Pokémon, ela fornecerá Energia Incolor. Quando você ligar esta carta da sua mão a 1 dos seus Pokémon no Banco, troque aquele Pokémon pelo seu Pokémon Ativo.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-252",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

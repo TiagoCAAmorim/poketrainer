@@ -1,0 +1,61 @@
+{
+  "id": "TWM-99",
+  "nome": "Hisuian Growlithe",
+  "nome_pt": "Growlithe de Hisui",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 80,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Blazing Destruction",
+      "nome_pt": "Destruição Flamejante",
+      "custo": [],
+      "dano": "—",
+      "texto": "Discard a Stadium in play.",
+      "texto_pt": "Descarte um Estádio em jogo.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Take Down",
+      "nome_pt": "Desmantelar",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "40",
+      "texto": "This Pokémon also does 10 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 10 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-99",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    },
+    {
+      "codigo": "TWM-181",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

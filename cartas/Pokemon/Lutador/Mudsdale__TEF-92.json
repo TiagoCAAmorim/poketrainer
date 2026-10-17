@@ -1,0 +1,64 @@
+{
+  "id": "TEF-92",
+  "nome": "Mudsdale",
+  "nome_pt": "Mudsdale",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Mudbray",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Mud Stock",
+      "nome_pt": "Estoque Lamacento",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "—",
+      "texto": "Attach a Basic Fighting Energy card from your discard pile to each of your Benched Pokémon.",
+      "texto_pt": "Ligue uma carta de Energia Lutador Básica da sua pilha de descarte a cada um dos seus Pokémon no Banco.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "High Horsepower",
+      "nome_pt": "Potência Equina",
+      "custo": [
+        "Lutador",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "140",
+      "texto": "This Pokémon also does 40 damage to itself.",
+      "texto_pt": "Este Pokémon também causa 40 pontos de dano a si mesmo.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-92",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-175",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "MEG-5",
+  "nome": "Exeggutor",
+  "nome_pt": "Exeggutor",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Exeggcute",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Guard Press",
+      "nome_pt": "Aperto Protetor",
+      "custo": [
+        "Planta"
+      ],
+      "dano": "30",
+      "texto": "During your opponent's next turn, this Pokémon takes 30 less damage from attacks (after applying Weakness and Resistance).",
+      "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 30 pontos de dano a menos de ataques (depois de aplicar Fraqueza e Resistência).",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Stomping Wood",
+      "nome_pt": "Madeira Pisadeira",
+      "custo": [
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "This attack does 30 more damage for each Grass Energy attached to this Pokémon.",
+      "texto_pt": "Este ataque causa 30 pontos de dano a mais para cada Energia Planta ligada a este Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-5",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-135",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

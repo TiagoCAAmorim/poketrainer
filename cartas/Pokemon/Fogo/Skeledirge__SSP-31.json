@@ -1,0 +1,55 @@
+{
+  "id": "SSP-31",
+  "nome": "Skeledirge",
+  "nome_pt": "Skeledirge",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Crocalor",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Unaware",
+      "nome_pt": "Ignorante",
+      "texto": "Prevent all effects of attacks used by your opponent's Pokémon done to this Pokémon. (Damage is not an effect.)",
+      "texto_pt": "Previna todos os efeitos de ataques usados pelos Pokémon do seu oponente causados a este Pokémon. (Dano não é um efeito.)",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Torcherto",
+      "nome_pt": "Repertocha",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "This attack does 20 more damage for each Benched Pokémon (both yours and your opponent's).",
+      "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada Pokémon no Banco (seus e do seu oponente).",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-31",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

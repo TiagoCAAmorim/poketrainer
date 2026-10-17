@@ -1,0 +1,23 @@
+{
+  "id": "SSP-189",
+  "nome": "Tera Orb",
+  "nome_pt": "Orbe Tera",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Search your deck for a Tera Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.",
+  "texto_pt": "Procure por um Pokémon Tera no seu baralho, revele-o e coloque-o na sua mão. Em seguida, embaralhe o seu baralho.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-189",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

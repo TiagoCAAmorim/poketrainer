@@ -1,0 +1,57 @@
+{
+  "id": "JTG-68",
+  "nome": "Lillie's Comfey",
+  "nome_pt": "Comfey da Lílian",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Inviting Flowers",
+      "nome_pt": "Flores Convidativas",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "—",
+      "texto": "You may search your deck for any number of Basic Lillie's Pokémon and put them onto your Bench. Then, shuffle your deck.",
+      "texto_pt": "Você pode procurar por qualquer número de Pokémon da Lílian Básicos no seu baralho e colocá-los no seu Banco. Em seguida, embaralhe o seu baralho.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Fade Out",
+      "nome_pt": "Desaparecer",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "30",
+      "texto": "Put this Pokémon and all attached cards into your hand.",
+      "texto_pt": "Coloque este Pokémon e todas as cartas ligadas a ele na sua mão.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-68",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "TEF-147",
+  "nome": "Explorer's Guidance",
+  "nome_pt": "Liderança do Explorador",
+  "categoria": "Treinador",
+  "subtipo": "Apoiador",
+  "ace_spec": false,
+  "texto": "Look at the top 6 cards of your deck and put 2 of them into your hand. Discard the other cards.",
+  "texto_pt": "Olhe as 6 cartas de cima do seu baralho e coloque 2 delas na sua mão. Descarte as outras cartas.",
+  "regras": [
+    "Apoiador: só pode jogar 1 carta de Apoiador por turno."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TEF-147",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "TEF-200",
+      "colecao": "Temporal Forces",
+      "data": "2024-03-22"
+    },
+    {
+      "codigo": "PRE-107",
+      "colecao": "Prismatic Evolutions",
+      "data": "2025-01-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

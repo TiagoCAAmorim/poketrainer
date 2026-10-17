@@ -1,0 +1,65 @@
+{
+  "id": "BLK-26",
+  "nome": "Beartic",
+  "nome_pt": "Beartic",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 150,
+  "estagio": "Estágio 1",
+  "evolui_de": "Cubchoo",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Continuous Headbutt",
+      "nome_pt": "Cabeçada Contínua",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "50×",
+      "texto": "Flip a coin until you get tails. This attack does 50 damage for each heads.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Este ataque causa 50 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Sheer Cold",
+      "nome_pt": "Frio Extremo",
+      "custo": [
+        "Água",
+        "Água",
+        "Água",
+        "Incolor"
+      ],
+      "dano": "150",
+      "texto": "During your opponent's next turn, the Defending Pokémon can't use attacks.",
+      "texto_pt": "Durante o próximo turno do seu oponente, o Pokémon Defensor não poderá usar ataques.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "BLK-26",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    },
+    {
+      "codigo": "BLK-110",
+      "colecao": "Black Bolt",
+      "data": "2025-07-18"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

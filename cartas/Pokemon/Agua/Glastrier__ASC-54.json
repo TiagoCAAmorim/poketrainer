@@ -1,0 +1,59 @@
+{
+  "id": "ASC-54",
+  "nome": "Glastrier",
+  "nome_pt": "Glastrier",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 130,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Ice Shot",
+      "nome_pt": "Disparo de Gelo",
+      "custo": [
+        "Água"
+      ],
+      "dano": "20",
+      "texto": "This attack also does 20 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
+      "texto_pt": "Este ataque também causa 20 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Frosty Typhoon",
+      "nome_pt": "Tufão Glacial",
+      "custo": [
+        "Água",
+        "Água",
+        "Água"
+      ],
+      "dano": "130",
+      "texto": "During your next turn, this Pokémon can't use Frosty Typhoon.",
+      "texto_pt": "Durante o seu próximo turno, este Pokémon não poderá usar Tufão Glacial.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "ASC-54",
+      "colecao": "Ascended Heroes",
+      "data": "2026-01-30"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

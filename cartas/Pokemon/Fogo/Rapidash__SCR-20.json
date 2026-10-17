@@ -1,0 +1,47 @@
+{
+  "id": "SCR-20",
+  "nome": "Rapidash",
+  "nome_pt": "Rapidash",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Ponyta",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Burning Run",
+      "nome_pt": "Corrida Fervente",
+      "custo": [
+        "Fogo",
+        "Incolor"
+      ],
+      "dano": "60+",
+      "texto": "Flip a coin. If heads, this attack does 60 more damage.",
+      "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 60 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-20",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

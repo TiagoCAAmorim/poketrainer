@@ -1,0 +1,46 @@
+{
+  "id": "SCR-114",
+  "nome": "Hoothoot",
+  "nome_pt": "Hoothoot",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Incolor"
+  ],
+  "hp": 70,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Triple Stab",
+      "nome_pt": "Estocada Tripla",
+      "custo": [
+        "Incolor"
+      ],
+      "dano": "10×",
+      "texto": "Flip 3 coins. This attack does 10 damage for each heads.",
+      "texto_pt": "Jogue 3 moedas. Este ataque causa 10 pontos de dano para cada cara.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SCR-114",
+      "colecao": "Stellar Crown",
+      "data": "2024-09-13"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

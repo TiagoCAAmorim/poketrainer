@@ -1,0 +1,58 @@
+{
+  "id": "JTG-75",
+  "nome": "Alcremie ex",
+  "nome_pt": "Alcremie ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 250,
+  "estagio": "Estágio 1",
+  "evolui_de": "Milcery",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Metal ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Confectionary Gift",
+      "nome_pt": "Presente de Confeitaria",
+      "texto": "Once during your turn, you may heal 30 damage from 1 of your Pokémon.",
+      "texto_pt": "Uma vez durante o seu turno, você poderá curar 30 pontos de dano de 1 dos seus Pokémon.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Whipped Shot",
+      "nome_pt": "Disparo de Chantilly",
+      "custo": [
+        "Psíquico",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "JTG-75",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

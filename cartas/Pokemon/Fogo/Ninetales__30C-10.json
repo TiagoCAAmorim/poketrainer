@@ -1,0 +1,46 @@
+{
+  "id": "30C-10",
+  "nome": "Ninetales",
+  "nome_pt": "Uxie",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Fogo"
+  ],
+  "hp": 110,
+  "estagio": "Estágio 1",
+  "evolui_de": "Vulpix",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Água ×2",
+  "resistencia": null,
+  "recuo": 1,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Flame Tail",
+      "nome_pt": "Restauração Psíquica",
+      "custo": [
+        "Fogo"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "Você pode colocar o Uxie e todos os cards ligados a ele no fundo do seu deck em qualquer ordem.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "30C-10",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

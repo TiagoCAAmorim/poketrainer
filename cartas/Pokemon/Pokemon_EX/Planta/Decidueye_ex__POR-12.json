@@ -1,0 +1,66 @@
+{
+  "id": "POR-12",
+  "nome": "Decidueye ex",
+  "nome_pt": "Decidueye ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 320,
+  "estagio": "Estágio 2",
+  "evolui_de": "Dartrix",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [
+    {
+      "nome": "Sniper's Eye",
+      "nome_pt": "Mira de Franco-atirador",
+      "texto": "If your opponent has exactly 4 cards in their hand, ignore all Colorless Energy in the costs of attacks used by this Pokémon.",
+      "texto_pt": "Se o seu oponente tiver exatamente 4 cartas na mão dele, ignore todas as Energias Incolor nos custos dos ataques usados por este Pokémon.",
+      "simulador": "pendente"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Crushing Arrow",
+      "nome_pt": "Flecha Esmagadora",
+      "custo": [
+        "Planta",
+        "Incolor",
+        "Incolor",
+        "Incolor"
+      ],
+      "dano": "240",
+      "texto": "Discard an Energy from your opponent's Active Pokémon.",
+      "texto_pt": "Descarte uma Energia do Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "POR-12",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    },
+    {
+      "codigo": "POR-100",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Habilidade Sniper's Eye: If your opponent has exactly 4 cards in their hand, ignore all Colorless Energy in the costs of attacks used by this Pokémon."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "SSP-171",
+  "nome": "Deduction Kit",
+  "nome_pt": "Kit de Investigação",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Look at the top 3 cards of your deck and put them back in any order, or shuffle them and put them on the bottom of your deck.",
+  "texto_pt": "Olhe as 3 cartas de cima do seu baralho e coloque-as de volta em qualquer ordem, ou embaralhe-as e coloque-as como as cartas de baixo do seu baralho.",
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-171",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

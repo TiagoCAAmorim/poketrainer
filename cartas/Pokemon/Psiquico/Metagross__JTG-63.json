@@ -1,0 +1,58 @@
+{
+  "id": "JTG-63",
+  "nome": "Metagross",
+  "nome_pt": "Metagross",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Psíquico"
+  ],
+  "hp": 170,
+  "estagio": "Estágio 2",
+  "evolui_de": "Metang",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Escuridão ×2",
+  "resistencia": "Lutador -30",
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Wrack Down",
+      "nome_pt": "Desmoronar",
+      "custo": [
+        "Psíquico"
+      ],
+      "dano": "60",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Conjoined Beams",
+      "nome_pt": "Feixes Conjugados",
+      "custo": [
+        "Psíquico",
+        "Psíquico"
+      ],
+      "dano": "130+",
+      "texto": "If Beldum and Metang are on your Bench, this attack does 150 more damage.",
+      "texto_pt": "Se Beldum e Metang estiverem no seu Banco, este ataque causará 150 pontos de dano a mais.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "JTG-63",
+      "colecao": "Journey Together",
+      "data": "2025-03-28"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

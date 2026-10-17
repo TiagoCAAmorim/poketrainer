@@ -1,0 +1,70 @@
+{
+  "id": "PBL-16",
+  "nome": "Wailord ex",
+  "nome_pt": "Wailord ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Água"
+  ],
+  "hp": 380,
+  "estagio": "Estágio 1",
+  "evolui_de": "Wailmer",
+  "pokemon_ex": true,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Elétrico ×2",
+  "resistencia": null,
+  "recuo": 4,
+  "premios_ao_ser_nocauteado": 2,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Surf",
+      "nome_pt": "Surfar",
+      "custo": [
+        "Água",
+        "Água",
+        "Água"
+      ],
+      "dano": "120",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Falling Down",
+      "nome_pt": "Capotar",
+      "custo": [
+        "Água",
+        "Água",
+        "Água",
+        "Água",
+        "Água"
+      ],
+      "dano": "270",
+      "texto": "This Pokémon is now Asleep.",
+      "texto_pt": "Este Pokémon agora está Adormecido.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [
+    "Pokémon ex: quando for Nocauteado, o oponente pega 2 cartas de Prêmio."
+  ],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PBL-16",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    },
+    {
+      "codigo": "PBL-97",
+      "colecao": "Pitch Black",
+      "data": "2026-07-17"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

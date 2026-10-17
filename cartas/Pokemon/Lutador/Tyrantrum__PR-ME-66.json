@@ -1,0 +1,60 @@
+{
+  "id": "PR-ME-66",
+  "nome": "Tyrantrum",
+  "nome_pt": "Tyrantrum",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 180,
+  "estagio": "Estágio 2",
+  "evolui_de": "Tyrunt",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [
+    {
+      "nome": "Tyrannically Gutsy",
+      "nome_pt": "Tenacidade Tirânica",
+      "texto": "If this Pokémon has any Special Energy attached, it gets +150 HP.",
+      "texto_pt": "Se este Pokémon tiver alguma Energia Especial ligada a ele, receberá +150 PS.",
+      "simulador": "implementada"
+    }
+  ],
+  "ataques": [
+    {
+      "nome": "Wreak Havoc",
+      "nome_pt": "Causar Estragos",
+      "custo": [
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "160",
+      "texto": "Flip a coin until you get tails. For each heads, discard the top card of your opponent's deck.",
+      "texto_pt": "Jogue uma moeda até sair coroa. Para cada cara, descarte a carta de cima do baralho do seu oponente.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "J",
+  "impressoes": [
+    {
+      "codigo": "PR-ME-66",
+      "colecao": "MEP Black Star Promos",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "POR-45",
+      "colecao": "Perfect Order",
+      "data": "2026-03-27"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

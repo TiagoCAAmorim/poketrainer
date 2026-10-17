@@ -1,0 +1,33 @@
+{
+  "id": "MEG-130",
+  "nome": "Switch",
+  "nome_pt": "Substituição",
+  "categoria": "Treinador",
+  "subtipo": "Item",
+  "ace_spec": false,
+  "texto": "Switch your Active Pokémon with 1 of your Benched Pokémon.",
+  "texto_pt": "Troque o seu Pokémon Ativo por 1 dos seus Pokémon no Banco.",
+  "regras": [],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-130",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "PFL-123",
+      "colecao": "Phantasmal Flames",
+      "data": "2025-11-14"
+    },
+    {
+      "codigo": "30C-127",
+      "colecao": "30th Celebration",
+      "data": "2026-09-16"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

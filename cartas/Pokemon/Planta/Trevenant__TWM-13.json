@@ -1,0 +1,60 @@
+{
+  "id": "TWM-13",
+  "nome": "Trevenant",
+  "nome_pt": "Trevenant",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Planta"
+  ],
+  "hp": 120,
+  "estagio": "Estágio 1",
+  "evolui_de": "Phantump",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Giga Drain",
+      "nome_pt": "Gigadreno",
+      "custo": [
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "50",
+      "texto": "Heal from this Pokémon the same amount of damage you did to your opponent's Active Pokémon.",
+      "texto_pt": "Cure deste Pokémon a mesma quantidade de dano que você causou ao Pokémon Ativo do seu oponente.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Forest Dump",
+      "nome_pt": "Floresta Entulhada",
+      "custo": [
+        "Planta",
+        "Planta",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-13",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

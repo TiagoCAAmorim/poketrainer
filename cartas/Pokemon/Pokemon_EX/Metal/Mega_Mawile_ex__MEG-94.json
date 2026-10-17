@@ -1,0 +1,69 @@
+{
+  "id": "MEG-94",
+  "nome": "Mega Mawile ex",
+  "nome_pt": "Mega Mawile ex",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Metal"
+  ],
+  "hp": 270,
+  "estagio": "Básico",
+  "evolui_de": null,
+  "pokemon_ex": true,
+  "mega": true,
+  "tera": false,
+  "fraqueza": "Fogo ×2",
+  "resistencia": "Planta -30",
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 3,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Gobble Down",
+      "nome_pt": "Engolidona",
+      "custo": [
+        "Metal",
+        "Metal"
+      ],
+      "dano": "80×",
+      "texto": "This attack does 80 damage for each Prize card you have taken.",
+      "texto_pt": "Este ataque causa 80 pontos de dano para cada carta de Prêmio que você pegou.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Huge Bite",
+      "nome_pt": "Dentadona",
+      "custo": [
+        "Metal",
+        "Metal",
+        "Incolor"
+      ],
+      "dano": "260",
+      "texto": "If your opponent's Active Pokémon already has any damage counters on it, this attack's base damage is 30.",
+      "texto_pt": "Se o Pokémon Ativo do seu oponente já tiver algum contador de dano nele, o dano base deste ataque será 30.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [
+    "Pokémon Mega Evolução ex: quando for Nocauteado, o oponente pega 3 cartas de Prêmio."
+  ],
+  "regulamento": "I",
+  "impressoes": [
+    {
+      "codigo": "MEG-94",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    },
+    {
+      "codigo": "MEG-162",
+      "colecao": "Mega Evolution",
+      "data": "2025-09-26"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Huge Bite: If your opponent's Active Pokémon already has any damage counters on it, this attack's base damage is 30."
+    ]
+  }
+}

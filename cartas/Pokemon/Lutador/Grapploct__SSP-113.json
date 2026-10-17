@@ -1,0 +1,61 @@
+{
+  "id": "SSP-113",
+  "nome": "Grapploct",
+  "nome_pt": "Grapploct",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 140,
+  "estagio": "Estágio 1",
+  "evolui_de": "Clobbopus",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Psíquico ×2",
+  "resistencia": null,
+  "recuo": 3,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Chop",
+      "nome_pt": "Trincar",
+      "custo": [
+        "Lutador"
+      ],
+      "dano": "40",
+      "texto": "",
+      "texto_pt": "",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Raging Tentacles",
+      "nome_pt": "Tentáculos Violentos",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "130",
+      "texto": "If this Pokémon has any damage counters on it, this attack can be used for Fighting.",
+      "texto_pt": "Se este Pokémon tiver algum contador de dano nele, este ataque poderá ser usado por Lutador.",
+      "simulador": "pendente"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-113",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "parcial",
+    "pendencias": [
+      "Ataque Raging Tentacles: If this Pokémon has any damage counters on it, this attack can be used for Fighting."
+    ]
+  }
+}

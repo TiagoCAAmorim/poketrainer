@@ -1,0 +1,30 @@
+{
+  "id": "SSP-177",
+  "nome": "Gravity Mountain",
+  "nome_pt": "Montanha da Gravidade",
+  "categoria": "Treinador",
+  "subtipo": "Estádio",
+  "ace_spec": false,
+  "texto": "Each Stage 2 Pokémon in play (both yours and your opponent's) gets -30 HP.",
+  "texto_pt": "Cada Pokémon Estágio 2 em jogo (seus e do seu oponente) recebe 30 PS a menos.",
+  "regras": [
+    "Estádio: só pode jogar 1 carta de Estádio por turno; fica em jogo até ser substituído."
+  ],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "SSP-177",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    },
+    {
+      "codigo": "SSP-250",
+      "colecao": "Surging Sparks",
+      "data": "2024-11-08"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}

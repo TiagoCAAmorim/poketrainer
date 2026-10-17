@@ -1,0 +1,57 @@
+{
+  "id": "TWM-100",
+  "nome": "Hisuian Arcanine",
+  "nome_pt": "Arcanine de Hisui",
+  "categoria": "Pokémon",
+  "tipo": [
+    "Lutador"
+  ],
+  "hp": 130,
+  "estagio": "Estágio 1",
+  "evolui_de": "Hisuian Growlithe",
+  "pokemon_ex": false,
+  "mega": false,
+  "tera": false,
+  "fraqueza": "Planta ×2",
+  "resistencia": null,
+  "recuo": 2,
+  "premios_ao_ser_nocauteado": 1,
+  "habilidades": [],
+  "ataques": [
+    {
+      "nome": "Proud Fangs",
+      "nome_pt": "Presas Orgulhosas",
+      "custo": [],
+      "dano": "30+",
+      "texto": "If your Benched Pokémon have any damage counters on them, this attack does 90 more damage.",
+      "texto_pt": "Se os seus Pokémon no Banco tiverem algum contador de dano neles, este ataque causará 90 pontos de dano a mais.",
+      "simulador": "implementada"
+    },
+    {
+      "nome": "Searing Flame",
+      "nome_pt": "Chama Cauterizante",
+      "custo": [
+        "Lutador",
+        "Lutador",
+        "Incolor"
+      ],
+      "dano": "90",
+      "texto": "Your opponent's Active Pokémon is now Burned.",
+      "texto_pt": "O Pokémon Ativo do seu oponente agora está Queimado.",
+      "simulador": "implementada"
+    }
+  ],
+  "regras": [],
+  "regulamento": "H",
+  "impressoes": [
+    {
+      "codigo": "TWM-100",
+      "colecao": "Twilight Masquerade",
+      "data": "2024-05-24"
+    }
+  ],
+  "simulador": {
+    "status": "implementada",
+    "pendencias": []
+  }
+}
