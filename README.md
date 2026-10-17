@@ -4,6 +4,7 @@ Formato: **Padrão TEF–30C** (marcas de regulamento H, I e J) — 2.083 cartas
 
 - **[INSTALACAO.md](INSTALACAO.md)** — passo a passo para deixar funcionando no computador e testes a rodar
 - **[PLANO.md](PLANO.md)** — plano completo, o que está pronto e os próximos passos
+- **[DECKS.md](DECKS.md)** — importar, limpar (fora da rotação), alterar e criar decks
 
 ## Estrutura
 
