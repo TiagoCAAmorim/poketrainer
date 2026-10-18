@@ -1105,23 +1105,30 @@ def test_tools_that_grant_attacks_and_badge_and_valley():
     assert 'confused' in me(g).active.conditions
 
 
-def test_backtrack_badge_rerolls_once():
+def test_backtrack_badge_rerolls_all_flips_once():
+    """Compendium (ruling 2416): o Badge refaz TODAS as moedas do ataque, e 1x por turno."""
+    from ptcg.core import AttackCtx
+    from ptcg.effects.compiler import attack_impl_from_text
     g = new_game()
     board(g, 0, 'POR-67', tools={0: ['Backtrack Badge']}, prizes=6)
     board(g, 1, 'Dreepy', prizes=6)
     at_turn(g)
-    from ptcg.effects.compiler import Exec, compile_sentence
-    E = Exec(g, 0, slot=me(g).active, ctx=SimpleNamespace(attacker=me(g).active, player=0))
-    fix_flips(g, False, True)
-    step = compile_sentence('Flip a coin')[0][1]
-    gen = step(E)
-    x = next(gen)                               # pergunta do Badge
-    assert 'Backtrack' in x.text
+    atk = me(g).active.d.attacks[0]
+    im = attack_impl_from_text('Flip 2 coins. This attack does 30 damage for each heads.')
+    ctx = AttackCtx(g, 0, me(g).active, opp(g).active, atk)
+    ctx.damage = 0
+    seq = [False, False, True, True]               # 1ª jogada: 0 caras; refeita: 2 caras
+    n = []
+    g.flip = lambda who=None: (n.append(1), seq.pop(0))[1]
+    gen = im.pre(g, ctx)
+    x = next(gen)                                   # pergunta do Badge depois de TODAS as moedas
+    assert 'Backtrack' in x.text and len(n) == 2
     try:
         gen.send(x.options[0])
     except StopIteration:
         pass
-    assert E.data['heads'] is True
+    assert len(n) == 4 and ctx.damage == 60
+    assert any(k.startswith('Backtrack Badge') for k in me(g).ability_keys)
 
 
 if __name__ == '__main__':

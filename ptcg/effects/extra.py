@@ -3117,14 +3117,16 @@ def _(m):
     return None
 
 
-def maybe_reroll(E, redo):
-    """Backtrack Badge: depois de jogar moedas de um ataque, 1x por turno pode ignorar o resultado e jogar de novo."""
+def maybe_reroll(E):
+    """Backtrack Badge: depois de jogar as moedas de um ataque, 1x por turno pode ignorar TODOS os resultados e jogar de novo.
+    Devolve True se aceitou (quem chama refaz a fase 'pre'). Não vale para moedas fora do ataque (ex.: Confusão)."""
     if E.ctx is None or E.slot is None or not E.g.has_type(E.slot, 'C'):
-        return
+        return False
     badge = next((t for t in E.slot.tools if t.name == 'Backtrack Badge'), None)
     key = f'Backtrack Badge:{badge.uid}' if badge is not None else None
     if badge is None or key in E.me.ability_keys:
-        return
+        return False
     if (yield from E.g.yes_no(E.p, 'Backtrack Badge: ignorar as moedas e jogar de novo?', source=badge)):
         E.me.ability_keys.add(key)
-        redo(E)
+        return True
+    return False

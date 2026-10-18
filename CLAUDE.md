@@ -72,9 +72,8 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
   de zona devem colocá-las em `limbo` (invariante de 60 cartas).
   Todos os Treinadores/Ferramentas/Estádios/Energias e os 12 decks fixos de `decks/tests/` (usados por `tests/test_engine.py`) estão 100%.
   `decks/limitless/` é local (gitignore): importe com `import_limitless.py` e limpe com `limpar_decks.py`; guia em `DECKS.md`.
-- Replays: 4/4 logs de exemplo reproduzidos por completo. No log slowking-vs-beedrill o TCG Live deu 300 de dano
-  com Metallic Hammer copiado por Seek Inspiration sem descartar Energias Metal (suspeita de bug do cliente);
-  o replay ajusta o dano ao log e anota.
+- Replays: 4/4 logs de exemplo reproduzidos por completo, sem ajuste de dano. (Slowking copiando Metallic Hammer dá 300 sem
+  Energia Metal: é o ruling oficial do Compendium, já implementado no padrão "You may discard N Energy ... more damage".)
 - PyTorch não foi testado (o ambiente anterior não conseguia instalar torch); `ptcg/ai/` pode precisar de ajustes.
 
 ## Próximos passos
@@ -107,6 +106,8 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
   `python gerenciar_logs.py corrigir <ID> --nota "o que mudou"`. Consultar: `problemas [abertos|corrigidos|todos]`, `problema <ID>`.
 
 ## Convenções
+- **Dúvidas de regra/implementação de uma carta**: consulte o Compendium do Pokégym
+  (`https://compendium.pokegym.net/category/3-attacks/<ataque>/`; há categorias por tipo de carta) antes de supor bug do cliente.
 - **Mantenha `PLANO.md` atualizado** (status das fases, números de cobertura, próximos passos) ao concluir uma etapa;
   `INSTALACAO.md` é o guia de instalação/testes do usuário — atualize se comandos ou resultados esperados mudarem.
 - Não reescrever arquivos gerados à mão: `cartas/` vem de `tools/export_cartas.py`; `ptcg/data/*.json` de `tools/`.

@@ -26,6 +26,7 @@ class Exec:
         self.slot = slot if slot is not None else (ctx.attacker if ctx is not None else None)
         self.card = card if card is not None else (self.slot.top if self.slot is not None else None)
         self.data = {}
+        self.flipped = False   # algum passo de moeda já rodou (Backtrack Badge refaz todas ao fim da fase 'pre')
 
     @property
     def opp(self):
@@ -397,7 +398,9 @@ def _(m):
 
     def step(E):
         flip_(E)
-        yield from extra.maybe_reroll(E, flip_)
+        E.flipped = True
+        if False:
+            yield
     step.est = lambda E, d: (E.data.update(heads=True, heads_n=0.5, tails_n=0.5) or d)
     return step
 
@@ -414,7 +417,9 @@ def _(m):
 
     def step(E):
         flip_(E)
-        yield from extra.maybe_reroll(E, flip_)
+        E.flipped = True
+        if False:
+            yield
     step.est = lambda E, d: (E.data.update(heads_n=n / 2, tails_n=n / 2, heads=True) or d)
     return step
 
@@ -428,7 +433,9 @@ def _(m):
 
     def step(E):
         flip_(E)
-        yield from extra.maybe_reroll(E, flip_)
+        E.flipped = True
+        if False:
+            yield
     step.est = lambda E, d: (E.data.update(heads_n=1, heads=True) or d)
     return step
 
@@ -442,6 +449,9 @@ def _(m):
         h = E.g.flips(n)
         E.data['heads_n'] = h
         E.data['tails_n'] = n - h
+        E.flipped = True
+        if False:
+            yield
     step.est = lambda E, d: (E.data.update(heads_n=cnt(E) / 2) or d)
     return step
 
@@ -1310,12 +1320,18 @@ def _(m):
     def step(E):
         s = E.slot
         cands = [e for e in s.energy if ok(e)]
-        if len(cands) < k:
+        # Ruling (Compendium, Metallic Hammer via Seek Inspiration): o "pode descartar" vale mesmo sem Energias
+        # suficientes -- descarta quantas puder (até k) e o dano extra continua. Só "devolver à mão" exige a Energia.
+        n = min(k, len(cands)) if discard else k
+        if discard and not cands:      # sem custo nenhum: o bônus é sempre vantajoso, não pergunta
+            E.ctx.damage += bonus
             return
-        if not (yield from E.g.yes_no(E.p, f'{"Descartar" if discard else "Devolver"} {k} Energia(s) para +{bonus} de dano?',
+        if len(cands) < n or (not discard and not cands):
+            return
+        if not (yield from E.g.yes_no(E.p, f'{"Descartar" if discard else "Devolver"} {n} Energia(s) para +{bonus} de dano?',
                                       source=E.card)):
             return
-        got = yield from E.g.choose_cards(E.p, cands, k, k, 'pick', 'Energias', E.card, key=lambda c: c.uid)
+        got = (yield from E.g.choose_cards(E.p, cands, n, n, 'pick', 'Energias', E.card, key=lambda c: c.uid)) if n else []
         if discard:
             E.g.discard_energy(s, got, E.ctx)
         else:
@@ -1653,10 +1669,21 @@ def attack_impl_from_text(text) -> AttackImpl:
     def run_pre(g, ctx):
         E = Exec(g, ctx.player, ctx=ctx)
         ctx.data['E'] = E
-        for f in pre:
-            yield from run(f(E))
-            if ctx.no_damage:
-                break
+
+        def passo():
+            for f in pre:
+                yield from run(f(E))
+                if ctx.no_damage:
+                    break
+        snap = (ctx.damage, ctx.no_damage, dict(E.data))
+        yield from passo()
+        # Backtrack Badge (ruling 2416): refaz TODAS as moedas do ataque, não só uma
+        if E.flipped and (yield from extra.maybe_reroll(E)):
+            ctx.damage, ctx.no_damage = snap[0], snap[1]
+            E.data.clear()
+            E.data.update(snap[2])
+            E.flipped = False
+            yield from passo()
 
     def run_post(g, ctx):
         E = ctx.data.get('E') or Exec(g, ctx.player, ctx=ctx)

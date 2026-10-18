@@ -263,7 +263,7 @@ def _(d, ab):
 def _(d, ab):
     return AbilityImpl(kind='passive', hooks={'ability_blocked': lambda g, src, slot, ability:
                                               True if g.is_active(src.slot) and slot.d.rule_box and
-                                              'future' not in slot.d.tags else None})
+                                              'future' not in slot.d.tags and ability.name != 'Luminous Wing' else None})
 
 
 @ability('Midnight Fluttering')
