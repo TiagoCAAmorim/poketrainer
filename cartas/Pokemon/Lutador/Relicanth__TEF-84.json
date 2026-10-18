@@ -22,7 +22,7 @@
       "nome_pt": "Mergulho na Memória",
       "texto": "Each of your evolved Pokémon can use any attack from its previous Evolutions. (You still need the necessary Energy to use each attack.)",
       "texto_pt": "Cada um dos seus Pokémon evoluídos pode usar qualquer ataque de suas Evoluções anteriores. (Você ainda precisa da Energia necessária para usar cada ataque.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Memory Dive: Each of your evolved Pokémon can use any attack from its previous Evolutions."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

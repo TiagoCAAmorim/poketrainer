@@ -28,7 +28,7 @@
       "dano": "30+",
       "texto": "If this Pokémon and your opponent's Active Pokémon have the same amount of Energy attached, this attack does 100 more damage.",
       "texto_pt": "Se este Pokémon e o Pokémon Ativo do seu oponente tiverem a mesma quantidade de Energia ligada a eles, este ataque causará 100 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Brave Bird",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Precise Beak: If this Pokémon and your opponent's Active Pokémon have the same amount of Energy attached, this attack does 100 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

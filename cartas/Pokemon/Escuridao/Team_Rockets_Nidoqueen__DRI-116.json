@@ -27,7 +27,7 @@
       "dano": "60+",
       "texto": "If a Pokémon that has \"Nidoking\" in its name is on your Bench, this attack does 120 more damage.",
       "texto_pt": "Se um Pokémon que tiver \"Nidoking\" em seu nome estiver no seu Banco, este ataque causará 120 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Mega Kick",
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Love Impact: If a Pokémon that has \"Nidoking\" in its name is on your Bench, this attack does 120 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

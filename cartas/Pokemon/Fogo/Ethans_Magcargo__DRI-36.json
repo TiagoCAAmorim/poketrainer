@@ -37,7 +37,7 @@
       "dano": "70×",
       "texto": "Discard up to 5 Fire Energy from this Pokémon. This attack does 70 damage for each card you discarded in this way.",
       "texto_pt": "Descarte até 5 Energias Fogo deste Pokémon. Este ataque causa 70 pontos de dano para cada carta descartada desta forma.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -60,9 +60,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Lava Burst: Discard up to 5 Fire Energy from this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -22,7 +22,7 @@
       "nome_pt": "Asa Ancestral",
       "texto": "Once during your turn, if this Pokémon is in the Active Spot, you may devolve 1 of your opponent's evolved Pokémon by putting the highest Stage Evolution card on it into your opponent's hand.",
       "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no Campo Ativo, você poderá reverter a evolução de 1 dos Pokémon evoluídos do seu oponente colocando a carta de Evolução de Estágio mais alto sobre ele na mão do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Ancient Wing: Devolve 1 of your opponent's evolved Pokémon by putting the highest Stage Evolution card on it into your opponent's hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

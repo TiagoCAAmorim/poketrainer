@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Look at the top card of your opponent's deck. You may have your opponent shuffle their deck.",
       "texto_pt": "Olhe a carta de cima do baralho do seu oponente. Você pode fazer com que o seu oponente embaralhe o baralho dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Peck",
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Mischievous Tentacles: Look at the top card of your opponent's deck.; You may have your opponent shuffle their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

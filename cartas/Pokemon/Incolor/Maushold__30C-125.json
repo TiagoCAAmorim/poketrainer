@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Flip a coin for each Maushold you have in play. For each heads, discard the top 2 cards of your opponent's deck.",
       "texto_pt": "Jogue uma moeda para cada Maushold que você tem em jogo. Para cada cara, descarte as 2 cartas de cima do baralho do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Pound",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Gnaw Together: Flip a coin for each Maushold you have in play.; For each heads, discard the top 2 cards of your opponent's deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

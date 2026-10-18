@@ -27,7 +27,7 @@
       "dano": "220",
       "texto": "Discard 4 Basic Fire Energy cards from your hand. If you can't discard 4 cards in this way, this attack does nothing.",
       "texto_pt": "Descarte 4 cartas de Energia Fogo Básica da sua mão. Se você não puder descartar 4 cartas desta forma, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -45,9 +45,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Infernal Slash: Discard 4 Basic Fire Energy cards from your hand.; If you can't discard 4 cards in this way, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

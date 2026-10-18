@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "Choose 2 of your opponent's Pokémon and put 3 damage counters on each of them.",
       "texto_pt": "Escolha 2 dos Pokémon do seu oponente e coloque 3 contadores de dano em cada um deles.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Ghostly Trip",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Mischievous Hands: Choose 2 of your opponent's Pokémon and put 3 damage counters on each of them."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

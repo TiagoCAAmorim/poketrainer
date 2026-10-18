@@ -39,7 +39,7 @@
       "dano": "60+",
       "texto": "If any of your Benched Cubone have any damage counters on them, this attack does 120 more damage.",
       "texto_pt": "Se algum dos seus Cubone no Banco tiver algum contador de dano nele, este ataque causará 120 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Bone Vengeance: If any of your Benched Cubone have any damage counters on them, this attack does 120 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

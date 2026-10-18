@@ -28,7 +28,7 @@
       "dano": "80",
       "texto": "During your opponent's next turn, if they attach an Energy card from their hand to the Defending Pokémon, their turn ends.",
       "texto_pt": "Durante o próximo turno do seu oponente, se ele ligar uma carta de Energia da mão dele ao Pokémon Defensor, o turno dele acabará.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Daydream: During your opponent's next turn, if they attach an Energy card from their hand to the Defending Pokémon, their turn ends."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -27,7 +27,7 @@
       "dano": "10",
       "texto": "The Defending Pokémon's Weakness is now Lightning until the end of your next turn. (Apply Weakness as x2.)",
       "texto_pt": "A Fraqueza do Pokémon Defensor agora é Lightning até o final do seu próximo turno. (Aplique Fraqueza de ×2.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Overwriting Bolt: The Defending Pokémon's Weakness is now Lightning until the end of your next turn."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

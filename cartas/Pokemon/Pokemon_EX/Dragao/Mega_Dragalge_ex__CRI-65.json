@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "Discard all Pokémon Tools and Special Energy from all of your opponent's Pokémon.",
       "texto_pt": "Descarte todas as Ferramentas Pokémon e Energias Especiais de todos os Pokémon do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Pernicious Poison",
@@ -40,7 +40,7 @@
       "dano": "—",
       "texto": "Your opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1.",
       "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado. Durante o Checape Pokémon, coloque 16 contadores de dano em vez de 1 naquele Pokémon.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -65,10 +65,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Corrosive Liquid: Discard all Pokémon Tools and Special Energy from all of your opponent's Pokémon.",
-      "Ataque Pernicious Poison: During Pokémon Checkup, place 16 damage counters on that Pokémon instead of 1."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

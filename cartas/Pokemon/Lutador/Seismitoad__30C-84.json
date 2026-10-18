@@ -27,7 +27,7 @@
       "dano": "60",
       "texto": "During your opponent's next turn, whenever they try to use a Trainer card from their hand, they flip a coin. If tails, your opponent discards that Trainer card instead of using it.",
       "texto_pt": "Durante o próximo turno do seu oponente, sempre que ele tentar usar uma carta de Treinador da mão dele, ele jogará uma moeda. Se sair coroa, seu oponente descartará aquela carta de Treinador em vez de usá-la.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Mega Punch",
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Quaking Fist: During your opponent's next turn, whenever they try to use a Trainer card from their hand, they flip a coin.; If tails, your opponent discards that Trainer card instead of using it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

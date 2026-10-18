@@ -22,7 +22,7 @@
       "nome_pt": "Queda Desconcertante",
       "texto": "During your opponent's turn, if this Pokémon is discarded from your deck by an effect of an attack or Ability from your opponent's Pokémon, or by an effect of your opponent's Item or Supporter cards, discard the top 8 cards of your opponent's deck.",
       "texto_pt": "Durante o turno do seu oponente, se este Pokémon for descartado do seu baralho pelo efeito de um ataque ou Habilidade dos Pokémon do seu oponente, ou pelo efeito das cartas de Item ou Apoiador do seu oponente, descarte as 8 cartas de cima do baralho do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Startling Drop: During your opponent's turn, if this Pokémon is discarded from your deck by an effect of an attack or Ability from your opponent's Pokémon, or by an effect of your opponent's Item or Supporter cards, discard the top 8 cards of your opponent's deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

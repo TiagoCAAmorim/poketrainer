@@ -41,7 +41,7 @@
       "dano": "—",
       "texto": "Flip a coin. If heads, Knock Out your opponent's Active Basic Pokémon. If tails, Knock Out 1 of your opponent's Benched Basic Pokémon.",
       "texto_pt": "Jogue uma moeda. Se sair cara, Nocauteie o Pokémon Básico Ativo do seu oponente. Se sair coroa, Nocauteie 1 dos Pokémon Básicos no Banco do seu oponente.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -72,9 +72,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Swinging Sphene: If heads, Knock Out your opponent's Active Basic Pokémon.; If tails, Knock Out 1 of your opponent's Benched Basic Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

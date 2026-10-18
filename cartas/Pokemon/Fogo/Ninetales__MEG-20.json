@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Discard the top card of your deck, and if that card is a Supporter card, use the effect of that card as the effect of this attack.",
       "texto_pt": "Descarte a carta de cima do seu baralho e, se aquela carta for uma carta de Apoiador, use o efeito daquela carta como o efeito deste ataque.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Combustion",
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Supernatural Shapeshifter: Discard the top card of your deck, and if that card is a Supporter card, use the effect of that card as the effect of this attack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

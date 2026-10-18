@@ -41,7 +41,7 @@
       "dano": "90×",
       "texto": "Flip 2 coins. This attack does 90 damage for each heads. If either of them is heads, your opponent's Active Pokémon is now Paralyzed.",
       "texto_pt": "Jogue 2 moedas. Este ataque causa 90 pontos de dano para cada cara. Se qualquer uma delas sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -59,9 +59,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Double Freeze: If either of them is heads, your opponent's Active Pokémon is now Paralyzed."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

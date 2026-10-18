@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "Choose 1 of your opponent's Active Pokémon's attacks. During your opponent's next turn, that Pokémon can't use that attack.",
       "texto_pt": "Escolha 1 dos ataques do Pokémon Ativo do seu oponente. Durante o próximo turno do seu oponente, aquele Pokémon não poderá usar aquele ataque.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Power Tackle",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Torment: Choose 1 of your opponent's Active Pokémon's attacks.; During your opponent's next turn, that Pokémon can't use that attack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

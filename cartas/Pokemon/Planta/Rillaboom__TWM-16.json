@@ -27,7 +27,7 @@
       "dano": "60",
       "texto": "During your opponent's next turn, attacks used by the Defending Pokémon cost Colorless more, and its Retreat Cost is Colorless more.",
       "texto_pt": "Durante o próximo turno do seu oponente, os ataques usados pelo Pokémon Defensor custarão Incolor a mais e o seu custo de Recuo será Incolor a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Wood Hammer",
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Drum Beating: During your opponent's next turn, attacks used by the Defending Pokémon cost Colorless more, and its Retreat Cost is Colorless more."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

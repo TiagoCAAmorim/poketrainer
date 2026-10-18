@@ -27,7 +27,7 @@
       "dano": "50×",
       "texto": "This attack does 50 damage for each of your Pokémon that has any damage counters on it.",
       "texto_pt": "Este ataque causa 50 pontos de dano para cada um dos seus Pokémon que tem algum contador de dano nele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Guard Claw",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Angry Slam: This attack does 50 damage for each of your Pokémon that has any damage counters on it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

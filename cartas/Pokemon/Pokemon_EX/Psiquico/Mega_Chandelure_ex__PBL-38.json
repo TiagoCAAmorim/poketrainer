@@ -36,7 +36,7 @@
       "dano": "130+",
       "texto": "This attack does 50 more damage for each Colorless in your opponent's Active Pokémon's Retreat Cost.",
       "texto_pt": "Este ataque causa 50 pontos de dano a mais para cada Incolor no Custo de Recuo do Pokémon Ativo do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Phantom Maze: This attack does 50 more damage for each Colorless in your opponent's Active Pokémon's Retreat Cost."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

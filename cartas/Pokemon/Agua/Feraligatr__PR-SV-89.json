@@ -22,7 +22,7 @@
       "nome_pt": "Âmago Torrencial",
       "texto": "Once during your turn, you may put 5 damage counters on this Pokémon. If you do, during this turn, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
       "texto_pt": "Uma vez durante o seu turno, você poderá colocar 5 contadores de dano neste Pokémon. Se fizer isto, durante este turno, os ataques usados por este Pokémon causarão 120 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Torrential Heart: Put 5 damage counters on this Pokémon.; If you do, during this turn, attacks used by this Pokémon do 120 more damage to your opponent's Active Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

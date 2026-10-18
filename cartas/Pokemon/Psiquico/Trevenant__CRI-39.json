@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "During your opponent's next turn, Energy can't be attached from your opponent's hand to the Defending Pokémon.",
       "texto_pt": "Durante o próximo turno do seu oponente, Energias não poderão ser ligadas da mão do seu oponente ao Pokémon Defensor.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Overwhelming Pain",
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Cursed Roots: During your opponent's next turn, Energy can't be attached from your opponent's hand to the Defending Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

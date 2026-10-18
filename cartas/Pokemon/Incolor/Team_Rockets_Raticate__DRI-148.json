@@ -27,7 +27,7 @@
       "dano": "90",
       "texto": "Flip 2 coins. If both of them are tails, this Pokémon also does 90 damage to itself.",
       "texto_pt": "Jogue 2 moedas. Se as duas saírem coroa, este Pokémon também causará 90 pontos de dano a si mesmo.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -45,9 +45,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Reckless Abandon: If both of them are tails, this Pokémon also does 90 damage to itself."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

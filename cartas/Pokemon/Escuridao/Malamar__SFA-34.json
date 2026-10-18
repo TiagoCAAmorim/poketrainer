@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. If you do, this attack does 120 damage to the new Active Pokémon. If you didn't play Xerosic's Machinations from your hand during this turn, this attack does nothing.",
       "texto_pt": "Mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo. Se fizer isto, este ataque causará 120 pontos de dano ao novo Pokémon Ativo. Se você não jogou Tramoias do Xerosic da sua mão durante este turno, este ataque não fará nada.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Spinning Attack",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Colluding Tentacles: If you didn't play Xerosic's Machinations from your hand during this turn, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

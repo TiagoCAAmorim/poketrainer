@@ -36,7 +36,7 @@
       "dano": "90",
       "texto": "Move a Water Energy from this Pokémon to 1 of your Benched Pokémon.",
       "texto_pt": "Mova uma Energia Água deste Pokémon para 1 dos seus Pokémon no Banco.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Cold Cyclone: Move a Water Energy from this Pokémon to 1 of your Benched Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

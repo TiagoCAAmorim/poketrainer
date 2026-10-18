@@ -22,7 +22,7 @@
       "nome_pt": "Lavagem",
       "texto": "As often as you like during your turn, you may use this Ability. Move a Water Energy from 1 of your Benched Pokémon to your Active Pokémon.",
       "texto_pt": "Quantas vezes desejar durante o seu turno, você poderá usar esta Habilidade. Mova uma Energia Água de 1 dos seus Pokémon no Banco para o seu Pokémon Ativo.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Wash Out: Move a Water Energy from 1 of your Benched Pokémon to your Active Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

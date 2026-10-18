@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Choose 1 of your opponent's Pokémon 6 times. (You can choose the same Pokémon more than once.) For each time you chose a Pokémon, do 20 damage to it. This damage isn't affected by Weakness or Resistance.",
       "texto_pt": "Escolha 1 dos Pokémon do seu oponente 6 vezes. (Você pode escolher o mesmo Pokémon mais de uma vez). Para cada vez que você escolher um Pokémon, cause 20 pontos de dano a ele. Este dano não é afetado por Fraqueza ou Resistência.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Aroma Shot",
@@ -60,9 +60,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Oil Salvo: Choose 1 of your opponent's Pokémon 6 times.; For each time you chose a Pokémon, do 20 damage to it.; This damage isn't affected by Weakness or Resistance."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

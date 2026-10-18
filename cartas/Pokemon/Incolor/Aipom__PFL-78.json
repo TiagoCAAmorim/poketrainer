@@ -28,7 +28,7 @@
       "dano": "20",
       "texto": "Choose a random card from your opponent's hand, and your opponent reveals that card and shuffles it into their deck.",
       "texto_pt": "Escolha uma carta aleatória da mão do seu oponente, e seu oponente revela aquela carta e a embaralha no baralho dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Astonish: Choose a random card from your opponent's hand, and your opponent reveals that card and shuffles it into their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -28,7 +28,7 @@
       "dano": "60+",
       "texto": "You may discard up to 2 Basic Energy from your Benched Pokémon. This attack does 90 more damage for each card you discarded in this way.",
       "texto_pt": "Você pode descartar até 2 Energias Básicas dos seus Pokémon no Banco. Este ataque causa 90 pontos de dano a mais para cada carta descartada desta forma.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Dravite",
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Flashing Spear: You may discard up to 2 Basic Energy from your Benched Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

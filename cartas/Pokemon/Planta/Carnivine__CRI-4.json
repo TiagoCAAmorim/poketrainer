@@ -29,7 +29,7 @@
       "dano": "80+",
       "texto": "If your opponent's Active Pokémon has no Retreat Cost, this attack does 80 more damage.",
       "texto_pt": "Se o Pokémon Ativo do seu oponente não tiver Custo de Recuo, este ataque causará 80 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Chomp Whole: If your opponent's Active Pokémon has no Retreat Cost, this attack does 80 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

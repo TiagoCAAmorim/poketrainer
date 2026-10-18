@@ -22,7 +22,7 @@
       "nome_pt": "Reunir Provas",
       "texto": "Once during your turn, you may use this Ability. Switch a card from your hand with the top card of your deck.",
       "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Troque uma carta da sua mão pela carta de cima do seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Evidence Gathering: Switch a card from your hand with the top card of your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

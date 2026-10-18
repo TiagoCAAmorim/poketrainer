@@ -22,7 +22,7 @@
       "nome_pt": "Luz Cativante",
       "texto": "Once during your turn, you may have each player draw a card.",
       "texto_pt": "Uma vez durante o seu turno, você poderá fazer com que cada jogador compre uma carta.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Alluring Light: Have each player draw a card."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

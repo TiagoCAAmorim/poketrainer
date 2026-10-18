@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Discard all Special Energy from all of your opponent's Pokémon.",
       "texto_pt": "Descarte todas as Energias Especiais de todos os Pokémon do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Black Blaze Slash",
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Cursed Edge: Discard all Special Energy from all of your opponent's Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

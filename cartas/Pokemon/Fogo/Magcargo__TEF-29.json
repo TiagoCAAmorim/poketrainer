@@ -22,7 +22,7 @@
       "nome_pt": "Zona de Lava",
       "texto": "Whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Burned.",
       "texto_pt": "Sempre que o Pokémon Ativo do seu oponente for movido para o Banco durante o turno dele, o novo Pokémon Ativo dele agora estará Queimado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Lava Zone: Whenever your opponent's Active Pokémon moves to the Bench during their turn, their new Active Pokémon is now Burned."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

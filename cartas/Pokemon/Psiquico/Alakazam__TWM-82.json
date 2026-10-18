@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Your opponent's Active Pokémon is now Confused. You may move any number of damage counters from your opponent's Pokémon to their other Pokémon in any way you like.",
       "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso. Você pode mover qualquer número de contadores de dano dos Pokémon do seu oponente para os outros Pokémon dele como desejar.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Psychic",
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Strange Hacking: You may move any number of damage counters from your opponent's Pokémon to their other Pokémon in any way you like."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

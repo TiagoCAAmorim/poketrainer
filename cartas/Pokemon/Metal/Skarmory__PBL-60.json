@@ -27,7 +27,7 @@
       "dano": "40×",
       "texto": "Discard up to 2 Basic Metal Energy cards from your hand, and this attack does 40 damage for each card you discarded in this way.",
       "texto_pt": "Descarte até 2 cartas de Energia Metal Básica da sua mão, e este ataque causa 40 pontos de dano para cada carta descartada desta forma.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Steel Cutter: Discard up to 2 Basic Metal Energy cards from your hand, and this attack does 40 damage for each card you discarded in this way."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

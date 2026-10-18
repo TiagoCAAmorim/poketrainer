@@ -27,7 +27,7 @@
       "dano": "40",
       "texto": "If your opponent has a Stadium in play, discard it. If you do, your opponent can't play any Stadium cards from their hand during their next turn.",
       "texto_pt": "Se o seu oponente tiver um Estádio em jogo, descarte-o. Se fizer isso, seu oponente não poderá jogar nenhuma carta de Estádio da mão dele durante o próximo turno dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Scorching Earth: If your opponent has a Stadium in play, discard it.; If you do, your opponent can't play any Stadium cards from their hand during their next turn."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

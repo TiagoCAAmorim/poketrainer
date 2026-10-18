@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Look at the top 9 cards of your deck, and you may put any number of Pokémon you find there onto your Bench. Shuffle the other cards back into your deck.",
       "texto_pt": "Olhe as 9 cartas de cima do seu baralho, e você pode colocar qualquer número de Pokémon que você encontrar lá no seu Banco. Embaralhe as outras cartas de volta no seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Eerie Glow",
@@ -55,9 +55,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Trick Portal: Look at the top 9 cards of your deck, and you may put any number of Pokémon you find there onto your Bench."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

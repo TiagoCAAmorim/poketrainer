@@ -27,7 +27,7 @@
       "dano": "60+",
       "texto": "If this Pokémon is Burned or Poisoned, this attack does 100 more damage.",
       "texto_pt": "Se este Pokémon estiver Envenenado ou Queimado, este ataque causará 100 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Feathery Strike",
@@ -40,7 +40,7 @@
       "dano": "150",
       "texto": "Discard 2 Energy from this Pokémon, and this attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
       "texto_pt": "Descarte 2 Energias deste Pokémon, e este ataque também causa 50 pontos de dano a 1 dos Pokémon no Banco do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -58,10 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Facade: If this Pokémon is Burned or Poisoned, this attack does 100 more damage.",
-      "Ataque Feathery Strike: Discard 2 Energy from this Pokémon, and this attack also does 50 damage to 1 of your opponent's Benched Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

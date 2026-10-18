@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Until the end of your next turn, the Defending Pokémon's Weakness is now Colorless. (The amount of Weakness doesn't change.)",
       "texto_pt": "Até o final do seu próximo turno, a Fraqueza do Pokémon Defensor será Incolor. (A quantidade de Fraqueza não muda.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Smack",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Now You're in My Power: Until the end of your next turn, the Defending Pokémon's Weakness is now Colorless."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

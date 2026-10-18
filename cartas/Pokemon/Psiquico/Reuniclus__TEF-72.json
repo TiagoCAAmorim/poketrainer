@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Look at the top 8 cards of your deck. You may put any number of Pokémon you find there onto your Bench. Shuffle the other cards back into your deck.",
       "texto_pt": "Olhe as 8 cartas de cima do seu baralho. Você pode colocar qualquer número de Pokémon que encontrar lá no seu Banco. Embaralhe as outras cartas de volta no seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Brain Shake",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Summoning Gate: Look at the top 8 cards of your deck.; You may put any number of Pokémon you find there onto your Bench."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -22,7 +22,7 @@
       "nome_pt": "Camuflagem de Neve",
       "texto": "Whenever your opponent plays an Item or Supporter card from their hand, prevent all effects of that card done to this Pokémon.",
       "texto_pt": "Sempre que seu oponente jogar uma carta de Item ou de Apoiador da mão dele, previna todos os efeitos daquela carta causados a este Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Snow Camouflage: Whenever your opponent plays an Item or Supporter card from their hand, prevent all effects of that card done to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

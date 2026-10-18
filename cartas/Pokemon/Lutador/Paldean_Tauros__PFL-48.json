@@ -27,7 +27,7 @@
       "dano": "40×",
       "texto": "This attack does 40 damage for each of your Pokémon that has \"Tauros\" in its name that has any damage counters on it.",
       "texto_pt": "Este ataque causa 40 pontos de dano para cada um dos seus Pokémon que tem \"Tauros\" em seu nome que tiver algum contador de dano nele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Double-Edge",
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Raging Charge: This attack does 40 damage for each of your Pokémon that has \"Tauros\" in its name that has any damage counters on it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

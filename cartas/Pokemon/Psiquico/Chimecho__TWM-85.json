@@ -39,7 +39,7 @@
       "dano": "—",
       "texto": "Shuffle 1 of your Benched Pokémon and all attached cards into your deck.",
       "texto_pt": "Embaralhe 1 dos seus Pokémon no Banco e todas as cartas ligadas a ele no seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Homeward Chime: Shuffle 1 of your Benched Pokémon and all attached cards into your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

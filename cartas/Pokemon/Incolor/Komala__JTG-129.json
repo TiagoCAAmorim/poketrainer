@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "Both Active Pokémon are now Asleep. During your next turn, attacks used by this Pokémon do 100 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).",
       "texto_pt": "Ambos os Pokémon Ativos agora estão Adormecidos. Durante o seu próximo turno, os ataques usados por este Pokémon causarão 100 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência).",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Slumbering Smack: Both Active Pokémon are now Asleep."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

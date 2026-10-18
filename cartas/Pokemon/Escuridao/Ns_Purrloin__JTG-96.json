@@ -28,7 +28,7 @@
       "dano": "30",
       "texto": "Your opponent reveals their hand, and you choose a card you find there and put it on the bottom of their deck.",
       "texto_pt": "Seu oponente revela a mão dele, e você escolhe uma carta que encontrar lá e a coloca como a carta de baixo do baralho dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Thieving Swipe: Your opponent reveals their hand, and you choose a card you find there and put it on the bottom of their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

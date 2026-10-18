@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "At the end of your opponent's next turn, discard the Defending Pokémon and all attached cards.",
       "texto_pt": "No final do próximo turno do seu oponente, descarte o Pokémon Defensor e todas as cartas ligadas a ele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Corrosive Sludge: At the end of your opponent's next turn, discard the Defending Pokémon and all attached cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

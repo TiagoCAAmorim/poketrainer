@@ -22,7 +22,7 @@
       "nome_pt": null,
       "texto": "If your Wishiwashi or Wishiwashi ex is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if your Pokémon is Knocked Out), place 3 damage counters on the Attacking Pokémon.",
       "texto_pt": null,
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Counterattack Grouping: If your Wishiwashi or Wishiwashi ex is in the Active Spot and is damaged by an attack from your opponent's Pokémon, place 3 damage counters on the Attacking Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "If you have exactly 1 Prize card remaining, your opponent's Active Pokémon is now Paralyzed.",
       "texto_pt": "Se você tiver exatamente 1 carta de Prêmio restante, o Pokémon Ativo do seu oponente agora estará Paralisado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Electrifying Chance: If you have exactly 1 Prize card remaining, your opponent's Active Pokémon is now Paralyzed."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

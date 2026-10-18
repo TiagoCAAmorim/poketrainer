@@ -41,7 +41,7 @@
       "dano": "120",
       "texto": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Ancient Pokémon.",
       "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a este Pokémon por ataques de Pokémon Ancestrais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Anachronism Repulsor: During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Ancient Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

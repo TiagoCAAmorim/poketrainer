@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "If you have 13 or more Pokémon that have the Hide 'n' Sneak Ability in your discard pile, choose 2 of your opponent's Pokémon and quadruple the number of damage counters on each of them.",
       "texto_pt": "Se você tiver 13 ou mais Pokémon que têm a Habilidade Esconde-some na sua pilha de descarte, escolha 2 dos Pokémon do seu oponente e quadruplique o número de contadores de dano em cada um deles.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Spiritual End: If you have 13 or more Pokémon that have the Hide 'n' Sneak Ability in your discard pile, choose 2 of your opponent's Pokémon and quadruple the number of damage counters on each of them."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

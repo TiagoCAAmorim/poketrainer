@@ -27,7 +27,7 @@
       "dano": "20×",
       "texto": "This attack does 20 damage for each Basic Water Energy card in your discard pile. Then, shuffle those cards into your deck.",
       "texto_pt": "Este ataque causa 20 pontos de dano para cada carta de Energia Água Básica na sua pilha de descarte. Em seguida, embaralhe aquelas cartas no seu baralho.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Swirling Waves",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Riptide: Then, shuffle those cards into your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

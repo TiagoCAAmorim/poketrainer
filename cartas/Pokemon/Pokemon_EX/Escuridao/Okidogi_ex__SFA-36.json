@@ -40,7 +40,7 @@
       "dano": "130+",
       "texto": "If this Pokémon is Poisoned, this attack does 130 more damage.",
       "texto_pt": "Se este Pokémon estiver Envenenado, este ataque causará 130 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -65,9 +65,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Chain-Crazed: If this Pokémon is Poisoned, this attack does 130 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

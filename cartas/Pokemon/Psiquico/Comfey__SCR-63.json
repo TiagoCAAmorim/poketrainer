@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Each player draws 3 cards.",
       "texto_pt": "Cada jogador compra 3 cartas.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Play Rough",
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Flower Shower: Each player draws 3 cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -19,9 +19,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Confusão persiste ao evoluir: não implementado"
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

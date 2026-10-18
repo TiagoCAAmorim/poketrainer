@@ -22,7 +22,7 @@
       "nome_pt": "Manufatura",
       "texto": "This Pokémon gets +40 HP for each Fighting Energy attached to it.",
       "texto_pt": "Este Pokémon recebe 40 PS a mais para cada Energia Lutador ligada a ele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Craftsmanship: This Pokémon gets +40 HP for each Fighting Energy attached to it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

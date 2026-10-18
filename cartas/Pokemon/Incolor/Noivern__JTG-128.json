@@ -22,7 +22,7 @@
       "nome_pt": "Eco Sintonizador",
       "texto": "If you have the same number of cards in your hand as your opponent, ignore all Energy in the cost of Frightening Howl used by this Pokémon.",
       "texto_pt": "Se você tiver o mesmo número de cartas na sua mão do que seu oponente, ignore todas as Energias no custo de Uivo Pavoroso usado por este Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Tuning Echo: If you have the same number of cards in your hand as your opponent, ignore all Energy in the cost of Frightening Howl used by this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

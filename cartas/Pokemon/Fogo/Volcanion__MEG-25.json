@@ -40,7 +40,7 @@
       "dano": "130",
       "texto": "Put 2 Fire Energy attached to this Pokémon into your hand.",
       "texto_pt": "Coloque 2 Energias Fogo ligadas a este Pokémon na sua mão.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Backfire: Put 2 Fire Energy attached to this Pokémon into your hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

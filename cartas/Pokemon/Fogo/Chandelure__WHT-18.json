@@ -27,7 +27,7 @@
       "dano": "50+",
       "texto": "If you have 10 or more Basic Fire Energy cards in your discard pile, this attack does 100 more damage.",
       "texto_pt": "Se você tiver 10 ou mais cartas de Energia Fogo Básica na sua pilha de descarte, este ataque causará 100 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Burn It All Up",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Incendiary Pillar: If you have 10 or more Basic Fire Energy cards in your discard pile, this attack does 100 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

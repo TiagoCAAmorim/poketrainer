@@ -41,7 +41,7 @@
       "dano": "250",
       "texto": "If this Pokémon is affected by a Special Condition, ignore all Energy in this attack's cost.",
       "texto_pt": "Se este Pokémon estiver afetado por uma Condição Especial, ignore todas as Energias no custo deste ataque.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Gutsy Swing: If this Pokémon is affected by a Special Condition, ignore all Energy in this attack's cost."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

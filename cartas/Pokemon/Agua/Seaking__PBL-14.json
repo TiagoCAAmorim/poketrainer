@@ -29,7 +29,7 @@
       "dano": "—",
       "texto": "This attack does 30 damage to 1 of your opponent's Pokémon for each Water Energy attached to this Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
       "texto_pt": "Este ataque causa 30 pontos de dano a 1 dos Pokémon do seu oponente para cada Energia Água ligada a este Pokémon. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Hydro Jet: This attack does 30 damage to 1 of your opponent's Pokémon for each Water Energy attached to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

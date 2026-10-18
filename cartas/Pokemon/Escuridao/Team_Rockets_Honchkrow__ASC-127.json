@@ -28,7 +28,7 @@
       "dano": "60×",
       "texto": "You may discard any number of Supporter cards that have \"Team Rocket\" in their name from your hand, and this attack does 60 damage for each card you discarded in this way.",
       "texto_pt": "Você pode descartar qualquer número de cartas de Apoiador que têm \"Equipe Rocket\" em seu nome da sua mão, e este ataque causa 60 pontos de dano para cada carta descartada desta forma.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Hammer In",
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Rocket Feathers: You may discard any number of Supporter cards that have \"Team Rocket\" in their name from your hand, and this attack does 60 damage for each card you discarded in this way."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "Flip a coin. If heads, search your deck for a Pokémon and switch it with this Pokémon. Any attached cards, damage counters, Special Conditions, turns in play, and any other effects remain on the new Pokémon. If you switched a Pokémon in this way, put this card into your deck. Then, shuffle your deck.",
       "texto_pt": "Jogue uma moeda. Se sair cara, procure por um Pokémon no seu baralho e troque-o por este Pokémon. Quaisquer cartas ligadas, contadores de dano, Condições Especiais, turnos em jogo e quaisquer outros efeitos permanecem no novo Pokémon. Se você trocou um Pokémon desta forma, coloque esta carta no seu baralho. Em seguida, embaralhe o seu baralho.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -46,9 +46,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Surprisingly Transform: If heads, search your deck for a Pokémon and switch it with this Pokémon.; Any attached cards, damage counters, Special Conditions, turns in play, and any other effects remain on the new Pokémon.; If you switched a Pokémon in this way, put this card into your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

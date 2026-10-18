@@ -22,7 +22,7 @@
       "nome_pt": "Recarga Estratégica",
       "texto": "Once during your turn, when this Pokémon moves from the Active Spot to your Bench, you may use this Ability. Attach up to 2 Basic Water Energy cards from your hand to this Pokémon.",
       "texto_pt": "Uma vez durante o seu turno, quando este Pokémon for movido do Campo Ativo para o seu Banco, você poderá usar esta Habilidade. Ligue até 2 cartas de Energia Água Básica da sua mão a este Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -55,9 +55,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Fall Back to Reload: Once during your turn, when this Pokémon moves from the Active Spot to your Bench, you may use this Ability. Attach up to 2 Basic Water Energy cards from your hand to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

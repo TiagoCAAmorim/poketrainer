@@ -22,7 +22,7 @@
       "nome_pt": "Soninho Bom",
       "texto": "If this Pokémon remains Asleep during Pokémon Checkup, heal all damage from this Pokémon.",
       "texto_pt": "Se este Pokémon permanecer Adormecido durante o Checape Pokémon, cure todo o dano deste Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Good Sleep: If this Pokémon remains Asleep during Pokémon Checkup, heal all damage from this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

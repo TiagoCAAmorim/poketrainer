@@ -41,7 +41,7 @@
       "dano": "—",
       "texto": "If your opponent's Active Pokémon is a Basic Pokémon, it is Knocked Out.",
       "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon Básico, ele será Nocauteado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -59,9 +59,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Axe Blast: If your opponent's Active Pokémon is a Basic Pokémon, it is Knocked Out."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Put 1 of your Benched Pokémon and all attached cards into your hand.",
       "texto_pt": "Coloque 1 dos seus Pokémon no Banco e todas as cartas ligadas a ele na sua mão.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Gust",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Happy Return: Put 1 of your Benched Pokémon and all attached cards into your hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

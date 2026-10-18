@@ -22,7 +22,7 @@
       "nome_pt": "Futuro Distorcido",
       "texto": "Once during your turn, if this Pokémon is in the Active Spot, you may have your opponent shuffle their hand into their deck and draw 3 cards.",
       "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no Campo Ativo, você poderá fazer com que o seu oponente embaralhe a mão dele no baralho dele e compre 3 cartas.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -36,7 +36,7 @@
       "dano": "90+",
       "texto": "If you have the same number of cards in your hand as your opponent, this attack does 90 more damage.",
       "texto_pt": "Se você tiver o mesmo número de cartas na sua mão do que seu oponente, este ataque causará 90 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -49,10 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Synchro Shot: If you have the same number of cards in your hand as your opponent, this attack does 90 more damage.",
-      "Habilidade Distorted Future: Have your opponent shuffle their hand into their deck and draw 3 cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

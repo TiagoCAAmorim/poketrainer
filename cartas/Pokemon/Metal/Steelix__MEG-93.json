@@ -28,7 +28,7 @@
       "dano": "40+",
       "texto": "If you have exactly 6 Prize cards remaining, this attack does 200 more damage.",
       "texto_pt": "Se você tiver exatamente 6 cartas de Prêmio restantes, este ataque causará 200 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Skull Bash",
@@ -60,9 +60,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Welcoming Tail: If you have exactly 6 Prize cards remaining, this attack does 200 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

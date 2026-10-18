@@ -29,7 +29,7 @@
       "dano": "—",
       "texto": "Knock Out each of your opponent's Pokémon that has 50 HP or less remaining.",
       "texto_pt": "Nocauteie cada um dos Pokémon do seu oponente que tiver PS restante de 50 ou menos.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Dark Strike",
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Soul Destroyer: Knock Out each of your opponent's Pokémon that has 50 HP or less remaining."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

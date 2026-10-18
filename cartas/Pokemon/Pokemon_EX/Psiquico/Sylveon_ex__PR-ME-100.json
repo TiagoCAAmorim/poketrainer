@@ -29,7 +29,7 @@
       "dano": "50×",
       "texto": "This attack does 50 damage for each type of Basic Energy attached to all of your Pokémon.",
       "texto_pt": "Este ataque causa 50 pontos de dano para cada tipo de Energia Básica ligada a todos os seus Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Colorful Harmony: This attack does 50 damage for each type of Basic Energy attached to all of your Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

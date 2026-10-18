@@ -27,7 +27,7 @@
       "dano": "10+",
       "texto": "If this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage.",
       "texto_pt": "Se este Pokémon tiver sido danificado por um ataque durante o último turno do seu oponente, este ataque causará a mesma quantidade de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Boulder Crush",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Counter: If this Pokémon was damaged by an attack during your opponent's last turn, this attack does that much more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

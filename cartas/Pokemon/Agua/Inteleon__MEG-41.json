@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Choose a Pokémon in play (yours or your opponent's) that has the least HP remaining, except for this Pokémon, and it is Knocked Out.",
       "texto_pt": "Escolha um Pokémon em jogo (seu ou do seu oponente) que tiver o menor PS restante, exceto este Pokémon, e ele será Nocauteado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Water Shot",
@@ -61,9 +61,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Bring Down: Choose a Pokémon in play that has the least HP remaining, except for this Pokémon, and it is Knocked Out."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

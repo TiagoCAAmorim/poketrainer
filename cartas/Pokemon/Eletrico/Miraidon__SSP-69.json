@@ -28,7 +28,7 @@
       "dano": "40",
       "texto": "During your opponent's next turn, prevent all damage done to each of your Future Pokémon by attacks from Pokémon ex. If this Pokémon is no longer your Active Pokémon, this effect ends.",
       "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a cada um dos seus Pokémon Futuristas por ataques de Pokémon ex. Se este Pokémon não for mais o seu Pokémon Ativo, este efeito terminará.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Thunder Claws",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque C.O.D.E.: Protect: During your opponent's next turn, prevent all damage done to each of your Future Pokémon by attacks from Pokémon ex.; If this Pokémon is no longer your Active Pokémon, this effect ends."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

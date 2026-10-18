@@ -22,7 +22,7 @@
       "nome_pt": "Salto Afobado",
       "texto": "Once during your turn, if this Pokémon is on your Bench, you may discard the bottom card of your deck. If you do, discard all cards from this Pokémon and put this Pokémon on top of your deck.",
       "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no seu Banco, você poderá descartar a carta de baixo do seu baralho. Se fizer isto, descarte todas as cartas deste Pokémon e coloque este Pokémon como a carta de cima do seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Flustered Leap: Discard the bottom card of your deck.; If you do, discard all cards from this Pokémon and put this Pokémon on top of your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

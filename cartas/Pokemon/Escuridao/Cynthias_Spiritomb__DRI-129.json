@@ -27,7 +27,7 @@
       "dano": "10×",
       "texto": "This attack does 10 damage for each damage counter on all of your Benched Cynthia's Pokémon. This attack's damage isn't affected by Weakness.",
       "texto_pt": "Este ataque causa 10 pontos de dano para cada contador de dano em todos os seus Pokémon da Cíntia no Banco. O dano deste ataque não é afetado por Fraqueza.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Raging Curse: This attack does 10 damage for each damage counter on all of your Benched Cynthia's Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

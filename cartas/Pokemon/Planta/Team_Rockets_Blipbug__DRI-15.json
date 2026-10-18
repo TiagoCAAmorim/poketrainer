@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Look at 1 of your opponent's face-down Prize cards.",
       "texto_pt": "Olhe 1 das cartas de Prêmio viradas para baixo do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Searching Eyes: Look at 1 of your opponent's face-down Prize cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

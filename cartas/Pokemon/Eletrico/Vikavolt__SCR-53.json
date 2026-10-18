@@ -27,7 +27,7 @@
       "dano": "90",
       "texto": "Switch this Pokémon with 1 of your Benched Lightning Pokémon.",
       "texto_pt": "Troque este Pokémon por 1 dos seus Pokémon Elétrico no Banco.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Sparking Strike",
@@ -64,9 +64,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Volt Switch: Switch this Pokémon with 1 of your Benched Lightning Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

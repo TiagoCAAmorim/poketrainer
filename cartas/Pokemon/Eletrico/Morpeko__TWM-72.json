@@ -22,7 +22,7 @@
       "nome_pt": "Caçar Lanches",
       "texto": "Once during your turn, you may look at the top card of your deck. You may discard that card.",
       "texto_pt": "Uma vez durante o seu turno, você poderá olhar a carta de cima do seu baralho. Você pode descartar aquela carta.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Snack Seek: Look at the top card of your deck.; You may discard that card."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Discard an Energy from your opponent's Active Pokémon ex.",
       "texto_pt": "Descarte uma Energia do Pokémon ex Ativo do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Steaming Stomp",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Fully Singe: Discard an Energy from your opponent's Active Pokémon ex."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

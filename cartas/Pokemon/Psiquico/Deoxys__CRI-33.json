@@ -29,7 +29,7 @@
       "dano": "80",
       "texto": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Pokémon that have an Ability.",
       "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a este Pokémon por ataques de Pokémon que têm uma Habilidade.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Psy Protection: During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Pokémon that have an Ability."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

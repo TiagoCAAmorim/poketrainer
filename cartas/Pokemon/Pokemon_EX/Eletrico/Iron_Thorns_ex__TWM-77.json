@@ -22,7 +22,7 @@
       "nome_pt": "Inicialização",
       "texto": "As long as this Pokémon is in the Active Spot, Pokémon with a Rule Box in play (both yours and your opponent's) have no Abilities, except for Future Pokémon. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)",
       "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, Pokémon em jogo que tiverem uma Caixa de Regras (seus e do seu oponente) não terão Habilidades, exceto por Pokémon Futuristas. (Pokémon ex, Pokémon V, etc. têm Caixas de Regras.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -63,9 +63,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Initialization: As long as this Pokémon is in the Active Spot, Pokémon with a Rule Box in play have no Abilities, except for Future Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Choose 3 of your opponent's Benched Pokémon. If you do, shuffle all of your opponent's Benched Pokémon that you didn't choose, and all cards attached to those Pokémon, into their deck.",
       "texto_pt": "Escolha 3 dos Pokémon no Banco do seu oponente. Se fizer isto, embaralhe todos os Pokémon no Banco do seu oponente que você não escolheu, e todas as cartas ligadas àqueles Pokémon, de volta no baralho dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Energy Loop",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Expelling Tornado: Choose 3 of your opponent's Benched Pokémon.; If you do, shuffle all of your opponent's Benched Pokémon that you didn't choose, and all cards attached to those Pokémon, into their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

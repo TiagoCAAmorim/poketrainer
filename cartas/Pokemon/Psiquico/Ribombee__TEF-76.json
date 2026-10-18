@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "During your next turn, if the Defending Pokémon is Knocked Out, take 2 more Prize cards.",
       "texto_pt": "Durante o seu próximo turno, se o Pokémon Defensor for Nocauteado, pegue 2 cartas de Prêmio a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Plentiful Pollen: During your next turn, if the Defending Pokémon is Knocked Out, take 2 more Prize cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

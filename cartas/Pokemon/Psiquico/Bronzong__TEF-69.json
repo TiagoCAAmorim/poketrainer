@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "During your opponent's next turn, they can't play any Pokémon from their hand to evolve their Pokémon.",
       "texto_pt": "Durante o próximo turno do seu oponente, ele não poderá jogar nenhum Pokémon da mão dele para evoluir os Pokémon dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Super Psy Bolt",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Evolution Jammer: During your opponent's next turn, they can't play any Pokémon from their hand to evolve their Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

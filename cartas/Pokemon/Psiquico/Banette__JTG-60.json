@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Your opponent chooses 3 cards from their hand and shuffles those cards into their deck.",
       "texto_pt": "Seu oponente escolhe 3 cartas da mão dele e embaralha aquelas cartas no baralho dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Spooky Shot",
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Cursed Words: Your opponent chooses 3 cards from their hand and shuffles those cards into their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

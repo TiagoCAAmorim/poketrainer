@@ -22,7 +22,7 @@
       "nome_pt": "Acossar Presas",
       "texto": "Once during your turn, you may use this Ability. Your opponent reveals their hand, and you put a Basic Pokémon with 70 HP or less that you find there onto your opponent's Bench.",
       "texto_pt": "Uma vez durante o seu turno, você poderá usar esta Habilidade. Seu oponente revela a mão dele, e você coloca um Pokémon Básico com 70 PS ou menos que encontrar lá no Banco do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -55,9 +55,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Look for Prey: Your opponent reveals their hand, and you put a Basic Pokémon with 70 HP or less that you find there onto your opponent's Bench."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

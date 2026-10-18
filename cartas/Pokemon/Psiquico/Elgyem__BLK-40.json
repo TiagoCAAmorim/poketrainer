@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Move an Energy from 1 of your opponent's Pokémon to another of their Pokémon.",
       "texto_pt": "Mova uma Energia de 1 dos Pokémon do seu oponente para outro Pokémon dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Beam",
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Slight Shift: Move an Energy from 1 of your opponent's Pokémon to another of their Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

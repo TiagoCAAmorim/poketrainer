@@ -2938,10 +2938,8 @@
      }
     ],
     "simulador": {
-     "status": "parcial",
-     "pendencias": [
-      "Confusão persiste ao evoluir: não implementado"
-     ]
+     "status": "implementada",
+     "pendencias": []
     },
     "arquivo": "Treinadores/Estadios/Dizzying_Valley__PFL-88.json"
    },
@@ -3810,10 +3808,8 @@
      }
     ],
     "simulador": {
-     "status": "parcial",
-     "pendencias": [
-      "refazer moedas não implementado"
-     ]
+     "status": "implementada",
+     "pendencias": []
     },
     "arquivo": "Treinadores/Ferramentas/Backtrack_Badge__PBL-74.json"
    },
@@ -3947,10 +3943,8 @@
      }
     ],
     "simulador": {
-     "status": "parcial",
-     "pendencias": [
-      "o ataque concedido não consta na base de dados"
-     ]
+     "status": "implementada",
+     "pendencias": []
     },
     "arquivo": "Treinadores/Ferramentas/Core_Memory__POR-70.json"
    },
@@ -4654,10 +4648,8 @@
      }
     ],
     "simulador": {
-     "status": "parcial",
-     "pendencias": [
-      "o ataque concedido não consta na base de dados"
-     ]
+     "status": "implementada",
+     "pendencias": []
     },
     "arquivo": "Treinadores/Ferramentas/Technical_Machine_Fluorite__SSP-188.json"
    },

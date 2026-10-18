@@ -28,7 +28,7 @@
       "dano": "60×",
       "texto": "Discard up to 2 Energy cards from your hand, and this attack does 60 damage for each card you discarded in this way.",
       "texto_pt": "Descarte até 2 cartas de Energia da sua mão, e este ataque causa 60 pontos de dano para cada carta descartada desta forma.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Double Eater: Discard up to 2 Energy cards from your hand, and this attack does 60 damage for each card you discarded in this way."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

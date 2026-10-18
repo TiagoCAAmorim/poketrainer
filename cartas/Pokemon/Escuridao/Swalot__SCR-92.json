@@ -27,7 +27,7 @@
       "dano": "10+",
       "texto": "If this Pokémon has more Energy attached than your opponent's Active Pokémon, this attack does 160 more damage.",
       "texto_pt": "Se este Pokémon tiver mais Energia ligada a ele do que o Pokémon Ativo do seu oponente, este ataque causará 160 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Venomous Hit",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Devouring Mouth: If this Pokémon has more Energy attached than your opponent's Active Pokémon, this attack does 160 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

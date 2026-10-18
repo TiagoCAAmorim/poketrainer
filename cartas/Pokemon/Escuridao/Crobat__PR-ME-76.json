@@ -22,7 +22,7 @@
       "nome_pt": "Manobras na Penumbra",
       "texto": "Once during your turn, if this Pokémon is in the Active Spot, you may use this Ability. Search your deck for a card. Shuffle your deck, then put that card on top of it.",
       "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no Campo Ativo, você poderá usar esta Habilidade. Procure por 1 carta no seu baralho. Embaralhe o seu baralho e, em seguida, coloque aquela carta como a carta de cima do seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Nighttime Maneuvers: Search your deck for a card.; Shuffle your deck, then put that card on top of it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

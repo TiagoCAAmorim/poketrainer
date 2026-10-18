@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "Your opponent's Active Pokémon is now Confused. Put 8 damage counters instead of 3 on that Pokémon for this Special Condition.",
       "texto_pt": "O Pokémon Ativo do seu oponente agora está Confuso. Coloque 8 contadores de dano ao invés de 3 naquele Pokémon para esta Condição Especial.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Thunderous Bolt",
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Disorienting Flash: Put 8 damage counters instead of 3 on that Pokémon for this Special Condition."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

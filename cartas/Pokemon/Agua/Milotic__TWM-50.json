@@ -22,7 +22,7 @@
       "nome_pt": "Calmaria Mental",
       "texto": "Your opponent's Pokémon in play and all attached cards can't be put into your opponent's hand.",
       "texto_pt": "Os Pokémon do seu oponente em jogo e todas as cartas ligadas a eles não podem ser colocados na mão do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Mentally Calm: Your opponent's Pokémon in play and all attached cards can't be put into your opponent's hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

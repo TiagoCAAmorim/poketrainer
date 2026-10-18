@@ -41,7 +41,7 @@
       "dano": "—",
       "texto": "Knock Out 1 of your opponent's Pokémon that has exactly 6 damage counters on it.",
       "texto_pt": "Nocauteie 1 dos Pokémon do seu oponente que tiver exatamente 6 contadores de dano nele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Euclase: Knock Out 1 of your opponent's Pokémon that has exactly 6 damage counters on it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

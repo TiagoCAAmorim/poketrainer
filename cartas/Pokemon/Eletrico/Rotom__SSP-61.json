@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Your opponent reveals their hand. Discard all Item cards and Pokémon Tool cards you find there.",
       "texto_pt": "Seu oponente revela a mão dele. Descarte todas as cartas de Item e cartas de Ferramenta Pokémon que encontrar lá.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Energy Short",
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Crushing Pulse: Discard all Item cards and Pokémon Tool cards you find there."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

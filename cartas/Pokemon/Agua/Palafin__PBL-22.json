@@ -28,7 +28,7 @@
       "dano": "80+",
       "texto": "If your opponent has exactly 1 Prize card remaining, this attack does 200 more damage.",
       "texto_pt": "Se o seu oponente tiver exatamente 1 carta de Prêmio restante, este ataque causará 200 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Knuckle Justice: If your opponent has exactly 1 Prize card remaining, this attack does 200 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

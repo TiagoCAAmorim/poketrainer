@@ -22,7 +22,7 @@
       "nome_pt": "Cérebro Rocket",
       "texto": "As often as you like during your turn, you may move 1 damage counter from 1 of your Team Rocket's Pokémon to another of your Pokémon.",
       "texto_pt": "Quantas vezes desejar durante o seu turno, você poderá mover 1 contador de dano de 1 dos seus Pokémon da Equipe Rocket para outro Pokémon seu.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -55,9 +55,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Rocket Brain: Move 1 damage counter from 1 of your Team Rocket's Pokémon to another of your Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

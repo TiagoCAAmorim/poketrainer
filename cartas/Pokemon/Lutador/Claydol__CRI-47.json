@@ -27,7 +27,7 @@
       "dano": "50",
       "texto": "If your opponent's Active Pokémon is an evolved Pokémon, devolve it by putting the highest Stage Evolution card on it into your opponent's hand.",
       "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon evoluído, involua-o colocando a carta de Evolução de Estágio mais alto sobre ele na mão do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -45,9 +45,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Devolution Ray: If your opponent's Active Pokémon is an evolved Pokémon, devolve it by putting the highest Stage Evolution card on it into your opponent's hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

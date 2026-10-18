@@ -40,7 +40,7 @@
       "dano": "120×",
       "texto": "Discard up to 2 Metal Energy from this Pokémon. This attack does 120 damage for each card you discarded in this way.",
       "texto_pt": "Descarte até 2 Energias Metal deste Pokémon. Este ataque causa 120 pontos de dano para cada carta descartada desta forma.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -60,9 +60,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Cross Breaker: Discard up to 2 Metal Energy from this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

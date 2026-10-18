@@ -22,7 +22,7 @@
       "nome_pt": "DNA Arco-íris",
       "texto": "This Pokémon can evolve into any Pokémon ex that evolves from Eevee if you play it from your hand onto this Pokémon. (This Pokémon can't evolve during your first turn or the turn you play it.)",
       "texto_pt": "Este Pokémon poderá evoluir para qualquer Pokémon ex que evolua de Eevee se você jogar aquele Pokémon ex da sua mão sobre este Pokémon. (Este Pokémon não poderá evoluir durante o seu primeiro turno ou durante o turno em que for colocado em jogo.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Rainbow DNA: This Pokémon can evolve into any Pokémon ex that evolves from Eevee if you play it from your hand onto this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

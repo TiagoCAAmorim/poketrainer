@@ -27,7 +27,7 @@
       "dano": "30×",
       "texto": "This attack does 30 damage for each Item card in your opponent's discard pile.",
       "texto_pt": "Este ataque causa 30 pontos de dano para cada carta de Item na pilha de descarte do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Surf",
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Ancient Seaweed: This attack does 30 damage for each Item card in your opponent's discard pile."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

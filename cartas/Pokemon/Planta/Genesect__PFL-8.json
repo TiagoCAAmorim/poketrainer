@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "This attack does 20 damage to 1 of your opponent's Pokémon for each Grass Energy attached to this Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
       "texto_pt": "Este ataque causa 20 pontos de dano a 1 dos Pokémon do seu oponente para cada Energia Planta ligada a este Pokémon. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Speed Attack",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Bug's Cannon: This attack does 20 damage to 1 of your opponent's Pokémon for each Grass Energy attached to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

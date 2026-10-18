@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "You can use this attack only if you go second, and only during your first turn. Your opponent can't play any Supporter cards from their hand during their next turn.",
       "texto_pt": "Você só pode usar este ataque se for o segundo a jogar e somente durante o seu primeiro turno. Seu oponente não poderá jogar nenhuma carta de Apoiador da mão dele durante o próximo turno dele.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Crunch",
@@ -61,9 +61,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Scream: Your opponent can't play any Supporter cards from their hand during their next turn."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

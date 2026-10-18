@@ -22,7 +22,7 @@
       "nome_pt": "Transferência Solar",
       "texto": "As often as you like during your turn, you may use this Ability. Move a Basic Grass Energy from 1 of your Pokémon to another of your Pokémon.",
       "texto_pt": "Quantas vezes desejar durante o seu turno, você poderá usar esta Habilidade. Mova uma Energia Planta Básica de 1 dos seus Pokémon para outro Pokémon seu.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -68,9 +68,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Solar Transfer: Move a Basic Grass Energy from 1 of your Pokémon to another of your Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

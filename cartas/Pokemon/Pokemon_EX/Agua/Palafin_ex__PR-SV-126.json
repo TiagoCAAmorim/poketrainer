@@ -22,7 +22,7 @@
       "nome_pt": "Espírito de Herói",
       "texto": "Put this Pokémon into play only with the effect of Palafin's Zero to Hero Ability.",
       "texto_pt": "Coloque este Pokémon em jogo somente com o efeito da Habilidade Do Abismo ao Heroísmo de Palafin.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -65,9 +65,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Hero's Spirit: Put this Pokémon into play only with the effect of Palafin's Zero to Hero Ability."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

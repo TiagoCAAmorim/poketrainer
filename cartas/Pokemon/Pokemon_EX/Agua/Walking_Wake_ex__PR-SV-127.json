@@ -22,7 +22,7 @@
       "nome_pt": "Mares Celestes",
       "texto": "Damage from attacks used by this Pokémon isn't affected by any effects on your opponent's Active Pokémon.",
       "texto_pt": "O dano dos ataques usados por este Pokémon não é afetado por quaisquer efeitos no Pokémon Ativo do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -78,9 +78,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Azure Seas: Damage from attacks used by this Pokémon isn't affected by any effects on your opponent's Active Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

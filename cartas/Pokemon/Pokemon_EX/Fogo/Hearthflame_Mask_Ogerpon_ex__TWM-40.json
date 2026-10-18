@@ -42,7 +42,7 @@
       "dano": "140+",
       "texto": "If your opponent's Active Pokémon is an Evolution Pokémon, this attack does 140 more damage, and discard all Energy from this Pokémon.",
       "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon de Evolução, este ataque causará 140 pontos de dano a mais, e descarte todas as Energias deste Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -78,9 +78,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Dynamic Blaze: If your opponent's Active Pokémon is an Evolution Pokémon, this attack does 140 more damage, and discard all Energy from this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

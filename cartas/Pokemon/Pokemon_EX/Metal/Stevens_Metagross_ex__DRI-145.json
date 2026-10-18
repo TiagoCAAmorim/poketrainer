@@ -22,7 +22,7 @@
       "nome_pt": "Inicialização X",
       "texto": "Once during your turn, you may search your deck for a Basic Psychic Energy card, a Basic Metal Energy card, or 1 of each and attach them to your Psychic Pokémon and Metal Pokémon in any way you like. Then, shuffle your deck.",
       "texto_pt": "Uma vez durante o seu turno, você poderá procurar por uma carta de Energia Psíquico Básica, uma carta de Energia Metal Básica ou 1 de cada no seu baralho e ligá-las aos seus Pokémon Psíquico e Pokémon Metal como desejar. Em seguida, embaralhe o seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade X-Boot: Search your deck for a Basic Psychic Energy card, a Basic Metal Energy card, or 1 of each and attach them to your Psychic Pokémon and Metal Pokémon in any way you like."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

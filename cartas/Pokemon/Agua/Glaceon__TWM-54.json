@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "At the end of your opponent's next turn, put 9 damage counters on the Defending Pokémon.",
       "texto_pt": "Coloque 9 contadores de dano no Pokémon Defensor no final do próximo turno do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Icicle Missile",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Permeating Chill: At the end of your opponent's next turn, put 9 damage counters on the Defending Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

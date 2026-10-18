@@ -28,7 +28,7 @@
       "dano": "30×",
       "texto": "If you go second, you can't use this attack during your first turn. This attack does 30 damage for each of your Benched Pokémon.",
       "texto_pt": "Se você for o segundo a jogar, você não poderá usar este ataque durante o seu primeiro turno. Este ataque causa 30 pontos de dano para cada um dos seus Pokémon no Banco.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Crown Opal",
@@ -92,9 +92,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Unified Beatdown: If you go second, you can't use this attack during your first turn."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

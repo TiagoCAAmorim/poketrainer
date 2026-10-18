@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Flip a coin. If heads, choose 1 of your opponent's Benched Pokémon. Shuffle that Pokémon and all attached cards into their deck.",
       "texto_pt": "Jogue uma moeda. Se sair cara, escolha 1 dos Pokémon no Banco do seu oponente. Embaralhe aquele Pokémon e todas as cartas ligadas a ele no baralho dele.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Disarming Voice",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Mystical Return: If heads, choose 1 of your opponent's Benched Pokémon.; Shuffle that Pokémon and all attached cards into their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

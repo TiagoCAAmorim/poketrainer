@@ -19,9 +19,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "o ataque concedido não consta na base de dados"
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

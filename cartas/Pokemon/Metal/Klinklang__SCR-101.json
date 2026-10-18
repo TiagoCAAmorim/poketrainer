@@ -22,7 +22,7 @@
       "nome_pt": "Rotação Emergencial",
       "texto": "Once during your turn, if this Pokémon is in your hand and your opponent has any Stage 2 Pokémon in play, you may put this Pokémon onto your Bench.",
       "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver na sua mão e seu oponente tiver algum Pokémon Estágio 2 em jogo, você poderá colocar este Pokémon no seu Banco.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Emergency Rotation: condição deste Pokémon: is in your hand and your opponent has any Stage 2 Pokémon in play"
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

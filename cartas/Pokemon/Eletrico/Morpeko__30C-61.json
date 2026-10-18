@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Discard the top 3 cards of your deck and put 1 of them into your hand.",
       "texto_pt": "Descarte as 3 cartas de cima do seu baralho e coloque 1 delas na sua mão.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Slap",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Select a Snack: Discard the top 3 cards of your deck and put 1 of them into your hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

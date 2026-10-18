@@ -22,7 +22,7 @@
       "nome_pt": "Tesouro do Mergulhador",
       "texto": "When 1 of your Water Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, you may put all Basic Water Energy attached to that Pokémon into your hand instead of the discard pile.",
       "texto_pt": "Quando 1 dos seus Pokémon Água for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, você poderá colocar todas as Energias Água Básicas ligadas àquele Pokémon na sua mão ao invés da pilha de descarte.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Diver's Catch: When 1 of your Water Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, you may put all Basic Water Energy attached to that Pokémon into your hand instead of the discard pile."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Discard 6 Basic Grass Energy cards from your hand, and Knock Out your opponent's Active Pokémon. If you can't discard 6 cards in this way, this attack does nothing.",
       "texto_pt": "Descarte 6 cartas de Energia Planta Básica da sua mão e Nocauteie o Pokémon Ativo do seu oponente. Se não puder descartar 6 cartas desta forma, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Whip Smash",
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Hydra Breath: Discard 6 Basic Grass Energy cards from your hand, and Knock Out your opponent's Active Pokémon.; If you can't discard 6 cards in this way, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

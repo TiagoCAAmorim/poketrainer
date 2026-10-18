@@ -43,7 +43,7 @@
       "dano": "—",
       "texto": "Discard a Team Rocket's Energy from this Pokémon. If you do, discard your opponent's Active Pokémon and all attached cards.",
       "texto_pt": "Descarte uma Energia da Equipe Rocket deste Pokémon. Se fizer isto, descarte o Pokémon Ativo do seu oponente e todas as cartas ligadas a ele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -68,9 +68,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Evil Incineration: Discard a Team Rocket's Energy from this Pokémon.; If you do, discard your opponent's Active Pokémon and all attached cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -22,7 +22,7 @@
       "nome_pt": "Fominha",
       "texto": "If your opponent's Basic Pokémon is Knocked Out by damage from an attack used by this Pokémon, take 1 more Prize card.",
       "texto_pt": "Se o Pokémon Básico do seu oponente for Nocauteado pelo dano de um ataque usado por este Pokémon, pegue 1 carta de Prêmio a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -64,9 +64,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Greedy Eater: If your opponent's Basic Pokémon is Knocked Out by damage from an attack used by this Pokémon, take 1 more Prize card."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

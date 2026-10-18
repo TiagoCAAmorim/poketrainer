@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "During your opponent's next turn, if the Defending Pokémon tries to use an attack, your opponent flips 2 coins. If either of them is tails, that attack doesn't happen.",
       "texto_pt": "Durante o próximo turno do seu oponente, se o Pokémon Defensor tentar usar um ataque, seu oponente jogará 2 moedas. Se qualquer uma delas sair coroa, aquele ataque não acontecerá.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Tantrum",
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Jet of Ink: During your opponent's next turn, if the Defending Pokémon tries to use an attack, your opponent flips 2 coins.; If either of them is tails, that attack doesn't happen."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -29,7 +29,7 @@
       "dano": "100",
       "texto": "Switch this Pokémon with 1 of your Benched Pokémon. If you do, switch out your oppoennt's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)",
       "texto_pt": "Escolha 2 cards de Energia ligados a Darkrai e Cresselia LENDA e coloque-os na Zona Perdida. Se qualquer um dos Pokémon do seu oponente for Nocauteado por danos causados por esse ataque, coloque esse Pokémon e todos os cards ligados a ele na Zona Perdida em vez de descartá-lo.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Wormhole: If you do, switch out your oppoennt's Active Pokémon to the Bench."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -22,7 +22,7 @@
       "nome_pt": "Asa Luminosa",
       "texto": "Prevent all effects of your opponent's Pokémon's Abilities done to this Pokémon.",
       "texto_pt": "Previna todos os efeitos das Habilidades dos Pokémon do seu oponente causados a este Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -36,7 +36,7 @@
       "dano": "120+",
       "texto": "You may discard up to 4 Energy cards from your hand, and this attack does 40 more damage for each card you discarded in this way.",
       "texto_pt": "Você pode descartar até 4 cartas de Energia da sua mão, e este ataque causa 40 pontos de dano a mais para cada carta descartada desta forma.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -66,10 +66,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Shooting Moons: You may discard up to 4 Energy cards from your hand, and this attack does 40 more damage for each card you discarded in this way.",
-      "Habilidade Luminous Wing: Prevent all effects of your opponent's Pokémon's Abilities done to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

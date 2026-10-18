@@ -28,7 +28,7 @@
       "dano": "120",
       "texto": "If you have 4 or fewer Benched Pokémon, this attack does nothing.",
       "texto_pt": "Se você tiver 4 ou menos Pokémon no Banco, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque V-Force: If you have 4 or fewer Benched Pokémon, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

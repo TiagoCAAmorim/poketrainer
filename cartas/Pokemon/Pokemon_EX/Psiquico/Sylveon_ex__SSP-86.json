@@ -42,7 +42,7 @@
       "dano": "—",
       "texto": "Choose 2 of your opponent's Benched Pokémon. Shuffle those Pokémon and all attached cards into your opponent's deck. If 1 of your Pokémon used Angelite during your last turn, this attack can't be used.",
       "texto_pt": "Escolha 2 dos Pokémon no Banco do seu oponente. Embaralhe aqueles Pokémon e todas as cartas ligadas a eles no baralho do seu oponente. Se 1 dos seus Pokémon usou Angelita durante o seu último turno, este ataque não poderá ser usado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -68,9 +68,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Angelite: Choose 2 of your opponent's Benched Pokémon.; Shuffle those Pokémon and all attached cards into your opponent's deck.; If 1 of your Pokémon used Angelite during your last turn, this attack can't be used."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -39,7 +39,7 @@
       "dano": "—",
       "texto": "Discard up to 2 Pokémon Tools from your opponent's Pokémon.",
       "texto_pt": "Descarte até 2 Ferramentas Pokémon dos Pokémon do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Cleaning Up: Discard up to 2 Pokémon Tools from your opponent's Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

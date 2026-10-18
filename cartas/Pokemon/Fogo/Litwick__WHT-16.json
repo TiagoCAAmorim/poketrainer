@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Look at the top card of your deck. You may discard that card.",
       "texto_pt": "Olhe a carta de cima do seu baralho. Você pode descartar aquela carta.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -45,9 +45,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Brighten and Burn: Look at the top card of your deck.; You may discard that card."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

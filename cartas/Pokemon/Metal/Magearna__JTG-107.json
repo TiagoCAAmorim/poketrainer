@@ -22,7 +22,7 @@
       "nome_pt": "Cura Autômata",
       "texto": "As long as this Pokémon is in the Active Spot, whenever you attach an Energy card from your hand to 1 of your Pokémon, heal 90 damage from that Pokémon.",
       "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, sempre que você ligar uma carta de Energia da sua mão a 1 dos seus Pokémon, cure 90 pontos de dano daquele Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Auto Heal: As long as this Pokémon is in the Active Spot, whenever you attach an Energy card from your hand to 1 of your Pokémon, heal 90 damage from that Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -28,7 +28,7 @@
       "dano": "50",
       "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed, and discard an Energy from that Pokémon.",
       "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado, e descarte uma Energia daquele Pokémon.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -46,9 +46,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Paralyzing Crackle: If heads, your opponent's Active Pokémon is now Paralyzed, and discard an Energy from that Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -22,7 +22,7 @@
       "nome_pt": "Rodopio Rancoroso",
       "texto": "If your Active Darkness Pokémon is damaged by an attack from your opponent's Pokémon (even if your Active Darkness Pokémon is Knocked Out), place 1 damage counter on the Attacking Pokémon.",
       "texto_pt": "Se o seu Pokémon Escuridão Ativo for danificado por um ataque dos Pokémon do seu oponente (mesmo que o seu Pokémon Escuridão Ativo seja Nocauteado), coloque 1 contador de dano no Pokémon Atacante.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Spiteful Swirl: If your Active Darkness Pokémon is damaged by an attack from your opponent's Pokémon, place 1 damage counter on the Attacking Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

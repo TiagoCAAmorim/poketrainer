@@ -27,7 +27,7 @@
       "dano": "30×",
       "texto": "This attack does 30 damage for each Colorless in your opponent's Active Pokémon's Retreat Cost.",
       "texto_pt": "Este ataque causa 30 pontos de dano para cada Incolor no Custo de Recuo do Pokémon Ativo do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Shadowy Knot: This attack does 30 damage for each Colorless in your opponent's Active Pokémon's Retreat Cost."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

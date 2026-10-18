@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Put 2 damage counters on 1 of your opponent's Pokémon for each Basic Grass Energy card in your discard pile. Then, shuffle those Energy cards into your deck.",
       "texto_pt": "Coloque 2 contadores de dano em 1 dos Pokémon do seu oponente para cada carta de Energia Planta Básica na sua pilha de descarte. Em seguida, embaralhe aquelas cartas de Energia no seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Matcha Splash",
@@ -64,9 +64,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Re-Brew: Put 2 damage counters on 1 of your opponent's Pokémon for each Basic Grass Energy card in your discard pile.; Then, shuffle those Energy cards into your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

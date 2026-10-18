@@ -22,7 +22,7 @@
       "nome_pt": "Buracos",
       "texto": "Whenever your opponent's Active Pokémon moves to the Bench during their turn, place 2 damage counters on that Pokémon.",
       "texto_pt": "Sempre que o Pokémon Ativo do seu oponente for movido para o Banco durante o turno dele, coloque 2 contadores de dano naquele Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Holes: Whenever your opponent's Active Pokémon moves to the Bench during their turn, place 2 damage counters on that Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

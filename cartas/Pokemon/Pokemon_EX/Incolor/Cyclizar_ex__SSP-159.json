@@ -42,7 +42,7 @@
       "dano": "180",
       "texto": "You may draw 5 cards.",
       "texto_pt": "Você pode comprar 5 cartas.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -63,9 +63,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Zircon Road: You may draw 5 cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

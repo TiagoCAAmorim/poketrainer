@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Put this Pokémon and all attached cards into your deck. If you do, search your deck for up to 3 cards and put them into your hand. Then, shuffle your deck.",
       "texto_pt": "Coloque este Pokémon e todas as cartas ligadas a ele no seu baralho. Se fizer isto, procure por até 3 cartas no seu baralho e coloque-as na sua mão. Em seguida, embaralhe o seu baralho.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Leafage",
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Breezy Gift: Put this Pokémon and all attached cards into your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

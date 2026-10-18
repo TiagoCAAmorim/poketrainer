@@ -22,7 +22,7 @@
       "nome_pt": "Economizador de Energia",
       "texto": "This Pokémon can't attack unless you have 4 or more Team Rocket's Pokémon in play.",
       "texto_pt": "Este Pokémon não pode atacar a não ser que você tenha 4 ou mais Pokémon da Equipe Rocket em jogo.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -37,7 +37,7 @@
       "dano": "160+",
       "texto": "You may discard up to 2 Energy from your Benched Pokémon. This attack does 60 more damage for each card you discarded in this way.",
       "texto_pt": "Você pode descartar até 2 Energias dos seus Pokémon no Banco. Este ataque causa 60 pontos de dano a mais para cada carta descartada desta forma.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -77,10 +77,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Erasure Ball: You may discard up to 2 Energy from your Benched Pokémon.",
-      "Habilidade Power Saver: This Pokémon can't attack unless you have 4 or more Team Rocket's Pokémon in play."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }
