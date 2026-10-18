@@ -42,6 +42,8 @@ python replay_log.py tests/fixtures/ptcgl_logs/*.log
 python simulate.py <deck> <deck> --games 200 [--salvar-log]      python optimize.py <deck> --gauntlet ...
 python server.py                                                  # http://localhost:8765 (welcome; /jogar /decks /cartas)
 python baixar_imagens.py                                          # imagens das cartas → imagens/ (fora do git)
+python imitar.py gerar|treinar|avaliar                           # IA: pré-treino imitando a heurística
+python train.py --resume checkpoints/imitacao.pt                 # IA: PPO self-play
 ```
 Reconstruir a base quando sair coleção nova: `python tools/build_carddb.py` (clona pokemon-tcg-data e TCGdex em
 `.cache/`), `python tools/build_pt_texts.py`, `python cartas.py atualizar`.
@@ -59,6 +61,7 @@ python tests/smoke_cartas.py       # todo ataque/Habilidade ativada roda sem err
 python tests/fuzz.py --games 300 --novas  # decks favorecendo a 2ª leva
 python tests/test_explorer.py      # filtros/detalhe da página de cartas (ptcg/explorer.py + web/cartas.html)
 python tests/test_deckbuilder.py   # montador de decks (ptcg/deckbuilder.py + web/decks.html)
+python tests/test_ai.py            # IA: formato compacto = collate, imitação e passo PPO (pula sem torch)
 ```
 pytest não é necessário (cada arquivo roda sozinho), mas os testes são compatíveis com pytest.
 
@@ -74,7 +77,11 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
   `decks/limitless/` é local (gitignore): importe com `import_limitless.py` e limpe com `limpar_decks.py`; guia em `DECKS.md`.
 - Replays: 4/4 logs de exemplo reproduzidos por completo, sem ajuste de dano. (Slowking copiando Metallic Hammer dá 300 sem
   Energia Metal: é o ruling oficial do Compendium, já implementado no padrão "You may discard N Energy ... more damage".)
-- PyTorch não foi testado (o ambiente anterior não conseguia instalar torch); `ptcg/ai/` pode precisar de ajustes.
+- IA (PyTorch 2.14 + CUDA, RTX 4070 Ti SUPER de 16 GB **compartilhada** com outros projetos do usuário, ex.: `~/dev/graph_nn`):
+  `ptcg/ai/dataset.py` (partidas da heurística em paralelo → shards `.npz` compactos; `ObsPacker`/`PackedObs`),
+  `ptcg/ai/imitate.py` (pré-treino por imitação + `evaluate_parallel` na CPU), `ptcg/ai/train.py` (PPO com rollouts em
+  workers `spawn` e atualização na GPU). Dados em `dados/imitacao/`, redes em `checkpoints/` (ambos no gitignore).
+  Se a VRAM acabar, o WSL transborda para a RAM e o treino quase para: confira `nvidia-smi` antes de culpar o código.
 
 ## Próximos passos
 0. Cobertura está em 100% (texto reconhecido); o foco agora é **fidelidade**: reproduzir logs reais e conferir cartas da 2ª leva.
@@ -93,7 +100,7 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
            if a.impl is None or a.impl.status != 'ok': print(d.id, d.name, '|', a.name, '|', a.impl.note if a.impl else '-')"
    ```
 2. Auditar cartas dos decks competitivos contra o Compendium e tratar os problemas da interface (sem logs próprios do usuário).
-3. IA: imitação da heurística (não há logs reais) + PPO self-play (`train.py`).
+3. IA: imitação da heurística feita (`imitar.py`); próximo: PPO self-play longo (`train.py --resume checkpoints/imitacao.pt`).
 
 ## Problemas apontados nas partidas (fluxo)
 - Na interface (`/jogar`) o botão **💬 Comentar** grava um comentário na decisão atual em `logs/problemas.jsonl`
