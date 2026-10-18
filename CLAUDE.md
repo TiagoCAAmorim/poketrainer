@@ -31,7 +31,7 @@ Mensagens do motor, logs e CLIs estão em português; nomes de cartas ficam em i
   Ordem: implementação à mão → compilador. Frase não reconhecida → carta `partial`/`missing`.
 - `replay/` — `parse.py` (templates en/pt do log do TCG Live), `replay.py` (`ReplayGame` com cartas ocultas
   "UNKNOWN" que viram a carta certa sob demanda, pontos de ambiguidade com retrocesso, conferência de dano e KO).
-- `decks.py`, `limitless.py`, `logbook.py` (LOG), `agents.py`, `encode.py` (observação p/ rede), `ai/`, `sim.py`, `view.py`.
+- `decks.py`, `deckbuilder.py` (montador, `web/decks.html`), `explorer.py` (cartas, `web/cartas.html`; imagens por `baixar_imagens.py` em `imagens/`, no gitignore), `limitless.py`, `logbook.py` (LOG), `agents.py`, `encode.py` (observação p/ rede), `ai/`, `sim.py`, `view.py`.
 
 ## Comandos
 ```
@@ -40,7 +40,8 @@ python gerenciar_decks.py listar|mostrar|criar|montar|importar|editar|copiar|exp
 python gerenciar_logs.py importar|listar|mostrar|rever|atividade|reprocessar|imitacao
 python replay_log.py tests/fixtures/ptcgl_logs/*.log
 python simulate.py <deck> <deck> --games 200 [--salvar-log]      python optimize.py <deck> --gauntlet ...
-python server.py                                                  # http://localhost:8765
+python server.py                                                  # http://localhost:8765 (welcome; /jogar /decks /cartas)
+python baixar_imagens.py                                          # imagens das cartas → imagens/ (fora do git)
 ```
 Reconstruir a base quando sair coleção nova: `python tools/build_carddb.py` (clona pokemon-tcg-data e TCGdex em
 `.cache/`), `python tools/build_pt_texts.py`, `python cartas.py atualizar`.
@@ -52,6 +53,8 @@ python tests/test_engine.py     # partidas com os decks reais + invariantes + de
 python tests/test_replay.py     # os 4 logs reais do TCG Live devem reproduzir 100%
 python tests/fuzz.py --games 300  # decks aleatórios legais, invariantes a cada decisão
 python tests/test_limitless.py
+python tests/test_explorer.py      # filtros/detalhe da página de cartas (ptcg/explorer.py + web/cartas.html)
+python tests/test_deckbuilder.py   # montador de decks (ptcg/deckbuilder.py + web/decks.html)
 ```
 pytest não é necessário (cada arquivo roda sozinho), mas os testes são compatíveis com pytest.
 

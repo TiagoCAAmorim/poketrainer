@@ -1,0 +1,2 @@
+-r requirements.txt
+playwright>=1.40   # teste de interface: tests/ui_smoke.py (depois: python -m playwright install chromium)

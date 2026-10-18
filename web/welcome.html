@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PTCG Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1512;--line:#2a3b33;--ink:#e7eee9;--mute:#8ea398;--accent:#f2c94c;--ok:#5bd38a;--warn:#f0a048;--danger:#ff5c5c;--card:#1c2a24;--card2:#22332c}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:15px/1.45 'Space Grotesk',system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:40px 16px 60px}
+h1{font-size:34px;margin:0 0 4px;letter-spacing:.5px}
+h1 b{color:var(--accent)}
+.lead{color:var(--mute);margin:0 0 28px;max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+a.opt{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;transition:border-color .15s,background .15s}
+a.opt:hover,a.opt:focus-visible{border-color:var(--accent);background:var(--card2);outline:none}
+a.opt .ic{font-size:26px;line-height:1}
+a.opt h2{margin:8px 0 4px;font-size:19px}
+a.opt p{margin:0;color:var(--mute);font-size:13.5px}
+a.opt .go{margin-top:10px;color:var(--accent);font-size:13px}
+.stats{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;padding-top:16px;border-top:1px solid var(--line);color:var(--mute);font-size:13px}
+.stats b{color:var(--ink)}
+.stats .w{color:var(--warn)}
+.foot{margin-top:18px;color:var(--mute);font-size:12.5px}
+.mono{font-family:'IBM Plex Mono',monospace}
+@media (max-width:640px){.grid{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>PTCG <b>Lab</b></h1>
+  <p class="lead">Motor de regras do Pokémon TCG (Pokémon TCG Live) para testar e otimizar decks do formato Padrão. O que você quer fazer?</p>
+  <div class="grid">
+    <a class="opt" href="/jogar"><div class="ic">⚔️</div><h2>Jogar / simular uma partida</h2>
+      <p>Escolha dois decks e quem controla cada lado (você, IA heurística, aleatório ou rede treinada) e jogue ou assista.</p><div class="go">Abrir o simulador →</div></a>
+    <a class="opt" href="/decks"><div class="ic">🃏</div><h2>Montar e editar decks</h2>
+      <p>Puxe cartas de outro deck ou busque por nome e categoria, atualize seus decks e duplique qualquer deck para a sua coleção.</p><div class="go">Abrir o montador →</div></a>
+    <a class="opt" href="/cartas"><div class="ic">🔎</div><h2>Explorar as cartas</h2>
+      <p>Filtre as cartas do formato, veja imagem e detalhes de cada uma e encontre as que ainda têm problemas de implementação.</p><div class="go">Abrir a biblioteca →</div></a>
+    <a class="opt" href="/jogar#log"><div class="ic">📜</div><h2>Reproduzir um log do TCG Live</h2>
+      <p>Cole o texto de "Copy Log" de uma partida real e veja o motor reproduzir jogada a jogada, conferindo dano e nocautes.</p><div class="go">Abrir a reprodução →</div></a>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="foot">Imagens das cartas: <span class="mono">python baixar_imagens.py</span> · Guias: <span class="mono">DECKS.md</span>, <span class="mono">INSTALACAO.md</span></div>
+</div>
+<script>
+fetch('/api/home').then(r=>r.json()).then(h=>{
+  const s=h.status||{}, prob=(s.parcial||0)+(s.pendente||0);
+  const faltam=h.cartas-h.com_imagem;
+  document.getElementById('stats').innerHTML=
+    `<span><b>${h.cartas}</b> cartas no formato</span>`+
+    `<span><b>${s.implementada||0}</b> implementadas · <span class="w"><b>${prob}</b> com pendências</span></span>`+
+    `<span><b>${h.decks}</b> decks (<b>${h.meus}</b> seus)</span>`+
+    `<span>${h.com_imagem?`<b>${h.com_imagem}</b> imagens baixadas`+(faltam>0?` · ${faltam} sem imagem`:''):'imagens ainda não baixadas'}</span>`;
+}).catch(()=>{});
+</script>
+</body>
+</html>

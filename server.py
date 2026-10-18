@@ -15,6 +15,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 from ptcg.agents import make_agent
+from ptcg import deckbuilder as DB
+from ptcg import explorer as EX
 from ptcg.carddb import db
 from ptcg.decks import DECK_DIR, deck_to_text, list_decks, load_deck, parse_decklist, support_report, validate
 from ptcg.engine import Game
@@ -163,12 +165,12 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, *a):
         pass
 
-    def _send(self, code, payload, ctype='application/json'):
+    def _send(self, code, payload, ctype='application/json', cache='no-store'):
         data = payload if isinstance(payload, bytes) else json.dumps(payload, ensure_ascii=False).encode()
         self.send_response(code)
         self.send_header('Content-Type', ctype + ('; charset=utf-8' if 'text' in ctype or 'json' in ctype else ''))
         self.send_header('Content-Length', str(len(data)))
-        self.send_header('Cache-Control', 'no-store')
+        self.send_header('Cache-Control', cache)
         self.end_headers()
         self.wfile.write(data)
 
@@ -181,9 +183,37 @@ class Handler(BaseHTTPRequestHandler):
         q = parse_qs(u.query)
         reveal = q.get('reveal', ['0'])[0] == '1'
         try:
-            if u.path in ('/', '/index.html'):
-                with open(os.path.join(WEB, 'index.html'), 'rb') as f:
+            pages = {'/': 'welcome.html', '/welcome': 'welcome.html', '/jogar': 'index.html', '/index.html': 'index.html',
+                     '/decks': 'decks.html', '/decks.html': 'decks.html', '/cartas': 'cartas.html', '/cartas.html': 'cartas.html'}
+            if u.path in pages:
+                with open(os.path.join(WEB, pages[u.path]), 'rb') as f:
                     return self._send(200, f.read(), 'text/html')
+            if u.path.startswith('/img/'):
+                partes = u.path.split('/')          # /img/<baixa|alta>/<ID>
+                f = EX.arquivo_imagem(partes[2], partes[3]) if len(partes) == 4 else None
+                if f is None:
+                    return self._send(404, {'error': 'imagem não baixada (python baixar_imagens.py)'})
+                return self._send(200, f.read_bytes(), 'image/webp' if f.suffix == '.webp' else 'image/png',
+                                  cache='public, max-age=86400')
+            if u.path == '/api/home':
+                o = EX.opcoes()
+                return self._send(200, {'cartas': o['total'], 'status': o['status'], 'com_imagem': o['com_imagem'],
+                                        'decks': len(list_decks()), 'meus': len(list_decks('meus'))})
+            if u.path == '/api/cards/options':
+                return self._send(200, {**EX.opcoes(), 'categorias': DB.lista_categorias()})
+            if u.path == '/api/cards/filter':
+                g = lambda k: q.get(k, [''])[0]
+                return self._send(200, EX.filtrar(g('q'), g('grupo'), g('sub'), g('status'), g('tipo'), g('estagio'),
+                                                  g('colecao'), g('no_texto') == '1', int(g('offset') or 0)))
+            if u.path == '/api/cards/detail':
+                return self._send(200, EX.detalhe(q['id'][0]))
+            if u.path == '/api/builder/init':
+                return self._send(200, {'categorias': DB.lista_categorias(), 'decks': DB.decks_disponiveis(),
+                                        'min_busca': DB.MIN_BUSCA})
+            if u.path == '/api/builder/search':
+                return self._send(200, DB.buscar(q.get('q', [''])[0], q.get('grupo', [''])[0], q.get('sub', [''])[0]))
+            if u.path == '/api/builder/deck':
+                return self._send(200, DB.ver_deck(q['name'][0]))
             if u.path == '/api/meta':
                 D = db()
                 cov = Counter(d.status for d in D.cards.values())
@@ -211,6 +241,18 @@ class Handler(BaseHTTPRequestHandler):
             reveal = bool(body.get('reveal'))
             if u.path == '/api/replay':
                 return self._send(200, run_replay(body['log']))
+            if u.path.startswith('/api/builder/'):
+                try:
+                    if u.path == '/api/builder/eval':
+                        return self._send(200, DB.avaliar(body['cards']))
+                    if u.path == '/api/builder/save':
+                        return self._send(200, DB.salvar(body['name'], body['cards'], bool(body.get('overwrite')),
+                                                         body.get('meta')))
+                    if u.path == '/api/builder/duplicate':
+                        return self._send(200, DB.duplicar(body['origem'], body.get('destino') or None))
+                except (ValueError, FileExistsError, KeyError) as e:
+                    return self._send(400, {'error': str(e).strip("'\"")})
+                return self._send(404, {'error': 'não encontrado'})
             with LOCK:
                 with_cards = False
                 if u.path == '/api/new':

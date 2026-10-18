@@ -236,3 +236,6 @@ decks/_lixeira/
 
 logs/atividade.jsonl
 logs/atividade.log
+
+# Imagens das cartas (baixar_imagens.py)
+imagens/

@@ -126,7 +126,7 @@ pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
 </head>
 <body>
 <header>
-  <h1>PTCG <b>Lab</b></h1>
+  <h1><a href="/" style="color:inherit;text-decoration:none" title="Página inicial">PTCG <b>Lab</b></a></h1>
   <div class="grp"><label>J1</label><select id="deck0"></select><select id="ctrl0"></select></div>
   <div class="grp"><label>J2</label><select id="deck1"></select><select id="ctrl1"></select></div>
   <div class="grp"><label>Semente</label><input id="seed" type="number" placeholder="aleatória"></div>
@@ -139,6 +139,8 @@ pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
   <div class="grp"><label><input type="checkbox" id="reveal"> Revelar mãos</label></div>
   <button class="btn" id="undoBtn" title="Desfazer até sua última decisão">↶</button>
   <button class="btn" id="deckBtn">Decks…</button>
+  <a class="btn" href="/decks" style="text-decoration:none">Montador de decks</a>
+  <a class="btn" href="/cartas" style="text-decoration:none">Cartas</a>
   <button class="btn" id="replayBtn">Log do TCG Live…</button>
   <span class="cov" id="cov"></span>
 </header>
@@ -408,6 +410,17 @@ document.addEventListener('keydown',e=>{
 });
 const deckModal=$('deckModal'), pileModal=$('pileModal'), replayModal=$('replayModal');
 loadMeta().then(refresh).catch(e=>toast('Servidor indisponível: '+e.message));
+// Atualiza a lista de decks ao voltar para esta página/aba (ex.: depois de montar um deck em /decks)
+let lastMeta=Date.now();
+function refreshDecks(){
+  if(document.hidden||Date.now()-lastMeta<1500) return;
+  lastMeta=Date.now();
+  loadMeta().catch(()=>{});
+}
+document.addEventListener('visibilitychange',refreshDecks);
+window.addEventListener('focus',refreshDecks);
+window.addEventListener('pageshow',e=>{ if(e.persisted){ lastMeta=0; refreshDecks() } });
+if(location.hash==='#log') setTimeout(()=>{ const b=document.getElementById('replayBtn'); if(b) b.click() },400);
 </script>
 </body>
 </html>

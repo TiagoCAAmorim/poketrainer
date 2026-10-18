@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PTCG Lab — Montador de decks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1512; --line:#2a3b33; --ink:#e7eee9; --mute:#8ea398; --accent:#f2c94c; --danger:#ff5c5c; --ok:#5bd38a; --warn:#f0a048;
+  --panel:#111a16; --card:#1c2a24; --card2:#22332c;
+  --G:#5bb85c; --R:#e8613c; --W:#4a9fe0; --L:#f2c94c; --P:#a768d6; --F:#c0794a; --D:#56677a; --M:#9aa5b1; --N:#c9a227; --C:#cfc9bb; --Y:#e88ac0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.35 'Space Grotesk',system-ui,sans-serif}
+button,select,input,textarea{font:inherit;color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);background:#0c120f}
+header h1{font-size:17px;margin:0 8px 0 0}
+header h1 b{color:var(--accent)}
+header a{color:var(--mute);text-decoration:none;margin-left:auto}
+header a:hover{color:var(--accent)}
+select,input[type=text]{background:#0b100d;border:1px solid var(--line);border-radius:6px;padding:5px 7px;min-width:0}
+.btn{background:#1c2a24;border:1px solid #33493f;border-radius:7px;padding:5px 11px;cursor:pointer;white-space:nowrap}
+.btn:hover:not(:disabled){border-color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:default}
+.btn.primary{background:var(--accent);color:#1a1405;border-color:var(--accent);font-weight:700}
+.btn.sm{padding:1px 8px;line-height:1.5}
+main{display:grid;grid-template-columns:1fr 1fr;gap:0;height:calc(100vh - 52px)}
+section{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--line)}
+section:last-child{border-right:none}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 12px;border-bottom:1px solid var(--line);background:var(--panel)}
+.bar h2{margin:0;font-size:14px;color:var(--mute);font-weight:500;text-transform:uppercase;letter-spacing:.6px}
+.tabs{display:flex;gap:4px}
+.tab{padding:4px 12px;border:1px solid var(--line);border-radius:7px;cursor:pointer;background:#101814;color:var(--mute)}
+.tab.on{background:var(--card2);color:var(--ink);border-color:var(--accent)}
+.list{flex:1;overflow:auto;padding:6px 10px 20px}
+.grp{margin:10px 0 4px;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.6px;display:flex;justify-content:space-between}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:5px 8px;margin:2px 0;background:var(--card);border:1px solid transparent;border-radius:7px}
+.row:hover{border-color:#3b5248;background:var(--card2)}
+.row .nm{font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .nm small{color:var(--mute);font-weight:400;margin-left:6px}
+.row .sub{color:var(--mute);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .ctl{display:flex;gap:4px;align-items:center}
+.qty{min-width:26px;text-align:center;font-weight:700}
+.pip{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:700;color:#10150f}
+.badge{font-size:10.5px;border:1px solid var(--line);border-radius:5px;padding:0 5px;color:var(--mute);margin-left:4px}
+.badge.warn{color:var(--warn);border-color:var(--warn)}
+.badge.ace{color:var(--accent);border-color:var(--accent)}
+.have{color:var(--ok);font-size:12px;margin-right:4px}
+.hint{color:var(--mute);padding:14px 4px}
+.msgs{padding:8px 12px;border-top:1px solid var(--line);background:var(--panel);font-size:12.5px;white-space:pre-wrap;max-height:22vh;overflow:auto}
+.msgs .e{color:var(--danger)} .msgs .w{color:var(--warn)} .msgs .o{color:var(--ok)}
+.total{font-weight:700}
+.total.ok{color:var(--ok)} .total.bad{color:var(--warn)}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#1d2a23;border:1px solid var(--accent);padding:8px 14px;border-radius:8px;display:none;z-index:60;white-space:pre-wrap;max-width:80vw}
+.toast.err{background:#3a1717;border-color:var(--danger)}
+@media (max-width:900px){main{grid-template-columns:1fr;height:auto}section{height:90vh;border-right:none;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>PTCG <b>Lab</b> · Montador de decks</h1>
+  <span style="color:var(--mute)">Esquerda: de onde puxar cartas · Direita: o seu deck (salvo em <span class="mono">decks/meus/</span>)</span>
+  <a href="/">← Início</a>
+</header>
+<main>
+  <!-- ESQUERDA: origem -->
+  <section>
+    <div class="bar">
+      <div class="tabs">
+        <div class="tab on" data-tab="deck">Outro deck</div>
+        <div class="tab" data-tab="busca">Buscar cartas</div>
+      </div>
+    </div>
+    <div class="bar" id="barDeck">
+      <select id="srcDeck" style="flex:1;min-width:180px"></select>
+      <button class="btn" id="dup" title="Cria uma cópia deste deck em decks/meus/ e abre à direita">Duplicar para meus decks</button>
+      <button class="btn" id="addAll" title="Soma todas as cartas deste deck ao deck da direita">Adicionar tudo</button>
+    </div>
+    <div class="bar" id="barBusca" style="display:none">
+      <select id="fGrupo"></select>
+      <select id="fSub"></select>
+      <input type="text" id="fNome" placeholder="Nome (mín. 3 letras, en ou pt)" style="flex:1;min-width:160px" autocomplete="off">
+    </div>
+    <div class="list" id="srcList"></div>
+  </section>
+
+  <!-- DIREITA: meu deck -->
+  <section>
+    <div class="bar">
+      <select id="myDeck" style="min-width:160px"></select>
+      <input type="text" id="myName" placeholder="nome_do_deck" style="flex:1;min-width:120px">
+      <button class="btn primary" id="save">Salvar alterações</button>
+      <button class="btn" id="saveAs">Salvar como novo</button>
+    </div>
+    <div class="bar">
+      <span class="total" id="total">0 / 60</span>
+      <span id="dirty" style="color:var(--warn)"></span>
+      <span style="flex:1"></span>
+      <button class="btn sm" id="copyTxt" title="Copia a lista no formato do Pokémon TCG Live">Copiar lista</button>
+      <button class="btn sm" id="clear">Limpar</button>
+    </div>
+    <div class="list" id="myList"></div>
+    <div class="msgs" id="msgs"></div>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TCOL={G:'--G',R:'--R',W:'--W',L:'--L',P:'--P',F:'--F',D:'--D',M:'--M',N:'--N',C:'--C',Y:'--Y'};
+const pip=t=>`<span class="pip" style="background:var(${TCOL[t]||'--C'})">${t||''}</span>`;
+async function api(url,body){
+  const r=await fetch(url,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:undefined);
+  const j=await r.json().catch(()=>({error:'resposta inválida'}));
+  if(!r.ok) throw new Error(j.error||r.statusText);
+  return j;
+}
+let toastT;
+function toast(msg,err){ const t=$('toast'); t.textContent=msg; t.className='toast'+(err?' err':''); t.style.display='block'; clearTimeout(toastT); toastT=setTimeout(()=>t.style.display='none',err?6000:2500) }
+
+// ---------------------------------------------------------------- estado
+let INIT=null;
+const INFO={};            // id -> resumo da carta (cache)
+let mine=new Map();       // id -> quantidade (deck da direita)
+let loaded=null;          // 'meus/x' quando editando um deck existente; null = novo
+let loadedMeta={};
+let dirty=false;
+let srcCards=[];          // cartas da lista da esquerda: [{...info, n?}]
+let srcMode='deck';
+
+const byName=()=>{ const m=new Map(); for(const [id,n] of mine){ const nm=INFO[id].name; m.set(nm,(m.get(nm)||0)+n) } return m };
+const total=()=>[...mine.values()].reduce((a,b)=>a+b,0);
+
+function setDirty(v){ dirty=v; $('dirty').textContent=v?'● alterações não salvas':'' }
+
+// ---------------------------------------------------------------- linhas de carta
+function cardRow(c,side){
+  const have=byName().get(c.name)||0;
+  const typ=c.kind==='pokemon'?c.types.map(pip).join(''):c.kind==='energy'&&c.provides?pip(c.provides):'';
+  const stage=c.kind==='pokemon'?` · ${['Básico','Estágio 1','Estágio 2'][c.stage]||''} · ${c.hp} PS`:c.kind==='trainer'?` · ${c.sub}`:'';
+  const badges=(c.ace?'<span class="badge ace">ACE SPEC</span>':'')+(c.status!=='ok'?`<span class="badge warn" title="Efeito ${c.status==='partial'?'parcial':'pendente'} no simulador">${c.status==='partial'?'parcial':'pendente'}</span>`:'');
+  let ctl;
+  if(side==='mine'){
+    ctl=`<button class="btn sm" data-act="dec" data-id="${c.id}">−</button><span class="qty">${c.n}</span><button class="btn sm" data-act="inc" data-id="${c.id}">+</button>`;
+  }else{
+    ctl=(have?`<span class="have" title="Já no seu deck (por nome)">${have} no deck</span>`:'')
+       +(c.n!=null?`<span class="qty" title="Cópias neste deck">×${c.n}</span>`:'')
+       +`<button class="btn sm" data-act="add" data-id="${c.id}" title="Adiciona 1 (Shift: ${c.n!=null?c.n:4} cópias)">+</button>`;
+  }
+  return `<div class="row" data-id="${c.id}"><div>${typ||'&nbsp;'}</div>
+    <div style="min-width:0"><div class="nm" title="${esc(c.resumo)}">${esc(c.name)}${c.name_pt?`<small>${esc(c.name_pt)}</small>`:''}<span class="badge mono">${esc(c.print)}</span>${badges}</div>
+    <div class="sub">${esc(stage.replace(/^ · /,''))}${c.resumo?' — '+esc(c.resumo):''}</div></div>
+    <div class="ctl">${ctl}</div></div>`;
+}
+const ORDEM=['pokemon','trainer','energy'], TIT={pokemon:'Pokémon',trainer:'Treinadores',energy:'Energias'};
+
+function renderMine(){
+  const cards=[...mine].map(([id,n])=>({...INFO[id],n}));
+  cards.sort((a,b)=>ORDEM.indexOf(a.kind)-ORDEM.indexOf(b.kind)||b.n-a.n||a.name.localeCompare(b.name));
+  let html='';
+  for(const k of ORDEM){
+    const cs=cards.filter(c=>c.kind===k); if(!cs.length) continue;
+    html+=`<div class="grp"><span>${TIT[k]}</span><span>${cs.reduce((a,c)=>a+c.n,0)}</span></div>`+cs.map(c=>cardRow(c,'mine')).join('');
+  }
+  $('myList').innerHTML=html||'<div class="hint">Deck vazio. Puxe cartas de outro deck ou busque pelo nome/categoria à esquerda.</div>';
+  const t=total(); $('total').textContent=`${t} / 60`; $('total').className='total '+(t===60?'ok':'bad');
+  $('save').disabled=!loaded;
+  $('save').title=loaded?`Sobrescreve ${loaded}`:'Abra um deck seu para atualizá-lo';
+  scheduleEval();
+}
+function renderSrc(){
+  const el=$('srcList');
+  if(srcMode==='deck'){
+    let html='';
+    for(const k of ORDEM){
+      const cs=srcCards.filter(c=>c.kind===k); if(!cs.length) continue;
+      html+=`<div class="grp"><span>${TIT[k]}</span><span>${cs.reduce((a,c)=>a+c.n,0)}</span></div>`+cs.map(c=>cardRow(c,'src')).join('');
+    }
+    el.innerHTML=html||'<div class="hint">Escolha um deck acima.</div>';
+  }else{
+    el.innerHTML=srcCards.length?srcCards.map(c=>cardRow(c,'src')).join('')+(srcTotal>srcCards.length?`<div class="hint">Mostrando ${srcCards.length} de ${srcTotal}. Refine o filtro.</div>`:''):`<div class="hint">${esc(srcHint)}</div>`;
+  }
+}
+
+// ---------------------------------------------------------------- ações sobre o deck da direita
+function addCard(id,qty=1){
+  const nm=INFO[id].name, c=INFO[id];
+  const basicEn=c.kind==='energy'&&c.basic_energy;
+  let ok=0;
+  for(let i=0;i<qty;i++){
+    if(!basicEn&&(byName().get(nm)||0)>=4){ toast(`${nm}: máximo de 4 cópias.`,true); break }
+    if(c.ace&&[...mine.keys()].some(k=>INFO[k].ace&&k!==id)){ toast('Só 1 carta ACE SPEC por deck.',true); break }
+    mine.set(id,(mine.get(id)||0)+1); ok++;
+  }
+  if(ok){ setDirty(true); renderMine(); renderSrc() }
+}
+function decCard(id){
+  const n=(mine.get(id)||0)-1; if(n<=0) mine.delete(id); else mine.set(id,n);
+  setDirty(true); renderMine(); renderSrc();
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-act]'); if(!b) return;
+  const id=b.dataset.id, a=b.dataset.act;
+  if(a==='inc') addCard(id); else if(a==='dec') decCard(id);
+  else if(a==='add'){ const c=srcCards.find(x=>x.id===id); addCard(id,e.shiftKey?(c&&c.n!=null?c.n:4):1) }
+});
+
+// ---------------------------------------------------------------- avaliação (validação do servidor)
+let evalT;
+function scheduleEval(){ clearTimeout(evalT); evalT=setTimeout(doEval,300) }
+async function doEval(){
+  const cards=[...mine].map(([id,n])=>({id,n}));
+  if(!cards.length){ $('msgs').innerHTML='<span class="o">Sem cartas.</span>'; return }
+  try{
+    const r=await api('/api/builder/eval',{cards});
+    $('msgs').innerHTML=(r.errors.length?r.errors.map(x=>`<div class="e">✘ ${esc(x)}</div>`).join(''):'<div class="o">✔ Deck válido (60 cartas, até 4 cópias, ≥1 Básico, ≤1 ACE SPEC)</div>')
+      +r.pending.map(x=>`<div class="w">⚠ ${esc(x)} no simulador</div>`).join('');
+  }catch(e){ $('msgs').innerHTML=`<div class="e">${esc(e.message)}</div>` }
+}
+
+// ---------------------------------------------------------------- carregar/guardar decks
+function fill(cards){ for(const c of cards) INFO[c.id]=c }
+function confirmDiscard(){ return !dirty||confirm('Há alterações não salvas no deck da direita. Descartar?') }
+function fillMySelect(sel){
+  const s=$('myDeck'); s.innerHTML='<option value="">(novo deck)</option>';
+  INIT.decks.filter(d=>d.meu).forEach(d=>s.appendChild(new Option(d.name.replace('meus/',''),d.name)));
+  s.value=sel||'';
+}
+async function openMine(name){
+  if(!name){ mine=new Map(); loaded=null; loadedMeta={}; $('myName').value=''; setDirty(false); renderMine(); renderSrc(); return }
+  const d=await api('/api/builder/deck?name='+encodeURIComponent(name));
+  fill(d.cards); mine=new Map(d.cards.map(c=>[c.id,c.n])); loaded=name; loadedMeta=d.meta;
+  $('myName').value=name.replace('meus/',''); setDirty(false); renderMine(); renderSrc();
+}
+$('myDeck').onchange=async()=>{
+  const v=$('myDeck').value;
+  if(!confirmDiscard()){ $('myDeck').value=loaded||''; return }
+  try{ await openMine(v) }catch(e){ toast(e.message,true) }
+};
+async function save(overwrite){
+  const name=$('myName').value.trim();
+  if(!overwrite&&!name){ toast('Digite um nome para o novo deck.',true); return }
+  const target=overwrite?loaded.replace('meus/',''):name;
+  const meta=overwrite?loadedMeta:(loaded?{...loadedMeta,copiado_de:loaded}:{});
+  try{
+    const r=await api('/api/builder/save',{name:target,cards:[...mine].map(([id,n])=>({id,n})),overwrite,meta});
+    INIT.decks=(await api('/api/builder/init')).decks;
+    loaded=r.name; fillMySelect(loaded); $('myName').value=loaded.replace('meus/','');
+    loadedMeta=(await api('/api/builder/deck?name='+encodeURIComponent(loaded))).meta;
+    setDirty(false); fillSrcDecks(); toast((r.criado?'Deck criado: ':'Deck atualizado: ')+r.name+(r.errors.length?'\n⚠ salvo, mas com pendências (veja os avisos).':''));
+  }catch(e){ toast(e.message,true) }
+}
+$('save').onclick=()=>loaded&&save(true);
+$('saveAs').onclick=()=>save(false);
+$('clear').onclick=()=>{ if(mine.size&&confirm('Remover todas as cartas do deck da direita?')){ mine=new Map(); setDirty(true); renderMine(); renderSrc() } };
+$('copyTxt').onclick=async()=>{
+  const g={pokemon:[],trainer:[],energy:[]};
+  for(const [id,n] of mine) g[INFO[id].kind].push([INFO[id],n]);
+  let out='';
+  for(const [k,t] of [['pokemon','Pokémon'],['trainer','Trainer'],['energy','Energy']]){
+    const it=g[k].sort((a,b)=>b[1]-a[1]||a[0].name.localeCompare(b[0].name)); if(!it.length) continue;
+    out+=`${t}: ${it.reduce((a,x)=>a+x[1],0)}\n`+it.map(([c,n])=>`${n} ${c.name} ${c.print}`).join('\n')+'\n\n';
+  }
+  try{ await navigator.clipboard.writeText(out); toast('Lista copiada.') }catch{ toast('Não foi possível copiar.',true) }
+};
+window.addEventListener('beforeunload',e=>{ if(dirty){ e.preventDefault(); e.returnValue='' } });
+
+// ---------------------------------------------------------------- esquerda
+function fillSrcDecks(){
+  const s=$('srcDeck'), cur=s.value; s.innerHTML='';
+  const groups={};
+  INIT.decks.forEach(d=>{ const g=d.name.includes('/')?d.name.split('/').slice(0,-1).join('/'):'decks'; (groups[g]=groups[g]||[]).push(d) });
+  const keys=Object.keys(groups).sort((a,b)=>(a==='meus'?-1:b==='meus'?1:a.localeCompare(b)));
+  for(const g of keys){ const og=document.createElement('optgroup'); og.label=g;
+    groups[g].forEach(d=>og.appendChild(new Option(d.label+(d.ok?'':' ⚠'),d.name))); s.appendChild(og) }
+  if(cur&&[...s.options].some(o=>o.value===cur)) s.value=cur;
+}
+async function loadSrcDeck(){
+  const n=$('srcDeck').value; if(!n){ srcCards=[]; renderSrc(); return }
+  try{ const d=await api('/api/builder/deck?name='+encodeURIComponent(n)); fill(d.cards); srcCards=d.cards;
+    $('dup').disabled=false; renderSrc();
+    if(d.errors.length) toast('Este deck tem cartas fora da base/rotação:\n'+d.errors.slice(0,3).join('\n'),true);
+  }catch(e){ toast(e.message,true) }
+}
+$('srcDeck').onchange=loadSrcDeck;
+$('dup').onclick=async()=>{
+  const n=$('srcDeck').value; if(!n) return;
+  if(!confirmDiscard()) return;
+  const sugestao=n.split('/').pop();
+  const destino=prompt('Nome do novo deck em decks/meus/:',sugestao); if(destino===null) return;
+  try{
+    const r=await api('/api/builder/duplicate',{origem:n,destino:destino.trim()});
+    INIT.decks=(await api('/api/builder/init')).decks; fillSrcDecks(); $('srcDeck').value=n;
+    fillMySelect(r.name); await openMine(r.name); toast('Deck copiado para '+r.name);
+  }catch(e){ toast(e.message,true) }
+};
+$('addAll').onclick=()=>{ if(srcMode!=='deck') return; let any=false; for(const c of srcCards){ const antes=mine.get(c.id)||0; addCard(c.id,c.n); any=any||(mine.get(c.id)||0)>antes } };
+
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  srcMode=t.dataset.tab;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
+  $('barDeck').style.display=srcMode==='deck'?'':'none'; $('barBusca').style.display=srcMode==='busca'?'':'none';
+  if(srcMode==='deck') loadSrcDeck(); else runSearch();
+});
+
+let srcTotal=0, srcHint='';
+function fillFilters(){
+  const g=$('fGrupo'); g.innerHTML='<option value="">Todas as categorias</option>';
+  INIT.categorias.forEach(c=>g.appendChild(new Option(`${c.rotulo} (${c.n})`,c.grupo)));
+  fillSub();
+}
+function fillSub(){
+  const s=$('fSub'), cat=INIT.categorias.find(c=>c.grupo===$('fGrupo').value);
+  s.innerHTML='<option value="">'+(cat?'Todos':'—')+'</option>'; s.disabled=!cat;
+  if(cat) cat.subs.forEach(x=>s.appendChild(new Option(`${x.rotulo} (${x.n})`,x.sub)));
+}
+$('fGrupo').onchange=()=>{ fillSub(); runSearch() };
+$('fSub').onchange=runSearch;
+let searchT, searchSeq=0;
+$('fNome').oninput=()=>{ clearTimeout(searchT); searchT=setTimeout(runSearch,200) };
+async function runSearch(){
+  const q=$('fNome').value.trim(), grupo=$('fGrupo').value, sub=$('fSub').value, seq=++searchSeq;
+  if(q.length<INIT.min_busca&&!grupo){
+    srcCards=[]; srcTotal=0; srcHint=q.length?`Digite ao menos ${INIT.min_busca} letras ou escolha uma categoria.`:`Escreva ao menos ${INIT.min_busca} letras do nome (inglês ou português) ou escolha uma categoria.`;
+    return renderSrc();
+  }
+  try{
+    const p=new URLSearchParams({q: q.length>=INIT.min_busca?q:'',grupo,sub});
+    const r=await api('/api/builder/search?'+p);
+    if(seq!==searchSeq) return;
+    fill(r.cards); srcCards=r.cards; srcTotal=r.total; srcHint='Nenhuma carta encontrada.'; renderSrc();
+  }catch(e){ toast(e.message,true) }
+}
+
+// ---------------------------------------------------------------- início
+(async()=>{
+  INIT=await api('/api/builder/init');
+  fillFilters(); fillSrcDecks(); fillMySelect('');
+  $('dup').disabled=true;
+  const pre=new URLSearchParams(location.search);
+  if(pre.get('deck')){ $('srcDeck').value=pre.get('deck') }
+  await loadSrcDeck(); renderMine();
+  const mineDecks=INIT.decks.filter(d=>d.meu);
+  if(pre.get('meu')&&mineDecks.some(d=>d.name===pre.get('meu'))){ fillMySelect(pre.get('meu')); await openMine(pre.get('meu')) }
+})().catch(e=>toast(e.message,true));
+</script>
+</body>
+</html>

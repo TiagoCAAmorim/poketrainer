@@ -44,6 +44,8 @@ O PyTorch (`pip install torch`) só é necessário mais tarde, para treinar a IA
 |---|---|---|---|---|
 | 1 | `python tests/test_rules.py` | < 1 s | 15 linhas `ok …` e `falhas: 0` | regras básicas (dano, fraqueza, condições, Habilidades, Ferramentas…) |
 | 2 | `python tests/test_limitless.py` | < 1 s | `ok` | leitura das páginas da Limitless |
+| 2c | `python tests/test_explorer.py` | < 5 s | `ok` | filtros e detalhe da página de cartas |
+| 2b | `python tests/test_deckbuilder.py` | < 5 s | `ok` | busca, salvar e duplicar do montador de decks |
 | 3 | `python tests/test_engine.py` | ~10 s | `ok 6.0 s` (o tempo varia) | partidas inteiras com os 12 decks top 8, sem cartas perdidas/duplicadas; partidas reproduzíveis |
 | 4 | `python tests/test_replay.py` | ~10–30 s | `ok 4 logs` | as 4 partidas reais do Pokémon TCG Live são refeitas jogada a jogada |
 | 5 | `python tests/fuzz.py --games 300` | ~15 s | `300 partidas, 0 com erro; …` | decks aleatórios e jogadas aleatórias (estresse do motor) |

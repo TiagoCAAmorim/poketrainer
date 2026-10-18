@@ -76,13 +76,31 @@ número de cartas. Também dá para editar o `.txt` à mão e validar em seguida
 
 ## 4. Criar
 
+**Montador gráfico** — `python server.py` e abra http://localhost:8765/decks (também há o botão *Montador de decks* no simulador).
+
+- **Esquerda (origem)**, duas abas:
+  - *Outro deck*: escolha qualquer deck (meus, importados, torneios, `tests`) e veja as cartas por Pokémon/Treinadores/Energias.
+    `+` adiciona 1 cópia (Shift+clique adiciona todas as cópias do deck); *Adicionar tudo* soma o deck inteiro;
+    *Duplicar para meus decks* cria a cópia em `decks/meus/` e já a abre à direita.
+  - *Buscar cartas*: filtros de categoria iguais às pastas de `cartas/` (Pokémon / Pokémon ex por tipo, Treinadores por
+    Apoiadores-Itens-Ferramentas-Estádios, Energias por tipo ou Especiais) e busca por nome em inglês ou português
+    (a lista aparece a partir de 3 letras; os filtros se combinam). Cada linha mostra quantas cópias você já tem.
+- **Direita (meu deck)**: abra um deck seu ou comece um novo; `+`/`−` ajustam as cópias; o contador mostra `N / 60` e a
+  validação do servidor aparece embaixo (cartas com efeito parcial/pendente também). O montador impede mais de 4 cópias por
+  nome (exceto Energia Básica) e mais de 1 ACE SPEC.
+  - *Salvar alterações* atualiza o deck aberto (só decks de `decks/meus/`); *Salvar como novo* usa o nome digitado e
+    recusa nomes que já existem; *Copiar lista* põe o texto no formato do TCG Live na área de transferência.
+  - Rascunhos incompletos (≠ 60 cartas) podem ser salvos; os avisos continuam aparecendo.
+
+Pelo terminal:
+
 ```
 python gerenciar_decks.py montar meu_deck                  # montagem interativa, carta a carta
 python gerenciar_decks.py montar meu_deck --base 01_hedrick_dragapult   # partindo de outro deck
 python gerenciar_decks.py criar meu_deck --arquivo lista.txt --arquetipo "Dragapult ex"
 ```
 
-Use `--sobrescrever` para trocar um deck existente. A interface (`python server.py`) também cria decks.
+Use `--sobrescrever` para trocar um deck existente. (O botão *Decks…* do simulador continua aceitando uma lista colada em texto.)
 
 ## 5. Validar e testar
 
