@@ -390,6 +390,10 @@ def mill(g, p, n):
     pl.discard.extend(cards)
     if cards:
         g.say(f'{pl.name} descartou do topo: {", ".join(c.name for c in cards)}')
+        if g.current != p:   # Startling Drop (Ferrothorn): descartado do baralho por efeito do oponente
+            for c in cards:
+                if any(a.name == 'Startling Drop' for a in c.d.abilities):
+                    mill(g, 1 - p, 8)
     return cards
 
 

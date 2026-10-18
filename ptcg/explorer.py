@@ -68,7 +68,7 @@ def opcoes() -> dict:
     sets = _raw()[0]['sets']
     cont = Counter(d.status for d in D.cards.values())
     colecoes = Counter(p.rsplit('-', 1)[0] for d in D.cards.values() for p in (d.prints or [d.id]))
-    return {'status': {STATUS_ROT[k]: v for k, v in cont.items()}, 'total': len(D.cards),
+    return {'status': {STATUS_ROT[k]: cont.get(k, 0) for k in STATUS_ROT}, 'total': len(D.cards),
             'colecoes': [{'code': c, 'nome': sets.get(c, {}).get('name', c), 'n': n}
                          for c, n in sorted(colecoes.items(), key=lambda x: sets.get(x[0], {}).get('date', ''))],
             'com_imagem': sum(1 for cid in D.cards if _arquivo('baixa', cid) or _arquivo('alta', cid)),

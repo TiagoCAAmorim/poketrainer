@@ -54,14 +54,22 @@ python tests/test_replay.py     # os 4 logs reais do TCG Live devem reproduzir 1
 python tests/fuzz.py --games 300  # decks aleatórios legais, invariantes a cada decisão
 python tests/test_limitless.py
 python tests/test_partidas_usuario.py  # partidas da interface SEM comentários (logs/interface + tests/fixtures/partidas) refeitas com invariantes
+python tests/test_efeitos_novos.py # cenários da 2ª leva de cobertura
+python tests/smoke_cartas.py       # todo ataque/Habilidade ativada roda sem erro
+python tests/fuzz.py --games 300 --novas  # decks favorecendo a 2ª leva
 python tests/test_explorer.py      # filtros/detalhe da página de cartas (ptcg/explorer.py + web/cartas.html)
 python tests/test_deckbuilder.py   # montador de decks (ptcg/deckbuilder.py + web/decks.html)
 ```
 pytest não é necessário (cada arquivo roda sozinho), mas os testes são compatíveis com pytest.
 
 ## Estado atual (2026-10-17)
-- Cobertura: 1.628 cartas completas, 389 parciais, 66 pendentes (`python cartas.py resumo`;
-  `python cartas.py listar --pendentes`; a ficha de cada carta mostra a frase não implementada).
+- Cobertura: 2.083/2.083 cartas completas (`python cartas.py resumo`). Segunda leva em `ptcg/effects/extra.py`
+  (padrões `@pattern` + `*_fallback` de contagens/condições, frases compostas "A, and B" via `register_multi`),
+  `abilities2.py` (Habilidades à mão: ganchos, eventos, gatilhos de movimento, `kind='hand'`/`'setup'`) e `attacks2.py`.
+  Ganchos novos no motor: `can_evolve`, `ignore_effects`, `no_return_to_hand`, `trainer_fizzle`, `retreat_fizzle`,
+  `keep_confusion`; `AttackImpl.cost_mod`; `AbilityImpl.hand_blocked`; `Game.prize_log`, `slot.flags['atk_log'/'dmg_log']`.
+  Cuidado em regex de `@pattern`: um `(.+)` final engole o ponto (use `(.+?)`). Efeitos que pedem decisão com cartas fora
+  de zona devem colocá-las em `limbo` (invariante de 60 cartas).
   Todos os Treinadores/Ferramentas/Estádios/Energias e os 12 decks fixos de `decks/tests/` (usados por `tests/test_engine.py`) estão 100%.
   `decks/limitless/` é local (gitignore): importe com `import_limitless.py` e limpe com `limpar_decks.py`; guia em `DECKS.md`.
 - Replays: 4/4 logs de exemplo reproduzidos por completo. No log slowking-vs-beedrill o TCG Live deu 300 de dano
@@ -70,7 +78,8 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
 - PyTorch não foi testado (o ambiente anterior não conseguia instalar torch); `ptcg/ai/` pode precisar de ajustes.
 
 ## Próximos passos
-1. **Cobertura**: implementar as frases restantes (lista: script abaixo). Priorizar cartas competitivas
+0. Cobertura está em 100% (texto reconhecido); o foco agora é **fidelidade**: reproduzir logs reais e conferir cartas da 2ª leva.
+1. (histórico) **Cobertura**: implementar as frases restantes (lista: script abaixo). Priorizar cartas competitivas
    (Bloodmoon Ursaluna ex "Seasoned Skill", Iron Thorns ex "Initialization", Flutter Mane "Midnight Fluttering",
    Gastrodon "Sticky Bind", Incineroar ex "Hustle Play", Munkidori ex, Kyurem "Plasma Bane", Hydreigon ex,
    Gengar ex "Gnawing Curse", Palafin "Zero to Hero", Klinklang, Okidogi "Adrena-Power", Rotom ex "Multi Adapter").

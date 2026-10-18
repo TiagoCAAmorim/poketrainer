@@ -57,14 +57,19 @@ def main():
     ap.add_argument('--games', type=int, default=200)
     ap.add_argument('--seed', type=int, default=0)
     ap.add_argument('--verbose', action='store_true')
+    ap.add_argument('--novas', action='store_true', help='favorece as cartas da segunda leva de cobertura')
     a = ap.parse_args()
     rng = random.Random(a.seed)
+    prefer = None
+    if a.novas:
+        with open(os.path.join(os.path.dirname(__file__), 'fixtures', 'cartas_segunda_leva.txt')) as f:
+            prefer = {x.strip() for x in f if x.strip()}
     errors = collections.Counter()
     examples = {}
     ends = collections.Counter()
     turns = []
     for k in range(a.games):
-        d0, d1 = random_deck(rng), random_deck(rng)
+        d0, d1 = random_deck(rng, prefer=prefer), random_deck(rng, prefer=prefer)
         g = None
         try:
             g = Game(d0, d1, seed=rng.randrange(2 ** 31))

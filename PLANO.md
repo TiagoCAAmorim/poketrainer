@@ -22,17 +22,15 @@ Atualizado em: 2026-10-17
 - ✅ Base com as 2.083 cartas legais (textos oficiais em inglês e português)
 - ✅ Todos os Treinadores (Itens, Apoiadores), Ferramentas, Estádios e Energias Especiais
 - ✅ Todas as cartas dos 12 decks de teste (`decks/tests/`, top 8 do Mundial e de Louisville 2026)
-- 🟡 Pokémon: **1.628 completas · 389 parciais · 66 pendentes**
-  (`python cartas.py resumo`; a lista do que falta: `python cartas.py listar --pendentes`)
-- ⬜ **Próximo:** cartas competitivas que ainda faltam — Bloodmoon Ursaluna ex (Seasoned Skill),
-  Iron Thorns ex (Initialization), Flutter Mane (Midnight Fluttering), Gastrodon (Sticky Bind),
-  Incineroar ex (Hustle Play), Munkidori ex, Kyurem (Plasma Bane), Hydreigon ex, Gengar ex (Gnawing Curse),
-  Palafin (Zero to Hero), Klinklang, Okidogi (Adrena-Power), Rotom ex (Multi Adapter)
-- ⬜ Efeitos genéricos que resolvem várias cartas de uma vez: "usar ataque do oponente como este ataque",
-  "escolher um ataque que o oponente não pode usar", "descartar Energias e causar N a 1 Pokémon do oponente",
-  "Round", contra-ataques ("se este Pokémon for danificado… coloque N contadores"), "carta aleatória da mão
-  do oponente volta para o baralho", nocaute direto
-- ⬜ Meta: 100% das cartas completas
+- ✅ Pokémon: **2.083 completas · 0 parciais · 0 pendentes** (`python cartas.py resumo`). A segunda leva (451 cartas)
+  está em `ptcg/effects/extra.py` (padrões do compilador), `abilities2.py` e `attacks2.py` (à mão).
+  "Completa" = o texto foi reconhecido e executa; a fidelidade é checada por `tests/test_efeitos_novos.py` (cenários),
+  `tests/smoke_cartas.py` (todo ataque/Habilidade ativada roda sem erro e sem perder cartas) e
+  `tests/fuzz.py --novas` (decks favorecendo essas cartas).
+- ⬜ Aproximações conhecidas: Multi Adapter não descarta Ferramentas extras ao perder a Habilidade; Luminous Wing só
+  bloqueia contadores de Habilidades; Backtrack Badge só refaz moedas de ataques compilados do texto;
+  ataques de Core Memory/TM Fluorite foram tirados de sites de cartas (a base não os tinha).
+- ✅ Meta: 100% das cartas completas (próximo: validar com logs reais)
 
 ## Fase 3 — Decks ✅
 - ✅ Leitura de listas do TCG Live e da Limitless (nomes em inglês ou português, com ou sem coleção/número)

@@ -289,7 +289,7 @@ def _(m, d, ab):
 def _(m, d, ab):
     from .compiler import count_expr
     n = int(m.group(1))
-    ph = m.group(2)
+    ph = m.group(2).rstrip('.')
     if ph == 'Prize card your opponent has taken':
         cnt = lambda g, s: g.prizes_taken(1 - s.owner)
     else:

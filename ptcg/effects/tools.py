@@ -1,7 +1,7 @@
 """Ferramentas Pokémon."""
 from __future__ import annotations
 
-from ..core import TrainerImpl
+from ..core import AttackDef, AttackImpl, TrainerImpl
 from . import lib, register_trainer
 
 
@@ -211,7 +211,35 @@ def _tm_discard(g, src, player):
         discard_tool(g, src)
 
 
-tool('Technical Machine: Fluorite', events={'turn_end': _tm_discard}, status='partial',
-     note='o ataque concedido não consta na base de dados')
-tool('Core Memory', status='partial', note='o ataque concedido não consta na base de dados')
-tool('Backtrack Badge', status='partial', note='refazer moedas não implementado')
+def _granted(attack_def, only=None):
+    """Gancho extra_attacks: o Pokémon com a Ferramenta pode usar o ataque impresso nela."""
+    def h(g, src, atks, slot):
+        if slot is src.slot and (only is None or only(slot)) and attack_def not in atks:
+            return atks + [attack_def]
+    return h
+
+
+def _fluorite_run(g, ctx):
+    s = ctx.attacker
+    g.discard_energy(s, list(s.energy), ctx)
+    for x in g.players[ctx.player].in_play():
+        if 'tera' in x.d.tags:
+            g.heal(x, 9999)
+    if False:
+        yield
+
+
+def _geobuster_run(g, ctx):
+    yield from g.main_damage(ctx)
+    g.discard_energy(ctx.attacker, list(ctx.attacker.energy), ctx)
+
+
+_FLUORITE = AttackDef('Fluorite', ['G', 'W', 'P'], 0, '',
+                      'Discard all Energy from this Pokémon and heal all damage from each of your Tera Pokémon.',
+                      AttackImpl(run=_fluorite_run), 'Technical Machine: Fluorite')
+_GEOBUSTER = AttackDef('Geobuster', ['F', 'F', 'F', 'F'], 350, '',
+                       'Discard all Energy from this Pokémon.', AttackImpl(run=_geobuster_run), 'Core Memory')
+
+tool('Technical Machine: Fluorite', events={'turn_end': _tm_discard}, hooks={'extra_attacks': _granted(_FLUORITE)})
+tool('Core Memory', hooks={'extra_attacks': _granted(_GEOBUSTER, lambda sl: sl.name == 'Mega Zygarde ex')})
+tool('Backtrack Badge')   # a nova jogada das moedas está em extra.maybe_reroll (chamada pelos passos de moeda)

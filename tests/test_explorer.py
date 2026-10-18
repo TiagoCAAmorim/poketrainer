@@ -30,8 +30,9 @@ def test_filtros():
 def test_detalhe_e_imagens():
     d = EX.detalhe('TWM-130')
     assert d['name'] == 'Dragapult ex' and d['ataques'][1]['texto_pt'] and d['impressoes'][0]['colecao']
-    pend = next(c for c in db().cards.values() if c.status != 'ok')
-    assert EX.detalhe(pend.id)['pendencias']
+    pend = next((c for c in db().cards.values() if c.status != 'ok'), None)      # pode não haver mais nenhuma
+    if pend is not None:
+        assert EX.detalhe(pend.id)['pendencias']
     assert EX.arquivo_imagem('baixa', '../../etc/passwd') is None                 # só IDs da base
     f = EX.arquivo_imagem('../x', 'TWM-130')                                       # qualidade inválida → baixa
     assert f is None or EX.IMG_DIR in f.parents

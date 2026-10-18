@@ -61,6 +61,7 @@ class Game:
         self.stadium: Optional[Card] = None
         self.effects: list[TempEffect] = []
         self.ko_log: list[dict] = []
+        self.prize_log: list[tuple] = []   # (turno, quem pegou, quantas)
         self.log: list[dict] = []
         self.history: list[int] = []
         self.winner: Optional[int] = None
@@ -352,7 +353,11 @@ class Game:
         return self.energy_count(slot, t) > 0
 
     def attack_cost(self, slot, atk) -> list:
-        return self.fold('attack_cost', list(atk.cost), slot=slot, attack=atk)
+        cost = self.fold('attack_cost', list(atk.cost), slot=slot, attack=atk)
+        im = atk.impl
+        if im is not None and im.cost_mod is not None:
+            cost = im.cost_mod(self, slot, cost)
+        return cost
 
     def can_pay(self, slot, cost, units=None) -> bool:
         if units is None:
@@ -373,6 +378,16 @@ class Game:
                     used[j] = False
             return False
         return bt(0)
+
+    @staticmethod
+    def playable_basic(c) -> bool:
+        """Básico que pode ser jogado da mão (alguns só entram por efeito, ex.: Palafin ex)."""
+        return c.d.is_basic and not any(ab.impl is not None and ab.impl.hand_blocked for ab in c.d.abilities)
+
+    @staticmethod
+    def setup_active_ok(c) -> bool:
+        """Pode ser colocado como Ativo na preparação mesmo sem ser Básico (ex.: Cinderace)."""
+        return c.d.kind == 'pokemon' and any(ab.impl is not None and ab.impl.kind == 'setup' for ab in c.d.abilities)
 
     def bench_max(self, p) -> int:
         return self.fold('bench_max', DEFAULT_BENCH, player=p)
@@ -485,7 +500,7 @@ class Game:
             self.shuffle(p)
             while True:
                 self.draw(p, 7)
-                if any(c.d.is_basic for c in pl.hand):
+                if any(self.playable_basic(c) for c in pl.hand):
                     break
                 pl.mulligans += 1
                 self.say(f'{pl.name} fez mulligan')
@@ -505,7 +520,7 @@ class Game:
         self.players[self.first_player].went_first = True
         for p in (0, 1):
             pl = self.players[p]
-            basics = [c for c in pl.hand if c.d.is_basic]
+            basics = [c for c in pl.hand if self.playable_basic(c) or self.setup_active_ok(c)]
             seen, opts = set(), []
             for c in basics:
                 if c.d.id not in seen:
@@ -514,7 +529,7 @@ class Game:
             opt = yield from self.ask(p, 'setup_active', 'Escolha seu Pokémon Ativo', opts)
             pl.hand.remove(opt.value)
             pl.active = PokemonSlot(opt.value, 0)
-            rest = [c for c in pl.hand if c.d.is_basic]
+            rest = [c for c in pl.hand if self.playable_basic(c)]
             bench = yield from self.choose_cards(p, rest, DEFAULT_BENCH, 0, 'setup_bench', 'Pokémon para o Banco')
             for c in bench:
                 pl.hand.remove(c)
@@ -609,6 +624,8 @@ class Game:
         frm = self.fold('evolves_from', {d.evolves_from}, slot=slot, card=card)
         if slot.name not in frm:
             return False
+        if not self.allowed('can_evolve', player=p, slot=slot, card=card):
+            return False
         early = self.anyhook('can_evolve_early', slot=slot, card=card)
         if not early:
             if self.first_turn(p) or slot.turn_entered >= self.turn:
@@ -673,13 +690,19 @@ class Game:
             d = c.d
             if d.kind == 'pokemon':
                 if d.stage == 0:
-                    if self.bench_space(p) > 0 and self.can_play_card(p, c):
+                    if self.playable_basic(c) and self.bench_space(p) > 0 and self.can_play_card(p, c):
                         add(('pb', d.id), Option(f'Jogar {d.name} no Banco', c, 'play_basic', card=c))
                 else:
                     for s in pl.in_play():
                         if self.can_evolve(p, s, c) and self.can_play_card(p, c):
                             add(('ev', d.id, s.sid), Option(f'Evoluir {self.slot_label(s)} → {d.name}', (c, s),
                                                             'evolve', card=c, target=(p, self.slot_pos(s))))
+                for ab in d.abilities:       # Habilidades usáveis da mão (ex.: Emergency Rotation)
+                    im = ab.impl
+                    if im is not None and im.kind == 'hand' and f'{ab.name}:{c.uid}' not in pl.ability_keys and \
+                            self.ability_active_in_hand(c, ab) and (im.can_use is None or im.can_use(self, p, c)):
+                        add(('hab', c.uid, ab.name), Option(f'Habilidade {ab.name} — {d.name} (mão)', (c, ab),
+                                                            'ability', card=c))
             elif d.kind == 'energy':
                 if pl.energy_attached < 1:
                     for s in pl.in_play():
@@ -751,7 +774,12 @@ class Game:
             yield from self.play_trainer(p, opt.value)
         elif k == 'ability':
             s, ab = opt.value
-            yield from self.use_ability(p, s, ab)
+            if isinstance(s, Card):      # Habilidade usada da mão (ex.: Emergency Rotation)
+                pl.ability_keys.add(f'{ab.name}:{s.uid}')
+                self.say(f'{pl.name} usou {ab.name} ({s.name}, da mão)', 'ability')
+                yield from run(ab.impl.run(self, p, s))
+            else:
+                yield from self.use_ability(p, s, ab)
         elif k == 'stadium':
             pl.stadium_used = True
             self.say(f'{pl.name} usou o Estádio {self.stadium.name}')
@@ -762,6 +790,9 @@ class Game:
             self.say(f'{pl.name} descartou {opt.value.name} do jogo')
             self.remove_slot(opt.value, to='discard')
             yield from self._promote_if_needed()
+
+    def ability_active_in_hand(self, card, ab) -> bool:
+        return True
 
     def use_ability(self, p, s, ab):
         pl = self.players[p]
@@ -796,7 +827,10 @@ class Game:
         old = slot.name
         slot.cards.append(card)
         slot.turn_evolved = self.turn
+        keep = 'confused' in slot.conditions and self.anyhook('keep_confusion', slot=slot)
         slot.clear_conditions()
+        if keep:
+            slot.conditions.add('confused')
         self._slot_left(slot, evolved=True)
         self.say(f'{pl.name} evoluiu {old} para {card.name}')
         yield from self.emit('evolved', player=p, slot=slot, from_hand=from_hand)
@@ -819,7 +853,10 @@ class Game:
             return None
         c = slot.cards.pop()
         (self.players[c.owner].hand if to == 'hand' else self.players[c.owner].discard).append(c)
+        keep = 'confused' in slot.conditions and self.anyhook('keep_confusion', slot=slot)
         slot.clear_conditions()
+        if keep:
+            slot.conditions.add('confused')
         self._slot_left(slot)
         return c
 
@@ -846,6 +883,10 @@ class Game:
     def play_trainer(self, p, c):
         pl, d = self.players[p], c.d
         pl.hand.remove(c)
+        if self.anyhook('trainer_fizzle', player=p, card=c):
+            self.say(f'{pl.name} jogou {c.name}, mas a carta foi descartada (moeda)', 'trainer')
+            pl.discard.append(c)
+            return
         self.say(f'{pl.name} jogou {c.name}', 'trainer')
         pl.played.append(d.name)
         if d.subtype == 'supporter':
@@ -876,6 +917,10 @@ class Game:
         pl = self.players[p]
         act = pl.active
         cost = self.retreat_cost(act)
+        if self.anyhook('retreat_fizzle', player=p, slot=act):
+            pl.retreated = True
+            self.say(f'{pl.name} tentou recuar {act.name}, mas o recuo falhou (moeda)')
+            return
         if cost > 0:
             paid = yield from self.choose_energy_to_discard(p, act, cost, 'retreat_energy',
                                                             'Energia para pagar o recuo')
@@ -924,6 +969,8 @@ class Game:
         """Tira um Pokémon de jogo; todas as cartas vão para `to` (discard/hand/deck)."""
         p = slot.owner
         pl = self.players[p]
+        if to == 'hand' and self.anyhook('no_return_to_hand', slot=slot):
+            return []
         if pl.active is slot:
             pl.active = None
         elif slot in pl.bench:
@@ -956,13 +1003,16 @@ class Game:
         att = pl.active
         self.say(f'{att.name} usou {atk.name}', 'attack')
         if 'confused' in att.conditions and not self.flip():
-            att.damage += 30
+            att.damage += 10 * att.flags.get('confused_n', 3)
             self.say(f'{att.name} está Confuso e se feriu (3 contadores)')
             yield from self._resolve_kos()
             return
-        if any(e.target is att and e.data.get('smokescreen') for e in self.effects) and not self.flip():
+        smoke = [e.data.get('flips', 1) for e in self.effects if e.target is att and e.data.get('smokescreen')]
+        if smoke and self.flips(max(smoke)) < max(smoke):
             self.say(f'O ataque de {att.name} não aconteceu')
             return
+        att.flags.setdefault('atk_log', []).append((self.turn, atk.name))
+        pl.attack_log.append((self.turn, att, atk.name))
         ctx = AttackCtx(self, p, att, op.active, atk)
         ctx.queue = []
         self._actx = ctx
@@ -1012,7 +1062,7 @@ class Game:
         if not self.is_active(target) and 'tera' in target.d.tags:
             return 0
         if dmg > 0:
-            if ctx.ignore_effects and target.owner == ctx.opp:
+            if (ctx.ignore_effects or self.anyhook('ignore_effects', ctx=ctx)) and target.owner == ctx.opp:
                 dmg = self.fold('damage_in', dmg, ctx=ctx, target=target, active=active_target,
                                 _skip_target=target)
             else:
@@ -1028,6 +1078,7 @@ class Game:
             self.say(f'{target.name} resistiu com 10 HP!')
         target.damage += dmg
         target.flags['hit'] = (self.turn, 'attack', ctx.attacker)
+        target.flags.setdefault('dmg_log', []).append((self.turn, dmg))
         ctx.queue.append(('damaged', target, dmg))
         if target is ctx.defender:
             ctx.done_damage += dmg
@@ -1073,6 +1124,8 @@ class Game:
             return False
         if cond in EXCLUSIVE_CONDITIONS:
             slot.conditions -= EXCLUSIVE_CONDITIONS
+        if cond not in slot.conditions:
+            slot.flags.pop({'poisoned': 'poison_n', 'confused': 'confused_n'}.get(cond, ''), None)
         slot.conditions.add(cond)
         if cond == 'paralyzed':
             slot.paralyzed_until = self.turn + (2 if self.current == slot.owner else 1)
@@ -1119,7 +1172,7 @@ class Game:
             if s is None:
                 continue
             if 'poisoned' in s.conditions:
-                n = self.fold('checkup_counters', 1, slot=s, cond='poisoned')
+                n = self.fold('checkup_counters', s.flags.get('poison_n', 1), slot=s, cond='poisoned')
                 s.damage += 10 * n
                 self.say(f'{s.name} sofreu {n * 10} de Veneno')
             if 'burned' in s.conditions:
@@ -1182,6 +1235,7 @@ class Game:
     def take_prizes(self, t, n):
         pl = self.players[t]
         n = min(n, len(pl.prizes))
+        self.prize_log.append((self.turn, t, n))
         for _ in range(n):
             pl.hand.append(pl.prizes.pop(0))
         self.say(f'{pl.name} pegou {n} carta(s) de prêmio ({len(pl.prizes)} restantes)', 'prize')

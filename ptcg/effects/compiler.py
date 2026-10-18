@@ -139,7 +139,8 @@ def count_expr(ph: str):
     if m:
         f = slot_filter(m.group(1) + ' Pokémon')
         return lambda E: sum(1 for p in (0, 1) for s in E.g.players[p].in_play() if f(E.g, s))
-    raise Unparsed(f'contagem: {ph}')
+    from . import extra
+    return extra.count_fallback(ph)
 
 
 def opp_active_pred(desc: str):
@@ -187,7 +188,8 @@ def opp_active_pred(desc: str):
         return lambda E, s: any(e.d.special_energy for e in s.energy)
     if d == 'has a Pokémon Tool attached':
         return lambda E, s: bool(s.tools)
-    raise Unparsed(f'condição do Ativo: {d}')
+    from . import extra
+    return extra.opp_pred_fallback(d)
 
 
 def self_pred(desc: str):
@@ -232,10 +234,19 @@ def self_pred(desc: str):
     if m:
         nm = m.group(1)
         return lambda E, s: s.turn_evolved == E.g.turn and len(s.cards) > 1 and s.cards[-2].name == nm
-    raise Unparsed(f'condição deste Pokémon: {d}')
+    from . import extra
+    return extra.self_pred_fallback(d)
 
 
 def cond_expr(ph: str):
+    try:
+        return _cond_expr(ph)
+    except Unparsed:
+        from . import extra
+        return extra.cond_fallback(ph)
+
+
+def _cond_expr(ph: str):
     """Condição de 'If X, ...' → f(E) -> bool"""
     ph = ph.strip()
     m = re.match(r"^your opponent's Active Pokémon (.+)$", ph)
@@ -378,11 +389,15 @@ def _dmg_set(fn_val, est=None):
 # --- moedas
 @pattern(r'Flip a coin', 'pre')
 def _(m):
-    def step(E):
+    def flip_(E):
         h = E.g.flip()
         E.data['heads'] = h
         E.data['heads_n'] = int(h)
         E.data['tails_n'] = 1 - int(h)
+
+    def step(E):
+        flip_(E)
+        yield from extra.maybe_reroll(E, flip_)
     step.est = lambda E, d: (E.data.update(heads=True, heads_n=0.5, tails_n=0.5) or d)
     return step
 
@@ -391,21 +406,29 @@ def _(m):
 def _(m):
     n = num(m.group(1))
 
-    def step(E):
+    def flip_(E):
         h = E.g.flips(n)
         E.data['heads_n'] = h
         E.data['tails_n'] = n - h
         E.data['heads'] = h > 0
+
+    def step(E):
+        flip_(E)
+        yield from extra.maybe_reroll(E, flip_)
     step.est = lambda E, d: (E.data.update(heads_n=n / 2, tails_n=n / 2, heads=True) or d)
     return step
 
 
 @pattern(r'Flip a coin until you get tails', 'pre')
 def _(m):
-    def step(E):
+    def flip_(E):
         h = E.g.flip_until_tails()
         E.data['heads_n'] = h
         E.data['heads'] = h > 0
+
+    def step(E):
+        flip_(E)
+        yield from extra.maybe_reroll(E, flip_)
     step.est = lambda E, d: (E.data.update(heads_n=1, heads=True) or d)
     return step
 
@@ -696,9 +719,12 @@ def _(m):
     return step
 
 
-@pattern(r'Your opponent reveals their hand')
+@pattern(r'Your opponent reveals their hand', 'pre')
 def _(m):
-    return lambda E: lib.reveal_hand(E.g, E.opp)
+    def step(E):
+        lib.reveal_hand(E.g, E.opp)
+        E.data['revealed'] = list(E.op.hand)
+    return step
 
 
 @pattern(r"Discard a random card from your opponent's hand")
@@ -728,9 +754,10 @@ def _(m):
     return lambda E: lib.mill(E.g, E.opp, n)
 
 
-@pattern(r"For each heads, discard the top card of your opponent's deck")
+@pattern(r"For each heads, discard the top (\d+|) ?cards? of your opponent's deck")
 def _(m):
-    return lambda E: lib.mill(E.g, E.opp, E.data.get('heads_n', 0))
+    k = int(m.group(1)) if m.group(1) else 1
+    return lambda E: lib.mill(E.g, E.opp, k * E.data.get('heads_n', 0))
 
 
 @pattern(r'Discard the top (\d+|) ?cards? of your deck')
@@ -866,6 +893,10 @@ def _attach_dest(dest):
         return (lambda E: [E.slot]), False
     if dest == 'your Active Pokémon':
         return (lambda E: [E.me.active] if E.me.active else []), False
+    m = re.match(r'^your Active (.*?)Pokémon$', dest)
+    if m:
+        f = slot_filter(m.group(1) + 'Pokémon')
+        return (lambda E: [E.me.active] if E.me.active and f(E.g, E.me.active) else []), False
     m = re.match(r'^your (Benched )?(.*?)Pokémon in any way you like$', dest)
     if m:
         bench = bool(m.group(1))
@@ -1098,9 +1129,11 @@ def _(m):
 def _(m):
     def step(E):
         t = E.opp_active()
+        E.data['did'] = False
         if t is not None and t.tools and not E.g.effects_prevented(E.ctx, t):
             E.g.discard_cards(t.tools)
             t.tools = []
+            E.data['did'] = True
     return step
 
 
@@ -1145,7 +1178,7 @@ def _(m):
     return step
 
 
-@pattern(r"Put damage counters on your opponent's Active Pokémon until its remaining HP is (\d+)")
+@pattern(r"(?:Put|Place) damage counters on your opponent's Active Pokémon until its remaining HP is (\d+)")
 def _(m):
     n = int(m.group(1))
 
@@ -1471,6 +1504,9 @@ def _(m):
 def _split(text):
     t = re.sub(r'\s*\([^)]*\)', '', text or '').strip()
     t = t.replace('Pokemon', 'Pokémon')
+    for a, b in TYPOS:   # erros de digitação nos dados de origem
+        t = t.replace(a, b)
+    t = t[:1].upper() + t[1:]
     parts = re.split(r'(?<=[.!])\s+', t)
     # junta "Flip a coin. If tails, that attack doesn't happen." etc. só quando necessário
     out = []
@@ -1481,16 +1517,40 @@ def _split(text):
     return out
 
 
+TYPOS = [('[G]', 'Grass'), ('[R]', 'Fire'), ('[W]', 'Water'), ('[L]', 'Lightning'), ('[P]', 'Psychic'),
+         ('[F]', 'Fighting'), ('[D]', 'Darkness'), ('[M]', 'Metal'), ('[N]', 'Dragon'), ('[C]', 'Colorless'),
+         (' Energy attaches', ' Energy attached'), ('Knocket', 'Knocked'), ('oppoennt', 'opponent'), ('is now paralyzed', 'is now Paralyzed')]
+
+COIN_COND = re.compile(r'^If (at least \d+|any|either|all|both|\d+) of them (?:is|are) (heads|tails), (.+)$')
+
 COND_PREFIX = [
     (re.compile(r'^If heads, (.+)$'), lambda E: E.data.get('heads')),
     (re.compile(r'^If tails, (.+)$'), lambda E: not E.data.get('heads')),
-    (re.compile(r'^If both of them are heads, (.+)$'), lambda E: E.data.get('heads_n') == 2),
     (re.compile(r'^If you do, (.+)$'), lambda E: E.data.get('did', True)),
 ]
 
 
 def compile_sentence(s):
     """→ lista de (fase, função) ou dict de flags. Lança Unparsed."""
+    m = COIN_COND.match(s)
+    if m:
+        q, which, inner = m.group(1).lower(), m.group(2), m.group(3)
+        want_heads = which == 'heads'
+
+        def coin_cond(E, q=q, want_heads=want_heads):
+            h, t = E.data.get('heads_n', 0), E.data.get('tails_n', 0)
+            k, total = (h if want_heads else t), h + t
+            if q in ('any', 'either'):
+                return k >= 1
+            if q in ('all', 'both'):
+                return k == total and total > 0
+            if q.startswith('at least '):
+                return k >= int(q[9:])
+            return k == int(q)
+        res = compile_sentence(inner[0].upper() + inner[1:])
+        if isinstance(res, dict):
+            return res
+        return [(ph, _guard(coin_cond, f)) for ph, f in res]
     for rx, cond in COND_PREFIX:
         m = rx.match(s)
         if m:
@@ -1504,15 +1564,21 @@ def compile_sentence(s):
             return [(ph, _guard(cond, f)) for ph, f in res]
     m = re.match(r'^If (.+?), (this attack does .+)$', s)
     if m:
-        c = cond_expr(m.group(1))
-        inner = m.group(2)
-        res = compile_sentence(inner[0].upper() + inner[1:])
-        return [(ph, _guard(c, f)) for ph, f in res]
+        try:
+            c = cond_expr(m.group(1))
+            inner = m.group(2)
+            res = compile_sentence(inner[0].upper() + inner[1:])
+            return [(ph, _guard(c, f)) for ph, f in res]
+        except Unparsed:
+            pass
     for rx, builder, phase in PATTERNS:
         m = rx.match(s)
         if m:
-            r = builder(m)
-            if phase == 'flag':
+            try:
+                r = builder(m)
+            except Unparsed:
+                continue
+            if phase in ('flag', 'multi'):
                 return r
             if r is None:
                 return []
@@ -1620,6 +1686,8 @@ def attack_impl_from_text(text) -> AttackImpl:
                     note='; '.join(prog.unparsed))
     if 'can_use' in fl:
         im.can_use = fl['can_use']
+    if 'cost_mod' in fl:
+        im.cost_mod = fl['cost_mod']
     if fl.get('first_turn'):
         im.first_turn = True
     return im
@@ -1639,3 +1707,7 @@ def steps_runner(prog, mode):
         for f in steps:
             yield from run(f(E))
     return run_trainer if mode == 'trainer' else run_ability
+
+
+from . import extra  # noqa: E402,F401  (registra os padrões adicionais)
+extra.register_multi()

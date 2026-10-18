@@ -63,7 +63,7 @@ def _fanfare(g, p):
 stadium('Celebratory Fanfare', action=_fanfare)
 stadium('Community Center', action=lambda g, p: [g.heal(s, 10) for s in g.players[p].in_play()],
         action_can=lambda g, p: g.players[p].supporter_played)
-stadium('Dizzying Valley', status='partial', note='Confusão persiste ao evoluir: não implementado')
+stadium('Dizzying Valley', hooks={'keep_confusion': lambda g, src, slot: True})
 stadium('Festival Grounds', hooks={'condition_immune': lambda g, src, slot, cond: bool(slot.energy)})
 stadium('Forest of Vitality', hooks={'can_evolve_early': lambda g, src, slot, card:
                                      g.has_type(slot, 'G') and 'G' in card.d.types and not g.first_turn(slot.owner)})
