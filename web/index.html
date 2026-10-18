@@ -145,7 +145,7 @@ body.resizing{cursor:col-resize;user-select:none}
   <div class="grp">
     <button class="btn" id="playBtn" title="Reproduzir/pausar a IA">⏸</button>
     <button class="btn" id="stepBtn" title="Avançar uma decisão da IA">⏭</button>
-    <label>Vel.</label><input id="speed" type="range" min="0" max="1500" value="450" style="width:80px">
+    <label>Vel.</label><input id="speed" type="range" min="0" max="100" value="45" style="width:90px" title="Direita = mais rápido; vale na hora, também durante a partida"><span id="speedTxt" class="mono" style="font-size:11px;color:var(--mute);min-width:44px"></span>
   </div>
   <div class="grp"><label><input type="checkbox" id="reveal"> Revelar mãos</label></div>
   <div class="grp"><label>Consultor</label><select id="advisor" title="IA que sugere jogadas para o humano (professor virtual)"></select></div>
@@ -334,11 +334,14 @@ function renderPrompt(pr){
 }
 
 async function act(i){ highlight=null; try{ ST=await api('/api/act',{index:i,reveal:reveal()}); render(); schedule() }catch(e){ toast(e.message) } }
+// slider = velocidade (direita = mais rápida); atraso entre jogadas da IA, curva quadrática (máx. = sem espera)
+const delayMs=()=>Math.round(1500*Math.pow(1-(+$('speed').value)/100,2));
+function speedLabel(){ const d=delayMs(); $('speedTxt').textContent=d===0?'máx.':d>=1000?(d/1000).toFixed(1)+' s':d+' ms' }
 function schedule(){
   clearTimeout(timer);
   if(REPLAY||!ST||!ST.prompt||ST.done||!playing) return;
   if(ST.ctrl[ST.prompt.player]==='human') return;
-  timer=setTimeout(stepAI,+$('speed').value);
+  timer=setTimeout(stepAI,delayMs());
 }
 async function stepAI(n=1){ try{ ST=await api('/api/step',{n,reveal:reveal()}); render(); schedule() }catch(e){ toast(e.message) } }
 async function refresh(){ const s=await api('/api/state?cards=1&reveal='+(reveal()?1:0)); if(s.cards) Object.assign(CARDS,s.cards); ST=s; render(); schedule() }
@@ -369,8 +372,8 @@ $('replayGo').onclick=async()=>{
 $('rPrev').onclick=()=>{ if(REPLAY&&REPLAY.i>0){REPLAY.i--;render()} };
 $('rNext').onclick=()=>{ if(REPLAY&&REPLAY.i<REPLAY.frames.length-1){REPLAY.i++;render()} };
 $('rSlider').oninput=e=>{ if(REPLAY){REPLAY.i=+e.target.value;render()} };
-$('rPlay').onclick=()=>{ clearInterval(rTimer); rTimer=setInterval(()=>{ if(!REPLAY||REPLAY.i>=REPLAY.frames.length-1) return clearInterval(rTimer); REPLAY.i++; render() },+$('speed').value+150) };
-$('exitReplay').onclick=()=>{ clearInterval(rTimer); REPLAY=null; $('replaybar').style.display='none'; refresh() };
+$('rPlay').onclick=()=>{ clearTimeout(rTimer); const tick=()=>{ if(!REPLAY||REPLAY.i>=REPLAY.frames.length-1) return; REPLAY.i++; render(); rTimer=setTimeout(tick,delayMs()+150) }; rTimer=setTimeout(tick,delayMs()+150) };
+$('exitReplay').onclick=()=>{ clearTimeout(rTimer); REPLAY=null; $('replaybar').style.display='none'; refresh() };
 
 // pilhas: descarte (a qualquer momento, também em replay) e baralho inteiro durante buscas
 function cardList(cards,opts={}){
@@ -471,7 +474,7 @@ $('undoBtn').onclick=async()=>{ try{ ST=await api('/api/undo',{reveal:reveal()})
 $('commentBtn').onclick=()=>{ if(!ST||!ST.prompt&&!ST.done){ toast('Sem partida em andamento'); return } playing=false; $('playBtn').textContent='▶'; clearTimeout(timer); commentModal.style.display='grid'; $('commentText').focus() };
 $('commentClose').onclick=()=>commentModal.style.display='none';
 $('commentSave').onclick=async()=>{ try{ const r=await api('/api/comment',{text:$('commentText').value}); $('commentText').value=''; commentModal.style.display='none'; toast('Comentário '+r.id+' registrado') }catch(e){ toast(e.message) } };
-$('speed').oninput=schedule;
+$('speed').oninput=()=>{ speedLabel(); schedule() }; speedLabel();
 $('deckBtn').onclick=()=>{ deckModal.style.display='grid'; showDeck() };
 $('deckClose').onclick=()=>deckModal.style.display='none';
 $('deckView').onchange=showDeck;
