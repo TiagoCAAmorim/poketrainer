@@ -137,6 +137,7 @@ pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
     <label>Vel.</label><input id="speed" type="range" min="0" max="1500" value="450" style="width:80px">
   </div>
   <div class="grp"><label><input type="checkbox" id="reveal"> Revelar mãos</label></div>
+  <div class="grp"><label>Consultor</label><select id="advisor" title="IA que sugere jogadas para o humano (professor virtual)"></select></div>
   <div class="grp"><label title="Mostra/esconde as probabilidades e a avaliação da IA (quando a IA da vez é uma rede)"><input type="checkbox" id="hints" checked> Sugestões da IA</label></div>
   <button class="btn" id="commentBtn" title="Anotar um problema nesta decisão (vai para logs/problemas.jsonl)">💬 Comentar</button>
   <button class="btn" id="discardBtn" title="Ver as cartas do seu descarte (clique na pilha 'Descarte' para ver a de qualquer jogador)">🗑 Descarte</button>
@@ -224,6 +225,7 @@ async function loadMeta(){
     for(const [g,ds] of Object.entries(groups)){ const og=document.createElement('optgroup'); og.label=g; ds.forEach(d=>og.appendChild(new Option(deckLabel(d),d.name))); s.appendChild(og) }
     if(keep) s.value=keep;
   }
+  { const s=$('advisor'), keep=s.value; s.innerHTML=''; s.add(new Option('Nenhum','')); (META.advisors||[]).forEach(c=>s.add(new Option(c.label,c.id))); s.value=keep }
   if(!$('deck1').dataset.init&&META.decks.length>1){$('deck1').selectedIndex=1;$('deck1').dataset.init=1}
   for(const id of ['ctrl0','ctrl1']){
     const s=$(id), keep=s.value; s.innerHTML='';
@@ -301,10 +303,11 @@ function renderPrompt(pr){
   const who=ST.players[pr.player].name; const human=ST.ctrl[pr.player]==='human';
   let html=`<h2>${human?'Sua decisão':'Vez de '+esc(who)}</h2><div class="ptext">${esc(pr.text)}${pr.source?` <span class="chip">${esc(pr.source)}</span>`:''}</div>`;
   const ev=$('hints').checked?ST.ai_eval:null;
-  if(ev){ const x=(ev.value+1)/2*100; html+=`<div id="evalBar">Avaliação da rede para ${esc(who)}: <b style="color:var(--ink)">${(ev.value>=0?'+':'')+ev.value.toFixed(2)}</b><div class="meter"><i style="left:calc(${x}% - 1px)"></i></div></div>` }
+  if(ev&&ev.value!=null){ const x=(ev.value+1)/2*100; html+=`<div id="evalBar">${ev.advisor?'Avaliação do consultor para a sua posição':'Avaliação da rede para '+esc(who)}: <b style="color:var(--ink)">${(ev.value>=0?'+':'')+ev.value.toFixed(2)}</b><div class="meter"><i style="left:calc(${x}% - 1px)"></i></div></div>` }
   const opts=pr.options||[]; const filt=highlight?new Set(highlight):null;
+  if(ev&&ev.advisor) html+=`<div style="font-size:12px;color:var(--mute);margin:6px 0 2px">🎓 Consultor: ${ev.value==null?'a opção sugerida está marcada':'probabilidade de cada opção'}</div>`;
   const btn=o=>{ const p=ev?ev.probs[o.i]:null;
-    return `<button class="opt k-${o.kind} ${filt&&filt.has(o.i)?'hl':''}" data-i="${o.i}" ${o.card?`data-card="${esc(o.card)}"`:''} ${human?'':'disabled'}>${p!=null?`<span class="pv">${(p*100).toFixed(0)}%</span>`:''}${esc(o.label)}${p!=null?`<span class="prob" style="width:${p*100}%"></span>`:''}</button>` };
+    return `<button class="opt k-${o.kind} ${filt&&filt.has(o.i)?'hl':''} ${ev&&ev.value==null&&p>=1?'hl':''}" data-i="${o.i}" ${o.card?`data-card="${esc(o.card)}"`:''} ${human?'':'disabled'}>${p!=null?`<span class="pv">${ev.value==null?(p>=1?'★ sugerido':''):(p*100).toFixed(0)+'%'}</span>`:''}${esc(o.label)}${p!=null?`<span class="prob" style="width:${p*100}%"></span>`:''}</button>` };
   if(pr.hint==='main'){
     for(const [k,label] of GROUPS){ const g=opts.filter(o=>o.kind===k); if(!g.length) continue;
       html+=`<div class="ogroup"><div class="gt">${label}</div>${g.map(btn).join('')}</div>` }
@@ -379,6 +382,7 @@ function showDeckView(){
   pileModal.style.display='grid';
 }
 $('hints').checked=(()=>{ try{ return localStorage.getItem('hints')!=='0' }catch(e){ return true } })();
+$('advisor').onchange=async()=>{ try{ ST=await api('/api/advisor',{advisor:$('advisor').value,reveal:reveal()}); render() }catch(e){ toast(e.message) } };
 $('hints').onchange=()=>{ try{ localStorage.setItem('hints',$('hints').checked?'1':'0') }catch(e){}; if(!REPLAY&&ST&&ST.players) renderPrompt(ST.prompt) };
 $('discardBtn').onclick=()=>{ const S=REPLAY?REPLAY.frames[REPLAY.i].state:ST; if(!S||!S.players){ toast('Sem partida em andamento'); return }
   const me=S.viewer==='all'||S.viewer===undefined?0:S.viewer; showDiscard(me) };
@@ -419,7 +423,7 @@ document.addEventListener('mousemove',e=>{
 
 $('newBtn').onclick=async()=>{
   try{ highlight=null; $('banner').dataset.shown=''; if(REPLAY){ REPLAY=null; $('replaybar').style.display='none' }
-    const s=await api('/api/new',{deck0:$('deck0').value,deck1:$('deck1').value,ctrl0:$('ctrl0').value,ctrl1:$('ctrl1').value,seed:$('seed').value,reveal:reveal()});
+    const s=await api('/api/new',{deck0:$('deck0').value,deck1:$('deck1').value,ctrl0:$('ctrl0').value,ctrl1:$('ctrl1').value,advisor:$('advisor').value,seed:$('seed').value,reveal:reveal()});
     if(s.cards) Object.assign(CARDS,s.cards); ST=s; render(); schedule() }catch(e){ toast(e.message) }
 };
 $('playBtn').onclick=()=>{ playing=!playing; $('playBtn').textContent=playing?'⏸':'▶'; schedule() };

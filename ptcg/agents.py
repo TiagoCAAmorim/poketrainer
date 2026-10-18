@@ -143,6 +143,12 @@ class HeuristicAgent(Agent):
             scores = self.generic(g, pr)
         return max(range(len(scores)), key=lambda i: (scores[i], self.rng.random()))
 
+    def evaluate(self, g, pr=None):
+        """Sugestão para a interface: 100% na opção escolhida pela heurística, sem avaliação de posição."""
+        pr = pr or g.prompt
+        best = self.act(g, pr)
+        return [1.0 if i == best else 0.0 for i in range(len(pr.options))], None
+
     # ------------------------------------------------------------ escolhas genéricas
     def generic(self, g, pr):
         p = pr.player

@@ -26,7 +26,7 @@ from ptcg.view import card_info, game_cards, game_view
 ROOT = os.path.dirname(os.path.abspath(__file__))
 WEB = os.path.join(ROOT, 'web')
 LOCK = threading.Lock()
-S = {'game': None, 'ctrl': ['human', 'heuristic'], 'agents': [None, None], 'decks': [None, None]}
+S = {'game': None, 'ctrl': ['human', 'heuristic'], 'agents': [None, None], 'decks': [None, None], 'advisor': None}
 
 
 def controllers():
@@ -36,6 +36,10 @@ def controllers():
         rel = os.path.relpath(p, ROOT)
         out.append({'id': f'model:{rel}', 'label': f'Rede: {rel}'})
     return out
+
+
+def advisors():
+    return [c for c in controllers() if c['id'] not in ('human', 'random')]
 
 
 def deck_index():
@@ -65,11 +69,17 @@ def state(reveal=False, with_cards=False):
     v = 'all' if reveal else viewer()
     ai_eval = None
     if not g.done:
-        ag = S['agents'][g.prompt.player]
-        if ag is not None and hasattr(ag, 'evaluate') and (v == 'all' or v == g.prompt.player):
+        who = g.prompt.player
+        # IA que joga a vez; se a vez é de um humano, o consultor (professor virtual) dá a sugestão
+        ag = S['agents'][who] if S['ctrl'][who] != 'human' else S['advisor']
+        if ag is not None and ag.name == 'heuristic' and S['ctrl'][who] != 'human':
+            ag = None       # evaluate() gastaria o rng da heurística e mudaria a partida
+        if ag is not None and hasattr(ag, 'evaluate') and (v == 'all' or v == who):
             try:
                 probs, value = ag.evaluate(g, g.prompt)
-                ai_eval = {'probs': [round(float(x), 4) for x in probs], 'value': round(value, 3)}
+                ai_eval = {'probs': [round(float(x), 4) for x in probs],
+                           'value': None if value is None else round(value, 3),
+                           'advisor': S['ctrl'][who] == 'human'}
             except Exception:
                 traceback.print_exc()
     out = game_view(g, v, ai_eval)
@@ -93,6 +103,7 @@ def new_game(body):
     S['ctrl'] = ctrl
     S['decks'] = [decks[0].name, decks[1].name]
     S['agents'] = [None if c == 'human' else make_agent(c, seed=(seed or 0) + i) for i, c in enumerate(ctrl)]
+    S['advisor'] = make_agent(body['advisor']) if body.get('advisor') else None
     S['logged'] = False
     S['comments'] = []
 
@@ -219,7 +230,7 @@ class Handler(BaseHTTPRequestHandler):
             if u.path == '/api/meta':
                 D = db()
                 cov = Counter(d.status for d in D.cards.values())
-                return self._send(200, {'decks': deck_index(), 'controllers': controllers(),
+                return self._send(200, {'decks': deck_index(), 'controllers': controllers(), 'advisors': advisors(),
                                         'coverage': dict(cov), 'total_cards': len(D.cards)})
             if u.path == '/api/deck':
                 name = q['name'][0]
@@ -279,6 +290,8 @@ class Handler(BaseHTTPRequestHandler):
                     rec = registrar_problema(g, texto, decks=S['decks'], controles=S['ctrl'])
                     S.setdefault('comments', []).append({'id': rec['id']})
                     return self._send(200, {'ok': True, 'id': rec['id']})
+                elif u.path == '/api/advisor':
+                    S['advisor'] = make_agent(body['advisor']) if body.get('advisor') else None
                 elif u.path == '/api/undo':
                     undo()
                 elif u.path == '/api/deck':
