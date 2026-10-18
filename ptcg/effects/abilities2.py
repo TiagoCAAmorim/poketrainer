@@ -651,8 +651,8 @@ def _(d, ab):
         if got:
             new = got[0]
             pl.deck.remove(new)
-            old = s.cards[0]
-            s.cards[0] = new
+            old = s.top   # ruling 1977: só a Palafin volta ao baralho; a Finizen fica embaixo
+            s.cards[s.cards.index(old)] = new
             pl.deck.append(old)
             g.shuffle(p)
         else:

@@ -293,6 +293,10 @@ def _cond_expr(ph: str):
         n = int(m.group(1))
         more = 'more' in ph
         return lambda E: len(E.me.hand) >= n if more else len(E.me.hand) <= n
+    m = re.match(rf'^you have at least (\d+) ({TYPE_WORDS}) Energy in play$', ph)
+    if m:  # ruling 2249: unidades de Energia daquele tipo em todos os seus Pokémon (Prism Energy conta)
+        n, T = int(m.group(1)), NAME_TO_TYPE[m.group(2)]
+        return lambda E: sum(E.g.energy_count(s, T) for s in E.me.in_play()) >= n
     m = re.match(r'^you have (?:any )?(.+?) (?:on your Bench|in play)$', ph)
     if m:
         sub = m.group(1)
@@ -606,6 +610,9 @@ def _(m):
     n = int(m.group(1))
 
     def step(E):
+        if E.data.get('did') is False:   # ruling 1956: sem troca não há "novo Ativo": sem dano
+            E.ctx.damage = 0
+            return
         E.ctx.defender = E.op.active
         E.ctx.damage = n
     return step
@@ -1064,7 +1071,7 @@ def _(m):
     return None   # já embutido nas buscas
 
 
-@pattern(rf'Put (up to {NUMW}|a|an|{NUMW}) (.+?) from your discard pile into your hand')
+@pattern(rf'Put (?!a number of )(up to {NUMW}|a|an|{NUMW}) (.+?) from your discard pile into your hand')
 def _(m):
     q = m.group(1)
     n = num(q.replace('up to ', '')) if q not in ('a', 'an') else 1
@@ -1116,8 +1123,10 @@ def _(m):
 def _(m):
     def step(E):
         if E.ctx is not None and E.op.active is not None and E.g.effects_prevented(E.ctx, E.op.active):
+            E.data['did'] = False   # ruling 2025: sem troca não há "novo Ativo"
             return
-        yield from lib.opp_switches_out(E.g, E.p, E.card)
+        s = yield from lib.opp_switches_out(E.g, E.p, E.card)
+        E.data['did'] = s is not None
     return step
 
 

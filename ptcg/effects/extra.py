@@ -1126,8 +1126,7 @@ def _(m):
                 E.me.deck.remove(c)
                 E.me.hand.append(c)
         else:
-            cards = [c for c in cards if c.d.is_basic]
-            k = E.g.bench_space(E.p)
+            k = E.g.bench_space(E.p)   # ruling 2045: qualquer Pokémon (Estágio 1/2 também) pode ir ao Banco
             got = yield from E.g.choose_cards(E.p, cards, min(k, len(cards)), 0, 'look', 'Pokémon para o Banco',
                                               E.card, key=lambda c: c.d.id)
             for c in got:
@@ -1332,7 +1331,9 @@ def _(m):
                 s = next((s for s in E.me.in_play() if e in s.energy), None)
                 return s is not None and any(code in u for u in e.d.impl.units(E.g, e, s))
             return False
-        yield from lib.move_energy(E.g, E.p, lambda: _MOVE_SRC[src](E), lambda: _MOVE_DST[dst](E), n, pred, E.card,
+        def srcs():  # ruling 2375: Mist Energy etc. impedem tirar Energia do Pokémon do oponente
+            return [s for s in _MOVE_SRC[src](E) if not (s.owner != E.p and E.g.effects_prevented(E.ctx, s))]
+        yield from lib.move_energy(E.g, E.p, srcs, lambda: _MOVE_DST[dst](E), n, pred, E.card,
                                    min_n=0 if (optional or n >= 99) else n)
     return step
 
@@ -1492,7 +1493,7 @@ def _(m):
     n = int(m.group(1))
 
     def step(E):
-        k = min(n, max(0, (E.g.hp_left(E.slot) - 10) // 10))
+        k = n   # ruling 1984: pode colocar todos, mesmo nocauteando o próprio Pokémon
         o = yield from E.g.ask(E.p, 'amount', 'Quantos contadores colocar?',
                                [Option(f'{i}', i, 'text') for i in range(k, -1, -1)], E.card)
         E.g.place_counters(E.slot, o.value, 'other', by=E.p)
@@ -1869,7 +1870,8 @@ def _(m):
         def ev(g, src, player, t=t):
             if player != src.owner and g.in_play(t):
                 t.damage = max(t.damage, g.hp(t))
-        E.g.add_effect('nocaute retardado', E.p, events={'turn_end': ev}, target=t, duration='opp_next_turn')
+        E.g.add_effect('nocaute retardado', E.p, events={'turn_end': ev}, target=t, duration='opp_next_turn',
+                       while_active=True)   # ruling 1981: recuar ou evoluir cancela
     return step
 
 
@@ -1882,8 +1884,9 @@ def _(m):
         owner = E.p
         if t is None:
             return
+        n0 = len(t.cards)   # ruling 1957: se o Defensor evoluir, o bônus se perde
         E.g.add_effect('prêmio extra', owner, {'prizes': lambda g, src, v, slot, taker, by_attack, attacker, t=t:
-                                               v + n if slot is t and taker == owner else None},
+                                               v + n if slot is t and len(t.cards) == n0 and taker == owner else None},
                        duration='my_next_turn')
     return step
 
@@ -2322,7 +2325,7 @@ def _(m):
     names = {m.group(1), m.group(2)}
 
     def step(E):
-        c = [x for x in E.me.deck if x.name in names and x.d.evolves_from == E.slot.name]
+        c = [x for x in E.me.deck if x.name in names]   # ruling 1949: pula o Estágio 1
         got = yield from E.g.choose_cards(E.p, c, 1, 0, 'search', 'Evoluir com', E.card)
         for x in got:
             E.me.deck.remove(x)
@@ -2626,7 +2629,11 @@ def _(m):
     def step(E):
         saved = (E.ctx.ignore_weakness, E.ctx.ignore_resistance)
         E.ctx.ignore_weakness = E.ctx.ignore_resistance = True
+        # ruling 2161: soma por Pokémon antes de aplicar modificadores (Granite Cave etc.)
+        tot = {}
         for s, n in E.data.pop('oil', []):
+            tot[s] = tot.get(s, 0) + n
+        for s, n in tot.items():
             if E.g.in_play(s):
                 E.g.deal_attack_damage(E.ctx, s, n)
         E.ctx.ignore_weakness, E.ctx.ignore_resistance = saved
@@ -2705,7 +2712,9 @@ def _(m):
         t = E.opp_active()
         if t is None or E.g.effects_prevented(E.ctx, t):
             return
-        yield from lib.discard_energy_from(E.g, E.p, t, 1, lambda e: e.d.provides == code, None, E.card)
+        def pred(e):   # ruling 2194: Energia Especial que fornece o tipo (Prism em Básico, Legacy) também conta
+            return any(code in u for c, us in E.g.energy_units(t) if c is e for u in us)
+        yield from lib.discard_energy_from(E.g, E.p, t, 1, pred, None, E.card)
     return step
 
 
@@ -2788,6 +2797,14 @@ def _(m):
 @pattern(r"Shuffle your hand into your deck")
 def _(m):
     return lambda E: E.g.hand_to_deck(E.p)
+
+
+@pattern(r"Put a number of cards up to the number of heads from your discard pile into your hand")
+def _(m):
+    def step(E):   # ruling 2199: pega até o número de caras, no mínimo 1 se possível
+        k = E.data.get('heads_n', 0)
+        yield from lib.recover(E.g, E.p, lambda c: True, k, 'hand', E.card, min_n=min(k, len(E.me.discard)))
+    return step
 
 
 @pattern(rf"Search your deck for an amount of Basic (?:({TYPE_WORDS}) )?Energy up to the number of heads and attach it to this Pokémon")

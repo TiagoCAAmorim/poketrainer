@@ -449,6 +449,502 @@ def test_r2305_stadium_change_completes_before_gravity_mountain_hp_loss():
     assert len(g.players[1].bench) == 5, len(g.players[1].bench)
 
 
+def test_r2131_area_zero_bench_trimmed_before_promotion():
+    # Ruling 2131: ao perder o Ativo Tera, o Banco é reduzido a 5 antes de promover o novo Ativo.
+    g = new_game()
+    board(g, 0, 'Dreepy', energy={0: ['Basic Psychic Energy']})
+    board(g, 1, 'Miraidon ex', bench=['Dreepy'] * 8, damage={0: 210})
+    g.stadium = card('Area Zero Underdepths', 1)
+    at_turn(g)
+    act(g, 'Petty Grudge')
+    hints = []
+    for _ in range(20):
+        if g.prompt.hint == 'main' or g.winner is not None:
+            break
+        hints.append(g.prompt.hint)
+        g.step(0)
+    assert hints.index('discard_bench') < hints.index('promote'), hints
+    assert len(g.players[1].bench) <= 5, len(g.players[1].bench)
+
+
+def test_r2213_pyroar_intimidating_fang_reduces_bench_damage():
+    # Ruling 2213: a redução de Intimidating Fang vale também para o dano ao Banco.
+    g = new_game()
+    board(g, 0, 'Ferrothorn', energy={0: ['Basic Metal Energy'] * 3}, bench=['Dreepy'])
+    board(g, 1, 'Pyroar', bench=['Dreepy'])
+    at_turn(g)
+    act(g, 'Kaboom Needles')
+    assert g.players[1].active.damage == 20, g.players[1].active.damage
+    assert g.players[1].bench[0].damage == 20, g.players[1].bench[0].damage
+
+
+def test_r2161_oil_salvo_sums_hits_before_granite_cave():
+    # Ruling 2161: 6 escolhas do mesmo alvo = 120 somados; Granite Cave (-30) aplica uma vez só: 90.
+    g = new_game()
+    board(g, 0, 'Arboliva ex', energy={0: ['Basic Grass Energy'] * 3})
+    board(g, 1, "Steven's Metagross ex")
+    g.stadium = card('Granite Cave', 1)
+    at_turn(g)
+    act(g, 'Oil Salvo')
+    for _ in range(10):
+        if g.prompt.hint == 'main':
+            break
+        g.step(0)
+    assert g.players[1].active.damage == 90, g.players[1].active.damage
+
+def test_r2258_grimsleys_move_any_stage_darkness():
+    # Ruling 2258: qualquer Pokémon {D} (não só Básico) pode ir direto ao Banco.
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=["Grimsley's Move"], deck=['Dreepy', 'Zoroark'] + ['Basic Psychic Energy'] * 8)
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, "Grimsley's Move")
+    resolve_all(g)
+    assert any(s.name == 'Zoroark' for s in g.players[0].bench), [s.name for s in g.players[0].bench]
+
+
+def test_r2257_munkidori_battle_cage_counters_vanish():
+    # Ruling 2257: com Battle Cage a colocação é impedida, mas os contadores saem do Munkidori.
+    g = new_game()
+    board(g, 0, 'Munkidori', energy={0: ['Basic Darkness Energy']}, damage={0: 30})
+    board(g, 1, 'Dreepy', bench=['Dreepy'])
+    g.stadium = card('Battle Cage', 1)
+    at_turn(g)
+    act(g, 'Adrena-Brain')
+    for _ in range(6):
+        if g.prompt.hint == 'main':
+            break
+        g.step(len(g.prompt.options) - 1 if g.prompt.hint == 'counters' else 0)   # alvo: o Pokémon do Banco
+    assert g.players[0].active.damage == 0, g.players[0].active.damage
+    assert all(s.damage == 0 for s in g.players[1].in_play())
+
+
+def test_r2249_suicune_crystal_fall_counts_water_energy():
+    # Ruling 2249: 4+ Energias {W} em jogo (Prism Energy conta em Básico) = +90.
+    for en in (['Basic Water Energy'] * 4, ['Basic Water Energy'] * 3 + ['Prism Energy']):
+        g = new_game()
+        board(g, 0, 'PFL-26', energy={0: en})
+        board(g, 1, 'Dragapult ex')
+        at_turn(g)
+        act(g, 'Crystal Fall')
+        assert g.players[1].active.damage in (120, 240), g.players[1].active.damage
+    g = new_game()
+    board(g, 0, 'PFL-26', energy={0: ['Basic Water Energy'] * 3})
+    board(g, 1, 'Dragapult ex')
+    at_turn(g)
+    act(g, 'Crystal Fall')
+    assert g.players[1].active.damage == 30, g.players[1].active.damage
+
+
+def test_r2292_roto_call_only_rotom():
+    # Ruling 2292: só Pokémon com "Rotom" no nome.
+    g = new_game()
+    board(g, 0, 'ASC-92', energy={0: ['Basic Lightning Energy']}, deck=['Fan Rotom', 'Rotom ex', 'Dreepy', 'Rotom'])
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Roto Call')
+    assert 'Dreepy' not in labels(g), labels(g)
+    resolve_all(g)
+    assert all('Rotom' in s.name for s in g.players[0].bench), [s.name for s in g.players[0].bench]
+
+
+def test_r2265_gale_thrust_after_retreat_only():
+    # Ruling 2265: +170 se este Pokémon foi movido do Banco ao Ativo neste turno.
+    g = new_game()
+    board(g, 0, 'Dreepy', bench=['PFL-84'], energy={0: ['Basic Psychic Energy'], 1: ['Basic Water Energy']})
+    board(g, 1, 'PR-ME-30')
+    at_turn(g)
+    act(g, 'Recuar')
+    resolve_all(g)
+    act(g, 'Gale Thrust')
+    assert g.players[1].active.damage == 230, g.players[1].active.damage
+
+
+def test_r2167_bother_bot_playability():
+    # Ruling 2167: jogável se há prêmio virado para baixo ou carta na mão do oponente.
+    BB = "Team Rocket's Bother-Bot"
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=[BB, 'Dreepy'], deck=['Dreepy'] * 5)
+    board(g, 1, 'Dreepy', hand=[], prizes=2)
+    for x in g.players[1].prizes:
+        x.face_up = True
+    at_turn(g)
+    assert not has(g, 'Bother-Bot'), labels(g)
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=[BB, 'Dreepy'], deck=['Dreepy'] * 5)
+    board(g, 1, 'Dreepy', hand=[], prizes=3)
+    at_turn(g)
+    act(g, 'Bother-Bot')
+    resolve_all(g)
+    assert sum(1 for x in g.players[1].prizes if x.face_up) == 1
+
+
+def test_r2241_excited_heal_with_basic_mega_ex():
+    # Ruling 2241: Mega Heracross ex (Básico) conta como "Grass Mega Evolution Pokémon ex".
+    g = new_game()
+    board(g, 0, 'PFL-4', bench=['PFL-7'], energy={0: ['Basic Psychic Energy']}, damage={1: 50})
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Excited Heal')
+    resolve_all(g)
+    assert g.players[0].bench[0].damage == 0, g.players[0].bench[0].damage
+
+
+def test_r2231_r2232_mystery_garden_needs_draw():
+    g = new_game()
+    board(g, 0, 'Dreepy', bench=['Dreepy', 'Dreepy'], hand=['Basic Psychic Energy'], deck=[])
+    board(g, 1, 'Dreepy')
+    g.stadium = card('Mystery Garden', 0)
+    at_turn(g)
+    assert not has(g, 'Mystery Garden'), labels(g)   # deck vazio
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=['Basic Psychic Energy', 'Dreepy', 'Dreepy'], deck=['Dreepy'] * 5)
+    board(g, 1, 'Dreepy')
+    g.stadium = card('Mystery Garden', 0)
+    at_turn(g)
+    assert not has(g, 'Mystery Garden'), labels(g)   # não compraria nada
+    board(g, 0, 'Munkidori', bench=['Munkidori', 'Munkidori'], hand=['Basic Psychic Energy'], deck=['Dreepy'] * 5)
+    g.refresh()
+    assert has(g, 'Mystery Garden'), labels(g)
+
+
+def test_r2109_inviting_wink_needs_opponent_bench_space():
+    # Ruling 2109: com o Banco do oponente cheio, Inviting Wink não pode ser usada.
+    g = new_game()
+    board(g, 0, "Lillie's Cutiefly", hand=["Lillie's Ribombee"], energy={0: ['Basic Psychic Energy']})
+    board(g, 1, 'Dreepy', bench=['Dreepy'] * 5, hand=['Dreepy', 'Dreepy'])
+    at_turn(g)
+    act(g, 'Ribombee')
+    assert g.prompt.hint != 'yes_no' and 'Inviting Wink' not in g.prompt.text, (g.prompt.hint, g.prompt.text)
+    g = new_game()
+    board(g, 0, "Lillie's Cutiefly", hand=["Lillie's Ribombee"], energy={0: ['Basic Psychic Energy']})
+    board(g, 1, 'Dreepy', bench=['Dreepy'] * 4, hand=['Dreepy', 'Dreepy'])
+    at_turn(g)
+    act(g, 'Ribombee')
+    assert 'Inviting Wink' in g.prompt.text, g.prompt.text
+
+
+def test_r2375_mist_energy_cannot_be_moved_by_slight_shift():
+    # Ruling 2375: Mist Energy no Pokémon Defensor não pode ser movida pelo Slight Shift.
+    g = new_game()
+    board(g, 0, 'Elgyem', energy={0: ['Basic Psychic Energy'] * 2})
+    board(g, 1, 'Dreepy', bench=['Dreepy'], energy={0: ['Mist Energy']})
+    at_turn(g)
+    act(g, 'Slight Shift')
+    resolve_all(g)
+    assert [e.name for e in g.players[1].active.energy] == ['Mist Energy'], g.players[1].active.energy
+
+
+
+def test_r2199_odor_sleuth_takes_up_to_heads_at_least_one():
+    # Ruling 2199: pega até o número de caras (3), e ao menos uma se possível.
+    g = new_game()
+    board(g, 0, 'WHT-76', energy={0: ['Basic Psychic Energy'] * 2}, discard=['Dreepy', 'Basic Psychic Energy', 'Drakloak'])
+    board(g, 1, 'Dreepy')
+    g.flip = lambda who=None: True
+    at_turn(g)
+    act(g, 'Odor Sleuth')
+    assert 'Concluir' not in labels(g), labels(g)       # mínimo = min(caras, descarte) = 3
+    for _ in range(4):
+        if g.prompt.hint == 'main':
+            break
+        g.step(0)
+    assert len(g.players[0].hand) == 3, len(g.players[0].hand)
+
+
+def test_r2194_firefighting_discards_prism_energy_from_basic():
+    # Ruling 2194: Prism Energy num Básico conta como {R} e pode ser descartada.
+    g = new_game()
+    board(g, 0, 'WHT-25', energy={0: ['Basic Water Energy'] * 2})
+    board(g, 1, 'Dreepy', energy={0: ['Prism Energy']})
+    at_turn(g)
+    act(g, 'Firefighting')
+    resolve_all(g)
+    assert not g.players[1].active.energy, g.players[1].active.energy
+
+
+def test_r2212_cinderace_counts_as_basic_in_setup():
+    # Ruling 2212 (+ usuário): na preparação o Cinderace é tratado como Básico, só para o Ativo; sem mulligan.
+    from ptcg.carddb import db
+    from ptcg.engine import Game
+    D = db()
+    cin = D.resolve('Cinderace').id
+    deck = [cin] * 30 + [D.resolve('Basic Fire Energy').id] * 30
+    g = Game(deck, deck, seed=0, first_player=0)   # sem GameOver 'baralho sem Pokémon Básico'
+    assert g.players[0].active is not None and g.players[0].active.name == 'Cinderace'
+    assert not g.players[0].bench
+
+
+def test_r2301_up_to_in_trainers_requires_one():
+    # Ruling 2301 (+ usuário): "até X" em Treinador/Habilidade exige ao menos 1 (se houver alvo); ataque pode 0.
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=['Tool Scrapper'])
+    board(g, 1, 'Dreepy', tools={0: ['Rescue Board']})
+    at_turn(g)
+    act(g, 'Tool Scrapper')
+    assert 'Concluir' not in labels(g), labels(g)
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=["N's Plan"], bench=['Dreepy'], energy={1: ['Basic Psychic Energy'] * 2})
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, "N's Plan")
+    assert len(g.players[0].active.energy) >= 1, g.players[0].active.energy   # a 1ª Energia é obrigatória
+
+
+def test_r2142_surfer_draws_before_buzzing_boost():
+    # Ruling 2142: a compra do Surfer resolve antes da Habilidade do Yanmega ex que dispara na troca.
+    g = new_game()
+    board(g, 0, 'Dreepy', bench=['Yanmega ex'], hand=['Surfer', 'Pikachu'],
+          deck=['Pikachu'] * 4 + ['Basic Grass Energy'] * 6)
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Surfer')
+    for _ in range(6):
+        if g.prompt.hint == 'main':
+            break
+        if 'Buzzing Boost' in g.prompt.text:
+            break
+        g.step(0)
+    assert len(g.players[0].hand) == 5 and all(c.name == 'Pikachu' for c in g.players[0].hand), \
+        [c.name for c in g.players[0].hand]
+    assert 'Buzzing Boost' in g.prompt.text, g.prompt.text
+
+
+def test_r2154_giovanni_blocked_target_still_switches_own():
+    # Ruling 2154 (+ usuário): escolhido o Cetitan ex no Banco, ele não se move, mas o jogador troca o próprio Ativo.
+    g = new_game()
+    board(g, 0, "Team Rocket's Kangaskhan ex", bench=["Team Rocket's Kangaskhan ex"], hand=["Team Rocket's Giovanni"],
+          damage={1: 10})
+    board(g, 1, 'Dreepy', bench=['Cetitan ex', 'Dreepy'])
+    at_turn(g)
+    act(g, 'Giovanni')
+    for _ in range(6):
+        if g.prompt.hint == 'gust':
+            break
+        g.step(0)
+    assert g.prompt.hint == 'gust' and any('Cetitan' in o.label for o in g.prompt.options), labels(g)
+    act(g, 'Cetitan')
+    assert g.players[0].active.damage == 10, 'o próprio Ativo deve ter sido trocado'
+    assert g.players[1].active.name == 'Dreepy' and any(s.name == 'Cetitan ex' for s in g.players[1].bench)
+
+
+
+def test_r1956_mawile_invite_and_strike_no_bench_no_damage():
+    # Ruling 1956: sem Pokémon no Banco do oponente não há troca e o ataque não causa dano.
+    g = new_game()
+    board(g, 0, 'Mawile', energy={0: ['Basic Metal Energy'] * 2})
+    board(g, 1, 'Dreepy')
+    g.players[0].active = None
+    board(g, 0, 'TEF-112', energy={0: ['Basic Psychic Energy'] * 2})
+    at_turn(g)
+    act(g, 'Invite and Strike')
+    assert g.players[1].active.damage == 0, g.players[1].active.damage
+
+
+def test_r1949_pidove_emergency_evolution_skips_stage_1():
+    # Ruling 1949: Pidove com HP restante <= 30 evolui direto para Unfezant.
+    g = new_game()
+    board(g, 0, 'Dreepy', bench=['TEF-133'], deck=['TEF-135'] + ['Basic Psychic Energy'] * 5, damage={1: 20})
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Emergency Evolution')
+    resolve_all(g)
+    assert g.players[0].bench[0].name == 'Unfezant', g.players[0].bench[0].name
+
+
+
+def test_r2025_goad_n_grab_blocked_switch_no_damage():
+    # Ruling 2025: com Mist Energy a troca é prevenida e, sem novo Ativo, não há dano.
+    g = new_game()
+    board(g, 0, 'SCR-96', energy={0: ['Basic Darkness Energy'] * 2})
+    board(g, 1, 'Dreepy', bench=['Dreepy'], energy={0: ['TEF-161']})
+    at_turn(g)
+    act(g, 'Goad')
+    resolve_all(g)
+    assert [e.name for e in g.players[1].active.energy] == ['Mist Energy'] and len(g.players[1].bench) == 1, \
+        'o Ativo original (com Mist Energy) não pode ter sido nocauteado'
+    assert g.players[1].active.damage == 0
+
+
+def test_r2019_r2020_colorful_confection_searches_pokemon_by_basic_energy_type():
+    # Rulings 2019/2020: busca Pokémon dos tipos das Energias Básicas ligadas (repetidos permitidos).
+    g = new_game()
+    board(g, 0, 'SCR-65', energy={0: ['Basic Psychic Energy', 'Basic Fire Energy', 'Luminous Energy']},
+          deck=['SCR-60', 'ASC-20', 'ASC-20', 'Basic Fire Energy'])
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Colorful Confection')
+    assert 'Basic Fire Energy' not in labels(g), labels(g)
+    resolve_all(g)
+    assert len([c for c in g.players[0].hand if c.d.kind == 'pokemon']) >= 1
+
+
+def test_r1979_re_brew_no_counters_no_shuffle():
+    # Ruling 1979: se nenhum contador é colocado (Mist Energy), as Energias ficam no descarte.
+    g = new_game()
+    board(g, 0, 'TWM-23', energy={0: ['Basic Psychic Energy'] * 2}, discard=['Basic Grass Energy'] * 2,
+          deck=['Dreepy'] * 3)
+    board(g, 1, 'Dreepy', energy={0: ['TEF-161']})
+    at_turn(g)
+    act(g, 'Re-Brew')
+    resolve_all(g)
+    assert len(g.players[0].discard) == 2 and len(g.players[0].deck) == 3, \
+        (len(g.players[0].discard), len(g.players[0].deck))
+
+
+def test_r2030_grand_tree_needs_valid_evolution():
+    # Ruling 2030: sem Estágio 1 no deck para evoluir um Básico em jogo, Grand Tree não pode ser usado.
+    g = new_game()
+    board(g, 0, 'Scyther', deck=['Basic Grass Energy'] * 5)
+    board(g, 1, 'Dreepy')
+    g.stadium = card('Grand Tree', 0)
+    at_turn(g)
+    assert not has(g, 'Grand Tree'), labels(g)
+
+
+def test_r2014_selective_slime_not_offered_with_all_conditions():
+    # Ruling 2014: não usa se o Ativo do oponente já está Queimado, Confuso e Envenenado.
+    g = new_game()
+    board(g, 0, 'SCR-6')
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    assert has(g, 'Selective Slime'), labels(g)
+    g.players[1].active.conditions = {'burned', 'confused', 'poisoned'}
+    g.refresh()
+    assert not has(g, 'Selective Slime'), labels(g)
+
+
+def test_r2082_gravity_gemstone_cannot_raise_zero_retreat():
+    # Ruling 2082: Latias ex (Skyliner) zera o Recuo; Gravity Gemstone não pode aumentá-lo.
+    g = new_game()
+    board(g, 0, 'Dreepy', bench=['SSP-76'])
+    board(g, 1, 'Dreepy', tools={0: ['Gravity Gemstone']})
+    at_turn(g)
+    assert g.retreat_cost(g.players[0].active) == 0, g.retreat_cost(g.players[0].active)
+
+
+def test_r2064_r2062_r2061_megaton_blower_blender_amulet():
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=['Megaton Blower'])
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    assert not has(g, 'Megaton Blower'), labels(g)             # 2064: sem alvo
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=['Brilliant Blender'], deck=['Dreepy'] * 8)
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Brilliant Blender')
+    resolve_all(g)
+    assert len(g.players[0].discard) >= 2, len(g.players[0].discard)   # 2062: ao menos 1 carta descartada do baralho
+
+
+def test_r2052_drag_off_no_bench_no_damage():
+    g = new_game()
+    board(g, 0, 'SSP-153', energy={0: ['Basic Psychic Energy'] * 2})
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Drag Off')
+    assert g.players[1].active.damage == 0, g.players[1].active.damage
+
+
+def test_r2051_rotom_crushing_pulse_discards_tools_and_items():
+    g = new_game()
+    board(g, 0, 'SSP-61', energy={0: ['Basic Lightning Energy']})
+    board(g, 1, 'Dreepy', hand=['Ultra Ball', 'Air Balloon', 'Basic Psychic Energy'])
+    at_turn(g)
+    act(g, 'Crushing Pulse')
+    resolve_all(g)
+    names = [c.name for c in g.players[1].hand]
+    assert 'Ultra Ball' not in names and 'Air Balloon' not in names, names
+
+
+def test_r2045_r1959_bench_from_top_allows_stage_1_and_2():
+    g = new_game()
+    board(g, 0, 'TEF-72', energy={0: ['Basic Psychic Energy'] * 3},
+          deck=['Drakloak', 'Dreepy'] + ['Basic Psychic Energy'] * 8)
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Summoning Gate')
+    assert 'Drakloak' in labels(g), labels(g)
+
+
+def test_r2042_up_tempo_with_five_cards():
+    # Ruling 2042: com 5 cartas na mão, colocar 1 no fundo deixa 4 e dá para comprar: disponível.
+    g = new_game()
+    board(g, 0, 'Quaquaval', hand=['Dreepy'] * 5, deck=['Dreepy'] * 5)
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    assert has(g, 'Up-Tempo'), labels(g)
+
+
+def test_r1985_accompanying_flute_needs_opponent_bench_space():
+    g = new_game()
+    board(g, 0, 'Dreepy', hand=['Accompanying Flute'])
+    board(g, 1, 'Dreepy', bench=['Dreepy'] * 5)
+    at_turn(g)
+    assert not has(g, 'Accompanying Flute'), labels(g)
+
+
+def test_r1984_undulating_slice_may_place_all_counters():
+    g = new_game()
+    board(g, 0, 'TWM-63', energy={0: ['Basic Water Energy'] * 3}, damage={0: 50})
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Undulating Slice')
+    labs = [o.label for o in g.prompt.options]
+    assert '9' in labs, labs
+
+
+def test_r1981_slow_crunch_cancelled_when_defender_evolves():
+    g = new_game()
+    board(g, 0, 'TWM-3', energy={0: ['Basic Grass Energy'] * 3})
+    board(g, 1, 'Dreepy', hand=['Drakloak'])
+    at_turn(g)
+    act(g, 'Slow Crunch')
+    act(g, 'Evoluir')                      # o oponente evolui o Defensor no turno dele
+    assert g.players[1].active.name == 'Drakloak'
+    act(g, 'Passar o turno')
+    resolve_all(g)
+    assert g.players[1].active is not None and g.players[1].active.damage < g.hp(g.players[1].active), \
+        'Drakloak não pode ser nocauteado por Slow Crunch'
+
+
+def test_r1977_zero_to_hero_returns_only_palafin():
+    g = new_game()
+    board(g, 0, 'TWM-60', bench=['Dreepy'], energy={0: ['Basic Water Energy']}, deck=['PR-SV-126', 'Pikachu'])
+    g.players[0].active.cards.insert(0, card('TWM-59', 0))
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    act(g, 'Recuar')
+    for _ in range(8):
+        if g.prompt.hint == 'main':
+            break
+        g.step(0)
+    assert any(c.name == 'Palafin' for c in g.players[0].deck) and not any(c.name == 'Finizen' for c in g.players[0].deck), \
+        [c.name for c in g.players[0].deck]
+
+
+def test_r1975_palafin_ex_cannot_evolve_from_hand():
+    g = new_game()
+    board(g, 0, 'TWM-59', hand=['PR-SV-126'], energy={0: ['Basic Water Energy']})
+    board(g, 1, 'Dreepy')
+    at_turn(g)
+    assert not has(g, 'Palafin ex'), labels(g)
+
+
+def test_r2025_goad_n_grab_damages_new_active():
+    g = new_game()
+    board(g, 0, 'SCR-96', energy={0: ['Basic Darkness Energy'] * 2})
+    board(g, 1, 'Dreepy', bench=['Dragapult ex'])
+    at_turn(g)
+    act(g, 'Goad')
+    resolve_all(g)
+    assert g.players[1].active.name == 'Dragapult ex' and g.players[1].active.damage == 160, \
+        (g.players[1].active.name, g.players[1].active.damage)
+    assert g.players[1].bench[0].damage == 0
+
+
+
 if __name__ == '__main__':
     import sys
     import traceback

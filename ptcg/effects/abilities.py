@@ -282,8 +282,9 @@ def _(m, d, ab):
 @passive(r"As long as this Pokémon is in the Active Spot, attacks used by your opponent's Active Pokémon do (\d+) less damage")
 def _(m, d, ab):
     n = int(m.group(1))
-    return AbilityImpl(kind='passive', hooks={'damage_out': lambda g, src, dmg, ctx, target:
-                       dmg - n if g.is_active(src.slot) and ctx.player != src.owner else None})
+    f = lambda g, src, dmg, ctx, target: dmg - n if g.is_active(src.slot) and ctx.player != src.owner else None
+    # ruling 2213: também reduz o dano que o ataque faz aos Pokémon do Banco
+    return AbilityImpl(kind='passive', hooks={'damage_out': f, 'damage_out_bench': f})
 
 
 @passive(r"This Pokémon gets \+(\d+) HP for each (.+)")
@@ -435,7 +436,7 @@ def _ability_cond(ph):
     return cond_expr(ph)
 
 
-def _feasible(body):
+def _feasible(body, hand_cost=0):
     """Condição mínima para a habilidade fazer algo (evita opções inúteis)."""
     b = body
     m = re.match(r'^(?:you may )?attach (?:a|an|up to \d+) (.+? card)s? from your hand', b, re.I)
@@ -449,7 +450,14 @@ def _feasible(body):
     m = re.match(r'^(?:you may )?draw cards until you have (\d+) cards', b, re.I)
     if m:   # ruling (Delphox, Flaring Magic): com N cartas ou mais na mão, a Habilidade não pode ser usada
         n = int(m.group(1))
-        return lambda E: len(E.me.hand) < n and bool(E.me.deck)
+        # ruling 2042: se o custo tira uma carta da mão (Up-Tempo), conta a mão já sem ela
+        return lambda E: len(E.me.hand) - hand_cost < n and (bool(E.me.deck) or hand_cost > 0)
+    if re.search(r"choose Burned, Confused, or Poisoned", b, re.I):
+        # ruling 2014 (Selective Slime): não usa se o Ativo do oponente já tem as três condições
+        return lambda E: E.opp_active() is not None and not {'burned', 'confused', 'poisoned'} <= E.opp_active().conditions
+    if re.search(r"onto their Bench", b, re.I) and re.search(r"reveal their hand", b, re.I):
+        # ruling 2109 (Inviting Wink): com o Banco do oponente cheio a Habilidade não pode ser usada
+        return lambda E: E.g.bench_space(1 - E.p) > 0
     if re.match(r'^(?:you may )?(draw|search your deck|look at the top)', b, re.I):
         return lambda E: bool(E.me.deck)
     if re.match(r'^(?:you may )?heal', b, re.I):
@@ -498,6 +506,7 @@ def _compile_ability(d, ab) -> AbilityImpl:
     m = ON_BENCH.match(t)
     cond = None
     cost = None
+    ct = None
     once = True
     if m:
         kind, body = 'on_bench', m.group('body')
@@ -521,7 +530,7 @@ def _compile_ability(d, ab) -> AbilityImpl:
         return AbilityImpl(kind='passive', status='missing', note=t)
     body = body[0].upper() + body[1:]
     prog = compile_text(body)
-    feasible = _feasible(body)
+    feasible = _feasible(body, 1 if (cost is not None and ct and 'from your hand' in ct) else 0)
     run_body = steps_runner(prog, 'ability')
 
     def can_use(g, p, slot):
@@ -587,9 +596,11 @@ def _(d, ab):
                 for k in range(maxn, 0, -1)]
         opt = yield from g.ask(p, 'amount', 'Quantos contadores mover?', opts, s.top)
         k = opt.value
-        if g.anyhook('prevent_counters', target=dst, kind='ability', by=p):
-            return
         src.damage -= 10 * k
+        # ruling 2257: se a colocação é prevenida (Battle Cage), os contadores saem de src e somem
+        if g.anyhook('prevent_counters', target=dst, kind='ability', by=p):
+            g.say(f'{k} contador(es) removido(s) de {src.name}; a colocação em {dst.name} foi impedida')
+            return
         dst.damage += 10 * k
         g.say(f'{k} contador(es) movido(s) de {src.name} para {dst.name}')
     return AbilityImpl(can_use=can, run=run_)

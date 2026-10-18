@@ -78,10 +78,15 @@ stadium('Full Metal Lab', hooks={'damage_in': lambda g, src, dmg, ctx, target, a
                                  dmg - 30 if g.has_type(target, 'M') and ctx.player != target.owner else None})
 
 
+def _grand_tree_cands(g, p):
+    pl = g.players[p]
+    return [s for s in pl.in_play() if s.d.stage == 0 and not g.first_turn(p) and s.turn_entered < g.turn
+            and any(c.d.stage == 1 and c.d.evolves_from == s.name for c in pl.deck)]
+
+
 def _grand_tree(g, p):
     pl = g.players[p]
-    cands = [s for s in pl.in_play() if s.d.stage == 0 and not g.first_turn(p) and s.turn_entered < g.turn
-             and any(c.d.stage == 1 and c.d.evolves_from == s.name for c in pl.deck)]
+    cands = _grand_tree_cands(g, p)
     if not cands:
         g.shuffle(p)
         return
@@ -98,7 +103,7 @@ def _grand_tree(g, p):
     g.shuffle(p)
 
 
-stadium('Grand Tree', action=_grand_tree)
+stadium('Grand Tree', action=_grand_tree, action_can=lambda g, p: bool(_grand_tree_cands(g, p)))   # ruling 2030
 stadium('Granite Cave', hooks={'damage_in': lambda g, src, dmg, ctx, target, active:
                                dmg - 30 if target.d.family == "Steven's" and ctx.player != target.owner else None})
 stadium('Gravity Mountain', hooks={'hp': lambda g, src, v, slot: v - 30 if slot.d.stage == 2 else None})
@@ -122,7 +127,14 @@ def _garden(g, p):
     g.draw_until(p, n)
 
 
-stadium('Mystery Garden', action=_garden, action_can=lambda g, p: any(c.d.kind == 'energy' for c in g.players[p].hand))
+def _garden_can(g, p):
+    # rulings 2231/2232: precisa de carta no deck e de comprar ao menos uma depois de descartar a Energia
+    pl = g.players[p]
+    n = sum(1 for s in pl.in_play() if g.has_type(s, 'P'))
+    return bool(pl.deck) and any(c.d.kind == 'energy' for c in pl.hand) and len(pl.hand) - 1 < n
+
+
+stadium('Mystery Garden', action=_garden, action_can=_garden_can)
 stadium("N's Castle", hooks={'retreat_cost': lambda g, src, v, slot: 0 if slot.d.family == "N's" else None})
 stadium('Neutralization Zone', hooks={'damage_in': lambda g, src, dmg, ctx, target, active:
                                       0 if not target.d.rule_box and ctx.attacker.d.rule_box and

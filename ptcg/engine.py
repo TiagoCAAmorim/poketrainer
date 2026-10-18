@@ -325,7 +325,9 @@ class Game:
         return self.fold('weakness', (slot.d.weakness, 2), slot=slot)
 
     def retreat_cost(self, slot) -> int:
-        return max(0, self.fold('retreat_cost', slot.d.retreat, slot=slot))
+        # ruling 2082: aumentos (Gravity Gemstone) entram antes, para "sem custo de Recuo" prevalecer
+        v = self.fold('retreat_cost_pre', slot.d.retreat, slot=slot)
+        return max(0, self.fold('retreat_cost', v, slot=slot))
 
     def energy_units(self, slot):
         """[(carta, [unidades])] — unidade = frozenset de tipos que ela pode pagar."""
@@ -501,7 +503,7 @@ class Game:
             self.shuffle(p)
             while True:
                 self.draw(p, 7)
-                if any(self.playable_basic(c) for c in pl.hand):
+                if any(self.playable_basic(c) or self.setup_active_ok(c) for c in pl.hand):   # ruling 2212
                     break
                 pl.mulligans += 1
                 self.say(f'{pl.name} fez mulligan')
@@ -580,9 +582,10 @@ class Game:
                 att = self.players[p].active
                 yield from self._attack(p, opt.value)
                 if att is not None and att is self.players[p].active and self.players[1 - p].active is not None \
-                        and self.anyhook('attack_twice', slot=att):
+                        and opt.value in att.d.attacks and self.anyhook('attack_twice', slot=att):
+                    # rulings 1973/1974: Festival Lead só vale para ataques impressos (não os de Technical Machine)
                     again = [Option(f'Atacar de novo: {a.name}', a, 'attack', card=att.top, attack=i)
-                             for i, a in enumerate(self.attacks_of(att)) if self.can_use_attack(p, a)]
+                             for i, a in enumerate(self.attacks_of(att)) if a in att.d.attacks and self.can_use_attack(p, a)]
                     if again:
                         o2 = Option('', None, 'noop')
                         while o2.kind == 'noop':
@@ -695,7 +698,8 @@ class Game:
                         add(('pb', d.id), Option(f'Jogar {d.name} no Banco', c, 'play_basic', card=c))
                 else:
                     for s in pl.in_play():
-                        if self.can_evolve(p, s, c) and self.can_play_card(p, c):
+                        if self.can_evolve(p, s, c) and self.can_play_card(p, c) and \
+                                not any(ab.impl is not None and ab.impl.hand_blocked for ab in d.abilities):   # ruling 1975
                             add(('ev', d.id, s.sid), Option(f'Evoluir {self.slot_label(s)} → {d.name}', (c, s),
                                                             'evolve', card=c, target=(p, self.slot_pos(s))))
                 for ab in d.abilities:       # Habilidades usáveis da mão (ex.: Emergency Rotation)
@@ -828,6 +832,7 @@ class Game:
         old = slot.name
         slot.cards.append(card)
         slot.turn_evolved = self.turn
+        slot.flags.pop('to_active_turn', None)   # ruling 2265: evoluir depois de mover não conta
         keep = 'confused' in slot.conditions and self.anyhook('keep_confusion', slot=slot)
         slot.clear_conditions()
         if keep:
@@ -950,7 +955,7 @@ class Game:
             got += len(dict(eu)[pick[0]])
         return chosen
 
-    def switch_active(self, p, bench_slot, cause='switch'):
+    def switch_active(self, p, bench_slot, cause='switch', defer=None):
         """Troca o Ativo de p pelo Pokémon do Banco (dispara moved_to_bench/moved_to_active)."""
         pl = self.players[p]
         i = pl.bench.index(bench_slot)
@@ -962,9 +967,16 @@ class Game:
         else:
             pl.bench.pop(i)
         pl.active = bench_slot
+        bench_slot.flags['to_active_turn'] = self.turn   # ruling 2265
+        evs = []
         if old is not None:
-            yield from self.emit('moved_to_bench', player=p, slot=old, cause=cause)
-        yield from self.emit('moved_to_active', player=p, slot=bench_slot, cause=cause)
+            evs.append(('moved_to_bench', dict(player=p, slot=old, cause=cause)))
+        evs.append(('moved_to_active', dict(player=p, slot=bench_slot, cause=cause)))
+        if defer is not None:   # o chamador emite depois (ruling 2142: Surfer compra antes do Buzzing Boost)
+            defer.extend(evs)
+            return
+        for name, kw in evs:
+            yield from self.emit(name, **kw)
 
     def remove_slot(self, slot, to='discard'):
         """Tira um Pokémon de jogo; todas as cartas vão para `to` (discard/hand/deck)."""
@@ -990,6 +1002,10 @@ class Game:
     def _promote_if_needed(self):
         for o in (1 - self.current, self.current):
             pl = self.players[o]
+            # rulings 2131/2132: com o Banco acima do limite (Area Zero), descarta antes de promover
+            while pl.active is None and len(pl.bench) > self.bench_max(o):
+                d = yield from self.choose_slot(o, pl.bench, 'discard_bench', 'Descartar Pokémon do Banco', self.stadium)
+                self.remove_slot(d, 'discard')
             if pl.active is None and pl.bench:
                 s = yield from self.choose_slot(o, pl.bench, 'promote', 'Escolha seu novo Pokémon Ativo')
                 pl.bench.remove(s)
@@ -1240,7 +1256,7 @@ class Game:
                     {'discard': self.players[c.owner].discard, 'hand': self.players[c.owner].hand,
                      'deck': self.players[c.owner].deck}[where].append(c)
                 owed[1 - o] += max(0, n)
-            for t in (0, 1):
+            for t in (1 - self.current, self.current):   # ruling 2239: quem joga o próximo turno pega primeiro
                 if owed[t]:
                     self.take_prizes(t, owed[t])
             self._check_win()

@@ -35,10 +35,41 @@ def _(d, atk):
         if n:
             t = yield from g.choose_slot(ctx.player, g.players[ctx.opp].in_play(), 'counters',
                                          f'Colocar {n} contadores em', ctx.attacker.top)
-            g.place_counters(t, n, 'attack', by=ctx.player, ctx=ctx)
+            placed = g.place_counters(t, n, 'attack', by=ctx.player, ctx=ctx)
+            if not placed:   # ruling 1979: sem contadores colocados, não embaralha as Energias
+                return
         for c in cards:
             pl.discard.remove(c)
             pl.deck.append(c)
+        g.shuffle(ctx.player)
+    return AttackImpl(run=run_)
+
+
+@attack('Grimmsnarl', "Goad 'n' Grab")
+def _(d, atk):
+    def run_(g, ctx):
+        # ruling 2025: troca primeiro; só se ocorrer há "novo Ativo" para receber os 160 (Mist Energy impede a troca)
+        old = g.players[ctx.opp].active
+        if old is None or g.effects_prevented(ctx, old):
+            return
+        s = yield from lib.opp_switches_out(g, ctx.player, ctx.attacker.top)
+        if s is not None:
+            ctx.defender = s
+            g.deal_attack_damage(ctx, s, 160)
+    return AttackImpl(run=run_)
+
+
+@attack('Alcremie', 'Colorful Confection')
+def _(d, atk):
+    def run_(g, ctx):
+        # rulings 2019/2020: tipos das Energias Básicas ligadas (Luminous Energy não conta); pode repetir tipos
+        pl = g.players[ctx.player]
+        types = {e.d.provides for e in ctx.attacker.energy if e.d.basic_energy}
+        cands = [c for c in pl.deck if c.d.kind == 'pokemon' and types & set(c.d.types)]
+        got = yield from g.choose_cards(ctx.player, cands, 5, 0, 'search', 'Colorful Confection: Pokémon', ctx.attacker.top)
+        for c in got:
+            pl.deck.remove(c)
+            pl.hand.append(c)
         g.shuffle(ctx.player)
     return AttackImpl(run=run_)
 

@@ -72,7 +72,7 @@ tool('Ancient Booster Energy Capsule', hooks={
 tool('Air Balloon', hooks={'retreat_cost': lambda g, src, v, slot: v - 2 if on(src, slot) else None})
 tool('Rescue Board', hooks={'retreat_cost': lambda g, src, v, slot:
                             (0 if g.hp_left(slot) <= 30 else v - 1) if on(src, slot) else None})
-tool('Gravity Gemstone', hooks={'retreat_cost': lambda g, src, v, slot:
+tool('Gravity Gemstone', hooks={'retreat_cost_pre': lambda g, src, v, slot:
                                 v + 1 if g.is_active(src.slot) and g.is_active(slot) else None})
 
 
@@ -171,7 +171,7 @@ tool('Handheld Fan', events={'damaged_by_attack': active_damaged(_fan)})
 # --- gatilhos ao ser nocauteado
 def _amulet(g, src, slot, owner, by_attack, attacker, dest):
     if slot is src.slot and by_attack:
-        yield from lib.search_to_hand(g, owner, lambda c: True, 3, src.card)
+        yield from lib.search_to_hand(g, owner, lambda c: True, 3, src.card, min_n=1)   # ruling 2061
 
 
 tool('Amulet of Hope', events={'knocked_out': _amulet})
