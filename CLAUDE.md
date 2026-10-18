@@ -40,6 +40,7 @@ python gerenciar_decks.py listar|mostrar|criar|montar|importar|editar|copiar|exp
 python gerenciar_logs.py importar|listar|mostrar|rever|atividade|reprocessar|imitacao
 python replay_log.py tests/fixtures/ptcgl_logs/*.log
 python simulate.py <deck> <deck> --games 200 [--salvar-log]      python optimize.py <deck> --gauntlet ...
+python melhorar_heuristica.py [--avaliar|--resetar]              # ajusta pesos da heurística vs aleatório → ptcg/data/heuristica.json
 python server.py                                                  # http://localhost:8765 (welcome; /jogar /decks /cartas)
 python baixar_imagens.py                                          # imagens das cartas → imagens/ (fora do git)
 python imitar.py gerar|treinar|avaliar                           # IA: pré-treino imitando a heurística
@@ -62,6 +63,7 @@ python tests/smoke_cartas.py       # todo ataque/Habilidade ativada roda sem err
 python tests/fuzz.py --games 300 --novas  # decks favorecendo a 2ª leva
 python tests/test_explorer.py      # filtros/detalhe da página de cartas (ptcg/explorer.py + web/cartas.html)
 python tests/test_deckbuilder.py   # montador de decks (ptcg/deckbuilder.py + web/decks.html)
+python tests/test_heuristica.py    # heurística ganha ≥85% do aleatório nos decks de decks/tests
 python tests/test_ai.py            # IA: formato compacto = collate, imitação e passo PPO (pula sem torch)
 ```
 pytest não é necessário (cada arquivo roda sozinho), mas os testes são compatíveis com pytest.
