@@ -812,7 +812,11 @@ def _(m):
 
     def step(E):
         t = E.opp_active()
-        if t is None or E.g.effects_prevented(E.ctx, t):
+        if t is None:
+            return
+        # Habilidade (sem ctx de ataque): Hide 'n' Sneak etc. também previnem o efeito (ruling 2393)
+        if (E.g.effects_prevented(E.ctx, t) if E.ctx is not None else
+                (E.slot is not None and E.g.effects_prevented_from(E.p, E.slot, t))):
             return
         yield from lib.discard_energy_from(E.g, E.p, t, n, (lambda e: e.d.special_energy) if special else None,
                                            None, E.card)
@@ -823,7 +827,11 @@ def _(m):
 def _(m):
     def step(E):
         t = E.opp_active()
-        if t is None or E.g.effects_prevented(E.ctx, t):
+        if t is None:
+            return
+        # Habilidade (sem ctx de ataque): Hide 'n' Sneak etc. também previnem o efeito (ruling 2393)
+        if (E.g.effects_prevented(E.ctx, t) if E.ctx is not None else
+                (E.slot is not None and E.g.effects_prevented_from(E.p, E.slot, t))):
             return
         yield from lib.discard_energy_from(E.g, E.p, t, E.data.get('heads_n', 0), None, None, E.card)
     return step
@@ -1023,7 +1031,9 @@ def _(m):
     pred = or_filter(m.group(4))
 
     def step(E):
-        yield from lib.search_to_hand(E.g, E.p, pred, n, E.card)
+        # Ruling 2315: Nasty Plot é obrigatório pegar ao menos 1 carta, se houver; as outras buscas podem falhar
+        must = E.ctx is not None and E.ctx.attack.name == 'Nasty Plot'
+        yield from lib.search_to_hand(E.g, E.p, pred, n, E.card, min_n=1 if must else 0)
     return step
 
 
@@ -1242,11 +1252,15 @@ def _(m):
         got = yield from E.g.choose_cards(E.p, [e for _, e in pool], len(pool), 0, 'discard_energy_any',
                                           'Energias a descartar', E.card, key=lambda e: (where[e.uid].sid, e.d.id),
                                           labeler=lambda e: f'{e.name} — {E.g.slot_label(where[e.uid])}')
-        for e in got:
-            E.g.discard_energy(where[e.uid], [e], E.ctx)
+        def apply():
+            for e in got:
+                if E.g.in_play(where[e.uid]) and e in where[e.uid].energy:
+                    E.g.discard_energy(where[e.uid], [e], E.ctx)
+        E.ctx.data.setdefault('after', []).append(apply)    # ruling 2423: o dano vem antes do descarte
         E.data['discarded'] = len(got)
     step.est = lambda E, d: (E.data.update(discarded=sum(1 for s in E.me.in_play() for e in s.energy
                                                           if e.d.basic_energy or not only_basic)) or d)
+    step.defers = True
     return step
 
 
@@ -1332,14 +1346,24 @@ def _(m):
                                       source=E.card)):
             return
         got = (yield from E.g.choose_cards(E.p, cands, n, n, 'pick', 'Energias', E.card, key=lambda c: c.uid)) if n else []
-        if discard:
-            E.g.discard_energy(s, got, E.ctx)
-        else:
-            for e in got:
-                s.energy.remove(e)
-                E.me.hand.append(e)
+
+        def apply():
+            # Rulings 2423/2385: a escolha é feita antes, mas as Energias só saem DEPOIS do dano (senão, p.ex., o
+            # Ancient Bulwark do Bastiodon passaria a contar menos Energias). Ruling 2370: Mentally Calm impede
+            # devolver à mão (a Energia fica), mas o bônus de dano vale.
+            if not E.g.in_play(s):
+                return
+            got_now = [e for e in got if e in s.energy]
+            if discard:
+                E.g.discard_energy(s, got_now, E.ctx)
+            elif not E.g.anyhook('no_return_to_hand', slot=s):
+                for e in got_now:
+                    s.energy.remove(e)
+                    E.me.hand.append(e)
+        E.ctx.data.setdefault('after', []).append(apply)
         E.ctx.damage += bonus
     step.est = lambda E, d: d + bonus
+    step.defers = True
     return step
 
 
@@ -1680,6 +1704,7 @@ def attack_impl_from_text(text) -> AttackImpl:
         # Backtrack Badge (ruling 2416): refaz TODAS as moedas do ataque, não só uma
         if E.flipped and (yield from extra.maybe_reroll(E)):
             ctx.damage, ctx.no_damage = snap[0], snap[1]
+            ctx.data.pop('after', None)
             E.data.clear()
             E.data.update(snap[2])
             E.flipped = False
@@ -1687,6 +1712,8 @@ def attack_impl_from_text(text) -> AttackImpl:
 
     def run_post(g, ctx):
         E = ctx.data.get('E') or Exec(g, ctx.player, ctx=ctx)
+        for f in ctx.data.pop('after', []):
+            f()
         for f in post:
             yield from run(f(E))
 
@@ -1707,7 +1734,9 @@ def attack_impl_from_text(text) -> AttackImpl:
         return max(0, int(d))
 
     fl = prog.flags
-    im = AttackImpl(pre=run_pre if pre else None, post=run_post if post else None, estimate=estimate,
+    im = AttackImpl(pre=run_pre if pre else None,
+                    post=run_post if (post or any(getattr(f, 'defers', False) for f in pre)) else None,
+                    estimate=estimate,
                     ignore_effects=fl.get('ignore_effects', False), ignore_weakness=fl.get('ignore_weakness', False),
                     ignore_resistance=fl.get('ignore_resistance', False), status=prog.status,
                     note='; '.join(prog.unparsed))

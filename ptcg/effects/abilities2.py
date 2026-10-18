@@ -107,7 +107,7 @@ def _(d, ab):
         bench = g.players[owner].bench
         if not pool or not bench:
             return
-        got = yield from g.choose_cards(owner, pool, 2, 0, 'pick', 'Energias Raio para o Banco', slot.top,
+        got = yield from g.choose_cards(owner, pool, 2, 1, 'pick', 'Energias Raio para o Banco', slot.top,
                                         key=lambda c: c.uid)
         if not got:
             return
@@ -377,9 +377,10 @@ def _(d, ab):
 
 @ability('Gloomy Garbage')
 def _(d, ab):
-    return AbilityImpl(kind='passive', hooks={'damage_out': lambda g, src, dmg, ctx, target:
-                       dmg - 20 if ctx.player != src.owner and ctx.attacker.tools and g.is_active(ctx.attacker)
-                       else None})
+    f = lambda g, src, dmg, ctx, target: (dmg - 20 if ctx.player != src.owner and ctx.attacker.tools
+                                          and g.is_active(ctx.attacker) else None)
+    # ruling 2345: também reduz o dano que o ataque faz aos Pokémon do Banco (gancho próprio, sem Fraqueza/Resistência)
+    return AbilityImpl(kind='passive', hooks={'damage_out': f, 'damage_out_bench': f})
 
 
 @ability('Vibrant Dance')

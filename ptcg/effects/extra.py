@@ -336,8 +336,22 @@ def use_attack_as_this(E, a):
         yield from run(im.post(g, ctx))
 
 
-def choose_attack(E, pool, text='Usar qual ataque como este ataque?'):
-    """pool: lista de (slot, AttackDef). Devolve o AttackDef escolhido (ou None)."""
+def not_in_copy_chain(E, pool):
+    """Tira do pool os ataques que já estão na cadeia de cópias deste ataque. Ex.: Night Joker usa um ataque
+    de um N's Pokémon no Banco; o Night Joker de outro N's Zoroark ex não é uma escolha válida (só levaria a
+    escolher de novo entre os mesmos ataques), e oferecê-lo deixava o motor repetir a cópia sem fim."""
+    if E.ctx is None:
+        return pool
+    chain = E.ctx.data.setdefault('copy_chain', set())
+    chain.add(E.ctx.attack.name)
+    return [(s, a) for s, a in pool if a.name not in chain]
+
+
+def choose_attack(E, pool, text='Usar qual ataque como este ataque?', copy=True):
+    """pool: lista de (slot, AttackDef). Devolve o AttackDef escolhido (ou None).
+    copy=False quando a escolha não é para usar o ataque (ex.: bloquear um ataque)."""
+    if copy:
+        pool = not_in_copy_chain(E, pool)
     if not pool:
         return None
     opts = [Option(f'{a.name} ({s.name})', a, 'text') for s, a in pool]
@@ -660,7 +674,8 @@ def _(m):
 @pattern(r"You may choose an attack from a Pokémon you find there and use it as this attack")
 def _(m):
     def step(E):
-        pool = [(c, a) for c in E.data.get('revealed', []) if c.d.kind == 'pokemon' for a in c.d.attacks]
+        pool = not_in_copy_chain(E, [(c, a) for c in E.data.get('revealed', []) if c.d.kind == 'pokemon'
+                                     for a in c.d.attacks])
         if not pool:
             return
         opts = [Option(f'{a.name} ({c.name})', a, 'text') for c, a in pool]
@@ -872,7 +887,7 @@ def _(m):
     return step
 
 
-@pattern(r"(?:You may )?[Dd]iscard (?:up to )?(\d+) (?:Basic )?Energy(?: cards?)? from your Benched Pokémon")
+@pattern(r"(?:You may )?[Dd]iscard (?:up to )?(\d+) (?:Basic )?Energy(?: cards?)? from your Benched Pokémon", 'pre')
 def _(m):
     n = int(m.group(1))
     basic = 'Basic' in m.group(0)
@@ -885,6 +900,7 @@ def _(m):
                                           labeler=lambda e: f'{e.name} — {E.g.slot_label(where[e.uid])}')
         for e in got:
             E.g.discard_energy(where[e.uid], [e], E.ctx)
+        E.data['discarded'] = len(got)       # ruling 2340: "+dano por carta descartada" (Erasure Ball, Flashing Spear)
     return step
 
 
@@ -1117,7 +1133,9 @@ def _(m):
             for c in got:
                 E.me.deck.remove(c)
                 yield from E.g.play_to_bench(E.p, c)
-        E.g.shuffle(E.p)
+        # ruling 2403: sem carta para devolver ao baralho, não embaralha
+        if not reveal_n or any(c in E.me.deck for c in E.data.get('looked', [])):
+            E.g.shuffle(E.p)
     return step
 
 
@@ -1303,10 +1321,17 @@ def _(m):
     if src not in _MOVE_SRC or dst not in _MOVE_DST:
         raise Unparsed(f'mover: {src} → {dst}')
 
-    def pred(e):
-        return (not basic or e.d.basic_energy) and (code is None or e.d.provides == code)
-
     def step(E):
+        def pred(e):
+            if basic and not e.d.basic_energy:
+                return False
+            if code is None or e.d.provides == code:
+                return True
+            if e.d.special_energy and e.d.impl is not None and e.d.impl.units is not None:
+                # ruling 2312: Energia Especial que fornece o tipo (ex.: Legacy Energy) também pode ser movida
+                s = next((s for s in E.me.in_play() if e in s.energy), None)
+                return s is not None and any(code in u for u in e.d.impl.units(E.g, e, s))
+            return False
         yield from lib.move_energy(E.g, E.p, lambda: _MOVE_SRC[src](E), lambda: _MOVE_DST[dst](E), n, pred, E.card,
                                    min_n=0 if (optional or n >= 99) else n)
     return step
@@ -1504,7 +1529,7 @@ def _(m):
         E.data['locked'] = None
         if t is None:
             return
-        a = yield from choose_attack(E, [(t, x) for x in E.g.attacks_of(t)], 'Qual ataque bloquear?')
+        a = yield from choose_attack(E, [(t, x) for x in E.g.attacks_of(t)], 'Qual ataque bloquear?', copy=False)
         E.data['locked'] = a.name if a is not None else None
     return step
 
@@ -1613,7 +1638,8 @@ def _(m):
         s = E.slot
 
         def ev(g, src, ctx, slot, damage, s=s):
-            if slot is s and ctx.player != s.owner and g.in_play(ctx.attacker):
+            if slot is s and ctx.player != s.owner and g.in_play(ctx.attacker) \
+                    and not g.effects_prevented_from(s.owner, s, ctx.attacker):
                 g.place_counters(ctx.attacker, n, 'other', by=s.owner)
         E.g.add_effect('contra-ataque', E.p, events={'damaged_by_attack': ev}, target=s, duration='opp_next_turn',
                        while_active=True)
@@ -1626,7 +1652,8 @@ def _(m):
         s = E.slot
 
         def ev(g, src, ctx, slot, damage, s=s):
-            if slot is s and ctx.player != s.owner and g.in_play(ctx.attacker):
+            if slot is s and ctx.player != s.owner and g.in_play(ctx.attacker) \
+                    and not g.effects_prevented_from(s.owner, s, ctx.attacker):
                 g.place_counters(ctx.attacker, damage // 10, 'other', by=s.owner)
         E.g.add_effect('contra-ataque', E.p, events={'damaged_by_attack': ev}, target=s, duration='opp_next_turn',
                        while_active=True)
@@ -1811,7 +1838,8 @@ def _(m):
             if player != src.owner and g.in_play(t):
                 g.remove_slot(t, to='discard')
                 yield from g._promote_if_needed()
-        E.g.add_effect('descarte retardado', E.p, events={'turn_end': ev}, target=t, duration='opp_next_turn')
+        E.g.add_effect('descarte retardado', E.p, events={'turn_end': ev}, target=t, duration='opp_next_turn',
+                       while_active=True)  # ruling 2404: acaba se o alvo sai do Ativo
     return step
 
 
@@ -2903,13 +2931,33 @@ def _(m):
     n = int(m.group(1))
 
     def step(E):
+        # ruling 2353: o oponente decide primeiro, mas a colocação é simultânea -- todas as escolhas (cartas e
+        # alvos) são feitas antes de qualquer Energia ser ligada
+        plans = []
         for who in (E.opp, E.p):
             pl = E.g.players[who]
             got = yield from E.g.choose_cards(who, [c for c in pl.hand if c.d.basic_energy], n, 0, 'attach_from_hand',
                                               'Energias da mão para ligar', E.card)
             for c in got:
                 pl.hand.remove(c)
-            yield from lib.attach_cards(E.g, who, got, lambda pl=pl: pl.in_play(), E.card)
+                pl.limbo.append(c)
+            for c in got:
+                slots = [s for s in pl.in_play() if E.g.can_attach_energy(who, c, s)]
+                if not slots:
+                    pl.limbo.remove(c)
+                    pl.hand.append(c)
+                    continue
+                s = yield from E.g.choose_slot(who, slots, 'attach_target', f'Ligar em: {c.name}', E.card,
+                                               energy=c.d.provides)
+                plans.append((who, c, s))
+        for who, c, s in plans:
+            E.g.players[who].limbo.remove(c)
+            # ruling 2354: Unaware (Skeledirge) previne o efeito do ataque; a Energia é descartada depois da escolha
+            if who != E.p and E.slot is not None and E.g.effects_prevented_from(E.p, E.slot, s):
+                E.g.players[who].discard.append(c)
+                E.g.say(f'{c.name} foi descartada (efeito prevenido em {s.name})')
+                continue
+            yield from E.g.attach_energy(who, c, s, from_hand=False)
     return step
 
 

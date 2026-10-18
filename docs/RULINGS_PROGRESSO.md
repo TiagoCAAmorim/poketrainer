@@ -17,12 +17,46 @@ Objetivo: para cada ruling, conferir o comportamento no motor e corrigir/testar 
 
 ## Log de sessões
 - Sessão 1 (2026-10-18): página lida (IDs 2427→1770); arquivo criado; `tests/test_rulings.py` com 8 cenários (todos passando). Correções: Special Red Card, Dark Bell (can_play), Delphox Flaring Magic (`_feasible`). Regressão OK: test_rules, test_engine, test_efeitos_novos, smoke_cartas.
-- Próximo: pegar os itens `[ ]` da Fase 1 que têm efeito testável (ex.: Morpeko/Lillie's Determination — mão vazia embaralha e compra; Garbodor empilhando; Mist Energy vs. contadores; Bastiodon/Ancient Bulwark; Spiritomb; Miraidon Photon Cord).
+- Sessão 2 (2026-10-18): conferidos 2420 (Lillie's) e 2344 (Garbodor empilhando), ambos já corretos; 2 cenários novos em `tests/test_rulings.py` (10 testes passando; `test_rules` OK). Nenhuma mudança no motor.
+- Sessão 3 (2026-10-18): 5 agentes de leitura avaliaram 85 IDs (seção "Avaliação em lote"); 18 divergências corrigidas no motor (inclui 2353, 2340, 2354), com 22 cenários novos em `tests/test_rulings.py` (2404 ficou sem cenário: só `while_active=True`); 2311, 2400, 2325 e 2305 conferidos sem mudança de motor. Regressão OK: test_rulings/rules/engine/efeitos_novos/replay/partidas_usuario/limitless/explorer/deckbuilder, smoke_cartas (0 erros), fuzz 300 (normal e `--novas`) e `tests/test_ai.py`. Nota: `test_partidas_usuario` já avisava "obsoleta" para a partida 2026-10-17T21:17:57 com o motor do HEAD (não é desta sessão).
+- Próximo: pegar os itens `[ ]` da Fase 1 que têm efeito testável (ainda pendentes: Morpeko 2413; Mist Energy vs. contadores 2408/2375; Bastiodon/Ancient Bulwark 2422–2424; Spiritomb 2411; Miraidon Photon Cord 2399–2400).
 - Cartas fora da rotação H/I/J (ex.: Voltaic {L} Energy, Growing {G} Energy, Telepathic {P} Energy, Ghetsis, Miss Fortune Sisters, Karate Belt) não estão no formato atual: não precisam de teste.
 - Atenção: os textos acima são resumos (paraphrase) de uma leitura por resumo da página; conferir a regra no próprio `/ruling/<ID>/` antes de mudar o motor.
 
+## Avaliação em lote (sessão 3, 2026-10-18)
+Cinco agentes de leitura avaliaram 85 IDs (lotes A, B, C1, C2 e D, cobrindo julho a março de 2026). Nenhum arquivo do repositório foi alterado pelos agentes. Os vereditos abaixo ainda não estão nos checkboxes das listas.
+
+**Correções aplicadas (sessão 3, com cenário em `tests/test_rulings.py`):** 2424, 2423, 2408, 2405 (Lurantis), 2404, 2403, 2399, 2393, 2386, 2385, 2370, 2345, 2317, 2315, 2312. Mecanismos novos: remoção de Energia adiada para depois do dano (`ctx.data['after']`, 2423/2385/2370); `Game.effects_prevented_from` (efeito atrasado ou de Habilidade sem `ctx` de ataque, 2408/2393); gancho `damage_out_bench` (2345); `fold(_skip_target)` também pula Habilidades do dono do alvo (2424). **2311 resolvido sem mudança:** a regra geral é só usar os ataques da carta do topo da evolução, então o motor (`attacks_of`) já está certo; o "DIVERGE" do agente estava errado (Feather Shot de Dartrix sob Decidueye ex não pode ser usado; Relicanth/Memory Dive também conferido, com teste: com ele no Banco o Decidueye ex usa o Feather Shot). **Também corrigidos depois:** 2353 (Pleasing Present: escolhas antes de ligar qualquer Energia) e 2340 (Erasure Ball/Flashing Spear: o descarte do Banco agora é `pre` e conta para o dano; era bug anterior à sessão, o HEAD dava 160). Nota 2340: o Mewtwo ex só ataca com 4+ Pokémon "Team Rocket's" em jogo (Habilidade dele), por isso o cenário do agente não mostrava o ataque. **Fechados depois:** 2354 (Unaware: a Energia é descartada; corrigido), 2325 e 2305 (já corretos, com teste), 2311 e 2400 (já corretos). Não há mais rulings incertos entre os 85 avaliados.
+
+**Lista original das divergências (17)** — o motor fazia diferente da regra; texto do agente, antes da correção:
+- 2424 Spiky Hopper vs. Ancient Bulwark: `fold` pula só os hooks do próprio alvo; o `damage_in` do Bastiodon no Banco não é pulado (`engine.py:1064-1067`, `fold` em `engine.py:267-275`). Pular também os `damage_in` do mesmo dono do alvo quando `ignore_effects`.
+- 2423 Bellowing Thunder: o descarte de Energia é `pre` (`compiler.py:1235-1250`), então o Bulwark bloqueia o dano. Mover o descarte efetivo para `post`, guardando a escolha em `E.data`. Checar outros ataques "descarte N Energias e causa dano por carta" (`extra.py:2983`).
+- 2408 Shellnado Spin + Mist Energy: contadores do contra-ataque com `kind='other'` sem `ctx` (`extra.py:1608-1617`); `engine.py:1099` só checa `effects_prevented` com `kind=='attack'`.
+- 2405 Lurantis ex (Lively Cutter): `compiler.py:226-227` lê `flags['healed_turn']`, mas nada grava a flag. Gravar em `Game.heal` quando a cura for > 0.
+- 2404 Intense Kiss: efeito de descarte retardado sem `while_active=True` (`extra.py:1803-1816`).
+- 2403 Fruity Aroma (menor): `extra.py:1097-1120` embaralha sempre; embaralhar só se sobrou carta.
+- 2399 Photon Cord: `abilities2.py` ~110 usa `choose_cards(..., min_n=0)`; deve ser 1 se o pool não estiver vazio.
+- 2393 Destructive Headbutting + Hide 'n' Sneak: o descarte não é bloqueado (`compiler.py:815-826` chama `effects_prevented` com ctx `None`, `engine.py:1088-1092`); a habilidade é oferecida sem Energia no Ativo do oponente.
+- 2386 Binding Flame em fóssil: `abilities.py:234-240` soma o acréscimo de recuo sem excluir `tag 'fossil'`.
+- 2385 Ancient Bulwark: o regex `(.+)` em `abilities.py:138` captura o ponto final e o filtro do atacante nunca casa (ver CLAUDE.md, "(.+?)"). Trocar por `(.+?)`.
+- 2370 Mentally Calm + Ninja Spinner: ramo "Devolver" em `compiler.py:1307-1343` faz `E.me.hand.append` sem consultar `no_return_to_hand`.
+- 2353 Pleasing Present (menor): a Energia é ligada por jogador em sequência (`extra.py:2912`), então não é simultânea.
+- 2345 Gloomy Garbage + Keldeo: `calc_damage` (`engine.py` ~1049-1061) só aplica `damage_out` ao Ativo. Precisa de gancho novo para o Banco, não do `damage_out` geral (quebraria os "+dano ao Ativo").
+- 2317 Hippopotas (Sand Attack): `_attack` (`engine.py:1005-1012`) rola a Confusão antes do Sand Attack. Checar `smoke` antes do bloco `'confused'`.
+- 2315 Nasty Plot: `compiler.py:1019-1027` usa `min_n=0`; exigir 1 só nesse ataque (outras buscas "até N" podem falhar, ruling 2263).
+- 2312 Wash Out + Legacy Energy: o filtro (`extra.py:1310`) usa `d.provides`, que é `None` na Legacy; usar as unidades de energia.
+- 2311 Dartrix (Feather Shot) sob Decidueye ex: **não era divergência** (ver acima).
+
+**NÃO TESTÁVEL (7)** — fora do formato H/I/J ou sem carta no banco: 2374 Karate Belt, 2371 Quaquaval ex / Exciting Dance, 2355 Beedrill (V e comum), 2326 Horsea / Octillery, 2323 Dream Ball, 2322 Telepathic {P}, 2321 Growing {G}.
+
+**INCERTO:** nenhum (2354 corrigido; 2325, 2305, 2311 e 2400 já corretos).
+
+**OK (restante, ~56 IDs):** 2427, 2425, 2422, 2421, 2419, 2417, 2416, 2414, 2413, 2412, 2411, 2409, 2407, 2405 (Munkidori), 2402, 2401, 2400 (Photon Cord), 2398, 2397, 2394, 2392, 2376, 2373, 2372, 2369, 2368, 2367, 2366, 2364, 2360, 2359, 2358, 2356, 2352, 2351, 2350, 2349, 2348, 2347, 2346, 2341, 2339, 2335, 2334, 2333, 2328, 2329, 2327, 2325 (fósseis), 2320, 2319, 2318, 2316, 2314, 2313, 2310, 2309, 2308, 2307.
+
+**Sugestões de cenário** (já validadas pelos agentes, ainda não escritas): Photon Cord com 2 Energias {L} (2399); Bulwark no Banco com Neo Upper + 2 {W} (2385, afirmar 200); Intense Kiss depois da troca (2404); Sand Attack antes de Confusão (2317, ambas as moedas em coroa); Nasty Plot com mão zerada (2315); Wash Out com Legacy no Banco (2312); Mentally Calm + Ninja Spinner (2370); Transformation Tome que nocauteia na troca (2367); Festival Grounds + Dipplin TWM-18 + Adversity Policy (2359); Watchful Eye bloqueando a transferência (2350); Gloomy Garbage com Keldeo no Banco (2345, falha hoje).
+
 ## Estado
-- [ ] Fase 1 — rulings de 2025–2026 (IDs ≥ 2139)
+- [~] Fase 1 — rulings de 2025–2026 (IDs ≥ 2139): feitos 85 IDs de jul–mar/2026 (sessões 1–3); faltam fev/2026 e anteriores
 - [ ] Fase 2 — rulings de 2023–2024 (IDs 1800–2138 e 1853–1999)
 - [ ] Fase 3 — rulings de 2022–2023 restantes (IDs 1770–1852 e 2000–2050 / 1979…)
 
@@ -31,116 +65,116 @@ Objetivo: para cada ruling, conferir o comportamento no motor e corrigir/testar 
 ## Fase 1 — 2025–2026
 
 ### Julho 2026 (IDs 2385–2429)
-- [ ] 2427 Annihilape (Destined Fight) — Mist Energy impede o KO do defensor; atacante ainda nocauteia (prêmio do oponente).
+- [x] 2427 Annihilape (Destined Fight) — Mist Energy impede o KO do defensor; atacante ainda nocauteia (prêmio do oponente). Conferido (já correto).
 - [ ] 2429 Risky Ruins; Antique Armor Fossil — Fóssil entra com contadores e conta como Pokémon em jogo.
 - [ ] 2428 Dipplin (Festival Lead); Festival Grounds; Kieran — bônus do Kieran vale para cada ataque contra ex, separadamente.
 - [ ] 2426 Flutter Mane (Midnight Fluttering); Hide 'n' Sneak — Hide 'n' Sneak prevalece e continua funcionando.
-- [ ] 2425 Dusknoir (Cursed Blast); Banette (Hide 'n' Sneak) — Dusknoir é nocauteado e dá prêmio; Banette não recebe contadores.
-- [ ] 2424 Mega Lopunny ex (Spiky Hopper); Bastiodon (Ancient Bulwark) — Bulwark vale para todos os Pokémonsdo jogador, mas Spiky Hopper ignora efeitos "Active", então o dano não é bloqueado.
-- [ ] 2423 Raging Bolt ex (Bellowing Thunder); Bastiodon — dano ocorre antes do descarte de Energia; Bulwark não bloqueia.
-- [ ] 2422 Banette (Puppet Pull); Bastiodon; Hide 'n' Sneak — Bulwark não é efeito sobre Banette; bloqueia o dano.
-- [ ] 2421 Voltaic {L} Energy — múltiplas cópias empilham (+20 cada).
-- [ ] 2420 Lillie's Determination — mão embaralhada no deck mesmo vazia; embaralha antes de comprar.
-- [ ] 2419 Gwynn — jogável com deck vazio; faz o possível.
+- [x] 2425 Dusknoir (Cursed Blast); Banette (Hide 'n' Sneak) — Dusknoir é nocauteado e dá prêmio; Banette não recebe contadores. Conferido (já correto).
+- [x] 2424 Mega Lopunny ex (Spiky Hopper); Bastiodon (Ancient Bulwark) — Bulwark vale para todos os Pokémonsdo jogador, mas Spiky Hopper ignora efeitos "Active", então o dano não é bloqueado. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2423 Raging Bolt ex (Bellowing Thunder); Bastiodon — dano ocorre antes do descarte de Energia; Bulwark não bloqueia. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2422 Banette (Puppet Pull); Bastiodon; Hide 'n' Sneak — Bulwark não é efeito sobre Banette; bloqueia o dano. Conferido (já correto).
+- [x] 2421 Voltaic {L} Energy — múltiplas cópias empilham (+20 cada). Conferido (já correto).
+- [x] 2420 Lillie's Determination — mão embaralhada no deck mesmo vazia; embaralha antes de comprar. Já correto (`hand_to_deck` sempre embaralha) + teste.
+- [x] 2419 Gwynn — jogável com deck vazio; faz o possível. Conferido (já correto).
 - [x] 2418 Dark Bell — não pode ser jogada sem alvo válido. **Corrigido** (`trainers.py`, can_play) + teste.
-- [ ] 2417 Backtrack Badge — vale só para flips de ataque, não para checagens de status.
-- [ ] 2416 Backtrack Badge — refazer todos os flips do ataque, não só os caras.
-- [ ] 2414 Mega Zeraora ex (Zepto Turn) — efeitos do ataque resolvem antes; atacante troca antes do KO ser processado.
-- [ ] 2413 Morpeko ex (Wheely Draw) — embaralha o deck antes de comprar se a mão estiver vazia.
-- [ ] 2412 Battle Cage Stadium; Spiritomb (Spiritual End) — colocação de contadores em Banco danificado é bloqueada.
-- [ ] 2411 Spiritomb (Spiritual End) — alvo com 0 de dano não recebe contadores; contagem multiplicada.
-- [ ] 2409 Thievul (Skill Thief) — não precisa da energia exigida pelo ataque copiado.
-- [ ] 2408 Mega Slowbro ex (Shellnado Spin); Mist Energy — contadores atrasados do Shellnado Spin são bloqueados pela Mist Energy.
-- [ ] 2407 Rampardos ex (Rowdy Hammer) — bônus limitado a 300; vale só no próximo turno, não cumulativo.
-- [ ] 2405 Munkidori (Adrena-Brain); Lurantis ex (Lively Cutter) — mover contadores não é cura; sem bônus.
-- [ ] 2404 Jynx (Intense Kiss) — efeito acaba quando o Pokémon atacado vai para o Banco.
-- [ ] 2403 Tropius (Fruity Aroma) — sem embaralhar, pois nenhuma carta volta ao deck.
-- [ ] 2402 Manectric (Flashing Barrier); Thievul (Skill Thief) — Thievul é Pokémon Evolução, então o dano é prevenido.
-- [ ] 2401 Sizzlipede (Bug Out) — todos os Pokémon revelados voltam embaralhados ao deck, não descartados.
-- [ ] 2400 Miraidon (Photon Cord); Cranidos (Push Down) — Photon Cord utilizável; energia não pode ser movida para si mesma.
-- [ ] 2399 Miraidon (Photon Cord) — deve mover ao menos uma Energia {L}; zero só para ataques.
-- [ ] 2398 Rampardos ex (Rowdy Hammer); Hide 'n' Sneak — bônus de dano não é efeito; Hide 'n' Sneak não bloqueia.
-- [ ] 2397 Cinderace (Explosiveness); Manectric (Flashing Barrier) — Pokémon Evolução, dano bloqueado.
-- [ ] 2394 Koraidon (Battle Claw); Cinderace (Explosiveness) — Pokémon Evolução, o +30 vale.
-- [ ] 2393 Rampardos ex (Destructive Headbutting); Hide 'n' Sneak — pode ser usado, mas Hide 'n' Sneak bloqueia o descarte de Energia; inutilizável se o alvo não tiver energia.
-- [ ] 2386 Antique Armor Fossil; Antique Skull Fossil; Binding Flame — fósseis sem custo de recuo, que não pode ser alterado.
-- [ ] 2392 Mega Chandelure ex (Binding Flame) — empilha.
-- [ ] 2385 Mega Greninja ex; Neo Upper Energy; Bastiodon — energia volta à mão após dano; Bulwark não bloqueia.
+- [x] 2417 Backtrack Badge — vale só para flips de ataque, não para checagens de status. Conferido (já correto).
+- [x] 2416 Backtrack Badge — refazer todos os flips do ataque, não só os caras. Conferido (já correto).
+- [x] 2414 Mega Zeraora ex (Zepto Turn) — efeitos do ataque resolvem antes; atacante troca antes do KO ser processado. Conferido (já correto).
+- [x] 2413 Morpeko ex (Wheely Draw) — embaralha o deck antes de comprar se a mão estiver vazia. Conferido (já correto).
+- [x] 2412 Battle Cage Stadium; Spiritomb (Spiritual End) — colocação de contadores em Banco danificado é bloqueada. Conferido (já correto).
+- [x] 2411 Spiritomb (Spiritual End) — alvo com 0 de dano não recebe contadores; contagem multiplicada. Conferido (já correto).
+- [x] 2409 Thievul (Skill Thief) — não precisa da energia exigida pelo ataque copiado. Conferido (já correto).
+- [x] 2408 Mega Slowbro ex (Shellnado Spin); Mist Energy — contadores atrasados do Shellnado Spin são bloqueados pela Mist Energy. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2407 Rampardos ex (Rowdy Hammer) — bônus limitado a 300; vale só no próximo turno, não cumulativo. Conferido (já correto).
+- [x] 2405 Munkidori (Adrena-Brain); Lurantis ex (Lively Cutter) — mover contadores não é cura; sem bônus. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2404 Jynx (Intense Kiss) — efeito acaba quando o Pokémon atacado vai para o Banco. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2403 Tropius (Fruity Aroma) — sem embaralhar, pois nenhuma carta volta ao deck. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2402 Manectric (Flashing Barrier); Thievul (Skill Thief) — Thievul é Pokémon Evolução, então o dano é prevenido. Conferido (já correto).
+- [x] 2401 Sizzlipede (Bug Out) — todos os Pokémon revelados voltam embaralhados ao deck, não descartados. Conferido (já correto).
+- [x] 2400 Miraidon (Photon Cord); Cranidos (Push Down) — Photon Cord utilizável; energia não pode ser movida para si mesma. Conferido (já correto).
+- [x] 2399 Miraidon (Photon Cord) — deve mover ao menos uma Energia {L}; zero só para ataques. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2398 Rampardos ex (Rowdy Hammer); Hide 'n' Sneak — bônus de dano não é efeito; Hide 'n' Sneak não bloqueia. Conferido (já correto).
+- [x] 2397 Cinderace (Explosiveness); Manectric (Flashing Barrier) — Pokémon Evolução, dano bloqueado. Conferido (já correto).
+- [x] 2394 Koraidon (Battle Claw); Cinderace (Explosiveness) — Pokémon Evolução, o +30 vale. Conferido (já correto).
+- [x] 2393 Rampardos ex (Destructive Headbutting); Hide 'n' Sneak — pode ser usado, mas Hide 'n' Sneak bloqueia o descarte de Energia; inutilizável se o alvo não tiver energia. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2386 Antique Armor Fossil; Antique Skull Fossil; Binding Flame — fósseis sem custo de recuo, que não pode ser alterado. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2392 Mega Chandelure ex (Binding Flame) — empilha. Conferido (já correto).
+- [x] 2385 Mega Greninja ex; Neo Upper Energy; Bastiodon — energia volta à mão após dano; Bulwark não bloqueia. **Corrigido** + teste (`tests/test_rulings.py`).
 
 ### Maio–junho 2026 (IDs 2139–2377)
-- [ ] 2376 Eri; Ninetales (Supernatural Shapeshifter) — como efeito de ataque, pode descartar zero Itens (atualização abr/2026).
+- [x] 2376 Eri; Ninetales (Supernatural Shapeshifter) — como efeito de ataque, pode descartar zero Itens (atualização abr/2026). Conferido (já correto).
 - [ ] 1968 Miss Fortune Sisters — oponente embaralha o deck mesmo sem cartas colocadas.
 - [ ] 2377 Roto-Stick — deck é embaralhado após a busca.
 - [ ] 1022 Ghetsis — oponente embaralha mesmo sem itens; sem compra extra.
 - [ ] 2375 Elgyem (Slight Shift); Mist Energy — Mist Energy não pode ser movida do Pokémon defensor.
-- [ ] 2374 Karate Belt; Grapploct (Raging Tentacles) — custo alternativo de um {F} é fixo e não é alterado pelo Karate Belt.
-- [ ] 2373 Mega Dragalge ex (Pernicious Poison) — 16 contadores de Veneno em cada Checkup enquanto Envenenado.
-- [ ] 2372 Transformation Tome; Mega Heracross ex (Juggernaut Horn) — mesmo Pokémon, então os +30 extras valem.
-- [ ] 2371 Quaquaval ex (Exciting Dance); Spiky Energy — Spiky Energy ainda causa dano ao atacante após ambos irem ao Banco.
-- [ ] 2370 Milotic (Mentally Calm); Mega Greninja ex (Ninja Spinner) — Energia de Água permanece presa, mas o bônus vale.
-- [ ] 2369 Mega Clefable ex (Luminous Wing); Mimikyu (Safeguard) — Safeguard ainda bloqueia; Luminous Wing não ignora.
-- [ ] 2368 Mega Emboar ex (Crimson Blast); Nitro {R} Energy — energia do atacante nocauteado não volta à mão.
-- [ ] 2367 Transformation Tome — duas cópias usadas juntas; um Básico novo com menos HP é nocauteado na hora.
-- [ ] 2366 Transformation Tome — só jogável como par.
+- [x] 2374 Karate Belt; Grapploct (Raging Tentacles) — custo alternativo de um {F} é fixo e não é alterado pelo Karate Belt. (carta/ataque fora do formato H/I/J ou ausente do banco: sem teste direto.)
+- [x] 2373 Mega Dragalge ex (Pernicious Poison) — 16 contadores de Veneno em cada Checkup enquanto Envenenado. Conferido (já correto).
+- [x] 2372 Transformation Tome; Mega Heracross ex (Juggernaut Horn) — mesmo Pokémon, então os +30 extras valem. Conferido (já correto).
+- [x] 2371 Quaquaval ex (Exciting Dance); Spiky Energy — Spiky Energy ainda causa dano ao atacante após ambos irem ao Banco. (carta/ataque fora do formato H/I/J ou ausente do banco: sem teste direto.)
+- [x] 2370 Milotic (Mentally Calm); Mega Greninja ex (Ninja Spinner) — Energia de Água permanece presa, mas o bônus vale. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2369 Mega Clefable ex (Luminous Wing); Mimikyu (Safeguard) — Safeguard ainda bloqueia; Luminous Wing não ignora. Conferido (já correto).
+- [x] 2368 Mega Emboar ex (Crimson Blast); Nitro {R} Energy — energia do atacante nocauteado não volta à mão. Conferido (já correto).
+- [x] 2367 Transformation Tome — duas cópias usadas juntas; um Básico novo com menos HP é nocauteado na hora. Conferido (já correto).
+- [x] 2366 Transformation Tome — só jogável como par. Conferido (já correto).
 - [x] 2365 Special Red Card — não pode ser jogada se o oponente não tem cartas na mão. **Corrigido** (`trainers.py`, can_play) + teste.
-- [ ] 2364 Roxie's Performance; Pecharunt ex (Subjugating Chains) — Pokémon "novos" também são afetados, então não pode recuar.
+- [x] 2364 Roxie's Performance; Pecharunt ex (Subjugating Chains) — Pokémon "novos" também são afetados, então não pode recuar. Conferido (já correto).
 - [x] 2363 Prism Tower — exige poder descartar 2 cartas. Já correto + teste.
 - [x] 2362 Prism Tower — não pode ser usada com deck vazio. Já correto + teste.
-- [ ] 2360 Adversity Policy — compra o máximo possível; pode perder no início do turno se o deck não puder fornecer carta.
-- [ ] 2359 Adversity Policy; Festival Grounds; Dipplin (Festival Lead) — cada ataque dispara compra de 3 (6 no total).
-- [ ] 2358 Adversity Policy; Skuntank (Smash Turn) — compra mesmo se o atacante sair de jogo.
-- [ ] 2356 Watchog (Snap Inspection) — deve devolver o máximo de cartas possível.
-- [ ] 2355 Beedrill ex (Rumbling Bees) — conta só Beedrill e Beedrill ex, não Beedrill V.
-- [ ] 2354 Delibird (Pleasing Present); Skeledirge (Unaware) — energia descartada após a escolha ser executada.
-- [ ] 2353 Delibird (Pleasing Present) — oponente escolhe primeiro; colocação de energia simultânea.
-- [ ] 2352 Slowking (Seek Inspiration); Metagross (Metallic Hammer) — dano extra sem energia {M}; deve descartar o máximo se escolher.
-- [ ] 2351 Ho-Oh (Flames of Revival) — pode atacar sem colocar Básico do descarte no Banco.
-- [ ] 2350 Ninetales (Nine-Tailed Transfer); Patrat (Watchful Eye) — contadores não podem ser movidos enquanto Watchful Eye estiver ativo.
-- [ ] 2349 Phantump (Spiteful Evolution) — não no primeiro turno; usável no primeiro turno em jogo depois disso.
-- [ ] 2348 Goodra (Slimy Sliding) — Retirada falha por este efeito ainda gasta a Retirada do turno.
-- [ ] 2347 Chesnaught (Needly Armor) — conta toda Energia {G}, incluindo Legacy Energy, para os contadores.
-- [ ] 2346 Garbodor (Gloomy Garbage); Shred — Shred não ignora o efeito do lado do atacante.
-- [ ] 2345 Garbodor (Gloomy Garbage); Keldeo (Shoot Through) — também reduz os 20 de dano ao Banco.
-- [ ] 2344 Garbodor (Gloomy Garbage) — duas cópias empilham (−40).
+- [x] 2360 Adversity Policy — compra o máximo possível; pode perder no início do turno se o deck não puder fornecer carta. Conferido (já correto).
+- [x] 2359 Adversity Policy; Festival Grounds; Dipplin (Festival Lead) — cada ataque dispara compra de 3 (6 no total). Conferido (já correto).
+- [x] 2358 Adversity Policy; Skuntank (Smash Turn) — compra mesmo se o atacante sair de jogo. Conferido (já correto).
+- [x] 2356 Watchog (Snap Inspection) — deve devolver o máximo de cartas possível. Conferido (já correto).
+- [x] 2355 Beedrill ex (Rumbling Bees) — conta só Beedrill e Beedrill ex, não Beedrill V. (carta/ataque fora do formato H/I/J ou ausente do banco: sem teste direto.)
+- [x] 2354 Delibird (Pleasing Present); Skeledirge (Unaware) — energia descartada após a escolha ser executada. Conferido (já correto).
+- [x] 2353 Delibird (Pleasing Present) — oponente escolhe primeiro; colocação de energia simultânea. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2352 Slowking (Seek Inspiration); Metagross (Metallic Hammer) — dano extra sem energia {M}; deve descartar o máximo se escolher. Conferido (já correto).
+- [x] 2351 Ho-Oh (Flames of Revival) — pode atacar sem colocar Básico do descarte no Banco. Conferido (já correto).
+- [x] 2350 Ninetales (Nine-Tailed Transfer); Patrat (Watchful Eye) — contadores não podem ser movidos enquanto Watchful Eye estiver ativo. Conferido (já correto).
+- [x] 2349 Phantump (Spiteful Evolution) — não no primeiro turno; usável no primeiro turno em jogo depois disso. Conferido (já correto).
+- [x] 2348 Goodra (Slimy Sliding) — Retirada falha por este efeito ainda gasta a Retirada do turno. Conferido (já correto).
+- [x] 2347 Chesnaught (Needly Armor) — conta toda Energia {G}, incluindo Legacy Energy, para os contadores. Conferido (já correto).
+- [x] 2346 Garbodor (Gloomy Garbage); Shred — Shred não ignora o efeito do lado do atacante. Conferido (já correto).
+- [x] 2345 Garbodor (Gloomy Garbage); Keldeo (Shoot Through) — também reduz os 20 de dano ao Banco. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2344 Garbodor (Gloomy Garbage) — duas cópias empilham (−40). Já correto + teste (controle: 1 Garbodor = −20; 2 = 0).
 - [x] 2343 Delphox (Flaring Magic) — não pode usar com 7+ cartas na mão. **Corrigido** (`abilities.py`, `_feasible`) + teste.
-- [ ] 2341 Mist Energy; Stunfisk (Pouncing Trap) — Mist Energy bloqueia o efeito atrasado de +100.
-- [ ] 2340 Team Rocket's Mewtwo ex (Erasure Ball); Team Rocket's Energy — cada carta descartada soma +60; pode descartar mais cartas.
+- [x] 2341 Mist Energy; Stunfisk (Pouncing Trap) — Mist Energy bloqueia o efeito atrasado de +100. Conferido (já correto).
+- [x] 2340 Team Rocket's Mewtwo ex (Erasure Ball); Team Rocket's Energy — cada carta descartada soma +60; pode descartar mais cartas. **Corrigido** + teste (`tests/test_rulings.py`).
 - [x] 2251 Smeargle (Energizing Sketch) — pode escolher não anexar nada. Já correto + teste.
-- [ ] 2339 Team Rocket's Giovanni; Mismagius ex (Swirling Prose) — novo Ativo fica Confuso se Mismagius era Ativo; Mismagius no Banco que entra depois não é afetado.
+- [x] 2339 Team Rocket's Giovanni; Mismagius ex (Swirling Prose) — novo Ativo fica Confuso se Mismagius era Ativo; Mismagius no Banco que entra depois não é afetado. Conferido (já correto).
 - [ ] 228 Flygon (Sand Slammer); Serperior (Royal Heal) — jogador do próximo turno escolhe a ordem, mudando a cada turno.
-- [ ] 2335 Mega Clefable ex (Luminous Wing); Crustle (Mysterious Rock Inn) — Rock Inn protege Crustle; Luminous Wing não ignora.
-- [ ] 2334 Team Rocket's Watchtower; Meowth ex (Last-Ditch Catch) — Watchtower remove a Habilidade.
-- [ ] 2333 Cynthia's Roserade (Cheer on to Glory); Empoleon ex (Emperor's Stance) — bônus de dano não é efeito; Emperor's Stance não bloqueia.
+- [x] 2335 Mega Clefable ex (Luminous Wing); Crustle (Mysterious Rock Inn) — Rock Inn protege Crustle; Luminous Wing não ignora. Conferido (já correto).
+- [x] 2334 Team Rocket's Watchtower; Meowth ex (Last-Ditch Catch) — Watchtower remove a Habilidade. Conferido (já correto).
+- [x] 2333 Cynthia's Roserade (Cheer on to Glory); Empoleon ex (Emperor's Stance) — bônus de dano não é efeito; Emperor's Stance não bloqueia. Conferido (já correto).
 - [ ] 2142 Surfer; Yanmega ex (Buzzing Boost) — a compra do Surfer resolve antes do Buzzing Boost.
 
 ### Abril 2026 (IDs 2328–2329, 2325–2327)
-- [ ] 2328 Risky Ruins; Strange Timepiece — devoluir ao Banco não conta como colocar: sem contadores.
-- [ ] 2329 Risky Ruins — recuar para o Banco não coloca contadores.
-- [ ] 2327 Strange Timepiece; Boosted Evolution — Boosted Evolution permite evoluir de volta no mesmo turno; o texto entre parênteses é só lembrete.
-- [ ] 2326 Horsea (Smokescreen); Octillery (Smokescreen Shot) — Smokescreen vira primeiro, depois Confusão.
-- [ ] 2325 Fósseis em geral; Jellicent (Oceanic Curse); Budew (Itchy Pollen) — fósseis na mão são cartas de Item, não podem ser jogados como Pokémon.
+- [x] 2328 Risky Ruins; Strange Timepiece — devoluir ao Banco não conta como colocar: sem contadores. Conferido (já correto).
+- [x] 2329 Risky Ruins — recuar para o Banco não coloca contadores. Conferido (já correto).
+- [x] 2327 Strange Timepiece; Boosted Evolution — Boosted Evolution permite evoluir de volta no mesmo turno; o texto entre parênteses é só lembrete. Conferido (já correto).
+- [x] 2326 Horsea (Smokescreen); Octillery (Smokescreen Shot) — Smokescreen vira primeiro, depois Confusão. (carta/ataque fora do formato H/I/J ou ausente do banco: sem teste direto.)
+- [x] 2325 Fósseis em geral; Jellicent (Oceanic Curse); Budew (Itchy Pollen) — fósseis na mão são cartas de Item, não podem ser jogados como Pokémon. Conferido (já correto).
 - [ ] 2324 Fósseis em geral — não podem ser Pokémon Ativo inicial.
-- [ ] 2323 Dusknoir (Cursed Blast); Dream Ball — Dream Ball pode ser usada no turno do oponente; resolve antes da promoção.
+- [x] 2323 Dusknoir (Cursed Blast); Dream Ball — Dream Ball pode ser usada no turno do oponente; resolve antes da promoção. (carta/ataque fora do formato H/I/J ou ausente do banco: sem teste direto.)
 
 ### Março 2026 (IDs 2301–2322, 2304–2320 + 887–1929 em 2026-03-12)
-- [ ] 2322 Telepathic {P} Energy — Banco cheio: sem busca nem embaralhamento; senão a busca é obrigatória.
-- [ ] 2321 Growing {G} Energy — empilha: três dão +60 HP.
-- [ ] 2320 Doublade (Weaponized Swords) — nomes devem coincidir exatamente; "Aegislash ex" não conta como "Aegislash".
-- [ ] 2319 Serperior (Solar Coiling); Rosa's Encouragement — checa só presença; bônus 150.
-- [ ] 2318 Shaymin (Send Flowers) — pode buscar Energia Especial.
-- [ ] 2317 Hippopotas (Sand Attack) — Sand Attack vira primeiro, depois Confusão.
-- [ ] 2316 Mega Zygarde ex (Nullifying Zero) — um flip por Pokémon, incluindo Tera no Banco (sem dano).
-- [ ] 2315 Salazzle ex (Nasty Plot) — deve pegar ao menos uma carta, se possível.
-- [ ] 2314 Klefki (Memory Lock) — trava termina quando o Pokémon vai para o Banco; pode atacar de novo se reativado.
-- [ ] 2313 Mawile (Double Eater) — zero descartes permitidos; ainda conta como ataque.
-- [ ] 2312 Dewgong (Wash Out); Legacy Energy — Energia {W} não-Básica pode ser movida.
-- [ ] 2311 Decidueye ex (Sniper's Eye); Dartrix (Feather Shot); Relicanth (Memory Dive) — custos incolores são removidos.
-- [ ] 2310 Turtonator (Shell Spikes); Mist Energy — Habilidade não é bloqueada por Mist Energy; o descarte ainda acontece.
-- [ ] 2309 Mega Clefable ex (Luminous Wing); Iron Thorns ex (Initialization) — Luminous Wing prevalece.
-- [ ] 2308 Gengar (Infinite Shadow); Gastly; Haunter — cartas subjacentes também vão para a mão.
-- [ ] 2307 Gengar (Infinite Shadow) — ir para a mão conta como nocaute; prêmio é pego.
+- [x] 2322 Telepathic {P} Energy — Banco cheio: sem busca nem embaralhamento; senão a busca é obrigatória. (carta/ataque fora do formato H/I/J ou ausente do banco: sem teste direto.)
+- [x] 2321 Growing {G} Energy — empilha: três dão +60 HP. (carta/ataque fora do formato H/I/J ou ausente do banco: sem teste direto.)
+- [x] 2320 Doublade (Weaponized Swords) — nomes devem coincidir exatamente; "Aegislash ex" não conta como "Aegislash". Conferido (já correto).
+- [x] 2319 Serperior (Solar Coiling); Rosa's Encouragement — checa só presença; bônus 150. Conferido (já correto).
+- [x] 2318 Shaymin (Send Flowers) — pode buscar Energia Especial. Conferido (já correto).
+- [x] 2317 Hippopotas (Sand Attack) — Sand Attack vira primeiro, depois Confusão. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2316 Mega Zygarde ex (Nullifying Zero) — um flip por Pokémon, incluindo Tera no Banco (sem dano). Conferido (já correto).
+- [x] 2315 Salazzle ex (Nasty Plot) — deve pegar ao menos uma carta, se possível. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2314 Klefki (Memory Lock) — trava termina quando o Pokémon vai para o Banco; pode atacar de novo se reativado. Conferido (já correto).
+- [x] 2313 Mawile (Double Eater) — zero descartes permitidos; ainda conta como ataque. Conferido (já correto).
+- [x] 2312 Dewgong (Wash Out); Legacy Energy — Energia {W} não-Básica pode ser movida. **Corrigido** + teste (`tests/test_rulings.py`).
+- [x] 2311 Decidueye ex (Sniper's Eye); Dartrix (Feather Shot); Relicanth (Memory Dive) — custos incolores são removidos. Conferido (já correto).
+- [x] 2310 Turtonator (Shell Spikes); Mist Energy — Habilidade não é bloqueada por Mist Energy; o descarte ainda acontece. Conferido (já correto).
+- [x] 2309 Mega Clefable ex (Luminous Wing); Iron Thorns ex (Initialization) — Luminous Wing prevalece. Conferido (já correto).
+- [x] 2308 Gengar (Infinite Shadow); Gastly; Haunter — cartas subjacentes também vão para a mão. Conferido (já correto).
+- [x] 2307 Gengar (Infinite Shadow) — ir para a mão conta como nocaute; prêmio é pego. Conferido (já correto).
 - [x] 2306 Vivillon (Grand Wing) — não pode usar se o oponente não tem cartas na mão. Já correto + teste.
-- [ ] 2305 Area Zero Underdepths; Gravity Mountain — efeitos de Estádio resolvem antes das checagens de KO.
+- [x] 2305 Area Zero Underdepths; Gravity Mountain — efeitos de Estádio resolvem antes das checagens de KO. Conferido (já correto).
 - [ ] 887 Win States — dano de Veneno após o nocaute do seu ataque não importa; vence quem pegou o último prêmio antes do fim do turno.
 - [ ] 882 Magneton (Selfdestruct) — Ativo substituto decide; senão Desempate.
 - [ ] 640 Palkia & Dialga LEGEND (Time Control); Desempate — adicionar prêmios ao oponente pode vencer.

@@ -135,7 +135,7 @@ def _(m, d, ab):
                        and _from_opp(ctx, src) else None})
 
 
-@passive(r"As long as this Pokémon is on your Bench, prevent all damage done to each of your Pokémon by attacks from your opponent's (.+)")
+@passive(r"As long as this Pokémon is on your Bench, prevent all damage done to each of your Pokémon by attacks from your opponent's (.+?)")
 def _(m, d, ab):
     af = _attacker_filter(m.group(1))
     return AbilityImpl(kind='passive', hooks={'damage_in': lambda g, src, dmg, ctx, target, active:
@@ -236,7 +236,8 @@ def _(m, d, ab):
     evo = bool(m.group(1))
     n = m.group(2).count('Colorless')
     return AbilityImpl(kind='passive', hooks={'retreat_cost': lambda g, src, v, slot:
-                       v + n if slot.owner != src.owner and g.is_active(slot) and (not evo or slot.d.stage > 0) else None})
+                       v + n if slot.owner != src.owner and g.is_active(slot) and (not evo or slot.d.stage > 0)
+                       and 'fossil' not in slot.d.tags else None})  # ruling 2386: custo do Fóssil é fixo
 
 
 @passive(r"Attacks used by (this Pokémon|your (.*?)Pokémon(?:, except any (.+?))?) do (\d+) more damage to your opponent's Active (.*?)Pokémon(?: for each Prize card your opponent has taken)?")
@@ -453,6 +454,9 @@ def _feasible(body):
         return lambda E: bool(E.me.deck)
     if re.match(r'^(?:you may )?heal', b, re.I):
         return lambda E: any(s.damage > 0 for s in E.me.in_play())
+    if re.search(r"discard an Energy from your opponent's Active Pokémon", b, re.I):
+        # ruling 2393 (Destructive Headbutting): sem Energia no Ativo do oponente a Habilidade não pode ser usada
+        return lambda E: bool(E.opp_active() is not None and E.opp_active().energy)
     return lambda E: True
 
 

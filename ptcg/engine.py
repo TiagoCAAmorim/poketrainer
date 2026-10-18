@@ -10,7 +10,7 @@ temporários) são consultados por GANCHOS:
     g.anyhook('prevent_attack_effects', ...) → verdadeiro se algum gancho prevenir
     yield from g.emit('knocked_out', ...) → dispara gatilhos
 
-Ganchos de consulta: hp, retreat_cost, attack_cost, energy_units, types, weakness, damage_out,
+Ganchos de consulta: hp, retreat_cost, attack_cost, energy_units, types, weakness, damage_out, damage_out_bench,
 damage_in, survive, prevent_attack_effects, prevent_counters, prevent_trainer_effects,
 condition_immune, can_heal, can_attack, can_retreat, can_play, ability_blocked, tools_blocked,
 bench_max, tool_slots, prizes, can_evolve_early, evolves_from, extra_attacks, checkup_counters,
@@ -267,8 +267,9 @@ class Game:
     def fold(self, name, value, **ctx):
         skip_target = ctx.pop('_skip_target', None)
         for src, f in self.hooks(name):
-            if skip_target is not None and src.slot is skip_target and src.kind != 'stadium':
-                continue
+            if skip_target is not None and src.kind != 'stadium' and (
+                    src.slot is skip_target or (src.kind == 'ability' and src.owner == skip_target.owner)):
+                continue      # "ignora efeitos no Pokémon Defensor": inclui Habilidades de outros Pokémon do dono (ruling 2424)
             r = f(self, src, value, **ctx)
             if r is not None:
                 value = r
@@ -1002,14 +1003,15 @@ class Game:
         pl, op = self.players[p], self.players[1 - p]
         att = pl.active
         self.say(f'{att.name} usou {atk.name}', 'attack')
+        # rulings 2317/2326: Smokescreen/Sand Attack vem antes da moeda da Confusão
+        smoke = [e.data.get('flips', 1) for e in self.effects if e.target is att and e.data.get('smokescreen')]
+        if smoke and self.flips(max(smoke)) < max(smoke):
+            self.say(f'O ataque de {att.name} não aconteceu')
+            return
         if 'confused' in att.conditions and not self.flip():
             att.damage += 10 * att.flags.get('confused_n', 3)
             self.say(f'{att.name} está Confuso e se feriu (3 contadores)')
             yield from self._resolve_kos()
-            return
-        smoke = [e.data.get('flips', 1) for e in self.effects if e.target is att and e.data.get('smokescreen')]
-        if smoke and self.flips(max(smoke)) < max(smoke):
-            self.say(f'O ataque de {att.name} não aconteceu')
             return
         att.flags.setdefault('atk_log', []).append((self.turn, atk.name))
         pl.attack_log.append((self.turn, att, atk.name))
@@ -1027,6 +1029,8 @@ class Game:
                     yield from self.main_damage(ctx)
                 if im is not None and im.post is not None and not ctx.no_damage:
                     yield from run(im.post(self, ctx))
+                for f in ctx.data.pop('after', []):      # remoções de Energia adiadas (ataque que não chegou ao 'post')
+                    f()
             from .effects.energies import RETURNERS
             for e in ctx.discarded_energy:
                 if e.name in RETURNERS:
@@ -1061,6 +1065,8 @@ class Game:
                 dmg -= target.d.resistance_value
         if not self.is_active(target) and 'tera' in target.d.tags:
             return 0
+        if not active_target and target.owner == ctx.opp:
+            dmg = self.fold('damage_out_bench', dmg, ctx=ctx, target=target)     # ex.: Gloomy Garbage (ruling 2345)
         if dmg > 0:
             if (ctx.ignore_effects or self.anyhook('ignore_effects', ctx=ctx)) and target.owner == ctx.opp:
                 dmg = self.fold('damage_in', dmg, ctx=ctx, target=target, active=active_target,
@@ -1091,6 +1097,13 @@ class Game:
             return False
         return self.anyhook('prevent_attack_effects', ctx=ctx, target=target)
 
+    def effects_prevented_from(self, player, attacker, target) -> bool:
+        """Como `effects_prevented`, mas para efeito atrasado de um ataque anterior (sem o ctx original):
+        `player`/`attacker` são quem usou o ataque (ruling 2408: Mist Energy bloqueia o Shellnado Spin)."""
+        from types import SimpleNamespace
+        return self.effects_prevented(SimpleNamespace(player=player, opp=1 - player, attacker=attacker,
+                                                      ignore_effects=False), target)
+
     def place_counters(self, target, n, kind='attack', by=None, ctx=None) -> int:
         """Coloca n contadores de dano (sem fraqueza/resistência). kind: attack|ability|trainer|other."""
         if n <= 0:
@@ -1112,6 +1125,7 @@ class Game:
         h = min(slot.damage, n)
         slot.damage -= h
         if h:
+            slot.flags['healed_turn'] = self.turn      # ruling 2405: ataques tipo Lively Cutter
             self.say(f'{self.slot_label(slot)} recuperou {h}')
         return h
 
