@@ -504,7 +504,8 @@ register_trainer('Special Red Card', TrainerImpl(run=_special_red,
                                                  can_play=lambda g, p, c: len(g.players[1 - p].prizes) <= 3))
 
 
-@trainer('Strange Timepiece')
+@trainer('Strange Timepiece', can_play=lambda g, p, c: any(
+    s.evolved and g.has_type(s, 'P') for s in g.players[p].in_play()))
 def _(g, p, card):
     s = yield from choose_my_slot(g, p, lambda g, s: s.evolved and g.has_type(s, 'P'), 'Desevoluir qual Pokémon?',
                                   card)
@@ -961,7 +962,8 @@ def _grimsley(g, p, card):
 register_trainer("Grimsley's Move", TrainerImpl(run=_grimsley, can_play=lambda g, p, c: not g.first_turn(p)))
 
 
-@trainer('Gwynn')
+@trainer('Gwynn', can_play=lambda g, p, c: any(
+    is_pokemon(x) and not x.d.rule_box for x in g.players[p].hand))
 def _(g, p, card):
     got = yield from g.discard_from_hand(p, 2, source=card, pred=lambda c: is_pokemon(c) and not c.d.rule_box, min_n=0)
     g.draw(p, 3 * len(got))
