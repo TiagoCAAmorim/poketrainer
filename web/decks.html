@@ -56,6 +56,18 @@ section:last-child{border-right:none}
 .total.ok{color:var(--ok)} .total.bad{color:var(--warn)}
 .toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#1d2a23;border:1px solid var(--accent);padding:8px 14px;border-radius:8px;display:none;z-index:60;white-space:pre-wrap;max-width:80vw}
 .toast.err{background:#3a1717;border-color:var(--danger)}
+#cardPanel{position:relative;display:none;border-right:1px solid var(--line);background:var(--panel);padding:12px;overflow:auto;min-height:0}
+main.withimg{grid-template-columns:var(--imgw,280px) 1fr 1fr}
+main.withimg #cardPanel{display:block}
+#cardGrip{position:absolute;top:0;right:-3px;bottom:0;width:7px;cursor:col-resize;z-index:6;touch-action:none}
+#cardGrip:hover,#cardGrip.drag{background:var(--accent);opacity:.5}
+body.resizing{cursor:col-resize;user-select:none}
+#cardPanel img{width:100%;border-radius:10px;box-shadow:0 6px 20px #000a;display:block}
+#cardPanel .ph{color:var(--mute);text-align:center;padding:24px 8px;border:1px dashed var(--line);border-radius:10px}
+#cardPanel h3{margin:10px 0 2px;font-size:15px} #cardPanel .meta{color:var(--mute);font-size:11.5px}
+.imgopt{display:flex;gap:5px;align-items:center;color:var(--mute);font-size:13px;margin-left:auto}
+.imgopt+a{margin-left:0}
+@media (max-width:900px){#cardPanel{display:none!important}main.withimg{grid-template-columns:1fr}}
 @media (max-width:900px){main{grid-template-columns:1fr;height:auto}section{height:90vh;border-right:none;border-bottom:1px solid var(--line)}}
 </style>
 </head>
@@ -63,9 +75,11 @@ section:last-child{border-right:none}
 <header>
   <h1>PTCG <b>Lab</b> · Montador de decks</h1>
   <span style="color:var(--mute)">Esquerda: de onde puxar cartas · Direita: o seu deck (salvo em <span class="mono">decks/meus/</span>)</span>
+  <label class="imgopt" title="Mostra a imagem da carta sob o mouse num painel à esquerda (precisa de python baixar_imagens.py)"><input type="checkbox" id="imgPanel"> Imagem da carta</label>
   <a href="/">← Início</a>
 </header>
-<main>
+<main id="mainGrid">
+  <aside id="cardPanel"><div id="cardInfo"><div class="ph">Passe o mouse sobre uma carta para ver a imagem.</div></div><div id="cardGrip" title="Arraste para redimensionar (duplo clique restaura)"></div></aside>
   <!-- ESQUERDA: origem -->
   <section>
     <div class="bar">
@@ -335,6 +349,29 @@ async function runSearch(){
     fill(r.cards); srcCards=r.cards; srcTotal=r.total; srcHint='Nenhuma carta encontrada.'; renderSrc();
   }catch(e){ toast(e.message,true) }
 }
+
+// ---------------------------------------------------------------- painel de imagem (opcional; mesmas preferências da tela /jogar)
+let shownImg=null;
+function showCardImage(id){
+  const c=INFO[id]; if(!c||id===shownImg) return; shownImg=id;
+  $('cardInfo').innerHTML=`<img src="/img/alta/${encodeURIComponent(id)}" alt="${esc(c.name)}" onerror="this.outerHTML='<div class=ph>Imagem não encontrada.<br>Rode <span class=mono>python baixar_imagens.py</span></div>'"><h3>${esc(c.name)}</h3><div class="meta">${c.name_pt?esc(c.name_pt)+' · ':''}${esc(c.print||id)}</div>`;
+}
+function setImgW(w){ w=Math.max(180,Math.min(w,Math.round(innerWidth*0.5))); $('mainGrid').style.setProperty('--imgw',w+'px'); return w }
+$('imgPanel').checked=(()=>{ try{ return localStorage.getItem('imgPanel')==='1' }catch(e){ return false } })();
+$('mainGrid').classList.toggle('withimg',$('imgPanel').checked);
+$('imgPanel').onchange=()=>{ const on=$('imgPanel').checked; $('mainGrid').classList.toggle('withimg',on); try{ localStorage.setItem('imgPanel',on?'1':'0') }catch(e){} };
+try{ const w=+localStorage.getItem('imgW'); if(w) setImgW(w) }catch(e){}
+$('cardGrip').onpointerdown=e=>{
+  const g=$('cardGrip'); g.setPointerCapture(e.pointerId); g.classList.add('drag'); document.body.classList.add('resizing');
+  const x0=e.clientX, w0=$('cardPanel').offsetWidth; let w=w0;
+  g.onpointermove=ev=>{ w=setImgW(w0+ev.clientX-x0) };
+  g.onpointerup=()=>{ g.onpointermove=g.onpointerup=null; g.classList.remove('drag'); document.body.classList.remove('resizing'); try{ localStorage.setItem('imgW',w) }catch(e){} };
+};
+$('cardGrip').ondblclick=()=>{ setImgW(280); try{ localStorage.removeItem('imgW') }catch(e){} };
+document.addEventListener('mouseover',e=>{
+  if(!$('imgPanel').checked) return;
+  const r=e.target.closest('.row[data-id]'); if(r) showCardImage(r.dataset.id);
+});
 
 // ---------------------------------------------------------------- início
 (async()=>{
