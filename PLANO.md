@@ -57,6 +57,10 @@ Atualizado em: 2026-10-18
 - ⬜ Se algum log novo aparecer: reproduzir, corrigir a divergência e transformar em teste (`gerenciar_logs.py importar`)
 - ✅ Metallic Hammer copiado por Slowking (Seek Inspiration): não era bug do cliente. O ruling do Compendium (compendium.pokegym.net) diz que o
   "pode descartar" vale sem Energia Metal; o motor agora dá o dano extra e o log reproduz os 300 sem ajuste
+- ✅ Revisão de rulings do Compendium (jul–mar/2026, 85 IDs; progresso em `docs/RULINGS_PROGRESSO.md`): 18 divergências corrigidas com cenário
+  em `tests/test_rulings.py` (Bastiodon/Ancient Bulwark, Mist Energy e Hide 'n' Sneak em efeitos atrasados e de Habilidade, Erasure Ball,
+  Sand Attack antes da Confusão, Pleasing Present simultâneo, etc.). Mecanismos novos no motor: remoção de Energia adiada para depois do
+  dano (`ctx.data['after']`), `Game.effects_prevented_from`, gancho `damage_out_bench`. Faltam fev/2026 e anteriores.
 - 🟡 Fonte principal de validação agora: https://compendium.pokegym.net (rulings por carta/ataque), conferindo as cartas dos decks competitivos
 
 ## Fase 5 — Biblioteca de cartas e LOG ✅
