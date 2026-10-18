@@ -52,11 +52,12 @@ Atualizado em: 2026-10-18
 - ✅ Leitor de logs "Copy Log" (inglês e português)
 - ✅ Reprodução jogada a jogada no motor, conferindo danos e nocautes; retrocesso nos pontos ambíguos
 - ✅ 4 logs de exemplo reproduzidos 100%
-- ⏸ **Logs das suas partidas** — envie alguns (`gerenciar_logs.py importar`) para encontrar regras que divergem
-- ⬜ Corrigir cada divergência encontrada e transformar o log em teste automático
+- ⏸ Logs próprios do TCG Live: **sem acesso a novos logs** (sem repositório público; os 4 de exemplo são tudo que há). A validação passa a
+  vir dos rulings do Compendium, das partidas da interface (botão 💬 Comentar) e dos testes de cenário/fuzz
+- ⬜ Se algum log novo aparecer: reproduzir, corrigir a divergência e transformar em teste (`gerenciar_logs.py importar`)
 - ✅ Metallic Hammer copiado por Slowking (Seek Inspiration): não era bug do cliente. O ruling do Compendium (compendium.pokegym.net) diz que o
   "pode descartar" vale sem Energia Metal; o motor agora dá o dano extra e o log reproduz os 300 sem ajuste
-- 🟡 Fonte para dúvidas de implementação: https://compendium.pokegym.net (rulings por carta/ataque)
+- 🟡 Fonte principal de validação agora: https://compendium.pokegym.net (rulings por carta/ataque), conferindo as cartas dos decks competitivos
 
 ## Fase 5 — Biblioteca de cartas e LOG ✅
 - ✅ `cartas/`: banco SQLite + Treinadores.json / Pokemon.json / Energias.json + pastas
@@ -83,7 +84,7 @@ Atualizado em: 2026-10-18
 ## Fase 8 — IA que aprende ⬜
 - ✅ Codificação do estado e das opções para a rede (`ptcg/encode.py`) e rede política/valor (`ptcg/ai/model.py`)
 - ⬜ Instalar PyTorch e testar o treino (`train.py`) — não foi possível no ambiente anterior
-- ⬜ Pré-treino por imitação a partir dos logs do TCG Live (`gerenciar_logs.py imitacao`)
+- ⏸ Pré-treino por imitação a partir de logs do TCG Live (`gerenciar_logs.py imitacao`): sem logs disponíveis; usar a heurística como professor (destilação)
 - ⬜ Treino por self-play (PPO) contra a heurística e versões anteriores
 - ⬜ Usar a rede treinada no `simulate.py` / `optimize.py` (`--agent model:checkpoints/best.pt`)
 
@@ -91,12 +92,18 @@ Atualizado em: 2026-10-18
 
 ## Próximos passos (ordem sugerida)
 
-1. **Você:** instalar e rodar os testes no computador — ver [INSTALACAO.md](INSTALACAO.md).
-2. **Você:** salvar 2 a 5 logs das suas partidas no TCG Live e importar (`python gerenciar_logs.py importar …`).
-3. **Claude:** conferir a fidelidade dos efeitos da 2ª leva de cobertura (a cobertura de texto já está em 100%) e tratar os problemas abertos em `logs/problemas.jsonl`.
-4. **Claude:** corrigir as divergências que aparecerem nos seus logs (Fase 4).
-5. **Você + Claude:** montar o gauntlet de decks a testar com os torneios já baixados (Fase 6).
-6. **Claude:** melhorar a IA heurística (Fase 6) e depois iniciar o treino da rede (Fase 8).
+Sem logs próprios do TCG Live, a fidelidade passa a ser validada pelo Compendium, pelas partidas da interface e pelos testes.
+
+1. **Claude:** auditar as cartas dos decks competitivos (`decks/tests/` e `decks/limitless/`) contra os rulings do Compendium
+   (compendium.pokegym.net), começando pelas mais usadas; cada divergência vira cenário em `tests/test_rules.py`.
+2. **Você:** jogar partidas na interface (`/jogar`) e usar 💬 Comentar quando algo parecer errado; Claude trata os problemas abertos.
+   Hoje não há nenhum aberto em `logs/problemas.jsonl`.
+3. **Claude:** fechar as aproximações restantes da Fase 2: Multi Adapter (descartar Ferramentas extras ao perder a Habilidade),
+   Luminous Wing (outros efeitos de Habilidades além de contadores) e Backtrack Badge em ataques escritos à mão.
+   Core Memory e TM Fluorite dependem de uma fonte para conferir.
+4. **Você + Claude:** montar o gauntlet com os decks de `decks/limitless/` e rodar a matriz de confrontos (`simulate.py`, Fase 6).
+5. **Claude:** melhorar a IA heurística (Apoiadores, sequência de turno, escolha de alvos) e criar a página de relatórios de confronto (Fase 6).
+6. **Você + Claude:** instalar o PyTorch, testar `train.py`, pré-treinar imitando a heurística e depois treinar por self-play (Fase 8).
 
 ## Como acompanhar
 - Este arquivo é atualizado a cada etapa concluída.

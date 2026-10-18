@@ -9,7 +9,7 @@ Mensagens do motor, logs e CLIs estão em português; nomes de cartas ficam em i
 2. **Decks**: montar vários, importar listas (TCG Live/Limitless) e baixar top 8 de Regionais/Internacionais/Mundial
    da Limitless (`import_limitless.py`, `ptcg/limitless.py`).
 3. **Validação com partidas reais do TCG Live**: logs "Copy Log" reproduzidos jogada a jogada (`ptcg/replay/`).
-   Vídeos foram substituídos por esses logs (o usuário ainda vai enviar logs próprios).
+   Vídeos foram substituídos por esses logs. O usuário NÃO terá logs novos (sem repositório público): validar por Compendium, interface e testes.
 4. **Biblioteca de cartas** (`cartas/`), **gerenciador de decks** e **LOG** (`logs/`).
 5. Interface HTML local (`server.py` + `web/index.html`) e IA (`ptcg/agents.py`, `ptcg/ai/`) — secundárias por ora.
 
@@ -92,8 +92,8 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
        for a in d.attacks + d.abilities:
            if a.impl is None or a.impl.status != 'ok': print(d.id, d.name, '|', a.name, '|', a.impl.note if a.impl else '-')"
    ```
-2. Reproduzir os logs próprios do usuário (`gerenciar_logs.py importar`) e corrigir divergências.
-3. IA: imitação a partir dos logs (`gerenciar_logs.py imitacao`) + PPO self-play (`train.py`).
+2. Auditar cartas dos decks competitivos contra o Compendium e tratar os problemas da interface (sem logs próprios do usuário).
+3. IA: imitação da heurística (não há logs reais) + PPO self-play (`train.py`).
 
 ## Problemas apontados nas partidas (fluxo)
 - Na interface (`/jogar`) o botão **💬 Comentar** grava um comentário na decisão atual em `logs/problemas.jsonl`
