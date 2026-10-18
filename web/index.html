@@ -137,6 +137,9 @@ pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
     <label>Vel.</label><input id="speed" type="range" min="0" max="1500" value="450" style="width:80px">
   </div>
   <div class="grp"><label><input type="checkbox" id="reveal"> Revelar mãos</label></div>
+  <div class="grp"><label title="Mostra/esconde as probabilidades e a avaliação da IA (quando a IA da vez é uma rede)"><input type="checkbox" id="hints" checked> Sugestões da IA</label></div>
+  <button class="btn" id="commentBtn" title="Anotar um problema nesta decisão (vai para logs/problemas.jsonl)">💬 Comentar</button>
+  <button class="btn" id="discardBtn" title="Ver as cartas do seu descarte (clique na pilha 'Descarte' para ver a de qualquer jogador)">🗑 Descarte</button>
   <button class="btn" id="undoBtn" title="Desfazer até sua última decisão">↶</button>
   <button class="btn" id="deckBtn">Decks…</button>
   <a class="btn" href="/decks" style="text-decoration:none">Montador de decks</a>
@@ -183,6 +186,12 @@ pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
   <textarea id="replayText" placeholder="Setup&#10;Fulano chose heads for the opening coin flip.&#10;..."></textarea>
   <div class="err" id="replayErr"></div>
   <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn" id="replayClose">Fechar</button><button class="btn primary" id="replayGo">Reproduzir</button></div>
+</div></div>
+<div class="modal" id="commentModal"><div class="box">
+  <h2 style="margin-top:0">Comentar esta decisão</h2>
+  <div style="color:var(--mute);font-size:12.5px;margin-bottom:6px">Descreva o erro (opção que não devia existir, faltou, efeito errado…). Fica registrado com a partida inteira até este ponto.</div>
+  <textarea id="commentText" style="width:100%;min-height:110px"></textarea>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn" id="commentClose">Cancelar</button><button class="btn primary" id="commentSave">Salvar comentário</button></div>
 </div></div>
 <div class="modal" id="pileModal"><div class="box"><h2 id="pileT" style="margin-top:0"></h2><div id="pileL"></div><div style="text-align:right;margin-top:10px"><button class="btn" onclick="pileModal.style.display='none'">Fechar</button></div></div></div>
 <script>
@@ -291,7 +300,7 @@ function renderPrompt(pr){
   if(!pr){ box.innerHTML=`<h2>${ST.done?'Fim de jogo':'—'}</h2>`; return }
   const who=ST.players[pr.player].name; const human=ST.ctrl[pr.player]==='human';
   let html=`<h2>${human?'Sua decisão':'Vez de '+esc(who)}</h2><div class="ptext">${esc(pr.text)}${pr.source?` <span class="chip">${esc(pr.source)}</span>`:''}</div>`;
-  const ev=ST.ai_eval;
+  const ev=$('hints').checked?ST.ai_eval:null;
   if(ev){ const x=(ev.value+1)/2*100; html+=`<div id="evalBar">Avaliação da rede para ${esc(who)}: <b style="color:var(--ink)">${(ev.value>=0?'+':'')+ev.value.toFixed(2)}</b><div class="meter"><i style="left:calc(${x}% - 1px)"></i></div></div>` }
   const opts=pr.options||[]; const filt=highlight?new Set(highlight):null;
   const btn=o=>{ const p=ev?ev.probs[o.i]:null;
@@ -301,7 +310,9 @@ function renderPrompt(pr){
       html+=`<div class="ogroup"><div class="gt">${label}</div>${g.map(btn).join('')}</div>` }
   } else html+=opts.map(btn).join('');
   if(highlight) html+=`<div style="margin-top:8px"><button class="btn" id="clearHl">Mostrar todas as opções</button></div>`;
+  if(pr.deck_cards&&human) html+=`<div style="margin-top:8px"><button class="btn" id="deckViewBtn">Ver baralho inteiro (${pr.deck_cards.length})</button></div>`;
   box.innerHTML=html;
+  const dv=$('deckViewBtn'); if(dv) dv.onclick=showDeckView;
   box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>act(+b.dataset.i));
   const ch=$('clearHl'); if(ch) ch.onclick=()=>{highlight=null;render()};
 }
@@ -345,12 +356,39 @@ $('rSlider').oninput=e=>{ if(REPLAY){REPLAY.i=+e.target.value;render()} };
 $('rPlay').onclick=()=>{ clearInterval(rTimer); rTimer=setInterval(()=>{ if(!REPLAY||REPLAY.i>=REPLAY.frames.length-1) return clearInterval(rTimer); REPLAY.i++; render() },+$('speed').value+150) };
 $('exitReplay').onclick=()=>{ clearInterval(rTimer); REPLAY=null; $('replaybar').style.display='none'; refresh() };
 
+// pilhas: descarte (a qualquer momento, também em replay) e baralho inteiro durante buscas
+function cardList(cards,opts={}){
+  const m=new Map();
+  cards.forEach(c=>{ const x=m.get(c.id)||{id:c.id,name:c.name,n:0,picked:0,eligible:false}; x.n++; if(c.picked) x.picked++; if(c.eligible) x.eligible=true; m.set(c.id,x) });
+  return [...m.values()].sort((a,b)=>a.name.localeCompare(b.name));
+}
+function showDiscard(p){
+  const S=REPLAY?REPLAY.frames[REPLAY.i].state:ST; if(!S||!S.players) return;
+  const P=S.players[p]; $('pileT').textContent=`Descarte — ${P.name} (${P.discard.length})`;
+  $('pileL').innerHTML=cardList(P.discard).map(x=>`<div data-card="${esc(x.id)}">${x.n}× ${esc(x.name)}</div>`).join('')||'<i>vazio</i>';
+  pileModal.style.display='grid';
+}
+function showDeckView(){
+  const pr=ST&&ST.prompt; if(!pr||!pr.deck_cards) return;
+  $('pileT').textContent=`Seu baralho (${pr.deck_cards.length} cartas, ordem oculta)`;
+  const html=cardList(pr.deck_cards).map(x=>{
+    const o=x.eligible?pr.options.find(o=>o.card===x.id):null;
+    const left=x.n-x.picked;
+    return `<div data-card="${esc(x.id)}" ${o?`data-pick="${o.i}" style="cursor:pointer;color:var(--accent)"`:'style="color:var(--mute)"'}>${left}× ${esc(x.name)}${x.picked?` <span class="chip">${x.picked} já escolhida(s)</span>`:''}${o?'':' <span class="chip">não pode ser escolhida</span>'}</div>`}).join('');
+  $('pileL').innerHTML=`<div style="color:var(--mute);margin-bottom:6px">Em destaque, as cartas que você pode pegar (clique para escolher).</div>${html}`;
+  pileModal.style.display='grid';
+}
+$('hints').checked=(()=>{ try{ return localStorage.getItem('hints')!=='0' }catch(e){ return true } })();
+$('hints').onchange=()=>{ try{ localStorage.setItem('hints',$('hints').checked?'1':'0') }catch(e){}; if(!REPLAY&&ST&&ST.players) renderPrompt(ST.prompt) };
+$('discardBtn').onclick=()=>{ const S=REPLAY?REPLAY.frames[REPLAY.i].state:ST; if(!S||!S.players){ toast('Sem partida em andamento'); return }
+  const me=S.viewer==='all'||S.viewer===undefined?0:S.viewer; showDiscard(me) };
+
 // clique em cartas → filtra opções que usam aquela carta
 document.addEventListener('click',e=>{
   const pile=e.target.closest('[data-discard]');
-  if(pile){ const S=REPLAY?REPLAY.frames[REPLAY.i].state:ST; const P=S.players[+pile.dataset.discard]; $('pileT').textContent='Descarte — '+P.name;
-    const cnt={}; P.discard.forEach(c=>cnt[c.name]=(cnt[c.name]||0)+1);
-    $('pileL').innerHTML=Object.entries(cnt).map(([n,c])=>`<div>${c}× ${esc(n)}</div>`).join('')||'<i>vazio</i>'; pileModal.style.display='grid'; return }
+  if(pile){ showDiscard(+pile.dataset.discard); return }
+  const dvc=e.target.closest('[data-pick]');
+  if(dvc){ pileModal.style.display='none'; act(+dvc.dataset.pick); return }
   if(REPLAY) return;
   const el=e.target.closest('.hc[data-uid], .pk[data-owner]');
   if(!el||!ST||!ST.prompt||!ST.prompt.options) return;
@@ -388,6 +426,9 @@ $('playBtn').onclick=()=>{ playing=!playing; $('playBtn').textContent=playing?'�
 $('stepBtn').onclick=()=>stepAI(1);
 $('reveal').onchange=refresh;
 $('undoBtn').onclick=async()=>{ try{ ST=await api('/api/undo',{reveal:reveal()}); highlight=null; render(); schedule() }catch(e){ toast(e.message) } };
+$('commentBtn').onclick=()=>{ if(!ST||!ST.prompt&&!ST.done){ toast('Sem partida em andamento'); return } playing=false; $('playBtn').textContent='▶'; clearTimeout(timer); commentModal.style.display='grid'; $('commentText').focus() };
+$('commentClose').onclick=()=>commentModal.style.display='none';
+$('commentSave').onclick=async()=>{ try{ const r=await api('/api/comment',{text:$('commentText').value}); $('commentText').value=''; commentModal.style.display='none'; toast('Comentário '+r.id+' registrado') }catch(e){ toast(e.message) } };
 $('speed').oninput=schedule;
 $('deckBtn').onclick=()=>{ deckModal.style.display='grid'; showDeck() };
 $('deckClose').onclick=()=>deckModal.style.display='none';

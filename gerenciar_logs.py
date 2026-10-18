@@ -11,6 +11,12 @@ Exemplos:
     python gerenciar_logs.py atividade --ultimos 30                 últimos eventos do registro
     python gerenciar_logs.py reprocessar                            reproduz de novo todos os logs do TCG Live
     python gerenciar_logs.py imitacao dados/imitacao.pkl             amostras (estado, jogada) de todos os logs
+    python gerenciar_logs.py fixar                                   copia partidas da interface sem comentários para
+                                                                   tests/fixtures/partidas/ (viram teste do motor)
+    python gerenciar_logs.py problemas [abertos|corrigidos|todos]    comentários feitos nas partidas (logs/problemas.jsonl)
+    python gerenciar_logs.py problema P003                           detalhe + últimas linhas da partida
+    python gerenciar_logs.py corrigir P003 --nota "o que foi feito"  marca como corrigido (depois de testar!)
+    python gerenciar_logs.py reabrir P003
 """
 import argparse
 import glob
@@ -19,7 +25,7 @@ import pickle
 import sys
 from pathlib import Path
 
-from ptcg.logbook import (LOG_DIR, ler_jsonl, logs_tcglive, registrar, rever_partida, salvar_log_tcglive,
+from ptcg.logbook import (LOG_DIR, atualizar_problema, problemas, ler_jsonl, logs_tcglive, registrar, rever_partida, salvar_log_tcglive,
                           sessoes_simulacao)
 
 
@@ -58,6 +64,16 @@ def main():
     p = sub.add_parser('atividade')
     p.add_argument('--ultimos', type=int, default=40)
     sub.add_parser('reprocessar')
+    sub.add_parser('fixar')
+    p = sub.add_parser('problemas')
+    p.add_argument('filtro', nargs='?', choices=['abertos', 'corrigidos', 'todos'], default='abertos')
+    p = sub.add_parser('problema')
+    p.add_argument('id')
+    p = sub.add_parser('corrigir')
+    p.add_argument('id')
+    p.add_argument('--nota', required=True, help='o que foi corrigido (e onde)')
+    p = sub.add_parser('reabrir')
+    p.add_argument('id')
     p = sub.add_parser('imitacao')
     p.add_argument('saida')
     a = ap.parse_args()
@@ -108,6 +124,57 @@ def main():
         p = LOG_DIR / 'atividade.log'
         lines = p.read_text(encoding='utf-8').splitlines() if p.exists() else []
         print('\n'.join(lines[-a.ultimos:]) or '(vazio)')
+    elif a.cmd == 'fixar':
+        dest = Path(__file__).resolve().parent / 'tests' / 'fixtures' / 'partidas' / 'interface.jsonl'
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        ja = {(r['semente'], tuple(r['history'])) for r in ler_jsonl(dest)}
+        novas = [r for r in ler_jsonl(LOG_DIR / 'interface' / 'partidas.jsonl')
+                 if r.get('history') and not r.get('comentarios') and (r['semente'], tuple(r['history'])) not in ja]
+        from tests.test_partidas_usuario import refazer
+        validas = []
+        for r in novas:
+            try:
+                g = refazer(r)
+                if g.winner == r['vencedor'] and g.turn == r['turnos']:
+                    validas.append(r)
+                    continue
+            except AssertionError:
+                pass
+            print(f'ignorada (não reproduz mais no motor atual): {r["quando"]} {r["jogadores"]}')
+        novas = validas
+        with open(dest, 'a', encoding='utf-8') as f:
+            for r in novas:
+                r.pop('log', None)
+                f.write(json.dumps(r, ensure_ascii=False) + '\n')
+        print(f'{len(novas)} partidas novas em {dest.relative_to(Path(__file__).resolve().parent)}')
+    elif a.cmd == 'problemas':
+        st = {'abertos': 'aberto', 'corrigidos': 'corrigido', 'todos': None}[a.filtro]
+        rows = problemas(st)
+        for r in rows:
+            print(f'{r["id"]} [{r["status"]}] {r["quando"][:10]} turno {r["turno"]}: {r["texto"]}')
+        print(f'({len(rows)} {a.filtro})')
+    elif a.cmd == 'problema':
+        r = next((x for x in problemas() if x['id'] == a.id.upper()), None)
+        if r is None:
+            sys.exit('problema não encontrado')
+        print(f'{r["id"]} [{r["status"]}] {r["quando"]} — {r["jogadores"]} decks={r["decks"]} semente={r["semente"]}')
+        print(f'Comentário: {r["texto"]}\n')
+        if r.get('prompt'):
+            print(f'Decisão {r["decisao"]} (turno {r["turno"]}): {r["prompt"]["texto"]}')
+            for o in r['prompt']['opcoes']:
+                print(f'   - {o}')
+        print('\nÚltimas linhas:')
+        for m in r['ultimas_linhas']:
+            print('  ', m)
+        if r.get('correcao'):
+            print(f'\nCorreção: {r["correcao"]}')
+        print('\nPara reproduzir: rever_partida(registro) com ptcg.logbook (decks_ids, semente, history).')
+    elif a.cmd in ('corrigir', 'reabrir'):
+        try:
+            r = atualizar_problema(a.id, 'corrigido' if a.cmd == 'corrigir' else 'aberto', getattr(a, 'nota', ''))
+        except KeyError as e:
+            sys.exit(str(e))
+        print(f'{r["id"]} → {r["status"]}')
     elif a.cmd == 'reprocessar':
         d = LOG_DIR / 'partidas_tcglive'
         files = sorted(d.glob('*.txt'))

@@ -240,3 +240,6 @@ logs/interface/partidas.jsonl
 
 # Imagens das cartas (baixar_imagens.py)
 imagens/
+
+# Marca do aviso diário de problemas pendentes
+.claude/.aviso_problemas

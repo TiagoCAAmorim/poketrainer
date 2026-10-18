@@ -68,6 +68,8 @@ Atualizado em: 2026-10-17
 
 ## Fase 7 — Interface gráfica 🟡
 - ✅ Jogar contra a IA, assistir IA × IA, desfazer, revelar mãos, editar decks
+- ✅ Botão 💬 Comentar: problemas ficam em `logs/problemas.jsonl` (abertos/corrigidos); aviso no 1º início de sessão do dia
+  (hook em `.claude/settings.json`); partidas sem comentário viram teste (`tests/test_partidas_usuario.py`, `gerenciar_logs.py fixar`)
 - ✅ Reproduzir logs do TCG Live jogada a jogada
 - ⬜ Melhorias visuais (imagens das cartas, animações) — baixa prioridade por enquanto
 

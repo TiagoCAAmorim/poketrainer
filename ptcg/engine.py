@@ -407,6 +407,9 @@ class Game:
                      key=None, labeler=None, **data):
         key = key or (lambda c: c.d.id)
         chosen, pool = [], list(cards)
+        deck_uids = {c.uid for c in self.players[p].deck}
+        if pool and all(c.uid in deck_uids for c in pool):
+            data = dict(data, deck_view=True)     # busca no próprio baralho: a interface pode mostrá-lo inteiro
         while len(chosen) < max_n and pool:
             opts, seen = [], set()
             for c in pool:

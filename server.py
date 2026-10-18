@@ -20,7 +20,7 @@ from ptcg import explorer as EX
 from ptcg.carddb import db
 from ptcg.decks import DECK_DIR, deck_to_text, list_decks, load_deck, parse_decklist, support_report, validate
 from ptcg.engine import Game
-from ptcg.logbook import registrar, salvar_log_tcglive, salvar_partida_interface
+from ptcg.logbook import registrar, registrar_problema, salvar_log_tcglive, salvar_partida_interface
 from ptcg.view import card_info, game_cards, game_view
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -94,6 +94,7 @@ def new_game(body):
     S['decks'] = [decks[0].name, decks[1].name]
     S['agents'] = [None if c == 'human' else make_agent(c, seed=(seed or 0) + i) for i, c in enumerate(ctrl)]
     S['logged'] = False
+    S['comments'] = []
 
 
 def log_if_done():
@@ -101,7 +102,8 @@ def log_if_done():
     if g is not None and g.done and not S.get('logged'):
         S['logged'] = True
         try:
-            salvar_partida_interface(g, decks=S['decks'], controles=S['ctrl'])
+            salvar_partida_interface(g, decks=S['decks'], controles=S['ctrl'],
+                                     comentarios=[c['id'] for c in S.get('comments', [])])
         except Exception:
             traceback.print_exc()
 
@@ -269,6 +271,14 @@ class Handler(BaseHTTPRequestHandler):
                     for _ in range(int(body.get('n', 1))):
                         if not ai_step():
                             break
+                elif u.path == '/api/comment':
+                    g = S['game']
+                    texto = (body.get('text') or '').strip()
+                    if g is None or not texto:
+                        return self._send(400, {'error': 'sem partida ou comentário vazio'})
+                    rec = registrar_problema(g, texto, decks=S['decks'], controles=S['ctrl'])
+                    S.setdefault('comments', []).append({'id': rec['id']})
+                    return self._send(200, {'ok': True, 'id': rec['id']})
                 elif u.path == '/api/undo':
                     undo()
                 elif u.path == '/api/deck':

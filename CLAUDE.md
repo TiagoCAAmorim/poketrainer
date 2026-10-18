@@ -53,6 +53,7 @@ python tests/test_engine.py     # partidas com os decks reais + invariantes + de
 python tests/test_replay.py     # os 4 logs reais do TCG Live devem reproduzir 100%
 python tests/fuzz.py --games 300  # decks aleatórios legais, invariantes a cada decisão
 python tests/test_limitless.py
+python tests/test_partidas_usuario.py  # partidas da interface SEM comentários (logs/interface + tests/fixtures/partidas) refeitas com invariantes
 python tests/test_explorer.py      # filtros/detalhe da página de cartas (ptcg/explorer.py + web/cartas.html)
 python tests/test_deckbuilder.py   # montador de decks (ptcg/deckbuilder.py + web/decks.html)
 ```
@@ -85,6 +86,16 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
    ```
 2. Reproduzir os logs próprios do usuário (`gerenciar_logs.py importar`) e corrigir divergências.
 3. IA: imitação a partir dos logs (`gerenciar_logs.py imitacao`) + PPO self-play (`train.py`).
+
+## Problemas apontados nas partidas (fluxo)
+- Na interface (`/jogar`) o botão **💬 Comentar** grava um comentário na decisão atual em `logs/problemas.jsonl`
+  (versionado; status `aberto`/`corrigido`, com decks, semente e decisões até ali → reproduzível).
+  Partidas com comentário ficam fora de `tests/test_partidas_usuario.py`; as sem comentário viram teste do motor
+  (`python gerenciar_logs.py fixar` copia as boas para `tests/fixtures/partidas/`).
+- Hook `SessionStart` (`.claude/settings.json` → `tools/problemas_pendentes.py --sessao`): na **1ª sessão de cada dia**
+  injeta no contexto a lista de problemas abertos. Quando aparecer, **apresente a lista ao usuário e proponha tratá-los**.
+- Ao corrigir: escreva um cenário em `tests/test_rules.py`, rode os testes e então
+  `python gerenciar_logs.py corrigir <ID> --nota "o que mudou"`. Consultar: `problemas [abertos|corrigidos|todos]`, `problema <ID>`.
 
 ## Convenções
 - **Mantenha `PLANO.md` atualizado** (status das fases, números de cobertura, próximos passos) ao concluir uma etapa;
