@@ -206,7 +206,7 @@ class Handler(BaseHTTPRequestHandler):
                 f = EX.arquivo_imagem(partes[2], partes[3]) if len(partes) == 4 else None
                 if f is None:
                     return self._send(404, {'error': 'imagem não baixada (python baixar_imagens.py)'})
-                return self._send(200, f.read_bytes(), 'image/webp' if f.suffix == '.webp' else 'image/png',
+                return self._send(200, f.read_bytes(), {'.webp': 'image/webp', '.jpg': 'image/jpeg'}.get(f.suffix, 'image/png'),
                                   cache='public, max-age=86400')
             if u.path == '/api/home':
                 o = EX.opcoes()

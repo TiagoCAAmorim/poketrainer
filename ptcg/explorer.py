@@ -48,7 +48,7 @@ def tem_imagem(cid: str):
 
 
 def _arquivo(qual: str, cid: str):
-    for ext in ('webp', 'png'):
+    for ext in ('webp', 'png', 'jpg'):
         p = IMG_DIR / qual / f'{cid}.{ext}'
         if p.exists() and p.stat().st_size > 0:
             return p

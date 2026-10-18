@@ -1,6 +1,6 @@
 """Baixa as imagens das cartas do formato para imagens/cartas/ (pasta fora do git).
 
-Fonte principal: TCGdex (assets.tcgdex.net, .webp leve); reserva: images.pokemontcg.io (.png).
+Fonte principal: TCGdex (assets.tcgdex.net, .webp leve); reservas: images.pokemontcg.io e limitlesstcg.com (.png).
 Cada carta usa a primeira impressão que tiver imagem. É retomável: o que já foi baixado é pulado.
 
     imagens/cartas/baixa/<ID>.webp    miniatura (~17 KB) para listas e grades
@@ -13,12 +13,14 @@ Exemplos:
     python baixar_imagens.py --nome "Dragapult"    # só cartas cujo nome contém o texto
     python baixar_imagens.py --colecao ASC MEG     # só estas coleções
     python baixar_imagens.py --refazer             # baixa de novo mesmo as que já existem
+    python baixar_imagens.py --manual PR-ME-93 pikachu.png   # usa uma imagem que você salvou à mão
     python baixar_imagens.py --listar-faltantes    # mostra as cartas sem imagem baixada
 
 Use com cuidado de rede: há uma pausa entre as requisições (--delay) e 4 conexões em paralelo (--threads).
 """
 import argparse
 import json
+import re
 import sys
 import threading
 import time
@@ -36,7 +38,9 @@ INDICE = IMG_DIR / 'indice.json'
 UA = {'User-Agent': 'Mozilla/5.0 (ptcg-lab image fetcher)'}
 TCGDEX = 'https://api.tcgdex.net/v2/en'
 PTCGIO = 'https://images.pokemontcg.io'
-ALIAS_COLECAO = {'PR-SV': 'SVP', 'PR-ME': 'MEP'}   # nosso código → abreviação oficial na TCGdex
+ALIAS_COLECAO = {'PR-SV': 'SVP', 'PR-ME': 'MEP'}   # nosso código → abreviação oficial na TCGdex/Limitless
+LIMITLESS = 'https://limitlesstcg.com/cards'
+LIMITLESS_IDIOMAS = ('pt', 'en')
 
 
 def http(url, binary=False, tries=4, timeout=30):
@@ -81,6 +85,20 @@ def tcgdex_index(delay):
     return out
 
 
+def limitless_urls(code, num):
+    """URLs (baixa=_SM, alta=_LG) lidas da página da carta na Limitless; a raridade no nome varia por carta."""
+    code = ALIAS_COLECAO.get(code, code)
+    for lang in LIMITLESS_IDIOMAS:
+        html = http(f'{LIMITLESS}/{lang}/{code}/{num}', binary=True)
+        if not html:
+            continue
+        m = re.search(rb'(https://[^"\']*/tpci/%s/%s_\d+_[A-Z0-9]+_[A-Z]+)(?:_SM|_LG)?\.png' % (code.encode(), code.encode()), html)
+        if m:
+            base = m.group(1).decode()
+            return {'baixa': f'{base}_SM.png', 'alta': f'{base}_LG.png'}
+    return None
+
+
 def candidatas(card, tdx, setids):
     """Fontes possíveis em ordem: TCGdex de cada impressão, depois pokemontcg.io de cada impressão."""
     fontes = []
@@ -95,6 +113,9 @@ def candidatas(card, tdx, setids):
         if sid:
             fontes.append(('pokemontcg.io', {'baixa': f'{PTCGIO}/{sid}/{num}.png',
                                                'alta': f'{PTCGIO}/{sid}/{num}_hires.png'}))
+    for pr in card.prints or [card.id]:      # última reserva: resolvida só se as anteriores falharem
+        code, num = pr.rsplit('-', 1)
+        fontes.append(('limitless', (code, num)))
     return fontes
 
 
@@ -116,6 +137,11 @@ def baixar_carta(card, tdx, setids, quals, refazer, delay):
     if not refazer and all(existente(q, cid) for q in quals):
         return cid, 'ja_existia', None
     for fonte, urls in candidatas(card, tdx, setids):
+        if fonte == 'limitless':
+            urls = limitless_urls(*urls)
+            time.sleep(delay)
+            if not urls:
+                continue
         ok = True
         info = {'fonte': fonte, 'urls': urls}
         for q in quals:
@@ -141,12 +167,32 @@ def main():
     ap.add_argument('--colecao', nargs='*', default=None, help='só cartas com impressão nestas coleções (ex.: ASC MEG)')
     ap.add_argument('--refazer', action='store_true')
     ap.add_argument('--listar-faltantes', action='store_true')
+    ap.add_argument('--manual', nargs=2, metavar=('ID', 'ARQUIVO'), help='copia uma imagem sua (png/webp/jpg) para a carta ID')
     ap.add_argument('--threads', type=int, default=4)
     ap.add_argument('--delay', type=float, default=0.15, help='pausa (s) após cada requisição de cada conexão')
     a = ap.parse_args()
     quals = ['baixa', 'alta'] if a.qualidade == 'ambas' else [a.qualidade]
 
     D = db()
+    if a.manual:
+        cid, arq = a.manual
+        arq = Path(arq)
+        if cid not in D.cards or not arq.is_file():
+            sys.exit(f'Carta {cid!r} desconhecida ou arquivo {arq} não encontrado.')
+        ext = arq.suffix.lower().lstrip('.').replace('jpeg', 'jpg')
+        if ext not in ('png', 'webp', 'jpg'):
+            sys.exit('Use um arquivo .png, .webp ou .jpg.')
+        for q in ('baixa', 'alta'):
+            for old in (CARTAS / q).glob(f'{cid}.*'):
+                old.unlink()
+            (CARTAS / q).mkdir(parents=True, exist_ok=True)
+            (CARTAS / q / f'{cid}.{ext}').write_bytes(arq.read_bytes())
+        indice = json.load(open(INDICE, encoding='utf-8')) if INDICE.exists() else {}
+        indice[cid] = {'fonte': 'manual', 'arquivo': arq.name}
+        indice['_sem_imagem'] = [x for x in indice.get('_sem_imagem', []) if x != cid]
+        INDICE.write_text(json.dumps(indice, ensure_ascii=False, indent=1), encoding='utf-8')
+        print(f'{cid}: imagem copiada para baixa/ e alta/.')
+        return
     cards = list(D.cards.values())
     if a.nome:
         n = norm(a.nome)

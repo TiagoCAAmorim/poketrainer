@@ -27,10 +27,12 @@ python baixar_imagens.py --nome "Dragapult"    # só cartas cujo nome contém o 
 python baixar_imagens.py --colecao ASC MEG     # só algumas coleções
 python baixar_imagens.py --listar-faltantes    # o que ainda não foi baixado
 python baixar_imagens.py --refazer             # baixa de novo
+python baixar_imagens.py --manual PR-ME-93 pikachu.png   # usa uma imagem salva por você (png/webp/jpg)
 ```
 
-- Fonte principal: TCGdex (`assets.tcgdex.net`, `.webp`); reserva: `images.pokemontcg.io` (`.png`). Cada carta usa a
-  primeira impressão que tiver imagem.
+- Fontes, em ordem: TCGdex (`assets.tcgdex.net`, `.webp`), `images.pokemontcg.io` (`.png`) e, por último,
+  `limitlesstcg.com` (`.png`, lida da página da carta em pt ou en; é a única com a 30th Celebration e as promos MEP).
+  Cada carta usa a primeira impressão que tiver imagem. As imagens da Limitless são maiores (~60 KB a miniatura, ~140 KB a grande).
 - É retomável (pula o que já existe) e educado com o servidor: 4 conexões e uma pequena pausa (`--threads`, `--delay`).
 - Estrutura: `imagens/cartas/baixa/<ID>.webp`, `imagens/cartas/alta/<ID>.webp`, `imagens/indice.json` (fonte usada e
   lista `_sem_imagem`). O servidor entrega por `/img/baixa/<ID>` e `/img/alta/<ID>`.
