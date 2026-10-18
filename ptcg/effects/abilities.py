@@ -445,6 +445,10 @@ def _feasible(body):
     if m:
         f = lib.card_filter(m.group(1))
         return lambda E: any(f(x) for x in E.me.discard)
+    m = re.match(r'^(?:you may )?draw cards until you have (\d+) cards', b, re.I)
+    if m:   # ruling (Delphox, Flaring Magic): com N cartas ou mais na mão, a Habilidade não pode ser usada
+        n = int(m.group(1))
+        return lambda E: len(E.me.hand) < n and bool(E.me.deck)
     if re.match(r'^(?:you may )?(draw|search your deck|look at the top)', b, re.I):
         return lambda E: bool(E.me.deck)
     if re.match(r'^(?:you may )?heal', b, re.I):

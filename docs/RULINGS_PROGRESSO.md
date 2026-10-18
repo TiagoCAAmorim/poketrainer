@@ -1,0 +1,603 @@
+# Revisão das regras do Compendium (Pokégym) — progresso
+
+Fonte: https://compendium.pokegym.net/all-rulings-by-date/ (lista de rulings por data; cada entrada tem ID em `/ruling/<ID>/`).
+Objetivo: para cada ruling, conferir o comportamento no motor e corrigir/testar as cartas envolvidas.
+
+## Como retomar
+1. Antes de criar qualquer cenário, ler `tests/test_rulings.py` para reaproveitar o estilo e os helpers já usados (`board`, `act`, `has`, `labels`, `new_game`, `at_turn`, `resolve_all`).
+   Cenários novos vão nesse mesmo arquivo (um teste por ruling ou grupo, nomeado com o ID, p.ex. `test_r2338_...`).
+2. Rodar `python tests/test_rulings.py` e, antes de commitar mudanças no motor, a bateria do CLAUDE.md.
+3. Atualizar a linha do ruling abaixo: `[ ]` pendente · `[~]` em andamento · `[x]` conferido (já correto ou corrigido com teste) · `[!]` divergência não resolvida (ver nota).
+4. Dúvidas de regra: consultar a página do ruling (`https://compendium.pokegym.net/ruling/<ID>/`) — os textos abaixo são resumos paraphrased.
+
+## Cobertura da leitura da página
+- Lidos: IDs **2427 → 1770** (≈ out/2022 a jul/2026), em ordem da página (~330 entradas, incluindo algumas sem ID visível).
+- **Não lidos**: rulings mais antigos que o ID 1770 (aprox. antes de out/2022). A ferramenta de leitura truncou a página nesse ponto; para continuar, reler a página com um offset maior ou abrir os IDs individualmente.
+- Entradas sem ID visível estão marcadas com `(s/ID)`.
+
+## Log de sessões
+- Sessão 1 (2026-10-18): página lida (IDs 2427→1770); arquivo criado; `tests/test_rulings.py` com 8 cenários (todos passando). Correções: Special Red Card, Dark Bell (can_play), Delphox Flaring Magic (`_feasible`). Regressão OK: test_rules, test_engine, test_efeitos_novos, smoke_cartas.
+- Próximo: pegar os itens `[ ]` da Fase 1 que têm efeito testável (ex.: Morpeko/Lillie's Determination — mão vazia embaralha e compra; Garbodor empilhando; Mist Energy vs. contadores; Bastiodon/Ancient Bulwark; Spiritomb; Miraidon Photon Cord).
+- Cartas fora da rotação H/I/J (ex.: Voltaic {L} Energy, Growing {G} Energy, Telepathic {P} Energy, Ghetsis, Miss Fortune Sisters, Karate Belt) não estão no formato atual: não precisam de teste.
+- Atenção: os textos acima são resumos (paraphrase) de uma leitura por resumo da página; conferir a regra no próprio `/ruling/<ID>/` antes de mudar o motor.
+
+## Estado
+- [ ] Fase 1 — rulings de 2025–2026 (IDs ≥ 2139)
+- [ ] Fase 2 — rulings de 2023–2024 (IDs 1800–2138 e 1853–1999)
+- [ ] Fase 3 — rulings de 2022–2023 restantes (IDs 1770–1852 e 2000–2050 / 1979…)
+
+---
+
+## Fase 1 — 2025–2026
+
+### Julho 2026 (IDs 2385–2429)
+- [ ] 2427 Annihilape (Destined Fight) — Mist Energy impede o KO do defensor; atacante ainda nocauteia (prêmio do oponente).
+- [ ] 2429 Risky Ruins; Antique Armor Fossil — Fóssil entra com contadores e conta como Pokémon em jogo.
+- [ ] 2428 Dipplin (Festival Lead); Festival Grounds; Kieran — bônus do Kieran vale para cada ataque contra ex, separadamente.
+- [ ] 2426 Flutter Mane (Midnight Fluttering); Hide 'n' Sneak — Hide 'n' Sneak prevalece e continua funcionando.
+- [ ] 2425 Dusknoir (Cursed Blast); Banette (Hide 'n' Sneak) — Dusknoir é nocauteado e dá prêmio; Banette não recebe contadores.
+- [ ] 2424 Mega Lopunny ex (Spiky Hopper); Bastiodon (Ancient Bulwark) — Bulwark vale para todos os Pokémonsdo jogador, mas Spiky Hopper ignora efeitos "Active", então o dano não é bloqueado.
+- [ ] 2423 Raging Bolt ex (Bellowing Thunder); Bastiodon — dano ocorre antes do descarte de Energia; Bulwark não bloqueia.
+- [ ] 2422 Banette (Puppet Pull); Bastiodon; Hide 'n' Sneak — Bulwark não é efeito sobre Banette; bloqueia o dano.
+- [ ] 2421 Voltaic {L} Energy — múltiplas cópias empilham (+20 cada).
+- [ ] 2420 Lillie's Determination — mão embaralhada no deck mesmo vazia; embaralha antes de comprar.
+- [ ] 2419 Gwynn — jogável com deck vazio; faz o possível.
+- [x] 2418 Dark Bell — não pode ser jogada sem alvo válido. **Corrigido** (`trainers.py`, can_play) + teste.
+- [ ] 2417 Backtrack Badge — vale só para flips de ataque, não para checagens de status.
+- [ ] 2416 Backtrack Badge — refazer todos os flips do ataque, não só os caras.
+- [ ] 2414 Mega Zeraora ex (Zepto Turn) — efeitos do ataque resolvem antes; atacante troca antes do KO ser processado.
+- [ ] 2413 Morpeko ex (Wheely Draw) — embaralha o deck antes de comprar se a mão estiver vazia.
+- [ ] 2412 Battle Cage Stadium; Spiritomb (Spiritual End) — colocação de contadores em Banco danificado é bloqueada.
+- [ ] 2411 Spiritomb (Spiritual End) — alvo com 0 de dano não recebe contadores; contagem multiplicada.
+- [ ] 2409 Thievul (Skill Thief) — não precisa da energia exigida pelo ataque copiado.
+- [ ] 2408 Mega Slowbro ex (Shellnado Spin); Mist Energy — contadores atrasados do Shellnado Spin são bloqueados pela Mist Energy.
+- [ ] 2407 Rampardos ex (Rowdy Hammer) — bônus limitado a 300; vale só no próximo turno, não cumulativo.
+- [ ] 2405 Munkidori (Adrena-Brain); Lurantis ex (Lively Cutter) — mover contadores não é cura; sem bônus.
+- [ ] 2404 Jynx (Intense Kiss) — efeito acaba quando o Pokémon atacado vai para o Banco.
+- [ ] 2403 Tropius (Fruity Aroma) — sem embaralhar, pois nenhuma carta volta ao deck.
+- [ ] 2402 Manectric (Flashing Barrier); Thievul (Skill Thief) — Thievul é Pokémon Evolução, então o dano é prevenido.
+- [ ] 2401 Sizzlipede (Bug Out) — todos os Pokémon revelados voltam embaralhados ao deck, não descartados.
+- [ ] 2400 Miraidon (Photon Cord); Cranidos (Push Down) — Photon Cord utilizável; energia não pode ser movida para si mesma.
+- [ ] 2399 Miraidon (Photon Cord) — deve mover ao menos uma Energia {L}; zero só para ataques.
+- [ ] 2398 Rampardos ex (Rowdy Hammer); Hide 'n' Sneak — bônus de dano não é efeito; Hide 'n' Sneak não bloqueia.
+- [ ] 2397 Cinderace (Explosiveness); Manectric (Flashing Barrier) — Pokémon Evolução, dano bloqueado.
+- [ ] 2394 Koraidon (Battle Claw); Cinderace (Explosiveness) — Pokémon Evolução, o +30 vale.
+- [ ] 2393 Rampardos ex (Destructive Headbutting); Hide 'n' Sneak — pode ser usado, mas Hide 'n' Sneak bloqueia o descarte de Energia; inutilizável se o alvo não tiver energia.
+- [ ] 2386 Antique Armor Fossil; Antique Skull Fossil; Binding Flame — fósseis sem custo de recuo, que não pode ser alterado.
+- [ ] 2392 Mega Chandelure ex (Binding Flame) — empilha.
+- [ ] 2385 Mega Greninja ex; Neo Upper Energy; Bastiodon — energia volta à mão após dano; Bulwark não bloqueia.
+
+### Maio–junho 2026 (IDs 2139–2377)
+- [ ] 2376 Eri; Ninetales (Supernatural Shapeshifter) — como efeito de ataque, pode descartar zero Itens (atualização abr/2026).
+- [ ] 1968 Miss Fortune Sisters — oponente embaralha o deck mesmo sem cartas colocadas.
+- [ ] 2377 Roto-Stick — deck é embaralhado após a busca.
+- [ ] 1022 Ghetsis — oponente embaralha mesmo sem itens; sem compra extra.
+- [ ] 2375 Elgyem (Slight Shift); Mist Energy — Mist Energy não pode ser movida do Pokémon defensor.
+- [ ] 2374 Karate Belt; Grapploct (Raging Tentacles) — custo alternativo de um {F} é fixo e não é alterado pelo Karate Belt.
+- [ ] 2373 Mega Dragalge ex (Pernicious Poison) — 16 contadores de Veneno em cada Checkup enquanto Envenenado.
+- [ ] 2372 Transformation Tome; Mega Heracross ex (Juggernaut Horn) — mesmo Pokémon, então os +30 extras valem.
+- [ ] 2371 Quaquaval ex (Exciting Dance); Spiky Energy — Spiky Energy ainda causa dano ao atacante após ambos irem ao Banco.
+- [ ] 2370 Milotic (Mentally Calm); Mega Greninja ex (Ninja Spinner) — Energia de Água permanece presa, mas o bônus vale.
+- [ ] 2369 Mega Clefable ex (Luminous Wing); Mimikyu (Safeguard) — Safeguard ainda bloqueia; Luminous Wing não ignora.
+- [ ] 2368 Mega Emboar ex (Crimson Blast); Nitro {R} Energy — energia do atacante nocauteado não volta à mão.
+- [ ] 2367 Transformation Tome — duas cópias usadas juntas; um Básico novo com menos HP é nocauteado na hora.
+- [ ] 2366 Transformation Tome — só jogável como par.
+- [x] 2365 Special Red Card — não pode ser jogada se o oponente não tem cartas na mão. **Corrigido** (`trainers.py`, can_play) + teste.
+- [ ] 2364 Roxie's Performance; Pecharunt ex (Subjugating Chains) — Pokémon "novos" também são afetados, então não pode recuar.
+- [x] 2363 Prism Tower — exige poder descartar 2 cartas. Já correto + teste.
+- [x] 2362 Prism Tower — não pode ser usada com deck vazio. Já correto + teste.
+- [ ] 2360 Adversity Policy — compra o máximo possível; pode perder no início do turno se o deck não puder fornecer carta.
+- [ ] 2359 Adversity Policy; Festival Grounds; Dipplin (Festival Lead) — cada ataque dispara compra de 3 (6 no total).
+- [ ] 2358 Adversity Policy; Skuntank (Smash Turn) — compra mesmo se o atacante sair de jogo.
+- [ ] 2356 Watchog (Snap Inspection) — deve devolver o máximo de cartas possível.
+- [ ] 2355 Beedrill ex (Rumbling Bees) — conta só Beedrill e Beedrill ex, não Beedrill V.
+- [ ] 2354 Delibird (Pleasing Present); Skeledirge (Unaware) — energia descartada após a escolha ser executada.
+- [ ] 2353 Delibird (Pleasing Present) — oponente escolhe primeiro; colocação de energia simultânea.
+- [ ] 2352 Slowking (Seek Inspiration); Metagross (Metallic Hammer) — dano extra sem energia {M}; deve descartar o máximo se escolher.
+- [ ] 2351 Ho-Oh (Flames of Revival) — pode atacar sem colocar Básico do descarte no Banco.
+- [ ] 2350 Ninetales (Nine-Tailed Transfer); Patrat (Watchful Eye) — contadores não podem ser movidos enquanto Watchful Eye estiver ativo.
+- [ ] 2349 Phantump (Spiteful Evolution) — não no primeiro turno; usável no primeiro turno em jogo depois disso.
+- [ ] 2348 Goodra (Slimy Sliding) — Retirada falha por este efeito ainda gasta a Retirada do turno.
+- [ ] 2347 Chesnaught (Needly Armor) — conta toda Energia {G}, incluindo Legacy Energy, para os contadores.
+- [ ] 2346 Garbodor (Gloomy Garbage); Shred — Shred não ignora o efeito do lado do atacante.
+- [ ] 2345 Garbodor (Gloomy Garbage); Keldeo (Shoot Through) — também reduz os 20 de dano ao Banco.
+- [ ] 2344 Garbodor (Gloomy Garbage) — duas cópias empilham (−40).
+- [x] 2343 Delphox (Flaring Magic) — não pode usar com 7+ cartas na mão. **Corrigido** (`abilities.py`, `_feasible`) + teste.
+- [ ] 2341 Mist Energy; Stunfisk (Pouncing Trap) — Mist Energy bloqueia o efeito atrasado de +100.
+- [ ] 2340 Team Rocket's Mewtwo ex (Erasure Ball); Team Rocket's Energy — cada carta descartada soma +60; pode descartar mais cartas.
+- [x] 2251 Smeargle (Energizing Sketch) — pode escolher não anexar nada. Já correto + teste.
+- [ ] 2339 Team Rocket's Giovanni; Mismagius ex (Swirling Prose) — novo Ativo fica Confuso se Mismagius era Ativo; Mismagius no Banco que entra depois não é afetado.
+- [ ] 228 Flygon (Sand Slammer); Serperior (Royal Heal) — jogador do próximo turno escolhe a ordem, mudando a cada turno.
+- [ ] 2335 Mega Clefable ex (Luminous Wing); Crustle (Mysterious Rock Inn) — Rock Inn protege Crustle; Luminous Wing não ignora.
+- [ ] 2334 Team Rocket's Watchtower; Meowth ex (Last-Ditch Catch) — Watchtower remove a Habilidade.
+- [ ] 2333 Cynthia's Roserade (Cheer on to Glory); Empoleon ex (Emperor's Stance) — bônus de dano não é efeito; Emperor's Stance não bloqueia.
+- [ ] 2142 Surfer; Yanmega ex (Buzzing Boost) — a compra do Surfer resolve antes do Buzzing Boost.
+
+### Abril 2026 (IDs 2328–2329, 2325–2327)
+- [ ] 2328 Risky Ruins; Strange Timepiece — devoluir ao Banco não conta como colocar: sem contadores.
+- [ ] 2329 Risky Ruins — recuar para o Banco não coloca contadores.
+- [ ] 2327 Strange Timepiece; Boosted Evolution — Boosted Evolution permite evoluir de volta no mesmo turno; o texto entre parênteses é só lembrete.
+- [ ] 2326 Horsea (Smokescreen); Octillery (Smokescreen Shot) — Smokescreen vira primeiro, depois Confusão.
+- [ ] 2325 Fósseis em geral; Jellicent (Oceanic Curse); Budew (Itchy Pollen) — fósseis na mão são cartas de Item, não podem ser jogados como Pokémon.
+- [ ] 2324 Fósseis em geral — não podem ser Pokémon Ativo inicial.
+- [ ] 2323 Dusknoir (Cursed Blast); Dream Ball — Dream Ball pode ser usada no turno do oponente; resolve antes da promoção.
+
+### Março 2026 (IDs 2301–2322, 2304–2320 + 887–1929 em 2026-03-12)
+- [ ] 2322 Telepathic {P} Energy — Banco cheio: sem busca nem embaralhamento; senão a busca é obrigatória.
+- [ ] 2321 Growing {G} Energy — empilha: três dão +60 HP.
+- [ ] 2320 Doublade (Weaponized Swords) — nomes devem coincidir exatamente; "Aegislash ex" não conta como "Aegislash".
+- [ ] 2319 Serperior (Solar Coiling); Rosa's Encouragement — checa só presença; bônus 150.
+- [ ] 2318 Shaymin (Send Flowers) — pode buscar Energia Especial.
+- [ ] 2317 Hippopotas (Sand Attack) — Sand Attack vira primeiro, depois Confusão.
+- [ ] 2316 Mega Zygarde ex (Nullifying Zero) — um flip por Pokémon, incluindo Tera no Banco (sem dano).
+- [ ] 2315 Salazzle ex (Nasty Plot) — deve pegar ao menos uma carta, se possível.
+- [ ] 2314 Klefki (Memory Lock) — trava termina quando o Pokémon vai para o Banco; pode atacar de novo se reativado.
+- [ ] 2313 Mawile (Double Eater) — zero descartes permitidos; ainda conta como ataque.
+- [ ] 2312 Dewgong (Wash Out); Legacy Energy — Energia {W} não-Básica pode ser movida.
+- [ ] 2311 Decidueye ex (Sniper's Eye); Dartrix (Feather Shot); Relicanth (Memory Dive) — custos incolores são removidos.
+- [ ] 2310 Turtonator (Shell Spikes); Mist Energy — Habilidade não é bloqueada por Mist Energy; o descarte ainda acontece.
+- [ ] 2309 Mega Clefable ex (Luminous Wing); Iron Thorns ex (Initialization) — Luminous Wing prevalece.
+- [ ] 2308 Gengar (Infinite Shadow); Gastly; Haunter — cartas subjacentes também vão para a mão.
+- [ ] 2307 Gengar (Infinite Shadow) — ir para a mão conta como nocaute; prêmio é pego.
+- [x] 2306 Vivillon (Grand Wing) — não pode usar se o oponente não tem cartas na mão. Já correto + teste.
+- [ ] 2305 Area Zero Underdepths; Gravity Mountain — efeitos de Estádio resolvem antes das checagens de KO.
+- [ ] 887 Win States — dano de Veneno após o nocaute do seu ataque não importa; vence quem pegou o último prêmio antes do fim do turno.
+- [ ] 882 Magneton (Selfdestruct) — Ativo substituto decide; senão Desempate.
+- [ ] 640 Palkia & Dialga LEGEND (Time Control); Desempate — adicionar prêmios ao oponente pode vencer.
+- [ ] 632 Drifblim (Take Away) — sem Banco é derrota; ambos sem Banco → Desempate.
+- [ ] 626 Nihilego GX (Symbiont GX); Desempate — adicionar prêmios pode vencer.
+- [ ] 879 Naganadel GX (Stinger GX) — ambos vencem ao mesmo tempo → Desempate.
+- [ ] 1929 Squawkabilly ex (Squawk and Seize) — usável no primeiro turno em Desempate.
+- [ ] 884 Electrode (Mass Destruction) — Desempate se ambos têm condições; vence se o oponente não tem Banco.
+- [ ] 1832 Lumineon V (Aqua Return) — condições simultâneas vão a Desempate; o oponente sem Banco perde.
+- [ ] 245 Cofagrigus (Six Feet Under) — quem tiver mais condições vence; empate → Desempate.
+
+### Fevereiro 2026 (IDs 2302–2304, 2219, 2301)
+- [ ] 2304 Regirock ex (Regi Charge) — não é obrigado a anexar.
+- [ ] 2303 Flareon ex (Burning Charge) — deve embaralhar mesmo se não anexar nada.
+- [ ] 347 Cramorant V (Beak Catch) — deve pegar ao menos uma carta, se possível.
+- [ ] 2219 Mega Lucario (Aura Jab) — "até" permite zero.
+- [ ] 2302 Garganacl (Blessed Salt); Froslass (Freezing Shroud) — jogador do próximo turno ordena os efeitos.
+- [ ] 2301 Ataques em geral; Meta-regras — resumo: "até" e regras de busca (busca pode falhar parcial ou totalmente).
+
+### Janeiro 2026 (IDs 2284–2294)
+- [ ] 2294 Battle Cage; N's Vanilluxe (Snow Coating) — dobrar exige colocação; bloqueado em Pokémon do oponente no Banco.
+- [ ] 2293 N's Vanilluxe (Snow Coating) — soma o mesmo número aos contadores existentes (2 vira 4 no total).
+- [ ] 2292 Rotom (Roto Call) — qualquer Pokémon com nome Rotom pode ser escolhido.
+- [ ] 2291 Entei (Flare Fall); Prism Energy — Prism Energy conta (se anexada a Básico).
+- [ ] 2290 Counter Gain; Mega Charizard Y ex (Explosion Y) — pode atacar descartando só duas energias.
+- [ ] 2289 Battle Cage; N's Vanilluxe (Blizzard) — dano não é efeito; Pokémon do Banco ainda recebe dano.
+- [ ] 2288 Meganium (Wild Growth); Teal Mask Ogerpon (Myriad Leaf Shower); Nighttime Mine — Wild Growth conta como 4 energias, cumprindo o custo.
+- [ ] 2287 N's Zekrom (Shred); Mega Hawlucha ex (Tenacious Body) — Tenacious Body cura após o dano, então não nocauteia.
+- [ ] 2286 Battle Cage; Team Rocket's Dugtrio (Holes) — Pokémon do Banco não recebem contadores.
+- [ ] 2285 Team Rocket's Dugtrio (Holes) — empilha: 4 contadores com duas cópias.
+- [ ] 2284 Canari; Heliolisk (Frilled Generator) — cada Heliolisk pode usar sua Habilidade.
+
+### Dezembro 2025 (IDs 2265, 2264, 2092, 2090, 2091, 2089)
+- [ ] 2265 Mega Lopunny ex (Gale Thrust) — turno começa na compra; mover no turno do oponente não conta.
+- [ ] 2264 Battle Cage; Dusknoir (Cursed Blast) — Dusknoir ainda é nocauteado mesmo com contadores bloqueados.
+- [ ] 2092 Thorton; Koraidon — Thorton carrega efeitos, então sem bônus.
+- [ ] 2091 Lumineon V; Handheld Fan — Aqua Return embaralha antes do efeito do Handheld Fan.
+- [ ] 2090 Pecharunt — promoção ocorre após o Checkup; Toxic Subjugation não se aplica.
+- [ ] 2089 Dusknoir; Togekiss — Wonder Kiss ainda vira antes das checagens de KO.
+
+### Novembro 2025 (IDs 2233–2263, 2240–2258, 2209–2212, 2219)
+- [ ] 2263 Dawn — qualquer busca pode falhar parcial ou totalmente.
+- [ ] 2262 Mega Gengar ex (Shadowy Concealment) — ainda reduz prêmios após o nocaute.
+- [ ] 2261 Battle Cage; Gardevoir ex (Psychic Embrace) — bloqueia só a colocação de dano do Banco do oponente.
+- [ ] 2260 Sacred Charm; Team Rocket's Watchtower — Pokémon Incolor não têm Habilidade, sem redução.
+- [ ] 2259 Jacq — Mega Absol ex é Básico; não pode ser buscado como Mega.
+- [ ] 2258 Grimsley's Move — qualquer Pokémon de estágio {D} pode ir ao Banco direto.
+- [ ] 2257 Munkidori; Battle Cage — dano movido a Pokémon do Banco do oponente é removido e some.
+- [ ] 2256 Pawmot — pode causar 60 a si mesmo para Paralisar, mesmo que isso o nocauteie.
+- [ ] 2255 Paldean Tauros; Tauros — qualquer Tauros danificado dá +40 ao Raging Charge.
+- [ ] 2254 Munkidori; Vileplume — mover contadores não é cura; sem bônus de Lively Flower.
+- [ ] 2253 Mega Heracross ex — contadores colocados antes não somam ao Juggernaut Horn.
+- [ ] 2252 Ceruledge — precisa de 4 descartes de {R} Básicas; senão o ataque não faz nada.
+- [ ] 2250 Gloom; Teal Mask Ogerpon ex — Pokémon Tera no Banco não recebe dano, nem do próprio ataque.
+- [ ] 2249 Suicune; Prism Energy — Prism Energy conta para o +90 do Crystal Fall.
+- [ ] 2248 Lokix; Mismagius ex — Pokémon recém-enviado não fica Confuso.
+- [ ] 2247 Mismagius ex — Swirling Prose não confunde novo Ativo no seu turno.
+- [ ] 2246 Toxtricity — pode nocautear o próprio Pokémon do Banco com 20 ou menos; oponente pega prêmios.
+- [ ] 2245 Mega Gengar ex; Krookodile — KO conta para Vengeful Fang mesmo sem prêmio.
+- [ ] 2244 Legacy Energy; Mega Gengar ex — prêmios: 1 por Mega ex, 0 por outro ex ou não-ex; Legacy Energy é consumida.
+- [ ] 2243 Flygon; Stoutland — Sandy Flapping pode ser usado ao entrar e de novo ao nocautear.
+- [ ] 2242 Rotom ex; Fan Rotom — Multi Adapter vale para qualquer Pokémon com nome Rotom.
+- [ ] 2241 Ludicolo; Mega Heracross ex — Excited Heal funciona com Mega ex não evoluído.
+- [ ] 2240 Dusknoir — se ambos têm 1 prêmio e só um pode enviar, esse vence; senão Desempate/incompleto.
+- [ ] 2239 Dusknoir — jogador do próximo turno pega prêmios primeiro; depois promoções na mesma ordem.
+- [ ] 2237 Teal Mask Ogerpon ex; Meganium — energia de Wild Growth conta; resultado +180.
+- [ ] 2236 Meganium; Venusaur — Habilidades se substituem; cada Básico de Grama dá 2 Grama.
+- [ ] 2235 Mega Evolution ex vs. XY Mega Evolution-EX — cartas diferentes; texto XY só se refere a Estágio MEGA.
+- [ ] 2234 Wally's Compassion — pode curar Mega ex sem energia.
+- [ ] 2233 Risky Ruins; Nest Ball — Básicos não-{D} colocados no Banco recebem 2 contadores.
+- [ ] 2232 Mystery Garden — não pode usar só para descartar energia sem comprar.
+- [ ] 2231 Mystery Garden — precisa de ao menos 1 carta para comprar.
+- [ ] 2230 Iron Defender — empilha; cada Pokémon {M} recebe 30 a menos de dano.
+- [ ] 2229 Forest of Vitality — Bulbasaur evolui para Venusaur em um turno se não for o primeiro turno.
+- [ ] 2228 Acerola's Mischief — proteção persiste após ir ao Banco.
+- [ ] 2227 Ninetales — deve usar o Apoiador revelado se puder.
+- [ ] 2226 Ninetales — pode usar o efeito de um Apoiador mesmo sem poder jogar Apoiadores.
+- [ ] 2225 Ninetales — pode usar efeito de Apoiador descartado após jogar um.
+- [ ] 2224 Hypno; Mega Manectric ex — bônus do Riotous Blasting é opcional e funciona com 0 Energia.
+- [ ] 2223 Pachirisu — Retirada limpa Electrified Incisors; novo Ativo não é afetado.
+- [ ] 2222 Inteleon; Mist Energy — Bring Down escolhe o Pokémon Mist, mas não pode nocautear.
+- [ ] 2221 Inteleon — Bring Down anunciado deve ser usado; alvos inválidos devem ser corrigidos.
+- [ ] 2220 Inteleon — Bring Down pode nocautear o próprio Pokémon; oponente pega prêmios.
+- [ ] 2218 Spiritomb — Spiteful Swirl empilha.
+- [ ] 2217 Spiritomb — Spiteful Swirl funciona a partir do Banco.
+- [ ] 2216 Mega Venusaur — Solar Transfer move só Energia {G} Básica.
+- [ ] 2215 Garganacl — Powerful a-Salt empilha.
+- [ ] 2214 Pyroar; Shred — Intimidating Fang reduz dano de Shred.
+- [ ] 2213 Pyroar — Intimidating Fang reduz dano também a Pokémon do Banco.
+- [ ] 2212 Cinderace — jogador escolhe colocar Ativo ou fazer mulligan.
+- [ ] 2209 Gumshoos — trocas de Evidence Gathering simultâneas; não pode espiar antes.
+- [ ] 2205 N's Plan — pode mover parte de uma carta com várias energias.
+- [ ] 2204 Hilda — pode buscar Energia Especial.
+- [ ] 2203 Throh; Air Balloon — custo de Retirada vira {C}; Shoulder Throw reduz 30.
+- [ ] 2200 Terrakion; Legacy Energy — Pokémon nocauteado por Legacy ainda conta para Retaliate.
+- [ ] 2199 Stoutland — Odor Sleuth deve pegar ao menos uma carta, se possível.
+- [ ] 2198 Maractus (Fennel) — sem dano removido não há cura para Lively Needles.
+- [ ] 2197 Roggenrola — Fraqueza/Resistência aplicam antes da checagem de Harden.
+- [ ] 2196 Roggenrola — Harden termina quando sai do Ativo.
+- [ ] 2195 Keldeo ex — bônus de Gale Thrust não vale após troca no turno do oponente.
+- [ ] 2194 Ducklett; Prism Energy — pode descartar Prism Energy de Básicos; não é {R} em não-Básicos.
+- [ ] 2192 Cofagrigus; Protective Cover — dano movido para Pokémon protegido some; movido de um protegido permanece.
+- [ ] 2191 Meloetta ex — bônus do Echoed Voice não empilha (30, 110, 110).
+- [ ] 2190 Landorus — Pokémon Tera no seu Banco são protegidos do próprio Earthquake.
+- [ ] 2189 Litwick — carta não descartada volta ao topo do deck.
+- [ ] 2188 Durant — Bite Together ganha no máximo +20.
+- [ ] 2187 Samurott — Torrential Whirlpool pode ser usado por cada Samurott.
+- [ ] 2186 Serperior ex — Regal Cheer empilha.
+- [ ] 2185 Klingklang; Ignition Energy — dá 3 {*} a Pokémon "evolves from" colocado direto em jogo.
+- [ ] 2182 Eelektrik — versão BW não é legal; texto diferente da Energia Básica.
+- [ ] 2181 Meloetta ex — Debut Performance permite atacar no primeiro turno.
+- [ ] 2180 Conkeldurr; Prism Energy — Craftsmanship não vale para Pokémon não-Básicos.
+- [ ] 2179 Conkeldurr; Luminous Energy — Craftsmanship dá +40 HP.
+- [ ] 2178 Archeops — não pode regredir um Pokémon colocado direto em jogo sem estágio inferior.
+- [ ] 906 Meta-regras — carta sem alvo válido não faz nada, mas os custos ainda são pagos.
+- [ ] 2176 Sacred Ash — errata: embaralha até 5 Pokémon.
+- [ ] 2175 Leftovers — errata: cura 20 (não 10).
+- [ ] 2174 Superior Energy Retrieval — errata: até 4 Energias Básicas.
+- [ ] 2173 Super Rod — errata: até 3 cartas.
+- [ ] 2172 Larvitar; Koffing — efeito de ataque resolve antes da busca de Smog Signals.
+- [ ] 2171 Weezing — Smog Signals é obrigatório, a menos que o Banco esteja cheio.
+- [ ] 2170 Okidogi; Luminous Energy — Good Punch ganha +100 HP de Adrena-Power.
+- [ ] 2168 Team Rocket's Giovanni — você faz todas as escolhas de troca.
+- [ ] 2167 Team Rocket's Bother-Bot — jogável, a menos que o oponente não tenha prêmios nem cartas na mão.
+- [ ] 2166 Team Rocket Nidoking ex — Tainted Horn só afeta Envenenados.
+- [ ] 2165 Zamazenta — 200 de dano ao usuário de Strong Bash = 20 contadores.
+- [ ] 2164 Gyarados — Splashing Panic faz o máximo com deck pequeno.
+- [ ] 2163 Blipbug — oponente não vê o prêmio; volta à mesma posição.
+- [ ] 2161 Arboliva ex; Granite Cave — dano de Oil Salvo calculado após todas as escolhas.
+- [ ] 2160 Oil Salvo; Flower Curtain — todo dano antes dos KOs; Shaymin ainda protege o Banco.
+- [ ] 2159 Blaziken — descarte de Inferno Kick Flurry é obrigatório.
+- [ ] 2158 Hydrapple — sem descarte se não puder descartar todas as seis.
+- [ ] 2157 Persian ex — custo de Haughty Order, não o custo do ataque escolhido.
+- [ ] 2156 Moltres ex — Evil Incineration descarta, então sem prêmios.
+- [ ] 2155 Primeape; So Submerged — sem dano se So Submerged bloqueia a troca.
+- [ ] 2154 Giovanni; Cetitan ex — bloqueado se Cetitan for escolhido; senão troca.
+- [ ] 2153 Koffing — Smog Signals busca antes do KO ser checado.
+- [ ] 2152 Orbeetle — Rocket Brain pode nocautear seu próprio Pokémon, mas move um contador por vez.
+- [ ] 2151 Orbeetle — dano deve vir de Pokémon da Team Rocket, mas pode ir para qualquer um seu.
+- [ ] 2150 Wobuffet; Repelling Veil — igual ao ruling de Protective Cover.
+- [ ] 2149 Porygon-Z — descarte de Reconstitute é custo; não pode usar com deck vazio.
+- [ ] 2148 Rapidash — cada Hurried Gait pode ser usado uma vez.
+- [ ] 2147 Arven's Greedent; Potent Glare — Watchtower não afeta {N}, então Greedent não pode ser jogado.
+- [ ] 2146 Ampharos; Golbat — dono de Golbat escolhe a ordem de Habilidades simultâneas.
+- [ ] 2145 Ampharos — dois usos de Darkest Impulse podem ocorrer quando dois Pokémon evoluem.
+- [ ] 2139 Ethan's Quilava — pré-lançamento usa regras Limitadas; mais de 4 cópias permitidas.
+
+### Abril–agosto 2025 (IDs 2135–2135, 2132–2131, 2130, 2129, 2127, 2126, 2125, 2124, 2123, 2122, 2121, 2120, 2119, 2118, 2117, 2116, 2115, 2114, 2113, 2112, 2111, 2110, 2109, 2108, 2107, 2106, 2104, 2095, 2094, 2093, 2092…)
+- [ ] 2135 Amarys; Togekiss — jogador escolhe a ordem dos efeitos de fim de turno.
+- [ ] 2132 Professor Turo's Scenario; Area Zero Underdepths — banco reduzido a 5 antes da promoção.
+- [ ] 2131 Area Zero Underdepths — mesma coisa: redução do banco primeiro.
+- [ ] 2130 Slowking; Terrakion — Seek Inspiration no turno anterior não bloqueia Cavern Tackle.
+- [ ] 2129 Professor Turo's Scenario; Milotic — cartas anexadas permanecem se Mentally Calm bloqueia o retorno à mão.
+- [ ] 2127 Custo de Retirada — pode descartar até o custo total, não mais.
+- [ ] 2126 Alakazam ex; Handheld Fan — atacante no Banco ainda conta; Handheld Fan move a Energia.
+- [ ] 2125 Darmanitan; Boomerang Energy — Boomerang Energy reanexa após a checagem do Handheld Fan.
+- [ ] 2124 Klefki; Handheld Fan — Fan é descartado antes do dano, então não move energia.
+- [ ] 2123 Protective Goggles; Fairy Zone — Goggles removem Fraqueza.
+- [ ] 2122 Bravery Charm; Noctowl — KO ocorre antes de Jewel Seeker.
+- [ ] 2121 Spiky Energy — múltiplas cópias empilham.
+- [ ] 2120 Ruffian — Tool e Energia Especial devem vir do mesmo Pokémon.
+- [ ] 2119 Iono's Voltorb; Luminous Energy — Voltaic Chain +20 conta Luminous Energy.
+- [ ] 2118 Volcanion ex — sem Banco, nada é movido ou descartado; dano ainda acontece.
+- [ ] 2117 Darmanitan — Flamebody Cannon descarta toda Energia mesmo sem Banco.
+- [ ] 2116 Bombirdier — Drop Shot descarta Energia mesmo sem dano.
+- [ ] 2115 Zoroark ex — Trade não pode ser usado com deck vazio.
+- [ ] 2114 Zoroark ex; Zoroark-GX — redações diferentes de Trade são intencionais.
+- [ ] 2113 Grimmsnarl; Toedscruel — reduzir custo de Retirada antes de calcular o dano.
+- [ ] 2112 Magmortar — Magma Surge soma com Queimadura (2+3+3 com dois Magmortar).
+- [ ] 2111 Ribombee — pode escolher zero Pokémon para colocar no Banco.
+- [ ] 2110 Ribombee — oponente pode evoluir esses Pokémon no próximo turno dele.
+- [ ] 2109 Ribombee — não pode usar se o Banco do oponente estiver cheio.
+- [ ] 2108 Kilowattrel — Flashing Draw falha com deck vazio ou 6+ cartas na mão.
+- [ ] 2107 Clefairy ex — Fairy Zone pode dar Fraqueza a Pokémon {N} sem uma.
+- [ ] 2106 Comfey; Maractus — Comfey vai para a mão primeiro, então Exploding Needles não tem alvo.
+- [ ] 2104 Dubwool — quem usa a Habilidade escolhe o Pokémon do Banco.
+- [ ] 2095 Sylveon; Cornerstone Mask Ogerpon — Safeguard não impede Demolish.
+- [ ] 2094 Mew ex; Angelite — efeito copiado não restringe Genome Hacking.
+- [ ] 2093 Dipplin; Flutter Mane — Festival Lead volta a funcionar após Flutter Mane ser nocauteado.
+
+### Dezembro 2024 – Novembro 2024 (IDs 2082–2092, 2068–2087)
+- [ ] 2088 Lucky Egg — Lucky Egg mais nova é jogada como escrita.
+- [ ] 2087 Koraidon — ataque falho por Confusão não conta como ataque.
+- [ ] 2085 Ceruledge; Temple of Sinnoh — Energia Especial desligada ainda pode ser descartada.
+- [ ] 2084 Dusknoir; Dusclops; Togekiss — Wonder Kiss vale se o usuário de Cursed Blast estiver Ativo.
+- [ ] 2083 Togekiss — Wonder Kiss vira só uma vez.
+- [ ] 2082 Gravity Gemstone; Latias ex; Archuladon — custo de Retirada zerado não pode ser aumentado.
+- [ ] 2068 Tyme — deve dizer o nome completo, p.ex. "Ceruledge ex".
+- [ ] 2067 Surfer — exige Pokémon do Banco para trocar.
+- [ ] 2066 Surfer — funciona com deck vazio.
+- [ ] 2065 Megaton Blower — pode descartar o Estádio mesmo sem Ferramentas ou Energias Especiais.
+- [ ] 2064 Megaton Blower — não joga sem alvo válido; senão faz o máximo.
+- [ ] 2063 Energy Search Pro — uma carta por tipo de Energia.
+- [ ] 2062 Brilliant Blender — deve descartar ao menos uma carta.
+- [ ] 2061 Amulet of Hope — deve pegar ao menos uma carta, se possível.
+- [ ] 2060 Koraidon — Unrelenting Onslaught conta o ataque de outro Pokémon Ancient.
+- [ ] 2059 Terapagos — Prism Charge não pode anexar a si mesmo.
+- [ ] 2058 Stunfisk — um flip de moeda cobre os dois efeitos.
+- [ ] 2057 Oranguru — dá Fraqueza Incolor se não houver nenhuma impressa.
+- [ ] 2056 Oranguru — só Fraqueza Incolor, não todos os tipos.
+- [ ] 2055 Walrein — Frigid Fangs vale para todos os Pokémon do oponente.
+- [ ] 2054 Vivillon — Evo-Powder pode evoluir Pokémon colocados em jogo neste turno.
+- [ ] 2053 Wo-Chien — vencer com Prêmio termina o jogo antes da derrota por deck vazio.
+- [ ] 2052 Braviary — Drag Off não causa dano sem troca.
+- [ ] 2051 Rotom — Crushing Pulse deve descartar todas as cartas correspondentes.
+
+### Novembro 2024 (IDs 2038–2050, 1979–2050)
+- [ ] 2047 Gouging Fire (Blazing Charge) — com 4 prêmios por jogador, dano 170.
+- [ ] 2046 Tatsugiri ex; Paldean Tauros (Spirited Tackle) — Estágio 1 colocado por Cinnabar Lure conta como Pokémon Evolução: 180.
+- [ ] 2044 Tatsugiri ex; Skeledirge; Victini (Victory Cheer) — Skeledirge colocado por Cinnabar Lure ainda recebe +10.
+- [ ] 2045 Tatsugiri ex (Cinnabar Lure) — Estágio 1 ou 2 podem ir ao Banco se houver espaço.
+- [ ] 2043 Togekiss (Wonder Kiss) — KO pode ocorrer em qualquer turno ou no Checkup; não precisa vir de ataque; só o Ativo do oponente é checado.
+- [ ] 2042 Quaquaval (Up-Tempo) — não pode usar sem poder comprar carta.
+- [ ] 2041 Roaring Moon ex; Pikachu ex; Lively Stadium (Calamity Storm, Resolute Heart) — com 220 dano, Resolute Heart não ativa e Pikachu ex cai; com 230 ativa e Pikachu fica com 10 HP.
+- [ ] 2040 Tatsugiri ex; Kecleon (Surprise Pump, Expert Hider) — Surprise Pump faz 100, pois a redução de Expert Hider é efeito ignorado pelo ataque.
+- [ ] 2072 Venusaur & Snivy-GX (Shining Vine) — errata: Habilidade passa a ser "sempre que".
+- [ ] 2071 Minior (Far-Flying Meteor) — errata: idem.
+- [ ] 2039 Area Zero Underdepths; Sky Field — troca de Estádio é simultânea.
+- [ ] 2038 Antique Dome/Helix Fossil; Shuppet (Enveloping Shadow) — fósseis não podem ser jogados como Pokémon da mão.
+- [ ] 2037 Grand Tree; Charizard ex (Infernal Reign) — Infernal Reign não usa se Charizard ex não foi jogado da mão para evoluir.
+- [ ] 2036 Pumpkaboo (Reckless Charge); Iron Valiant ex (Tachyon Bits) — todos os efeitos resolvem antes do vencedor ser definido.
+- [ ] 2034 Roaring Moon ex; Neutralization Zone (Calamity Storm) — dano é calculado e depois prevenido pelo Estádio, antes do descarte do Estádio.
+- [ ] 2033 Haxorus; Mist Energy; Temple of Sinnoh (Bring Down the Axe) — Mist Energy ainda conta como Energia Especial; o KO acontece.
+- [ ] 2032 Kyurem (Trifrost, Plasma Bane); Pokémon League HQ — Plasma Bane define custo como um; Estádio não adiciona energia.
+- [ ] 2031 Ogerpon ex; Double Turbo Energy; Sparkling Crystal (Torrential Pump) — dano ao Banco ainda é dado quando só parte da energia pode voltar; 80 Ativo e 100 Banco.
+- [ ] 2030 Grand Tree — não pode buscar sem caminho de evolução válido.
+- [ ] 2029 Grand Tree (Scyther → Scizor) — Estágio 1 sem Estágio 2 conhecido pode ser buscado.
+- [ ] 2028 Deluxe Bomb — oponente ainda pega prêmio, pois efeitos resolvem antes do fim do jogo.
+- [ ] 2027 Crispin — se só uma Energia Básica for achada, vai para a mão.
+- [ ] 2026 Area Zero Underdepths (Pokémon-ex Tera) — KOs primeiro (com prêmios), depois descarte de um Banco, depois novo Ativo.
+- [ ] 2025 Grimmsnarl (Goad 'n' Grab); Mist Energy — sem dano, pois não há novo Ativo.
+- [ ] 2024 Falinks (Form Ranks); Area Zero Underdepths — só um espaço do Banco preenchido, pois não havia Tera em jogo.
+- [ ] 2017 Falinks (Form Ranks, All-Out Attack) — All-Out Attack faz 120, pois checa estado do jogo.
+- [ ] 2021 Drifblim (Everyone Explode Now) — só o estágio mais evoluído conta.
+- [ ] 2020 Alcremie; Luminous Energy (Colorful Confection) — Luminous Energy não é Energia Básica para a busca.
+- [ ] 2019 Alcremie (Colorful Confection) — pode buscar vários tipos correspondentes, inclusive repetidos.
+- [ ] 2018 Eldegoss (Breezy Gift) — usável com deck vazio, pois Pokémon e cartas anexadas embaralham antes.
+- [ ] 2016 Dachsbun ex; Fidough (Time to Chow Down) — o Dachsbun ex evoluído também é curado.
+- [ ] 2015 Dachsbun ex (Time to Chow Down) — usado uma vez; todos os Pokémon Evolução são curados e cada um descarta Energia.
+- [ ] 2014 Cradily (Selective Slime) — não usa se o Ativo do oponente já tem as três condições, exceto condições "reforçadas" como Veneno.
+- [ ] 2013 Hydrapple ex (Ripening Charge); Teal Dance — Habilidades não combinam; sem compra.
+- [ ] 2012 Tauros (Destructive Horn); Orthworm ex (Pummeling Payback) — sem dano se não há {M} anexada quando Pummeling Payback dispara.
+- [ ] 2011 Crabominable (Food Prep); Technical Machine: Crisis Punch — sim, custos reduzidos por cada Kofu no descarte.
+- [ ] 2010 Diancie (Diffuse Reflection); Reversal Energy — dano conta cartas de Energia Especial, não a energia que fornece: Reversal Energy dá +40, não +120.
+- [ ] 2009 Reversal Energy — quando o efeito não dispara, fornece uma Energia {C}.
+- [ ] 2008 Ting-Lu (Ground Crasher); Cleffa; Bravery Charm; Jamming Tower — dano, depois descarte do Estádio, depois checagem de KO; Cleffa sobrevive com 80 HP.
+- [ ] 2007 Palafin (Zero to Hero); Flutter Mane (Midnight Fluttering) — Zero to Hero não é bloqueado, pois Palafin foi para o Banco.
+- [ ] 2006 Technical Machines; Jamming Tower — o texto de descarte da TM é efeito, então a TM não é descartada no fim do turno.
+- [ ] 2005 Regidrago VSTAR (Legacy Star) — deve descartar 7 cartas se puder.
+- [ ] 2004 Regidrago VSTAR (Legacy Star) — se restarem menos de 7, descarta todas.
+- [ ] 2003 Regidrago VSTAR (Legacy Star) — não usa com deck vazio.
+- [ ] 1979 Sinistcha ex (Re-Brew) — sem embaralhar se nenhum contador for colocado.
+- [ ] 2002 Greninja ex; Double Turbo Energy (Mirage Barrage) — dano 100: escolhe o descarte primeiro, reduz o dano, depois descarta.
+- [ ] 2001 Cleffa (Grasping Draw); Pokémon League HQ — ataques de custo zero precisam de 1 Energia com o Estádio, salvo efeito que zere o custo.
+- [ ] 2000 Kyurem (Plasma Bane); cartas Colress — Colress's Experiment, Colress's Tenacity e a carta Colress contam.
+- [ ] 1999 Rabsca (Revival Blessing); Charizard ex (Infernal Reign) — Infernal Reign não usa, pois Charizard ex não foi jogado da mão.
+- [ ] 1998 Rare Candy; Charizard ex (Infernal Reign) — Infernal Reign pode ser usado, pois Charizard ex ainda está sendo jogado da mão.
+- [ ] 1995 Munkidori (Adrena-Brain); Abomasnow (Freezing Disaster) — mover contadores não é cura; permitido.
+- [ ] 1992 Iron Hands ex; Heavy Baton; Quaquaval ex (Exciting Dance) — Heavy Baton ainda funciona: dano e KO ocorreram com ele Ativo.
+- [ ] 1991 Iron Leaves ex (Rapid Vernier); Klefki (Mischievous Lock) — Rapid Vernier é bloqueado, pois o Pokémon já está no Banco quando dispara.
+- [ ] 1990 Radiant Jirachi (Entrusted Wishes); Quaquaval ex — Entrusted Wishes ainda funciona, pelo mesmo motivo de Heavy Baton.
+- [ ] 1989 Ogerpon ex (montagem de deck) — versões de nomes diferentes de Teal Mask Ogerpon ex podem entrar no deck.
+- [ ] 1988 Ogre's Mask; Teal Mask Ogerpon ex — trocar por outro Teal Mask Ogerpon ex do descarte é permitido.
+- [ ] 1987 Carmine — pode ser jogada em qualquer turno.
+- [ ] 1986 Accompanying Flute — escolher zero Básicos é permitido.
+- [ ] 1985 Accompanying Flute — não pode ser jogada se o Banco do oponente estiver cheio.
+- [ ] 1984 Walking Wake (Undulating Slice) — pode colocar até 9 contadores, mesmo se isso nocautear a si mesmo.
+- [ ] 1983 Illumise (Slowing Perfume) — restrito à única vez permitida: o primeiro turno de quem joga em segundo.
+- [ ] 1982 Pinsir (Slow Crunch) — o KO ocorre mesmo se o atacante recuar ou for nocauteado depois.
+- [ ] 1981 Pinsir (Slow Crunch) — se o defensor recuar ou evoluir, o efeito acaba e não há KO.
+- [ ] 1980 Greninja ex (Shinobi Blade) — busca é opcional, mas, se feita, uma carta deve ser pega.
+- [ ] 1978 Volbeat (Quick Sign) — pode ser usado em qualquer turno.
+- [ ] 1977 Palafin (Zero to Hero) — só Palafin volta ao deck; Finizen fica em jogo sob Palafin ex.
+- [ ] 1976 Drakloak (Recon Directive) — com uma carta restante, ela vai para a mão.
+- [ ] 1975 Palafin ex (Hero's Spirit) — só entra em jogo via Zero to Hero, exceto efeitos que removem Habilidades da mão.
+- [ ] 1974 Goldeen (Festival Lead); Whirlpool; Technical Machine — Festival Lead não vale para ataques de TM.
+- [ ] 1973 Festival Lead; Technical Machine — não pode atacar duas vezes com a TM.
+- [ ] 1972 Thwackey (Boom Boom Groove); Festival Lead — cada Thwackey usa sua Habilidade uma vez, então vários podem usar no turno.
+- [ ] 1971 Ariados (Big Net); Rescue Board — custo de Retirada zero do Rescue Board não pode ser aumentado pelo Big Net.
+- [ ] 1970 Ariados (Big Net; String Bind) — o aumento de Retirada do Big Net aumenta o dano de String Bind.
+- [ ] 1969 Fezandipiti (Adrena-Pheromone); Legacy Energy — Legacy Energy fornece todos os tipos, então ataque e proteção funcionam.
+
+### Abril–julho 2024 e anteriores (IDs 1967–1975…)
+- [ ] 1967 Forest Seal Stone (Star Alchemy); Garbodor (Garbotoxin) — Star Alchemy funciona, pois é Habilidade que o Pokémon pode acessar.
+- [ ] 1966 Cursed Shovel; Bibarel (Reassuring Dam) — Cursed Shovel não é bloqueado, pois é Ferramenta.
+- [ ] 1965 Salvatore — só cartas legais no formato atual podem ser buscadas.
+- [ ] 1964 Master Ball — Master Ball ACE SPEC antiga pode ser usada; outras antigas não-ACE não.
+- [ ] 1963 Boxed Order — o turno acaba mesmo se nenhum Item for achado.
+- [ ] 1962 Reuniclus (Summoning Gate) — não pode exceder o tamanho do Banco; com Banco cheio, o ataque não faz nada.
+- [ ] 1959 Reuniclus (Summoning Gate) — Pokémon não-Básicos podem ir direto ao Banco.
+- [ ] 1958 Iron Boulder ex (Repulsor Axe); Mist Energy — Mist Energy bloqueia os 8 contadores, pois são efeito de ataque.
+- [ ] 1957 Ribombee (Plentiful Pollen) — os Prêmios extras são perdidos se o defensor trocar ou evoluir.
+- [ ] 1956 Mawile (Invite and Strike) — sem dano se não houver troca; dano só vai ao novo Ativo.
+- [ ] 1955 Sableye (Damage Collection) — qualquer número de Pokémon do Banco pode ser escolhido; todo dano vai ao Ativo do oponente.
+- [ ] 1954 Shiftry (Expelling Tornado); Rabsca (Spherical Shield) — Pokémon do Banco não escolhidos continuam protegidos e não voltam ao deck.
+- [ ] 1953 Feraligatr (Torrential Heart); Prime Catcher; Flutter Mane — o boost vale até o fim do turno, mesmo após a Habilidade ser desativada.
+- [ ] 1952 Iron Leaves ex (Rapid Vernier); Flutter Mane — todas as ações do Rapid Vernier podem ser completadas, pois começa no Banco.
+- [ ] 1951 Baxcalibur (Super Cold); Gengar ex (Gnawing Curse) — sim, 2 contadores por Energia anexada.
+- [ ] 1950 Metang (Metal Maker); Gengar ex (Gnawing Curse) — sem contadores extras, pois Metal Maker não anexa energia da mão.
+- [ ] 1949 Pidove (Emergency Evolution) — usável no primeiro turno ou no turno em que foi jogado, se HP ≤ 30.
+- [ ] 1947 Hypno (Pendulum Influence); Ampharos ex (Thunderstrike Tail) — dano extra é opcional; uma Energia é descartada mesmo se só houver uma.
+- [ ] 1946 Moonlit Hill — não pode descartar Energia Psíquica Básica para cura sem contadores de dano.
+- [ ] 1945 Shining Jirachi (Stellar Reign); Pokémon Research Lab — Estágio 1 permanece em jogo, pois não se pode regredir para nada.
+- [ ] 1944 Hisuian Zoroark (Doom Curse); Great Tusk ex (Quaking Demolition) — Quaking Demolition ainda dispara, pois efeitos de fim de turno resolvem antes das checagens de KO.
+- [ ] 1943 Mime Jr. (Mimed Games) — não pode copiar um ataque VSTAR se o oponente já usou o poder VSTAR.
+- [ ] 1942 Mime Jr. (Mimed Games); Pincurchin (Follow-Up Kerzap) — Follow-Up Kerzap não pode ser copiado se a condição não foi cumprida.
+- [ ] 1941 Mime Jr. (Mimed Games); Sableye (Lost Mine) — Lost Mine não pode ser copiado sem cartas suficientes na Zona Perdida.
+- [ ] 1940 Mime Jr. (Mimed Games) — não pode escolher a si mesmo; se só Mime Jr. estiver em jogo, o ataque não faz nada.
+- [ ] 1739 Cartas de lançamento (legalidade) — cartas de expansão novas só são legais quando a expansão for legal; reimpressões mais novas de cartas legais podem ser usadas.
+- [ ] 1939 Boost Shake; Togekiss (Precious Gift) — Precious Gift ainda funciona, pois acontece no fim do turno.
+- [ ] 1938 Veluza (Fillet Memento); Splash Energy — mover Splash Energy impede Veluza de voltar à mão.
+- [ ] 1937 Technical Machine: Evolution; Raichu BREAK — não pode buscar Raichu BREAK no Padrão, pois não é legal.
+- [ ] 1936 Medicham V (Yoga Loop) — Pokémon jogado no turno anterior pode evoluir no turno extra.
+- [ ] 1935 Psyduck (Overthink); Will — Overthink ainda força resultado de cara, mesmo com Will.
+- [ ] 1934 Wo-Chien (Binding Greed) — o efeito não passa para novo Ativo após KO.
+- [ ] 1933 Deoxys (Promo); Drapion V (Dynamic Tail); Wild Style — só uma redução de {C}, pois é um Pokémon.
+- [ ] 1932 Umbreon (Feint Attack); Charizard ex (Tera) — Feint Attack atravessa o traço Tera.
+- [ ] 1931 Tool Jammer; Technical Machines — TMs não são descartadas no fim do turno (o texto de descarte é efeito).
+- [ ] 1930 Mew ex (Genome Hacking) — pode copiar ataque VSTAR do oponente mesmo se ele usou, mas não um VSTAR Power se você já usou o seu.
+- [ ] 1928 Medicham V (Yoga Loop); Squawkabilly ex (Squawk and Seize) — Squawk and Seize não usa no turno extra, pois não é mais o primeiro turno.
+- [ ] 1927 Skater's Park; Toedscruel (Slime Mold Colony) — Energia Básica da Retirada do oponente vai para a mão, não descarte.
+- [ ] 1926 PokéStop; Toedscruel (Slime Mold Colony) — PokéStop funciona normalmente para o dono do Estádio; Itens descartados do oponente não voltam à mão.
+- [ ] 1925 Golurk V (Rewind Beam) — Estágio mais alto volta à mão antes da checagem de KO.
+- [ ] 1924 Spiritomb (Fettered in Misfortune); Honchkrow V (Boss Pockets); Gapejaw Bog; Ting-Lu ex — efeitos em ordem: Boss Pockets cancelado, Gapejaw Bog coloca contadores, depois Cursed Land cancela Fettered in Misfortune.
+- [ ] 1923 Pumpkaboo (Pumpkin Pit); Gapejaw Bog; Ting-Lu ex (Cursed Land) — jogador escolhe a ordem; Pumpkin Pit só funciona se o Estádio for descartado antes.
+- [ ] 1922 Snorlax Doll; TM Blindside — sim, pode usar o ataque.
+- [ ] 1921 Snorlax Doll; Luxurious Cape — sem carta de prêmio quando Snorlax Doll é nocauteado.
+- [ ] 1920 Snorlax Doll (Mulligan) — não pode ir ao Ativo nas compras do mulligan, mas pode ir ao Banco se houver espaço.
+- [ ] 1919 Erika's Invitation; Gapejaw Bog — sim, 2 contadores no Básico ao chegar ao Banco.
+- [ ] 1918 Cursed Duster — descarte aleatório da mão acontece antes de pegar prêmios.
+- [ ] 1917 Antique Old Amber; Aerodactyl ex — não pode evoluir a partir dele, pois a linha é definida pelo texto "evolves from".
+- [ ] 1916 Golurk V (Rewind Beam); Vengeful Punch — sem contadores em Golurk V, pois o Pokémon danificado regrediu e o estágio danificado foi nocauteado.
+- [ ] 1915 Tinkaton (Alloyed Hammer); Luminous Energy — Luminous Energy paga o custo e conta como todos os tipos: dano 180.
+- [ ] 1914 Cresselia (Moonglow Reverse); Jirachi (Stellar Veil) — Pokémon do Banco do oponente não recebe contadores, por Stellar Veil.
+- [ ] 1913 Magby (Scorching Heater); Espathra (Stance) — sem contadores em Espathra, pois Stance bloqueia efeitos de ataque.
+- [ ] 1912 Aegislash (Hard Bashing); Espathra (Stance) — dano passa, pois Hard Bashing ignora efeitos incluindo Stance.
+- [ ] 1911 Superior Energy Retrieval; Toedscruel (Slime Mold Colony) — duas cartas são descartadas, mas nenhuma Energia pode ser recuperada.
+- [ ] 1910 Klefki (Mischievous Lock); Iron Valiant ex (Tachyon Bits) — Tachyon Bits funciona após troca, pois Klefki não está mais em jogo.
+- [ ] 1909 Cramorant (Lost Provisions); TM Blindside — sim, o ataque de TM pode ser usado sem Energia com 4 cartas na Zona Perdida.
+- [ ] 1908 Squawkabilly ex (Grasnar e Aproveitar); errata PT-BR — texto da Habilidade atualizado para "primeiro turno" em versões em português.
+- [ ] 1907 Weavile (Caçada Ofensiva); errata PT-BR — texto atualizado para alvos Básicos do Banco apenas.
+- [ ] 1906 Snorlax Doll — só pode ser jogado durante a preparação.
+- [ ] 1905 Shauntal — pode ser jogado se algum jogador tiver Pokémon no Banco.
+- [ ] (s/ID) Professor Turo's Scenario — sim, as três cartas Pokémon vão para a mão a partir de evolução Estágio 2; cartas anexadas são descartadas.
+- [ ] 1904 Crobat (Echoing Madness) — escolhe uma classe de carta (Item ou Apoiador); não nomeia cartas específicas.
+- [ ] 1903 Crustle (Crag Bash) — Pokémon Estágio 1 ou 2 colocado em jogo sem evoluir ainda conta como Pokémon Evolução para a redução de 100.
+- [ ] 1902 Spinda (Tangled Feet) — Confusão virando cara coloca contadores; Tangled Feet não dispara.
+- [ ] 1901 Espathra (Stance) — proteção persiste ao ir ao Banco ou voltar, pois vem de Habilidade.
+- [ ] 1900 Maushold ex (Solidarity) — só o estágio mais evoluído de um Pokémon conta.
+- [ ] 1899 Froslass ex (Evanescent) — em cara, o oponente pega um prêmio a menos, independentemente de como ocorreu o KO.
+- [ ] 1898 Absol (Drawareness) — não pode descartar a não ser que fique com 4 cartas ou menos.
+- [ ] 1897 Absol (Drawareness) — com 4 ou menos cartas, pode comprar até 5 sem descartar.
+- [ ] 1896 Grabber — se há Pokémon na mão do oponente, deve colocar um no fundo do deck dele.
+- [ ] 1892 Erika's Invitation — se há Básico na mão do oponente, deve colocá-lo no Banco dele.
+- [ ] 1891 Erika's Invitation — não pode ser jogada se o Banco do oponente estiver cheio.
+- [ ] 1890 Daisy's Help — Prêmios devem voltar às posições originais.
+- [ ] 1889 Forest Seal Stone; Scizor (Punishing Scissors) — Pokémon V pode usar Star Alchemy mas não tem; sem 50 de dano extra.
+- [ ] 1888 Path to the Peak; Scizor; Genesect V — com Path to the Peak, Genesect V não tem Habilidades; Punishing Scissors faz 10.
+- [ ] 1887 Mew ex (Genome Hacking) — custos de Energia não precisam ser cumpridos, mas partes obrigatórias do ataque sim.
+- [ ] 1886 Mew ex; Medicham V (Yoga Loop) — Genome Hacking pode copiar Yoga Loop, repetidamente se possível.
+- [ ] 1885 Medicham V (Yoga Loop) — usado no tempo esgotado, concede turnos extras, mas não no último turno da partida.
+- [ ] 1884 Quaquaval ex (Exciting Dance); Nymble (Slight Splash) — Exciting Dance não move Nymble protegido.
+- [ ] 1883 Collapsed Stadium; Lunatone (New Moon) — New Moon não impede a redução do Banco; Pokémon do Banco devem ser descartados.
+- [ ] 1882 Gapejaw Bog; Solrock; Lunatone (New Moon) — New Moon ativa na hora, então os 2 contadores são prevenidos.
+- [ ] 1881 Lost City; Lunatone (New Moon) — KOs simultâneos são avaliados juntos; todos vão ao descarte.
+- [ ] 1880 Grant — usável do descarte quando se joga primeiro, pois essa cláusula não faz parte da ação do Apoiador.
+- [ ] 1878 Mawile (Tempting Trap); Duraludon VMAX (G-Max Pulverization) — G-Max Pulverization ignora o +90 extra.
+- [ ] 1877 Radiant Alakazam (Painful Spoons); Fusion Strike Energy — contadores movidos para Pokémon protegido são descartados; mover de um protegido não faz nada.
+- [ ] 1876 Klawf ex (Counterattacking Pincer); Rugged Helmet; Fusion Strike Energy; Double Turbo Energy — disparam simultaneamente; jogador escolhe a ordem, que muda o resultado.
+- [ ] 1874 Toxtricity (Loud Mix) — Incolor é tipo válido de Pokémon.
+- [ ] 1873 Palafin (Justice Kick) — subido durante o turno do oponente, então o ataque não faz nada.
+- [ ] 1870 Togekiss (Precious Gift) — usado após pegar prêmios e antes do Checkup.
+- [ ] 1869 Togekiss (Precious Gift) — não é obrigatório atacar para usar.
+- [ ] 1868 Scovillain (Double Type); Toxtricity (Loud Mix) — Pokémon de dois tipos conta como dois tipos.
+- [ ] 1867 Cleffa — não evolui para Clefairy, pois nenhuma das cartas se liga à outra.
+- [ ] 1866 Letter of Encouragement — qualquer causa de KO conta, mas KO no Checkup não.
+- [ ] 1865 Brassius — não contado na mão, pois já está em jogo.
+- [ ] 1864 Tsareena (Queenly Heel) — trocar ou recuar remove o efeito, permitindo evoluir.
+- [ ] 1863 Ninetales (Nine-Tailed Dance) — o próprio Ninetales é o que não pode atacar no turno seguinte.
+- [ ] 1862 Houndstone ex (Last Respects); Mewtwo V-UNION — cada peça no descarte conta separadamente.
+- [ ] 1861 Seismitoad (Echoed Voice) — bônus não empilha; dano 120, 220, 220.
+- [ ] 1860 Lampent (Alluring Fireball); Elektross (Suction Shock) — sem Banco, não há dano nem efeito no Ativo atual.
+- [ ] 1859 Lunatone (New Moon); Pokémon League HQ — o custo extra {C} vale só para Básicos do oponente.
+- [ ] 1858 Lucky Energy; Gift Energy — ordem fixa: Lucky Energy resolve quando o dano é colocado; Gift Energy na checagem de KO.
+- [ ] 1857 Worker — duas frases separadas, cada uma feita até onde for possível.
+- [ ] 1856 Spiritomb (Fettered in Misfortune); Genesect V; Fusion Strike Energy — Fusion Strike Energy bloqueia o efeito, então Fusion Strike System funciona.
+- [ ] 1855 Ting-Lu ex (Cursed Land); Gapejaw Bog; Lumineon V (Luminous Sign) — efeitos simultâneos; jogador escolhe a ordem.
+- [ ] 1853 Eevee (Energy Evolution) — não pode ser usado sem evolução correspondente.
+- [ ] 101 Blunder Policy; Malamar (Contrary); Fuecoco (Spacing Out) — o resultado físico da moeda não importa; vale o resultado tratado, então Blunder Policy compra 3.
+- [ ] 1847 Eternatus VMAX (Eternal Zone); Ting-Lu ex (Cursed Land); Quaquaval ex (Exciting Dance) — Cursed Land desliga Eternal Zone no meio do ataque, forçando descartes.
+- [ ] 1846 Tropius (Tropic Breeze) — Energia anexada permanece em Tropius quando não há Banco.
+- [ ] 1845 Quaxly (Apply Gel); Tinkatuff (Pulverizing Press) — cara ainda é necessária para atacar enquanto Apply Gel está nele.
+- [ ] 1844 Annihilape ex (Angry Grudge) — pode colocar os 12 contadores mesmo com menos HP; é nocauteado no fim.
+- [ ] 1843 Squawkabilly ex (Squawk and Seize) — usável com mão vazia.
+- [ ] 1842 Abomasnow (Freezing Disaster); Dedenne ex (Tail Swap) — mover contadores é permitido, pois mover não é cura.
+- [ ] 1841 Forretress ex (Exploding Energy) — Energia anexada antes do KO é descartada com ele.
+- [ ] 1840 Skiploom/Jumpluff (Drifting Dodge); Tinkatuff (Pulverizing Press) — dano ainda se aplica independentemente do flip.
+- [ ] 1839 Bramblin (Ride the Wind); Weavile (Assaulting Hunt) — Weavile pode ser trazido e usado no seu turno.
+- [ ] 1838 Weavile (Assaulting Hunt) — não pode trocar Básico do Banco do oponente, pois só funciona no seu turno.
+- [ ] 1837 Lost Vacuum — não pode ser jogada sem Estádio ou Ferramenta alvo, pois nenhum efeito ocorreria.
+- [ ] 1836 Manaphy (Pulling Currents) — usável com Banco cheio, mas nenhum Básico pode ser adicionado e a mão do oponente não pode ser vista.
+- [ ] 1835 Inteleon VMAX (G-Max Spiral); Duraludon VMAX (Skyscraper) — Skyscraper bloqueia o dano antes do efeito de remoção de energia.
+- [ ] 1834 Venusaur (Jungle Totem); Typhlosion (Blazing Energy); Charizard (Energy Burn) — Energia Básica {G} fornece {R}{R} e continua sendo Energia Básica {G}.
+- [ ] 1833 Radiant Greninja (Concealed Cards) — não pode descartar Energia como custo com deck vazio.
+- [ ] 1831 Honchkrow V (Boss Pockets); Emergency Jelly — Ferramentas disparam em sequência, então as seguintes podem não fazer nada.
+- [ ] 1829 Pokémon (geral) — Pokémon-ex e Pokémon ex são o mesmo; cartas SV têm Rule Box, cartas EX não; Pokémon-EX é diferente.
+- [ ] 1828 Erika's Hospitality; Mimikyu (Impersonation) — descartar de uma mão de 6 deixa 5, então o efeito pode ser usado.
+- [ ] 1827 Temple of Sinnoh; Rapid Strike Energy — não pode anexar Rapid Strike Energy da mão a Pokémon que não seja Rapid Strike.
+- [ ] 1773 Archeops (Primal Turbo); Rapid Strike Energy; Temple of Sinnoh — pode anexar, e não é descartada enquanto Temple of Sinnoh estiver em jogo.
+- [ ] 1826 Klefki (Mischievous Lock); Empoleon V (Emperor's Eyes) — se ambos disparam juntos, o jogador da vez vai primeiro.
+- [ ] 1825 Empoleon V (Emperor's Eyes); Klefki (Mischievous Lock) — a Habilidade ativada primeiro tem precedência.
+- [ ] 1824 Porygon-Z (Crazy Code); Archeops (Primal Turbo); Spiral Energy — Spiral Energy em Pokémon que não é Rapid Strike é descartada, mas remove Paralisia antes.
+- [ ] 1568 Pokémon Catcher; Treinadores em geral — redação muda para "trocar"; impressões antigas continuam legais.
+- [ ] 1823 Florges (Moonblast); Kilowattrel (Skill Dive) — redução de 30 vale para todo dano de ataque, inclusive ao Banco.
+- [ ] 1822 Indeedee (Expert Nurturer) — pode olhar o deck antes de escolher a evolução.
+- [ ] 1821 Indeedee (Expert Nurturer) — pode evoluir no primeiro turno da partida ou no turno em que entrou em jogo.
+- [ ] 1820 Banette ex (Everlasting Darkness); Vitality Band — Vitality Band é Ferramenta, não Item, então pode ser anexada.
+- [ ] 1819 Dolliv (Apply Oil) — trocar o Ativo remove o efeito, sem necessidade de moeda.
+- [ ] 1818 Medicham (Acu-Punch-Ture) — se o Pokémon atacado trocou, o novo Ativo pode usar o ataque de mesmo nome.
+- [ ] 1817 Drifblim (Curse Spreading); Tera — Tera não bloqueia colocação de contadores de dano.
+- [ ] 1816 Scatterbug (Adaptive Evolution); Rare Candy — Rare Candy não evolui no primeiro turno nem no turno em que foi jogado.
+- [ ] 1815 Treinadores em geral (errata) — Ferramenta Pokémon é categoria própria; Ferramentas antigas não são mais Itens.
+- [ ] 1814 Wyrdeer V (Frontier Road); Galarian Weezing (Neutralizing Gas) — Neutralizing Gas já está ativo, então Frontier Road não ativa.
+- [ ] 1810 Mew VMAX; Sky Seal Stone (Star Order); Fusion Strike Energy — o Prêmio extra ainda vale, pois Star Order não é efeito sobre o Pokémon do oponente.
+- [ ] 1807 Sky Seal Stone; Tool Jammer — Star Order não pode ser usado se o Ativo do oponente tem Tool Jammer.
+- [ ] 1806 Sky Seal Stone (Star Order) — vale para qualquer Pokémon V Básico seu até o fim do turno.
+- [ ] 1805 Oranguru (Primate Acting) — se o ataque é usado, deve escolher Apoiador do descarte quando houver.
+- [ ] 1803 Oranguru (Primate Acting) — pode usar após jogar um Apoiador, pois usa o efeito, não joga outro Apoiador.
+- [ ] 1802 Zamazenta VSTAR (Shield Star) — redução de dano permanece mesmo se sair de jogo ou as Habilidades forem desligadas.
+- [ ] 1801 Rotom VSTAR (Conversion Star) — precisa de ao menos 1 carta na mão e 1 no deck; pode descartar qualquer número da mão.
+- [ ] 1800 Earthen Seal Stone; Galarian Zapdos V (Fighting Instinct) — mudanças de custo valem para todos os ataques do Pokémon, inclusive de Ferramentas.
+- [ ] 1799 Unown [V] — não evolui para Unown VSTAR, pois os nomes são diferentes.
+- [ ] 1798 Worker — pode comprar 3 cartas mesmo sem Estádio em jogo.
+- [ ] 1797 Serena — usável enquanto puder descartar ao menos 1 carta.
+- [ ] 1796 Forest Seal Stone (Star Alchemy); Path to the Peak — usável, pois o Pokémon tem acesso à Habilidade.
+- [ ] 1795 Unown VSTAR (Star Cipher); Spiritomb (Ticking Terror); Path to the Peak — quando Path to the Peak sai, vale a mudança de Fraqueza mais recente.
+- [ ] 1794 Unown VSTAR (Star Cipher); Dunsparce (Mysterious Nest) — Pokémon Incolor fica sem Fraqueza.
+- [ ] 1793 Galarian Zapdos V; Earthen Seal Stone; Fighting Instinct — Star Gravity pode ser usado de graça com 3 Pokémon V em jogo.
+- [ ] 1792 Milotic (Dew Guard); Sordward & Shielbert — a carta fracassa e não faz nada.
+- [ ] 1791 V Guard Energy — múltiplas cópias não empilham.
+- [ ] 1790 Regenerative Energy — múltiplas cópias empilham; cada uma cura 100 na evolução.
+- [ ] 1789 Quad Stone — pode jogar as quatro se voltarem à mão.
+- [ ] 1788 Earthen Seal Stone; Forest Seal Stone — Poderes VSTAR podem ser usados em Pokémon V, mas só um por jogo.
+- [ ] 1787 Unown VSTAR (Star Cipher) — Pokémon sem Fraqueza impressa recebe Fraqueza ×2 a Psíquico.
+- [ ] 1786 Skuntank V (Pursuit Blast) — só faz 120 se o Pokémon escolhido recuou no último turno do oponente.
+- [ ] 1785 Cobalion (Follow-Up) — deve escolher o Pokémon do Banco antes de buscar no deck.
+- [ ] 1784 Regieleki VMAX (Transistor) — efeitos empilham, cada um +30.
+- [ ] 1783 Lugia VSTAR (Summoning Star) — pode colocar qualquer Estágio Incolor sem Rule Box do descarte no Banco.
+- [ ] 1782 Chesnaught V (Needle Line) — cada um empilha 3 contadores, mas só quando o Ativo é danificado.
+- [ ] 1781 Rapidash (Heat Boost) — cada um usável uma vez por turno, com descarte de {R} separado e +30 por uso.
+- [ ] 1780 Radiant Jirachi (Entrusted Wishes) — obrigatório quando nocauteado por ataque, e deve pegar ao menos 1 carta se possível.
+- [ ] 1779 Spicy Seasoned Curry — não pode ser jogada se não há dano e o Ativo já está Queimado.
+- [ ] 1778 Lost City — quando um Pokémon evoluído é nocauteado, toda a linha de evolução vai para a Zona Perdida.
+- [ ] 1777 Aurora Energy; Rainbow Energy; Galarian Articuno (Psylaser) — sempre fornecem todos os tipos, então devem ser descartadas se não quiser que forneçam Energia.
+- [ ] 1776 Virizion V (Verdant Wind); Spicy Seasoned Curry — cura e evita Queimadura, pois Verdant Wind bloqueia a condição.
+- [ ] 1775 Marowak (Bodyguard); Silicobra (Sand Attack) — Sand Attack afeta seus próprios Pokémon, então Bodyguard não evita o flip.
+- [ ] 1774 Temple of Sinnoh; Sobble; Drizzile — Rapid Strike Energy fica anexada após evoluir enquanto Temple of Sinnoh estiver em jogo.
+- [ ] 1772 Barbaracle (Lost Block) — vai ao descarte e o oponente pega o Prêmio.
+- [ ] 1771 Colress's Experiment; Comfey (Flower Selecting) — jogável com 1 carta no deck, mas a carta deve ir para a mão.
+- [ ] 1770 Emperor's Eyes — texto truncado na leitura; conferir na página.

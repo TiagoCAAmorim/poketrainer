@@ -168,7 +168,13 @@ def _(g, p, card):
         g.add_condition(a, 'confused')
 
 
-@trainer('Dark Bell')
+def _dark_bell_ok(g, p, card):
+    # ruling: sem alvo válido (Ativos que não sejam {D}) a carta não pode ser jogada
+    return any(g.players[q].active and not g.has_type(g.players[q].active, 'D')
+               and T_ok(g, card, g.players[q].active) for q in (p, 1 - p))
+
+
+@trainer('Dark Bell', can_play=_dark_bell_ok)
 def _(g, p, card):
     for q in (p, 1 - p):
         a = g.players[q].active
@@ -501,7 +507,8 @@ def _special_red(g, p, card):
 
 
 register_trainer('Special Red Card', TrainerImpl(run=_special_red,
-                                                 can_play=lambda g, p, c: len(g.players[1 - p].prizes) <= 3))
+                                                 can_play=lambda g, p, c: len(g.players[1 - p].prizes) <= 3
+                                                 and bool(g.players[1 - p].hand)))   # ruling: sem cartas na mão do oponente, não joga
 
 
 @trainer('Strange Timepiece', can_play=lambda g, p, c: any(
