@@ -87,6 +87,7 @@ Atualizado em: 2026-10-18
 
 ## Fase 8 — IA que aprende 🟡
 - ✅ Codificação do estado e das opções para a rede (`ptcg/encode.py`) e rede política/valor (`ptcg/ai/model.py`)
+Guia: `docs/IA_TREINO.md` · diário dos experimentos: `docs/IA_PROGRESSO.md` · `python ia.py historico|acompanhar`
 - ✅ PyTorch 2.14 + CUDA instalado e testado (`tests/test_ai.py`)
 - ✅ Pré-treino por imitação da heurística (`imitar.py gerar|treinar|avaliar`): 20.000 partidas heurística × heurística
   (~3,2 milhões de decisões, 108 decks, 5% de jogadas aleatórias com o rótulo da heurística) → **86% de acerto** na

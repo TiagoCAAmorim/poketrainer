@@ -24,6 +24,7 @@ import torch
 import torch.nn.functional as F
 
 from ..decks import list_decks
+from ..logbook import registrar_treino
 from .dataset import ObsPacker, PackedObs
 from .model import PolicyValueNet, load_checkpoint, masked_entropy, save_checkpoint
 
@@ -240,6 +241,8 @@ def main(argv=None):
     ap.add_argument('--resume', default=None, help='ex.: checkpoints/imitacao.pt')
     ap.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu')
     ap.add_argument('--seed', type=int, default=0)
+    ap.add_argument('--sem-wandb', action='store_true', help='não registrar no W&B (tiago-amorim/poketrainer)')
+    ap.add_argument('--nome', default=None, help='nome da execução no W&B (padrão: data/hora)')
     args = ap.parse_args(argv)
     sys.stdout.reconfigure(line_buffering=True)
 
@@ -265,12 +268,34 @@ def main(argv=None):
     log_path = out / 'train_log.jsonl'
     print(f'Treinando em {args.device} com {len(deck_names)} decks, {workers} workers'
           + (f', partindo de {args.resume}' if args.resume else ''))
+    run_id = time.strftime('%Y-%m-%d_%H%M%S')
+    cfg = {k: v for k, v in vars(args).items() if k != 'decks'}
+    cfg.update(decks=len(deck_names), workers=workers)
+    with open(log_path, 'a') as f:      # marca o início desta execução (ia.py acompanhar mostra só a última)
+        f.write(json.dumps({'inicio': run_id, **cfg}, default=str) + '\n')
+    from . import wb as W
+    run = W.start('ppo', cfg, name=args.nome or f'ppo_{run_id}', enabled=not args.sem_wandb)
+    registrar_treino('ppo_inicio', f'{run_id}: {args.iterations} iterações'
+                     + (f' a partir de {args.resume}' if args.resume else ' do zero'), execucao=run_id,
+                     **cfg, **({'wandb': run.url} if run else {}))
+    t_start, it, status, best_it = time.perf_counter(), 0, 'erro', None
     executor = get_context('spawn').Pool(workers, initializer=_worker_init) if workers else None
+
+    def log_eval(it, r, st=None):
+        run.log({'aval/vitorias': r['vitorias'], 'aval/erro_padrao': r['erro_padrao'],
+                 'aval/indo_primeiro': r['indo_primeiro'] or 0.0, 'aval/melhor': max(best, r['vitorias'])}, step=it)
+        registrar_treino('ppo_avaliacao', f'{run_id} it {it}: {r["vitorias"]:.1%} contra a heurística '
+                         f'(±{r["erro_padrao"]:.1%})', execucao=run_id, it=it,
+                         minutos=round((time.perf_counter() - t_start) / 60, 1), **r, **(st or {}))
     try:
         if args.resume and args.eval_games:
             r = evaluate_parallel(net, deck_names, args.eval_games, workers=workers, pool=executor)
-            best = r['vitorias']
+            best, best_it = r['vitorias'], 0
+            save_checkpoint(str(out / 'best.pt'), net, {'it': 0, 'winrate': best, 'decks': deck_names})
             print(json.dumps({'it': 0, 'eval_vs_heuristica': r}, ensure_ascii=False), flush=True)
+            with open(log_path, 'a') as f:
+                f.write(json.dumps({'it': 0, 'eval_vs_heuristica': r['vitorias']}) + '\n')
+            log_eval(0, r)
         for it in range(1, args.iterations + 1):
             t0 = time.perf_counter()
             save_checkpoint(learner_path, net)
@@ -285,7 +310,8 @@ def main(argv=None):
             t1 = time.perf_counter()
             data = PackedObs(parts)
             st = ppo_update(net, opt, data, args, args.device)
-            rec = {'it': it, 'transicoes': len(data), 'rollout_s': round(t1 - t0, 1),
+            rec = {'it': it, 'min': round((time.perf_counter() - t_start) / 60, 1), 'transicoes': len(data),
+                   'rollout_s': round(t1 - t0, 1),
                    'update_s': round(time.perf_counter() - t1, 1), **{k: round(v, 4) for k, v in st.items()}}
             if errors:
                 rec['erros_motor'] = errors
@@ -304,16 +330,33 @@ def main(argv=None):
                 rec['eval_vs_heuristica'] = r['vitorias']
                 save_checkpoint(str(out / 'latest.pt'), net, {'it': it, 'decks': deck_names})
                 if r['vitorias'] > best:
-                    best = r['vitorias']
+                    best, best_it = r['vitorias'], it
                     save_checkpoint(str(out / 'best.pt'), net, {'it': it, 'winrate': best, 'decks': deck_names})
+                log_eval(it, r, {k: rec[k] for k in ('kl', 'ent', 'v', 'clip')})
             print(json.dumps(rec, ensure_ascii=False), flush=True)
+            run.log({('treino/' + k if k not in ('it', 'min') else k): v for k, v in rec.items()
+                     if k != 'eval_vs_heuristica'}, step=it)
             with open(log_path, 'a') as f:
                 f.write(json.dumps(rec) + '\n')
+        status = 'concluido'
+    except KeyboardInterrupt:
+        status = 'interrompido'
+        print('Interrompido: salvando checkpoints/latest.pt')
     finally:
         if executor:
-            executor.close()
+            executor.terminate() if status != 'concluido' else executor.close()
             executor.join()
-    save_checkpoint(str(out / 'latest.pt'), net, {'it': args.iterations, 'decks': deck_names})
+        save_checkpoint(str(out / 'latest.pt'), net, {'it': it, 'decks': deck_names})
+        run.summary({'status': status, 'iteracoes': it, 'melhor_vitorias': max(best, 0.0),
+                     'melhor_it': -1 if best_it is None else best_it})
+        if best_it is not None:
+            run.artifact(out / 'best.pt', 'ppo', metadata={'it': best_it, 'vitorias': best, 'execucao': run_id},
+                         aliases=['best', run_id])
+        run.finish(0 if status != 'erro' else 1)
+        registrar_treino('ppo_fim', f'{run_id}: {status} na iteração {it}; '
+                         + (f'melhor {best:.1%} (it {best_it})' if best_it is not None else 'sem avaliação'),
+                         execucao=run_id, status=status, it=it, melhor=best, melhor_it=best_it,
+                         minutos=round((time.perf_counter() - t_start) / 60, 1), out=str(out))
 
 
 if __name__ == '__main__':

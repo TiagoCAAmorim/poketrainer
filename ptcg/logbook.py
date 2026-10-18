@@ -9,6 +9,7 @@
         indice.jsonl
       simulacoes/<AAAA-MM-DD_HHMMSS>_<descricao>.jsonl   1 partida simulada por linha
       interface/partidas.jsonl       partidas jogadas na interface gráfica
+      ia/treinos.jsonl               treinos e avaliações da IA (imitar.py, train.py) — `python ia.py historico`
 
 Cada partida do motor é gravada com decks (ids), semente e a sequência de decisões (`history`):
 isso basta para reproduzi-la exatamente (`gerenciar_logs.py rever …`).
@@ -53,6 +54,24 @@ def registrar(categoria: str, mensagem: str, **dados):
     _append(LOG_DIR / 'atividade.jsonl', json.dumps({'quando': dt.isoformat(timespec='seconds'),
                                                      'categoria': categoria, 'mensagem': mensagem,
                                                      **dados}, ensure_ascii=False, default=str))
+
+
+# ------------------------------------------------------------------ treinos da IA
+TREINOS = LOG_DIR / 'ia' / 'treinos.jsonl'
+
+
+def registrar_treino(tipo: str, resumo: str, **dados) -> dict:
+    """Uma linha em logs/ia/treinos.jsonl (versionado) + uma em atividade.log.
+
+    tipo: 'dados' | 'imitacao' | 'avaliacao' | 'ppo_inicio' | 'ppo_avaliacao' | 'ppo_fim'."""
+    rec = {'quando': _now().isoformat(timespec='seconds'), 'tipo': tipo, 'resumo': resumo, **dados}
+    _append(TREINOS, json.dumps(rec, ensure_ascii=False, default=str))
+    registrar('ia', f'{tipo}: {resumo}')
+    return rec
+
+
+def treinos() -> list:
+    return ler_jsonl(TREINOS)
 
 
 # ------------------------------------------------------------------ partidas do motor

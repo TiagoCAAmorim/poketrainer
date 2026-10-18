@@ -10,6 +10,7 @@ Tudo o que o sistema faz fica registrado aqui.
 | `simulacoes/` | partidas simuladas (`simulate.py --salvar-log`), 1 partida por linha, com decks, semente e todas as decisões — dá para rever qualquer uma exatamente |
 | `problemas.jsonl` | comentários feitos pelo usuário nas partidas (botão 💬 Comentar), com status aberto/corrigido e a partida até aquele ponto (**versionado**) |
 | `interface/partidas.jsonl` | partidas jogadas na interface gráfica |
+| `ia/treinos.jsonl` | treinos e avaliações da IA (dados gerados, imitação, avaliações, início/avaliações/fim do PPO) — `python ia.py historico` (**versionado**) |
 
 ```
 python gerenciar_logs.py importar minha_partida.txt     # guarda e reproduz um log do TCG Live

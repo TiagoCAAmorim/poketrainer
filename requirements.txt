@@ -1,3 +1,4 @@
 numpy>=1.24
 torch>=2.1
+wandb>=0.19     # opcional: registro dos treinos da IA no W&B (ptcg/ai/wb.py)
 pytest

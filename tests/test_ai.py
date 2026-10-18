@@ -74,8 +74,8 @@ def test_generate_and_train_imitation():
         assert len(data) == st['samples']
         assert set(np.unique(data.d['value'])) <= {-1.0, 0.0, 1.0}
         out = os.path.join(tmp, 'im.pt')
-        net = train_imitation(tmp, out, epochs=1, batch=64, hidden=32, emb=8, device='cpu', log=lambda *_: None)
-        assert os.path.exists(out)
+        net, resumo = train_imitation(tmp, out, epochs=1, batch=64, hidden=32, emb=8, device='cpu', log=lambda *_: None)
+        assert os.path.exists(out) and resumo['melhor_epoca']['epoca'] == 1
         assert all(torch.isfinite(p).all() for p in net.parameters())
 
 

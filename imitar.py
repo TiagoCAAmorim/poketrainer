@@ -13,6 +13,7 @@ import json
 import sys
 
 from ptcg.decks import list_decks
+from ptcg.logbook import registrar_treino
 
 
 def decks_from(a):
@@ -58,28 +59,63 @@ def main(argv=None):
     p.add_argument('--oponente', default='heuristic', choices=['heuristic', 'random'])
     p.add_argument('--processos', type=int, default=None)
     p.add_argument('--seed', type=int, default=12345)
+    for p in sub.choices.values():
+        p.add_argument('--sem-wandb', action='store_true', help='não registrar no W&B (tiago-amorim/poketrainer)')
+        p.add_argument('--nome', default=None, help='nome da execução no W&B')
     a = ap.parse_args(argv)
     sys.stdout.reconfigure(line_buffering=True)   # progresso visível mesmo redirecionado para arquivo
 
-    if a.cmd == 'gerar':
-        from ptcg.ai.dataset import generate
-        decks = decks_from(a)
-        print(f'Gerando {a.partidas} partidas com {len(decks)} decks → {a.saida}')
-        st = generate(a.saida, a.partidas, decks, epsilon=a.epsilon, workers=a.processos,
-                      games_per_shard=a.por_shard, seed=a.seed)
-        print(f'Pronto: {st}')
-    elif a.cmd == 'treinar':
-        from ptcg.ai.imitate import train_imitation
-        train_imitation(a.dados, a.saida, epochs=a.epocas, batch=a.lote, lr=a.lr, hidden=a.hidden, emb=a.emb,
-                        resume=a.resume, device=a.device, eval_games=a.avaliar, vf_coef=a.vf_coef)
-    elif a.cmd == 'avaliar':
-        from ptcg.ai.imitate import evaluate_parallel
-        from ptcg.ai.model import load_checkpoint
-        net, extra = load_checkpoint(a.checkpoint, 'cpu')
-        print(f'{a.checkpoint}: {json.dumps({k: v for k, v in extra.items() if k != "decks"}, ensure_ascii=False)}')
-        r = evaluate_parallel(net, decks_from(a), a.partidas, a.oponente, a.processos, a.seed, log=print)
-        print(json.dumps(r, ensure_ascii=False))
-
+    from ptcg.ai import wb as W
+    cfg = {k: v for k, v in vars(a).items() if k not in ('cmd', 'sem_wandb', 'nome')}
+    run = W.start({'gerar': 'dados', 'treinar': 'imitacao', 'avaliar': 'avaliacao'}[a.cmd], cfg, name=a.nome,
+                  enabled=not a.sem_wandb)
+    extra = {'wandb': run.url} if run else {}
+    ok = False
+    try:
+        if a.cmd == 'gerar':
+            from ptcg.ai.dataset import generate
+            decks = decks_from(a)
+            print(f'Gerando {a.partidas} partidas com {len(decks)} decks → {a.saida}')
+            st = generate(a.saida, a.partidas, decks, epsilon=a.epsilon, workers=a.processos,
+                          games_per_shard=a.por_shard, seed=a.seed)
+            print(f'Pronto: {st}')
+            run.summary({'partidas': st['games'], 'amostras': st['samples'], 'erros_motor': st['errors'],
+                         'empates': st['draws'], 'decks': len(decks)})
+            registrar_treino('dados', f'{st["games"]} partidas, {st["samples"]} decisões → {a.saida}',
+                             saida=a.saida, partidas=st['games'], amostras=st['samples'], erros=st['errors'],
+                             empates=st['draws'], decks=len(decks), epsilon=a.epsilon, seed=a.seed, **extra)
+        elif a.cmd == 'treinar':
+            from ptcg.ai.imitate import train_imitation
+            _, res = train_imitation(a.dados, a.saida, epochs=a.epocas, batch=a.lote, lr=a.lr, hidden=a.hidden,
+                                     emb=a.emb, resume=a.resume, device=a.device, eval_games=a.avaliar,
+                                     vf_coef=a.vf_coef, wb=run)
+            be, av = res['melhor_epoca'] or {}, res['avaliacao']
+            run.summary({**{f'melhor/{k}': v for k, v in be.items()},
+                         **({'aval/vitorias': av['vitorias']} if av else {}), 'amostras_treino': res['amostras_treino']})
+            run.artifact(a.saida, 'imitacao', metadata={**be, **({'vitorias': av['vitorias']} if av else {})},
+                         aliases=['latest'])
+            registrar_treino('imitacao', f'{a.saida}: acerto {be.get("val_acc", be.get("treino_acc"))} (época '
+                             f'{be.get("epoca")})' + (f', {av["vitorias"]:.1%} contra a heurística' if av else ''),
+                             **res, **extra)
+        elif a.cmd == 'avaliar':
+            import numpy as np
+            from ptcg.ai.imitate import evaluate_parallel
+            from ptcg.ai.model import load_checkpoint
+            net, meta = load_checkpoint(a.checkpoint, 'cpu')
+            print(f'{a.checkpoint}: {json.dumps({k: v for k, v in meta.items() if k != "decks"}, ensure_ascii=False)}')
+            decks = decks_from(a)
+            r, por_deck = evaluate_parallel(net, decks, a.partidas, a.oponente, a.processos, a.seed, log=print,
+                                            detalhes=True)
+            print(json.dumps(r, ensure_ascii=False))
+            run.summary({'checkpoint': a.checkpoint, **r})
+            run.table('por_deck', ['deck', 'partidas', 'vitorias'],
+                      [[d, len(v), float(np.mean(v))] for d, v in sorted(por_deck.items())])
+            registrar_treino('avaliacao', f'{a.checkpoint}: {r["vitorias"]:.1%} contra {a.oponente} '
+                             f'({r["partidas"]} partidas, ±{r["erro_padrao"]:.1%})', checkpoint=a.checkpoint,
+                             decks=len(decks), seed=a.seed, **r, **extra)
+        ok = True
+    finally:
+        run.finish(0 if ok else 1)
 
 if __name__ == '__main__':
     main()

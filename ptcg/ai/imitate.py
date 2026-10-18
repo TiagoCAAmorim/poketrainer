@@ -49,7 +49,8 @@ def val_metrics(net, data, device, batch=2048, limit=200_000):
 
 def train_imitation(data_dir, out, epochs=8, batch=1024, lr=1e-3, weight_decay=1e-4, vf_coef=0.25,
                     hidden=256, emb=48, resume=None, device=None, seed=0, eval_games=0, detach_value=True,
-                    log=print):
+                    log=print, wb=None):
+    """wb: execução do W&B (`ptcg.ai.wb.start`) para registrar as métricas; None = não registra."""
     device = device or ('cuda' if torch.cuda.is_available() else 'cpu')
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
@@ -68,7 +69,8 @@ def train_imitation(data_dir, out, epochs=8, batch=1024, lr=1e-3, weight_decay=1
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=lr, total_steps=steps, pct_start=0.05)
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     log_path = Path(out).with_suffix('.jsonl')
-    best = None
+    best, best_rec = None, None
+    gstep = 0
     for ep in range(1, epochs + 1):
         net.train()
         perm = rng.permutation(len(train))
@@ -91,10 +93,16 @@ def train_imitation(data_dir, out, epochs=8, batch=1024, lr=1e-3, weight_decay=1
             agg['acc'] += (logits.argmax(-1) == b['action']).float().sum().item()
             agg['n'] += k
             step = s // batch + 1
+            gstep += 1
             if step % 500 == 0:      # progresso dentro da época (detecta GPU lenta/sem memória cedo)
                 el = time.perf_counter() - t0
                 log(f'  época {ep}: {agg["n"]}/{len(perm)} amostras, {step / el:.1f} passos/s, '
                     f'acerto {agg["acc"] / agg["n"]:.3f}')
+                if wb:
+                    wb.log({'treino/loss_pi': loss_pi.item(), 'treino/mse_v': mse_v.item(),
+                            'treino/acc_parcial': agg['acc'] / agg['n'], 'treino/passos_s': step / el,
+                            'treino/lr': sched.get_last_lr()[0], 'epoca': ep - 1 + agg['n'] / len(perm)},
+                           step=gstep)
         n = agg.pop('n')
         rec = {'epoca': ep, 's': round(time.perf_counter() - t0, 1), **{f'treino_{k}': round(v / n, 4) for k, v in agg.items()}}
         if val is not None:
@@ -104,18 +112,31 @@ def train_imitation(data_dir, out, epochs=8, batch=1024, lr=1e-3, weight_decay=1
         extra = {'fonte': 'imitacao', 'epoca': ep, 'dados': str(data_dir), **rec}
         save_checkpoint(str(Path(out).with_name(Path(out).stem + '_ultimo.pt')), net, extra)
         if best is None or key < best:
-            best = key
+            best, best_rec = key, rec
             save_checkpoint(out, net, extra)
         log(json.dumps(rec, ensure_ascii=False))
+        if wb:
+            wb.log({'epoca': ep, **{('val/' + k[4:] if k.startswith('val_') else 'epoca/' + k): v
+                                    for k, v in rec.items() if k != 'epoca'}}, step=gstep)
         with open(log_path, 'a') as f:
             f.write(json.dumps(rec) + '\n')
     if eval_games:
         best_net, _ = load_checkpoint(out, 'cpu')
         meta = Path(data_dir) / 'meta.json'
         decks = sorted({d for r in json.loads(meta.read_text())['rodadas'] for d in r['decks']}) if meta.exists() else None
-        r = evaluate_parallel(best_net, decks, n_games=eval_games)
+        r, por_deck = evaluate_parallel(best_net, decks, n_games=eval_games, detalhes=True)
         log(f'Avaliação de {out}: {r}')
-    return net
+        if wb:
+            wb.log({'aval/vitorias': r['vitorias'], 'aval/erro_padrao': r['erro_padrao']}, step=gstep)
+            wb.table('aval/por_deck', ['deck', 'partidas', 'vitorias'],
+                     [[d, len(v), float(np.mean(v))] for d, v in sorted(por_deck.items())])
+    else:
+        r = None
+    resumo = {'checkpoint': str(out), 'dados': str(data_dir), 'amostras_treino': len(train),
+              'amostras_val': len(val) if val else 0, 'epocas': epochs, 'lr': lr, 'lote': batch, 'vf_coef': vf_coef,
+              'detach_value': detach_value, 'hidden': net.config['hidden'], 'emb': net.config['emb'],
+              'melhor_epoca': best_rec, 'avaliacao': r}
+    return net, resumo
 
 
 # ------------------------------------------------------------------ avaliação paralela (CPU)
@@ -154,10 +175,11 @@ def _eval_worker(task):
 
 
 def evaluate_parallel(net, deck_names=None, n_games=200, opponent='heuristic', workers=None, seed=12345,
-                      max_decisions=3000, log=None, pool=None):
+                      max_decisions=3000, log=None, pool=None, detalhes=False):
     """Taxa de vitória (empate = ½) da rede, jogando de forma gulosa, contra a heurística ou o aleatório.
 
-    Cada partida é sorteada pela semente, então duas avaliações com a mesma `seed` usam os mesmos confrontos."""
+    Cada partida é sorteada pela semente, então duas avaliações com a mesma `seed` usam os mesmos confrontos.
+    detalhes=True devolve (resumo, {deck: [pontos por partida]})."""
     from ..decks import list_decks
     deck_names = deck_names or list_decks()
     workers = workers or max(1, min((os.cpu_count() or 2) - 2, n_games))
@@ -177,10 +199,10 @@ def evaluate_parallel(net, deck_names=None, n_games=200, opponent='heuristic', w
            'indo_primeiro': round(float(np.mean(first)), 3) if first else None,
            'erro_padrao': round(float(np.std([r['score'] for r in res]) / math.sqrt(len(res))), 3),
            's': round(time.perf_counter() - t0, 1)}
+    by_deck = {}
+    for r in res:
+        by_deck.setdefault(r['deck'], []).append(r['score'])
     if log:
-        by_deck = {}
-        for r in res:
-            by_deck.setdefault(r['deck'], []).append(r['score'])
         for d, v in sorted(by_deck.items(), key=lambda x: -np.mean(x[1])):
             log(f'  {np.mean(v):5.2f}  ({len(v):3d})  {d}')
-    return out
+    return (out, by_deck) if detalhes else out

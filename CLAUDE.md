@@ -44,6 +44,7 @@ python server.py                                                  # http://local
 python baixar_imagens.py                                          # imagens das cartas → imagens/ (fora do git)
 python imitar.py gerar|treinar|avaliar                           # IA: pré-treino imitando a heurística
 python train.py --resume checkpoints/imitacao.pt                 # IA: PPO self-play
+python ia.py historico|acompanhar                                 # IA: treinos registrados / curva do PPO (docs/IA_TREINO.md)
 ```
 Reconstruir a base quando sair coleção nova: `python tools/build_carddb.py` (clona pokemon-tcg-data e TCGdex em
 `.cache/`), `python tools/build_pt_texts.py`, `python cartas.py atualizar`.
@@ -82,6 +83,9 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
   `ptcg/ai/imitate.py` (pré-treino por imitação + `evaluate_parallel` na CPU), `ptcg/ai/train.py` (PPO com rollouts em
   workers `spawn` e atualização na GPU). Dados em `dados/imitacao/`, redes em `checkpoints/` (ambos no gitignore).
   Se a VRAM acabar, o WSL transborda para a RAM e o treino quase para: confira `nvidia-smi` antes de culpar o código.
+  Guia em `docs/IA_TREINO.md`; ao terminar um experimento, registre números e conclusão em `docs/IA_PROGRESSO.md`
+  (cada execução já grava em `logs/ia/treinos.jsonl`, versionado, e no W&B tiago-amorim/poketrainer no servidor da
+  CoreWeave — `ptcg/ai/wb.py`; `--sem-wandb` desliga; `tests/test_ai.py` não abre execuções; para testar as CLIs use `WANDB_MODE=offline`).
 
 ## Próximos passos
 0. Cobertura está em 100% (texto reconhecido); o foco agora é **fidelidade**: reproduzir logs reais e conferir cartas da 2ª leva.

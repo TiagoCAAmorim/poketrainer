@@ -103,13 +103,20 @@ Para parar o servidor: `Ctrl+C` no terminal.
 
 A rede aprende em duas etapas: primeiro **imita a IA heurística** (aprendizado supervisionado, rápido) e depois
 **melhora jogando contra si mesma** (PPO). Arquivos gerados ficam em `dados/` e `checkpoints/` (fora do git).
+Explicação completa da lógica e de cada opção: [`docs/IA_TREINO.md`](docs/IA_TREINO.md); resultados obtidos até agora:
+[`docs/IA_PROGRESSO.md`](docs/IA_PROGRESSO.md).
 
 | Passo | Comando | Tempo (32 núcleos + RTX 4070) | Resultado |
 |---|---|---|---|
 | 1 | `python imitar.py gerar --partidas 20000` | ~2–3 min | `dados/imitacao/` (~5 GB, ~3 milhões de decisões da heurística) |
 | 2 | `python imitar.py treinar --epocas 6` | ~12 min | `checkpoints/imitacao.pt`; no fim, taxa de vitória contra a heurística |
 | 3 | `python imitar.py avaliar checkpoints/imitacao.pt --partidas 400` | ~1 min | vitórias contra a heurística, por deck |
-| 4 | `python train.py --resume checkpoints/imitacao.pt --iterations 300` | horas | `checkpoints/best.pt` / `latest.pt`; uma linha JSON por iteração |
+| 4 | `python train.py --resume checkpoints/imitacao.pt --iterations 300` | ~35–45 min | `checkpoints/best.pt` / `latest.pt`; uma linha JSON por iteração |
+| 5 | `python ia.py acompanhar --seguir` (outro terminal) | — | curva do PPO em andamento (vitórias, KL, entropia…) e alertas |
+| 6 | `python ia.py historico` | — | todos os treinos e avaliações registrados (`logs/ia/treinos.jsonl`) |
+
+Os treinos também aparecem com gráficos no W&B (`pip install wandb` e `wandb login` uma vez):
+https://forge.coreweave.com/wandb/tiago-amorim/poketrainer — `--sem-wandb` desliga.
 
 - Para gerar mais dados depois, rode `gerar` de novo com outra semente (`--seed 2`): os shards são acrescentados.
 - `--pasta tests` restringe aos 12 decks fixos; sem isso são usados todos os decks de `decks/` (inclui `decks/limitless/`).

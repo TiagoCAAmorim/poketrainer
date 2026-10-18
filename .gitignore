@@ -243,3 +243,6 @@ imagens/
 
 # Marca do aviso diário de problemas pendentes
 .claude/.aviso_problemas
+
+# Execuções locais do Weights & Biases (ptcg/ai/wb.py)
+wandb/
