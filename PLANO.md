@@ -57,6 +57,7 @@ Atualizado em: 2026-10-18
 - ⬜ Se algum log novo aparecer: reproduzir, corrigir a divergência e transformar em teste (`gerenciar_logs.py importar`)
 - ✅ Metallic Hammer copiado por Slowking (Seek Inspiration): não era bug do cliente. O ruling do Compendium (compendium.pokegym.net) diz que o
   "pode descartar" vale sem Energia Metal; o motor agora dá o dano extra e o log reproduz os 300 sem ajuste
+- ✅ Revisão de rulings, sessão 4 (fev/2026 → 2024, Fases 2–3 incluídas): ~45 correções com cenário em `tests/test_rulings.py` (Area Zero, Goad 'n' Grab, Crystal Fall/Flare Fall, Gale Thrust, Surfer, Cinderace, "até X", Giovanni/Cetitan, Gravity Gemstone, Palafin ex, Festival Lead…); o restante dos IDs é não testável (cartas fora do H/I/J). Vitória simultânea = empate (decisão do usuário).
 - ✅ Revisão de rulings do Compendium (jul–mar/2026, 85 IDs; progresso em `docs/RULINGS_PROGRESSO.md`): 18 divergências corrigidas com cenário
   em `tests/test_rulings.py` (Bastiodon/Ancient Bulwark, Mist Energy e Hide 'n' Sneak em efeitos atrasados e de Habilidade, Erasure Ball,
   Sand Attack antes da Confusão, Pleasing Present simultâneo, etc.). Mecanismos novos no motor: remoção de Energia adiada para depois do
@@ -86,8 +87,8 @@ Atualizado em: 2026-10-18
 - ⬜ Animações e demais melhorias visuais — baixa prioridade por enquanto
 
 ## Fase 8 — IA que aprende 🟡
-- ✅ Codificação do estado e das opções para a rede (`ptcg/encode.py`) e rede política/valor (`ptcg/ai/model.py`)
 Guia: `docs/IA_TREINO.md` · diário dos experimentos: `docs/IA_PROGRESSO.md` · `python ia.py historico|acompanhar`
+- ✅ Codificação do estado e das opções para a rede (`ptcg/encode.py`) e rede política/valor (`ptcg/ai/model.py`)
 - ✅ PyTorch 2.14 + CUDA instalado e testado (`tests/test_ai.py`)
 - ✅ Pré-treino por imitação da heurística (`imitar.py gerar|treinar|avaliar`): 20.000 partidas heurística × heurística
   (~3,2 milhões de decisões, 108 decks, 5% de jogadas aleatórias com o rótulo da heurística) → **86% de acerto** na
