@@ -36,7 +36,7 @@ Instale:
 pip install numpy
 ```
 O motor, a biblioteca de cartas, os decks, o LOG, os testes e a interface só precisam de **numpy**.
-O PyTorch (`pip install torch`) só é necessário mais tarde, para treinar a IA — pode pular por enquanto.
+O PyTorch (`pip install torch`) só é necessário para treinar a IA (seção 9); o resto funciona sem ele.
 
 ## 4. Testes (nesta ordem)
 
@@ -44,9 +44,12 @@ O PyTorch (`pip install torch`) só é necessário mais tarde, para treinar a IA
 |---|---|---|---|---|
 | 1 | `python tests/test_rules.py` | < 1 s | 15 linhas `ok …` e `falhas: 0` | regras básicas (dano, fraqueza, condições, Habilidades, Ferramentas…) |
 | 2 | `python tests/test_limitless.py` | < 1 s | `ok` | leitura das páginas da Limitless |
+| 2c | `python tests/test_explorer.py` | < 5 s | `ok` | filtros e detalhe da página de cartas |
+| 2b | `python tests/test_deckbuilder.py` | < 5 s | `ok` | busca, salvar e duplicar do montador de decks |
 | 3 | `python tests/test_engine.py` | ~10 s | `ok 6.0 s` (o tempo varia) | partidas inteiras com os 12 decks top 8, sem cartas perdidas/duplicadas; partidas reproduzíveis |
 | 4 | `python tests/test_replay.py` | ~10–30 s | `ok 4 logs` | as 4 partidas reais do Pokémon TCG Live são refeitas jogada a jogada |
 | 5 | `python tests/fuzz.py --games 300` | ~15 s | `300 partidas, 0 com erro; …` | decks aleatórios e jogadas aleatórias (estresse do motor) |
+| 6 | `python tests/test_ai.py` | ~20 s | 3 linhas `ok …` e `falhas: 0` | formato dos dados da IA, pré-treino e um passo do PPO (precisa do PyTorch; sem ele os testes são pulados) |
 
 Se `pip install pytest` estiver disponível, `python -m pytest -q tests` roda os mesmos testes de uma vez.
 
@@ -57,8 +60,8 @@ Se `pip install pytest` estiver disponível, `python -m pytest -q tests` roda os
 | `python cartas.py resumo` | na 1ª vez: `Biblioteca ainda não gerada; criando…` (gera `cartas/cartas.db`); depois a contagem por pasta e `Total: 2083 cartas` |
 | `python cartas.py mostrar TWM-130` | ficha do Dragapult ex, com os ataques em inglês e português |
 | `python cartas.py buscar "Ultra Bola"` | `MEG-131  Ultra Ball  Ultra Bola  Treinadores/Itens` |
-| `python gerenciar_decks.py validar --todos` | `12/12 válidos` |
-| `python gerenciar_decks.py mostrar 01_hedrick_dragapult` | lista do 1º lugar do Mundial e `✔ deck válido` |
+| `python gerenciar_decks.py validar --todos` | `N/N válidos` (inclui os 12 decks fixos de `decks/tests/`; decks de torneios fora da rotação aparecem inválidos — use `limpar_decks.py`) |
+| `python gerenciar_decks.py mostrar 01_hedrick_dragapult` | lista do 1º lugar do Mundial (`decks/tests/`) e `✔ deck válido` |
 | `python gerenciar_logs.py listar` | 4 partidas do TCG Live com `✔` |
 | `python simulate.py 01_hedrick_dragapult 05_heiremans_crustle --games 50` | taxa de vitória do confronto (a IA heurística ainda é simples: números indicativos) |
 
@@ -94,3 +97,29 @@ Para parar o servidor: `Ctrl+C` no terminal.
 | Acentos/símbolos estranhos no terminal do Windows | use o Windows Terminal, ou rode `chcp 65001` antes |
 | Porta 8765 ocupada | `python server.py --port 9000` |
 | `import_limitless.py` falha | sem internet ou a Limitless mudou o site: avise e envie a mensagem de erro |
+| Treino parado ou muito lento (passos/s caindo) | outra coisa está usando a GPU e a memória de vídeo acabou (no WSL/Windows ela transborda para a RAM e fica muito lenta): feche o outro programa ou use `--device cpu` |
+
+## 9. Treinar a IA (PyTorch)
+
+A rede aprende em duas etapas: primeiro **imita a IA heurística** (aprendizado supervisionado, rápido) e depois
+**melhora jogando contra si mesma** (PPO). Arquivos gerados ficam em `dados/` e `checkpoints/` (fora do git).
+Explicação completa da lógica e de cada opção: [`docs/IA_TREINO.md`](docs/IA_TREINO.md); resultados obtidos até agora:
+[`docs/IA_PROGRESSO.md`](docs/IA_PROGRESSO.md).
+
+| Passo | Comando | Tempo (32 núcleos + RTX 4070) | Resultado |
+|---|---|---|---|
+| 1 | `python imitar.py gerar --partidas 20000` | ~2–3 min | `dados/imitacao/` (~5 GB, ~3 milhões de decisões da heurística) |
+| 2 | `python imitar.py treinar --epocas 6` | ~12 min | `checkpoints/imitacao.pt`; no fim, taxa de vitória contra a heurística |
+| 3 | `python imitar.py avaliar checkpoints/imitacao.pt --partidas 400` | ~1 min | vitórias contra a heurística, por deck |
+| 4 | `python train.py --resume checkpoints/imitacao.pt --iterations 300` | ~35–45 min | `checkpoints/best.pt` / `latest.pt`; uma linha JSON por iteração |
+| 5 | `python ia.py acompanhar --seguir` (outro terminal) | — | curva do PPO em andamento (vitórias, KL, entropia…) e alertas |
+| 6 | `python ia.py historico` | — | todos os treinos e avaliações registrados (`logs/ia/treinos.jsonl`) |
+
+Os treinos também aparecem com gráficos no W&B (`pip install wandb` e `wandb login` uma vez):
+https://forge.coreweave.com/wandb/tiago-amorim/poketrainer — `--sem-wandb` desliga.
+
+- Para gerar mais dados depois, rode `gerar` de novo com outra semente (`--seed 2`): os shards são acrescentados.
+- `--pasta tests` restringe aos 12 decks fixos; sem isso são usados todos os decks de `decks/` (inclui `decks/limitless/`).
+- Uma rede treinada aparece na interface como **Rede: checkpoints/…** e pode ser usada em
+  `python simulate.py deck1 deck2 --agent model:checkpoints/best.pt`.
+- Se a base de cartas mudar de tamanho (coleção nova), os dados e checkpoints antigos deixam de servir: gere de novo.

@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "This Pokémon does 100 damage to itself. Flip a coin. If heads, your opponent's Active Pokémon is Knocked Out.",
       "texto_pt": "Este Pokémon causa 100 pontos de dano a si mesmo. Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente será Nocauteado.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Electric Ball",
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Thump-Thump Boom: If heads, your opponent's Active Pokémon is Knocked Out."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

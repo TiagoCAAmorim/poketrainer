@@ -28,7 +28,7 @@
       "dano": "130",
       "texto": "You may have this Pokémon also do 60 damage to itself and make your opponent's Active Pokémon Paralyzed.",
       "texto_pt": "Você pode fazer este Pokémon também causar 60 pontos de dano a si mesmo e deixar o Pokémon Ativo do seu oponente Paralisado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Voltaic Fist: You may have this Pokémon also do 60 damage to itself and make your opponent's Active Pokémon Paralyzed."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

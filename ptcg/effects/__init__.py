@@ -59,7 +59,7 @@ def _load_modules():
     global _LOADED
     if _LOADED:
         return
-    from . import trainers, tools, stadiums, energies, abilities, attacks  # noqa: F401
+    from . import trainers, tools, stadiums, energies, abilities, attacks, abilities2, attacks2  # noqa: F401
     _LOADED = True
 
 

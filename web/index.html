@@ -26,6 +26,7 @@ select{max-width:270px}
 input[type=number]{width:84px}
 .btn{background:#1c2a24;border:1px solid #33493f;border-radius:7px;padding:5px 11px;cursor:pointer}
 .btn:hover{border-color:var(--accent)}
+a.btn{color:var(--ink);text-decoration:none}
 .btn.primary{background:var(--accent);color:#1a1405;border-color:var(--accent);font-weight:700}
 .cov{font-size:12px;color:var(--mute);margin-left:auto}
 .cov b{color:var(--ok)}
@@ -121,12 +122,22 @@ aside{border-left:1px solid var(--line);background:var(--panel);display:flex;fle
 .timeline input{flex:1}
 .replaybar{display:none;padding:8px 14px;border-bottom:1px solid var(--line);background:#0e1612}
 pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
+#cardPanel{position:relative;z-index:45;display:none;border-right:1px solid var(--line);background:var(--panel);padding:12px;overflow:auto;min-height:0}
+main.withimg{grid-template-columns:var(--imgw,280px) minmax(0,1fr) 390px}
+main.withimg #cardPanel{display:block}
+#cardGrip{position:absolute;top:0;right:-3px;bottom:0;width:7px;cursor:col-resize;z-index:6;touch-action:none}
+#cardGrip:hover,#cardGrip.drag{background:var(--accent);opacity:.5}
+body.resizing{cursor:col-resize;user-select:none}
+#cardPanel img{width:100%;border-radius:10px;box-shadow:0 6px 20px #000a;display:block}
+#cardPanel .ph{color:var(--mute);text-align:center;padding:24px 8px;border:1px dashed var(--line);border-radius:10px}
+#cardPanel h3{margin:10px 0 2px;font-size:15px} #cardPanel .meta{color:var(--mute);font-size:11.5px}
+@media (max-width:1100px){#cardPanel{display:none!important}main.withimg{grid-template-columns:1fr}}
 @media (max-width:1100px){main{grid-template-columns:1fr}aside{border-left:none;border-top:1px solid var(--line);max-height:50vh}}
 </style>
 </head>
 <body>
 <header>
-  <h1>PTCG <b>Lab</b></h1>
+  <h1><a href="/" style="color:inherit;text-decoration:none" title="Página inicial">PTCG <b>Lab</b></a></h1>
   <div class="grp"><label>J1</label><select id="deck0"></select><select id="ctrl0"></select></div>
   <div class="grp"><label>J2</label><select id="deck1"></select><select id="ctrl1"></select></div>
   <div class="grp"><label>Semente</label><input id="seed" type="number" placeholder="aleatória"></div>
@@ -134,15 +145,23 @@ pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
   <div class="grp">
     <button class="btn" id="playBtn" title="Reproduzir/pausar a IA">⏸</button>
     <button class="btn" id="stepBtn" title="Avançar uma decisão da IA">⏭</button>
-    <label>Vel.</label><input id="speed" type="range" min="0" max="1500" value="450" style="width:80px">
+    <label>Vel.</label><input id="speed" type="range" min="0" max="100" value="45" style="width:90px" title="Direita = mais rápido; vale na hora, também durante a partida"><span id="speedTxt" class="mono" style="font-size:11px;color:var(--mute);min-width:44px"></span>
   </div>
   <div class="grp"><label><input type="checkbox" id="reveal"> Revelar mãos</label></div>
+  <div class="grp"><label>Consultor</label><select id="advisor" title="IA que sugere jogadas para o humano (professor virtual)"></select></div>
+  <div class="grp"><label title="Mostra a imagem da carta sob o mouse num painel à esquerda (precisa de python baixar_imagens.py)"><input type="checkbox" id="imgPanel"> Imagem da carta</label></div>
+  <div class="grp"><label title="Mostra/esconde as probabilidades e a avaliação da IA (quando a IA da vez é uma rede)"><input type="checkbox" id="hints" checked> Sugestões da IA</label></div>
+  <button class="btn" id="commentBtn" title="Anotar um problema nesta decisão (vai para logs/problemas.jsonl)">💬 Comentar</button>
+  <button class="btn" id="discardBtn" title="Ver as cartas do seu descarte (clique na pilha 'Descarte' para ver a de qualquer jogador)">🗑 Descarte</button>
   <button class="btn" id="undoBtn" title="Desfazer até sua última decisão">↶</button>
   <button class="btn" id="deckBtn">Decks…</button>
+  <a class="btn" href="/decks" style="text-decoration:none">Montador de decks</a>
+  <a class="btn" href="/cartas" style="text-decoration:none">Cartas</a>
   <button class="btn" id="replayBtn">Log do TCG Live…</button>
   <span class="cov" id="cov"></span>
 </header>
-<main>
+<main id="mainGrid">
+  <div id="cardPanel"><div id="cardInfo"><div class="ph">Passe o mouse sobre uma carta para ver a imagem.</div></div><div id="cardGrip" title="Arraste para redimensionar"></div></div>
   <section id="board">
     <div class="empty-state" id="empty"><h2>Monte uma partida</h2>
       <p>Escolha os decks (inclusive os top 8 importados da Limitless) e quem controla cada lado, e clique em <b>Nova partida</b>.</p>
@@ -182,6 +201,12 @@ pre.sum{white-space:pre-wrap;font-size:12px;color:#c7d3cc;margin:6px 0 0}
   <div class="err" id="replayErr"></div>
   <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn" id="replayClose">Fechar</button><button class="btn primary" id="replayGo">Reproduzir</button></div>
 </div></div>
+<div class="modal" id="commentModal"><div class="box">
+  <h2 style="margin-top:0">Comentar esta decisão</h2>
+  <div style="color:var(--mute);font-size:12.5px;margin-bottom:6px">Descreva o erro (opção que não devia existir, faltou, efeito errado…). Fica registrado com a partida inteira até este ponto.</div>
+  <textarea id="commentText" style="width:100%;min-height:110px"></textarea>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px"><button class="btn" id="commentClose">Cancelar</button><button class="btn primary" id="commentSave">Salvar comentário</button></div>
+</div></div>
 <div class="modal" id="pileModal"><div class="box"><h2 id="pileT" style="margin-top:0"></h2><div id="pileL"></div><div style="text-align:right;margin-top:10px"><button class="btn" onclick="pileModal.style.display='none'">Fechar</button></div></div></div>
 <script>
 const $=id=>document.getElementById(id);
@@ -213,6 +238,7 @@ async function loadMeta(){
     for(const [g,ds] of Object.entries(groups)){ const og=document.createElement('optgroup'); og.label=g; ds.forEach(d=>og.appendChild(new Option(deckLabel(d),d.name))); s.appendChild(og) }
     if(keep) s.value=keep;
   }
+  { const s=$('advisor'), keep=s.value; s.innerHTML=''; s.add(new Option('Nenhum','')); (META.advisors||[]).forEach(c=>s.add(new Option(c.label,c.id))); s.value=keep }
   if(!$('deck1').dataset.init&&META.decks.length>1){$('deck1').selectedIndex=1;$('deck1').dataset.init=1}
   for(const id of ['ctrl0','ctrl1']){
     const s=$(id), keep=s.value; s.innerHTML='';
@@ -289,27 +315,33 @@ function renderPrompt(pr){
   if(!pr){ box.innerHTML=`<h2>${ST.done?'Fim de jogo':'—'}</h2>`; return }
   const who=ST.players[pr.player].name; const human=ST.ctrl[pr.player]==='human';
   let html=`<h2>${human?'Sua decisão':'Vez de '+esc(who)}</h2><div class="ptext">${esc(pr.text)}${pr.source?` <span class="chip">${esc(pr.source)}</span>`:''}</div>`;
-  const ev=ST.ai_eval;
-  if(ev){ const x=(ev.value+1)/2*100; html+=`<div id="evalBar">Avaliação da rede para ${esc(who)}: <b style="color:var(--ink)">${(ev.value>=0?'+':'')+ev.value.toFixed(2)}</b><div class="meter"><i style="left:calc(${x}% - 1px)"></i></div></div>` }
+  const ev=$('hints').checked?ST.ai_eval:null;
+  if(ev&&ev.value!=null){ const x=(ev.value+1)/2*100; html+=`<div id="evalBar">${ev.advisor?'Avaliação do consultor para a sua posição':'Avaliação da rede para '+esc(who)}: <b style="color:var(--ink)">${(ev.value>=0?'+':'')+ev.value.toFixed(2)}</b><div class="meter"><i style="left:calc(${x}% - 1px)"></i></div></div>` }
   const opts=pr.options||[]; const filt=highlight?new Set(highlight):null;
+  if(ev&&ev.advisor) html+=`<div style="font-size:12px;color:var(--mute);margin:6px 0 2px">🎓 Consultor: ${ev.value==null?'a opção sugerida está marcada':'probabilidade de cada opção'}</div>`;
   const btn=o=>{ const p=ev?ev.probs[o.i]:null;
-    return `<button class="opt k-${o.kind} ${filt&&filt.has(o.i)?'hl':''}" data-i="${o.i}" ${o.card?`data-card="${esc(o.card)}"`:''} ${human?'':'disabled'}>${p!=null?`<span class="pv">${(p*100).toFixed(0)}%</span>`:''}${esc(o.label)}${p!=null?`<span class="prob" style="width:${p*100}%"></span>`:''}</button>` };
+    return `<button class="opt k-${o.kind} ${filt&&filt.has(o.i)?'hl':''} ${ev&&ev.value==null&&p>=1?'hl':''}" data-i="${o.i}" ${o.card?`data-card="${esc(o.card)}"`:''} ${human?'':'disabled'}>${p!=null?`<span class="pv">${ev.value==null?(p>=1?'★ sugerido':''):(p*100).toFixed(0)+'%'}</span>`:''}${esc(o.label)}${p!=null?`<span class="prob" style="width:${p*100}%"></span>`:''}</button>` };
   if(pr.hint==='main'){
     for(const [k,label] of GROUPS){ const g=opts.filter(o=>o.kind===k); if(!g.length) continue;
       html+=`<div class="ogroup"><div class="gt">${label}</div>${g.map(btn).join('')}</div>` }
   } else html+=opts.map(btn).join('');
   if(highlight) html+=`<div style="margin-top:8px"><button class="btn" id="clearHl">Mostrar todas as opções</button></div>`;
+  if(pr.deck_cards&&human) html+=`<div style="margin-top:8px"><button class="btn" id="deckViewBtn">Ver baralho inteiro (${pr.deck_cards.length})</button></div>`;
   box.innerHTML=html;
+  const dv=$('deckViewBtn'); if(dv) dv.onclick=showDeckView;
   box.querySelectorAll('.opt').forEach(b=>b.onclick=()=>act(+b.dataset.i));
   const ch=$('clearHl'); if(ch) ch.onclick=()=>{highlight=null;render()};
 }
 
 async function act(i){ highlight=null; try{ ST=await api('/api/act',{index:i,reveal:reveal()}); render(); schedule() }catch(e){ toast(e.message) } }
+// slider = velocidade (direita = mais rápida); atraso entre jogadas da IA, curva quadrática (máx. = sem espera)
+const delayMs=()=>Math.round(1500*Math.pow(1-(+$('speed').value)/100,2));
+function speedLabel(){ const d=delayMs(); $('speedTxt').textContent=d===0?'máx.':d>=1000?(d/1000).toFixed(1)+' s':d+' ms' }
 function schedule(){
   clearTimeout(timer);
   if(REPLAY||!ST||!ST.prompt||ST.done||!playing) return;
   if(ST.ctrl[ST.prompt.player]==='human') return;
-  timer=setTimeout(stepAI,+$('speed').value);
+  timer=setTimeout(stepAI,delayMs());
 }
 async function stepAI(n=1){ try{ ST=await api('/api/step',{n,reveal:reveal()}); render(); schedule() }catch(e){ toast(e.message) } }
 async function refresh(){ const s=await api('/api/state?cards=1&reveal='+(reveal()?1:0)); if(s.cards) Object.assign(CARDS,s.cards); ST=s; render(); schedule() }
@@ -340,15 +372,43 @@ $('replayGo').onclick=async()=>{
 $('rPrev').onclick=()=>{ if(REPLAY&&REPLAY.i>0){REPLAY.i--;render()} };
 $('rNext').onclick=()=>{ if(REPLAY&&REPLAY.i<REPLAY.frames.length-1){REPLAY.i++;render()} };
 $('rSlider').oninput=e=>{ if(REPLAY){REPLAY.i=+e.target.value;render()} };
-$('rPlay').onclick=()=>{ clearInterval(rTimer); rTimer=setInterval(()=>{ if(!REPLAY||REPLAY.i>=REPLAY.frames.length-1) return clearInterval(rTimer); REPLAY.i++; render() },+$('speed').value+150) };
-$('exitReplay').onclick=()=>{ clearInterval(rTimer); REPLAY=null; $('replaybar').style.display='none'; refresh() };
+$('rPlay').onclick=()=>{ clearTimeout(rTimer); const tick=()=>{ if(!REPLAY||REPLAY.i>=REPLAY.frames.length-1) return; REPLAY.i++; render(); rTimer=setTimeout(tick,delayMs()+150) }; rTimer=setTimeout(tick,delayMs()+150) };
+$('exitReplay').onclick=()=>{ clearTimeout(rTimer); REPLAY=null; $('replaybar').style.display='none'; refresh() };
+
+// pilhas: descarte (a qualquer momento, também em replay) e baralho inteiro durante buscas
+function cardList(cards,opts={}){
+  const m=new Map();
+  cards.forEach(c=>{ const x=m.get(c.id)||{id:c.id,name:c.name,n:0,picked:0,eligible:false}; x.n++; if(c.picked) x.picked++; if(c.eligible) x.eligible=true; m.set(c.id,x) });
+  return [...m.values()].sort((a,b)=>a.name.localeCompare(b.name));
+}
+function showDiscard(p){
+  const S=REPLAY?REPLAY.frames[REPLAY.i].state:ST; if(!S||!S.players) return;
+  const P=S.players[p]; $('pileT').textContent=`Descarte — ${P.name} (${P.discard.length})`;
+  $('pileL').innerHTML=cardList(P.discard).map(x=>`<div data-card="${esc(x.id)}">${x.n}× ${esc(x.name)}</div>`).join('')||'<i>vazio</i>';
+  pileModal.style.display='grid';
+}
+function showDeckView(){
+  const pr=ST&&ST.prompt; if(!pr||!pr.deck_cards) return;
+  $('pileT').textContent=`Seu baralho (${pr.deck_cards.length} cartas, ordem oculta)`;
+  const html=cardList(pr.deck_cards).map(x=>{
+    const o=x.eligible?pr.options.find(o=>o.card===x.id):null;
+    const left=x.n-x.picked;
+    return `<div data-card="${esc(x.id)}" ${o?`data-pick="${o.i}" style="cursor:pointer;color:var(--accent)"`:'style="color:var(--mute)"'}>${left}× ${esc(x.name)}${x.picked?` <span class="chip">${x.picked} já escolhida(s)</span>`:''}${o?'':' <span class="chip">não pode ser escolhida</span>'}</div>`}).join('');
+  $('pileL').innerHTML=`<div style="color:var(--mute);margin-bottom:6px">Em destaque, as cartas que você pode pegar (clique para escolher).</div>${html}`;
+  pileModal.style.display='grid';
+}
+$('hints').checked=(()=>{ try{ return localStorage.getItem('hints')!=='0' }catch(e){ return true } })();
+$('advisor').onchange=async()=>{ try{ ST=await api('/api/advisor',{advisor:$('advisor').value,reveal:reveal()}); render() }catch(e){ toast(e.message) } };
+$('hints').onchange=()=>{ try{ localStorage.setItem('hints',$('hints').checked?'1':'0') }catch(e){}; if(!REPLAY&&ST&&ST.players) renderPrompt(ST.prompt) };
+$('discardBtn').onclick=()=>{ const S=REPLAY?REPLAY.frames[REPLAY.i].state:ST; if(!S||!S.players){ toast('Sem partida em andamento'); return }
+  const me=S.viewer==='all'||S.viewer===undefined?0:S.viewer; showDiscard(me) };
 
 // clique em cartas → filtra opções que usam aquela carta
 document.addEventListener('click',e=>{
   const pile=e.target.closest('[data-discard]');
-  if(pile){ const S=REPLAY?REPLAY.frames[REPLAY.i].state:ST; const P=S.players[+pile.dataset.discard]; $('pileT').textContent='Descarte — '+P.name;
-    const cnt={}; P.discard.forEach(c=>cnt[c.name]=(cnt[c.name]||0)+1);
-    $('pileL').innerHTML=Object.entries(cnt).map(([n,c])=>`<div>${c}× ${esc(n)}</div>`).join('')||'<i>vazio</i>'; pileModal.style.display='grid'; return }
+  if(pile){ showDiscard(+pile.dataset.discard); return }
+  const dvc=e.target.closest('[data-pick]');
+  if(dvc){ pileModal.style.display='none'; act(+dvc.dataset.pick); return }
   if(REPLAY) return;
   const el=e.target.closest('.hc[data-uid], .pk[data-owner]');
   if(!el||!ST||!ST.prompt||!ST.prompt.options) return;
@@ -360,8 +420,33 @@ document.addEventListener('click',e=>{
   if(m.length===1) act(m[0].i); else if(m.length){ highlight=m.map(o=>o.i); render() }
 });
 // tooltip
+// painel de imagem (opcional): guarda a última carta apontada
+let shownImg=null;
+function showCardImage(id){
+  const d=CARDS[id]; if(!d||id===shownImg) return; shownImg=id;
+  const pn=$('cardInfo');
+  pn.innerHTML=`<img src="/img/alta/${encodeURIComponent(id)}" alt="${esc(d.name)}" onerror="this.outerHTML='<div class=ph>Imagem não encontrada.<br>Rode <span class=mono>python baixar_imagens.py</span></div>'"><h3>${esc(d.name)}</h3><div class="meta">${d.name_pt?esc(d.name_pt)+' · ':''}${esc((d.prints||[])[0]||d.id)}</div>`;
+}
+function applyImgPanel(){
+  const on=$('imgPanel').checked; $('mainGrid').classList.toggle('withimg',on);
+  try{ localStorage.setItem('imgPanel',on?'1':'0') }catch(e){}
+  if(!on) $('tip').style.display='none';
+}
+$('imgPanel').checked=(()=>{ try{ return localStorage.getItem('imgPanel')==='1' }catch(e){ return false } })();
+$('imgPanel').onchange=applyImgPanel; applyImgPanel();
+// largura do painel ajustável (arrastar a borda direita; duplo clique restaura)
+function setImgW(w){ w=Math.max(180,Math.min(w,Math.round(innerWidth*0.6))); $('mainGrid').style.setProperty('--imgw',w+'px'); return w }
+try{ const w=+localStorage.getItem('imgW'); if(w) setImgW(w) }catch(e){}
+$('cardGrip').onpointerdown=e=>{
+  const g=$('cardGrip'); g.setPointerCapture(e.pointerId); g.classList.add('drag'); document.body.classList.add('resizing');
+  const x0=e.clientX, w0=$('cardPanel').offsetWidth; let w=w0;
+  g.onpointermove=ev=>{ w=setImgW(w0+ev.clientX-x0) };
+  g.onpointerup=()=>{ g.onpointermove=g.onpointerup=null; g.classList.remove('drag'); document.body.classList.remove('resizing'); try{ localStorage.setItem('imgW',w) }catch(e){} };
+};
+$('cardGrip').ondblclick=()=>{ setImgW(280); try{ localStorage.removeItem('imgW') }catch(e){} };
 document.addEventListener('mousemove',e=>{
   const el=e.target.closest('[data-card]'); const tip=$('tip');
+  if($('imgPanel').checked){ tip.style.display='none'; if(el) showCardImage(el.dataset.card); return }
   if(!el){ tip.style.display='none'; return }
   const d=CARDS[el.dataset.card]; if(!d){ tip.style.display='none'; return }
   const cost=c=>`<span class="cost">${c.map(t=>`<span class="pip" style="background:${tcol(t)}">${t}</span>`).join('')}</span>`;
@@ -379,14 +464,17 @@ document.addEventListener('mousemove',e=>{
 
 $('newBtn').onclick=async()=>{
   try{ highlight=null; $('banner').dataset.shown=''; if(REPLAY){ REPLAY=null; $('replaybar').style.display='none' }
-    const s=await api('/api/new',{deck0:$('deck0').value,deck1:$('deck1').value,ctrl0:$('ctrl0').value,ctrl1:$('ctrl1').value,seed:$('seed').value,reveal:reveal()});
+    const s=await api('/api/new',{deck0:$('deck0').value,deck1:$('deck1').value,ctrl0:$('ctrl0').value,ctrl1:$('ctrl1').value,advisor:$('advisor').value,seed:$('seed').value,reveal:reveal()});
     if(s.cards) Object.assign(CARDS,s.cards); ST=s; render(); schedule() }catch(e){ toast(e.message) }
 };
 $('playBtn').onclick=()=>{ playing=!playing; $('playBtn').textContent=playing?'⏸':'▶'; schedule() };
 $('stepBtn').onclick=()=>stepAI(1);
 $('reveal').onchange=refresh;
 $('undoBtn').onclick=async()=>{ try{ ST=await api('/api/undo',{reveal:reveal()}); highlight=null; render(); schedule() }catch(e){ toast(e.message) } };
-$('speed').oninput=schedule;
+$('commentBtn').onclick=()=>{ if(!ST||!ST.prompt&&!ST.done){ toast('Sem partida em andamento'); return } playing=false; $('playBtn').textContent='▶'; clearTimeout(timer); commentModal.style.display='grid'; $('commentText').focus() };
+$('commentClose').onclick=()=>commentModal.style.display='none';
+$('commentSave').onclick=async()=>{ try{ const r=await api('/api/comment',{text:$('commentText').value}); $('commentText').value=''; commentModal.style.display='none'; toast('Comentário '+r.id+' registrado') }catch(e){ toast(e.message) } };
+$('speed').oninput=()=>{ speedLabel(); schedule() }; speedLabel();
 $('deckBtn').onclick=()=>{ deckModal.style.display='grid'; showDeck() };
 $('deckClose').onclick=()=>deckModal.style.display='none';
 $('deckView').onchange=showDeck;
@@ -408,6 +496,17 @@ document.addEventListener('keydown',e=>{
 });
 const deckModal=$('deckModal'), pileModal=$('pileModal'), replayModal=$('replayModal');
 loadMeta().then(refresh).catch(e=>toast('Servidor indisponível: '+e.message));
+// Atualiza a lista de decks ao voltar para esta página/aba (ex.: depois de montar um deck em /decks)
+let lastMeta=Date.now();
+function refreshDecks(){
+  if(document.hidden||Date.now()-lastMeta<1500) return;
+  lastMeta=Date.now();
+  loadMeta().catch(()=>{});
+}
+document.addEventListener('visibilitychange',refreshDecks);
+window.addEventListener('focus',refreshDecks);
+window.addEventListener('pageshow',e=>{ if(e.persisted){ lastMeta=0; refreshDecks() } });
+if(location.hash==='#log') setTimeout(()=>{ const b=document.getElementById('replayBtn'); if(b) b.click() },400);
 </script>
 </body>
 </html>

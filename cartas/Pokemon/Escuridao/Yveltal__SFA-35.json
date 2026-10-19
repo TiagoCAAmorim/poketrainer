@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Put 2 damage counters on each of your opponent's Pokémon that has any damage counters on it.",
       "texto_pt": "Coloque 2 contadores de dano em cada um dos Pokémon do seu oponente que tem algum contador de dano nele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Destructive Beam",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Corrosive Winds: Put 2 damage counters on each of your opponent's Pokémon that has any damage counters on it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

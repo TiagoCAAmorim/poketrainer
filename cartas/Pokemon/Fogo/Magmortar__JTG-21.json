@@ -22,7 +22,7 @@
       "nome_pt": "Rebentação de Magma",
       "texto": "During Pokémon Checkup, put 3 more damage counters on your opponent's Burned Pokémon.",
       "texto_pt": "Durante o Checape Pokémon, coloque 3 contadores de dano a mais nos Pokémon Queimados do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Magma Surge: During Pokémon Checkup, put 3 more damage counters on your opponent's Burned Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

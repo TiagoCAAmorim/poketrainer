@@ -40,7 +40,7 @@
       "dano": "120+",
       "texto": "You may discard your hand. If you discarded any cards in this way, this attack does 120 more damage.",
       "texto_pt": "Você pode descartar a sua mão. Se você descartou qualquer carta desta forma, este ataque causará 120 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -55,9 +55,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Purging Strike: You may discard your hand.; If you discarded any cards in this way, this attack does 120 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -40,7 +40,7 @@
       "dano": "100+",
       "texto": "If Rosa's Encouragement is in your discard pile, this attack does 150 more damage.",
       "texto_pt": "Se Encorajamento da Rose estiver na sua pilha de descarte, este ataque causará 150 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Solar Coiling: If Rosa's Encouragement is in your discard pile, this attack does 150 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

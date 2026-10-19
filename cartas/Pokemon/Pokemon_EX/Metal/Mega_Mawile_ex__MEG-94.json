@@ -41,7 +41,7 @@
       "dano": "260",
       "texto": "If your opponent's Active Pokémon already has any damage counters on it, this attack's base damage is 30.",
       "texto_pt": "Se o Pokémon Ativo do seu oponente já tiver algum contador de dano nele, o dano base deste ataque será 30.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -61,9 +61,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Huge Bite: If your opponent's Active Pokémon already has any damage counters on it, this attack's base damage is 30."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

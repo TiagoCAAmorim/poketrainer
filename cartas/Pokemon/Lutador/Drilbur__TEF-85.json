@@ -22,7 +22,7 @@
       "nome_pt": "Cavar Cavar Cavar",
       "texto": "When you play this Pokémon from your hand onto your Bench during your turn, you may search your deck for up to 3 Basic Fighting Energy cards and discard them. Then, shuffle your deck.",
       "texto_pt": "Quando você jogar este Pokémon da sua mão para o seu Banco durante o seu turno, você poderá procurar por até 3 cartas de Energia Lutador Básica no seu baralho e descartá-las. Em seguida, embaralhe o seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Dig Dig Dig: Search your deck for up to 3 Basic Fighting Energy cards and discard them."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

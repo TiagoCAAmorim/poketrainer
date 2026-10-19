@@ -22,7 +22,7 @@
       "nome_pt": "Asas Arenosas",
       "texto": "Once during your turn, when you play this Pokémon from your hand to evolve 1 of your Pokémon, you may use this Ability. You may also use this Ability if this Pokémon is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon. Discard the top 2 cards of your opponent's deck.",
       "texto_pt": "Uma vez durante o seu turno, quando você jogar este Pokémon da sua mão para evoluir 1 dos seus Pokémon, você poderá usar esta Habilidade. Você também poderá usar esta Habilidade se este Pokémon estiver no Campo Ativo e for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente. Descarte as 2 cartas de cima do baralho do seu oponente.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -59,9 +59,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Sandy Flapping: You may also use this Ability if this Pokémon is in the Active Spot and is Knocked Out by damage from an attack from your opponent's Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

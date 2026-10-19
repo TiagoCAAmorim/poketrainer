@@ -28,7 +28,7 @@
       "dano": "80",
       "texto": "You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon.",
       "texto_pt": "Você pode mover uma Energia do Pokémon Ativo do seu oponente para 1 dos Pokémon no Banco dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Tricky Steps: You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

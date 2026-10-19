@@ -22,7 +22,7 @@
       "nome_pt": "Mira de Franco-atirador",
       "texto": "If your opponent has exactly 4 cards in their hand, ignore all Colorless Energy in the costs of attacks used by this Pokémon.",
       "texto_pt": "Se o seu oponente tiver exatamente 4 cartas na mão dele, ignore todas as Energias Incolor nos custos dos ataques usados por este Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Sniper's Eye: If your opponent has exactly 4 cards in their hand, ignore all Colorless Energy in the costs of attacks used by this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

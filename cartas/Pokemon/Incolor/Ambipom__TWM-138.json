@@ -22,7 +22,7 @@
       "nome_pt": "Cauda Maligna",
       "texto": "When you play this Pokémon from your hand to evolve 1 of your Pokémon during your turn, you may flip 2 coins. For each heads, choose a random card from your opponent's hand. Your opponent reveals those cards and shuffles them into their deck.",
       "texto_pt": "Quando você jogar este Pokémon da sua mão para evoluir 1 dos seus Pokémon durante o seu turno, você poderá jogar 2 moedas. Para cada cara, escolha uma carta aleatória da mão do seu oponente. Seu oponente revela aquelas cartas e as embaralha no baralho dele.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Wicked Tail: For each heads, choose a random card from your opponent's hand.; Your opponent reveals those cards and shuffles them into their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

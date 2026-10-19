@@ -22,7 +22,7 @@
       "nome_pt": "Subjugação Tóxica",
       "texto": "As long as this Pokémon is in the Active Spot, put 5 more damage counters on your opponent's Poisoned Pokémon during Pokémon Checkup.",
       "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, coloque 5 contadores de dano a mais nos Pokémon Envenenados do seu oponente durante o Checape Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Toxic Subjugation: As long as this Pokémon is in the Active Spot, put 5 more damage counters on your opponent's Poisoned Pokémon during Pokémon Checkup."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

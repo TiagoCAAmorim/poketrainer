@@ -25,7 +25,7 @@
       "dano": "120",
       "texto": "If you don't have exactly 3 cards in your hand, this attack does nothing.",
       "texto_pt": "Se você não tiver exatamente 3 cartas na sua mão, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -43,9 +43,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Trio-Cheehoo: If you don't have exactly 3 cards in your hand, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

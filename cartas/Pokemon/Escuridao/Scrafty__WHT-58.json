@@ -28,7 +28,7 @@
       "dano": "60×",
       "texto": "Flip a coin for each Darkness Pokémon you have in play. This attack does 60 damage for each heads.",
       "texto_pt": "Jogue uma moeda para cada Pokémon Escuridão que você tem em jogo. Este ataque causa 60 pontos de dano para cada cara.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -46,9 +46,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Ruffians Attack: Flip a coin for each Darkness Pokémon you have in play."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

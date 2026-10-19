@@ -27,7 +27,7 @@
       "dano": "150",
       "texto": "If you don't have exactly 7 cards in your hand, this attack does nothing.",
       "texto_pt": "Se você não tiver exatamente 7 cartas na sua mão, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -45,9 +45,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Seventh Kick: If you don't have exactly 7 cards in your hand, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

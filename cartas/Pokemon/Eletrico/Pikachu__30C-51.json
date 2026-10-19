@@ -29,7 +29,7 @@
       "dano": "—",
       "texto": "Discard all Lightning Energy from this Pokémon, and this attack does 90 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
       "texto_pt": "Descarte todas as Energias Lightning deste Pokémon, e este ataque causa 90 pontos de dano a 1 dos Pokémon do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Lightning Crash: Discard all Lightning Energy from this Pokémon, and this attack does 90 damage to 1 of your opponent's Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

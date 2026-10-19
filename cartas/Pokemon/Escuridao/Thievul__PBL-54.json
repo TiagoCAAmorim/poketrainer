@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "If you have no cards in your hand, choose an attack from 1 of your opponent's Pokémon in play and use it as this attack.",
       "texto_pt": "Se você não tiver cartas na sua mão, escolha um ataque de 1 dos Pokémon do seu oponente em jogo e use-o como este ataque.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Sharp Fang",
@@ -59,9 +59,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Skill Thief: If you have no cards in your hand, choose an attack from 1 of your opponent's Pokémon in play and use it as this attack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

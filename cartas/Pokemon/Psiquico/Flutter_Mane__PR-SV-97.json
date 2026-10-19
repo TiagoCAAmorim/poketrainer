@@ -22,7 +22,7 @@
       "nome_pt": "Sopro da Meia-noite",
       "texto": "As long as this Pokémon is in the Active Spot, your opponent's Active Pokémon has no Abilities, except for Midnight Fluttering.",
       "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, o Pokémon Ativo do seu oponente não terá Habilidades, exceto por Sopro da Meia-noite.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Midnight Fluttering: As long as this Pokémon is in the Active Spot, your opponent's Active Pokémon has no Abilities, except for Midnight Fluttering."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

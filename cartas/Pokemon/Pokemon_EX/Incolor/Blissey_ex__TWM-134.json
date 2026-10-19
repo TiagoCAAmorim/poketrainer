@@ -22,7 +22,7 @@
       "nome_pt": "Substituição Animada",
       "texto": "Once during your turn, you may move a Basic Energy from 1 of your Pokémon to another of your Pokémon.",
       "texto_pt": "Uma vez durante o seu turno, você poderá mover uma Energia Básica de 1 dos seus Pokémon para outro Pokémon seu.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Happy Switch: Move a Basic Energy from 1 of your Pokémon to another of your Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

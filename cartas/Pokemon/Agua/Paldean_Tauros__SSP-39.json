@@ -28,7 +28,7 @@
       "dano": "30",
       "texto": "You may put 2 Energy attached to your opponent's Active Stage 2 Pokémon into their hand.",
       "texto_pt": "Você pode colocar 2 Energias ligadas ao Pokémon Estágio 2 Ativo do seu oponente na mão dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Jet Headbutt",
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Upthrusting Horns: You may put 2 Energy attached to your opponent's Active Stage 2 Pokémon into their hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

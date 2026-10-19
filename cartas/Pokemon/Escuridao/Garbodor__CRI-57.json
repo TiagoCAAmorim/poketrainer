@@ -22,7 +22,7 @@
       "nome_pt": "Lixo Lúgubre",
       "texto": "Attacks used by your opponent's Active Pokémon that has a Pokémon Tool attached do 20 less damage (before applying Weakness and Resistance).",
       "texto_pt": "Os ataques usados pelo Pokémon Ativo do seu oponente que tiver uma Ferramenta Pokémon ligada a ele causam 20 pontos de dano a menos (antes de aplicar Fraqueza e Resistência).",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Gloomy Garbage: Attacks used by your opponent's Active Pokémon that has a Pokémon Tool attached do 20 less damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

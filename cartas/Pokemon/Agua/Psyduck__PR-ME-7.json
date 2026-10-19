@@ -22,7 +22,7 @@
       "nome_pt": "Umidade",
       "texto": "Pokémon in play (both yours and your opponent's) lose all Abilities that require those Pokémon to be Knocked Out.",
       "texto_pt": "Os Pokémon em jogo (tanto seus quanto do seu oponente) perdem todas as Habilidades que exigem que esses Pokémon sejam Nocauteados.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Damp: Pokémon in play lose all Abilities that require those Pokémon to be Knocked Out."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

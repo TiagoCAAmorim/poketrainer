@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "Before doing damage, discard all Pokémon Tools and Special Energy from your opponent's Active Pokémon.",
       "texto_pt": "Antes de causar dano, descarte todas as Ferramentas Pokémon e Energias Especiais do Pokémon Ativo do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Reaping Dash: Before doing damage, discard all Pokémon Tools and Special Energy from your opponent's Active Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -29,7 +29,7 @@
       "dano": "180",
       "texto": "During your opponent's next turn, if this Pokémon is damaged by an attack (even if this Pokémon is Knocked Out), place 12 damage counters on the Attacking Pokémon.",
       "texto_pt": "Durante o próximo turno do seu oponente, se este Pokémon for danificado por um ataque (mesmo que este Pokémon seja Nocauteado), coloque 12 contadores de dano no Pokémon Atacante.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -44,9 +44,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Shellnado Spin: During your opponent's next turn, if this Pokémon is damaged by an attack, place 12 damage counters on the Attacking Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

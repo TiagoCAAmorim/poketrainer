@@ -176,6 +176,22 @@ def test_munkidori_moves_counters_and_watchful_eye_blocks():
     assert not has(g2, 'Adrena-Brain')
 
 
+def test_night_joker_cannot_copy_night_joker():
+    """Night Joker escolhe entre os ataques dos N's Pokémon no Banco, exceto o Night Joker de outro
+    N's Zoroark ex (antes era oferecido e a cópia se repetia sem fim: RecursionError)."""
+    g = new_game()
+    board(g, 0, "N's Zoroark ex", bench=["N's Zoroark ex", "N's Zekrom"],
+          energy={0: ['Basic Darkness Energy'] * 3})
+    board(g, 1, 'Dreepy', bench=['Dreepy'])
+    at_turn(g)
+    act(g, 'Night Joker')
+    assert g.prompt.hint == 'copy_attack', g.prompt.text
+    assert not has(g, 'Night Joker'), labels(g)
+    act(g, 'Shred')
+    resolve_all(g)
+    assert g.prizes_taken(0) == 1          # Shred (70) nocauteia o Dreepy (70 PS)
+
+
 if __name__ == '__main__':
     import traceback
     fails = 0

@@ -28,7 +28,7 @@
       "dano": "30",
       "texto": "Before doing damage, discard all Pokémon Tools from your opponent's Active Pokémon. If you discarded a Pokémon Tool in this way, your opponent's Active Pokémon is now Paralyzed.",
       "texto_pt": "Antes de causar dano, descarte todas as Ferramentas Pokémon do Pokémon Ativo do seu oponente. Se você descartou uma Ferramenta Pokémon desta forma, o Pokémon Ativo do seu oponente agora estará Paralisado.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Zapping Short: If you discarded a Pokémon Tool in this way, your opponent's Active Pokémon is now Paralyzed."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

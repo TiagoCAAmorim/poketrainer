@@ -28,7 +28,7 @@
       "dano": "30+",
       "texto": "If 1 of your other Ancient Pokémon used an attack during your last turn, this attack does 150 more damage.",
       "texto_pt": "Se 1 dos seus outros Pokémon Ancestrais usou um ataque durante o seu último turno, este ataque causará 150 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Hammer In",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Unrelenting Onslaught: If 1 of your other Ancient Pokémon used an attack during your last turn, this attack does 150 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

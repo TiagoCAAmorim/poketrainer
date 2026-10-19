@@ -40,7 +40,7 @@
       "dano": "130",
       "texto": "If this Pokémon has any damage counters on it, this attack can be used for Fighting.",
       "texto_pt": "Se este Pokémon tiver algum contador de dano nele, este ataque poderá ser usado por Lutador.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Raging Tentacles: If this Pokémon has any damage counters on it, this attack can be used for Fighting."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

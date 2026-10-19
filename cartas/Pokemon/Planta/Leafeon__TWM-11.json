@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Attach a Basic Grass Energy card from your hand to 1 of your Benched Pokémon. If you do, heal all damage from that Pokémon.",
       "texto_pt": "Ligue uma carta de Energia Planta Básica da sua mão a 1 dos seus Pokémon no Banco. Se fizer isto, cure todo o dano daquele Pokémon.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Solar Beam",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Leaflet Blessings: If you do, heal all damage from that Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

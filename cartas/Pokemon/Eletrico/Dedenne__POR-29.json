@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Choose Basic Lightning Energy cards from your discard pile up to the amount of Energy attached to all of your opponent's Pokémon and attach them to your Lightning Pokémon in any way you like.",
       "texto_pt": "Escolha cartas de Energia Elétrico Básica da sua pilha de descarte até a quantidade de Energias ligadas a todos os Pokémon do seu oponente e ligue-as aos seus Pokémon Elétrico como desejar.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Thunder Shock",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Tail Generator: Choose Basic Lightning Energy cards from your discard pile up to the amount of Energy attached to all of your opponent's Pokémon and attach them to your Lightning Pokémon in any way you like."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

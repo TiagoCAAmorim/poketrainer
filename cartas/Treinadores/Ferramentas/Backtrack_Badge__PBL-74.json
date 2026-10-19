@@ -19,9 +19,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "refazer moedas não implementado"
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

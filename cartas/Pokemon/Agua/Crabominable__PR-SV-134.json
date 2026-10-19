@@ -22,7 +22,7 @@
       "nome_pt": "Preparação de Marmitas",
       "texto": "Attacks used by this Pokémon cost Colorless less for each Kofu card in your discard pile.",
       "texto_pt": "Os ataques usados por este Pokémon custam Incolor a menos para cada carta Álgaro na sua pilha de descarte.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Food Prep: Attacks used by this Pokémon cost Colorless less for each Kofu card in your discard pile."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

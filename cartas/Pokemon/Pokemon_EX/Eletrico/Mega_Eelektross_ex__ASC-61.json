@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "This attack does 60 damage to each of 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
       "texto_pt": "Este ataque causa 60 pontos de dano a cada um de 2 dos Pokémon do seu oponente. (Não aplique Fraqueza e Resistência aos Pokémon no Banco.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Disaster Shock",
@@ -41,7 +41,7 @@
       "dano": "190",
       "texto": "You may discard 2 Lightning Energy from this Pokémon and make your opponent's Active Pokémon Paralyzed.",
       "texto_pt": "Você pode descartar 2 Energias Elétrico deste Pokémon e deixar o Pokémon Ativo do seu oponente Paralisado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -66,10 +66,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Split Bomb: This attack does 60 damage to each of 2 of your opponent's Pokémon.",
-      "Ataque Disaster Shock: You may discard 2 Lightning Energy from this Pokémon and make your opponent's Active Pokémon Paralyzed."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

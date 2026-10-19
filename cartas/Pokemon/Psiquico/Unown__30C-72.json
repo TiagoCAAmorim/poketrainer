@@ -28,7 +28,7 @@
       "dano": "40",
       "texto": "If your opponent's Pokémon is Knocked Out by damage from this attack, take 1 more Prize card.",
       "texto_pt": "Se o Pokémon do seu oponente for Nocauteado pelo dano deste ataque, pegue 1 carta de Prêmio a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Mysterious Signal: If your opponent's Pokémon is Knocked Out by damage from this attack, take 1 more Prize card."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

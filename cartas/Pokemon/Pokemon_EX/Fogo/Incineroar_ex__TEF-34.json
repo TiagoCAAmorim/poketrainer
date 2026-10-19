@@ -22,7 +22,7 @@
       "nome_pt": "Cair pra Dentro",
       "texto": "Attacks used by this Pokémon cost Colorless less for each of your opponent's Benched Pokémon.",
       "texto_pt": "Os ataques usados por este Pokémon custam Incolor a menos para cada Pokémon no Banco do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -59,9 +59,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Hustle Play: Attacks used by this Pokémon cost Colorless less for each of your opponent's Benched Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -40,7 +40,7 @@
       "dano": "80×",
       "texto": "Your opponent flips a coin for each of their Benched Pokémon. This attack does 80 damage to your opponent's Active Pokémon for each tails. This attack's damage isn't affected by Weakness or Resistance.",
       "texto_pt": "Seu oponente joga uma moeda para cada um dos Pokémon no Banco dele. Este ataque causa 80 pontos de dano ao Pokémon Ativo do seu oponente para cada coroa. O dano deste ataque não é afetado por Fraqueza ou Resistência.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Bench Manipulation: Your opponent flips a coin for each of their Benched Pokémon.; This attack does 80 damage to your opponent's Active Pokémon for each tails."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

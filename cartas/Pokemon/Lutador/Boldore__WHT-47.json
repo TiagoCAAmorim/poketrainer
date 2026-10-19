@@ -27,7 +27,7 @@
       "dano": "30+",
       "texto": "If your opponent's Active Pokémon has Fighting Resistance, this attack does 50 more damage.",
       "texto_pt": "Se o Pokémon Ativo do seu oponente tiver Resistência Lutador, este ataque causará 50 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Power Gem",
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Smack Down: If your opponent's Active Pokémon has Fighting Resistance, this attack does 50 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

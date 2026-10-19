@@ -39,7 +39,7 @@
       "dano": "—",
       "texto": "Both Active Pokémon are Knocked Out.",
       "texto_pt": "Ambos os Pokémon Ativos são Nocauteados.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Destined Fight: Both Active Pokémon are Knocked Out."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -28,7 +28,7 @@
       "dano": "170",
       "texto": "If you don't have the same number of cards in your hand as your opponent, this attack does nothing.",
       "texto_pt": "Se você não tiver o mesmo número de cartas na sua mão do que seu oponente, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Adjusted Horn: If you don't have the same number of cards in your hand as your opponent, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

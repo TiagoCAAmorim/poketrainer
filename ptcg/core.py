@@ -47,13 +47,14 @@ class AttackImpl:
     ignore_effects: bool = False          # "isn't affected by any effects on your opponent's Active Pokémon"
     ignore_weakness: bool = False
     ignore_resistance: bool = False
+    cost_mod: Optional[Callable] = None   # f(g, slot, cost) -> custo alterado ("can be used for ...")
     status: str = 'ok'                    # 'ok' | 'partial' | 'missing'
     note: str = ''
 
 
 @dataclass
 class AbilityImpl:
-    kind: str = 'activated'   # activated | passive | on_bench (ao ir pro banco da mão) | on_evolve | trigger
+    kind: str = 'activated'   # activated | passive | on_bench (ao ir pro banco da mão) | on_evolve | trigger | hand (usável da mão) | setup
     can_use: Optional[Callable] = None    # f(g, p, slot) -> bool
     run: Optional[Callable] = None        # f(g, p, slot)
     hooks: dict = field(default_factory=dict)    # consultas estáticas (ver Game.fold/allowed)
@@ -62,6 +63,7 @@ class AbilityImpl:
     shared_key: Optional[str] = None
     optional: bool = True
     self_ko: bool = False     # habilidades que nocauteiam o próprio Pokémon (para Damp)
+    hand_blocked: bool = False   # carta que só entra em jogo por um efeito (não pode ser jogada da mão)
     status: str = 'ok'
     note: str = ''
 
@@ -283,6 +285,8 @@ class PokemonSlot:
         return self.cards + self.energy + self.tools
 
     def clear_conditions(self):
+        self.flags.pop('poison_n', None)
+        self.flags.pop('confused_n', None)
         self.conditions.clear()
         self.paralyzed_until = -1
 
@@ -303,6 +307,7 @@ class Player:
         self.went_first = False
         self.turns_taken = 0
         self.legacy_used = False
+        self.attack_log: list = []   # (turno, Pokémon, nome do ataque)
         self.reset_turn()
 
     def reset_turn(self):

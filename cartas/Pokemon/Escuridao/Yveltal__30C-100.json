@@ -22,7 +22,7 @@
       "nome_pt": "Travar Vida",
       "texto": "Your opponent's Active Pokémon can't be healed.",
       "texto_pt": "O Pokémon Ativo do seu oponente não pode ser curado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Life-Locked: Your opponent's Active Pokémon can't be healed."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

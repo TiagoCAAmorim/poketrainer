@@ -22,7 +22,7 @@
       "nome_pt": "Tendência Explosiva",
       "texto": "If this Pokémon is in your hand when you are setting up to play, you may put it face down in the Active Spot.",
       "texto_pt": "Se este Pokémon estiver na sua mão enquanto você estiver preparando o seu jogo, você poderá colocá-lo virado para baixo no Campo Ativo.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Explosiveness: If this Pokémon is in your hand when you are setting up to play, you may put it face down in the Active Spot."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

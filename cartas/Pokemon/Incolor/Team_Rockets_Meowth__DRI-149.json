@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Choose a random card from your opponent's hand. Your opponent reveals that card and shuffles it into their deck.",
       "texto_pt": "Escolha uma carta aleatória da mão do seu oponente. Seu oponente revela aquela carta e a embaralha no baralho dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Fury Swipes",
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Paw-cket Pilfer: Choose a random card from your opponent's hand.; Your opponent reveals that card and shuffles it into their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

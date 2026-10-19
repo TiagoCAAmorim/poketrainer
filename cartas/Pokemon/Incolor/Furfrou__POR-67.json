@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Discard random cards from your opponent's hand until they have 5 cards in their hand.",
       "texto_pt": "Descarte cartas aleatórias da mão do seu oponente até que ele tenha 5 cartas na mão dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Headbutt",
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Hand Trim: Discard random cards from your opponent's hand until they have 5 cards in their hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

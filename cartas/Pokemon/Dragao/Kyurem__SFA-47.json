@@ -22,7 +22,7 @@
       "nome_pt": "Maldição de Plasma",
       "texto": "If your opponent has any cards in their discard pile that have \"Colress\" in the name, this Pokémon can use the Trifrost attack for Colorless.",
       "texto_pt": "Se o seu oponente tiver alguma carta na pilha de descarte dele que tem \"Colress\" em seu nome, este Pokémon poderá usar o ataque Geada Tripla por Incolor.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Plasma Bane: If your opponent has any cards in their discard pile that have \"Colress\" in the name, this Pokémon can use the Trifrost attack for Colorless."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

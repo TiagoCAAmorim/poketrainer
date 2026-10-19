@@ -28,7 +28,7 @@
       "dano": "20+",
       "texto": "If this Pokémon's remaining HP is 50 or less, this attack does 170 more damage.",
       "texto_pt": "Se o PS restante deste Pokémon for 50 ou menos, este ataque causará 170 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Cut",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Retaliatory Claw: If this Pokémon's remaining HP is 50 or less, this attack does 170 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

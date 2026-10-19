@@ -40,7 +40,7 @@
       "dano": "80+",
       "texto": "This attack does 60 more damage for each Prize card your opponent took during their last turn.",
       "texto_pt": "Este ataque causa 60 pontos de dano a mais para cada carta de Prêmio que seu oponente pegou durante o último turno dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Settle the Score: This attack does 60 more damage for each Prize card your opponent took during their last turn."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -29,7 +29,7 @@
       "dano": "90",
       "texto": "Flip a coin. If heads, your opponent's Active Pokémon is now paralyzed.",
       "texto_pt": "Jogue uma moeda. Se sair cara, o Pokémon Ativo do seu oponente agora estará Paralisado.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Body Slam: If heads, your opponent's Active Pokémon is now paralyzed."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

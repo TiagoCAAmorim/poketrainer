@@ -22,7 +22,7 @@
       "nome_pt": "Primeira Performance",
       "texto": "If you go first, this Pokémon can use attacks during your first turn.",
       "texto_pt": "Se você for o primeiro a jogar, este Pokémon poderá usar ataques durante o seu primeiro turno.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -60,9 +60,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Debut Performance: If you go first, this Pokémon can use attacks during your first turn."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

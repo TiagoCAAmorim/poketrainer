@@ -27,7 +27,7 @@
       "dano": "60",
       "texto": "During your opponent's next turn, Pokémon that have 2 or less Energy attached can't attack. (This includes new Pokémon that come into play.)",
       "texto_pt": "Durante o próximo turno do seu oponente, os Pokémon que tiverem 2 ou menos Energias ligadas a eles não poderão atacar. (Isto inclui novos Pokémon que entrarem em jogo.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Megaton Fall",
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Frigid Fangs: During your opponent's next turn, Pokémon that have 2 or less Energy attached can't attack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

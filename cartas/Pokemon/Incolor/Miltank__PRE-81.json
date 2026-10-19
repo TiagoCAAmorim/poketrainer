@@ -39,7 +39,7 @@
       "dano": "100",
       "texto": "You can use this attack only if this Pokémon used Rollout during your last turn.",
       "texto_pt": "Você só pode usar este ataque se este Pokémon usou Rolagem durante o seu último turno.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Moomoo Rolling: You can use this attack only if this Pokémon used Rollout during your last turn."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

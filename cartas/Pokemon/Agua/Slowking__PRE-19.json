@@ -29,7 +29,7 @@
       "dano": "70",
       "texto": "You may put 2 Energy attached to your opponent's Active Pokémon into their hand.",
       "texto_pt": "Você pode colocar 2 Energias ligadas ao Pokémon Ativo do seu oponente na mão dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Wash the Slate Clean: You may put 2 Energy attached to your opponent's Active Pokémon into their hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

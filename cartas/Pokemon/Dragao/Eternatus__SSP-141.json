@@ -40,7 +40,7 @@
       "dano": "230",
       "texto": "Discard a Stadium in play. If you can't, this attack does nothing.",
       "texto_pt": "Descarte um Estádio em jogo. Se não puder fazer isto, este ataque não fará nada.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque World Ender: If you can't, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

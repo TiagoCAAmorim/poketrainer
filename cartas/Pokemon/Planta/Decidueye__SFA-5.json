@@ -38,7 +38,7 @@
       "dano": "170",
       "texto": "Discard a Basic Grass Energy card from your hand. If you can't, this attack does nothing.",
       "texto_pt": "Descarte uma carta de Energia Planta Básica da sua mão. Se não puder fazer isto, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Power Shot: Discard a Basic Grass Energy card from your hand.; If you can't, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

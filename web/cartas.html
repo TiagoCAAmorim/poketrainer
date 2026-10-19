@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PTCG Lab — Cartas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1512; --line:#2a3b33; --ink:#e7eee9; --mute:#8ea398; --accent:#f2c94c; --danger:#ff5c5c; --ok:#5bd38a; --warn:#f0a048;
+  --panel:#111a16; --card:#1c2a24; --card2:#22332c;
+  --G:#5bb85c; --R:#e8613c; --W:#4a9fe0; --L:#f2c94c; --P:#a768d6; --F:#c0794a; --D:#56677a; --M:#9aa5b1; --N:#c9a227; --C:#cfc9bb; --Y:#e88ac0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font:14px/1.4 'Space Grotesk',system-ui,sans-serif}
+button,select,input{font:inherit;color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);background:#0c120f}
+header h1{font-size:17px;margin:0 8px 0 0}
+header h1 b{color:var(--accent)}
+header a{color:var(--mute);text-decoration:none}
+header a:hover{color:var(--accent)}
+header .sp{flex:1}
+select,input[type=text]{background:#0b100d;border:1px solid var(--line);border-radius:6px;padding:5px 7px;min-width:0;width:100%}
+.btn{background:#1c2a24;border:1px solid #33493f;border-radius:7px;padding:5px 11px;cursor:pointer}
+.btn:hover:not(:disabled){border-color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:default}
+.layout{display:grid;grid-template-columns:260px 1fr;height:calc(100vh - 46px)}
+aside{border-right:1px solid var(--line);background:var(--panel);overflow:auto;padding:12px}
+aside label{display:block;margin:12px 0 4px;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+aside label:first-child{margin-top:0}
+.chk{display:flex;gap:6px;align-items:center;margin-top:8px;color:var(--mute);font-size:13px;cursor:pointer}
+.seg{display:flex;flex-direction:column;gap:4px}
+.seg button{display:flex;justify-content:space-between;text-align:left;background:#101814;border:1px solid var(--line);border-radius:7px;padding:5px 9px;cursor:pointer}
+.seg button.on{border-color:var(--accent);background:var(--card2)}
+.seg button.prob.on{border-color:var(--warn)}
+.seg small{color:var(--mute)}
+#hint{color:var(--mute);font-size:12px;margin-top:6px}
+main{overflow:auto;padding:12px 16px 30px;position:relative}
+.top{display:flex;gap:10px;align-items:center;margin-bottom:10px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.tile{background:var(--card);border:1px solid transparent;border-radius:10px;padding:6px;cursor:pointer;display:flex;flex-direction:column;gap:5px;position:relative}
+.tile:hover,.tile:focus-visible{border-color:var(--accent);outline:none}
+.tile.sel{border-color:var(--accent);background:var(--card2)}
+.thumb{aspect-ratio:245/342;width:100%;border-radius:6px;background:#0b100d;object-fit:cover;display:block}
+.ph{aspect-ratio:245/342;width:100%;border-radius:6px;background:#0b100d;border:1px dashed var(--line);display:grid;place-items:center;text-align:center;padding:8px;color:var(--mute);font-size:12.5px}
+.tile .nm{font-size:13px;font-weight:500;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tile .pr{color:var(--mute);font-size:11.5px}
+.flag{position:absolute;top:10px;right:10px;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:5px;background:#000b;border:1px solid var(--warn);color:var(--warn)}
+.flag.missing{border-color:var(--danger);color:var(--danger)}
+.more{display:block;margin:18px auto 0}
+.pip{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;font-size:10px;font-weight:700;color:#10150f;vertical-align:middle}
+.badge{font-size:11px;border:1px solid var(--line);border-radius:5px;padding:0 6px;color:var(--mute);margin-right:4px;white-space:nowrap}
+.badge.ok{color:var(--ok);border-color:var(--ok)} .badge.partial{color:var(--warn);border-color:var(--warn)} .badge.missing{color:var(--danger);border-color:var(--danger)}
+.empty{color:var(--mute);padding:30px 4px}
+
+/* detalhe */
+#detail{position:fixed;top:46px;right:0;bottom:0;width:min(520px,100vw);background:var(--panel);border-left:1px solid var(--line);overflow:auto;padding:14px 16px 30px;transform:translateX(100%);transition:transform .18s;z-index:20;box-shadow:-10px 0 30px #0008}
+#detail.open{transform:none}
+#detail .close{position:absolute;top:8px;right:10px}
+#detail h2{margin:0 30px 2px 0;font-size:20px}
+#detail .sub{color:var(--mute);margin-bottom:10px}
+#detail .big{width:min(100%,330px);aspect-ratio:245/342;border-radius:12px;display:block;margin:0 auto 12px;background:#0b100d;object-fit:cover}
+#detail .sec{margin:14px 0 4px;color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:.6px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13px}
+.kv span:nth-child(odd){color:var(--mute)}
+.blk{background:var(--card);border-radius:8px;padding:8px 10px;margin:6px 0}
+.blk .t{font-weight:700}
+.blk p{margin:4px 0 0;color:#c7d3cc;font-size:13px}
+.blk p.en{color:var(--mute);font-size:12.5px}
+.blk .note{margin-top:6px;color:var(--warn);font-size:12.5px}
+.blk .note.missing{color:var(--danger)}
+.links a{color:var(--accent);cursor:pointer;margin-right:10px;text-decoration:underline dotted}
+@media (max-width:860px){.layout{grid-template-columns:1fr;height:auto}aside{border-right:none;border-bottom:1px solid var(--line)}main{overflow:visible}}
+</style>
+</head>
+<body>
+<header>
+  <h1>PTCG <b>Lab</b> · Cartas</h1>
+  <a href="/">← Início</a>
+  <span class="sp"></span>
+  <a href="/decks">Montador de decks</a>
+  <a href="/jogar">Simulador</a>
+</header>
+<div class="layout">
+  <aside>
+    <label for="q">Nome</label>
+    <input type="text" id="q" placeholder="mín. 3 letras (en ou pt)" autocomplete="off">
+    <label class="chk"><input type="checkbox" id="noTexto"> Buscar também em ataques, Habilidades e texto</label>
+    <div id="hint"></div>
+
+    <label>Implementação no simulador</label>
+    <div class="seg" id="segStatus"></div>
+
+    <label for="grupo">Categoria</label>
+    <select id="grupo"></select>
+    <label for="sub">Subcategoria</label>
+    <select id="sub"></select>
+    <label for="tipo">Tipo de Energia</label>
+    <select id="tipo"></select>
+    <label for="estagio">Estágio</label>
+    <select id="estagio"></select>
+    <label for="colecao">Coleção</label>
+    <select id="colecao"></select>
+    <button class="btn" id="limpar" style="margin-top:14px;width:100%">Limpar filtros</button>
+  </aside>
+  <main id="main">
+    <div class="top"><span id="count"></span></div>
+    <div class="grid" id="grid"></div>
+    <button class="btn more" id="more" style="display:none">Carregar mais</button>
+  </main>
+</div>
+<div id="detail"><button class="btn close" id="dclose" aria-label="Fechar">✕</button><div id="dbody"></div></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const TCOL={G:'--G',R:'--R',W:'--W',L:'--L',P:'--P',F:'--F',D:'--D',M:'--M',N:'--N',C:'--C',Y:'--Y'};
+const pip=t=>`<span class="pip" style="background:var(${TCOL[t]||'--C'})" title="${esc(OPT?.tipos?.[t]||t)}">${t}</span>`;
+const STATUS_ROT={ok:'implementada',partial:'parcial',missing:'pendente'};
+let OPT=null, offset=0, total=0, seq=0, selId=null;
+const state={status:''};
+
+async function api(url){ const r=await fetch(url); const j=await r.json().catch(()=>({error:'resposta inválida'})); if(!r.ok) throw new Error(j.error||r.statusText); return j }
+
+// ---------------------------------------------------------------- filtros
+function fillSel(id,opts,first){ const s=$(id); s.innerHTML=''; s.appendChild(new Option(first,'')); opts.forEach(([v,l])=>s.appendChild(new Option(l,v))) }
+function fillSub(){
+  const c=OPT.categorias.find(x=>x.grupo===$('grupo').value);
+  fillSel('sub',c?c.subs.map(s=>[s.sub,`${s.rotulo} (${s.n})`]):[],c?'Todas':'—'); $('sub').disabled=!c;
+}
+function segs(){
+  const s=OPT.status, prob=(s.parcial||0)+(s.pendente||0);
+  const items=[['', 'Todas', OPT.total,''],['ok','Implementadas',s.implementada||0,''],['problema','Com problemas (parcial + pendente)',prob,'prob'],
+               ['partial','Só parciais',s.parcial||0,'prob'],['missing','Só pendentes',s.pendente||0,'prob']];
+  $('segStatus').innerHTML=items.map(([v,l,n,c])=>`<button data-v="${v}" class="${c} ${state.status===v?'on':''}"><span>${l}</span><small>${n}</small></button>`).join('');
+}
+$('segStatus').onclick=e=>{ const b=e.target.closest('button'); if(!b) return; state.status=b.dataset.v; segs(); run(true) };
+['grupo'].forEach(id=>$(id).onchange=()=>{ fillSub(); run(true) });
+['sub','tipo','estagio','colecao'].forEach(id=>$(id).onchange=()=>run(true));
+$('noTexto').onchange=()=>run(true);
+let qT; $('q').oninput=()=>{ clearTimeout(qT); qT=setTimeout(()=>run(true),220) };
+$('limpar').onclick=()=>{ $('q').value=''; $('noTexto').checked=false; state.status=''; ['grupo','tipo','estagio','colecao'].forEach(i=>$(i).value=''); fillSub(); segs(); run(true) };
+
+function params(off){
+  return new URLSearchParams({q:$('q').value.trim(),grupo:$('grupo').value,sub:$('sub').value,status:state.status,tipo:$('tipo').value,
+    estagio:$('estagio').value,colecao:$('colecao').value,no_texto:$('noTexto').checked?'1':'0',offset:off});
+}
+
+// ---------------------------------------------------------------- lista
+function tile(c){
+  const img=c.imagem?`<img class="thumb" loading="lazy" src="/img/baixa/${c.id}" alt="${esc(c.name)}" onerror="this.outerHTML='<div class=ph>${esc(c.name)}</div>'">`:`<div class="ph">${esc(c.name)}</div>`;
+  const flag=c.status!=='ok'?`<span class="flag ${c.status}" title="${esc((c.pendencias||[]).join('\n'))}">${c.status==='partial'?'parcial':'pendente'}</span>`:'';
+  return `<div class="tile ${c.id===selId?'sel':''}" tabindex="0" role="button" data-id="${c.id}" aria-label="${esc(c.name)}">${flag}${img}
+    <div class="nm" title="${esc(c.name)}${c.name_pt?' / '+esc(c.name_pt):''}">${esc(c.name)}</div><div class="pr mono">${esc(c.print)}</div></div>`;
+}
+async function run(reset){
+  const my=++seq;
+  if(reset){ offset=0; $('grid').innerHTML='' }
+  const q=$('q').value.trim();
+  $('hint').textContent=q&&q.length<OPT.min_busca?`Digite ao menos ${OPT.min_busca} letras.`:'';
+  try{
+    const r=await api('/api/cards/filter?'+params(offset));
+    if(my!==seq) return;
+    total=r.total; offset+=r.cards.length;
+    $('grid').insertAdjacentHTML('beforeend',r.cards.map(tile).join(''));
+    $('count').textContent=r.dica||`${total} carta${total===1?'':'s'}`+(offset<total?` (mostrando ${offset})`:'');
+    $('more').style.display=offset<total?'':'none';
+    if(!total&&!r.dica) $('grid').innerHTML='<div class="empty">Nenhuma carta com esses filtros.</div>';
+  }catch(e){ $('count').textContent=e.message }
+}
+$('more').onclick=()=>run(false);
+$('grid').addEventListener('click',e=>{ const t=e.target.closest('.tile'); if(t) openCard(t.dataset.id) });
+$('grid').addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('tile')){ e.preventDefault(); openCard(e.target.dataset.id) } });
+
+// ---------------------------------------------------------------- detalhe
+const cost=a=>(a.custo||[]).map(pip).join('')||'<span style="color:var(--mute)">sem custo</span>';
+function impl(st,nota){
+  if(st==='ok') return '';
+  return `<div class="note ${st}">${st==='partial'?'⚠ Parcial':'✘ Pendente'} no simulador${nota?': '+esc(nota):''}</div>`;
+}
+function textos(pt,en){
+  return (pt?`<p>${esc(pt)}</p>`:'')+(en?`<p class="${pt?'en':''}">${esc(en)}</p>`:'');
+}
+async function openCard(id){
+  selId=id; document.querySelectorAll('.tile.sel').forEach(t=>t.classList.remove('sel'));
+  const t=document.querySelector(`.tile[data-id="${CSS.escape(id)}"]`); if(t) t.classList.add('sel');
+  history.replaceState(null,'','#'+id);
+  try{
+    const d=await api('/api/cards/detail?id='+encodeURIComponent(id));
+    const meta=[];
+    meta.push(['Categoria',d.categoria_rot+(d.subtipo?' · '+({supporter:'Apoiador',item:'Item',tool:'Ferramenta',stadium:'Estádio',basic:'Básica',special:'Especial'}[d.subtipo]||d.subtipo):'')]);
+    if(d.kind==='pokemon'){
+      meta.push(['Tipo',d.types.map(pip).join(' ')],['Estágio',d.estagio_rot+(d.evolves_from?' (evolui de '+esc(d.evolves_from)+')':'')],['PS',d.hp],
+        ['Fraqueza',d.fraqueza||'—'],['Resistência',d.resistencia||'—'],['Recuo',d.recuo],['Prêmios ao ser nocauteado',d.premios]);
+    }else if(d.kind==='energy'&&d.provides) meta.push(['Fornece',pip(d.provides)]);
+    if(d.ace) meta.push(['ACE SPEC','sim']);
+    if(d.tags.length) meta.push(['Marcas',esc(d.tags.join(', '))]);
+    meta.push(['Regulamento',d.regulamento||'—'],['Simulador',`<span class="badge ${d.status}">${d.status_rot}</span>`]);
+    const img=d.imagem.alta||d.imagem.baixa?`<img class="big" src="/img/alta/${d.id}" alt="${esc(d.name)}">`
+      :`<div class="ph big" style="aspect-ratio:245/342">Sem imagem.<br>Rode <span class="mono">python baixar_imagens.py</span></div>`;
+    let h=`${img}<h2>${esc(d.name)}</h2><div class="sub">${d.name_pt?esc(d.name_pt)+' · ':''}<span class="mono">${esc(d.print)}</span></div>`;
+    if(d.pendencias.length){
+      h+=`<div class="sec">Problemas de implementação</div>`+d.pendencias.map(p=>`<div class="blk"><span class="t">${esc(p.onde)} ${esc(p.nome)}</span>${impl(p.status,p.nota)}</div>`).join('');
+    }
+    h+=`<div class="sec">Dados</div><div class="kv">${meta.map(([k,v])=>`<span>${k}</span><span>${v}</span>`).join('')}</div>`;
+    if(d.habilidades.length) h+=`<div class="sec">Habilidades</div>`+d.habilidades.map(a=>`<div class="blk"><span class="t">${esc(a.nome)}</span>${a.nome_pt&&a.nome_pt!==a.nome?` <span style="color:var(--mute)">${esc(a.nome_pt)}</span>`:''} <span class="badge ${a.status}">${STATUS_ROT[a.status]}</span>${textos(a.texto_pt,a.texto)}${impl(a.status,a.nota)}</div>`).join('');
+    if(d.ataques.length) h+=`<div class="sec">Ataques</div>`+d.ataques.map(a=>`<div class="blk"><div>${cost(a)} <span class="t">${esc(a.nome)}</span>${a.nome_pt&&a.nome_pt!==a.nome?` <span style="color:var(--mute)">${esc(a.nome_pt)}</span>`:''}${a.dano?` <b style="float:right">${esc(a.dano)}</b>`:''}</div>${a.status!=='ok'?`<span class="badge ${a.status}">${STATUS_ROT[a.status]}</span>`:''}${textos(a.texto_pt,a.texto)}${impl(a.status,a.nota)}</div>`).join('');
+    if(d.kind!=='pokemon'&&(d.texto||d.texto_pt)) h+=`<div class="sec">Efeito</div><div class="blk">${textos(d.texto_pt,d.texto)}</div>`;
+    if(d.evolui_para&&d.evolui_para.length) h+=`<div class="sec">Evolui para</div><div class="links">${d.evolui_para.map(n=>`<a data-q="${esc(n)}">${esc(n)}</a>`).join('')}</div>`;
+    h+=`<div class="sec">Impressões</div><div class="kv">${d.impressoes.map(p=>`<span class="mono">${esc(p.codigo)}</span><span>${esc(p.colecao)} ${p.data?'· '+esc(p.data):''}</span>`).join('')}</div>`;
+    if(d.outras_versoes.length) h+=`<div class="sec">Outras cartas com o mesmo nome</div><div class="links">${d.outras_versoes.map(v=>`<a data-id="${esc(v.id)}">${esc(v.print)}</a>`).join('')}</div>`;
+    $('dbody').innerHTML=h; $('detail').classList.add('open'); $('detail').scrollTop=0;
+  }catch(e){ $('dbody').innerHTML=`<div class="empty">${esc(e.message)}</div>`; $('detail').classList.add('open') }
+}
+$('dbody').addEventListener('click',e=>{
+  const a=e.target.closest('a'); if(!a) return;
+  if(a.dataset.id) openCard(a.dataset.id);
+  else if(a.dataset.q){ $('q').value=a.dataset.q; $('noTexto').checked=false; run(true) }
+});
+function closeDetail(){ $('detail').classList.remove('open'); selId=null; document.querySelectorAll('.tile.sel').forEach(t=>t.classList.remove('sel')); history.replaceState(null,'',location.pathname) }
+$('dclose').onclick=closeDetail;
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeDetail() });
+
+// ---------------------------------------------------------------- início
+(async()=>{
+  OPT=await api('/api/cards/options');
+  fillSel('grupo',OPT.categorias.map(c=>[c.grupo,`${c.rotulo} (${c.n})`]),'Todas'); fillSub();
+  fillSel('tipo',Object.entries(OPT.tipos).map(([k,v])=>[k,v]),'Qualquer');
+  fillSel('estagio',Object.entries(OPT.estagios).map(([k,v])=>[k,v]),'Qualquer');
+  fillSel('colecao',OPT.colecoes.map(c=>[c.code,`${c.code} — ${c.nome} (${c.n})`]),'Todas');
+  const u=new URLSearchParams(location.search);
+  if(u.get('status')) state.status=u.get('status');
+  segs();
+  await run(true);
+  if(location.hash.length>1) openCard(decodeURIComponent(location.hash.slice(1)));
+  if(!OPT.com_imagem) $('count').textContent+=' — imagens ainda não baixadas: python baixar_imagens.py';
+})().catch(e=>{ $('count').textContent=e.message });
+</script>
+</body>
+</html>

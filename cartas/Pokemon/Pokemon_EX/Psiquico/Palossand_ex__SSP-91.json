@@ -42,7 +42,7 @@
       "dano": "—",
       "texto": "Put damage counters on each of your opponent's Benched Pokémon until its remaining HP is 100.",
       "texto_pt": "Coloque contadores de dano em cada um dos Pokémon no Banco do seu oponente até o PS restante dele ser 100.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -63,9 +63,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Barite Jail: Put damage counters on each of your opponent's Benched Pokémon until its remaining HP is 100."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

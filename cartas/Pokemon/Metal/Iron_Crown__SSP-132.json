@@ -28,7 +28,7 @@
       "dano": "40+",
       "texto": "If your opponent has 3 or more Benched Pokémon, this attack does 80 more damage.",
       "texto_pt": "Se o seu oponente tiver 3 ou mais Pokémon no Banco, este ataque causará 80 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Slicing Blade",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Deleting Slash: If your opponent has 3 or more Benched Pokémon, this attack does 80 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

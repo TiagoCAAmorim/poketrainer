@@ -4,6 +4,8 @@ Formato: **Padrão TEF–30C** (marcas de regulamento H, I e J) — 2.083 cartas
 
 - **[INSTALACAO.md](INSTALACAO.md)** — passo a passo para deixar funcionando no computador e testes a rodar
 - **[PLANO.md](PLANO.md)** — plano completo, o que está pronto e os próximos passos
+- **[CARTAS.md](CARTAS.md)** — explorar cartas (filtros, imagens, cartas com problemas) e baixar as imagens
+- **[DECKS.md](DECKS.md)** — importar, limpar (fora da rotação), alterar e criar decks
 
 ## Estrutura
 
@@ -14,8 +16,9 @@ cartas/            BIBLIOTECA DE CARTAS (o que cada carta faz, em inglês e port
   Treinadores/Apoiadores | Itens | Ferramentas | Estadios
   Pokemon/Pokemon_EX/<Tipo>   Pokemon/<Tipo>             (Planta, Fogo, Agua, Eletrico, Psiquico,
   Energias/<Tipo>   Energias/Especiais                    Lutador, Escuridao, Metal, Dragao, Incolor)
+imagens/           imagens das cartas baixadas (não versionada)
 decks/             DECKS (texto no formato do TCG Live)
-  meus/  importados/  limitless/<torneio>/  _lixeira/
+  meus/  importados/  limitless/<torneio>/  tests/ (12 decks fixos dos testes)  _lixeira/  _fora_da_rotacao/
 logs/              LOG: atividade.log, partidas do TCG Live, simulações, partidas da interface
 ptcg/              o motor
   engine.py          regras (setup, turnos, ações legais, dano, condições, KO, prêmios, vitória)
@@ -31,7 +34,8 @@ gerenciar_logs.py  guardar e consultar logs (TCG Live, simulações, atividade)
 import_limitless.py baixar top 8 de torneios da Limitless
 replay_log.py      reproduzir logs do TCG Live no motor
 simulate.py        matriz de confrontos      optimize.py   otimizar uma lista
-server.py + web/   interface gráfica local (http://localhost:8765)
+server.py + web/   interface local (http://localhost:8765): welcome.html, index.html (/jogar), decks.html, cartas.html
+baixar_imagens.py  baixar as imagens das cartas (TCGdex/pokemontcg.io) para imagens/
 tools/             reconstrução da base de cartas (build_carddb, build_pt_texts, export_cartas)
 tests/             regras, fuzzing, logs reais do TCG Live, importador
 ```
@@ -50,9 +54,11 @@ python gerenciar_decks.py listar
 python import_limitless.py import --latest 5                      # top 8 dos últimos torneios
 
 python gerenciar_logs.py importar partida.txt        # log do TCG Live ("Copy Log") → guardado e reproduzido
-python simulate.py meus/meu_deck limitless/2026-08-worlds/01_hedrick_dragapult --games 200 --salvar-log
+python simulate.py meus/meu_deck tests/01_hedrick_dragapult --games 200 --salvar-log
 python optimize.py meus/meu_deck --gauntlet 01_hedrick_dragapult 05_heiremans_crustle
-python server.py                                     # interface: jogar, assistir IA, reproduzir logs
+python server.py                                     # http://localhost:8765 → página inicial (escolha o que fazer)
+                                                     #   /jogar simulador · /decks montador · /cartas biblioteca
+python baixar_imagens.py                             # imagens das cartas → imagens/ (fora do git)
 ```
 
 ## Logs do Pokémon TCG Live

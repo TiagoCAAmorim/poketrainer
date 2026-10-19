@@ -22,7 +22,7 @@
       "nome_pt": "Carga Letárgica",
       "texto": "Once during your turn, if this Pokémon is on your Bench, you may use this Ability. Attach an Energy card from your hand to your Active Larry's Pokémon.",
       "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no seu Banco, você poderá usar esta Habilidade. Ligue uma carta de Energia da sua mão ao seu Pokémon do Lauro Ativo.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Lethargic Charge: Attach an Energy card from your hand to your Active Larry's Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

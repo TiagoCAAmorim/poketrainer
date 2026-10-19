@@ -28,7 +28,7 @@
       "dano": "40×",
       "texto": "This attack does 40 damage for each Basic Energy attached to this Pokémon.",
       "texto_pt": "Este ataque causa 40 pontos de dano para cada Energia Básica ligada a este Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Space Crash: This attack does 40 damage for each Basic Energy attached to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

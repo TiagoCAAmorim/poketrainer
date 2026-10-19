@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "if you have exactly 30 cards in your hand, take 2 Prize cards. If you do, shuffle your hand into your deck.",
       "texto_pt": "Se você tiver exatamente 30 cartas na sua mão, pegue 2 cartas de Prêmio. Se fizer isso, embaralhe a sua mão no seu baralho.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Triple Smash",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Celebration: if you have exactly 30 cards in your hand, take 2 Prize cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

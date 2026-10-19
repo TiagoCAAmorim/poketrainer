@@ -40,7 +40,7 @@
       "dano": "20×",
       "texto": "Put up to 9 damage counters on this Pokémon. This attack does 20 damage for each damage counter you placed in this way.",
       "texto_pt": "Coloque até 9 contadores de dano neste Pokémon. Este ataque causa 20 pontos de dano para cada contador de dano colocado desta forma.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -55,9 +55,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Undulating Slice: Put up to 9 damage counters on this Pokémon.; This attack does 20 damage for each damage counter you placed in this way."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

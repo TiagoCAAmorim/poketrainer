@@ -22,7 +22,7 @@
       "nome_pt": "Espinhos de Carapaça",
       "texto": "If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), discard an Energy from the Attacking Pokémon.",
       "texto_pt": "Se este Pokémon estiver no Campo Ativo e for danificado por um ataque dos Pokémon do seu oponente (mesmo que este Pokémon seja Nocauteado), descarte uma Energia do Pokémon Atacante.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Shell Spikes: If this Pokémon is in the Active Spot and is damaged by an attack from your opponent's Pokémon, discard an Energy from the Attacking Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

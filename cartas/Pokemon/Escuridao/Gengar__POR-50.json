@@ -22,7 +22,7 @@
       "nome_pt": "Sombra Infinita",
       "texto": "If this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, put it into your hand instead of the discard pile. (Discard all attached cards.)",
       "texto_pt": "Se este Pokémon for Nocauteado pelo dano de um ataque dos Pokémon do seu oponente, coloque-o na sua mão em vez da pilha de descarte. (Descarte todas as cartas ligadas a ele.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Infinite Shadow: If this Pokémon is Knocked Out by damage from an attack from your opponent's Pokémon, put it into your hand instead of the discard pile."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

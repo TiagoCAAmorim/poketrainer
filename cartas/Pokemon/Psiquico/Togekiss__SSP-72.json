@@ -22,7 +22,7 @@
       "nome_pt": "Kiss Surpresa",
       "texto": "When your opponent's Active Pokémon is Knocked Out, flip a coin. If heads, take 1 more Prize card. The effect of Wonder Kiss doesn't stack.",
       "texto_pt": "Quando o Pokémon Ativo do seu oponente for Nocauteado, jogue uma moeda. Se sair cara, pegue 1 carta de Prêmio a mais. O efeito de Kiss Surpresa não acumula.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -60,9 +60,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Wonder Kiss: When your opponent's Active Pokémon is Knocked Out, flip a coin. If heads, take 1 more Prize card. The effect of Wonder Kiss doesn't stack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

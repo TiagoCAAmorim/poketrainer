@@ -28,7 +28,7 @@
       "dano": "90×",
       "texto": "Discard any amount of [R] Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way.",
       "texto_pt": "Descarte qualquer quantidade de cartas de Energia [R] dentre seus Pokémon, e este ataque causará 90 pontos de dano para cada carta descartada desta forma.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Inferno X: Discard any amount of [R] Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

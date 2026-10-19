@@ -40,7 +40,7 @@
       "dano": "80+",
       "texto": "You may put all Energy attached to this Pokémon into your hand to have this attack do 80 more damage.",
       "texto_pt": "Você pode colocar todas as Energias ligadas a este Pokémon na sua mão para fazer este ataque causar 80 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Jungle Whip: You may put all Energy attached to this Pokémon into your hand to have this attack do 80 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

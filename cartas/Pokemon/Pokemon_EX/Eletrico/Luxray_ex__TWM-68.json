@@ -28,7 +28,7 @@
       "dano": "120",
       "texto": "Your opponent reveals their hand. Discard a card you find there.",
       "texto_pt": "Seu oponente revela a mão dele. Descarte uma carta que encontrar lá.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Volt Strike",
@@ -60,9 +60,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Piercing Gaze: Discard a card you find there."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

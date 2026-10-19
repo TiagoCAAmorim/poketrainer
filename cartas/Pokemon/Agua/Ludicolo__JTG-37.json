@@ -22,7 +22,7 @@
       "nome_pt": "Samba da Vitalidade",
       "texto": "All of your Pokémon in play get +40 HP. The effect of Vibrant Dance doesn't stack.",
       "texto_pt": "Todos os seus Pokémon em jogo recebem 40 PS a mais. O efeito de Samba da Vitalidade não acumula.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Vibrant Dance: All of your Pokémon in play get +40 HP. The effect of Vibrant Dance doesn't stack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

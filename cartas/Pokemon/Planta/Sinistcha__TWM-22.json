@@ -38,7 +38,7 @@
       "dano": "70×",
       "texto": "Discard up to 3 Grass Energy cards from your Pokémon. This attack does 70 damage for each card you discarded in this way.",
       "texto_pt": "Descarte até 3 cartas de Energia Planta dos seus Pokémon. Este ataque causa 70 pontos de dano para cada carta descartada desta forma.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Spill the Tea: Discard up to 3 Grass Energy cards from your Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

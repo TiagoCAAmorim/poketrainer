@@ -22,7 +22,7 @@
       "nome_pt": "Buscar Bolhas",
       "texto": "As often as you like during your turn, you may use this Ability. Move an Energy from 1 of your other Pokémon to this Pokémon.",
       "texto_pt": "Quantas vezes desejar durante o seu turno, você poderá usar esta Habilidade. Mova uma Energia de 1 dos seus outros Pokémon para este Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Bubble Gathering: Move an Energy from 1 of your other Pokémon to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

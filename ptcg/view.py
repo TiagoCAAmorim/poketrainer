@@ -76,6 +76,13 @@ def game_view(g, viewer='all', ai_eval=None):
                 'target': list(o.target) if o.target else None,
             } for i, o in enumerate(pr.options)],
         }
+        if pr.data.get('deck_view'):
+            # busca no baralho: todas as cartas (ordem oculta), marcando as que podem ser pegas
+            ok = {o.card.d.id for o in pr.options if o.card is not None and hasattr(o.card, 'd')}
+            picked = {c.uid for c in pr.data.get('picked', [])}
+            prompt['deck_cards'] = sorted(
+                ({'id': c.d.id, 'name': c.name, 'eligible': c.d.id in ok, 'picked': c.uid in picked}
+                 for c in g.players[pr.player].deck), key=lambda x: (x['name'], x['picked']))
     elif g.prompt is not None:
         prompt = {'player': g.prompt.player, 'hint': g.prompt.hint, 'text': 'Oponente pensando…',
                   'options': [], 'hidden': True}

@@ -29,7 +29,7 @@
       "dano": "250",
       "texto": "Discard a Fire Energy, a Water Energy, and a Lightning Energy from this Pokémon.",
       "texto_pt": "Descarte uma Energia Fire, uma Energia Water e uma Energia Lightning deste Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Elemental Blast: Discard a Fire Energy, a Water Energy, and a Lightning Energy from this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

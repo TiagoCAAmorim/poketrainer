@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Flip a coin. If heads, switch 1 of your opponent's Benched Pokémon with their Active Pokémon.",
       "texto_pt": null,
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Pull: If heads, switch 1 of your opponent's Benched Pokémon with their Active Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -39,7 +39,7 @@
       "dano": "160",
       "texto": "If you don't have Uxie and Azelf on your Bench, this attack does nothing.",
       "texto_pt": "Se você não tiver Uxie e Azelf no seu Banco, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Guardian Burst: If you don't have Uxie and Azelf on your Bench, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

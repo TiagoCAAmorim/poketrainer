@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "Discard the top card of your opponent's deck. If you played an Ancient Supporter card from your hand during this turn, discard 3 more cards in this way.",
       "texto_pt": "Descarte a carta de cima do baralho do seu oponente. Se você jogou uma carta de Apoiador Ancestral da sua mão durante este turno, descarte 3 cartas a mais desta forma.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Giant Tusk",
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Land Collapse: If you played an Ancient Supporter card from your hand during this turn, discard 3 more cards in this way."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -22,7 +22,7 @@
       "nome_pt": "Alma Resiliente",
       "texto": "This Pokémon gets +50 HP for each Prize card your opponent has taken.",
       "texto_pt": "Este Pokémon recebe 50 PS a mais para cada carta de Prêmio que seu oponente pegou.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Resilient Soul: This Pokémon gets +50 HP for each Prize card your opponent has taken."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

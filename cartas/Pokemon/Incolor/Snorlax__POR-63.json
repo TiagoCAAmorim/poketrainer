@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Flip a coin until you get tails. Search your deck for an amount of Basic Energy up to the number of heads and attach it to this Pokémon. Then, shuffle your deck.",
       "texto_pt": "Jogue uma moeda até sair coroa. Procure por uma quantidade de Energia Básica no seu baralho até o número de caras e ligue-as a este Pokémon. Em seguida, embaralhe o seu baralho.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Collapse",
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Gormandizer: Search your deck for an amount of Basic Energy up to the number of heads and attach it to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

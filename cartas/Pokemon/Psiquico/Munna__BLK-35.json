@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "This Pokémon is now Asleep. Heal 30 damage from it.",
       "texto_pt": "Este Pokémon agora está Adormecido. Cure 30 pontos de dano dele.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Mumble",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Rest: Heal 30 damage from it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

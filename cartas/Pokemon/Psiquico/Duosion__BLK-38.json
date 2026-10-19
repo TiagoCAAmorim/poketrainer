@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Search your deck for a card that evolves from 1 of your Pokémon and put it onto that Pokémon to evolve it. Then, shuffle your deck.",
       "texto_pt": "Procure por uma carta no seu baralho que evolua de 1 dos seus Pokémon e coloque-a sobre aquele Pokémon para evoluí-lo. Em seguida, embaralhe o seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Spray Fluid",
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Cellular Evolution: Search your deck for a card that evolves from 1 of your Pokémon and put it onto that Pokémon to evolve it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

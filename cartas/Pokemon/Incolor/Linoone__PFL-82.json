@@ -22,7 +22,7 @@
       "nome_pt": "Disparada Animada",
       "texto": "Once during your turn, if this Pokémon is on your Bench, and if you have any Mega Evolution Pokémon ex in play, you may use this Ability. Switch this Pokémon with your Active Pokémon.",
       "texto_pt": "Uma vez durante o seu turno, se este Pokémon estiver no seu Banco e se você tiver algum Pokémon ex de Megaevolução em jogo, você poderá usar esta Habilidade. Troque este Pokémon pelo seu Pokémon Ativo.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Excited Dash: Switch this Pokémon with your Active Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

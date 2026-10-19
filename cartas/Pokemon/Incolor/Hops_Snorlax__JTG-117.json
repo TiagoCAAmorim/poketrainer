@@ -22,7 +22,7 @@
       "nome_pt": "Boca-livre",
       "texto": "Attacks used by your Hop's Pokémon do 30 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance). The effect of Extra Helpings doesn't stack.",
       "texto_pt": "Os ataques usados pelos seus Pokémon do Lupo causam 30 pontos de dano a mais ao Pokémon Ativo do seu oponente (antes de aplicar Fraqueza e Resistência). O efeito de Boca-livre não acumula.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Extra Helpings: Attacks used by your Hop's Pokémon do 30 more damage to your opponent's Active Pokémon. The effect of Extra Helpings doesn't stack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

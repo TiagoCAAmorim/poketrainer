@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "Discard all Energy from this Pokémon. At the end of your opponent's next turn, the Defending Pokémon will be Knocked Out.",
       "texto_pt": "Descarte todas as Energias deste Pokémon. No final do próximo turno do seu oponente, o Pokémon Defensor será Nocauteado.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Superpowered Horns",
@@ -59,9 +59,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Slow Crunch: At the end of your opponent's next turn, the Defending Pokémon will be Knocked Out."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

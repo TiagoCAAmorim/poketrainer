@@ -22,7 +22,7 @@
       "nome_pt": "Paredão",
       "texto": "As long as this Pokémon is in the Active Spot, whenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to all of your Pokémon.",
       "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, sempre que seu oponente jogar uma carta de Apoiador da mão dele, previna todos os efeitos daquela carta causados a todos os seus Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Wide Wall: As long as this Pokémon is in the Active Spot, whenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to all of your Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

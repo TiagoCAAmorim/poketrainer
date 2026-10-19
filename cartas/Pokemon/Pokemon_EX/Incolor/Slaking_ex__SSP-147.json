@@ -22,7 +22,7 @@
       "nome_pt": "Preguiça de Nascença",
       "texto": "If your opponent has no Pokémon ex or Pokémon V in play, this Pokémon can't attack.",
       "texto_pt": "Se o seu oponente não tiver Pokémon ex ou Pokémon V em jogo, este Pokémon não poderá atacar.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -56,9 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Born to Slack: If your opponent has no Pokémon ex or Pokémon V in play, this Pokémon can't attack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

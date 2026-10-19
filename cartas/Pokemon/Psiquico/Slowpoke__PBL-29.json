@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "You may discard any number of cards from your hand.",
       "texto_pt": "Você pode descartar qualquer número de cartas da sua mão.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Headbutt",
@@ -52,9 +52,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque All-You-Can-Yeet: You may discard any number of cards from your hand."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

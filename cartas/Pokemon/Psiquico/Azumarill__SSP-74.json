@@ -22,7 +22,7 @@
       "nome_pt": "Bolhas Cintilantes",
       "texto": "If you have any Tera Pokémon in play, this Pokémon can use the Double-Edge attack for Psychic.",
       "texto_pt": "Se você tiver algum Pokémon Tera em jogo, este Pokémon poderá usar o ataque Faca de Dois Gumes por Psíquico.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Glistening Bubbles: If you have any Tera Pokémon in play, this Pokémon can use the Double-Edge attack for Psychic."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

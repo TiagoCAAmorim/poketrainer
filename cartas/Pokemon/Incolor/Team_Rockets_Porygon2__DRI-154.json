@@ -29,7 +29,7 @@
       "dano": "20×",
       "texto": "This attack does 20 damage for each Supporter card that has \"Team Rocket\" in its name in your discard pile.",
       "texto_pt": "Este ataque causa 20 pontos de dano para cada carta de Apoiador que tenha \"Equipe Rocket\" em seu nome na sua pilha de descarte.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -42,9 +42,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque R Command: This attack does 20 damage for each Supporter card that has \"Team Rocket\" in its name in your discard pile."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

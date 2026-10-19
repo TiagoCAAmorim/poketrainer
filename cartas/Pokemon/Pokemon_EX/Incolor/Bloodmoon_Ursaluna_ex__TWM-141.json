@@ -22,7 +22,7 @@
       "nome_pt": "Talento Inato",
       "texto": "Blood Moon used by this Pokémon costs Colorless less for each Prize card your opponent has taken.",
       "texto_pt": "O ataque Luar de Sangue usado por este Pokémon custa Incolor a menos para cada carta de Prêmio que seu oponente pegou.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -74,9 +74,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Seasoned Skill: Blood Moon used by this Pokémon costs Colorless less for each Prize card your opponent has taken."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

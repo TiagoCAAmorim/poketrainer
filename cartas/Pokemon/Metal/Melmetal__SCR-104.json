@@ -41,7 +41,7 @@
       "dano": "250",
       "texto": "Before doing damage, discard all Pokémon Tools from this Pokémon. If you can't discard any, this attack does nothing.",
       "texto_pt": "Antes de causar dano, descarte todas as Ferramentas Pokémon deste Pokémon. Se não puder descartar nenhuma, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Reforged Axe: Before doing damage, discard all Pokémon Tools from this Pokémon.; If you can't discard any, this attack does nothing."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

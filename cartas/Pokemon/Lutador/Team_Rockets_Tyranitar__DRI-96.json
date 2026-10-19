@@ -22,7 +22,7 @@
       "nome_pt": "Fluxo de Areia",
       "texto": "During Pokémon Checkup, if this Pokémon is in the Active Spot, put 2 damage counters on each of your opponent's Basic Pokémon.",
       "texto_pt": "Durante o Checape Pokémon, se este Pokémon estiver no Campo Ativo, coloque 2 contadores de dano em cada um dos Pokémon Básicos do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Sand Stream: During Pokémon Checkup, if this Pokémon is in the Active Spot, put 2 damage counters on each of your opponent's Basic Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

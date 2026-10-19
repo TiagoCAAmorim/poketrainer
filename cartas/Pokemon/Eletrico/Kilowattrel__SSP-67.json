@@ -41,7 +41,7 @@
       "dano": "160",
       "texto": "Move all Energy from this Pokémon to your Benched Pokémon in any way you like.",
       "texto_pt": "Mova todas as Energias deste Pokémon para os seus Pokémon no Banco como desejar.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Storm Bolt: Move all Energy from this Pokémon to your Benched Pokémon in any way you like."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

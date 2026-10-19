@@ -22,7 +22,7 @@
       "nome_pt": "Adaptador Multiuso",
       "texto": "Each of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each.",
       "texto_pt": "Cada um dos seus Pokémon que tem \"Rotom\" em seu nome pode ter até 2 cartas de Ferramenta Pokémon ligadas a ele. Se esta Habilidade parar de funcionar, descarte Ferramentas Pokémon daqueles Pokémon até restar apenas 1 em cada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -61,9 +61,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Multi Adapter: Each of your Pokémon that has \"Rotom\" in its name may have up to 2 Pokémon Tool cards attached. If this Ability goes away, discard Pokémon Tools from those Pokémon until only 1 remains on each."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

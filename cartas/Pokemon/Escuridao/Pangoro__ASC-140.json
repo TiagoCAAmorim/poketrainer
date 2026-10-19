@@ -40,7 +40,7 @@
       "dano": "80+",
       "texto": "If any of your Benched Pancham have any damage counters on them, this attack does 120 more damage.",
       "texto_pt": "Se algum dos seus Pancham no Banco tiver algum contador de dano nele, este ataque causará 120 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Master's Punch: If any of your Benched Pancham have any damage counters on them, this attack does 120 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

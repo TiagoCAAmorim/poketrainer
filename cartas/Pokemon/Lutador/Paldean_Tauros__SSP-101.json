@@ -41,7 +41,7 @@
       "dano": "90",
       "texto": "If the Defending Pokémon is a Basic Pokémon, it can't attack during your opponent's next turn.",
       "texto_pt": "Se o Pokémon Defensor for um Pokémon Básico, ele não poderá atacar durante o próximo turno do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Blocking Stomp: If the Defending Pokémon is a Basic Pokémon, it can't attack during your opponent's next turn."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

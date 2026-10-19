@@ -22,7 +22,7 @@
       "nome_pt": "Olhar Imponente",
       "texto": "As long as this Pokémon is in the Active Spot, your opponent can't play any Pokémon that has an Ability from their hand, except for Team Rocket's Pokémon.",
       "texto_pt": "Enquanto este Pokémon estiver no Campo Ativo, seu oponente não poderá jogar nenhum Pokémon que tem uma Habilidade da mão dele, exceto por Pokémon da Equipe Rocket.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -50,9 +50,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Potent Glare: As long as this Pokémon is in the Active Spot, your opponent can't play any Pokémon that has an Ability from their hand, except for Team Rocket's Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

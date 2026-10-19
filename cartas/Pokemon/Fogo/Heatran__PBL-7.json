@@ -40,7 +40,7 @@
       "dano": "120",
       "texto": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Burned Pokémon.",
       "texto_pt": "Durante o próximo turno do seu oponente, previna todo o dano causado a este Pokémon por ataques de Pokémon Queimados.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Lava Wall: During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Burned Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

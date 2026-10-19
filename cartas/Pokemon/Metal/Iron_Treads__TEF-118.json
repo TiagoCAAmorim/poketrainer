@@ -22,7 +22,7 @@
       "nome_pt": "Dual Core",
       "texto": "As long as this Pokémon has a Future Booster Energy Capsule attached, it is Fighting and Metal type.",
       "texto_pt": "Enquanto este Pokémon tiver uma Cápsula Energética de Melhoria Futurista ligada a ele, será de tipo Lutador e Metal.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Dual Core: As long as this Pokémon has a Future Booster Energy Capsule attached, it is Fighting and Metal type."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

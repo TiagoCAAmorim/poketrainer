@@ -83,14 +83,15 @@ class PolicyValueNet(nn.Module):
         x = torch.cat([my_act, my_bench, opp_act, opp_bench, hand, disc, glob, ctx], -1)
         return self.trunk(x)
 
-    def forward(self, b):
+    def forward(self, b, detach_value=False):
+        """detach_value: a perda de valor não altera o tronco (usado na imitação, onde o valor decora as partidas)."""
         s = self.state(b)                                                                # B,H
         o = torch.cat([self.card(b['opt_ids']), self.card(b['opt_tids']), b['opt_feats']], -1)
         oh = self.opt_mlp(o)                                                             # B,A,H
         se = s.unsqueeze(1).expand_as(oh)
         logits = self.score(torch.cat([se, oh, se * oh], -1)).squeeze(-1)               # B,A
         logits = logits.masked_fill(~b['opt_mask'], NEG)
-        value = torch.tanh(self.value_head(s).squeeze(-1))
+        value = torch.tanh(self.value_head(s.detach() if detach_value else s).squeeze(-1))
         return logits, value
 
 

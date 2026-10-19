@@ -228,4 +228,21 @@ logs/simulacoes/
 optimized_deck*.txt
 optimized_deck*_history.json
 !tests/fixtures/ptcgl_logs/*.log
-!logs/atividade.log
+
+# Decks baixados/gerados (reimportáveis com import_limitless.py). Os já versionados continuam rastreados.
+decks/limitless/
+decks/_fora_da_rotacao/
+decks/_lixeira/
+
+logs/atividade.jsonl
+logs/atividade.log
+logs/interface/partidas.jsonl
+
+# Imagens das cartas (baixar_imagens.py)
+imagens/
+
+# Marca do aviso diário de problemas pendentes
+.claude/.aviso_problemas
+
+# Execuções locais do Weights & Biases (ptcg/ai/wb.py)
+wandb/

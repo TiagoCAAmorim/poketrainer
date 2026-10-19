@@ -40,7 +40,7 @@
       "dano": "40×",
       "texto": "This attack does 40 damage for each Pokémon Tool attached to all Pokémon.",
       "texto_pt": "Este ataque causa 40 pontos de dano para cada Ferramenta Pokémon ligada a todos os Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Tool Drop: This attack does 40 damage for each Pokémon Tool attached to all Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

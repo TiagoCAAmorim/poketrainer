@@ -40,7 +40,7 @@
       "dano": "—",
       "texto": "If you use this attack when you have exactly 1 Prize card remaining, you win this game.",
       "texto_pt": "Se você usar este ataque quando tiver exatamente 1 carta de Prêmio restante, você vencerá esta partida.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Victory Symbol: If you use this attack when you have exactly 1 Prize card remaining, you win this game."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

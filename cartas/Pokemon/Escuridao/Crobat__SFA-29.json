@@ -36,7 +36,7 @@
       "dano": "120",
       "texto": "Your opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, put 2 damage counters on that Pokémon instead of 1.",
       "texto_pt": "O Pokémon Ativo do seu oponente agora está Envenenado. Durante o Checape Pokémon, coloque 2 contadores de dano ao invés de 1 naquele Pokémon.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Poison Fang: During Pokémon Checkup, put 2 damage counters on that Pokémon instead of 1."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

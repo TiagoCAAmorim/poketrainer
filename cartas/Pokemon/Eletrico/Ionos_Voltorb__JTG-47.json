@@ -28,7 +28,7 @@
       "dano": "20+",
       "texto": "This attack does 20 more damage for each Lightning Energy attached to all of your Iono's Pokémon.",
       "texto_pt": "Este ataque causa 20 pontos de dano a mais para cada Energia Elétrico ligada a todos os seus Pokémon da Kissera.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Voltaic Chain: This attack does 20 more damage for each Lightning Energy attached to all of your Iono's Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "If your opponent's Active Pokémon has exactly 6 damage counters on it, that Pokémon is Knocked Out.",
       "texto_pt": "Se o Pokémon Ativo do seu oponente tiver exatamente 6 contadores de dano nele, aquele Pokémon será Nocauteado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Claw of Darkness",
@@ -41,7 +41,7 @@
       "dano": "200",
       "texto": "Your opponent reveals their hand, and you discard a card you find there.",
       "texto_pt": "Seu oponente revela a mão dele, e você descarta uma carta que encontrar lá.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -66,10 +66,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Terminal Period: If your opponent's Active Pokémon has exactly 6 damage counters on it, that Pokémon is Knocked Out.",
-      "Ataque Claw of Darkness: Your opponent reveals their hand, and you discard a card you find there."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

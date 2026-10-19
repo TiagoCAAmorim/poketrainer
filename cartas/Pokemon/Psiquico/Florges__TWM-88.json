@@ -22,7 +22,7 @@
       "nome_pt": "Convite Cativante",
       "texto": "Once during your turn, you may flip a coin. If heads, switch in 1 of your opponent's Benched Pokémon to the Active Spot, and the new Active Pokémon is now Confused.",
       "texto_pt": "Uma vez durante o seu turno, você poderá jogar uma moeda. Se sair cara, mande 1 dos Pokémon no Banco do seu oponente para o Campo Ativo, e o novo Pokémon Ativo agora estará Confuso.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Captivating Invitation: If heads, switch in 1 of your opponent's Benched Pokémon to the Active Spot, and the new Active Pokémon is now Confused."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

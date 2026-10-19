@@ -28,7 +28,7 @@
       "dano": "—",
       "texto": "Choose 1 of your opponent's Active Tera Pokémon's attacks and use it as this attack.",
       "texto_pt": "Escolha 1 dos ataques do Pokémon Tera Ativo do seu oponente e use-o como este ataque.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Gemstone Mimicry: Choose 1 of your opponent's Active Tera Pokémon's attacks and use it as this attack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

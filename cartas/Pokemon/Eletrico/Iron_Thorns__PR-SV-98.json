@@ -28,7 +28,7 @@
       "dano": "70×",
       "texto": "Reveal the top 5 cards of your deck. This attack does 70 damage for each Future card you find there. Then, discard those Future cards and shuffle the other cards back into your deck.",
       "texto_pt": "Revele as 5 cartas de cima do seu baralho. Este ataque causa 70 pontos de dano para cada carta Futurista que encontrar lá. Em seguida, descarte aquelas cartas Futuristas e embaralhe as outras cartas de volta no seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Megaton Lariat",
@@ -62,9 +62,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Destructo-Press: Reveal the top 5 cards of your deck.; This attack does 70 damage for each Future card you find there.; Then, discard those Future cards and shuffle the other cards back into your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

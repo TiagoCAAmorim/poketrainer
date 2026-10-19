@@ -27,7 +27,7 @@
       "dano": "30",
       "texto": "Flip a coin until you get tails. For each heads, choose a random card from your opponent's hand. Your opponent reveals those cards and shuffles them into their deck.",
       "texto_pt": "Jogue uma moeda até sair coroa. Para cada cara, escolha uma carta aleatória da mão do seu oponente. Seu oponente revela aquelas cartas e as embaralha no baralho dele.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     },
     {
       "nome": "Hammer In",
@@ -58,9 +58,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Horrifying Bite: For each heads, choose a random card from your opponent's hand.; Your opponent reveals those cards and shuffles them into their deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

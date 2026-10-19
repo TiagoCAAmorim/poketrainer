@@ -26,6 +26,7 @@ class Exec:
         self.slot = slot if slot is not None else (ctx.attacker if ctx is not None else None)
         self.card = card if card is not None else (self.slot.top if self.slot is not None else None)
         self.data = {}
+        self.flipped = False   # algum passo de moeda já rodou (Backtrack Badge refaz todas ao fim da fase 'pre')
 
     @property
     def opp(self):
@@ -139,7 +140,8 @@ def count_expr(ph: str):
     if m:
         f = slot_filter(m.group(1) + ' Pokémon')
         return lambda E: sum(1 for p in (0, 1) for s in E.g.players[p].in_play() if f(E.g, s))
-    raise Unparsed(f'contagem: {ph}')
+    from . import extra
+    return extra.count_fallback(ph)
 
 
 def opp_active_pred(desc: str):
@@ -187,7 +189,8 @@ def opp_active_pred(desc: str):
         return lambda E, s: any(e.d.special_energy for e in s.energy)
     if d == 'has a Pokémon Tool attached':
         return lambda E, s: bool(s.tools)
-    raise Unparsed(f'condição do Ativo: {d}')
+    from . import extra
+    return extra.opp_pred_fallback(d)
 
 
 def self_pred(desc: str):
@@ -232,10 +235,19 @@ def self_pred(desc: str):
     if m:
         nm = m.group(1)
         return lambda E, s: s.turn_evolved == E.g.turn and len(s.cards) > 1 and s.cards[-2].name == nm
-    raise Unparsed(f'condição deste Pokémon: {d}')
+    from . import extra
+    return extra.self_pred_fallback(d)
 
 
 def cond_expr(ph: str):
+    try:
+        return _cond_expr(ph)
+    except Unparsed:
+        from . import extra
+        return extra.cond_fallback(ph)
+
+
+def _cond_expr(ph: str):
     """Condição de 'If X, ...' → f(E) -> bool"""
     ph = ph.strip()
     m = re.match(r"^your opponent's Active Pokémon (.+)$", ph)
@@ -281,6 +293,10 @@ def cond_expr(ph: str):
         n = int(m.group(1))
         more = 'more' in ph
         return lambda E: len(E.me.hand) >= n if more else len(E.me.hand) <= n
+    m = re.match(rf'^you have at least (\d+) ({TYPE_WORDS}) Energy in play$', ph)
+    if m:  # ruling 2249: unidades de Energia daquele tipo em todos os seus Pokémon (Prism Energy conta)
+        n, T = int(m.group(1)), NAME_TO_TYPE[m.group(2)]
+        return lambda E: sum(E.g.energy_count(s, T) for s in E.me.in_play()) >= n
     m = re.match(r'^you have (?:any )?(.+?) (?:on your Bench|in play)$', ph)
     if m:
         sub = m.group(1)
@@ -378,11 +394,17 @@ def _dmg_set(fn_val, est=None):
 # --- moedas
 @pattern(r'Flip a coin', 'pre')
 def _(m):
-    def step(E):
+    def flip_(E):
         h = E.g.flip()
         E.data['heads'] = h
         E.data['heads_n'] = int(h)
         E.data['tails_n'] = 1 - int(h)
+
+    def step(E):
+        flip_(E)
+        E.flipped = True
+        if False:
+            yield
     step.est = lambda E, d: (E.data.update(heads=True, heads_n=0.5, tails_n=0.5) or d)
     return step
 
@@ -391,21 +413,33 @@ def _(m):
 def _(m):
     n = num(m.group(1))
 
-    def step(E):
+    def flip_(E):
         h = E.g.flips(n)
         E.data['heads_n'] = h
         E.data['tails_n'] = n - h
         E.data['heads'] = h > 0
+
+    def step(E):
+        flip_(E)
+        E.flipped = True
+        if False:
+            yield
     step.est = lambda E, d: (E.data.update(heads_n=n / 2, tails_n=n / 2, heads=True) or d)
     return step
 
 
 @pattern(r'Flip a coin until you get tails', 'pre')
 def _(m):
-    def step(E):
+    def flip_(E):
         h = E.g.flip_until_tails()
         E.data['heads_n'] = h
         E.data['heads'] = h > 0
+
+    def step(E):
+        flip_(E)
+        E.flipped = True
+        if False:
+            yield
     step.est = lambda E, d: (E.data.update(heads_n=1, heads=True) or d)
     return step
 
@@ -419,6 +453,9 @@ def _(m):
         h = E.g.flips(n)
         E.data['heads_n'] = h
         E.data['tails_n'] = n - h
+        E.flipped = True
+        if False:
+            yield
     step.est = lambda E, d: (E.data.update(heads_n=cnt(E) / 2) or d)
     return step
 
@@ -573,6 +610,9 @@ def _(m):
     n = int(m.group(1))
 
     def step(E):
+        if E.data.get('did') is False:   # ruling 1956: sem troca não há "novo Ativo": sem dano
+            E.ctx.damage = 0
+            return
         E.ctx.defender = E.op.active
         E.ctx.damage = n
     return step
@@ -696,9 +736,12 @@ def _(m):
     return step
 
 
-@pattern(r'Your opponent reveals their hand')
+@pattern(r'Your opponent reveals their hand', 'pre')
 def _(m):
-    return lambda E: lib.reveal_hand(E.g, E.opp)
+    def step(E):
+        lib.reveal_hand(E.g, E.opp)
+        E.data['revealed'] = list(E.op.hand)
+    return step
 
 
 @pattern(r"Discard a random card from your opponent's hand")
@@ -728,9 +771,10 @@ def _(m):
     return lambda E: lib.mill(E.g, E.opp, n)
 
 
-@pattern(r"For each heads, discard the top card of your opponent's deck")
+@pattern(r"For each heads, discard the top (\d+|) ?cards? of your opponent's deck")
 def _(m):
-    return lambda E: lib.mill(E.g, E.opp, E.data.get('heads_n', 0))
+    k = int(m.group(1)) if m.group(1) else 1
+    return lambda E: lib.mill(E.g, E.opp, k * E.data.get('heads_n', 0))
 
 
 @pattern(r'Discard the top (\d+|) ?cards? of your deck')
@@ -775,7 +819,11 @@ def _(m):
 
     def step(E):
         t = E.opp_active()
-        if t is None or E.g.effects_prevented(E.ctx, t):
+        if t is None:
+            return
+        # Habilidade (sem ctx de ataque): Hide 'n' Sneak etc. também previnem o efeito (ruling 2393)
+        if (E.g.effects_prevented(E.ctx, t) if E.ctx is not None else
+                (E.slot is not None and E.g.effects_prevented_from(E.p, E.slot, t))):
             return
         yield from lib.discard_energy_from(E.g, E.p, t, n, (lambda e: e.d.special_energy) if special else None,
                                            None, E.card)
@@ -786,7 +834,11 @@ def _(m):
 def _(m):
     def step(E):
         t = E.opp_active()
-        if t is None or E.g.effects_prevented(E.ctx, t):
+        if t is None:
+            return
+        # Habilidade (sem ctx de ataque): Hide 'n' Sneak etc. também previnem o efeito (ruling 2393)
+        if (E.g.effects_prevented(E.ctx, t) if E.ctx is not None else
+                (E.slot is not None and E.g.effects_prevented_from(E.p, E.slot, t))):
             return
         yield from lib.discard_energy_from(E.g, E.p, t, E.data.get('heads_n', 0), None, None, E.card)
     return step
@@ -866,6 +918,10 @@ def _attach_dest(dest):
         return (lambda E: [E.slot]), False
     if dest == 'your Active Pokémon':
         return (lambda E: [E.me.active] if E.me.active else []), False
+    m = re.match(r'^your Active (.*?)Pokémon$', dest)
+    if m:
+        f = slot_filter(m.group(1) + 'Pokémon')
+        return (lambda E: [E.me.active] if E.me.active and f(E.g, E.me.active) else []), False
     m = re.match(r'^your (Benched )?(.*?)Pokémon in any way you like$', dest)
     if m:
         bench = bool(m.group(1))
@@ -982,7 +1038,9 @@ def _(m):
     pred = or_filter(m.group(4))
 
     def step(E):
-        yield from lib.search_to_hand(E.g, E.p, pred, n, E.card)
+        # Ruling 2315: Nasty Plot é obrigatório pegar ao menos 1 carta, se houver; as outras buscas podem falhar
+        must = E.ctx is not None and E.ctx.attack.name == 'Nasty Plot'
+        yield from lib.search_to_hand(E.g, E.p, pred, n, E.card, min_n=1 if must else 0)
     return step
 
 
@@ -1013,7 +1071,7 @@ def _(m):
     return None   # já embutido nas buscas
 
 
-@pattern(rf'Put (up to {NUMW}|a|an|{NUMW}) (.+?) from your discard pile into your hand')
+@pattern(rf'Put (?!a number of )(up to {NUMW}|a|an|{NUMW}) (.+?) from your discard pile into your hand')
 def _(m):
     q = m.group(1)
     n = num(q.replace('up to ', '')) if q not in ('a', 'an') else 1
@@ -1065,8 +1123,10 @@ def _(m):
 def _(m):
     def step(E):
         if E.ctx is not None and E.op.active is not None and E.g.effects_prevented(E.ctx, E.op.active):
+            E.data['did'] = False   # ruling 2025: sem troca não há "novo Ativo"
             return
-        yield from lib.opp_switches_out(E.g, E.p, E.card)
+        s = yield from lib.opp_switches_out(E.g, E.p, E.card)
+        E.data['did'] = s is not None
     return step
 
 
@@ -1098,9 +1158,11 @@ def _(m):
 def _(m):
     def step(E):
         t = E.opp_active()
+        E.data['did'] = False
         if t is not None and t.tools and not E.g.effects_prevented(E.ctx, t):
             E.g.discard_cards(t.tools)
             t.tools = []
+            E.data['did'] = True
     return step
 
 
@@ -1145,7 +1207,7 @@ def _(m):
     return step
 
 
-@pattern(r"Put damage counters on your opponent's Active Pokémon until its remaining HP is (\d+)")
+@pattern(r"(?:Put|Place) damage counters on your opponent's Active Pokémon until its remaining HP is (\d+)")
 def _(m):
     n = int(m.group(1))
 
@@ -1199,11 +1261,15 @@ def _(m):
         got = yield from E.g.choose_cards(E.p, [e for _, e in pool], len(pool), 0, 'discard_energy_any',
                                           'Energias a descartar', E.card, key=lambda e: (where[e.uid].sid, e.d.id),
                                           labeler=lambda e: f'{e.name} — {E.g.slot_label(where[e.uid])}')
-        for e in got:
-            E.g.discard_energy(where[e.uid], [e], E.ctx)
+        def apply():
+            for e in got:
+                if E.g.in_play(where[e.uid]) and e in where[e.uid].energy:
+                    E.g.discard_energy(where[e.uid], [e], E.ctx)
+        E.ctx.data.setdefault('after', []).append(apply)    # ruling 2423: o dano vem antes do descarte
         E.data['discarded'] = len(got)
     step.est = lambda E, d: (E.data.update(discarded=sum(1 for s in E.me.in_play() for e in s.energy
                                                           if e.d.basic_energy or not only_basic)) or d)
+    step.defers = True
     return step
 
 
@@ -1277,20 +1343,36 @@ def _(m):
     def step(E):
         s = E.slot
         cands = [e for e in s.energy if ok(e)]
-        if len(cands) < k:
+        # Ruling (Compendium, Metallic Hammer via Seek Inspiration): o "pode descartar" vale mesmo sem Energias
+        # suficientes -- descarta quantas puder (até k) e o dano extra continua. Só "devolver à mão" exige a Energia.
+        n = min(k, len(cands)) if discard else k
+        if discard and not cands:      # sem custo nenhum: o bônus é sempre vantajoso, não pergunta
+            E.ctx.damage += bonus
             return
-        if not (yield from E.g.yes_no(E.p, f'{"Descartar" if discard else "Devolver"} {k} Energia(s) para +{bonus} de dano?',
+        if len(cands) < n or (not discard and not cands):
+            return
+        if not (yield from E.g.yes_no(E.p, f'{"Descartar" if discard else "Devolver"} {n} Energia(s) para +{bonus} de dano?',
                                       source=E.card)):
             return
-        got = yield from E.g.choose_cards(E.p, cands, k, k, 'pick', 'Energias', E.card, key=lambda c: c.uid)
-        if discard:
-            E.g.discard_energy(s, got, E.ctx)
-        else:
-            for e in got:
-                s.energy.remove(e)
-                E.me.hand.append(e)
+        got = (yield from E.g.choose_cards(E.p, cands, n, n, 'pick', 'Energias', E.card, key=lambda c: c.uid)) if n else []
+
+        def apply():
+            # Rulings 2423/2385: a escolha é feita antes, mas as Energias só saem DEPOIS do dano (senão, p.ex., o
+            # Ancient Bulwark do Bastiodon passaria a contar menos Energias). Ruling 2370: Mentally Calm impede
+            # devolver à mão (a Energia fica), mas o bônus de dano vale.
+            if not E.g.in_play(s):
+                return
+            got_now = [e for e in got if e in s.energy]
+            if discard:
+                E.g.discard_energy(s, got_now, E.ctx)
+            elif not E.g.anyhook('no_return_to_hand', slot=s):
+                for e in got_now:
+                    s.energy.remove(e)
+                    E.me.hand.append(e)
+        E.ctx.data.setdefault('after', []).append(apply)
         E.ctx.damage += bonus
     step.est = lambda E, d: d + bonus
+    step.defers = True
     return step
 
 
@@ -1471,6 +1553,9 @@ def _(m):
 def _split(text):
     t = re.sub(r'\s*\([^)]*\)', '', text or '').strip()
     t = t.replace('Pokemon', 'Pokémon')
+    for a, b in TYPOS:   # erros de digitação nos dados de origem
+        t = t.replace(a, b)
+    t = t[:1].upper() + t[1:]
     parts = re.split(r'(?<=[.!])\s+', t)
     # junta "Flip a coin. If tails, that attack doesn't happen." etc. só quando necessário
     out = []
@@ -1481,16 +1566,40 @@ def _split(text):
     return out
 
 
+TYPOS = [('[G]', 'Grass'), ('[R]', 'Fire'), ('[W]', 'Water'), ('[L]', 'Lightning'), ('[P]', 'Psychic'),
+         ('[F]', 'Fighting'), ('[D]', 'Darkness'), ('[M]', 'Metal'), ('[N]', 'Dragon'), ('[C]', 'Colorless'),
+         (' Energy attaches', ' Energy attached'), ('Knocket', 'Knocked'), ('oppoennt', 'opponent'), ('is now paralyzed', 'is now Paralyzed')]
+
+COIN_COND = re.compile(r'^If (at least \d+|any|either|all|both|\d+) of them (?:is|are) (heads|tails), (.+)$')
+
 COND_PREFIX = [
     (re.compile(r'^If heads, (.+)$'), lambda E: E.data.get('heads')),
     (re.compile(r'^If tails, (.+)$'), lambda E: not E.data.get('heads')),
-    (re.compile(r'^If both of them are heads, (.+)$'), lambda E: E.data.get('heads_n') == 2),
     (re.compile(r'^If you do, (.+)$'), lambda E: E.data.get('did', True)),
 ]
 
 
 def compile_sentence(s):
     """→ lista de (fase, função) ou dict de flags. Lança Unparsed."""
+    m = COIN_COND.match(s)
+    if m:
+        q, which, inner = m.group(1).lower(), m.group(2), m.group(3)
+        want_heads = which == 'heads'
+
+        def coin_cond(E, q=q, want_heads=want_heads):
+            h, t = E.data.get('heads_n', 0), E.data.get('tails_n', 0)
+            k, total = (h if want_heads else t), h + t
+            if q in ('any', 'either'):
+                return k >= 1
+            if q in ('all', 'both'):
+                return k == total and total > 0
+            if q.startswith('at least '):
+                return k >= int(q[9:])
+            return k == int(q)
+        res = compile_sentence(inner[0].upper() + inner[1:])
+        if isinstance(res, dict):
+            return res
+        return [(ph, _guard(coin_cond, f)) for ph, f in res]
     for rx, cond in COND_PREFIX:
         m = rx.match(s)
         if m:
@@ -1504,15 +1613,21 @@ def compile_sentence(s):
             return [(ph, _guard(cond, f)) for ph, f in res]
     m = re.match(r'^If (.+?), (this attack does .+)$', s)
     if m:
-        c = cond_expr(m.group(1))
-        inner = m.group(2)
-        res = compile_sentence(inner[0].upper() + inner[1:])
-        return [(ph, _guard(c, f)) for ph, f in res]
+        try:
+            c = cond_expr(m.group(1))
+            inner = m.group(2)
+            res = compile_sentence(inner[0].upper() + inner[1:])
+            return [(ph, _guard(c, f)) for ph, f in res]
+        except Unparsed:
+            pass
     for rx, builder, phase in PATTERNS:
         m = rx.match(s)
         if m:
-            r = builder(m)
-            if phase == 'flag':
+            try:
+                r = builder(m)
+            except Unparsed:
+                continue
+            if phase in ('flag', 'multi'):
                 return r
             if r is None:
                 return []
@@ -1587,13 +1702,27 @@ def attack_impl_from_text(text) -> AttackImpl:
     def run_pre(g, ctx):
         E = Exec(g, ctx.player, ctx=ctx)
         ctx.data['E'] = E
-        for f in pre:
-            yield from run(f(E))
-            if ctx.no_damage:
-                break
+
+        def passo():
+            for f in pre:
+                yield from run(f(E))
+                if ctx.no_damage:
+                    break
+        snap = (ctx.damage, ctx.no_damage, dict(E.data))
+        yield from passo()
+        # Backtrack Badge (ruling 2416): refaz TODAS as moedas do ataque, não só uma
+        if E.flipped and (yield from extra.maybe_reroll(E)):
+            ctx.damage, ctx.no_damage = snap[0], snap[1]
+            ctx.data.pop('after', None)
+            E.data.clear()
+            E.data.update(snap[2])
+            E.flipped = False
+            yield from passo()
 
     def run_post(g, ctx):
         E = ctx.data.get('E') or Exec(g, ctx.player, ctx=ctx)
+        for f in ctx.data.pop('after', []):
+            f()
         for f in post:
             yield from run(f(E))
 
@@ -1614,12 +1743,16 @@ def attack_impl_from_text(text) -> AttackImpl:
         return max(0, int(d))
 
     fl = prog.flags
-    im = AttackImpl(pre=run_pre if pre else None, post=run_post if post else None, estimate=estimate,
+    im = AttackImpl(pre=run_pre if pre else None,
+                    post=run_post if (post or any(getattr(f, 'defers', False) for f in pre)) else None,
+                    estimate=estimate,
                     ignore_effects=fl.get('ignore_effects', False), ignore_weakness=fl.get('ignore_weakness', False),
                     ignore_resistance=fl.get('ignore_resistance', False), status=prog.status,
                     note='; '.join(prog.unparsed))
     if 'can_use' in fl:
         im.can_use = fl['can_use']
+    if 'cost_mod' in fl:
+        im.cost_mod = fl['cost_mod']
     if fl.get('first_turn'):
         im.first_turn = True
     return im
@@ -1639,3 +1772,7 @@ def steps_runner(prog, mode):
         for f in steps:
             yield from run(f(E))
     return run_trainer if mode == 'trainer' else run_ability
+
+
+from . import extra  # noqa: E402,F401  (registra os padrões adicionais)
+extra.register_multi()

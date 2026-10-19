@@ -29,7 +29,7 @@
       "dano": "70",
       "texto": "During your opponent's next turn, if this Pokémon is damaged by an attack (even if this Pokémon is Knocked Out), put damage counters on the Attacking Pokémon equal to the damage done to this Pokémon.",
       "texto_pt": "Durante o próximo turno do seu oponente, se este Pokémon for danificado por um ataque (mesmo que este Pokémon seja Nocauteado), coloque contadores de dano no Pokémon Atacante equivalentes ao dano causado a este Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -47,9 +47,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Strong Bash: During your opponent's next turn, if this Pokémon is damaged by an attack, put damage counters on the Attacking Pokémon equal to the damage done to this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

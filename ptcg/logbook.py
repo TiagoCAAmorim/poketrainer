@@ -9,6 +9,7 @@
         indice.jsonl
       simulacoes/<AAAA-MM-DD_HHMMSS>_<descricao>.jsonl   1 partida simulada por linha
       interface/partidas.jsonl       partidas jogadas na interface gráfica
+      ia/treinos.jsonl               treinos e avaliações da IA (imitar.py, train.py) — `python ia.py historico`
 
 Cada partida do motor é gravada com decks (ids), semente e a sequência de decisões (`history`):
 isso basta para reproduzi-la exatamente (`gerenciar_logs.py rever …`).
@@ -55,6 +56,24 @@ def registrar(categoria: str, mensagem: str, **dados):
                                                      **dados}, ensure_ascii=False, default=str))
 
 
+# ------------------------------------------------------------------ treinos da IA
+TREINOS = LOG_DIR / 'ia' / 'treinos.jsonl'
+
+
+def registrar_treino(tipo: str, resumo: str, **dados) -> dict:
+    """Uma linha em logs/ia/treinos.jsonl (versionado) + uma em atividade.log.
+
+    tipo: 'dados' | 'imitacao' | 'avaliacao' | 'ppo_inicio' | 'ppo_avaliacao' | 'ppo_fim'."""
+    rec = {'quando': _now().isoformat(timespec='seconds'), 'tipo': tipo, 'resumo': resumo, **dados}
+    _append(TREINOS, json.dumps(rec, ensure_ascii=False, default=str))
+    registrar('ia', f'{tipo}: {resumo}')
+    return rec
+
+
+def treinos() -> list:
+    return ler_jsonl(TREINOS)
+
+
 # ------------------------------------------------------------------ partidas do motor
 def partida_registro(g, **extra) -> dict:
     """Resumo reproduzível de uma partida (Game) do motor."""
@@ -87,12 +106,64 @@ class SessaoSimulacao:
         self.n += 1
 
 
-def salvar_partida_interface(g, decks=None, controles=None):
-    rec = partida_registro(g, decks=decks, controles=controles, log=[x['msg'] for x in g.log])
+def salvar_partida_interface(g, decks=None, controles=None, comentarios=None):
+    rec = partida_registro(g, decks=decks, controles=controles, log=[x['msg'] for x in g.log],
+                           comentarios=comentarios or [])
     _append(LOG_DIR / 'interface' / 'partidas.jsonl', json.dumps(rec, ensure_ascii=False))
     registrar('interface', f'partida terminada: {g.names[0]} x {g.names[1]} — '
                            f'{"empate" if g.winner == -1 else g.names[g.winner] + " venceu"} ({g.end_reason})',
               decks=decks)
+
+
+# ------------------------------------------------------------------ problemas apontados nas partidas
+PROBLEMAS = LOG_DIR / 'problemas.jsonl'   # versionado: é a memória dos problemas (abertos e corrigidos)
+
+
+def _problemas_todos() -> list:
+    return _read_jsonl(PROBLEMAS)
+
+
+def registrar_problema(g, texto: str, decks=None, controles=None) -> dict:
+    """Guarda um comentário do usuário sobre a decisão atual da partida (status 'aberto').
+
+    Inclui decks, semente e decisões até aqui, então `rever_partida(rec)` reproduz o momento exato.
+    """
+    pr = g.prompt
+    rec = {
+        'id': f'P{len(_problemas_todos()) + 1:03d}', 'status': 'aberto', 'texto': texto.strip(),
+        'quando': _now().isoformat(timespec='seconds'),
+        'decisao': len(g.history), 'turno': g.turn,
+        'prompt': None if pr is None else {'jogador': pr.player, 'hint': pr.hint, 'texto': pr.text,
+                                           'opcoes': [o.label for o in pr.options]},
+        'ultimas_linhas': [x['msg'] for x in g.log[-12:]],
+        'jogadores': list(g.names), 'decks': decks, 'controles': controles,
+        'decks_ids': g.deck_lists, 'semente': g.seed, 'history': list(g.history),
+    }
+    _append(PROBLEMAS, json.dumps(rec, ensure_ascii=False))
+    registrar('problema', f'{rec["id"]} (turno {g.turn}, decisão {rec["decisao"]}): {rec["texto"][:120]}')
+    return rec
+
+
+def problemas(status=None) -> list:
+    return [r for r in _problemas_todos() if status is None or r['status'] == status]
+
+
+def atualizar_problema(pid: str, status: str, nota='') -> dict:
+    """Marca um problema como 'corrigido' (ou reabre). Reescreve o arquivo."""
+    recs = _problemas_todos()
+    alvo = next((r for r in recs if r['id'] == pid.upper()), None)
+    if alvo is None:
+        raise KeyError(f'problema {pid} não encontrado')
+    alvo['status'] = status
+    if status == 'corrigido':
+        alvo['corrigido_em'] = _now().isoformat(timespec='seconds')
+        alvo['correcao'] = nota
+    else:
+        alvo.pop('corrigido_em', None)
+    with _LOCK:
+        PROBLEMAS.write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in recs), encoding='utf-8')
+    registrar('problema', f'{alvo["id"]} → {status}' + (f': {nota}' if nota else ''))
+    return alvo
 
 
 def rever_partida(rec: dict):

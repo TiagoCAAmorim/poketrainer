@@ -38,7 +38,7 @@
       "dano": "50×",
       "texto": "Your opponent reveals their hand. This attack does 50 damage for each Trainer card you find there.",
       "texto_pt": "Seu oponente revela a mão dele. Este ataque causa 50 pontos de dano para cada carta de Treinador que encontrar lá.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -63,9 +63,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Wondrous Cotton: This attack does 50 damage for each Trainer card you find there."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

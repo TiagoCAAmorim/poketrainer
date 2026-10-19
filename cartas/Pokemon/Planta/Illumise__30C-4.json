@@ -22,7 +22,7 @@
       "nome_pt": "Sinal Vermelho",
       "texto": "If you have Volbeat in play, apply Weakness for both Active Pokémon as x3",
       "texto_pt": "Ao ligar uma Energia de Plasma da sua mão a este Pokémon, você pode trocar 1 dos Pokémon do Banco do oponente pelo Pokémon Ativo dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -49,9 +49,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Supereffective Pheromones: If you have Volbeat in play, apply Weakness for both Active Pokémon as x3"
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -27,7 +27,7 @@
       "dano": "20",
       "texto": "You may switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)",
       "texto_pt": "Você pode mandar o Pokémon Ativo do seu oponente para o Banco. (O seu oponente escolhe o novo Pokémon Ativo.)",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -40,9 +40,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Push Down: You may switch out your opponent's Active Pokémon to the Bench."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

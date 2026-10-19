@@ -22,7 +22,7 @@
       "nome_pt": "Chamado Ventiladoresco",
       "texto": "Once during your first turn, you may search your deck for up to 3 Colorless Pokémon with 100 HP or less, reveal them, and put them into your hand. Then, shuffle your deck. You can't use more than 1 Fan Call Ability during your turn.",
       "texto_pt": "Uma vez durante o seu primeiro turno, você poderá procurar por até 3 Pokémon Incolor com 100 PS ou menos no seu baralho, revelá-los e colocá-los na sua mão. Em seguida, embaralhe o seu baralho. Você não pode usar mais de 1 Habilidade Chamado Ventiladoresco durante o seu turno.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -35,7 +35,7 @@
       "dano": "70",
       "texto": "If there is no Stadium in play, this attack does nothing.",
       "texto_pt": "Se não houver Estádio em jogo, este ataque não fará nada.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -63,10 +63,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Assault Landing: If there is no Stadium in play, this attack does nothing.",
-      "Habilidade Fan Call: Once during your first turn, you may search your deck for up to 3 Colorless Pokémon with 100 HP or less, reveal them, and put them into your hand. Then, shuffle your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

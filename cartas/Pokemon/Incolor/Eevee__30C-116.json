@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Your opponent reveals their hand, and you put an Item card you find there on the bottom of your opponent's deck.",
       "texto_pt": "Seu oponente revela a mão dele, e você coloca uma carta de Item que você encontrar lá como a carta de baixo do baralho do seu oponente.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Tackle",
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Fetch and Hide: Your opponent reveals their hand, and you put an Item card you find there on the bottom of your opponent's deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

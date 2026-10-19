@@ -41,7 +41,7 @@
       "dano": "210",
       "texto": "During your opponent's next turn, this Pokémon takes 100 more damage from attacks (after applying Weakness and Resistance).",
       "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 100 pontos de dano a mais de ataques (depois de aplicar Fraqueza e Resistência).",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -54,9 +54,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Plunging Headbutt: During your opponent's next turn, this Pokémon takes 100 more damage from attacks."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

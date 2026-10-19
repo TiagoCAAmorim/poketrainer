@@ -27,7 +27,7 @@
       "dano": "20+",
       "texto": "If Durant is on your Bench, this attack does 20 more damage.",
       "texto_pt": "Se Durant estiver no seu Banco, este ataque causará 20 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Vise Grip",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Bite Together: If Durant is on your Bench, this attack does 20 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

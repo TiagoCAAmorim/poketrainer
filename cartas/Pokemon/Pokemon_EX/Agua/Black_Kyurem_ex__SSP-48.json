@@ -29,7 +29,7 @@
       "dano": "90",
       "texto": "If your opponent's Active Pokémon is a Dragon Pokémon, it is now Paralyzed.",
       "texto_pt": "Se o Pokémon Ativo do seu oponente for um Pokémon Dragão, ele agora estará Paralisado.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Black Frost",
@@ -63,9 +63,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Ice Age: If your opponent's Active Pokémon is a Dragon Pokémon, it is now Paralyzed."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

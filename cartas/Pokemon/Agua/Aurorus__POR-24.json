@@ -22,7 +22,7 @@
       "nome_pt": "Parede de Tundra",
       "texto": "All of your Pokémon that have any Water Energy attached take 50 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance). The effect of Tundra Wall doesn't stack.",
       "texto_pt": "Todos os seus Pokémon que têm alguma Energia Água ligada a eles recebem 50 pontos de dano a menos de ataques dos Pokémon do seu oponente (depois de aplicar Fraqueza e Resistência). O efeito de Parede de Tundra não acumula.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -55,9 +55,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Tundra Wall: All of your Pokémon that have any Water Energy attached take 50 less damage from attacks from your opponent's Pokémon. The effect of Tundra Wall doesn't stack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

@@ -38,7 +38,7 @@
       "dano": "40+",
       "texto": "If there are 3 or fewer cards in your deck, this attack does 200 more damage.",
       "texto_pt": "Se houver 3 ou menos cartas no seu baralho, este ataque causará 200 pontos de dano a mais.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -51,9 +51,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Counterturn: If there are 3 or fewer cards in your deck, this attack does 200 more damage."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

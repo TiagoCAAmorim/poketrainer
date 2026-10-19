@@ -40,7 +40,7 @@
       "dano": "—",
       "texto": "Place damage counters on your opponent's Active Pokémon until its remaining HP is 50.",
       "texto_pt": "Coloque contadores de dano no Pokémon Ativo do seu oponente até o PS restante dele ser 50.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Swirling Resentment: Place damage counters on your opponent's Active Pokémon until its remaining HP is 50."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

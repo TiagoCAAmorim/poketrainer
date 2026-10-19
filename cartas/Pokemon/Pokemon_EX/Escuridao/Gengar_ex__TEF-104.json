@@ -22,7 +22,7 @@
       "nome_pt": "Maldição Corrosiva",
       "texto": "Whenever your opponent attaches an Energy card from their hand to 1 of their Pokémon, put 2 damage counters on that Pokémon.",
       "texto_pt": "Sempre que seu oponente ligar uma carta de Energia da mão dele a 1 dos Pokémon dele, coloque 2 contadores de dano naquele Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -36,7 +36,7 @@
       "dano": "160",
       "texto": "You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon.",
       "texto_pt": "Você pode mover uma Energia do Pokémon Ativo do seu oponente para 1 dos Pokémon no Banco dele.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -56,10 +56,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Tricky Steps: You may move an Energy from your opponent's Active Pokémon to 1 of their Benched Pokémon.",
-      "Habilidade Gnawing Curse: Whenever your opponent attaches an Energy card from their hand to 1 of their Pokémon, put 2 damage counters on that Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

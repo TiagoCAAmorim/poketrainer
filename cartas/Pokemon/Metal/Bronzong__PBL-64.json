@@ -40,7 +40,7 @@
       "dano": "120",
       "texto": "During your opponent's next turn, this Pokémon takes 100 less damage from attacks from Evolution Pokémon (after applying Weakness and Resistance).",
       "texto_pt": "Durante o próximo turno do seu oponente, este Pokémon receberá 100 pontos de dano a menos de ataques de Pokémon de Evolução (depois de aplicar Fraqueza e Resistência).",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Metal Block: During your opponent's next turn, this Pokémon takes 100 less damage from attacks from Evolution Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

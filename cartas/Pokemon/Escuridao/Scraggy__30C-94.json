@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Your opponent shuffles their hand into their deck and draws 4 cards.",
       "texto_pt": "Seu oponente embaralha a mão dele no baralho dele e compra 4 cartas.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Corkscrew Punch",
@@ -57,9 +57,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Nitpick: Your opponent shuffles their hand into their deck and draws 4 cards."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

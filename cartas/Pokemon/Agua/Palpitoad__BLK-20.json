@@ -28,7 +28,7 @@
       "dano": "40×",
       "texto": "This attack does 40 damage for each of your Pokémon in play that has the Round attack.",
       "texto_pt": "Este ataque causa 40 pontos de dano para cada um dos seus Pokémon em jogo que tiver o ataque Circular.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Wave Splash",
@@ -59,9 +59,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Round: This attack does 40 damage for each of your Pokémon in play that has the Round attack."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

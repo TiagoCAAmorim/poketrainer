@@ -40,7 +40,7 @@
       "dano": "110",
       "texto": "You may move any amount of Energy from your Pokémon to your other Pokémon in any way you like.",
       "texto_pt": "Você pode mover qualquer quantidade de Energia dos seus Pokémon para outros Pokémon seus como desejar.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Energy Blender: You may move any amount of Energy from your Pokémon to your other Pokémon in any way you like."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

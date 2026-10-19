@@ -22,7 +22,7 @@
       "nome_pt": "Zumbido Impulsor",
       "texto": "Once during your turn, when this Pokémon moves from your Bench to the Active Spot, you may search your deck for up to 3 Basic Grass Energy cards and attach them to this Pokémon. Then, shuffle your deck.",
       "texto_pt": "Uma vez durante o seu turno, quando este Pokémon for movido do seu Banco para o Campo Ativo, você poderá procurar por até 3 cartas de Energia Planta Básica no seu baralho e ligá-las a este Pokémon. Em seguida, embaralhe o seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -63,9 +63,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Buzzing Boost: Once during your turn, when this Pokémon moves from your Bench to the Active Spot, you may search your deck for up to 3 Basic Grass Energy cards and attach them to this Pokémon. Then, shuffle your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

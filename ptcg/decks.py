@@ -134,7 +134,7 @@ def deck_to_text(card_ids, meta=None) -> str:
     return '\n'.join(out)
 
 
-def random_deck(rng: random.Random, statuses=('ok', 'partial'), lines=2):
+def random_deck(rng: random.Random, statuses=('ok', 'partial'), lines=2, prefer=None):
     """Gera um deck legal aleatório (linhas de evolução + treinadores + energias) para testes de estresse."""
     D = db()
     pool = [d for d in D.cards.values() if d.status in statuses]
@@ -148,8 +148,10 @@ def random_deck(rng: random.Random, statuses=('ok', 'partial'), lines=2):
     energies = [d for d in D.cards.values() if d.basic_energy]
     deck = []
     types = set()
+    fav = [d for d in basics if prefer and d.id in prefer]
+    fav_evo = [d for d in pool if prefer and d.id in prefer and d.is_evolution]
     for _ in range(lines):
-        b = rng.choice(basics)
+        b = rng.choice(fav) if fav and rng.random() < 0.8 else rng.choice(basics)
         deck += [b] * rng.randint(2, 4)
         types |= set(b.types)
         s1 = evos.get(b.name)

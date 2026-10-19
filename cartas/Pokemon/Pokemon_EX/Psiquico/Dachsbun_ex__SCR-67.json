@@ -22,7 +22,7 @@
       "nome_pt": "Tá na Mesa, Pessoal",
       "texto": "When you play this Pokémon from your hand to evolve 1 of your Pokémon during your turn, you may heal all damage from each of your Evolution Pokémon. If you healed any damage in this way, discard all Energy from those Pokémon.",
       "texto_pt": "Quando você jogar este Pokémon da sua mão para evoluir 1 dos seus Pokémon durante o seu turno, você poderá curar todo o dano de cada um dos seus Pokémon de Evolução. Se você curou qualquer dano desta forma, descarte todas as Energias daqueles Pokémon.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -61,9 +61,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Time to Chow Down: Heal all damage from each of your Evolution Pokémon.; If you healed any damage in this way, discard all Energy from those Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

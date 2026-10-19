@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Draw 3 cards from the bottom of your deck.",
       "texto_pt": "Compre as 3 cartas de baixo do seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Psychic",
@@ -55,9 +55,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Upside-Down Draw: Draw 3 cards from the bottom of your deck."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

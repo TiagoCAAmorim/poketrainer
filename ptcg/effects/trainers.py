@@ -61,7 +61,7 @@ def search_multi(g, p, preds, card, text='Buscar'):
 
 
 # ====================================================================== ITENS
-@trainer('Accompanying Flute')
+@trainer('Accompanying Flute', can_play=lambda g, p, c: g.bench_space(1 - p) > 0)   # ruling 1985
 def _(g, p, card):
     op = g.players[1 - p]
     top = op.deck[:5]
@@ -122,7 +122,7 @@ def _(g, p, card):
 @trainer('Brilliant Blender')
 def _(g, p, card):
     pl = g.players[p]
-    got = yield from g.choose_cards(p, pl.deck, 5, 0, 'pick', 'Cartas para descartar do baralho', card)
+    got = yield from g.choose_cards(p, pl.deck, 5, 1, 'pick', 'Cartas para descartar do baralho', card)   # ruling 2062
     for c in got:
         pl.deck.remove(c)
         pl.discard.append(c)
@@ -168,7 +168,13 @@ def _(g, p, card):
         g.add_condition(a, 'confused')
 
 
-@trainer('Dark Bell')
+def _dark_bell_ok(g, p, card):
+    # ruling: sem alvo válido (Ativos que não sejam {D}) a carta não pode ser jogada
+    return any(g.players[q].active and not g.has_type(g.players[q].active, 'D')
+               and T_ok(g, card, g.players[q].active) for q in (p, 1 - p))
+
+
+@trainer('Dark Bell', can_play=_dark_bell_ok)
 def _(g, p, card):
     for q in (p, 1 - p):
         a = g.players[q].active
@@ -349,7 +355,12 @@ def _(g, p, card):
         g.draw(1 - p, n)
 
 
-register_trainer('Megaton Blower', TrainerImpl(run=lambda g, p, c: _megaton(g, p, c)))
+def _megaton_can(g, p, card):   # ruling 2064: precisa de Estádio em jogo ou Ferramenta/Energia Especial do oponente
+    return g.stadium is not None or any(s.tools or any(e.d.special_energy for e in s.energy)
+                                        for s in g.players[1 - p].in_play() if T_ok(g, card, s))
+
+
+register_trainer('Megaton Blower', TrainerImpl(run=lambda g, p, c: _megaton(g, p, c), can_play=_megaton_can))
 
 
 def _megaton(g, p, card):
@@ -501,10 +512,12 @@ def _special_red(g, p, card):
 
 
 register_trainer('Special Red Card', TrainerImpl(run=_special_red,
-                                                 can_play=lambda g, p, c: len(g.players[1 - p].prizes) <= 3))
+                                                 can_play=lambda g, p, c: len(g.players[1 - p].prizes) <= 3
+                                                 and bool(g.players[1 - p].hand)))   # ruling: sem cartas na mão do oponente, não joga
 
 
-@trainer('Strange Timepiece')
+@trainer('Strange Timepiece', can_play=lambda g, p, c: any(
+    s.evolved and g.has_type(s, 'P') for s in g.players[p].in_play()))
 def _(g, p, card):
     s = yield from choose_my_slot(g, p, lambda g, s: s.evolved and g.has_type(s, 'P'), 'Desevoluir qual Pokémon?',
                                   card)
@@ -534,14 +547,20 @@ def _(g, p, card):
     yield from lib.search_to_hand(g, p, lambda c: c.d.is_tool and 'Technical Machine' in c.d.name, 3, card)
 
 
-@trainer("Team Rocket's Bother-Bot")
+@trainer("Team Rocket's Bother-Bot",
+         can_play=lambda g, p, c: any(not x.face_up for x in g.players[1 - p].prizes) or bool(g.players[1 - p].hand))
 def _(g, p, card):
+    # ruling 2167: jogável se há prêmio virado para baixo ou carta na mão; a troca só se houver as duas coisas
     op = g.players[1 - p]
-    if not op.prizes or not op.hand:
+    down = [x for x in op.prizes if not x.face_up]
+    prize = g.rng.choice(down) if down else None
+    if prize is not None:
+        prize.face_up = True
+    h = g.rng.choice(op.hand) if op.hand else None
+    if prize is None or h is None:
+        g.say(f'Prêmio revelado: {prize.name if prize else "-"}; carta da mão: {h.name if h else "-"}')
         return
-    prize = g.rng.choice(op.prizes)
     prize.face_up = True
-    h = g.rng.choice(op.hand)
     g.say(f'Prêmio revelado: {prize.name}; carta da mão: {h.name}')
     if (yield from g.yes_no(p, f'Trocar {prize.name} (prêmio) por {h.name} (mão)?', source=card)):
         i = op.prizes.index(prize)
@@ -574,7 +593,7 @@ def _(g, p, card):
 def _(g, p, card):
     pool = [(s, t) for q in (0, 1) for s in g.players[q].in_play() for t in s.tools if T_ok(g, card, s) or q == p]
     where = {t.uid: s for s, t in pool}
-    got = yield from g.choose_cards(p, [t for _, t in pool], 2, 0, 'pick', 'Ferramentas para descartar', card,
+    got = yield from g.choose_cards(p, [t for _, t in pool], 2, 1 if pool else 0, 'pick', 'Ferramentas para descartar', card,   # ruling 2301
                                     key=lambda t: t.uid, labeler=lambda t: f'{t.name} — {g.slot_label(where[t.uid])}')
     for t in got:
         where[t.uid].tools.remove(t)
@@ -954,14 +973,15 @@ register_trainer("Gladion's Final Battle", TrainerImpl(run=_gladion, can_play=la
 
 
 def _grimsley(g, p, card):
-    yield from lib.look_top(g, p, 7, lambda c: is_pokemon(c) and 'D' in c.d.types and c.d.is_basic,
+    yield from lib.look_top(g, p, 7, lambda c: is_pokemon(c) and 'D' in c.d.types,
                             1 if g.bench_space(p) else 0, dest='bench', rest='bottom', source=card)
 
 
 register_trainer("Grimsley's Move", TrainerImpl(run=_grimsley, can_play=lambda g, p, c: not g.first_turn(p)))
 
 
-@trainer('Gwynn')
+@trainer('Gwynn', can_play=lambda g, p, c: any(
+    is_pokemon(x) and not x.d.rule_box for x in g.players[p].hand))
 def _(g, p, card):
     got = yield from g.discard_from_hand(p, 2, source=card, pred=lambda c: is_pokemon(c) and not c.d.rule_box, min_n=0)
     g.draw(p, 3 * len(got))
@@ -1137,7 +1157,8 @@ register_trainer("Morty's Conviction", TrainerImpl(run=_morty, can_play=lambda g
 @trainer("N's Plan")
 def _(g, p, card):
     pl = g.players[p]
-    yield from lib.move_energy(g, p, lambda: pl.bench, lambda: [pl.active] if pl.active else [], 2, source=card)
+    yield from lib.move_energy(g, p, lambda: pl.bench, lambda: [pl.active] if pl.active else [], 2, source=card,
+                               min_n=1)   # ruling 2301: "até 2" em Treinador = 1 ou 2
 
 
 def _naveen(g, p, card):
@@ -1260,9 +1281,12 @@ def _(g, p, card):
 
 
 def _surfer(g, p, card):
-    s = yield from lib.switch_own(g, p, card)
+    pend = []
+    s = yield from lib.switch_own(g, p, card, defer=pend)
     if s is not None:
         g.draw_until(p, 5)
+    for name, kw in pend:   # ruling 2142: eventos da troca (Buzzing Boost) só depois da compra
+        yield from g.emit(name, **kw)
 
 
 register_trainer('Surfer', TrainerImpl(run=_surfer, can_play=lambda g, p, c: bool(g.players[p].bench)))
@@ -1295,7 +1319,7 @@ def _giovanni(g, p, card):
         return
     s = yield from g.choose_slot(p, cands, 'switch', 'Novo Ativo (Team Rocket)', card)
     yield from g.switch_active(p, s)
-    yield from lib.gust(g, p, gust_pred(card), card)
+    yield from lib.gust(g, p, gust_pred(card), card, blocked_ok=True)   # ruling 2154
 
 
 register_trainer("Team Rocket's Giovanni", TrainerImpl(run=_giovanni, can_play=lambda g, p, c: g.players[p].active is not None

@@ -41,7 +41,7 @@ def card_filter(phrase: str, g=None, p=None):
     if re.search(r"(that )?(doesn't|does not|don't) have a Rule Box", s):
         preds.append(lambda c: c.d.kind == 'pokemon' and not c.d.rule_box)
         s = re.sub(r"(that )?(doesn't|does not|don't) have a Rule Box", '', s).strip()
-    m = re.search(r'that has "([^"]+)" in (?:its|their) name', s)
+    m = re.search(r'that (?:has|have) "([^"]+)" in (?:its|their) name', s)
     if m:
         part = m.group(1)
         preds.append(lambda c, part=part: part in c.d.name)
@@ -66,7 +66,7 @@ def card_filter(phrase: str, g=None, p=None):
         for t in re.findall(TYPE_WORDS, s):
             code = NAME_TO_TYPE[t]
             preds.append(lambda c, code=code: c.d.provides == code)
-    elif 'Pokémon' in s or 'Pokemon' in s:
+    elif ('Pokémon' in s or 'Pokemon' in s) and 'Tool' not in s:   # ruling 2051: "Pokémon Tool" é Treinador
         want_kind = 'pokemon'
         if re.search(r'\bBasic\b', s):
             preds.append(lambda c: c.d.is_basic)
@@ -128,7 +128,7 @@ def slot_filter(phrase: str):
         preds.append(lambda g, sl, code=code: g.has_type(sl, code))
     if re.search(r'\bBasic\b', s):
         preds.append(lambda g, sl: sl.d.stage == 0)
-    if 'Evolution' in s or 'evolved' in s:
+    if re.search(r'(?<!Mega )Evolution', s) or 'evolved' in s:   # "Mega Evolution ex" pode ser Básico
         preds.append(lambda g, sl: sl.d.stage > 0)
     if 'Stage 2' in s:
         preds.append(lambda g, sl: sl.d.stage == 2)
@@ -255,22 +255,26 @@ def look_top(g, p, n, pred, take_max, dest='hand', rest='shuffle', source=None, 
     return got
 
 
-def switch_own(g, p, source=None, text='Escolha o novo Ativo'):
+def switch_own(g, p, source=None, text='Escolha o novo Ativo', defer=None):
     pl = g.players[p]
     if not pl.bench or pl.active is None:
         return None
     s = yield from g.choose_slot(p, pl.bench, 'switch', text, source)
-    yield from g.switch_active(p, s)
+    yield from g.switch_active(p, s, defer=defer)
     g.say(f'{pl.name} trocou para {s.name}')
     return s
 
 
-def gust(g, p, pred=None, source=None, text='Trazer Pokémon do Banco do oponente para o Ativo'):
+def gust(g, p, pred=None, source=None, text='Trazer Pokémon do Banco do oponente para o Ativo', blocked_ok=False):
+    """blocked_ok: alvos que `pred` recusa ainda podem ser escolhidos, mas nada acontece com eles (ruling 2154)."""
     op = g.players[1 - p]
-    cands = [s for s in op.bench if pred is None or pred(g, s)]
+    cands = [s for s in op.bench if blocked_ok or pred is None or pred(g, s)]
     if not cands or op.active is None:
         return None
     s = yield from g.choose_slot(p, cands, 'gust', text, source)
+    if pred is not None and not pred(g, s):
+        g.say(f'{s.name} não foi afetado')
+        return None
     yield from g.switch_active(1 - p, s, cause='gust')
     g.say(f'{s.name} foi trazido para o Ativo do oponente')
     return s
@@ -390,6 +394,10 @@ def mill(g, p, n):
     pl.discard.extend(cards)
     if cards:
         g.say(f'{pl.name} descartou do topo: {", ".join(c.name for c in cards)}')
+        if g.current != p:   # Startling Drop (Ferrothorn): descartado do baralho por efeito do oponente
+            for c in cards:
+                if any(a.name == 'Startling Drop' for a in c.d.abilities):
+                    mill(g, 1 - p, 8)
     return cards
 
 

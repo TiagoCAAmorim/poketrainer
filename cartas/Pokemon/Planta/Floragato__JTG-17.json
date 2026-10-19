@@ -28,7 +28,7 @@
       "dano": "30+",
       "texto": "Flip a coin. If heads, this attack does 30 more damage, and heal 30 damage from this Pokémon.",
       "texto_pt": "Jogue uma moeda. Se sair cara, este ataque causará 30 pontos de dano a mais, e cure 30 pontos de dano deste Pokémon.",
-      "simulador": "parcial"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -41,9 +41,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Magical Leaf: If heads, this attack does 30 more damage, and heal 30 damage from this Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

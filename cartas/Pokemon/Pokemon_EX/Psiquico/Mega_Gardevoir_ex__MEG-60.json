@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "For each of your Benched Pokémon, search your deck for a Basic Psychic Energy card and attach it to that Pokémon. Then, shuffle your deck.",
       "texto_pt": "Para cada um dos seus Pokémon no Banco, procure por uma carta de Energia Psíquico Básica no seu baralho e ligue-a àquele Pokémon. Em seguida, embaralhe o seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Mega Symphonia",
@@ -78,9 +78,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Overflowing Wishes: For each of your Benched Pokémon, search your deck for a Basic Psychic Energy card and attach it to that Pokémon."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

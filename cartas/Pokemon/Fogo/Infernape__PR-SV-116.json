@@ -22,7 +22,7 @@
       "nome_pt": "Dança Incendiária",
       "texto": "Once during your turn, you may attach a Basic Fire Energy card, a Basic Fighting Energy card, or 1 of each from your hand to your Pokémon in any way you like.",
       "texto_pt": "Uma vez durante o seu turno, você poderá ligar uma carta de Energia Fogo Básica, uma carta de Energia Lutador Básica ou 1 de cada da sua mão aos seus Pokémon como desejar.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -60,9 +60,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Pyro Dance: Attach a Basic Fire Energy card, a Basic Fighting Energy card, or 1 of each from your hand to your Pokémon in any way you like."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

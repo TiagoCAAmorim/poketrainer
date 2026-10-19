@@ -41,7 +41,7 @@
       "dano": "260",
       "texto": "This Pokémon can't use Blaze Blitz again until it leaves the Active Spot.",
       "texto_pt": "Este Pokémon não poderá usar Avanço Incendiário novamente até sair do Campo Ativo.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [
@@ -77,9 +77,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Blaze Blitz: This Pokémon can't use Blaze Blitz again until it leaves the Active Spot."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

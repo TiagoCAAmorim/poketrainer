@@ -22,7 +22,7 @@
       "nome_pt": "Evolução Emergencial",
       "texto": "Once during your turn, if this Pokémon's remaining HP is 30 or less, you may search your deck for an Unfezant or Unfezant ex and put it onto this Pidove to evolve it. Then, shuffle your deck.",
       "texto_pt": "Uma vez durante o seu turno, se o PS restante deste Pokémon for 30 ou menos, você poderá procurar por um Unfezant ou Unfezant ex no seu baralho e colocá-lo sobre este Pidove para evoluí-lo. Em seguida, embaralhe o seu baralho.",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "ataques": [
@@ -48,9 +48,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Habilidade Emergency Evolution: Search your deck for an Unfezant or Unfezant ex and put it onto this Pidove to evolve it."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

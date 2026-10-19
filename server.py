@@ -15,16 +15,18 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 from ptcg.agents import make_agent
+from ptcg import deckbuilder as DB
+from ptcg import explorer as EX
 from ptcg.carddb import db
 from ptcg.decks import DECK_DIR, deck_to_text, list_decks, load_deck, parse_decklist, support_report, validate
 from ptcg.engine import Game
-from ptcg.logbook import registrar, salvar_log_tcglive, salvar_partida_interface
+from ptcg.logbook import registrar, registrar_problema, salvar_log_tcglive, salvar_partida_interface
 from ptcg.view import card_info, game_cards, game_view
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 WEB = os.path.join(ROOT, 'web')
 LOCK = threading.Lock()
-S = {'game': None, 'ctrl': ['human', 'heuristic'], 'agents': [None, None], 'decks': [None, None]}
+S = {'game': None, 'ctrl': ['human', 'heuristic'], 'agents': [None, None], 'decks': [None, None], 'advisor': None}
 
 
 def controllers():
@@ -34,6 +36,10 @@ def controllers():
         rel = os.path.relpath(p, ROOT)
         out.append({'id': f'model:{rel}', 'label': f'Rede: {rel}'})
     return out
+
+
+def advisors():
+    return [c for c in controllers() if c['id'] not in ('human', 'random')]
 
 
 def deck_index():
@@ -63,11 +69,17 @@ def state(reveal=False, with_cards=False):
     v = 'all' if reveal else viewer()
     ai_eval = None
     if not g.done:
-        ag = S['agents'][g.prompt.player]
-        if ag is not None and hasattr(ag, 'evaluate') and (v == 'all' or v == g.prompt.player):
+        who = g.prompt.player
+        # IA que joga a vez; se a vez é de um humano, o consultor (professor virtual) dá a sugestão
+        ag = S['agents'][who] if S['ctrl'][who] != 'human' else S['advisor']
+        if ag is not None and ag.name == 'heuristic' and S['ctrl'][who] != 'human':
+            ag = None       # evaluate() gastaria o rng da heurística e mudaria a partida
+        if ag is not None and hasattr(ag, 'evaluate') and (v == 'all' or v == who):
             try:
                 probs, value = ag.evaluate(g, g.prompt)
-                ai_eval = {'probs': [round(float(x), 4) for x in probs], 'value': round(value, 3)}
+                ai_eval = {'probs': [round(float(x), 4) for x in probs],
+                           'value': None if value is None else round(value, 3),
+                           'advisor': S['ctrl'][who] == 'human'}
             except Exception:
                 traceback.print_exc()
     out = game_view(g, v, ai_eval)
@@ -91,7 +103,9 @@ def new_game(body):
     S['ctrl'] = ctrl
     S['decks'] = [decks[0].name, decks[1].name]
     S['agents'] = [None if c == 'human' else make_agent(c, seed=(seed or 0) + i) for i, c in enumerate(ctrl)]
+    S['advisor'] = make_agent(body['advisor']) if body.get('advisor') else None
     S['logged'] = False
+    S['comments'] = []
 
 
 def log_if_done():
@@ -99,7 +113,8 @@ def log_if_done():
     if g is not None and g.done and not S.get('logged'):
         S['logged'] = True
         try:
-            salvar_partida_interface(g, decks=S['decks'], controles=S['ctrl'])
+            salvar_partida_interface(g, decks=S['decks'], controles=S['ctrl'],
+                                     comentarios=[c['id'] for c in S.get('comments', [])])
         except Exception:
             traceback.print_exc()
 
@@ -163,12 +178,12 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, *a):
         pass
 
-    def _send(self, code, payload, ctype='application/json'):
+    def _send(self, code, payload, ctype='application/json', cache='no-store'):
         data = payload if isinstance(payload, bytes) else json.dumps(payload, ensure_ascii=False).encode()
         self.send_response(code)
         self.send_header('Content-Type', ctype + ('; charset=utf-8' if 'text' in ctype or 'json' in ctype else ''))
         self.send_header('Content-Length', str(len(data)))
-        self.send_header('Cache-Control', 'no-store')
+        self.send_header('Cache-Control', cache)
         self.end_headers()
         self.wfile.write(data)
 
@@ -181,13 +196,41 @@ class Handler(BaseHTTPRequestHandler):
         q = parse_qs(u.query)
         reveal = q.get('reveal', ['0'])[0] == '1'
         try:
-            if u.path in ('/', '/index.html'):
-                with open(os.path.join(WEB, 'index.html'), 'rb') as f:
+            pages = {'/': 'welcome.html', '/welcome': 'welcome.html', '/jogar': 'index.html', '/index.html': 'index.html',
+                     '/decks': 'decks.html', '/decks.html': 'decks.html', '/cartas': 'cartas.html', '/cartas.html': 'cartas.html'}
+            if u.path in pages:
+                with open(os.path.join(WEB, pages[u.path]), 'rb') as f:
                     return self._send(200, f.read(), 'text/html')
+            if u.path.startswith('/img/'):
+                partes = u.path.split('/')          # /img/<baixa|alta>/<ID>
+                f = EX.arquivo_imagem(partes[2], partes[3]) if len(partes) == 4 else None
+                if f is None:
+                    return self._send(404, {'error': 'imagem não baixada (python baixar_imagens.py)'})
+                return self._send(200, f.read_bytes(), {'.webp': 'image/webp', '.jpg': 'image/jpeg'}.get(f.suffix, 'image/png'),
+                                  cache='public, max-age=86400')
+            if u.path == '/api/home':
+                o = EX.opcoes()
+                return self._send(200, {'cartas': o['total'], 'status': o['status'], 'com_imagem': o['com_imagem'],
+                                        'decks': len(list_decks()), 'meus': len(list_decks('meus'))})
+            if u.path == '/api/cards/options':
+                return self._send(200, {**EX.opcoes(), 'categorias': DB.lista_categorias()})
+            if u.path == '/api/cards/filter':
+                g = lambda k: q.get(k, [''])[0]
+                return self._send(200, EX.filtrar(g('q'), g('grupo'), g('sub'), g('status'), g('tipo'), g('estagio'),
+                                                  g('colecao'), g('no_texto') == '1', int(g('offset') or 0)))
+            if u.path == '/api/cards/detail':
+                return self._send(200, EX.detalhe(q['id'][0]))
+            if u.path == '/api/builder/init':
+                return self._send(200, {'categorias': DB.lista_categorias(), 'decks': DB.decks_disponiveis(),
+                                        'min_busca': DB.MIN_BUSCA})
+            if u.path == '/api/builder/search':
+                return self._send(200, DB.buscar(q.get('q', [''])[0], q.get('grupo', [''])[0], q.get('sub', [''])[0]))
+            if u.path == '/api/builder/deck':
+                return self._send(200, DB.ver_deck(q['name'][0]))
             if u.path == '/api/meta':
                 D = db()
                 cov = Counter(d.status for d in D.cards.values())
-                return self._send(200, {'decks': deck_index(), 'controllers': controllers(),
+                return self._send(200, {'decks': deck_index(), 'controllers': controllers(), 'advisors': advisors(),
                                         'coverage': dict(cov), 'total_cards': len(D.cards)})
             if u.path == '/api/deck':
                 name = q['name'][0]
@@ -211,6 +254,18 @@ class Handler(BaseHTTPRequestHandler):
             reveal = bool(body.get('reveal'))
             if u.path == '/api/replay':
                 return self._send(200, run_replay(body['log']))
+            if u.path.startswith('/api/builder/'):
+                try:
+                    if u.path == '/api/builder/eval':
+                        return self._send(200, DB.avaliar(body['cards']))
+                    if u.path == '/api/builder/save':
+                        return self._send(200, DB.salvar(body['name'], body['cards'], bool(body.get('overwrite')),
+                                                         body.get('meta')))
+                    if u.path == '/api/builder/duplicate':
+                        return self._send(200, DB.duplicar(body['origem'], body.get('destino') or None))
+                except (ValueError, FileExistsError, KeyError) as e:
+                    return self._send(400, {'error': str(e).strip("'\"")})
+                return self._send(404, {'error': 'não encontrado'})
             with LOCK:
                 with_cards = False
                 if u.path == '/api/new':
@@ -227,6 +282,16 @@ class Handler(BaseHTTPRequestHandler):
                     for _ in range(int(body.get('n', 1))):
                         if not ai_step():
                             break
+                elif u.path == '/api/comment':
+                    g = S['game']
+                    texto = (body.get('text') or '').strip()
+                    if g is None or not texto:
+                        return self._send(400, {'error': 'sem partida ou comentário vazio'})
+                    rec = registrar_problema(g, texto, decks=S['decks'], controles=S['ctrl'])
+                    S.setdefault('comments', []).append({'id': rec['id']})
+                    return self._send(200, {'ok': True, 'id': rec['id']})
+                elif u.path == '/api/advisor':
+                    S['advisor'] = make_agent(body['advisor']) if body.get('advisor') else None
                 elif u.path == '/api/undo':
                     undo()
                 elif u.path == '/api/deck':

@@ -27,7 +27,7 @@
       "dano": "—",
       "texto": "Put 6 damage counters on each Pokémon that has an Ability (both yours and your opponent's).",
       "texto_pt": "Coloque 6 contadores de dano em cada Pokémon que tem uma Habilidade (seus e do seu oponente).",
-      "simulador": "pendente"
+      "simulador": "implementada"
     },
     {
       "nome": "Spooky Shot",
@@ -53,9 +53,7 @@
     }
   ],
   "simulador": {
-    "status": "parcial",
-    "pendencias": [
-      "Ataque Law of the Underworld: Put 6 damage counters on each Pokémon that has an Ability."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }

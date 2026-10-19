@@ -28,7 +28,7 @@
       "dano": "40×",
       "texto": "This attack does 40 damage for each Pokémon in play that has \"Koffing\" or \"Weezing\" in its name (both yours and your opponent's).",
       "texto_pt": "Este ataque causa 40 pontos de dano para cada Pokémon em jogo que tenha \"Koffing\" ou \"Weezing\" em seu nome (seus e do seu oponente).",
-      "simulador": "pendente"
+      "simulador": "implementada"
     }
   ],
   "regras": [],
@@ -46,9 +46,7 @@
     }
   ],
   "simulador": {
-    "status": "pendente",
-    "pendencias": [
-      "Ataque Explode Together Now: This attack does 40 damage for each Pokémon in play that has \"Koffing\" or \"Weezing\" in its name."
-    ]
+    "status": "implementada",
+    "pendencias": []
   }
 }
