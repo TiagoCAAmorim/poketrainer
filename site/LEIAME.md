@@ -5,7 +5,7 @@ de `ptcg/imprimir.py`, em inglês ou português, com a lista de cartas vinda de 
 ou da busca com sugestões.
 
 - Abrir: dê duplo clique em `site/index.html` (funciona sem servidor) ou sirva a pasta (`python -m http.server -d site`).
-- Publicar: qualquer hospedagem estática serve (ex.: GitHub Pages apontando para a pasta `site/`).
+- Publicar: o workflow `.github/workflows/pages.yml` publica esta pasta no GitHub Pages a cada push na `main` (ative uma vez em Settings → Pages → Source: "GitHub Actions"). Qualquer hospedagem estática também serve.
 - **Chave Pix**: edite `PIX_KEY` no topo de `app.js` (vazio esconde o convite do café).
 
 ## Arquivos
