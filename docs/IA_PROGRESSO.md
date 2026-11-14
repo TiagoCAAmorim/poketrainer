@@ -15,7 +15,7 @@ W&B: https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | Rede | Vitórias contra a heurística | Como foi obtida |
 |---|---|---|
 | `checkpoints/imitacao.pt` | **48,7%** (400 partidas, ±2,5%) | imitação refeita em 13/11 (motor e heurística atuais), 20 mil partidas, 780 decks, 6 épocas, `detach_value` |
-| `checkpoints/best.pt` | — (PPO longo ainda não rodado) | — |
+| `checkpoints/ppo1/latest.pt` | **73,4%** (1000 partidas, ±1,4%) | PPO 300 it a partir da imitação (padrões do `train.py`) |
 
 ## Sessões
 
@@ -64,3 +64,13 @@ a ~80 correções de rulings do motor.
 - **Referência**: `imitacao.pt` com **48,7%** contra a heurística (400 partidas, ±2,5%; 51,8% indo primeiro). A
   avaliação embutida no fim do treino deu 46,3% (200 partidas, ±3,5%). Melhor que os 43,5% da sessão 1, mas a
   heurística e o conjunto de decks mudaram, então os números não são diretamente comparáveis.
+- **PPO longo `ppo1`** (`train.py --resume checkpoints/imitacao.pt --iterations 300 --out checkpoints/ppo1`, padrões:
+  lr 1e-4, ent 0,005, 240 partidas/it, 18 workers): **47 min** (~9,5 s/it), 0 erros do motor.
+  Avaliação embutida (200 partidas, semente 12345): 46,3% (it 0) → 57,3% (40) → 60,5% (60) → 63,2% (100) →
+  68,0% (160) → 72,8% (200) → 74,3% (260, `best.pt`) → 68,8% (300). `kl` 0,001 → pico 0,023 (it 40) → 0,009–0,013;
+  `clip` 0,04 → 0,07; **`ent` subiu** 0,23 → 0,18 (it 40) → 0,31 (it 300); `v` ~0,12–0,14.
+  Reavaliação sem viés de seleção (1000 partidas, semente 777): `imitacao.pt` **46,3%** ±1,6% ·
+  `ppo1/best.pt` **72,8%** ±1,4% · `ppo1/latest.pt` **73,4%** ±1,4%.
+  Conclusão: o PPO passou a heurística com folga (+27 pontos), mas a curva achatou em ~72% depois da it 200 e a
+  entropia não para de subir. Próximo: varredura curta de hiperparâmetros a partir de `ppo1/latest.pt` antes de outro
+  treino longo.
