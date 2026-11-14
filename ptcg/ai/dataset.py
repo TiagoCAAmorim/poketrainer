@@ -187,8 +187,20 @@ class PackedObs:
     Campos escalares por amostra (action, value, logp, adv...) vêm junto no lote com o mesmo nome."""
     RAGGED = {'disc': ('disc_idx', 'disc_val'), 'opt': ('opt_ids', 'opt_tids', 'opt_feats')}
 
-    def __init__(self, parts):
+    def __init__(self, parts, consumir=False):
+        """`consumir=True`: solta cada campo das partes assim que é copiado (pico de memória ≈ 1× os dados, não 2×)."""
         parts = [p for p in parts if len(p['opt_off']) > 1]
+
+        def cat(k):                      # concatena soltando cada pedaço logo após copiá-lo (se consumir)
+            n = sum(len(p[k]) for p in parts)
+            out = np.empty((n, *parts[0][k].shape[1:]), parts[0][k].dtype)
+            i = 0
+            for p in parts:
+                a = p.pop(k) if consumir else p[k]
+                out[i:i + len(a)] = a
+                i += len(a)
+            return out
+
         if not parts:
             raise FileNotFoundError('nenhuma amostra')
         n_each = [len(p['opt_off']) - 1 for p in parts]
@@ -197,7 +209,7 @@ class PackedObs:
         self.obs = 2 if 'deck_ids' in parts[0] else 1
         self.scalar_keys = [k for k in parts[0] if k not in ragged_keys and k not in self.fixed
                             and parts[0][k].shape == (n_each[0],)]
-        self.d = {k: np.concatenate([p[k] for p in parts]) for k in (*self.fixed, *self.scalar_keys)}
+        self.d = {k: cat(k) for k in (*self.fixed, *self.scalar_keys)}
         for pre, keys in self.RAGGED.items():
             offs, base = [], 0
             for p in parts:
@@ -205,12 +217,12 @@ class PackedObs:
                 base += p[f'{pre}_off'][-1]
             self.d[f'{pre}_off'] = np.concatenate(offs + [np.array([base])])
             for k in keys:
-                self.d[k] = np.concatenate([p[k] for p in parts])
+                self.d[k] = cat(k)
         self.n = sum(n_each)
 
     @classmethod
     def from_paths(cls, paths):
-        return cls([dict(np.load(p)) for p in paths])
+        return cls([dict(np.load(p)) for p in paths], consumir=True)
 
     @classmethod
     def from_dir(cls, path):
