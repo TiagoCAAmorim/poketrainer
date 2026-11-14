@@ -106,7 +106,9 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
            if a.impl is None or a.impl.status != 'ok': print(d.id, d.name, '|', a.name, '|', a.impl.note if a.impl else '-')"
    ```
 2. Auditar cartas dos decks competitivos contra o Compendium e tratar os problemas da interface (sem logs próprios do usuário).
-3. IA: imitação da heurística feita (`imitar.py`); próximo: PPO self-play longo (`train.py --resume checkpoints/imitacao.pt`).
+3. IA: imitação e PPO longo feitos (nov/2026: `ppo4` com 85% contra a heurística; ver `docs/IA_PROGRESSO.md`).
+   Próximo: continuar com `--games 960` medindo por confronto direto (`imitar.py avaliar a.pt --oponente model:b.pt`);
+   decidir só com ≥ 1000 partidas (a avaliação embutida de 200 engana).
 
 ## Problemas apontados nas partidas (fluxo)
 - Na interface (`/jogar`) o botão **💬 Comentar** grava um comentário na decisão atual em `logs/problemas.jsonl`

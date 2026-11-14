@@ -90,15 +90,21 @@ Atualizado em: 2026-10-18
 Guia: `docs/IA_TREINO.md` · diário dos experimentos: `docs/IA_PROGRESSO.md` · `python ia.py historico|acompanhar`
 - ✅ Codificação do estado e das opções para a rede (`ptcg/encode.py`) e rede política/valor (`ptcg/ai/model.py`)
 - ✅ PyTorch 2.14 + CUDA instalado e testado (`tests/test_ai.py`)
-- ✅ Pré-treino por imitação da heurística (`imitar.py gerar|treinar|avaliar`): 20.000 partidas heurística × heurística
-  (~3,2 milhões de decisões, 108 decks, 5% de jogadas aleatórias com o rótulo da heurística) → **86% de acerto** na
-  validação e **44% de vitórias contra a heurística** (400 partidas). A perda de valor não mexe no tronco da rede
-  (`detach_value`), senão o valor decora as partidas e a política piora (38%).
+- ✅ Pré-treino por imitação da heurística (`imitar.py gerar|treinar|avaliar`): 20.000 partidas heurística × heurística,
+  5% de jogadas aleatórias com o rótulo da heurística. A perda de valor não mexe no tronco da rede (`detach_value`),
+  senão o valor decora as partidas e a política piora. Refeita em 13/11/2026 com o motor e a heurística atuais
+  (2,86 milhões de decisões, 780 decks): **86,0% de acerto** na validação, **46–49% contra a heurística**.
 - ✅ PPO com rollouts paralelos (`train.py`): 30 processos na CPU + atualização na GPU, ~7 s por iteração de 240 partidas
   (~30 mil decisões). Teste de 10 iterações a partir da imitação: estável (KL < 0,01), 44% → 47% contra a heurística.
 - ✅ Bug do motor achado pelo treino: Night Joker (N's Zoroark ex) oferecia o Night Joker de outro N's Zoroark ex no
   Banco, e a cópia se repetia sem fim; agora só os demais ataques dos N's Pokémon no Banco (teste em `tests/test_rules.py`)
-- ⬜ Treino PPO longo (centenas de iterações) e acompanhar `eval_vs_heuristica` em `checkpoints/train_log.jsonl`
+- ✅ Treino PPO longo (sessão 2, 13–14/11/2026, RTX 3060 Laptop): `ppo1` 300 it → **73%**; `ppo2` +400 it → **80%**;
+  platô em ~79% com 240 partidas/it, destravado com `--games 960` → `ppo4` **85% contra a heurística** (2000 partidas),
+  vence o `ppo1` em 69% e o `ppo2` em 60% no confronto direto. Varredura de hiperparâmetros, rede 512, decaimento da
+  lr e pool diverso não mudaram o resultado. Detalhes em `docs/IA_PROGRESSO.md`.
+- ✅ Ferramentas de treino: métricas extras no W&B (variância explicada, `grad_norm`, vitórias contra o pool…),
+  confronto direto entre redes (`imitar.py avaliar --oponente model:x.pt`), `train.py --lr-final` e `--pool-inicial`
+- ⬜ Continuar o PPO com lote grande enquanto o confronto direto contra a versão anterior passar de 50%
 - ⬜ Usar a rede treinada no `simulate.py` / `optimize.py` (`--agent model:checkpoints/best.pt`) — a ligação já existe
 
 ---
@@ -116,8 +122,8 @@ Sem logs próprios do TCG Live, a fidelidade passa a ser validada pelo Compendiu
    Core Memory e TM Fluorite dependem de uma fonte para conferir.
 4. **Você + Claude:** montar o gauntlet com os decks de `decks/limitless/` e rodar a matriz de confrontos (`simulate.py`, Fase 6).
 5. **Claude:** melhorar a IA heurística (Apoiadores, sequência de turno, escolha de alvos) e criar a página de relatórios de confronto (Fase 6).
-6. **Você:** rodar o PPO longo (`python train.py --resume checkpoints/imitacao.pt --iterations 300`, ~35 min com a GPU livre);
-   **Claude:** analisar o `train_log.jsonl` e ajustar (Fase 8).
+6. **Claude:** continuar o PPO (`python train.py --resume checkpoints/ppo4/t2/latest.pt --games 960 --iterations 100`)
+   e medir cada trecho por confronto direto; se estacionar, rever a observação (`encode.py`) ou acrescentar busca (Fase 8).
 
 ## Como acompanhar
 - Este arquivo é atualizado a cada etapa concluída.

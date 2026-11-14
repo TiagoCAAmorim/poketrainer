@@ -15,7 +15,8 @@ W&B: https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | Rede | Vitórias contra a heurística | Como foi obtida |
 |---|---|---|
 | `checkpoints/imitacao.pt` | **48,7%** (400 partidas, ±2,5%) | imitação refeita em 13/11 (motor e heurística atuais), 20 mil partidas, 780 decks, 6 épocas, `detach_value` |
-| `checkpoints/ppo2/latest.pt` | **79,7%** (2000 partidas, ±0,9%); vence o `ppo1` em 58,7% | `ppo1` (300 it) + `sweep1/g480` (30 it) + `ppo2` (400 it), padrões do `train.py` |
+| `checkpoints/ppo4/t2/latest.pt` | **85,0%** (2000 partidas, ±0,8%); vence o `ppo2` em 60,0% e o `ppo1` em 69,1% | `ppo2` + 100 it (`lr_decai`) + 250 it (`ppo3/t1`) + 60 it e 200 it com `--games 960` (`plato/lote960`, `ppo4`) |
+| `checkpoints/ppo2/latest.pt` | 79,7% (2000 partidas, ±0,9%); vence o `ppo1` em 58,7% | `ppo1` (300 it) + `sweep1/g480` (30 it) + `ppo2` (400 it), padrões do `train.py` |
 | `checkpoints/ppo1/latest.pt` | 73,4% (1000 partidas, ±1,4%) | PPO 300 it a partir da imitação |
 
 ## Sessões
@@ -141,4 +142,18 @@ a ~80 correções de rulings do motor.
   Conclusão: **no platô, o lote maior destrava** (com 240 partidas/it o mesmo número de partidas empatou). Na
   varredura do início (`g480`, longe do platô) não fez diferença — o ruído do gradiente só domina quando o sinal fica
   fraco. O teste `ent0` foi cancelado para dar tempo ao treino longo.
-- **`ppo4`** (em andamento): `--games 960`, 2 trechos de 100 it a partir de `plato/lote960`.
+- **`ppo4`** (`--games 960`, trechos de 100 it, ~59 min cada, a partir de `plato/lote960`): × trecho anterior
+  **52,4%** (t1) e **52,6%** (t2); avaliação embutida 81–84%; `kl` 0,013–0,014, `ent` 0,43 → 0,50, `var_explicada`
+  0,75–0,78. `ppo4/t2/latest.pt` (200 it): heurística **85,0%** ±0,8% (2000 partidas) · × `ppo3/t1` 58,7% ·
+  × `ppo2` **60,0%** · × `ppo1` **69,1%** · × `imitacao` 86,7% (1000 partidas cada, ±1,5%).
+  Trecho 3 (mais 100 it) em andamento no fim da sessão.
+
+**Resumo da sessão 2**: imitação refeita (48,7%) → `ppo1` (73,4%) → `ppo2` (79,7%) → platô em ~79% com 240
+partidas/it → lote de 960 partidas/it → `ppo4` (**85,0%** contra a heurística; vence o `ppo1` em 69% e o `ppo2` em 60%).
+O que não ajudou: lr maior/menor, `ent-coef` 0, `p-heuristic` 0,5, `max-grad` 1,0, rede 512, decaimento da lr, pool
+de oponentes diverso. Ferramentas novas: métricas extras no W&B, `--oponente model:`, `--lr-final`, `--pool-inicial`.
+
+**Próximo**: (1) continuar o `ppo4` com `--games 960` (ou 1920) enquanto o confronto direto contra o trecho anterior
+ficar acima de 50%; (2) medir com confrontos diretos (a heurística já não discrimina bem); (3) se estacionar de novo,
+suspeitar da observação (`encode.py`: o descarte ocupa 46% dos pesos como contagem por carta) ou partir para busca
+na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).

@@ -39,6 +39,9 @@ Pré-requisito: PyTorch instalado (`pip install torch`; com GPU NVIDIA, a versã
 - Interromper o PPO com **Ctrl+C** é seguro: salva `checkpoints/latest.pt` e registra o fim no histórico.
 - Pasta de saída do PPO: `--out checkpoints/experimento1` (cada pasta tem seu `train_log.jsonl`;
   `python ia.py acompanhar checkpoints/experimento1/train_log.jsonl`).
+- Confronto direto entre redes: `python imitar.py avaliar a.pt --oponente model:b.pt --partidas 1000`.
+- `train.py --lr-final 1e-5` (decaimento linear da lr) e `--pool-inicial a.pt b.pt` (checkpoints fixos no pool de
+  oponentes, inclusive de outra arquitetura).
 
 ---
 
@@ -124,6 +127,19 @@ Cada **iteração** (`ptcg/ai/train.py`):
 
 O erro padrão de uma avaliação com 200 partidas é ~3,5 pontos percentuais: diferenças menores que isso são ruído.
 O `ia.py acompanhar` mostra alertas (KL alto, erros do motor, entropia muito baixa) no fim.
+
+### Lições dos treinos de nov/2026 (detalhes em `IA_PROGRESSO.md`, sessão 2)
+- **Não decida pela avaliação embutida de 200 partidas**: ela usa poucos dos ~780 decks e já errou por 10 pontos.
+  O `best.pt` é o máximo de várias medidas ruidosas e costuma ser *pior* que o `latest.pt`. Para decidir, reavalie
+  com `imitar.py avaliar ... --partidas 2000 --seed 777` (±1 ponto) e use `--eval-games 600` nos treinos.
+- **Confronto direto entre versões** mede progresso quando a heurística deixa de ser régua (acima de ~75%):
+  `python imitar.py avaliar novo.pt --oponente model:antigo.pt --partidas 1000` (50% = sem progresso; ±1,6 ponto).
+- Hiperparâmetros, rede maior (`--hidden 512`), `--lr-final` e pool de oponentes diverso (`--pool-inicial`) não
+  mudaram o resultado. `--lr 2e-4` é grande demais (`kl` > 0,02, entropia dispara).
+- **No platô, aumente o lote**: com `--games 240` o PPO estacionou em ~79% contra a heurística; `--games 960` (mesmo
+  total de partidas, ~34 s/it) voltou a ganhar (55,5% no confronto direto, 84,8% contra a heurística).
+- Varreduras: rode uma configuração por vez (cada PPO usa todos os núcleos) e repita a de referência com outra
+  `--seed` para saber o tamanho do ruído (aqui, ~1,6 ponto em 60 iterações).
 
 ## 5. Desempenho e cuidados
 
