@@ -15,7 +15,8 @@ W&B: https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | Rede | Vitórias contra a heurística | Como foi obtida |
 |---|---|---|
 | `checkpoints/imitacao.pt` | **48,7%** (400 partidas, ±2,5%) | imitação refeita em 13/11 (motor e heurística atuais), 20 mil partidas, 780 decks, 6 épocas, `detach_value` |
-| `checkpoints/ppo1/latest.pt` | **73,4%** (1000 partidas, ±1,4%) | PPO 300 it a partir da imitação (padrões do `train.py`) |
+| `checkpoints/ppo2/latest.pt` | **79,7%** (2000 partidas, ±0,9%); vence o `ppo1` em 58,7% | `ppo1` (300 it) + `sweep1/g480` (30 it) + `ppo2` (400 it), padrões do `train.py` |
+| `checkpoints/ppo1/latest.pt` | 73,4% (1000 partidas, ±1,4%) | PPO 300 it a partir da imitação |
 
 ## Sessões
 
@@ -104,3 +105,13 @@ a ~80 correções de rulings do motor.
   embutida de 200 partidas engana** (poucos decks dos 780 entram nela): decidir só com ≥ 1000 partidas; os treinos
   seguintes usam `--eval-games 600`. Interromper a 512 pela curva embutida foi precipitado.
 - **`--lr-final`** (novo em `train.py`): decaimento linear da lr ao longo das iterações da execução.
+- **PPO longo `ppo2`** (400 it a partir de `sweep1/g480/latest.pt`, padrões, `--eval-games 600`): **72 min**.
+  Avaliação embutida (600 partidas): 76,0% (it 0) → 73–77% (it 10–90) → 79,2% (100) → 73,6–77,9% (150–250) →
+  79,0% (300) → 81,8% (380, `best.pt`) → 79,2% (400). `kl` 0,010–0,013, `ent` 0,31 → 0,36, `grad_norm` ~0,7,
+  `var_explicada` 0,72–0,79.
+  Reavaliação (semente 777): `ppo2/latest.pt` **79,7%** ±0,9% (2000 partidas) · `ppo2/best.pt` 78,2% (o máximo da
+  curva embutida volta a enganar). **Confronto direto** (novo, `--oponente model:`; 1000 partidas, ±1,6%):
+  `ppo2` × sua it 200 **55,0%** · `ppo2` × `ppo1/latest` **58,7%** · (`ppo2` it 200 × `ppo1` 57,0%, 400 partidas;
+  `ppo1` × `imitacao` 79,2%, 200 partidas).
+  Conclusão: contra a heurística a curva quase estaciona (~76–80%), mas o confronto direto mostra que a rede segue
+  melhorando — a heurística deixou de ser uma régua sensível. Usar confrontos entre versões para medir progresso.
