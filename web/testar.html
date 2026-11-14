@@ -26,6 +26,10 @@ select,input[type=text],input[type=number]{background:#0b100d;border:1px solid v
 .prog{margin:14px 0;display:none}
 .prog .t{color:var(--mute);margin-bottom:4px}
 .prog .b{height:8px;background:#0b100d;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.btn.danger{border-color:var(--danger);color:var(--danger)}.btn.danger:hover:not(:disabled){background:#3a1717}
+.prog .st{display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--mute);font-size:12.5px;margin:5px 0}.prog .st b{color:var(--ink);font-weight:500}
+.plog{max-height:150px;overflow:auto;background:#0b100d;border:1px solid var(--line);border-radius:6px;padding:6px 10px;margin-top:6px;font:12px/1.5 'IBM Plex Mono',monospace;color:var(--mute)}
+.plog .a{color:var(--ok)}.plog .r{color:var(--warn)}
 .prog .b i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
 .err{color:var(--danger);margin:10px 0;white-space:pre-wrap}
 .tabs{display:flex;flex-wrap:wrap;gap:4px;margin:16px 0 10px}
@@ -90,6 +94,7 @@ textarea{background:#0b100d;border:1px solid var(--line);border-radius:6px;paddi
     <label>Processos<input type="number" id="workers" min="1" placeholder="auto" style="width:80px"></label>
     <label class="chk"><input type="checkbox" id="sugerir" checked> sugerir trocas</label>
     <button class="btn primary" id="go">Testar</button>
+    <button class="btn danger" id="abort" style="display:none">⏹ Abortar</button>
     <button class="btn" id="pdf" disabled title="Abre a impressão do navegador: escolha 'Salvar como PDF'">Exportar PDF</button>
   </div>
   <details class="op" id="opdet"><summary id="opsum">Oponentes: todos os decks da base (use o filtro/máximo acima, ou escolha manualmente aqui)</summary>
@@ -104,7 +109,7 @@ textarea{background:#0b100d;border:1px solid var(--line);border-radius:6px;paddi
     <div class="note">Uma carta por linha (inglês ou português). Vazio = a busca escolhe sozinha entre cartas da mesma linha, Treinadores e Energias do deck. Só vale com "sugerir trocas" marcado.</div>
     <textarea id="candidatas" rows="4" placeholder="Ex.:&#10;Counter Catcher&#10;Prime Catcher"></textarea></details>
   <div class="note">Os dois lados jogam com a IA escolhida (redes rodam na CPU, nunca na GPU); assentos alternados. Com a base inteira (centenas de decks) o teste leva alguns minutos; as sugestões, mais alguns.</div>
-  <div class="prog" id="prog"><div class="t" id="progt"></div><div class="b"><i id="progb"></i></div></div>
+  <div class="prog" id="prog"><div class="t" id="progt"></div><div class="b"><i id="progb"></i></div><div class="st" id="prost"></div><div class="plog" id="plog"></div></div>
   <div class="err" id="err"></div>
   <div id="out" style="display:none">
     <div class="tabs" id="tabs"></div>
@@ -159,22 +164,38 @@ $('go').onclick=async()=>{
   const j=await r.json(); if(j.error){$('err').textContent=j.error;return}
   poll(false);
 };
+const mmss=x=>x==null||!isFinite(x)?'—':(x>=3600?Math.floor(x/3600)+'h ':'')+String(Math.floor(x%3600/60)).padStart(2,'0')+':'+String(Math.round(x%60)).padStart(2,'0');
 function poll(first){
   clearTimeout(timer);
   fetch('/api/testdeck/status').then(r=>r.json()).then(s=>{
-    const ativo=s.estado==='testando'||s.estado==='sugerindo';
+    const ativo=['testando','sugerindo','abortando'].includes(s.estado);
     $('go').disabled=ativo;
-    $('prog').style.display=ativo?'block':'none';
+    $('abort').style.display=ativo?'inline-block':'none';
+    $('abort').disabled=s.estado==='abortando';
+    const temlog=(s.log||[]).length>0&&s.estado!=='ocioso';
+    $('prog').style.display=ativo||temlog?'block':'none';
+    $('progt').style.display=$('progb').parentNode.style.display=$('prost').style.display=ativo?'':'none';
+    if(temlog){
+      const box=$('plog'),fim=box.scrollTop+box.clientHeight>=box.scrollHeight-8;
+      box.innerHTML=s.log.map(l=>`<div class="${/ACEITA/.test(l.msg)?'a':/abort|não confirmou/i.test(l.msg)?'r':''}">[${mmss(l.t)}] ${esc(l.msg)}</div>`).join('');
+      if(fim)box.scrollTop=box.scrollHeight;
+    }
     if(ativo){
-      $('progt').textContent=`${s.estado==='testando'?'Testando':'Procurando trocas'} ${s.deck} — ${s.rotulo||''} ${s.feitos}/${s.total} · ${Math.round(s.decorrido||0)}s`;
+      $('progt').textContent=`${s.etapa||''} — ${s.rotulo||'preparando'}: ${s.feitos}/${s.total}`+(s.estado==='abortando'?' — abortando…':'');
       $('progb').style.width=(100*s.feitos/Math.max(s.total,1))+'%';
+      $('prost').innerHTML=`<span>deck <b>${esc(s.deck||'')}</b></span><span>IA <b>${esc(s.agente||'')}</b> · ${s.workers||'?'} processos</span>`+
+        `<span>partidas jogadas <b>${s.partidas_feitas||0}</b> (${(s.partidas_por_s||0).toFixed(1)}/s)</span>`+
+        `<span>decorrido <b>${mmss(s.decorrido)}</b></span><span>falta ≈ <b>${mmss(s.eta)}</b> neste passo</span>`;
       timer=setTimeout(()=>poll(false),1000);
       if(s.resultado && !R){R=s.resultado; render();}      // mostra o teste enquanto as trocas são procuradas
     }
-    if(s.estado==='erro'){$('err').textContent=s.erro}
-    if(s.estado==='pronto' && s.resultado){R=s.resultado; S=s.sugestoes||null; render();}
+    $('err').textContent=s.estado==='erro'?s.erro:'';
+    if(s.estado==='abortado'&&!ativo){ $('err').textContent='Teste abortado.'+(s.resultado?' O relatório do teste concluído está abaixo; as trocas não foram calculadas.':''); }
+    if((s.estado==='pronto'||s.estado==='abortado') && s.resultado){R=s.resultado; S=s.sugestoes||null; render();}
   });
 }
+$('abort').onclick=async()=>{ if(!confirm('Abortar o teste em andamento? As partidas em curso serão perdidas.'))return;
+  const r=await fetch('/api/testdeck/abort',{method:'POST',body:'{}'}); const j=await r.json(); if(j.error)$('err').textContent=j.error; poll(false); };
 const TABS=['Resumo','Cartas','Combos','Prêmios','Fases','Matchups','Sugestões'];
 let tab='Resumo';
 function render(){

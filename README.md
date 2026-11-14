@@ -74,6 +74,12 @@ python import_limitless.py import --latest 5
 
 ---
 
+## Atualizar o programa
+
+Quando sair uma versão nova, a **página inicial** mostra o aviso "🔔 Nova versão disponível". Clique em **Atualizar agora**:
+o programa baixa o código e as IAs novas, reinicia sozinho e a página recarrega. Funciona igual se você instalou por Git
+ou por ZIP, e **seus decks, logs e imagens não são tocados**. Sem a interface: `python atualizar.py`.
+
 ## O que dá para fazer na interface
 
 A página inicial mostra seis atalhos:

@@ -9,6 +9,36 @@
   "descricao": "Regras escritas à mão (ptcg/agents.py); a referência do Elo."
  },
  {
+  "nivel": 1,
+  "nome": "faceis-f1",
+  "arquivo": "ias/nivel_1.pt",
+  "origem": "checkpoints/faceis/f1/latest.pt",
+  "descricao": "imitação + 30 it de PPO (240 partidas/it).",
+  "elo": 50,
+  "vs_heuristica": 0.572,
+  "partidas_vs_heuristica": 2000
+ },
+ {
+  "nivel": 2,
+  "nome": "faceis-f2",
+  "arquivo": "ias/nivel_2.pt",
+  "origem": "checkpoints/faceis/f2/latest.pt",
+  "descricao": "imitação + 70 it de PPO (240 partidas/it).",
+  "elo": 107,
+  "vs_heuristica": 0.649,
+  "partidas_vs_heuristica": 2000
+ },
+ {
+  "nivel": 3,
+  "nome": "faceis-f3",
+  "arquivo": "ias/nivel_3.pt",
+  "origem": "checkpoints/faceis/f3b/latest.pt",
+  "descricao": "imitação + 130 it de PPO (240 partidas/it).",
+  "elo": 148,
+  "vs_heuristica": 0.701,
+  "partidas_vs_heuristica": 2000
+ },
+ {
   "nivel": 4,
   "nome": "ppo1",
   "arquivo": "ias/nivel_4.pt",

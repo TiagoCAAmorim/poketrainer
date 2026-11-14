@@ -24,7 +24,8 @@ import random
 import statistics
 import time
 from collections import Counter, defaultdict
-from concurrent.futures import ProcessPoolExecutor, as_completed
+import threading
+from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, wait
 from pathlib import Path
 
 from .carddb import db
@@ -140,6 +141,10 @@ def _lote(job):
     return res
 
 
+class Cancelado(Exception):
+    """O teste foi abortado pelo usuário (Pool.cancelar())."""
+
+
 class Pool:
     """Pool de processos reutilizável (spawn: seguro dentro do servidor com threads)."""
 
@@ -147,6 +152,19 @@ class Pool:
         self.agente = agente
         self.n = workers or max(1, (os.cpu_count() or 2) - 1)
         self.ex = ProcessPoolExecutor(self.n, mp_context=mp.get_context('spawn'), initializer=_iniciar_worker)
+        self.cancelado = threading.Event()
+        self.partidas_feitas = 0          # contador para o painel de andamento
+
+    def cancelar(self):
+        """Aborta já: descarta o que está na fila e encerra os processos (partidas em curso são perdidas)."""
+        self.cancelado.set()
+        procs = list((getattr(self.ex, '_processes', None) or {}).values())   # antes do shutdown (ele zera o dict)
+        self.ex.shutdown(wait=False, cancel_futures=True)
+        for p in procs:
+            try:
+                p.terminate()
+            except Exception:       # noqa: BLE001
+                pass
 
     def __enter__(self):
         return self
@@ -163,6 +181,8 @@ class Pool:
                      progresso=None, rotulo=''):
         """Como `rodar`, para várias listas de uma vez (melhor uso dos processos). Mesmas sementes para todas."""
         spec = spec or self.agente
+        if self.cancelado.is_set():
+            raise Cancelado()
         futs = {}
         for li, cards in enumerate(listas):
             for i, o in enumerate(oponentes):
@@ -170,12 +190,18 @@ class Pool:
                 jobs = [(base + j, j % 2) for j in range(partidas)]
                 futs[self.ex.submit(_lote, (cards, o['cards'], jobs, instrumentar, spec))] = (li, o['name'])
         out, feitos = [{} for _ in listas], 0
-        for f in as_completed(futs):
-            li, nome = futs[f]
-            out[li][nome] = f.result()
-            feitos += 1
-            if progresso:
-                progresso(rotulo, feitos, len(futs))
+        pendentes = set(futs)
+        while pendentes:
+            prontos, pendentes = wait(pendentes, timeout=0.5, return_when=FIRST_COMPLETED)
+            if self.cancelado.is_set():
+                raise Cancelado()
+            for f in prontos:
+                li, nome = futs[f]
+                out[li][nome] = f.result()
+                self.partidas_feitas += len(out[li][nome])
+                feitos += 1
+                if progresso:
+                    progresso(rotulo, feitos, len(futs))
         return out
 
 
@@ -420,9 +446,14 @@ class Agregador:
 
 
 # =============================================================== teste completo
+def _ev(evento, msg):
+    if evento:
+        evento(msg)
+
+
 def testar_deck(deck_nome: str, partidas: int = 20, filtro: str | None = None, maximo: int | None = None,
                 seed: int = 0, workers: int | None = None, progresso=None, pool: Pool | None = None,
-                oponentes: list | None = None, agente: str = 'heuristic') -> dict:
+                oponentes: list | None = None, agente: str = 'heuristic', evento=None) -> dict:
     """Joga `partidas` partidas contra cada oponente e devolve as estatísticas (JSON-serializável).
 
     progresso(rotulo, feitos, total) é chamado a cada oponente concluído."""
@@ -435,6 +466,7 @@ def testar_deck(deck_nome: str, partidas: int = 20, filtro: str | None = None, m
     if not oponentes:
         raise ValueError('Nenhum oponente encontrado (confira o filtro).')
     meta = {o['name']: o['arquetipo'] for o in oponentes}
+    _ev(evento, f'Teste: {len(oponentes)} oponentes × {partidas} partidas = {len(oponentes) * partidas} partidas')
     agg = Agregador(base.cards)
     own = pool is None
     pool = pool or Pool(workers, agente)
@@ -448,6 +480,7 @@ def testar_deck(deck_nome: str, partidas: int = 20, filtro: str | None = None, m
         if own:
             pool.__exit__()
     res = agg.resultado(meta, partidas)
+    _ev(evento, f'Teste concluído: {100 * res["winrate"]:.1f}% de vitórias em {res["jogos"]} partidas ({time.time() - t0:.0f}s)')
     res.update({'deck': deck_nome, 'partidas_por_oponente': partidas, 'n_oponentes': len(oponentes),
                 'ignorados': ignorados[:20], 'n_ignorados': len(ignorados), 'segundos': time.time() - t0,
                 'lista': dict(Counter(base.cards)), 'filtro': filtro or '', 'seed': seed, 'agente': getattr(pool, 'agente', agente),
@@ -539,7 +572,7 @@ def sugerir_trocas(deck_nome: str, res_teste: dict, oponentes: list | None = Non
                    n_confirma: int = 60, partidas_confirma: int = 20, z: float = 1.0, seed: int = 7,
                    workers: int | None = None, progresso=None, pool: Pool | None = None,
                    travadas: list | None = None, agente: str = 'heuristic',
-                   candidatas: list | None = None) -> dict:
+                   candidatas: list | None = None, evento=None) -> dict:
     """Busca trocas (tira 1 cópia de uma carta, põe 1 de outra) que melhorem a taxa de vitória.
 
     Triagem: `candidatos` trocas por rodada contra um gauntlet (n_gauntlet[0] confrontos mais difíceis +
@@ -569,14 +602,22 @@ def sugerir_trocas(deck_nome: str, res_teste: dict, oponentes: list | None = Non
         def aval(lst, ops, n, sd, rot):
             return _media(pool.rodar(lst, ops, n, sd, False, progresso=progresso, rotulo=rot))
 
+        _ev(evento, f'Triagem contra {len(gauntlet)} oponentes ({n_gauntlet[0]} mais difíceis + aleatórios); '
+                    f'confirmação contra {len(conf)} {"outros" if independente else "(mesmos)"} oponentes'
+                    + (f'; cartas candidatas: {len(somente)}' if somente else ''))
         ref_conf = aval(base.cards, conf, partidas_confirma, 9_000_000 + seed, 'referência')
         for rodada in range(1, rodadas + 1):
             s_atual = aval(atual, gauntlet, partidas_triagem, seed_tri, f'rodada {rodada}: deck atual')
             cands = _candidatos(atual, pool_c, ruins, rng, candidatos, trav, somente)
+            _ev(evento, f'Rodada {rodada}/{rodadas}: {len(cands)} trocas candidatas; deck atual na triagem {100 * s_atual:.1f}%')
             res_c = pool.rodar_varios([c[0] for c in cands], gauntlet, partidas_triagem, seed_tri, False,
                                       progresso=progresso, rotulo=f'rodada {rodada}: {len(cands)} trocas')
             pontuados = [(_media(r), lst, o, inn) for r, (lst, o, inn) in zip(res_c, cands)]
             pontuados.sort(key=lambda x: -x[0])
+            if pontuados:
+                s0, _, o0, i0 = pontuados[0]
+                _ev(evento, f'Rodada {rodada}: melhor da triagem −{D.get(o0).name} +{D.get(i0).name} '
+                            f'({100 * s0:.1f}% vs {100 * s_atual:.1f}%)')
             aceito = None
             for s, lst, o, inn in pontuados[:3]:
                 if s <= s_atual:
@@ -590,7 +631,10 @@ def sugerir_trocas(deck_nome: str, res_teste: dict, oponentes: list | None = Non
                        'triagem_antes': s_atual, 'triagem_depois': s,
                        'conf_antes': a_old, 'conf_depois': a_new, 'conf_jogos': n_tot,
                        'delta': a_new - a_old, 'ic95': 1.96 * se, 'rodada': rodada}
-                if a_new - a_old >= z * se and a_new > a_old:
+                ok = a_new - a_old >= z * se and a_new > a_old
+                _ev(evento, f'  confirmação −{reg["tira"]} +{reg["poe"]}: {100 * a_old:.1f}% → {100 * a_new:.1f}% '
+                            f'({100 * (a_new - a_old):+.1f} pp) — {"ACEITA" if ok else "não confirmou"}')
+                if ok:
                     reg['aceita'] = True
                     aceito = (lst, reg)
                     testadas.append(reg)
@@ -598,9 +642,11 @@ def sugerir_trocas(deck_nome: str, res_teste: dict, oponentes: list | None = Non
                 reg['aceita'] = False
                 testadas.append(reg)
             if aceito is None:
+                _ev(evento, f'Rodada {rodada}: nenhuma troca confirmou — busca encerrada')
                 break
             atual = aceito[0]
             trocas.append(aceito[1])
+        _ev(evento, 'Validação final da lista nova contra a original')
         sd = 13_000_000 + seed
         final = aval(atual, conf, partidas_confirma * 2, sd, 'validação final')
         antes = aval(base.cards, conf, partidas_confirma * 2, sd, 'validação final')

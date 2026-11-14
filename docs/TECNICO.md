@@ -58,6 +58,7 @@ python tests/test_engine.py         # partidas com os decks reais + invariantes 
 python tests/test_replay.py         # os 4 logs reais do TCG Live devem reproduzir 100%
 python tests/fuzz.py --games 300    # decks aleatórios legais, invariantes a cada decisão
 python tests/test_limitless.py  tests/test_testdeck.py  tests/test_explorer.py  tests/test_deckbuilder.py
+python tests/test_atualizar.py      # atualização (git local e ZIP) preservando dados do usuário
 python tests/test_imprimir.py       # precisa de reportlab + pillow
 python tests/test_partidas_usuario.py  tests/test_efeitos_novos.py  tests/smoke_cartas.py
 python tests/test_heuristica.py     # heurística ganha ≥85% do aleatório

@@ -19,6 +19,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qs, urlparse
 
 from ptcg.agents import make_agent
+from ptcg import atualizar as AT
 from ptcg import deckbuilder as DB
 from ptcg import explorer as EX
 from ptcg import imprimir as IMP
@@ -40,8 +41,17 @@ JOB = {'id': 0, 'estado': 'ocioso'}
 JOB_LOCK = threading.Lock()
 
 
+JOB_POOL = {'p': None}
+
+
 def _job_prog(rot, feitos, total):
+    if rot != JOB.get('rotulo') or feitos < JOB.get('feitos', 0):
+        JOB['rot_t0'] = time.time()
     JOB.update(rotulo=rot, feitos=feitos, total=total)
+
+
+def _job_ev(msg):
+    JOB.setdefault('log', []).append({'t': round(time.time() - JOB.get('t0', time.time()), 1), 'msg': msg})
 
 
 def _job_run(jid, body):
@@ -51,28 +61,52 @@ def _job_run(jid, body):
                                      int(body.get('seed') or 0), body.get('oponentes') or None)
         cand = [x for x in (body.get('candidatas') or [])]
         with TD.Pool(int(body['workers']) if body.get('workers') else None, body.get('agente') or 'heuristic') as pool:
+            JOB_POOL['p'] = pool
+            JOB.update(workers=pool.n, agente=pool.agente, etapa='Etapa 1' + ('/2' if body.get('sugerir') else '/1')
+                       + ': jogando contra os oponentes')
+            if JOB.get('abortar'):
+                raise TD.Cancelado()
             res = TD.testar_deck(body['deck'], int(body.get('partidas') or 20), body.get('contra') or None,
-                                 None, int(body.get('seed') or 0), progresso=_job_prog, pool=pool, oponentes=ops)
+                                 None, int(body.get('seed') or 0), progresso=_job_prog, pool=pool, oponentes=ops,
+                                 evento=_job_ev)
             if JOB['id'] != jid:
                 return
             JOB.update(resultado=res, estado='sugerindo' if body.get('sugerir') else 'pronto')
             registrar('teste_deck', f'{body["deck"]}: {res["jogos"]} partidas, {100 * res["winrate"]:.1f}% de vitórias '
                                     '(interface)', oponentes=res['n_oponentes'])
             if body.get('sugerir'):
-                JOB.update(feitos=0, total=1)
+                JOB.update(feitos=0, total=1, etapa='Etapa 2/2: buscando trocas de cartas')
                 sug = TD.sugerir_trocas(body['deck'], res, rodadas=int(body.get('rodadas') or 3),
                                         candidatos=int(body.get('candidatos') or 24), progresso=_job_prog,
                                         pool=pool, travadas=body.get('travar') or [], candidatas=cand or None,
-                                        oponentes=ops)
+                                        oponentes=ops, evento=_job_ev)
                 JOB.update(sugestoes=sug, estado='pronto')
+    except TD.Cancelado:
+        if JOB['id'] == jid:
+            _job_ev('Teste abortado pelo usuário' + (' (o relatório do teste já concluído foi mantido)'
+                                                     if 'resultado' in JOB else ''))
+            JOB.update(estado='abortado')
     except Exception as e:      # noqa: BLE001
         traceback.print_exc()
         JOB.update(estado='erro', erro=f'{type(e).__name__}: {e}')
+    finally:
+        JOB_POOL['p'] = None
+
+
+def job_abort():
+    with JOB_LOCK:
+        if JOB['estado'] not in ('testando', 'sugerindo'):
+            raise ValueError('Não há teste em andamento.')
+        JOB.update(abortar=True, estado='abortando')
+        _job_ev('Abortando…')
+    p = JOB_POOL['p']
+    if p is not None:
+        p.cancelar()
 
 
 def job_start(body):
     with JOB_LOCK:
-        if JOB['estado'] in ('testando', 'sugerindo'):
+        if JOB['estado'] in ('testando', 'sugerindo', 'abortando'):
             raise ValueError('Já existe um teste em andamento.')
         if body.get('candidatas'):
             TD.ids_de_nomes(body['candidatas'])       # ValueError → 400 antes de gastar tempo
@@ -93,6 +127,14 @@ def job_status():
         out['sugestoes'] = JOB['sugestoes']
     if 't0' in out:
         out['decorrido'] = time.time() - out['t0']
+    p = JOB_POOL['p']
+    if p is not None:
+        out['partidas_feitas'] = p.partidas_feitas
+        out['partidas_por_s'] = p.partidas_feitas / max(out.get('decorrido', 1), 1)
+    f, t = out.get('feitos', 0), out.get('total', 1)
+    if 'rot_t0' in out and f > 0:
+        out['eta'] = (time.time() - out['rot_t0']) / f * (t - f)
+    out.pop('rot_t0', None)
     return out
 
 
@@ -294,6 +336,8 @@ class Handler(BaseHTTPRequestHandler):
                 o = EX.opcoes()
                 return self._send(200, {'cartas': o['total'], 'status': o['status'], 'com_imagem': o['com_imagem'],
                                         'decks': len(list_decks()), 'meus': len(list_decks('meus'))})
+            if u.path == '/api/update/check':
+                return self._send(200, update_check(q.get('force', ['0'])[0] == '1'))
             if u.path == '/api/cards/options':
                 return self._send(200, {**EX.opcoes(), 'categorias': DB.lista_categorias()})
             if u.path == '/api/cards/filter':
@@ -341,6 +385,10 @@ class Handler(BaseHTTPRequestHandler):
         try:
             body = self._body()
             reveal = bool(body.get('reveal'))
+            if u.path == '/api/update/apply':
+                if self.headers.get('X-Requested-With') != 'ptcg-lab':
+                    return self._send(403, {'error': 'requisição não permitida'})
+                return self._send(200, update_apply())
             if u.path == '/api/replay':
                 return self._send(200, run_replay(body['log']))
             if u.path in ('/api/print/pdf', '/api/print/layout'):
@@ -373,6 +421,12 @@ class Handler(BaseHTTPRequestHandler):
                     return self._send(200, job_start(body))
                 except (ValueError, KeyError) as e:
                     return self._send(400, {'error': str(e).strip("'\"")})
+            if u.path == '/api/testdeck/abort':
+                try:
+                    job_abort()
+                    return self._send(200, {'ok': True})
+                except ValueError as e:
+                    return self._send(400, {'error': str(e)})
             if u.path == '/api/testdeck/save':
                 try:
                     sug = JOB.get('sugestoes')
@@ -460,6 +514,47 @@ def abrir_navegador(url):
         print(f'Não consegui abrir o navegador sozinho: abra {url} no seu navegador.')
 
 
+_upd = {'quando': 0, 'dados': None}
+_upd_lock = threading.Lock()
+RESTART = {'pedido': False, 'srv': None}
+
+
+def update_check(force=False):
+    """Verifica se há versão nova (cache de 6 h; falha de rede não é erro: só 'indisponivel')."""
+    with _upd_lock:
+        if not force and _upd['dados'] and time.time() - _upd['quando'] < 6 * 3600:
+            return _upd['dados']
+        try:
+            d = AT.verificar()
+        except AT.ErroAtualizacao as e:
+            d = {'indisponivel': True, 'erro': str(e), 'disponivel': False}
+        if not d.get('indisponivel'):
+            _upd.update(quando=time.time(), dados=d)
+        return d
+
+
+def update_apply():
+    with _upd_lock:
+        try:
+            r = AT.aplicar()
+            if r['dependencias']:
+                r['resumo'] += ' · ' + AT.pip_install()
+        except AT.ErroAtualizacao as e:
+            return {'ok': False, 'erro': str(e)}
+        _upd.update(quando=0, dados=None)
+    RESTART['pedido'] = True
+    threading.Timer(0.5, lambda: RESTART['srv'].shutdown()).start()     # reinicia depois de responder
+    return r
+
+
+def reiniciar():
+    args = [sys.executable] + sys.argv + ([] if '--no-browser' in sys.argv else ['--no-browser'])
+    if os.name == 'nt':
+        subprocess.Popen(args)
+        sys.exit(0)
+    os.execv(sys.executable, args)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--port', type=int, default=8765)
@@ -468,6 +563,7 @@ def main():
     a = ap.parse_args()
     db()   # carrega a base antes do primeiro acesso
     srv = ThreadingHTTPServer((a.host, a.port), Handler)
+    RESTART['srv'] = srv
     url = f'http://localhost:{a.port}'
     print(f'Servidor em {url}  (Ctrl+C para sair)')
     if not a.no_browser:
@@ -476,6 +572,10 @@ def main():
         srv.serve_forever()
     except KeyboardInterrupt:
         pass
+    srv.server_close()
+    if RESTART['pedido']:
+        print('Atualizado: reiniciando o servidor...')
+        reiniciar()
 
 
 if __name__ == '__main__':

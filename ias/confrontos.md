@@ -6,6 +6,9 @@ Vitórias do nível mais alto (empate = ½), erro padrão ≈ 0,5/√partidas.
 | nível | nome | Elo | origem |
 |---:|---|---:|---|
 | 0 | heurística | 0 | `heuristic` |
+| 1 | faceis-f1 | 50 | `checkpoints/faceis/f1/latest.pt` |
+| 2 | faceis-f2 | 107 | `checkpoints/faceis/f2/latest.pt` |
+| 3 | faceis-f3 | 148 | `checkpoints/faceis/f3b/latest.pt` |
 | 4 | ppo1 | 175 | `checkpoints/ppo1/latest.pt` |
 | 5 | sweep-g480 | 215 | `checkpoints/sweep1/g480/latest.pt` |
 | 6 | ppo2 | 236 | `checkpoints/ppo2/latest.pt` |
@@ -26,3 +29,6 @@ Vitórias do nível mais alto (empate = ½), erro padrão ≈ 0,5/√partidas.
 | 6 × 0 | 79.7% | 2000 | 79.6% |
 | 5 × 0 | 77.5% | 2000 | 77.5% |
 | 4 × 0 | 73.7% | 3000 | 73.2% |
+| 3 × 0 | 70.1% | 2000 | 70.1% |
+| 2 × 0 | 64.9% | 2000 | 64.9% |
+| 1 × 0 | 57.2% | 2000 | 57.2% |

@@ -7,6 +7,7 @@ com o ambiente virtual ativado (veja o [README](../README.md)). No Windows, use 
 
 ```
 python server.py [--port 9000] [--no-browser]     # http://localhost:8765
+python atualizar.py [--sim|--verificar]           # atualiza código + redes de ias/ a partir do GitHub (na GUI: página inicial)
 python baixar_imagens.py                          # imagens das cartas → imagens/ (fora do git); opções em CARTAS.md
 ```
 

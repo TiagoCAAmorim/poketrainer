@@ -82,6 +82,12 @@ Abre `http://localhost:8765` no navegador (se não abrir sozinho, digite o ender
 
 Para parar o servidor: `Ctrl+C` no terminal.
 
+## Atualizar depois de instalado
+
+Pela interface: na página inicial, aviso "Nova versão disponível" → **Atualizar agora** (reinicia sozinho). Ou
+`python atualizar.py`. Vale para clone (Git, só na branch `main`) e para ZIP (a primeira vez aparece como "versão
+desconhecida": atualize uma vez para registrá-la). Seus decks (`decks/meus`), logs, imagens e PDFs nunca são sobrescritos.
+
 ## 7. Seus próprios dados
 
 - **Seus decks**: no TCG Live, exporte a lista (copiar) e salve num arquivo `.txt`; depois

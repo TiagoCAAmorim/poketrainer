@@ -3,11 +3,18 @@
 Principais novidades de cada versão, da mais nova para a mais antiga.
 As versões foram numeradas depois do fato, a partir do histórico do git (ainda não há *tags* nem *releases* no GitHub).
 
+## [Não lançado]
+- **Atualizar o programa pela interface**: a página inicial avisa "Nova versão disponível" e o botão *Atualizar agora* baixa o
+  código, as redes novas de `ias/` e os dados oficiais, e reinicia o servidor. Funciona em clone (git, só na `main`) e em
+  instalação por ZIP (nunca toca em `decks/meus`, `logs`, `imagens`, `pdfs`). Também por `python atualizar.py`.
+
 ## [0.4.0] — 2026-11-14 · Níveis de IA, impressão e teste de deck
 - **IAs por nível de dificuldade (0–9)**: a heurística é o nível 0 e as redes treinadas ficam em `ias/`
   (níveis 4 a 9, ~4,6 MB cada). A interface lista "IA nível N". O nível 9 vence a heurística em 85% das partidas.
 - **Testar um deck** (`/testar`, `testar_deck.py`): seu deck contra toda a base, com vitórias por ordem de jogo,
   cartas e combos mais úteis, vez em que saem os Prêmios, matchups difíceis e trocas de cartas sugeridas.
+  Dá para escolher os decks oponentes e a IA, limitar as cartas candidatas às trocas, exportar PDF, **abortar** o teste
+  a qualquer momento e acompanhar o andamento (partidas por segundo, tempo restante, log de cada etapa).
 - **Imprimir cartas em PDF** (`/imprimir`, `imprimir_cartas.py`): escala em % do tamanho real, papel A4/Office/A5…
   e versão simplificada em preto e branco.
 

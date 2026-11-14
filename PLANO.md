@@ -86,6 +86,7 @@ Atualizado em: 2026-10-18
 - ✅ Consultor de IA para o humano (sugestões da heurística/rede, trocável na partida)
 - ✅ Imagens das cartas: `baixar_imagens.py` (Limitless como 3ª fonte, opção `--manual`; `imagens/` fora do git)
 - ✅ Imprimir cartas em PDF (`imprimir_cartas.py`, web `/imprimir`): parte de um deck, +/− cartas, escala em % do tamanho real, papel A4 (padrão)/Office/A5/…, versão simplificada P&B sem arte
+- ✅ Atualização pela interface (`ptcg/atualizar.py`, `atualizar.py`): aviso na página inicial + botão; modos git (`main`) e ZIP; preserva dados do usuário; baixa `ias/` novas e reinicia o servidor
 - ⬜ Animações e demais melhorias visuais — baixa prioridade por enquanto
 
 ## Fase 8 — IA que aprende 🟡

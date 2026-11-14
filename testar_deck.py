@@ -51,11 +51,14 @@ def main():
             ult[0] = time.time()
             print(f'\r  {rot}: {feitos}/{total}   ', end='', file=sys.stderr, flush=True)
 
+    def ev(msg):
+        print(f'\n  · {msg}', file=sys.stderr)
+
     with Pool(a.workers, a.agente) as pool:
         ops = None
         if a.oponentes:
             ops, _ = listar_oponentes(a.deck, nomes=a.oponentes)
-        res = testar_deck(a.deck, a.partidas, a.contra, a.maximo, a.seed, progresso=prog, pool=pool, oponentes=ops)
+        res = testar_deck(a.deck, a.partidas, a.contra, a.maximo, a.seed, progresso=prog, pool=pool, oponentes=ops, evento=ev)
         print(file=sys.stderr)
         print(relatorio_texto(res, a.top))
         registrar('teste_deck', f'{a.deck}: {res["jogos"]} partidas, {100 * res["winrate"]:.1f}% de vitórias',
@@ -64,7 +67,7 @@ def main():
         if a.sugerir:
             print('\nProcurando trocas (pode levar alguns minutos)...', file=sys.stderr)
             sug = sugerir_trocas(a.deck, res, candidatos=a.candidatos, rodadas=a.rodadas, progresso=prog,
-                                 pool=pool, travadas=a.travar, candidatas=a.candidatas, oponentes=ops)
+                                 pool=pool, travadas=a.travar, candidatas=a.candidatas, oponentes=ops, evento=ev)
             print(file=sys.stderr)
             print('\n' + relatorio_sugestoes(sug))
             if a.salvar:

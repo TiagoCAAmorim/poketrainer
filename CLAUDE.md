@@ -42,6 +42,7 @@ python replay_log.py tests/fixtures/ptcgl_logs/*.log
 python testar_deck.py <deck> [--contra filtro] [--sugerir --salvar]   # 1 deck × todos os outros: estatísticas + trocas (ptcg/testdeck.py, web /testar)
 python simulate.py <deck> <deck> --games 200 [--salvar-log]      python optimize.py <deck> --gauntlet ...
 python melhorar_heuristica.py [--avaliar|--resetar]              # ajusta pesos da heurística vs aleatório → ptcg/data/heuristica.json
+python atualizar.py [--sim|--verificar]                           # atualiza código+ias do GitHub (ptcg/atualizar.py; na GUI: página inicial)
 python server.py                                                  # http://localhost:8765 (welcome; /jogar /decks /cartas)
 python baixar_imagens.py                                          # imagens das cartas → imagens/ (fora do git)
 python imprimir_cartas.py <deck> [--adicionar/--remover "2 Ultra Ball"] [--escala 90] [--papel A4|Office|A5|LxA] [--simplificado]   # PDF em pdfs/ (web /imprimir)
@@ -64,6 +65,7 @@ python tests/test_partidas_usuario.py  # partidas da interface SEM comentários 
 python tests/test_efeitos_novos.py # cenários da 2ª leva de cobertura
 python tests/smoke_cartas.py       # todo ataque/Habilidade ativada roda sem erro
 python tests/fuzz.py --games 300 --novas  # decks favorecendo a 2ª leva
+python tests/test_atualizar.py   # atualização por git local e por ZIP, preservando dados do usuário
 python tests/test_imprimir.py      # PDF de cartas: escala, papéis, cópias repetidas, simplificado, imagens (precisa de reportlab+pillow)
 python tests/test_explorer.py      # filtros/detalhe da página de cartas (ptcg/explorer.py + web/cartas.html)
 python tests/test_deckbuilder.py   # montador de decks (ptcg/deckbuilder.py + web/decks.html)

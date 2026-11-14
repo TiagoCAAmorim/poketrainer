@@ -247,3 +247,7 @@ imagens/
 # Execuções locais do Weights & Biases (ptcg/ai/wb.py)
 wandb/
 pdfs/
+
+# Versão instalada por ZIP (ptcg/atualizar.py)
+.versao_instalada
+*.novo
