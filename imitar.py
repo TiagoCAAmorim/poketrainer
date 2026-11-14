@@ -41,6 +41,8 @@ def main(argv=None):
     p.add_argument('--obs', type=int, default=1, choices=(1, 2),
                    help='versão da observação (2 = deck restante, descarte como conjunto, dano por ataque); '
                         'use uma pasta por versão (ex.: --saida dados/imitacao_v2)')
+    p.add_argument('--professor', default='heuristic',
+                   help="quem a rede imita: 'heuristic' (padrão), 'nivel:9' ou 'model:caminho.pt' (jogada mais provável)")
 
     p = sub.add_parser('treinar', help='treino supervisionado nos shards')
     p.add_argument('--dados', default='dados/imitacao')
@@ -80,7 +82,7 @@ def main(argv=None):
             from ptcg.ai.dataset import generate
             decks = decks_from(a)
             print(f'Gerando {a.partidas} partidas com {len(decks)} decks → {a.saida}')
-            st = generate(a.saida, a.partidas, decks, epsilon=a.epsilon, workers=a.processos,
+            st = generate(a.saida, a.partidas, decks, epsilon=a.epsilon, workers=a.processos, professor=a.professor,
                           games_per_shard=a.por_shard, seed=a.seed, versao=a.obs)
             print(f'Pronto: {st}')
             run.summary({'partidas': st['games'], 'amostras': st['samples'], 'erros_motor': st['errors'],

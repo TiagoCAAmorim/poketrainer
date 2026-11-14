@@ -100,6 +100,26 @@ def test_generate_and_train_imitation_v2():
     test_generate_and_train_imitation(versao=2)
 
 
+def test_generate_professora_rede():
+    """Imitação de uma rede (destilação): a rede v1 ensina e os dados saem na v2; pastas não misturam professoras."""
+    if torch is None:
+        return
+    from ptcg.ai.dataset import generate
+    from ptcg.ai.model import PolicyValueNet, save_checkpoint
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, 'prof.pt')
+        save_checkpoint(path, PolicyValueNet(hidden=32, emb=8))
+        out = os.path.join(tmp, 'dados')
+        st = generate(out, 2, DECKS, workers=1, games_per_shard=2, log=lambda *_: None, versao=2,
+                      professor=f'model:{path}')
+        assert st['games'] == 2 and st['errors'] == 0 and st['samples'] > 50
+        try:
+            generate(out, 1, DECKS, workers=1, log=lambda *_: None, versao=2)
+            assert False, 'misturou professoras'
+        except ValueError:
+            pass
+
+
 def test_rollout_and_ppo_step(versao=1):
     if torch is None:
         return

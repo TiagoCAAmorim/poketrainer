@@ -88,9 +88,14 @@ def _gen_shard(task):
     from ..agents import HeuristicAgent
     from ..decks import load_deck
     from ..engine import Game
-    path, seed, n_games, deck_names, epsilon, max_decisions, versao = task
+    path, seed, n_games, deck_names, epsilon, max_decisions, versao, professor = task
     rng = random.Random(seed)
     teacher = HeuristicAgent(seed=rng.randrange(2 ** 31))
+    if professor != 'heuristic':         # outra professora (ex.: 'nivel:9' = melhor rede, jogada mais provável)
+        import torch
+        from ..agents import make_agent
+        torch.set_num_threads(1)
+        teacher = make_agent(professor)
     decks = {}
     w = ObsPacker()
     values = []
@@ -131,7 +136,7 @@ def _gen_shard(task):
 
 
 def generate(out_dir, n_games, deck_names, epsilon=0.05, workers=None, games_per_shard=100,
-             max_decisions=3000, seed=0, log=print, versao=1):
+             max_decisions=3000, seed=0, log=print, versao=1, professor='heuristic'):
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     existing = sorted(out.glob('shard_*.npz'))
@@ -140,18 +145,21 @@ def generate(out_dir, n_games, deck_names, epsilon=0.05, workers=None, games_per
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
     if meta and meta.get('obs', 1) != versao:
         raise ValueError(f'{out_dir} tem observação v{meta.get("obs", 1)}; use outra pasta para a v{versao}.')
+    antes = {r.get('professor', 'heuristic') for r in meta.get('rodadas', [])}
+    if antes and antes != {professor}:
+        raise ValueError(f'{out_dir} tem partidas da professora {sorted(antes)}; use outra pasta para {professor}.')
     if meta and meta.get('vocab') != V:
         raise ValueError(f'{out_dir} foi gerado com vocabulário {meta.get("vocab")}, o pool atual tem {V}. '
                          'Use outra pasta.')
     meta.update(obs=versao, vocab=V, slot_f=SLOT_F, glob_f=GLOB_F, opt_f=OPT_F, n_slots=N_SLOTS, max_hand=MAX_HAND)
     meta.setdefault('rodadas', []).append({'partidas': n_games, 'epsilon': epsilon, 'decks': deck_names,
-                                           'seed': seed, 'quando': time.strftime('%Y-%m-%d %H:%M')})
+                                           'seed': seed, 'professor': professor, 'quando': time.strftime('%Y-%m-%d %H:%M')})
     n_shards = (n_games + games_per_shard - 1) // games_per_shard
     tasks = []
     for s in range(n_shards):
         n = min(games_per_shard, n_games - s * games_per_shard)
         tasks.append((str(out / f'shard_{first + s:05d}.npz'), seed * 1_000_003 + first + s, n, deck_names,
-                      epsilon, max_decisions, versao))
+                      epsilon, max_decisions, versao, professor))
     workers = workers or max(1, (os.cpu_count() or 2) - 2)
     t0 = time.perf_counter()
     tot = {'games': 0, 'samples': 0, 'draws': 0, 'errors': 0}

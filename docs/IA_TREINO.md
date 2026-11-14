@@ -84,6 +84,10 @@ pesos (v1: 2,3 milhões). O checkpoint guarda a versão (`config['obs']`, ausent
 `encode(g, versao=net.obs)`: as redes v1 (todas as de `ias/`) continuam funcionando sem mudança. Dados de imitação
 ficam numa pasta por versão (`dados/imitacao_v2`); o treino recusa misturar versões.
 
+**Imitar uma rede (destilação)**: `imitar.py gerar --professor nivel:9` (ou `model:caminho.pt`) gera as partidas com a
+rede como professora (jogada mais provável) em vez da heurística — ex.: começar uma rede v2 já perto do nível 9 em vez
+de refazer o PPO do zero. ~2,4× mais lento que a heurística; uma pasta por professora (`dados/imitacao_v2_n9`).
+
 **Rede** (`ptcg/ai/model.py`):
 1. Cada carta vira um vetor aprendido (*embedding*): cartas com papel parecido ficam com vetores parecidos.
 2. O estado é resumido num vetor de 256 números.
