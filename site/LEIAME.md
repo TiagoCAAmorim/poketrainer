@@ -27,3 +27,7 @@ python tools/build_site.py           # cartas + decks → site/data/*.js
 python tests/test_site.py
 ```
 Ao mudar `carta_simplificada` em Python, mude também `pdf.js` (os dois devem produzir o mesmo desenho).
+
+## Quem atualiza o quê
+- **Decks**: automático, toda segunda (`.github/workflows/decks-semanal.yml`; também pelo botão *Run workflow*).
+- **Cartas**: à mão, com `python tools/atualizar_cartas_site.py` e o roteiro [docs/ROTEIRO_CARTAS_SITE.md](../docs/ROTEIRO_CARTAS_SITE.md).

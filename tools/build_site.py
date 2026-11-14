@@ -93,18 +93,12 @@ def norm(s):
     return re.sub(r'\s+', ' ', (s or '').replace('’', "'").lower()).strip()
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--cards', default=str(RAIZ / '.cache' / 'cards_site.json'))
-    ap.add_argument('--cards-pt', default=str(RAIZ / '.cache' / 'cards_pt_site.json'))
-    a = ap.parse_args()
+def gerar_cartas(a):
     if not Path(a.cards).exists():
         sys.exit(f'Falta {a.cards}: veja os comandos no topo deste arquivo.')
     raw = json.load(open(a.cards, encoding='utf-8'))
     pt = json.load(open(a.cards_pt, encoding='utf-8')) if Path(a.cards_pt).exists() else {}
     errata = json.load(open(ERRATA, encoding='utf-8')) if ERRATA.exists() else {}
-    SAIDA.mkdir(parents=True, exist_ok=True)
-
     cartas = {cid: carta(aplicar_errata(c, errata), pt.get(cid) or {}) for cid, c in sorted(raw['cards'].items())}
     impressoes = {k: v['id'] for k, v in raw['prints'].items() if v.get('id') in cartas}
     nomes = {}   # nome (en) → id preferido
@@ -112,6 +106,23 @@ def main():
         nomes.setdefault(c['n'], cid)
     escrever('cartas.js', 'DADOS_CARTAS', {'cartas': cartas, 'impressoes': impressoes, 'nomes': nomes})
     print(f'cartas.js: {len(cartas)} cartas, {len(impressoes)} impressões')
+    return impressoes, nomes
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--cards', default=str(RAIZ / '.cache' / 'cards_site.json'))
+    ap.add_argument('--so-decks', action='store_true',
+                    help='só regera decks.js, usando impressões/nomes de site/data/cartas.js (não precisa de .cache; usado no CI)')
+    ap.add_argument('--cards-pt', default=str(RAIZ / '.cache' / 'cards_pt_site.json'))
+    a = ap.parse_args()
+    SAIDA.mkdir(parents=True, exist_ok=True)
+    if a.so_decks:
+        txt = (SAIDA / 'cartas.js').read_text(encoding='utf-8')
+        base = json.loads(txt[txt.index('=') + 1:].rstrip(';'))
+        impressoes, nomes = base['impressoes'], base['nomes']
+    else:
+        impressoes, nomes = gerar_cartas(a)
 
     if not TEMPORADAS:
         print('sem temporada_*.json (rode tools/baixar_temporada.py)')
