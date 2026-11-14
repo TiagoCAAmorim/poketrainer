@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   // ⚙️ Configuração: troque pela sua chave Pix (deixe '' para esconder o convite do café)
-  const PIX_KEY = 'SUA-CHAVE-PIX-AQUI';
+  const PIX_KEY = 'bcd8d244-8aeb-4003-99ca-d8ba4f5f5952';
 
   const BASE = window.DADOS_CARTAS, CARTAS = BASE.cartas;
   const TEMPORADA = window.DADOS_DECKS || { torneios: [] };
