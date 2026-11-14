@@ -1,0 +1,15 @@
+[
+ {
+  "nome": "ppo4-t2",
+  "arquivo": "ias/ppo4-t2.pt",
+  "origem": "checkpoints/ppo4/t2/latest.pt",
+  "descricao": "lote960 + 200 it com 960 partidas/it.",
+  "elo": 305,
+  "vs_heuristica": 0.85,
+  "partidas_vs_heuristica": 2000,
+  "nomes_antigos": [
+   "ias/nivel_8.pt"
+  ],
+  "ex_nivel": 8
+ }
+]

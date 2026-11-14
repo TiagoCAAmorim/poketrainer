@@ -109,7 +109,8 @@ Guia: `docs/IA_TREINO.md` · diário dos experimentos: `docs/IA_PROGRESSO.md` ·
   confronto direto entre redes (`imitar.py avaliar --oponente model:x.pt`), `train.py --lr-final` e `--pool-inicial`
 - ✅ Níveis de dificuldade 0–9 (`ias/`, versionado): 0 = heurística, redes guardadas em float16, critério = Elo
   relativo à heurística ajustado a todas as avaliações; interface lista "IA nível N"; `python ia.py niveis|nivel|elo|escada`.
-- ⬜ Continuar o PPO com lote grande enquanto o confronto direto contra a versão anterior passar de 50%
+- ✅ `ppo5` com `--games 1920`: **87,3% contra a heurística**, vence o `ppo4/t3` em 55,8% (nível 9); estacionou após 2 trechos
+- ⬜ Passar do platô do `ppo5`: lr decrescente (em teste), depois rede/observação (`encode.py`) ou busca na hora de jogar
 - ⬜ Usar a rede treinada no `simulate.py` / `optimize.py` (`--agent model:checkpoints/best.pt`) — a ligação já existe
 
 ---
@@ -127,7 +128,7 @@ Sem logs próprios do TCG Live, a fidelidade passa a ser validada pelo Compendiu
    Core Memory e TM Fluorite dependem de uma fonte para conferir.
 4. **Você + Claude:** montar o gauntlet com os decks de `decks/limitless/` e rodar a matriz de confrontos (`simulate.py`, Fase 6).
 5. **Claude:** melhorar a IA heurística (Apoiadores, sequência de turno, escolha de alvos) e criar a página de relatórios de confronto (Fase 6).
-6. **Claude:** continuar o PPO (`python train.py --resume checkpoints/ppo4/t3/latest.pt --games 1920 --iterations 100`)
+6. **Claude:** continuar o PPO (`python train.py --resume checkpoints/ppo5/t4/latest.pt --games 1920 --iterations 100`)
    e medir cada trecho por confronto direto; se estacionar, rever a observação (`encode.py`) ou acrescentar busca (Fase 8).
 
 ## Como acompanhar

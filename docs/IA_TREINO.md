@@ -33,7 +33,8 @@ Pré-requisito: PyTorch instalado (`pip install torch`; com GPU NVIDIA, a versã
 
 ### Níveis de dificuldade (`ias/`)
 
-As redes que deram certo ficam guardadas em `ias/` (versionado; pesos em float16, ~4,6 MB cada), uma por nível:
+As redes que deram certo ficam guardadas em `ias/<nome>.pt` (versionado; pesos em float16, ~4,6 MB cada); a rede que
+sai da escala continua em `ias/` e fica listada em `ias/antigas.json`. Uma por nível:
 **0 = heurística … 9 = melhor rede até agora**. Na interface aparecem como "IA nível N · faixa — nome (Elo …)";
 no código, `make_agent('nivel:N')`. Faixas: 0–2 fácil, 3–5 médio, 6–7 difícil, 8–9 muito difícil.
 

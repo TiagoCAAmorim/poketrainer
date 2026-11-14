@@ -11,91 +11,115 @@
  {
   "nivel": 1,
   "nome": "faceis-f1",
-  "arquivo": "ias/nivel_1.pt",
+  "arquivo": "ias/faceis-f1.pt",
   "origem": "checkpoints/faceis/f1/latest.pt",
   "descricao": "imitação + 30 it de PPO (240 partidas/it).",
   "elo": 50,
   "vs_heuristica": 0.566,
-  "partidas_vs_heuristica": 3000
+  "partidas_vs_heuristica": 3000,
+  "nomes_antigos": [
+   "ias/nivel_1.pt"
+  ]
  },
  {
   "nivel": 2,
   "nome": "faceis-f2",
-  "arquivo": "ias/nivel_2.pt",
+  "arquivo": "ias/faceis-f2.pt",
   "origem": "checkpoints/faceis/f2/latest.pt",
   "descricao": "imitação + 70 it de PPO (240 partidas/it).",
   "elo": 100,
   "vs_heuristica": 0.649,
-  "partidas_vs_heuristica": 2000
+  "partidas_vs_heuristica": 2000,
+  "nomes_antigos": [
+   "ias/nivel_2.pt"
+  ]
  },
  {
   "nivel": 3,
   "nome": "faceis-f3",
-  "arquivo": "ias/nivel_3.pt",
+  "arquivo": "ias/faceis-f3.pt",
   "origem": "checkpoints/faceis/f3b/latest.pt",
   "descricao": "imitação + 130 it de PPO (240 partidas/it).",
   "elo": 134,
   "vs_heuristica": 0.701,
-  "partidas_vs_heuristica": 2000
+  "partidas_vs_heuristica": 2000,
+  "nomes_antigos": [
+   "ias/nivel_3.pt"
+  ]
  },
  {
   "nivel": 4,
   "nome": "ppo1",
-  "arquivo": "ias/nivel_4.pt",
+  "arquivo": "ias/ppo1.pt",
   "origem": "checkpoints/ppo1/latest.pt",
   "descricao": "Primeiro PPO a partir da imitação (300 it × 240 partidas).",
-  "elo": 182,
+  "elo": 181,
   "vs_heuristica": 0.737,
-  "partidas_vs_heuristica": 3000
+  "partidas_vs_heuristica": 3000,
+  "nomes_antigos": [
+   "ias/nivel_4.pt"
+  ]
  },
  {
   "nivel": 5,
   "nome": "sweep-g480",
-  "arquivo": "ias/nivel_5.pt",
+  "arquivo": "ias/sweep-g480.pt",
   "origem": "checkpoints/sweep1/g480/latest.pt",
   "descricao": "ppo1 + 60 it com 480 partidas/it (varredura de hiperparâmetros).",
-  "elo": 206,
+  "elo": 205,
   "vs_heuristica": 0.775,
-  "partidas_vs_heuristica": 2000
+  "partidas_vs_heuristica": 2000,
+  "nomes_antigos": [
+   "ias/nivel_5.pt"
+  ]
  },
  {
   "nivel": 6,
   "nome": "ppo2",
-  "arquivo": "ias/nivel_6.pt",
+  "arquivo": "ias/ppo2.pt",
   "origem": "checkpoints/ppo2/latest.pt",
   "descricao": "ppo1 + 400 it (padrões).",
-  "elo": 242,
+  "elo": 241,
   "vs_heuristica": 0.797,
-  "partidas_vs_heuristica": 2000
+  "partidas_vs_heuristica": 2000,
+  "nomes_antigos": [
+   "ias/nivel_6.pt"
+  ]
  },
  {
   "nivel": 7,
   "nome": "lote960",
-  "arquivo": "ias/nivel_7.pt",
+  "arquivo": "ias/lote960.pt",
   "origem": "checkpoints/plato/lote960/latest.pt",
   "descricao": "ppo2 → lr_decai → ppo3/t1 (platô) + 60 it com 960 partidas/it.",
-  "elo": 279,
+  "elo": 278,
   "vs_heuristica": 0.848,
-  "partidas_vs_heuristica": 1000
+  "partidas_vs_heuristica": 1000,
+  "nomes_antigos": [
+   "ias/nivel_7.pt"
+  ]
  },
  {
   "nivel": 8,
-  "nome": "ppo4-t2",
-  "arquivo": "ias/nivel_8.pt",
-  "origem": "checkpoints/ppo4/t2/latest.pt",
-  "descricao": "lote960 + 200 it com 960 partidas/it.",
-  "elo": 306,
-  "vs_heuristica": 0.85,
+  "nome": "ppo4-t3",
+  "arquivo": "ias/ppo4-t3.pt",
+  "origem": "checkpoints/ppo4/t3/latest.pt",
+  "descricao": "lote960 + 300 it com 960 partidas/it.",
+  "nomes_antigos": [
+   "ias/nivel_9.pt"
+  ],
+  "elo": 312,
+  "vs_heuristica": 0.851,
   "partidas_vs_heuristica": 2000
  },
  {
   "nivel": 9,
-  "nome": "ppo4-t3",
-  "arquivo": "ias/nivel_9.pt",
-  "origem": "checkpoints/ppo4/t3/latest.pt",
-  "descricao": "lote960 + 300 it com 960 partidas/it (melhor até agora).",
-  "elo": 316,
-  "vs_heuristica": 0.851,
+  "nome": "ppo5-t4",
+  "arquivo": "ias/ppo5-t4.pt",
+  "origem": "checkpoints/ppo5/t4/latest.pt",
+  "descricao": "ppo4/t3 + 200 it com 1920 partidas/it (melhor até agora).",
+  "elo": 347,
+  "vs_heuristica": 0.873,
   "partidas_vs_heuristica": 2000
  }
 ]
