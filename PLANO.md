@@ -73,6 +73,7 @@ Atualizado em: 2026-10-18
 
 ## Fase 6 — Testes de deck e otimização 🟡
 - ✅ Matriz de confrontos (`simulate.py`) e otimizador de listas por troca de cartas (`optimize.py`)
+- ✅ **Teste de um deck contra toda a base** (`testar_deck.py`, `ptcg/testdeck.py`, página `/testar`): ~20 partidas por oponente; vitória por ordem de jogo (1º/2º), cartas mais usadas/que menos ajudaram, combos (mesma vez), histograma da vez do jogador em que cada prêmio sai, melhores cartas/combos por fase (início/meio/fim), matchups e arquétipos difíceis; `--sugerir` testa trocas (−1/+1) por simulação (triagem + confirmação em outros oponentes) e `--salvar` grava `decks/meus/<deck>_vN.txt`. O motor registra `Game.plays` e `Game.prize_turns`. Base inteira (~780 decks × 20) leva alguns minutos; use `--maximo`/`--contra` para acelerar.
 - 🟡 A IA heurística ainda é simples: as taxas de vitória servem como indicação, não como verdade
 - ⬜ Melhorar a IA heurística (uso de Apoiadores, sequência de turno, escolha de alvos)
 - ⬜ Relatórios de confronto (por exemplo, uma página com a matriz e gráficos)
@@ -122,7 +123,7 @@ Sem logs próprios do TCG Live, a fidelidade passa a ser validada pelo Compendiu
    Core Memory e TM Fluorite dependem de uma fonte para conferir.
 4. **Você + Claude:** montar o gauntlet com os decks de `decks/limitless/` e rodar a matriz de confrontos (`simulate.py`, Fase 6).
 5. **Claude:** melhorar a IA heurística (Apoiadores, sequência de turno, escolha de alvos) e criar a página de relatórios de confronto (Fase 6).
-6. **Claude:** continuar o PPO (`python train.py --resume checkpoints/ppo4/t2/latest.pt --games 960 --iterations 100`)
+6. **Claude:** continuar o PPO (`python train.py --resume checkpoints/ppo4/t3/latest.pt --games 1920 --iterations 100`)
    e medir cada trecho por confronto direto; se estacionar, rever a observação (`encode.py`) ou acrescentar busca (Fase 8).
 
 ## Como acompanhar

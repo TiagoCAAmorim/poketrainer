@@ -15,7 +15,8 @@ W&B: https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | Rede | Vitórias contra a heurística | Como foi obtida |
 |---|---|---|
 | `checkpoints/imitacao.pt` | **48,7%** (400 partidas, ±2,5%) | imitação refeita em 13/11 (motor e heurística atuais), 20 mil partidas, 780 decks, 6 épocas, `detach_value` |
-| `checkpoints/ppo4/t2/latest.pt` | **85,0%** (2000 partidas, ±0,8%); vence o `ppo2` em 60,0% e o `ppo1` em 69,1% | `ppo2` + 100 it (`lr_decai`) + 250 it (`ppo3/t1`) + 60 it e 200 it com `--games 960` (`plato/lote960`, `ppo4`) |
+| `checkpoints/ppo4/t3/latest.pt` | **85,1%** (2000 partidas, ±0,8%); vence o `ppo4/t2` em 51,9% e o `ppo2` em 60,9% | `ppo2` + 100 it (`lr_decai`) + 250 it (`ppo3/t1`) + 60 it e 300 it com `--games 960` (`plato/lote960`, `ppo4`) |
+| `checkpoints/ppo4/t2/latest.pt` | 85,0% (2000 partidas); vence o `ppo2` em 60,0% e o `ppo1` em 69,1% | idem, 200 it de `ppo4` |
 | `checkpoints/ppo2/latest.pt` | 79,7% (2000 partidas, ±0,9%); vence o `ppo1` em 58,7% | `ppo1` (300 it) + `sweep1/g480` (30 it) + `ppo2` (400 it), padrões do `train.py` |
 | `checkpoints/ppo1/latest.pt` | 73,4% (1000 partidas, ±1,4%) | PPO 300 it a partir da imitação |
 
@@ -146,14 +147,16 @@ a ~80 correções de rulings do motor.
   **52,4%** (t1) e **52,6%** (t2); avaliação embutida 81–84%; `kl` 0,013–0,014, `ent` 0,43 → 0,50, `var_explicada`
   0,75–0,78. `ppo4/t2/latest.pt` (200 it): heurística **85,0%** ±0,8% (2000 partidas) · × `ppo3/t1` 58,7% ·
   × `ppo2` **60,0%** · × `ppo1` **69,1%** · × `imitacao` 86,7% (1000 partidas cada, ±1,5%).
-  Trecho 3 (mais 100 it) em andamento no fim da sessão.
+  `ppo4/t3/latest.pt` (300 it): × t2 **51,9%** ±1,6% (só 1,2 erro padrão), heurística **85,1%** ±0,8% (2000
+  partidas), × `ppo2` 60,9%. Ganho por trecho caindo (52,4 → 52,6 → 51,9%): sinal de que o lote de 960 também
+  está chegando ao limite.
 
 **Resumo da sessão 2**: imitação refeita (48,7%) → `ppo1` (73,4%) → `ppo2` (79,7%) → platô em ~79% com 240
 partidas/it → lote de 960 partidas/it → `ppo4` (**85,0%** contra a heurística; vence o `ppo1` em 69% e o `ppo2` em 60%).
 O que não ajudou: lr maior/menor, `ent-coef` 0, `p-heuristic` 0,5, `max-grad` 1,0, rede 512, decaimento da lr, pool
 de oponentes diverso. Ferramentas novas: métricas extras no W&B, `--oponente model:`, `--lr-final`, `--pool-inicial`.
 
-**Próximo**: (1) continuar o `ppo4` com `--games 960` (ou 1920) enquanto o confronto direto contra o trecho anterior
+**Próximo**: (1) continuar a partir de `ppo4/t3` com `--games 1920` (o ganho por trecho com 960 caiu para ~52%) enquanto o confronto direto contra o trecho anterior
 ficar acima de 50%; (2) medir com confrontos diretos (a heurística já não discrimina bem); (3) se estacionar de novo,
 suspeitar da observação (`encode.py`: o descarte ocupa 46% dos pesos como contagem por carta) ou partir para busca
 na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).
