@@ -87,7 +87,7 @@ class Rollout:
         from .model import collate
         a = self.a
         packer, results = ObsPacker(), []
-        stats = {'errors': 0, 'decisions': 0}
+        stats = {'errors': 0, 'decisions': 0, 'games': 0, 'turns': 0, 'limit': 0, 'draws': 0}
         active = [self.new_game(pool) for _ in range(min(a['parallel'], n_games))]
         started = len(active)
         while active:
@@ -128,6 +128,10 @@ class Rollout:
                     stats['errors'] += 1      # erro do motor: a partida é descartada
                 elif g.done or g.decisions > a['max_decisions']:
                     stats['decisions'] += g.decisions
+                    stats['games'] += 1
+                    stats['turns'] += g.turn
+                    stats['limit'] += not g.done
+                    stats['draws'] += g.done and g.winner in (-1, None)
                     for p in (0, 1):
                         if gm['ctrl'][p] == 'learner' and gm['traj'][p]:
                             self.finish(gm['traj'][p], g, p, packer)
@@ -179,8 +183,13 @@ def rollout_task(task):
 def ppo_update(net, opt, data: PackedObs, args, device):
     N = len(data)
     adv_all = data.d['adv']
+    ret_all = data.d['ret']
+    # variância explicada do valor antes da atualização (ret = adv + v_antigo): 1 = valor perfeito, ≤0 = inútil
+    var_ret = float(np.var(ret_all))
+    pre = {'var_explicada': 1.0 - float(np.var(adv_all)) / var_ret if var_ret > 1e-8 else 0.0,
+           'ret_medio': float(np.mean(ret_all)), 'adv_std': float(np.std(adv_all))}
     data.d['adv'] = ((adv_all - adv_all.mean()) / (adv_all.std() + 1e-8)).astype(np.float32)
-    stats = {'pi': 0.0, 'v': 0.0, 'ent': 0.0, 'kl': 0.0, 'clip': 0.0, 'n': 0}
+    stats = {'pi': 0.0, 'v': 0.0, 'ent': 0.0, 'kl': 0.0, 'clip': 0.0, 'grad_norm': 0.0, 'n': 0}
     net.train()
     for _ in range(args.epochs):
         idx = np.random.permutation(N)
@@ -197,8 +206,9 @@ def ppo_update(net, opt, data: PackedObs, args, device):
             loss = pi_loss + args.vf_coef * v_loss - args.ent_coef * ent
             opt.zero_grad(set_to_none=True)
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(net.parameters(), args.max_grad)
+            gn = torch.nn.utils.clip_grad_norm_(net.parameters(), args.max_grad)
             opt.step()
+            stats['grad_norm'] += gn.item()
             stats['pi'] += pi_loss.item()
             stats['v'] += v_loss.item()
             stats['ent'] += ent.item()
@@ -207,7 +217,7 @@ def ppo_update(net, opt, data: PackedObs, args, device):
             stats['n'] += 1
     net.eval()
     n = max(stats.pop('n'), 1)
-    return {k: v / n for k, v in stats.items()}
+    return {**{k: v / n for k, v in stats.items()}, **pre}
 
 
 def main(argv=None):
@@ -306,9 +316,12 @@ def main(argv=None):
             outs = executor.map(rollout_task, tasks) if executor else [rollout_task(t) for t in tasks]
             parts = [o[0] for o in outs if o[0] is not None]
             results = [r for o in outs for r in o[1]]
-            errors = sum(o[2]['errors'] for o in outs)
+            gst = {k: sum(o[2].get(k, 0) for o in outs) for k in outs[0][2]} if outs else {}
+            errors = gst.get('errors', 0)
             t1 = time.perf_counter()
             data = PackedObs(parts)
+            if args.device.startswith('cuda'):
+                torch.cuda.reset_peak_memory_stats()
             st = ppo_update(net, opt, data, args, args.device)
             rec = {'it': it, 'min': round((time.perf_counter() - t_start) / 60, 1), 'transicoes': len(data),
                    'rollout_s': round(t1 - t0, 1),
@@ -318,6 +331,18 @@ def main(argv=None):
             vs_h = [r for o, r in results if o == 'heuristic']
             if vs_h:
                 rec['treino_vs_heuristica'] = round((np.mean(vs_h) + 1) / 2, 3)
+            # séries extras só para o W&B (o train_log.jsonl e o `ia.py acompanhar` ficam como estavam)
+            extra = {'partidas': gst.get('games', 0), 'lr': opt.param_groups[0]['lr'], 'it_s': rec['rollout_s'] + rec['update_s']}
+            if gst.get('games'):
+                g_ = gst['games']
+                extra.update(decisoes_por_partida=gst['decisions'] / g_, turnos_por_partida=gst['turns'] / g_,
+                             frac_limite=gst['limit'] / g_, frac_empates=gst['draws'] / g_)
+            vs_p = [r for o, r in results if o == 'pool']
+            if vs_p:
+                extra['treino_vs_pool'] = (np.mean(vs_p) + 1) / 2
+            extra['partidas_vs_heuristica'], extra['partidas_vs_pool'] = len(vs_h), len(vs_p)
+            if args.device.startswith('cuda'):
+                extra['vram_pico_mb'] = torch.cuda.max_memory_allocated() / 2 ** 20
             if it % args.snapshot_every == 0:
                 snap = str(out / '_pool' / f'snap_{it:05d}.pt')
                 save_checkpoint(snap, net, {'it': it})
@@ -334,8 +359,9 @@ def main(argv=None):
                     save_checkpoint(str(out / 'best.pt'), net, {'it': it, 'winrate': best, 'decks': deck_names})
                 log_eval(it, r, {k: rec[k] for k in ('kl', 'ent', 'v', 'clip')})
             print(json.dumps(rec, ensure_ascii=False), flush=True)
-            run.log({('treino/' + k if k not in ('it', 'min') else k): v for k, v in rec.items()
-                     if k != 'eval_vs_heuristica'}, step=it)
+            run.log({**{('treino/' + k if k not in ('it', 'min') else k): v for k, v in rec.items()
+                        if k != 'eval_vs_heuristica'},
+                     **{'treino/' + k: v for k, v in extra.items()}}, step=it)
             with open(log_path, 'a') as f:
                 f.write(json.dumps(rec) + '\n')
         status = 'concluido'

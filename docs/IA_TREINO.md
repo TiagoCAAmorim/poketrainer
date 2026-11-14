@@ -145,7 +145,7 @@ https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | `dados` | configuração da geração (decks, epsilon, seed) e resumo (partidas, decisões, erros do motor) |
 | `imitacao` | `treino/*` a cada 500 passos (perda, acerto parcial, passos/s, lr), `val/*` por época, `aval/*` no fim, tabela de vitórias por deck e o checkpoint como artefato `imitacao` |
 | `avaliacao` | vitórias, erro padrão, vitórias indo primeiro e tabela por deck |
-| `ppo` | `treino/*` por iteração (kl, clip, ent, v, pi, vitórias no treino, tempos), `aval/*` a cada avaliação (eixo = iteração) e o `best.pt` como artefato `ppo` (aliases `best` e a data da execução) |
+| `ppo` | `treino/*` por iteração (kl, clip, ent, v, pi, vitórias no treino contra a heurística e contra o pool, `var_explicada` do valor — perto de 1 é bom, ≤0 o valor não ajuda —, `grad_norm`, `ret_medio`, `adv_std`, decisões e turnos por partida, fração de empates e de partidas no limite de decisões, lr, tempos, pico de VRAM), `aval/*` a cada avaliação (eixo = iteração) e o `best.pt` como artefato `ppo` (aliases `best` e a data da execução) |
 
 - A URL da execução também vai para `logs/ia/treinos.jsonl` (campo `wandb`).
 - `--sem-wandb` desliga; `--nome` dá nome à execução (padrão do PPO: `ppo_<data>`).

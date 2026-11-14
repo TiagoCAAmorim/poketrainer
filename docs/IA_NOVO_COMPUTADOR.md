@@ -37,6 +37,14 @@ nvidia-smi                              # VRAM livre (o treino precisa de ~1 GB 
 nproc                                   # o PPO usa 30 workers por padrão (máquina de 32 núcleos)
 wandb login                             # opcional
 ```
+Armadilhas vistas no notebook com RTX 3060 Laptop (13/11/2026):
+- O `pip install torch` padrão veio para CUDA 13.2 e o driver só ia até 12.9 (`cuda.is_available() == False`).
+  Resolvido com `pip install --force-reinstall torch --index-url https://download.pytorch.org/whl/cu128`.
+  Confira a "CUDA Version" no topo do `nvidia-smi` e escolha a build do torch igual ou menor.
+- **Alimentação do notebook**: com uma fonte fraca (mesmo aparecendo "na tomada"), a GPU ficou em `P8`, 210 MHz e
+  teto de 20 W (`nvidia-smi -q -d PERFORMANCE` mostra "SW Power Cap: Active"), e a imitação rodou a ~2 passos/s.
+  Trocando para a fonte original (P0, ~80 W) foi a **27 passos/s**. Confira `nvidia-smi` antes de começar.
+
 Copie `decks/limitless/` agora e confira: `find decks -name '*.txt' | wc -l` deve dar ~924 (ou 768 + 12 + extras).
 
 ### 2. Validar o ambiente
