@@ -90,6 +90,11 @@ def mostrar_niveis():
               f"{'' if vs is None else f'{vs:.1%}':>8}  {n['nome']:<12} {n.get('origem', '')}")
         if n.get('descricao'):
             print(f"{'':>8}{n['descricao']}")
+    from ptcg.ai.niveis import _antigas
+    ant = _antigas()
+    if ant:
+        print('\nFora da escala (guardadas em ias/, listadas em ias/antigas.json): '
+              + ', '.join(f"{a['nome']} (ex-nível {a.get('ex_nivel')}, Elo {a.get('elo', '?'):+})" for a in ant))
     print('\nElo relativo à heurística, ajustado a todas as avaliações de logs/ia/treinos.jsonl '
           '(+100 ≈ 64% de vitórias, +200 ≈ 76%, +300 ≈ 85%). Na interface: "IA nível N"; no código: make_agent("nivel:N").')
 

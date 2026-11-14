@@ -1,9 +1,10 @@
 """Níveis de dificuldade da IA: 0 = heurística … 9 = melhor rede treinada até agora.
 
 As redes escolhidas ficam em `ias/` (versionadas, pesos em float16, ~4,6 MB cada) para não se perderem quando
-`checkpoints/` (fora do git) for limpo ou a máquina mudar. `ias/niveis.json` descreve cada nível:
+`checkpoints/` (fora do git) for limpo ou a máquina mudar. Cada rede é salva com o próprio nome
+(`ias/<nome>.pt`): ao trocar a rede de um nível, a anterior continua em `ias/` (fora da escala, mas guardada). `ias/niveis.json` descreve cada nível:
 
-    {"nivel": 4, "nome": "ppo1", "arquivo": "ias/nivel_4.pt", "origem": "checkpoints/ppo1/latest.pt",
+    {"nivel": 4, "nome": "ppo1", "arquivo": "ias/ppo1.pt", "origem": "checkpoints/ppo1/latest.pt",
      "elo": 178, "vs_heuristica": 0.739, "descricao": "..."}
 
 Critério de dificuldade: **Elo relativo à heurística** (heurística = 0), ajustado por máxima verossimilhança
@@ -17,6 +18,7 @@ from __future__ import annotations
 
 import json
 import math
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -52,7 +54,7 @@ def obter(nivel: int) -> dict:
 
 
 def spec(nivel: int) -> str:
-    """Especificação de agente (make_agent) do nível: 'heuristic' ou 'model:<raiz>/ias/nivel_N.pt'."""
+    """Especificação de agente (make_agent) do nível: 'heuristic' ou 'model:<raiz>/ias/<nome>.pt'."""
     n = obter(nivel)
     return f"model:{ROOT / n['arquivo']}" if n.get('arquivo') else 'heuristic'
 
@@ -74,15 +76,36 @@ def exportar(checkpoint: str, destino: Path):
     torch.save({'model': estado, 'config': ck['config'], 'extra': extra}, destino)
 
 
+def _antigas() -> list[dict]:
+    a = DIR / 'antigas.json'
+    return json.loads(a.read_text()) if a.exists() else []
+
+
 def definir(nivel: int, checkpoint: str, nome: str, descricao: str = ''):
-    """Exporta `checkpoint` para ias/nivel_N.pt e grava o nível (Elo e vitórias vêm de recalcular())."""
+    """Exporta `checkpoint` para ias/<nome>.pt e grava o nível (Elo e vitórias vêm de recalcular()).
+
+    A rede que sai da escala continua em ias/ e vai para ias/antigas.json (com os nomes com que já foi avaliada);
+    uma rede que só muda de nível leva junto o histórico de nomes."""
     if int(nivel) == 0:
         raise ValueError('o nível 0 é sempre a heurística')
-    destino = DIR / f'nivel_{int(nivel)}.pt'
+    destino = DIR / f'{re.sub(r"[^A-Za-z0-9_.-]+", "_", nome)}.pt'
     exportar(checkpoint, destino)
-    niveis = [n for n in carregar() if n['nivel'] != int(nivel)]
-    niveis.append({'nivel': int(nivel), 'nome': nome, 'arquivo': str(destino.relative_to(ROOT)),
-                   'origem': str(checkpoint), 'descricao': descricao})
+    arq = str(destino.relative_to(ROOT))
+    atuais, antigas = carregar(), _antigas()
+    nomes_antigos = sorted({a for n in atuais + antigas if n.get('origem') == str(checkpoint)
+                            for a in [n.get('arquivo')] + n.get('nomes_antigos', []) if a and a != arq})
+    sai = [n for n in atuais if n['nivel'] == int(nivel) and n.get('arquivo')]
+    niveis = [n for n in atuais if n['nivel'] != int(nivel)]
+    niveis.append({'nivel': int(nivel), 'nome': nome, 'arquivo': arq, 'origem': str(checkpoint),
+                   'descricao': descricao, **({'nomes_antigos': nomes_antigos} if nomes_antigos else {})})
+    antigas += [{k: v for k, v in n.items() if k != 'nivel'} | {'ex_nivel': n['nivel']} for n in sai]
+    em_uso = {n.get('origem') for n in niveis}
+    vistos, limpas = set(), []
+    for a in reversed(antigas):          # sem duplicatas e sem as que voltaram para a escala
+        if a['origem'] not in em_uso and a['origem'] not in vistos:
+            vistos.add(a['origem'])
+            limpas.append(a)
+    (DIR / 'antigas.json').write_text(json.dumps(limpas[::-1], ensure_ascii=False, indent=1) + '\n')
     salvar(niveis)
     return recalcular()
 
@@ -97,7 +120,14 @@ def confrontos(registros=None) -> list[tuple[str, str, float, int]]:
     """(a, b, fração de vitórias de a, partidas) de todas as avaliações registradas. Redes de ias/ são
     identificadas com o checkpoint de origem; 'heuristic' é a âncora."""
     from ..logbook import treinos
-    apelidos = {n['arquivo']: n['origem'] for n in carregar() if n.get('arquivo')}
+    apelidos = {}
+    for n in carregar():                 # nomes com que a rede já foi avaliada → checkpoint de origem
+        for a in [n.get('arquivo')] + n.get('nomes_antigos', []):
+            if a:
+                apelidos[a] = n['origem']
+    for r in _antigas():
+        for a in [r['arquivo']] + r.get('nomes_antigos', []):
+            apelidos[a] = r['origem']
     out = []
     for r in registros if registros is not None else treinos():
         if r.get('tipo') == 'avaliacao' and r.get('oponente') not in (None, 'random'):

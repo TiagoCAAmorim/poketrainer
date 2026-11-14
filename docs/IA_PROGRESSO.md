@@ -15,7 +15,8 @@ W&B: https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | Rede | Vitórias contra a heurística | Como foi obtida |
 |---|---|---|
 | `checkpoints/imitacao.pt` | **48,7%** (400 partidas, ±2,5%) | imitação refeita em 13/11 (motor e heurística atuais), 20 mil partidas, 780 decks, 6 épocas, `detach_value` |
-| `checkpoints/ppo4/t3/latest.pt` | **85,1%** (2000 partidas, ±0,8%); vence o `ppo4/t2` em 51,9% e o `ppo2` em 60,9% | `ppo2` + 100 it (`lr_decai`) + 250 it (`ppo3/t1`) + 60 it e 300 it com `--games 960` (`plato/lote960`, `ppo4`) |
+| `checkpoints/ppo5/t4/latest.pt` (`ias/ppo5-t4.pt`, nível 9) | **87,3%** (2000 partidas, ±0,7%); vence o `ppo4/t3` em 55,8% | `ppo4/t3` + 200 it com `--games 1920` (`ppo5`) |
+| `checkpoints/ppo4/t3/latest.pt` | 85,1% (2000 partidas, ±0,8%); vence o `ppo4/t2` em 51,9% e o `ppo2` em 60,9% | `ppo2` + 100 it (`lr_decai`) + 250 it (`ppo3/t1`) + 60 it e 300 it com `--games 960` (`plato/lote960`, `ppo4`) |
 | `checkpoints/ppo4/t2/latest.pt` | 85,0% (2000 partidas); vence o `ppo2` em 60,0% e o `ppo1` em 69,1% | idem, 200 it de `ppo4` |
 | `checkpoints/ppo2/latest.pt` | 79,7% (2000 partidas, ±0,9%); vence o `ppo1` em 58,7% | `ppo1` (300 it) + `sweep1/g480` (30 it) + `ppo2` (400 it), padrões do `train.py` |
 | `checkpoints/ppo1/latest.pt` | 73,4% (1000 partidas, ±1,4%) | PPO 300 it a partir da imitação |
@@ -160,3 +161,22 @@ de oponentes diverso. Ferramentas novas: métricas extras no W&B, `--oponente mo
 ficar acima de 50%; (2) medir com confrontos diretos (a heurística já não discrimina bem); (3) se estacionar de novo,
 suspeitar da observação (`encode.py`: o descarte ocupa 46% dos pesos como contagem por carta) ou partir para busca
 na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).
+
+### Sessão 3 (2026-11-14, tarde): lote de 1920 partidas e níveis de dificuldade
+
+- **`ppo5`** (`--games 1920`, trechos de 50 it ≈ 1 h, a partir de `ppo4/t3`): × trecho anterior **53,9%** (t1, contra
+  `ppo4/t3`) → **52,8%** (t2) → 50,5% (t3) → 50,1% (t4). `kl` 0,014, `ent` ~0,51, ~70 s/it (44 s rollout + 26 s
+  atualização, ~225 mil transições/it). `ppo5/t4`: heurística **87,3%** ±0,7% (2000 partidas; era 85,1%) e
+  × `ppo4/t3` **55,8%**. Conclusão: dobrar o lote rendeu dois trechos e estacionou de novo; o confronto direto
+  entre trechos vizinhos fica em ~50% mas o acumulado ainda sobe contra a heurística.
+- Cuidado: com 1920 partidas/it o treino usa ~11 GB de RAM; rodando junto com outro treino o processo foi morto pelo
+  OOM (15 GB nesta máquina). Rodar um treino de cada vez (o `learner.pt` em `_pool/` permite retomar).
+- **Níveis de dificuldade** (`ias/`, `ptcg/ai/niveis.py`, `python ia.py niveis|nivel|elo|escada`): 0 = heurística …
+  9 = melhor rede; critério = Elo relativo à heurística ajustado a todas as avaliações. Redes fáceis novas para os
+  níveis 1–3 (imitação + 30/70/130 it de PPO com 240 partidas/it: 57,2%, 64,9%, 70,1% contra a heurística).
+  Escada (cada nível × anterior, 1000 partidas): 55,3 · 55,2 · 55,0 · 60,1 · 53,5 · 57,2 · 54,1 · 53,9 · 52,0% —
+  todos acima de 50%. Elo atual: 0, +50, +100, +134, +181, +205, +241, +278, +312 (`ppo4-t3`), +347 (`ppo5-t4`).
+  `ppo4-t2` saiu da escala e continua em `ias/` (`ias/antigas.json`).
+
+**Próximo**: em andamento `ppo6` = consolidação com lr decrescente (5e-5 → 1e-5) e 1920 partidas/it a partir de
+`ppo5/t4`. Se não passar de ~52% contra o início, o limite é provavelmente a rede/observação e não o PPO.
