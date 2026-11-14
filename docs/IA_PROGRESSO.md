@@ -15,7 +15,8 @@ W&B: https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | Rede | Vitórias contra a heurística | Como foi obtida |
 |---|---|---|
 | `checkpoints/imitacao.pt` | **48,7%** (400 partidas, ±2,5%) | imitação refeita em 13/11 (motor e heurística atuais), 20 mil partidas, 780 decks, 6 épocas, `detach_value` |
-| `checkpoints/ppo5/t4/latest.pt` (`ias/ppo5-t4.pt`, nível 9) | **87,3%** (2000 partidas, ±0,7%); vence o `ppo4/t3` em 55,8% | `ppo4/t3` + 200 it com `--games 1920` (`ppo5`) |
+| `checkpoints/ppo6/lrdec/latest.pt` (`ias/ppo6-lrdec.pt`, nível 9) | **87,6%** (2000 partidas, ±0,7%); vence o `ppo5/t4` em 53,3% e o `ppo4/t3` em 56,8% | `ppo5/t4` + 50 it com lr 5e-5 → 1e-5 e `--games 1920` |
+| `checkpoints/ppo5/t4/latest.pt` (`ias/ppo5-t4.pt`) | **87,3%** (2000 partidas, ±0,7%); vence o `ppo4/t3` em 55,8% | `ppo4/t3` + 200 it com `--games 1920` (`ppo5`) |
 | `checkpoints/ppo4/t3/latest.pt` | 85,1% (2000 partidas, ±0,8%); vence o `ppo4/t2` em 51,9% e o `ppo2` em 60,9% | `ppo2` + 100 it (`lr_decai`) + 250 it (`ppo3/t1`) + 60 it e 300 it com `--games 960` (`plato/lote960`, `ppo4`) |
 | `checkpoints/ppo4/t2/latest.pt` | 85,0% (2000 partidas); vence o `ppo2` em 60,0% e o `ppo1` em 69,1% | idem, 200 it de `ppo4` |
 | `checkpoints/ppo2/latest.pt` | 79,7% (2000 partidas, ±0,9%); vence o `ppo1` em 58,7% | `ppo1` (300 it) + `sweep1/g480` (30 it) + `ppo2` (400 it), padrões do `train.py` |
@@ -178,5 +179,9 @@ na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).
   todos acima de 50%. Elo atual: 0, +50, +100, +134, +181, +205, +241, +278, +312 (`ppo4-t3`), +347 (`ppo5-t4`).
   `ppo4-t2` saiu da escala e continua em `ias/` (`ias/antigas.json`).
 
-**Próximo**: em andamento `ppo6` = consolidação com lr decrescente (5e-5 → 1e-5) e 1920 partidas/it a partir de
-`ppo5/t4`. Se não passar de ~52% contra o início, o limite é provavelmente a rede/observação e não o PPO.
+- **`ppo6/lrdec`** (consolidação: 50 it, 1920 partidas/it, lr 5e-5 → 1e-5, a partir de `ppo5/t4`): × `ppo5/t4`
+  **53,3%** ±1,1% (2000 partidas, 3 erros padrão), × `ppo4/t3` 56,8%, heurística **87,6%** ±0,7%. Conclusão: no
+  platô com lr 1e-4, baixar a lr destrava mais um degrau (a lr alta ficava "pulando" em volta do ótimo). Virou o
+  nível 9 (Elo +356); `ppo5-t4` foi para `ias/antigas.json`.
+
+**Próximo**: em andamento `ppo6/lrdec2` = segunda consolidação (lr 3e-5 → 5e-6) a partir de `ppo6/lrdec`.

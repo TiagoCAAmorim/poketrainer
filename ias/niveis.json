@@ -92,7 +92,7 @@
   "arquivo": "ias/lote960.pt",
   "origem": "checkpoints/plato/lote960/latest.pt",
   "descricao": "ppo2 → lr_decai → ppo3/t1 (platô) + 60 it com 960 partidas/it.",
-  "elo": 278,
+  "elo": 277,
   "vs_heuristica": 0.848,
   "partidas_vs_heuristica": 1000,
   "nomes_antigos": [
@@ -108,18 +108,18 @@
   "nomes_antigos": [
    "ias/nivel_9.pt"
   ],
-  "elo": 312,
+  "elo": 310,
   "vs_heuristica": 0.851,
   "partidas_vs_heuristica": 2000
  },
  {
   "nivel": 9,
-  "nome": "ppo5-t4",
-  "arquivo": "ias/ppo5-t4.pt",
-  "origem": "checkpoints/ppo5/t4/latest.pt",
-  "descricao": "ppo4/t3 + 200 it com 1920 partidas/it (melhor até agora).",
-  "elo": 347,
-  "vs_heuristica": 0.873,
+  "nome": "ppo6-lrdec",
+  "arquivo": "ias/ppo6-lrdec.pt",
+  "origem": "checkpoints/ppo6/lrdec/latest.pt",
+  "descricao": "ppo5/t4 + 50 it com 1920 partidas/it e lr 5e-5 → 1e-5 (melhor até agora).",
+  "elo": 356,
+  "vs_heuristica": 0.876,
   "partidas_vs_heuristica": 2000
  }
 ]

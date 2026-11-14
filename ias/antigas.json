@@ -11,5 +11,15 @@
    "ias/nivel_8.pt"
   ],
   "ex_nivel": 8
+ },
+ {
+  "nome": "ppo5-t4",
+  "arquivo": "ias/ppo5-t4.pt",
+  "origem": "checkpoints/ppo5/t4/latest.pt",
+  "descricao": "ppo4/t3 + 200 it com 1920 partidas/it (melhor até agora).",
+  "elo": 347,
+  "vs_heuristica": 0.873,
+  "partidas_vs_heuristica": 2000,
+  "ex_nivel": 9
  }
 ]
