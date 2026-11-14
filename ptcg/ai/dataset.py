@@ -161,6 +161,8 @@ def generate(out_dir, n_games, deck_names, epsilon=0.05, workers=None, games_per
         tasks.append((str(out / f'shard_{first + s:05d}.npz'), seed * 1_000_003 + first + s, n, deck_names,
                       epsilon, max_decisions, versao, professor))
     workers = workers or max(1, (os.cpu_count() or 2) - 2)
+    if professor != 'heuristic':
+        import torch  # noqa: F401  (importar antes do fork: o gancho de import do W&B falha nos filhos)
     t0 = time.perf_counter()
     tot = {'games': 0, 'samples': 0, 'draws': 0, 'errors': 0}
     with get_context('fork').Pool(workers) as pool:
