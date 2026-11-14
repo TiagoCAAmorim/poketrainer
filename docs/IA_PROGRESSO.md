@@ -188,6 +188,11 @@ na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).
   × `ppo4/t3` 59,5%, heurística 88,8% ±0,7%; Elo +364 contra +358 (ruído). A segunda consolidação já não rende:
   o PPO com estes adversários estacionou em ~+360. O nível 9 continua com `ppo6-lrdec`.
 
-**Próximo**: em andamento `liga/l1` = adversários mais fortes (5% heurística, 45% pool com `ppo6-lrdec`, `ppo5-t4`,
-`ppo4-t3` fixos + snapshots, 50% self-play), lr 3e-5, a partir de `ppo6/lrdec2`. Se também empatar, o próximo
-passo é estrutural: observação (`encode.py`), rede maior com mais dados, ou busca na hora de jogar.
+- **`liga/l1`** (50 it a partir de `ppo6/lrdec2`, lr 3e-5, adversários mais fortes: 5% heurística, 45% pool com
+  `ppo6-lrdec`, `ppo5-t4`, `ppo4-t3` fixos + snapshots, 50% self-play): × `ppo6/lrdec2` **50,7%** ±1,1% (2000, empate),
+  × `ppo4/t3` 59,4%, heurística 88,6% ±0,7%. Adversários mais fortes também não tiram do platô: com a observação e a
+  rede atuais o PPO estacionou em Elo ~+360.
+
+**Próximo**: passo estrutural. Em andamento a **observação v2** (`encode.py`: lista do próprio deck/prêmios, descarte
+como conjunto de embeddings, dano/nocaute por ataque), com a mesma receita da v1 (20 mil partidas de imitação, PPO
+240 partidas/it) para comparar curvas: 130 it × `faceis/f3b` e 300 it × `ppo1`. As redes v1 continuam funcionando.
