@@ -405,9 +405,30 @@ def arquivo_imagem(cid: str):
     return _ai('alta', cid)
 
 
+def imagem_economica(origem, forca=1.0):
+    """Versão econômica da arte da carta: escala de cinza, sem fundos coloridos, só os traços (texto, molduras, contornos
+    da ilustração) em tons de cinza sobre papel branco. Mantém a diagramação original. `origem`: caminho ou imagem PIL."""
+    import numpy as np
+    from PIL import Image, ImageFilter
+    im = origem if hasattr(origem, 'convert') else Image.open(origem)
+    im = im.convert('RGBA')
+    papel = Image.new('RGBA', im.size, (255, 255, 255, 255))
+    papel.alpha_composite(im)
+    g = papel.convert('L')
+    a = np.asarray(g, dtype=np.float32)
+    fundo = np.asarray(g.filter(ImageFilter.GaussianBlur(im.size[0] * 0.008)), dtype=np.float32)   # tom local
+    d = a - fundo
+    # em regiões escuras o texto/traço é mais CLARO que o fundo (ex.: texto branco sobre azul-escuro); nas claras, mais escuro
+    w = np.clip((fundo - 90) / 40, 0, 1)
+    tinta = w * np.where(d < 0, -d, 0.8 * d) + (1 - w) * np.where(d > 0, d, -0.35 * d)
+    tinta = np.clip((tinta - 7) * 3.2 / 255 * forca, 0, 1)
+    return Image.fromarray((255 * (1 - 0.9 * tinta)).astype(np.uint8), 'L')
+
+
 def gerar_pdf(cartas: list, saida=None, *, escala=0.9, papel=PAPEL_PADRAO, simplificado=False, margem=6.0,
-              espaco=1.0, orientacao='auto', idioma='pt', guias=True) -> dict:
+              espaco=1.0, orientacao='auto', idioma='pt', guias=True, economico=False) -> dict:
     """Gera o PDF. `cartas`: ids, um por cópia. `saida`: caminho, ou None para devolver os bytes em `pdf`.
+    `economico`: usa a arte original em cinza, sem fundos coloridos (menos tinta; `imagem_economica`).
     Retorna {pdf, paginas, cartas, por_pagina, orientacao, faltando(ids sem imagem desenhados simplificados), ...}."""
     from reportlab.lib.utils import ImageReader
     from reportlab.pdfgen import canvas
@@ -443,7 +464,7 @@ def gerar_pdf(cartas: list, saida=None, *, escala=0.9, papel=PAPEL_PADRAO, simpl
             if cid not in imgs:
                 f = arquivo_imagem(cid)
                 try:
-                    imgs[cid] = ImageReader(str(f)) if f else None
+                    imgs[cid] = (ImageReader(imagem_economica(f)) if economico else ImageReader(str(f))) if f else None
                 except Exception:   # imagem corrompida
                     imgs[cid] = None
             img = imgs[cid]

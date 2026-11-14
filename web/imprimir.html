@@ -58,7 +58,7 @@ select,input[type=text],input[type=number]{background:#0b100d;border:1px solid v
       <h3>3. Impressão</h3>
       <label>Tamanho do papel<select id="papel"></select></label>
       <label>Tamanho das cartas (% do real, 63 × 88 mm)<input type="number" id="escala" value="90" min="20" max="150" step="1"></label>
-      <label class="chk"><input type="checkbox" id="simples"> Cartas simplificadas (só texto, preto e branco)</label>
+      <label>Estilo das cartas<select id="estilo"><option value="">Original (colorida)</option><option value="eco">Econômica (layout original, em cinza, sem fundos)</option><option value="simples">Simplificada (só texto, preto e branco)</option></select></label>
       <label>Idioma do texto simplificado<select id="idioma"><option value="pt">Português</option><option value="en">Inglês</option></select></label>
       <div class="row"><label style="flex:1">Margem (mm)<input type="number" id="margem" value="6" min="0" max="30" step="0.5"></label>
         <label style="flex:1">Espaço (mm)<input type="number" id="espaco" value="1" min="0" max="20" step="0.5"></label></div>
@@ -87,7 +87,7 @@ function render(){
   atualizaInfo();
 }
 $('lista').onclick=e=>{const b=e.target.closest('button');if(!b)return;const c=cartas.get(b.dataset.id);c.n=Math.max(0,c.n+Number(b.dataset.d));if(!c.n)cartas.delete(b.dataset.id);render()};
-function corpo(){return {cards:itens(),papel:$('papel').value,escala:Number($('escala').value),margem:Number($('margem').value),espaco:Number($('espaco').value),orientacao:$('orient').value,simplificado:$('simples').checked,idioma:$('idioma').value}}
+function corpo(){return {cards:itens(),papel:$('papel').value,escala:Number($('escala').value),margem:Number($('margem').value),espaco:Number($('espaco').value),orientacao:$('orient').value,simplificado:$('estilo').value==='simples',economico:$('estilo').value==='eco',idioma:$('idioma').value}}
 async function atualizaInfo(){
   clearTimeout(tInfo);
   tInfo=setTimeout(async()=>{
@@ -117,7 +117,7 @@ $('gerar').onclick=async()=>{
   try{const r=await api('/api/print/pdf',corpo());const blob=await r.blob();
     const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cartas.pdf';a.click();
     const sem=Number(r.headers.get('X-Sem-Imagem')||0);
-    $('msg').innerHTML=`<span class="ok">PDF gerado: ${r.headers.get('X-Paginas')} página(s).</span>`+(sem&&!$('simples').checked?` ${sem} carta(s) sem imagem saíram simplificadas.`:'')}
+    $('msg').innerHTML=`<span class="ok">PDF gerado: ${r.headers.get('X-Paginas')} página(s).</span>`+(sem&&$('estilo').value!=='simples'?` ${sem} carta(s) sem imagem saíram simplificadas.`:'')}
   catch(e){$('err').textContent=e.message;$('msg').textContent=''}
   $('gerar').disabled=!total();
 };

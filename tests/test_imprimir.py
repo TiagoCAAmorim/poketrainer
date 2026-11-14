@@ -79,9 +79,32 @@ def test_imagens_e_faltantes():
             IMP.arquivo_imagem = original
 
 
+def test_imagem_economica():
+    """Fundo colorido vira papel branco; traços (texto) continuam escuros; o PDF sai em escala de cinza."""
+    from PIL import Image, ImageDraw
+    im = Image.new('RGB', (300, 420), (230, 120, 30))                    # fundo laranja
+    ImageDraw.Draw(im).rectangle((60, 200, 240, 212), fill=(255, 255, 255))   # "texto" claro sobre fundo
+    e = IMP.imagem_economica(im)
+    assert e.mode == 'L' and e.size == im.size
+    assert e.getpixel((10, 10)) > 245                                     # fundo liso → branco
+    assert min(e.crop((55, 195, 245, 217)).getdata()) < 150               # traço continua visível
+    from pathlib import Path
+    with tempfile.TemporaryDirectory() as t:
+        img = os.path.join(t, 'a.png')
+        im.save(img)
+        original = IMP.arquivo_imagem
+        try:
+            IMP.arquivo_imagem = lambda cid: Path(img)
+            r = IMP.gerar_pdf(['TWM-130'], economico=True)
+            assert b'DeviceGray' in r['pdf'] and not r['faltando']
+        finally:
+            IMP.arquivo_imagem = original
+
+
 if __name__ == '__main__':
     test_layout_e_papel()
     test_conjunto_e_ajuste()
     test_pdf_simplificado()
     test_imagens_e_faltantes()
+    test_imagem_economica()
     print('ok')
