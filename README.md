@@ -97,6 +97,7 @@ A página inicial mostra seis atalhos:
 | `ModuleNotFoundError: No module named 'numpy'` | O ambiente não está ativado (veja o passo 1) ou falta `pip install numpy reportlab pillow`. |
 | `ModuleNotFoundError: No module named 'ptcg'` | Rode os comandos de dentro da pasta `poketrainer`. |
 | A porta 8765 está ocupada | `python server.py --port 9000` e abra `http://localhost:9000`. |
+| O navegador não abre sozinho (no WSL aparecem várias linhas "not found") | Abra `http://localhost:8765` no navegador do Windows. Para abrir automaticamente: `sudo apt install wslu` e `export BROWSER=wslview`; ou use `python server.py --no-browser`. |
 | Acentos estranhos no terminal do Windows | Use o Windows Terminal ou digite `chcp 65001` antes. |
 | `import_limitless.py` falha | Sem internet, ou a Limitless mudou o site. |
 

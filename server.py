@@ -7,6 +7,9 @@ import argparse
 import glob
 import json
 import os
+import shutil
+import subprocess
+import sys
 import threading
 import time
 import traceback
@@ -438,6 +441,25 @@ class Handler(BaseHTTPRequestHandler):
             return self._send(500, {'error': f'{type(e).__name__}: {e}'})
 
 
+def abrir_navegador(url):
+    """Abre o navegador sem poluir o terminal; se não conseguir, avisa em uma linha."""
+    ok = False
+    try:
+        if sys.platform.startswith('linux'):
+            for cmd in ('wslview', 'xdg-open'):     # wslview: navegador do Windows (WSL, pacote wslu)
+                if shutil.which(cmd):
+                    ok = subprocess.run([cmd, url], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                        timeout=15).returncode == 0
+                    if ok:
+                        break
+        else:
+            ok = webbrowser.open(url)
+    except Exception:
+        ok = False
+    if not ok:
+        print(f'Não consegui abrir o navegador sozinho: abra {url} no seu navegador.')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--port', type=int, default=8765)
@@ -449,7 +471,7 @@ def main():
     url = f'http://localhost:{a.port}'
     print(f'Servidor em {url}  (Ctrl+C para sair)')
     if not a.no_browser:
-        threading.Timer(0.8, lambda: webbrowser.open(url)).start()
+        threading.Timer(0.8, lambda: abrir_navegador(url)).start()
     try:
         srv.serve_forever()
     except KeyboardInterrupt:
