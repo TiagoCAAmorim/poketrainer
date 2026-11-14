@@ -231,6 +231,8 @@ def main(argv=None):
     ap.add_argument('--epochs', type=int, default=3)
     ap.add_argument('--minibatch', type=int, default=1024)
     ap.add_argument('--lr', type=float, default=1e-4)
+    ap.add_argument('--lr-final', type=float, default=None,
+                    help='lr na última iteração (decaimento linear a partir de --lr); padrão: lr constante')
     ap.add_argument('--gamma', type=float, default=0.997)
     ap.add_argument('--lam', type=float, default=0.95)
     ap.add_argument('--clip', type=float, default=0.2)
@@ -308,6 +310,10 @@ def main(argv=None):
             log_eval(0, r)
         for it in range(1, args.iterations + 1):
             t0 = time.perf_counter()
+            if args.lr_final is not None:     # decaimento linear da lr ao longo das iterações desta execução
+                frac = (it - 1) / max(args.iterations - 1, 1)
+                for pg in opt.param_groups:
+                    pg['lr'] = args.lr + frac * (args.lr_final - args.lr)
             save_checkpoint(learner_path, net)
             n = max(workers, 1)
             sizes = [args.games // n + (1 if k < args.games % n else 0) for k in range(n)]

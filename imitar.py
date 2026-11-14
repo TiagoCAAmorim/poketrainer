@@ -56,7 +56,8 @@ def main(argv=None):
     p.add_argument('checkpoint')
     deck_args(p)
     p.add_argument('--partidas', type=int, default=400)
-    p.add_argument('--oponente', default='heuristic', choices=['heuristic', 'random'])
+    p.add_argument('--oponente', default='heuristic',
+                   help="'heuristic', 'random' ou 'model:checkpoint.pt' (confronto direto entre redes)")
     p.add_argument('--processos', type=int, default=None)
     p.add_argument('--seed', type=int, default=12345)
     for p in sub.choices.values():

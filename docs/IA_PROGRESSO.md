@@ -94,3 +94,13 @@ a ~80 correções de rulings do motor.
   Conclusão: `base` e `base_s1` diferem 1,6 ponto só pela semente, e tudo menos `lr2e4` fica nessa faixa. **Os padrões
   do `train.py` estão adequados**; ajustar hiperparâmetros não é o gargalo. Todas as rodadas ganharam 1–3,5 pontos em
   60 it, então treinar mais ainda rende. Próximo: testar capacidade (`--hidden 512`).
+- **Rede maior (`--hidden 512`, 5,9 M de pesos)**: imitação nos mesmos dados (6 épocas, ~3,5 min/época, 12 passos/s):
+  `val_acc` **86,2%**, `val_mse_v` 0,788 (256: 86,0% / 0,790) → **46,5%** contra a heurística (1000 partidas;
+  256: 46,3%). PPO com os padrões (`checkpoints/ppo_h512`, ~15,7 s/it, 1,65× a 256), interrompido na it 200: a
+  avaliação embutida (200 partidas, semente 12345) ficou 3–9 pontos abaixo do `ppo1` da it 50 à 200 (63,2% contra
+  72,8% na it 200), mas a reavaliação com 2000 partidas (semente 777) deu **73,2%** — igual ao `ppo1` na it 300
+  (73,4–73,9%). `grad_norm` 0,3–0,55 (menos corte que a 256); `kl` um pouco maior (0,015–0,025).
+  Conclusões: (1) **capacidade não é o gargalo**: por tempo de máquina as duas empatam; fica a 256. (2) **A avaliação
+  embutida de 200 partidas engana** (poucos decks dos 780 entram nela): decidir só com ≥ 1000 partidas; os treinos
+  seguintes usam `--eval-games 600`. Interromper a 512 pela curva embutida foi precipitado.
+- **`--lr-final`** (novo em `train.py`): decaimento linear da lr ao longo das iterações da execução.

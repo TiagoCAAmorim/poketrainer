@@ -152,6 +152,7 @@ def _eval_worker(task):
     net = PolicyValueNet(**cfg)
     net.load_state_dict(state)
     net.eval()
+    opp_net = load_checkpoint(opponent[6:], 'cpu')[0] if opponent.startswith('model:') else None
     decks = {}
     res = []
     for seed, me in games:
@@ -166,6 +167,9 @@ def _eval_worker(task):
             while not g.done and g.decisions < max_decisions:
                 if g.prompt.player == me:
                     logits, _ = net(collate([encode(g)]))
+                    g.step(int(logits[0].argmax()))
+                elif opp_net is not None:      # outra rede, também gulosa
+                    logits, _ = opp_net(collate([encode(g)]))
                     g.step(int(logits[0].argmax()))
                 else:
                     g.step(opp.act(g, g.prompt))
