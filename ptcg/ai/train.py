@@ -14,6 +14,7 @@ import argparse
 import json
 import os
 import random
+import shutil
 import sys
 import time
 from multiprocessing import get_context
@@ -243,6 +244,8 @@ def main(argv=None):
     ap.add_argument('--p-heuristic', type=float, default=0.25)
     ap.add_argument('--p-pool', type=float, default=0.15)
     ap.add_argument('--pool-size', type=int, default=5)
+    ap.add_argument('--pool-inicial', nargs='*', default=None,
+                    help='checkpoints antigos que ficam no pool de oponentes a execução inteira (diversidade)')
     ap.add_argument('--snapshot-every', type=int, default=20)
     ap.add_argument('--eval-every', type=int, default=10)
     ap.add_argument('--eval-games', type=int, default=200)
@@ -276,6 +279,11 @@ def main(argv=None):
                     p_pool=args.p_pool, parallel=args.parallel, max_decisions=args.max_decisions)
     learner_path = str(out / '_pool' / 'learner.pt')
     pool_paths: list = []
+    fixed_pool: list = []     # --pool-inicial: cópias em _pool/ que nunca saem do pool (a poda só apaga snapshots)
+    for k, src in enumerate(args.pool_inicial or []):
+        dst = out / '_pool' / f'fixo_{k:02d}.pt'
+        shutil.copyfile(src, dst)
+        fixed_pool.append(str(dst))
     best = -1.0
     log_path = out / 'train_log.jsonl'
     print(f'Treinando em {args.device} com {len(deck_names)} decks, {workers} workers'
@@ -317,7 +325,7 @@ def main(argv=None):
             save_checkpoint(learner_path, net)
             n = max(workers, 1)
             sizes = [args.games // n + (1 if k < args.games % n else 0) for k in range(n)]
-            tasks = [(learner_path, list(pool_paths), sz, rng.randrange(2 ** 31), deck_names, roll_cfg)
+            tasks = [(learner_path, fixed_pool + pool_paths, sz, rng.randrange(2 ** 31), deck_names, roll_cfg)
                      for sz in sizes if sz]
             outs = executor.map(rollout_task, tasks) if executor else [rollout_task(t) for t in tasks]
             parts = [o[0] for o in outs if o[0] is not None]

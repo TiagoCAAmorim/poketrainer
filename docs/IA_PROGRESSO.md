@@ -115,3 +115,23 @@ a ~80 correções de rulings do motor.
   `ppo1` × `imitacao` 79,2%, 200 partidas).
   Conclusão: contra a heurística a curva quase estaciona (~76–80%), mas o confronto direto mostra que a rede segue
   melhorando — a heurística deixou de ser uma régua sensível. Usar confrontos entre versões para medir progresso.
+- **Decaimento da lr** (100 it a partir de `ppo2/latest.pt` cada; 2000 partidas contra a heurística, ±0,9%;
+  confrontos com 1000, ±1,6%):
+
+  | Rodada | Heurística | × `ppo2` | × a outra |
+  |---|---|---|---|
+  | `lr_const` (1e-4) | 80,3% | 50,2% | — |
+  | `lr_decai` (1e-4 → 1e-5, `--lr-final`) | 81,0% | 53,7% | 49,5% |
+
+  Com a lr no fim do decaimento o `kl` cai a 0,0006 e o `clip` a 0,006 (a rede quase não muda). Conclusão: sem ganho
+  claro (confronto direto entre as duas empata). **Mais importante: os ganhos minguam** — 100 it a mais empatam com o
+  `ppo2`. Suspeita: o pool de oponentes só tem as 5 últimas versões (todas das últimas ~100 it), e os confrontos
+  sugerem ciclos (it 200 × `ppo1` 57%, final × it 200 55%, mas final × `ppo1` só 58,7%).
+- **`--pool-inicial`** (novo em `train.py`): checkpoints antigos (inclusive de outra arquitetura) ficam no pool de
+  oponentes a execução inteira; são copiados para `_pool/fixo_*.pt`, e a poda só apaga snapshots.
+- **Pool diverso `pool_div`** (100 it a partir de `ppo2/latest.pt`, `--p-pool 0.3`, `--pool-inicial` com `ppo1`,
+  `ppo2` it 200, `sweep1/g480` e `ppo_h512`): heurística 79,3% · × `ppo2` **49,5%** · × `lr_const` 47,4%.
+  Conclusão: diversidade de oponentes também não destrava. Hiperparâmetros, capacidade, decaimento da lr e pool
+  empatam em janelas de 100 it; o que rende é tempo de treino (~+5 pontos de confronto direto a cada 200 it no `ppo2`).
+- **`ppo3`** (em andamento): 4 trechos de 250 it com os padrões, a partir de `lr_decai/latest.pt`, com confronto
+  direto contra o trecho anterior ao fim de cada um.
