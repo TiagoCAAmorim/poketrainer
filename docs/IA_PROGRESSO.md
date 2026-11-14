@@ -193,6 +193,12 @@ na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).
   × `ppo4/t3` 59,4%, heurística 88,6% ±0,7%. Adversários mais fortes também não tiram do platô: com a observação e a
   rede atuais o PPO estacionou em Elo ~+360.
 
-**Próximo**: passo estrutural. Em andamento a **observação v2** (`encode.py`: lista do próprio deck/prêmios, descarte
-como conjunto de embeddings, dano/nocaute por ataque), com a mesma receita da v1 (20 mil partidas de imitação, PPO
-240 partidas/it) para comparar curvas: 130 it × `faceis/f3b` e 300 it × `ppo1`. As redes v1 continuam funcionando.
+- **Observação v2** (mesma receita da v1: 20 mil partidas da heurística, 6 épocas, PPO 240 partidas/it):
+  imitação com acerto de validação 0,861 (v1: 0,86) e 48,3% contra a heurística (v1: 46,3%); com 130 it 66,5% contra a
+  heurística (v1 `faceis/f3b`: 70,1%) e **48,4%** ±1,6% no confronto direto; com 300 it 75,0% (v1 `ppo1`: 73,7%) e
+  **49,8%** ±1,6% contra `ppo1`. **Empate**: com o mesmo orçamento, as informações novas não aceleram o aprendizado.
+  A rede v2 é menor (1,6 M pesos), mas a observação custa 2,9 ms contra 1,6 ms da v1.
+
+**Próximo**: em andamento `v2n9` = v2 imitando o nível 9 (`imitar.py gerar --obs 2 --professor nivel:9`) e depois
+PPO lote 1920 (lr 5e-5 → 1e-5), para ver se as informações novas rendem quando a rede já joga bem, ou seja, se a v2 passa do
+platô (~+360) da v1. Se não, a próxima opção é busca na hora de jogar.
