@@ -74,3 +74,23 @@ a ~80 correções de rulings do motor.
   Conclusão: o PPO passou a heurística com folga (+27 pontos), mas a curva achatou em ~72% depois da it 200 e a
   entropia não para de subir. Próximo: varredura curta de hiperparâmetros a partir de `ppo1/latest.pt` antes de outro
   treino longo.
+- **Varredura `sweep1`** (60 it cada a partir de `ppo1/latest.pt`, que mede 73,9% em 2000 partidas; avaliação final
+  de 2000 partidas, semente 777, ±1,0%; `g480` com 30 it para o mesmo total de partidas):
+
+  | Rodada | Mudança | Vitórias | `kl` | `ent` (it 60) |
+  |---|---|---|---|---|
+  | `g480` | 480 partidas/it | **77,5%** | 0,012 | 0,31 |
+  | `base` | — | **77,3%** | 0,011 | 0,33 |
+  | `lr5e5` | lr 5e-5 | 75,9% | 0,005 | 0,28 |
+  | `base_s1` | — (semente 1) | 75,7% | — | — |
+  | `ph50` | `--p-heuristic` 0,5 | 75,4% | — | — |
+  | `ent0` | `--ent-coef` 0 | 75,1% | 0,013 | 0,26 |
+  | `mg1` | `--max-grad` 1,0 | 75,0% | — | — |
+  | `lr2e4` | lr 2e-4 | 72,9% | 0,023 | 0,42 |
+
+  Métricas novas: `var_explicada` ≈ 0,73 (o valor funciona); `grad_norm` ≈ 0,65 antes do corte, ou seja, o
+  `--max-grad` 0,5 corta quase todo passo (afrouxar para 1,0 não ajudou). A entropia subindo vem do tamanho do passo
+  (lr maior → entropia maior) e, em parte, do bônus de entropia.
+  Conclusão: `base` e `base_s1` diferem 1,6 ponto só pela semente, e tudo menos `lr2e4` fica nessa faixa. **Os padrões
+  do `train.py` estão adequados**; ajustar hiperparâmetros não é o gargalo. Todas as rodadas ganharam 1–3,5 pontos em
+  60 it, então treinar mais ainda rende. Próximo: testar capacidade (`--hidden 512`).
