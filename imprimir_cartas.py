@@ -2,6 +2,7 @@
 
 Exemplos:
     python imprimir_cartas.py meus/meu_deck                                  # A4, 90%, com imagens → pdfs/meu_deck.pdf
+    python imprimir_cartas.py tests/01_hedrick_dragapult --economico         # layout da carta, só a ilustração em cinza claro (pouca tinta)
     python imprimir_cartas.py tests/01_hedrick_dragapult --simplificado      # só texto, preto e branco (economiza tinta)
     python imprimir_cartas.py meus/meu_deck --papel Office --escala 85
     python imprimir_cartas.py meus/meu_deck --adicionar "2 Ultra Ball" --remover "1 Boss's Orders" -o saida.pdf
@@ -29,6 +30,7 @@ def main():
     ap.add_argument('--remover', nargs='*', default=[], help='cartas a retirar, ex.: "1 Boss\'s Orders"')
     ap.add_argument('--escala', type=float, default=90, help='%% do tamanho real da carta (padrão 90)')
     ap.add_argument('--papel', default=PAPEL_PADRAO, help=f'{", ".join(PAPEIS)} ou LARGURAxALTURA em mm (padrão {PAPEL_PADRAO})')
+    ap.add_argument('--economico', action='store_true', help='layout da carta com só a ilustração simplificada em cinza, o resto em preto e branco (economiza tinta)')
     ap.add_argument('--simplificado', action='store_true', help='cartas só com texto, em preto e branco (sem arte)')
     ap.add_argument('--idioma', choices=['pt', 'en'], default='pt', help='idioma do texto das cartas simplificadas')
     ap.add_argument('--margem', type=float, default=6, help='margem da página em mm (padrão 6)')
@@ -47,9 +49,9 @@ def main():
     try:
         ids = ajustar(ids, a.adicionar, a.remover) if (a.adicionar or a.remover) else expandir({c: ids.count(c) for c in set(ids)})
         nome = (a.deck or 'cartas').replace('/', '_')
-        saida = Path(a.saida) if a.saida else ROOT / 'pdfs' / f'{nome}{"_simplificado" if a.simplificado else ""}.pdf'
+        saida = Path(a.saida) if a.saida else ROOT / 'pdfs' / f'{nome}{"_simplificado" if a.simplificado else "_economico" if a.economico else ""}.pdf'
         saida.parent.mkdir(parents=True, exist_ok=True)
-        r = gerar_pdf(ids, saida, escala=a.escala / 100, papel=a.papel, simplificado=a.simplificado, margem=a.margem,
+        r = gerar_pdf(ids, saida, escala=a.escala / 100, papel=a.papel, simplificado=a.simplificado, economico=a.economico, margem=a.margem,
                       espaco=a.espaco, orientacao=a.orientacao, idioma=a.idioma)
     except ValueError as e:
         sys.exit(f'Erro: {e}')

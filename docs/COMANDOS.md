@@ -56,7 +56,7 @@ python melhorar_heuristica.py [--avaliar|--resetar]    # ajusta os pesos da IA h
 ## Impressão
 
 ```
-python imprimir_cartas.py <deck> [--adicionar "2 Ultra Ball"] [--remover "1 Boss's Orders"] [--escala 90] [--papel A4|Office|A5|LxA] [--simplificado]
+python imprimir_cartas.py <deck> [--adicionar "2 Ultra Ball"] [--remover "1 Boss's Orders"] [--escala 90] [--papel A4|Office|A5|LxA] [--economico | --simplificado]
 ```
 O PDF sai em `pdfs/`. Na impressora escolha "tamanho real / 100%", sem ajustar à página.
 

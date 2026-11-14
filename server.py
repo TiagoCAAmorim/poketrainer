@@ -460,7 +460,7 @@ class Handler(BaseHTTPRequestHandler):
                                                 'carta_mm': [round(L['cw'], 1), round(L['ch'], 1)]})
                     if not cartas:
                         raise ValueError('Nenhuma carta para imprimir.')
-                    r = IMP.gerar_pdf(cartas, simplificado=bool(body.get('simplificado')), idioma=body.get('idioma') or 'pt', **kw)
+                    r = IMP.gerar_pdf(cartas, simplificado=bool(body.get('simplificado')), economico=bool(body.get('economico')), idioma=body.get('idioma') or 'pt', **kw)
                     registrar('decks', f'gerou PDF de {r["cartas"]} cartas ({kw["papel"]}, {kw["escala"] * 100:.0f}%) pela interface')
                     self.send_response(200)
                     self.send_header('Content-Type', 'application/pdf')
@@ -470,6 +470,11 @@ class Handler(BaseHTTPRequestHandler):
                     self.send_header('Access-Control-Expose-Headers', 'X-Paginas, X-Sem-Imagem')
                     self.end_headers()
                     return self.wfile.write(r['pdf'])
+                except ModuleNotFoundError as e:
+                    falta = {'reportlab': 'reportlab', 'PIL': 'pillow'}.get(e.name, e.name)
+                    return self._send(500, {'error': f'Falta o módulo "{falta}" para gerar o PDF. '
+                                                     f'Instale com: pip install {falta}  (ou pip install -r requirements.txt) '
+                                                     'e reinicie o servidor.'})
                 except (ValueError, KeyError) as e:
                     return self._send(400, {'error': str(e).strip("'\"")})
             if u.path == '/api/testdeck/start':

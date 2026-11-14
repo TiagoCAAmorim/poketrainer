@@ -4,6 +4,12 @@ Principais novidades de cada versão, da mais nova para a mais antiga.
 As versões foram numeradas depois do fato, a partir do histórico do git (ainda não há *tags* nem *releases* no GitHub).
 
 ## [Não lançado]
+- **Impressão econômica** (`/imprimir` → "Estilo das cartas", `imprimir_cartas.py --economico`): mantém a diagramação da carta (nome, ícones, PS,
+  ilustração, ataques, rodapé), mas só a ilustração vem da imagem — recortada e simplificada em cinza claro com contornos — e todo o resto é redesenhado
+  em preto e branco, como na versão simplificada. A ilustração ocupa o espaço que sobra e o texto mantém tamanho legível. `imprimir.arte_economica()`.
+- **Correção 30C (nomes em português)**: a TCGdex tem duas coleções com a sigla 30C ("30th Celebration" e "30th Classic Collection"); os nºs 1–30 da segunda sobrescreviam os da primeira ao ler o TCGdex (ex.: Exeggcute com texto do Charizard). `load_tcgdex` agora separa a Classic Collection (`30CC`); 26 cartas corrigidas em `cards.json`/`cards_pt.json` e no site. O site passou a ter imagens também da 30C.
+- **Página estática, "Estilo das cartas"**: Simplificada (só texto), Econômica (texto + ilustração simplificada) ou Originais (imagens coloridas da TCGdex, em inglês). Detalhes da econômica: O navegador busca a imagem da carta na TCGdex (que libera CORS) e aplica o mesmo filtro do modo econômico (`pdf.js`, `site/data/imagens.js` por `tools/build_imagens_site.py`). Sem a opção, o PDF continua só com texto.
+- **PDF simplificado** (site e `imprimir.py`): ícones de tipo e custo de energia e a categoria da carta (Pokémon, Apoiador, Item, Ferramenta, Estádio, Energia).
 - **Verificação das imagens na página inicial**: mostra quantas cartas têm imagem, onde faltam e um botão "Baixar as que faltam" (com progresso),
   útil depois de uma atualização com coleções novas ou para tentar de novo cartas sem fonte. A lógica de download virou `baixar_imagens.executar()`.
 - **Instalador de um comando** (`instalar.py`, só biblioteca padrão): num Windows com só o Python, um comando baixa o ZIP do programa
