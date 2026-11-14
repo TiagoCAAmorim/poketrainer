@@ -42,6 +42,8 @@ def main():
                 sys.exit('Falhou: ' + ' '.join(cmd))
     if rodar('tools/build_site.py'):
         sys.exit('Falhou: tools/build_site.py')
+    if not a.sem_rede and rodar('tools/build_imagens_site.py', '--refazer'):
+        print('Aviso: não foi possível atualizar site/data/imagens.js (ilustrações do modo econômico)')
     depois = ler(DADOS)
     sets = lambda d: {k.rsplit('-', 1)[0] for k in d['impressoes']}   # noqa: E731
     novas = sorted(set(depois['cartas']) - set(antes['cartas']))

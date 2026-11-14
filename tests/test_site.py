@@ -15,6 +15,14 @@ def _js(nome):
     return json.loads(txt[txt.index('=') + 1:].rstrip(';'))
 
 
+def test_imagens():
+    d, im = _js('cartas.js'), _js('imagens.js')
+    assert im['base'].startswith('https://assets.tcgdex.net/')
+    assert set(im['cartas']) <= set(d['cartas'])
+    assert len(im['cartas']) > 0.9 * len(d['cartas'])         # quase todas têm ilustração (as promocionais 30C ficam sem)
+    assert 'SSP-46' in im['cartas'] or any(k.startswith('SSP-') for k in im['cartas'])
+
+
 def test_cartas():
     d = _js('cartas.js')
     nomes = {c['n'] for c in d['cartas'].values()}

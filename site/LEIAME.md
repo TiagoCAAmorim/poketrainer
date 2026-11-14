@@ -14,7 +14,7 @@ ou da busca com sugestões.
 | `index.html`, `style.css`, `app.js` | interface, busca com sugestões, importação, textos EN/PT |
 | `pdf.js` | desenho da carta e do layout; port de `carta_simplificada`/`layout` de `ptcg/imprimir.py` |
 | `vendor/jspdf.umd.min.js` | jsPDF 2.5.2 (MIT), versionado para a página funcionar offline |
-| `data/cartas.js`, `data/decks.js` | **gerados** — não editar à mão |
+| `data/cartas.js`, `data/decks.js`, `data/imagens.js` | **gerados** — não editar à mão (`imagens.js`: caminho da imagem de cada carta na TCGdex, para o modo com ilustração) |
 
 ## Atualizar os dados
 A página usa uma base própria (marcas G, H, I, J) porque os decks da temporada ainda têm cartas da marca G; a base do motor (H, I, J) não muda.
@@ -24,8 +24,10 @@ python tools/build_pt_texts.py --cards .cache/cards_site.json --out .cache/cards
 python tools/baixar_temporada.py     # temporada 2026 → ptcg/data/temporada_2026.json (padrão: set/2025 a ago/2026)
 python tools/baixar_temporada.py --desde 2026-09-01 --ate 2027-08-31 --saida ptcg/data/temporada_2027.json   # temporada atual (rode de novo para pegar torneios novos)
 python tools/build_site.py           # cartas + decks → site/data/*.js
+python tools/build_imagens_site.py   # ilustrações (TCGdex) → site/data/imagens.js; precisa de rede (--refazer ignora o cache)
 python tests/test_site.py
 ```
+O modo "ilustração simplificada" busca a imagem da carta na TCGdex pelo navegador (ela libera CORS; a Limitless não) e aplica o mesmo filtro de `arte_economica` (`pdf.js`: `simplificarArte`). Cartas sem imagem (ex.: 30C) saem só com texto.
 Ao mudar `carta_simplificada` em Python, mude também `pdf.js` (os dois devem produzir o mesmo desenho).
 
 ## Quem atualiza o quê

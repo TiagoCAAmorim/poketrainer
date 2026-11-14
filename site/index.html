@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PTCG Lab — Proxy PDF</title>
-<meta name="description" content="Generate a printable PDF of simplified, text-only black-and-white Pokémon TCG cards (playtest proxies). Runs entirely in your browser.">
+<meta name="description" content="Generate a printable PDF of simplified black-and-white Pokémon TCG cards (playtest proxies), text only or with simplified artwork. Runs entirely in your browser.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -45,6 +45,8 @@
     <div class="box">
       <h2 data-i="h_pdf"></h2>
       <label><span data-i="pdf_lang"></span><select id="idioma"><option value="en">English</option><option value="pt">Português</option></select></label>
+      <label class="chk"><input type="checkbox" id="economico"> <span data-i="eco"></span></label>
+      <div class="mut" id="ecoNota" data-i="eco_note" style="margin:-4px 0 10px;font-size:12px"></div>
       <label><span data-i="paper"></span><select id="papel"></select></label>
       <label id="lblCustom" hidden><span data-i="custom"></span><input type="text" id="custom" placeholder="210x297"></label>
       <label><span data-i="scale"></span><input type="number" id="escala" value="90" min="20" max="150" step="1"></label>
@@ -67,6 +69,7 @@
 <script src="vendor/jspdf.umd.min.js"></script>
 <script src="data/cartas.js"></script>
 <script src="data/decks.js"></script>
+<script src="data/imagens.js"></script>
 <script src="pdf.js"></script>
 <script src="app.js"></script>
 </body>

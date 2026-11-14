@@ -44,3 +44,5 @@ footer a{color:var(--accent)}
 .pix{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
 .pix code{background:#0b100d;border:1px solid var(--line);border-radius:6px;padding:3px 8px;user-select:all;word-break:break-all}
 [hidden]{display:none!important}
+label.chk{flex-direction:row;align-items:center;gap:8px;color:var(--text,inherit);font-size:13px}
+label.chk input{width:auto;margin:0}

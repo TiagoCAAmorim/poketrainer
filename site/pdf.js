@@ -80,6 +80,7 @@
         const q = pts.map(([x, y]) => [X(x), Y(y)]);
         doc.lines(q.slice(1).map((p, i) => [p[0] - q[i][0], p[1] - q[i][1]]), q[0][0], q[0][1], [1, 1], st || 'F', true);
       },
+      image(data, x, y, w, h, alias) { doc.addImage(data, 'JPEG', X(x), Y(y + h), w * s, h * s, alias, 'FAST'); },
       text: (t, x, y, align) => doc.text(t, X(x), Y(y), { align: align || 'left' }),
       split(texto, f, size, largura) {
         texto = lat(texto);
@@ -152,6 +153,84 @@
     return x;
   }
 
+
+  // ---------------------------------------------------------------- ilustração simplificada (modo econômico)
+  // Mesma transformação de ptcg/imprimir.py (arte_economica): recorta a caixa da ilustração, cinza claro em 6 tons + contornos escuros.
+  const CAIXA_ARTE = { p: [0.07, 0.12, 0.93, 0.475], t: [0.075, 0.14, 0.925, 0.515], e: [0.045, 0.14, 0.955, 0.64] };
+  const arteCache = new Map();   // id → Promise<{cv, w, h}|null>
+
+  function desfocar(a, w, h, sigma) {   // gaussiana aproximada por 3 passagens de média (separável)
+    const n = 3, ideal = Math.sqrt(12 * sigma * sigma / n + 1);
+    let wl = Math.floor(ideal); if (wl % 2 === 0) wl--;
+    const wu = wl + 2, m = Math.round((12 * sigma * sigma - n * wl * wl - 4 * n * wl - 3 * n) / (-4 * wl - 4));
+    const tmp = new Float32Array(a.length);
+    const passe = (src, dst, r, horiz) => {
+      const len = horiz ? w : h, outer = horiz ? h : w, st = horiz ? 1 : w, ost = horiz ? w : 1, k = 1 / (2 * r + 1);
+      for (let o = 0; o < outer; o++) {
+        const b = o * ost; let acc = 0;
+        for (let i = -r; i <= r; i++) acc += src[b + Math.min(len - 1, Math.max(0, i)) * st];
+        for (let i = 0; i < len; i++) {
+          dst[b + i * st] = acc * k;
+          acc += src[b + Math.min(len - 1, i + r + 1) * st] - src[b + Math.max(0, i - r) * st];
+        }
+      }
+    };
+    let src = Float32Array.from(a);
+    for (let i = 0; i < n; i++) {
+      const r = ((i < m ? wl : wu) - 1) / 2;
+      passe(src, tmp, r, true); passe(tmp, src, r, false);
+    }
+    return src;
+  }
+
+  function simplificarArte(img, kind) {
+    const W = img.naturalWidth, H = img.naturalHeight, [x0, y0, x1, y1] = CAIXA_ARTE[kind] || CAIXA_ARTE.p;
+    const sx = Math.round(x0 * W), sy = Math.round(y0 * H), w = Math.round(x1 * W) - sx, h = Math.round(y1 * H) - sy;
+    const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+    const cx = cv.getContext('2d', { willReadFrequently: true });
+    cx.fillStyle = '#fff'; cx.fillRect(0, 0, w, h); cx.drawImage(img, sx, sy, w, h, 0, 0, w, h);
+    const px = cx.getImageData(0, 0, w, h), d = px.data, g = new Float32Array(w * h);
+    for (let i = 0; i < g.length; i++) g[i] = 0.299 * d[4 * i] + 0.587 * d[4 * i + 1] + 0.114 * d[4 * i + 2];
+    const suave = desfocar(g, w, h, W * 0.01), local = desfocar(g, w, h, W * 0.012);
+    for (let i = 0; i < g.length; i++) {
+      const q = Math.floor(suave[i] / 256 * 6) / 5, base = 255 * (1 - (1 - q) * 0.3);
+      const tr = Math.min(1, Math.max(0, (Math.max(local[i] - g[i], 0) - 8) * 3 / 255));
+      const v = Math.min(base, 255 * (1 - 0.9 * tr));
+      d[4 * i] = d[4 * i + 1] = d[4 * i + 2] = v; d[4 * i + 3] = 255;
+    }
+    cx.putImageData(px, 0, 0);
+    return { cv, w, h };
+  }
+
+  function carregarImagem(url) {
+    return new Promise((res, rej) => { const im = new Image(); im.crossOrigin = 'anonymous'; im.onload = () => res(im); im.onerror = rej; im.src = url; });
+  }
+
+  // devolve Promise com a ilustração simplificada de `d` (ou null se não houver imagem / falhar)
+  function prepararArte(d) {
+    const dados = window.DADOS_IMAGENS;
+    const ref = dados && dados.cartas[d.id];
+    if (!ref || (d.k === 'e' && d.b)) return Promise.resolve(null);
+    if (!arteCache.has(d.id)) {
+      const url = q => dados.base + ref + '/' + q + '.webp';
+      arteCache.set(d.id, carregarImagem(url('high')).catch(() => carregarImagem(url('low')))
+        .then(im => simplificarArte(im, d.k)).catch(() => null));
+    }
+    return arteCache.get(d.id);
+  }
+
+  // recorte da ilustração para a proporção w:h (centrado na horizontal, um pouco acima do meio na vertical) → data URL JPEG
+  function recorteArte(arte, ar) {
+    const { cv, w: W, h: H } = arte;
+    let cw = W, ch = Math.round(W / ar);
+    if (W / H >= ar) { ch = H; cw = Math.round(H * ar); }
+    ch = Math.min(ch, H);
+    const cx = Math.floor((W - cw) / 2), cy = Math.floor(Math.max(0, Math.min(H - ch, (H - ch) * 0.45)));
+    const o = document.createElement('canvas'); o.width = cw; o.height = ch;
+    o.getContext('2d').drawImage(cv, cx, cy, cw, ch, 0, 0, cw, ch);
+    return o.toDataURL('image/jpeg', 0.85);
+  }
+
   // textos de uma carta no idioma: nome, texto, habilidades [[nome, texto]], ataques [[nome, texto]]
   function textos(d, idioma) {
     const t = d[idioma] || d.en;
@@ -163,7 +242,7 @@
     };
   }
 
-  function cartaSimplificada(c, d, idioma, larg, alt) {
+  function cartaSimplificada(c, d, idioma, larg, alt, arte) {
     const S = L10N[idioma], T = textos(d, idioma);
     const m = 7.0, iw = larg - 2 * m;
     c.lw(1.2); c.roundRect(0.6, 0.6, larg - 1.2, alt - 1.2, 8);
@@ -199,7 +278,8 @@
     if (T.nomePt && T.nomePt !== T.nome) { c.font('Helvetica', 5.8); c.text(lat(`(${T.nomePt})`), m, y); y -= 6.4; }
     y -= 1.5;
     c.lw(0.5); c.line(m, y, larg - m, y);
-    const topo = y - 4, base = 22.0;
+    let topo = y - 4;
+    const base = 22.0;
     const blocos = [];
     if (d.k === 'p') {
       for (const [n, t] of T.ab) blocos.push(['hab', n, [], '', t]);
@@ -218,6 +298,12 @@
       }
       return [linhas, h];
     };
+    if (arte) {
+      const precisa = montar(6.4)[1], ah = Math.max(42, Math.min(topo - base - precisa - 6, 0.38 * alt));
+      c.image(recorteArte(arte, iw / ah), m, topo - ah, iw, ah, `a${d.id}_${Math.round(ah)}`);
+      c.lw(0.6); c.rect(m, topo - ah, iw, ah);
+      topo -= ah + 5;
+    }
     tam = 8.2;
     let linhas, h;
     for (;;) { [linhas, h] = montar(tam); if (h <= topo - base || tam <= 4.2) break; tam -= 0.2; }
@@ -265,9 +351,15 @@
   }
 
   /* cartas: lista de objetos de carta (com .id), uma por cópia. Devolve {doc, paginas, porPagina, colunas, linhas}. */
-  function gerar(cartas, { idioma = 'pt', papel = 'A4', escala = 0.9, margem = 6, espaco = 1 } = {}) {
+  async function gerar(cartas, { idioma = 'pt', papel = 'A4', escala = 0.9, margem = 6, espaco = 1, economico = false, progresso } = {}) {
     if (!cartas.length) throw new Error('empty');
     const L = layout(papel, escala, margem, espaco);
+    const artes = new Map();
+    if (economico) {
+      const unicas = [...new Set(cartas)];
+      let feitas = 0;
+      await Promise.all(unicas.map(d => prepararArte(d).then(a => { artes.set(d, a); if (progresso) progresso(++feitas, unicas.length); })));
+    }
     const { jsPDF } = window.jspdf;
     const orient = L.W > L.H ? 'l' : 'p';
     const doc = new jsPDF({ unit: 'pt', format: [Math.min(L.W, L.H) * MM, Math.max(L.W, L.H) * MM], orientation: orient, compress: true });
@@ -282,9 +374,10 @@
       if (pos === 0) { if (i) doc.addPage([Math.min(PW, PH), Math.max(PW, PH)], orient); paginas++; }
       const col = pos % L.cols, lin = Math.floor(pos / L.cols);
       const c = contexto(doc, gx + col * (cw + gap), gy + lin * (ch + gap), cw / bw, bh);
-      cartaSimplificada(c, d, idioma, bw, bh);
+      cartaSimplificada(c, d, idioma, bw, bh, artes.get(d) || null);
     });
-    return { doc, paginas, porPagina: L.porPagina, colunas: L.cols, linhas: L.lins, orientacao: L.o };
+    const semArte = economico ? [...artes.entries()].filter(([d, a]) => !a && !(d.k === 'e' && d.b)).length : 0;
+    return { doc, semArte, paginas, porPagina: L.porPagina, colunas: L.cols, linhas: L.lins, orientacao: L.o };
   }
 
   window.PTCGPdf = { gerar, layout, PAPEIS, ESCALA_MIN, ESCALA_MAX };

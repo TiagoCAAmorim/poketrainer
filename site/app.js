@@ -12,7 +12,8 @@
 
   const I18N = {
     en: {
-      title: 'Proxy PDF', intro: 'Build a printable PDF of simplified cards: text only, black and white, no artwork, so it saves ink. Great for playtesting a deck. Everything runs in your browser; nothing is uploaded.',
+      title: 'Proxy PDF', intro: 'Build a printable PDF of simplified cards: black and white, text only or with a light, simplified artwork, so it saves ink. Great for playtesting a deck. Everything runs in your browser; nothing is uploaded.',
+      eco: 'Include simplified artwork (light gray)', eco_note: 'The card layout is redrawn in black and white; only the illustration is fetched from TCGdex by your browser and simplified. Needs an internet connection and takes a few seconds.', loading: (a, b) => `Fetching artwork… ${a}/${b}`, noart: n => `${n} card(s) had no artwork available and were printed text only.`,
       h_import: '1. Start from a deck', load: 'Load', paste: 'or paste a deck list (TCG Live / Limitless)', import: 'Import list',
       h_add: '2. Add cards', add_hint: 'Start typing a card name (English or Portuguese). ↑ ↓ to choose, Enter to add. Tip: "3 ultra" adds 3 copies.',
       search_ph: 'Card name…', h_cards: 'Cards to print', copies: 'copies', clear: 'Clear', empty: 'Pick a deck above or search for cards.',
@@ -23,11 +24,12 @@
       e_empty: 'Add some cards first.', e_paper: 'Invalid paper size.', e_scale: 'Card size must be between 20% and 150%.', e_fit: 'Cards at this size do not fit the paper with this margin.',
       done: (n, p) => `PDF generated: ${n} cards, ${p} page(s).`, lang_note: 'Standard format (marks H, I, J).',
       cafe: 'If this helped you, you can buy me a coffee:', kofi: 'Ko-fi', pix: 'Pix (Brazil)', copy: 'Copy', copied: 'Copied!', remove: 'remove',
-      disclaimer: 'PTCG Lab is a personal, non-profit project, not affiliated with The Pokémon Company, Nintendo, Creatures or Game Freak. Pokémon and the names and texts of the cards belong to their respective owners. The generated PDFs contain plain text only, with no artwork, and are meant for personal playtesting. Deck lists come from public tournament results on Limitless.',
+      disclaimer: 'PTCG Lab is a personal, non-profit project, not affiliated with The Pokémon Company, Nintendo, Creatures or Game Freak. Pokémon and the names and texts of the cards belong to their respective owners. The generated PDFs contain plain text or, if you choose it, a simplified version of the card illustration (fetched from TCGdex), and are meant for personal playtesting. Card artwork belongs to its respective owners. Deck lists come from public tournament results on Limitless.',
       deckof: (p, a) => `${p} — ${a}`, warn: 'incomplete'
     },
     pt: {
-      title: 'PDF de proxies', intro: 'Monte um PDF para imprimir com cartas simplificadas: só texto, preto e branco, sem arte, para gastar pouca tinta. Ótimo para testar um deck. Tudo roda no seu navegador; nada é enviado.',
+      title: 'PDF de proxies', intro: 'Monte um PDF para imprimir com cartas simplificadas: preto e branco, só texto ou com uma ilustração leve e simplificada, para gastar pouca tinta. Ótimo para testar um deck. Tudo roda no seu navegador; nada é enviado.',
+      eco: 'Incluir ilustração simplificada (cinza claro)', eco_note: 'O layout da carta é redesenhado em preto e branco; só a ilustração é buscada na TCGdex pelo seu navegador e simplificada. Precisa de internet e leva alguns segundos.', loading: (a, b) => `Buscando ilustrações… ${a}/${b}`, noart: n => `${n} carta(s) sem ilustração disponível saíram só com texto.`,
       h_import: '1. Comece por um deck', load: 'Carregar', paste: 'ou cole uma lista de deck (TCG Live / Limitless)', import: 'Importar lista',
       h_add: '2. Adicionar cartas', add_hint: 'Comece a digitar o nome da carta (inglês ou português). ↑ ↓ para escolher, Enter para adicionar. Dica: "3 ultra" adiciona 3 cópias.',
       search_ph: 'Nome da carta…', h_cards: 'Cartas a imprimir', copies: 'cópias', clear: 'Limpar', empty: 'Escolha um deck acima ou busque cartas.',
@@ -38,7 +40,7 @@
       e_empty: 'Adicione cartas primeiro.', e_paper: 'Tamanho de papel inválido.', e_scale: 'O tamanho da carta deve ficar entre 20% e 150%.', e_fit: 'A carta neste tamanho não cabe no papel com essa margem.',
       done: (n, p) => `PDF gerado: ${n} cartas, ${p} página(s).`, lang_note: 'Formato Padrão (marcas H, I, J).',
       cafe: 'Se isto te ajudou, você pode me pagar um café:', kofi: 'Ko-fi (exterior)', pix: 'Pix', copy: 'Copiar', copied: 'Copiado!', remove: 'remover',
-      disclaimer: 'O PTCG Lab é um projeto pessoal, sem fins lucrativos e sem nenhuma associação com a The Pokémon Company, a Nintendo, a Creatures ou a Game Freak. Pokémon e os nomes e textos das cartas pertencem aos seus respectivos donos. Os PDFs gerados têm apenas texto, sem arte, e servem para teste pessoal. As listas de deck vêm dos resultados públicos de torneios da Limitless.',
+      disclaimer: 'O PTCG Lab é um projeto pessoal, sem fins lucrativos e sem nenhuma associação com a The Pokémon Company, a Nintendo, a Creatures ou a Game Freak. Pokémon e os nomes e textos das cartas pertencem aos seus respectivos donos. Os PDFs gerados têm apenas texto ou, se você escolher, uma versão simplificada da ilustração da carta (buscada na TCGdex), e servem para teste pessoal. As ilustrações pertencem aos seus respectivos donos. As listas de deck vêm dos resultados públicos de torneios da Limitless.',
       deckof: (p, a) => `${p} — ${a}`, warn: 'incompleto'
     }
   };
@@ -229,7 +231,7 @@
   // ------------------------------------------------------------ PDF
   function opcoes() {
     const papel = $('papel').value === 'custom' ? $('custom').value : $('papel').value;
-    return { idioma: $('idioma').value, papel, escala: (parseFloat($('escala').value) || 0) / 100, margem: parseFloat($('margem').value) || 0, espaco: parseFloat($('espaco').value) || 0 };
+    return { idioma: $('idioma').value, economico: $('economico').checked, papel, escala: (parseFloat($('escala').value) || 0) / 100, margem: parseFloat($('margem').value) || 0, espaco: parseFloat($('espaco').value) || 0 };
   }
   const ERROS = { paper: 'e_paper', scale: 'e_scale', fit: 'e_fit', empty: 'e_empty' };
   function atualizarInfo() {
@@ -237,19 +239,24 @@
       $('info').textContent = t('pages')(Math.max(1, Math.ceil(n / L.porPagina)), L.porPagina, L.cols, L.lins); $('info').className = 'mut';
     } catch (e) { $('info').textContent = t(ERROS[e.message] || 'e_fit'); $('info').className = 'err'; }
   }
-  $('gerar').onclick = () => {
+  $('gerar').onclick = async () => {
+    const btn = $('gerar');
     try {
       const cartas = []; ordenadas().forEach(d => { for (let i = 0; i < lista.get(d.id); i++) cartas.push(d); });
-      const r = PTCGPdf.gerar(cartas, opcoes());
+      btn.disabled = true;
+      const r = await PTCGPdf.gerar(cartas, Object.assign(opcoes(), { progresso: (a, b) => msg('msgPdf', t('loading')(a, b), 'mut') }));
       r.doc.save('proxies.pdf');
-      msg('msgPdf', t('done')(cartas.length, r.paginas), 'ok');
+      msg('msgPdf', t('done')(cartas.length, r.paginas) + (r.semArte ? '\n' + t('noart')(r.semArte) : ''), 'ok');
     } catch (e) { msg('msgPdf', t(ERROS[e.message]) || String(e), 'err'); }
+    btn.disabled = false;
   };
   const PAPEIS = { A4: 'A4 (210 × 297 mm)', Office: 'Office / Ofício (216 × 330 mm)', A5: 'A5 (148 × 210 mm)', Letter: 'Letter (216 × 279 mm)', Legal: 'Legal (216 × 356 mm)', A3: 'A3 (297 × 420 mm)' };
   Object.entries(PAPEIS).forEach(([k, v]) => { const o = document.createElement('option'); o.value = k; o.textContent = v; $('papel').appendChild(o); });
   const oc = document.createElement('option'); oc.value = 'custom'; oc.textContent = '…'; $('papel').appendChild(oc);
   $('papel').onchange = () => { $('lblCustom').hidden = $('papel').value !== 'custom'; atualizarInfo(); };
   ['custom', 'escala', 'margem', 'espaco'].forEach(id => $(id).addEventListener('input', atualizarInfo));
+  try { $('economico').checked = store.get('ptcg_eco') === '1'; } catch (e) { /* ok */ }
+  $('economico').onchange = () => store.set('ptcg_eco', $('economico').checked ? '1' : '0');
   $('idioma').onchange = () => { idiomaPdfManual = $('idioma').value; store.set('ptcg_pdflang', idiomaPdfManual); };
 
   // ------------------------------------------------------------ idioma da página, café, aviso
