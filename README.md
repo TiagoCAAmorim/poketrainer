@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/banner.png" alt="PTCG Lab" width="100%">
+</p>
+
 # PTCG Lab — motor de Pokémon TCG (regras do Pokémon TCG Live) para testar e otimizar decks
 
 Formato: **Padrão TEF–30C** (marcas de regulamento H, I e J) — 2.083 cartas.
