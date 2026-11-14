@@ -5,7 +5,7 @@ As versões foram numeradas depois do fato, a partir do histórico do git (ainda
 
 ## [Não lançado]
 - **Página estática de PDF de cartas** (`site/`): gera no navegador, sem servidor, o PDF de cartas simplificadas em inglês ou
-  português, com busca por nome com sugestões, importação de lista e os 16 melhores decks de cada torneio da temporada 2026
+  português, com busca por nome com sugestões, importação de lista e os 16 melhores decks de cada torneio das temporadas 2026 e 2027 (atual)
   (`tools/baixar_temporada.py`, `tools/build_site.py`). Página em inglês e português, aviso legal e convite para um café via Pix.
 - **Atualizar o programa pela interface**: a página inicial avisa "Nova versão disponível" e o botão *Atualizar agora* baixa o
   código, as redes novas de `ias/` e os dados oficiais, e reinicia o servidor. Funciona em clone (git, só na `main`) e em

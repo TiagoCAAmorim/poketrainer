@@ -21,7 +21,8 @@ A página usa uma base própria (marcas G, H, I, J) porque os decks da temporada
 ```
 python tools/build_carddb.py --marks G,H,I,J --out .cache/cards_site.json          # base do site (inclui a marca G)
 python tools/build_pt_texts.py --cards .cache/cards_site.json --out .cache/cards_pt_site.json
-python tools/baixar_temporada.py     # top 16 de cada Regional/Internacional/Mundial da temporada → ptcg/data/temporada_2026.json
+python tools/baixar_temporada.py     # temporada 2026 → ptcg/data/temporada_2026.json (padrão: set/2025 a ago/2026)
+python tools/baixar_temporada.py --desde 2026-09-01 --ate 2027-08-31 --saida ptcg/data/temporada_2027.json   # temporada atual (rode de novo para pegar torneios novos)
 python tools/build_site.py           # cartas + decks → site/data/*.js
 python tests/test_site.py
 ```

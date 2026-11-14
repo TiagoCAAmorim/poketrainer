@@ -16,7 +16,7 @@
       search_ph: 'Card name…', h_cards: 'Cards to print', copies: 'copies', clear: 'Clear', empty: 'Pick a deck above or search for cards.',
       h_pdf: '3. PDF', pdf_lang: 'Card text language', paper: 'Paper size', custom: 'Custom size, width x height in mm', scale: 'Card size (% of real, 63 × 88 mm)',
       margin: 'Margin (mm)', gap: 'Gap (mm)', generate: 'Generate PDF', pages: (p, n, c, l) => `${p} page(s), ${n} cards per page (${c} × ${l})`,
-      g_p: 'Pokémon', g_t: 'Trainers', g_e: 'Energy', tourney: 'Season top 16 — pick an event', deckpick: 'Pick a deck', place: n => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th')),
+      g_p: 'Pokémon', g_t: 'Trainers', g_e: 'Energy', tourney: 'Top 16 of each event — pick one', season: (y, atual) => `${y} season${atual ? ' (current)' : ''}`, deckpick: 'Pick a deck', place: n => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th')),
       players: 'players', loaded: n => `Loaded ${n} cards.`, imported: n => `Imported ${n} cards.`, missing: l => `Not found / not in the current format:\n${l}`,
       e_empty: 'Add some cards first.', e_paper: 'Invalid paper size.', e_scale: 'Card size must be between 20% and 150%.', e_fit: 'Cards at this size do not fit the paper with this margin.',
       done: (n, p) => `PDF generated: ${n} cards, ${p} page(s).`, lang_note: 'Standard format (marks H, I, J).',
@@ -31,7 +31,7 @@
       search_ph: 'Nome da carta…', h_cards: 'Cartas a imprimir', copies: 'cópias', clear: 'Limpar', empty: 'Escolha um deck acima ou busque cartas.',
       h_pdf: '3. PDF', pdf_lang: 'Idioma do texto das cartas', paper: 'Tamanho do papel', custom: 'Tamanho personalizado, largura x altura em mm', scale: 'Tamanho das cartas (% do real, 63 × 88 mm)',
       margin: 'Margem (mm)', gap: 'Espaço (mm)', generate: 'Gerar PDF', pages: (p, n, c, l) => `${p} página(s), ${n} cartas por página (${c} × ${l})`,
-      g_p: 'Pokémon', g_t: 'Treinadores', g_e: 'Energias', tourney: 'Top 16 da temporada — escolha um evento', deckpick: 'Escolha um deck', place: n => n + 'º',
+      g_p: 'Pokémon', g_t: 'Treinadores', g_e: 'Energias', tourney: 'Top 16 de cada evento — escolha um', season: (y, atual) => `Temporada ${y}${atual ? ' (atual)' : ''}`, deckpick: 'Escolha um deck', place: n => n + 'º',
       players: 'jogadores', loaded: n => `${n} cartas carregadas.`, imported: n => `${n} cartas importadas.`, missing: l => `Não encontradas / fora do formato atual:\n${l}`,
       e_empty: 'Adicione cartas primeiro.', e_paper: 'Tamanho de papel inválido.', e_scale: 'O tamanho da carta deve ficar entre 20% e 150%.', e_fit: 'A carta neste tamanho não cabe no papel com essa margem.',
       done: (n, p) => `PDF gerado: ${n} cartas, ${p} página(s).`, lang_note: 'Formato Padrão (marcas H, I, J).',
@@ -193,7 +193,11 @@
     const s = $('torneio'), antes = s.value;
     s.textContent = '';
     const o0 = document.createElement('option'); o0.value = ''; o0.textContent = t('tourney'); s.appendChild(o0);
-    TORNEIOS.forEach((tn, i) => { const o = document.createElement('option'); o.value = i; o.textContent = `${tn.data} — ${tn.nome}` + (tn.jogadores ? ` (${tn.jogadores} ${t('players')})` : ''); s.appendChild(o); });
+    let grupo = null, temp = null;
+    TORNEIOS.forEach((tn, i) => {
+      if (tn.temporada !== temp) { temp = tn.temporada; grupo = document.createElement('optgroup'); grupo.label = t('season')(temp, temp === TORNEIOS[0].temporada); s.appendChild(grupo); }
+      const o = document.createElement('option'); o.value = i; o.textContent = `${tn.data} — ${tn.nome}` + (tn.jogadores ? ` (${tn.jogadores} ${t('players')})` : ''); grupo.appendChild(o);
+    });
     s.value = antes; preencherDecks();
   }
   function preencherDecks() {

@@ -9,7 +9,7 @@ A página usa uma base PRÓPRIA (marcas G, H, I, J), maior que a do motor (H, I,
 2026 ainda usam cartas da marca G. A base do motor não é tocada.
 
 - cartas.js : cartas em formato compacto, com textos em inglês e português, impressões (SET-NUM → id) e nomes;
-- decks.js  : top 16 dos torneios da temporada (ptcg/data/temporada_2026.json), com as cartas resolvidas para ids.
+- decks.js  : top 16 dos torneios das temporadas (ptcg/data/temporada_*.json), com as cartas resolvidas para ids.
               Decks com carta desconhecida entram marcados com `faltam`.
 """
 import argparse
@@ -23,7 +23,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(RAIZ))
 
 SAIDA = RAIZ / 'site' / 'data'
-TEMPORADA = RAIZ / 'ptcg' / 'data' / 'temporada_2026.json'
+TEMPORADAS = sorted((RAIZ / 'ptcg' / 'data').glob('temporada_*.json'))   # uma por temporada (baixar_temporada.py)
 ERRATA = RAIZ / 'ptcg' / 'data' / 'errata.json'
 KIND = {'pokemon': 'p', 'trainer': 't', 'energy': 'e'}
 
@@ -113,10 +113,9 @@ def main():
     escrever('cartas.js', 'DADOS_CARTAS', {'cartas': cartas, 'impressoes': impressoes, 'nomes': nomes})
     print(f'cartas.js: {len(cartas)} cartas, {len(impressoes)} impressões')
 
-    if not TEMPORADA.exists():
-        print('sem temporada_2026.json (rode tools/baixar_temporada.py)')
+    if not TEMPORADAS:
+        print('sem temporada_*.json (rode tools/baixar_temporada.py)')
         return
-    temp = json.loads(TEMPORADA.read_text(encoding='utf-8'))
     por_nome = {norm(n): i for n, i in nomes.items()}
     for en in ('Grass', 'Fire', 'Water', 'Lightning', 'Psychic', 'Fighting', 'Darkness', 'Metal'):
         if f'Basic {en} Energy' in nomes:
@@ -131,7 +130,9 @@ def main():
         return por_nome.get(norm(nome))
 
     torneios, faltam_total = [], Counter()
-    for t in temp['torneios']:
+    todos = [(tp['ate'][:4], t) for tp in map(lambda f: json.loads(f.read_text(encoding='utf-8')), TEMPORADAS)
+             for t in tp['torneios']]
+    for temporada, t in todos:
         decks = []
         for dk in t['decks']:
             cont, faltam = Counter(), []
@@ -144,9 +145,9 @@ def main():
                     faltam_total[nome] += q
             decks.append({'lugar': dk['place'], 'jogador': dk['player'], 'arq': dk['archetype'],
                           'cartas': [[c, n] for c, n in cont.items()], **({'faltam': faltam} if faltam else {})})
-        torneios.append({'id': t['id'], 'nome': t['name'], 'data': t['date'], 'tipo': t['type'], 'jogadores': t['players'],
+        torneios.append({'temporada': temporada, 'id': t['id'], 'nome': t['name'], 'data': t['date'], 'tipo': t['type'], 'jogadores': t['players'],
                          'decks': decks})
-    escrever('decks.js', 'DADOS_DECKS', {'desde': temp['desde'], 'ate': temp['ate'], 'torneios': torneios})
+    escrever('decks.js', 'DADOS_DECKS', {'torneios': torneios})
     n = sum(len(t['decks']) for t in torneios)
     comfalta = sum(1 for t in torneios for d in t['decks'] if d.get('faltam'))
     print(f'decks.js: {len(torneios)} torneios, {n} decks ({comfalta} com cartas fora da base)')
