@@ -103,6 +103,32 @@ def test_rollout_and_ppo_step():
         assert (data.d['logp'] <= 0).all()
 
 
+def test_niveis_elo_e_exportacao():
+    """Elo por máxima verossimilhança recupera as diferenças; níveis de ias/ carregam e jogam."""
+    from ptcg.ai import niveis
+    regs = [{'tipo': 'avaliacao', 'checkpoint': 'a.pt', 'oponente': 'heuristic', 'vitorias': 0.76, 'partidas': 2000},
+            {'tipo': 'avaliacao', 'checkpoint': 'b.pt', 'oponente': 'model:a.pt', 'vitorias': 0.64, 'partidas': 1000}]
+    r = niveis.elo(regs)
+    assert r['heuristic'] == 0 and abs(r['a.pt'] - 200) < 3 and abs(r['b.pt'] - 300) < 3, r
+    assert niveis.carregar()[0]['nivel'] == 0 and niveis.spec(0) == 'heuristic'
+    if torch is None:
+        return
+    from ptcg.agents import make_agent
+    from ptcg.ai.model import PolicyValueNet, load_checkpoint, save_checkpoint
+    with tempfile.TemporaryDirectory() as tmp:
+        net = PolicyValueNet(hidden=32, emb=8)
+        src, dst = os.path.join(tmp, 'net.pt'), os.path.join(tmp, 'compacta.pt')
+        save_checkpoint(src, net)
+        niveis.exportar(src, __import__('pathlib').Path(dst))
+        back, extra = load_checkpoint(dst)
+        assert extra['origem'] == src
+        assert max((p - q).abs().max().item() for p, q in zip(net.parameters(), back.parameters())) < 1e-2
+    for n in niveis.carregar()[1:2]:            # o primeiro nível com rede joga uma decisão
+        ag = make_agent(f"nivel:{n['nivel']}")
+        g = Game(load_deck(DECKS[0]).cards, load_deck(DECKS[1]).cards, seed=1)
+        assert 0 <= ag.act(g, g.prompt) < len(g.prompt.options)
+
+
 if __name__ == '__main__':
     import traceback
     random.seed(0)

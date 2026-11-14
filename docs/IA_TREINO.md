@@ -17,7 +17,7 @@ treino/avaliação: `logs/ia/treinos.jsonl` (`python ia.py historico`) e, com gr
 ## Comandos
 
 Pré-requisito: PyTorch instalado (`pip install torch`; com GPU NVIDIA, a versão CUDA). Conferir com
-`python tests/test_ai.py` (3 linhas `ok`).
+`python tests/test_ai.py` (4 linhas `ok`).
 
 | Passo | Comando | Tempo (32 núcleos + RTX 4070 Ti SUPER) | Gera |
 |---|---|---|---|
@@ -30,6 +30,26 @@ Pré-requisito: PyTorch instalado (`pip install torch`; com GPU NVIDIA, a versã
 | 7. Usar | `python simulate.py deck1 deck2 --agent model:checkpoints/best.pt` | — | também aparece na interface como **Rede: checkpoints/best.pt** |
 
 `dados/` e `checkpoints/` ficam fora do git; `logs/ia/treinos.jsonl` é versionado (é o diário dos treinos).
+
+### Níveis de dificuldade (`ias/`)
+
+As redes que deram certo ficam guardadas em `ias/` (versionado; pesos em float16, ~4,6 MB cada), uma por nível:
+**0 = heurística … 9 = melhor rede até agora**. Na interface aparecem como "IA nível N · faixa — nome (Elo …)";
+no código, `make_agent('nivel:N')`. Faixas: 0–2 fácil, 3–5 médio, 6–7 difícil, 8–9 muito difícil.
+
+O critério é o **Elo relativo à heurística**, ajustado por máxima verossimilhança a *todas* as avaliações de
+`logs/ia/treinos.jsonl` (contra a heurística e confrontos diretos). +100 ≈ 64% de vitórias, +200 ≈ 76%, +300 ≈ 85%.
+`ias/niveis.json` guarda nível, origem, Elo e vitórias; `ias/confrontos.md` (gerado) mostra os confrontos entre
+níveis ao lado do que o Elo prevê — é onde revisar a classificação.
+
+```
+python ia.py niveis                        # tabela dos níveis (recalcula Elo e confrontos.md)
+python ia.py elo                           # Elo de toda rede já avaliada (candidatas a nível)
+python ia.py nivel 9 checkpoints/X/latest.pt --nome X --descricao "..."   # guarda/substitui um nível
+python ia.py escada --partidas 1000        # cada nível contra o anterior (~1 min cada); entra no Elo
+```
+Ao trocar redes de nível, mantenha o Elo crescendo com o nível e, de preferência, ≥ ~25 pontos entre vizinhos
+(55% no confronto direto); avalie a rede nova com ≥ 1000 partidas antes (`imitar.py avaliar ... --oponente model:...`).
 
 ### Opções úteis
 - Decks: padrão = todos de `decks/` (inclui `decks/limitless/`). `--pasta tests` usa só os 12 fixos;
@@ -180,5 +200,6 @@ https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | `ptcg/ai/train.py` | PPO: rollouts em processos, GAE, atualização, avaliações, registro |
 | `ptcg/ai/wb.py` | registro no W&B (no-op se desligado/indisponível) |
 | `ptcg/ai/agent.py` | `TorchAgent` — usa a rede para jogar (`make_agent('model:...')`) |
+| `ptcg/ai/niveis.py`, `ias/` | níveis de dificuldade: redes guardadas, Elo (Bradley–Terry), `make_agent('nivel:N')` |
 | `imitar.py`, `train.py`, `ia.py` | linhas de comando |
-| `tests/test_ai.py` | formato compacto = `collate`, imitação, rollout + passo PPO |
+| `tests/test_ai.py` | formato compacto = `collate`, imitação, rollout + passo PPO, níveis/Elo |

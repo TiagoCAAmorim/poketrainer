@@ -446,7 +446,10 @@ AGENTS = {'random': RandomAgent, 'heuristic': HeuristicAgent}
 
 
 def make_agent(spec: str, seed=None) -> Agent:
-    """'random' | 'heuristic' | 'heuristic:{json com pesos}' | 'model:caminho/checkpoint.pt'"""
+    """'random' | 'heuristic' | 'heuristic:{json com pesos}' | 'model:caminho/checkpoint.pt' | 'nivel:N' (ias/)"""
+    if spec.startswith('nivel:'):
+        from .ai.niveis import spec as spec_nivel
+        spec = spec_nivel(int(spec.split(':', 1)[1]))
     if spec.startswith('heuristic:'):
         params = dict(DEFAULT_PARAMS)
         params.update(json.loads(spec.split(':', 1)[1]))

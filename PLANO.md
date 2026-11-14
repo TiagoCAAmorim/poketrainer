@@ -85,6 +85,7 @@ Atualizado em: 2026-10-18
 - ✅ Reproduzir logs do TCG Live jogada a jogada
 - ✅ Consultor de IA para o humano (sugestões da heurística/rede, trocável na partida)
 - ✅ Imagens das cartas: `baixar_imagens.py` (Limitless como 3ª fonte, opção `--manual`; `imagens/` fora do git)
+- ✅ Imprimir cartas em PDF (`imprimir_cartas.py`, web `/imprimir`): parte de um deck, +/− cartas, escala em % do tamanho real, papel A4 (padrão)/Office/A5/…, versão simplificada P&B sem arte
 - ⬜ Animações e demais melhorias visuais — baixa prioridade por enquanto
 
 ## Fase 8 — IA que aprende 🟡
@@ -105,6 +106,8 @@ Guia: `docs/IA_TREINO.md` · diário dos experimentos: `docs/IA_PROGRESSO.md` ·
   lr e pool diverso não mudaram o resultado. Detalhes em `docs/IA_PROGRESSO.md`.
 - ✅ Ferramentas de treino: métricas extras no W&B (variância explicada, `grad_norm`, vitórias contra o pool…),
   confronto direto entre redes (`imitar.py avaliar --oponente model:x.pt`), `train.py --lr-final` e `--pool-inicial`
+- ✅ Níveis de dificuldade 0–9 (`ias/`, versionado): 0 = heurística, redes guardadas em float16, critério = Elo
+  relativo à heurística ajustado a todas as avaliações; interface lista "IA nível N"; `python ia.py niveis|nivel|elo|escada`.
 - ⬜ Continuar o PPO com lote grande enquanto o confronto direto contra a versão anterior passar de 50%
 - ⬜ Usar a rede treinada no `simulate.py` / `optimize.py` (`--agent model:checkpoints/best.pt`) — a ligação já existe
 

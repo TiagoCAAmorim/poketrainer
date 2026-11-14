@@ -2,6 +2,10 @@
 
     python ia.py historico [--ultimos 20] [--tipo ppo_avaliacao]     tudo que foi gerado/treinado/avaliado (logs/ia/treinos.jsonl)
     python ia.py acompanhar [checkpoints/train_log.jsonl] [--seguir]  curva da execução de PPO mais recente
+    python ia.py niveis                                               níveis de dificuldade (0 = heurística … 9) em ias/
+    python ia.py nivel 9 checkpoints/ppo5/t4/latest.pt --nome ppo5    guarda a rede em ias/ como nível 9
+    python ia.py elo                                                  Elo (heurística = 0) de toda rede já avaliada
+    python ia.py escada [--partidas 1000]                             confronto direto de cada nível contra o anterior
 """
 import argparse
 import json
@@ -76,6 +80,46 @@ def acompanhar(path, a_cada=None):
         print(f'⚠ {a}')
 
 
+def mostrar_niveis():
+    from ptcg.ai.niveis import carregar, faixa
+    print(f"{'nível':>5}  {'faixa':<13} {'Elo':>5} {'× heur.':>8}  {'nome':<12} origem")
+    for n in carregar():
+        elo = n.get('elo')
+        vs = n.get('vs_heuristica')
+        print(f"{n['nivel']:>5}  {faixa(n['nivel']):<13} {'' if elo is None else f'{elo:+d}':>5} "
+              f"{'' if vs is None else f'{vs:.1%}':>8}  {n['nome']:<12} {n.get('origem', '')}")
+        if n.get('descricao'):
+            print(f"{'':>8}{n['descricao']}")
+    print('\nElo relativo à heurística, ajustado a todas as avaliações de logs/ia/treinos.jsonl '
+          '(+100 ≈ 64% de vitórias, +200 ≈ 76%, +300 ≈ 85%). Na interface: "IA nível N"; no código: make_agent("nivel:N").')
+
+
+def mostrar_elo():
+    from ptcg.ai.niveis import confrontos, elo
+    r = elo()
+    n_jogos = {}
+    for a, b, _, p in confrontos():
+        n_jogos[a] = n_jogos.get(a, 0) + p
+        n_jogos[b] = n_jogos.get(b, 0) + p
+    for nome, v in sorted(r.items(), key=lambda x: -x[1]):
+        print(f'{v:+7.0f}  ({n_jogos[nome]:>6} partidas)  {nome}')
+
+
+def escada(partidas=1000, seed=777):
+    """Cada nível contra o anterior (registrado em treinos.jsonl, entra no Elo)."""
+    import subprocess
+    from ptcg.ai.niveis import carregar, recalcular
+    niveis = carregar()
+    for ant, n in zip(niveis, niveis[1:]):
+        op = 'heuristic' if not ant.get('arquivo') else f"model:{ant['arquivo']}"
+        print(f"nível {n['nivel']} × nível {ant['nivel']} ({partidas} partidas)...", flush=True)
+        subprocess.run([sys.executable, 'imitar.py', 'avaliar', n['arquivo'], '--oponente', op, '--partidas',
+                        str(partidas), '--seed', str(seed), '--nome', f"escada_{n['nivel']}_vs_{ant['nivel']}"],
+                       check=True, stdout=subprocess.DEVNULL)
+    recalcular()
+    mostrar_niveis()
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest='cmd', required=True)
@@ -87,10 +131,31 @@ def main(argv=None):
     p.add_argument('arquivo', nargs='?', default='checkpoints/train_log.jsonl')
     p.add_argument('--a-cada', type=int, default=None, help='mostrar uma linha a cada N iterações')
     p.add_argument('--seguir', action='store_true', help='atualiza a cada 60 s (Ctrl+C para sair)')
+    sub.add_parser('niveis')
+    p = sub.add_parser('nivel')
+    p.add_argument('nivel', type=int)
+    p.add_argument('checkpoint')
+    p.add_argument('--nome', required=True)
+    p.add_argument('--descricao', default='')
+    sub.add_parser('elo')
+    p = sub.add_parser('escada')
+    p.add_argument('--partidas', type=int, default=1000)
     a = ap.parse_args(argv)
     sys.stdout.reconfigure(line_buffering=True)
     if a.cmd == 'historico':
         historico(a.ultimos, a.tipo)
+    elif a.cmd == 'niveis':
+        from ptcg.ai.niveis import recalcular
+        recalcular()
+        mostrar_niveis()
+    elif a.cmd == 'nivel':
+        from ptcg.ai.niveis import definir
+        definir(a.nivel, a.checkpoint, a.nome, a.descricao)
+        mostrar_niveis()
+    elif a.cmd == 'elo':
+        mostrar_elo()
+    elif a.cmd == 'escada':
+        escada(a.partidas)
     elif a.cmd == 'acompanhar':
         while True:
             acompanhar(a.arquivo, a.a_cada)

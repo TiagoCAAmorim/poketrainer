@@ -1,0 +1,71 @@
+[
+ {
+  "nivel": 0,
+  "nome": "heurística",
+  "arquivo": null,
+  "origem": "heuristic",
+  "elo": 0,
+  "vs_heuristica": 0.5,
+  "descricao": "Regras escritas à mão (ptcg/agents.py); a referência do Elo."
+ },
+ {
+  "nivel": 4,
+  "nome": "ppo1",
+  "arquivo": "ias/nivel_4.pt",
+  "origem": "checkpoints/ppo1/latest.pt",
+  "descricao": "Primeiro PPO a partir da imitação (300 it × 240 partidas).",
+  "elo": 175,
+  "vs_heuristica": 0.737,
+  "partidas_vs_heuristica": 3000
+ },
+ {
+  "nivel": 5,
+  "nome": "sweep-g480",
+  "arquivo": "ias/nivel_5.pt",
+  "origem": "checkpoints/sweep1/g480/latest.pt",
+  "descricao": "ppo1 + 60 it com 480 partidas/it (varredura de hiperparâmetros).",
+  "elo": 215,
+  "vs_heuristica": 0.775,
+  "partidas_vs_heuristica": 2000
+ },
+ {
+  "nivel": 6,
+  "nome": "ppo2",
+  "arquivo": "ias/nivel_6.pt",
+  "origem": "checkpoints/ppo2/latest.pt",
+  "descricao": "ppo1 + 400 it (padrões).",
+  "elo": 236,
+  "vs_heuristica": 0.797,
+  "partidas_vs_heuristica": 2000
+ },
+ {
+  "nivel": 7,
+  "nome": "lote960",
+  "arquivo": "ias/nivel_7.pt",
+  "origem": "checkpoints/plato/lote960/latest.pt",
+  "descricao": "ppo2 → lr_decai → ppo3/t1 (platô) + 60 it com 960 partidas/it.",
+  "elo": 282,
+  "vs_heuristica": 0.848,
+  "partidas_vs_heuristica": 1000
+ },
+ {
+  "nivel": 8,
+  "nome": "ppo4-t2",
+  "arquivo": "ias/nivel_8.pt",
+  "origem": "checkpoints/ppo4/t2/latest.pt",
+  "descricao": "lote960 + 200 it com 960 partidas/it.",
+  "elo": 305,
+  "vs_heuristica": 0.85,
+  "partidas_vs_heuristica": 2000
+ },
+ {
+  "nivel": 9,
+  "nome": "ppo4-t3",
+  "arquivo": "ias/nivel_9.pt",
+  "origem": "checkpoints/ppo4/t3/latest.pt",
+  "descricao": "lote960 + 300 it com 960 partidas/it (melhor até agora).",
+  "elo": 311,
+  "vs_heuristica": 0.851,
+  "partidas_vs_heuristica": 2000
+ }
+]

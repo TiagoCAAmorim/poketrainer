@@ -30,8 +30,20 @@ S = {'game': None, 'ctrl': ['human', 'heuristic'], 'agents': [None, None], 'deck
 
 
 def controllers():
-    out = [{'id': 'human', 'label': 'Humano'}, {'id': 'heuristic', 'label': 'IA heurística'},
-           {'id': 'random', 'label': 'Aleatório'}]
+    out = [{'id': 'human', 'label': 'Humano'}]
+    try:                                    # níveis de dificuldade (ias/niveis.json): 0 = heurística … 9
+        from ptcg.ai.niveis import carregar, rotulo
+        niveis = carregar()
+    except Exception:                       # noqa: BLE001  (sem torch: só a heurística)
+        niveis = []
+    for n in niveis:
+        if n['nivel'] == 0:
+            out.append({'id': 'heuristic', 'label': rotulo(n)})
+        elif os.path.exists(os.path.join(ROOT, n['arquivo'])):
+            out.append({'id': f"nivel:{n['nivel']}", 'label': rotulo(n)})
+    if not niveis:
+        out.append({'id': 'heuristic', 'label': 'IA heurística'})
+    out.append({'id': 'random', 'label': 'Aleatório'})
     for p in sorted(glob.glob(os.path.join(ROOT, 'checkpoints', '*.pt'))):
         rel = os.path.relpath(p, ROOT)
         out.append({'id': f'model:{rel}', 'label': f'Rede: {rel}'})
@@ -96,7 +108,8 @@ def new_game(body):
     decks = [load_deck(body['deck0']), load_deck(body['deck1'])]
     names = []
     for i in (0, 1):
-        label = {'human': 'Você', 'heuristic': 'Heurística', 'random': 'Aleatório'}.get(ctrl[i], 'Rede')
+        label = {'human': 'Você', 'heuristic': 'Heurística', 'random': 'Aleatório'}.get(
+            ctrl[i], f'IA nível {ctrl[i][6:]}' if ctrl[i].startswith('nivel:') else 'Rede')
         short = decks[i].meta.get('archetype') or decks[i].name
         names.append(f'{label} ({short})' if ctrl.count(ctrl[i]) == 1 else f'J{i + 1} ({short})')
     S['game'] = Game(decks[0].cards, decks[1].cards, seed=seed, names=names)
