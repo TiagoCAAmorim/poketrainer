@@ -3,6 +3,8 @@
   'use strict';
   // ⚙️ Configuração: troque pela sua chave Pix (deixe '' para esconder o convite do café)
   const PIX_KEY = 'bcd8d244-8aeb-4003-99ca-d8ba4f5f5952';
+  // Ko-fi (gorjetas internacionais): cole o endereço da sua página, ex. 'https://ko-fi.com/seunome' ('' esconde o botão)
+  const KOFI_URL = 'https://ko-fi.com/tiagoamorim';
 
   const BASE = window.DADOS_CARTAS, CARTAS = BASE.cartas;
   const TEMPORADA = window.DADOS_DECKS || { torneios: [] };
@@ -20,7 +22,7 @@
       players: 'players', loaded: n => `Loaded ${n} cards.`, imported: n => `Imported ${n} cards.`, missing: l => `Not found / not in the current format:\n${l}`,
       e_empty: 'Add some cards first.', e_paper: 'Invalid paper size.', e_scale: 'Card size must be between 20% and 150%.', e_fit: 'Cards at this size do not fit the paper with this margin.',
       done: (n, p) => `PDF generated: ${n} cards, ${p} page(s).`, lang_note: 'Standard format (marks H, I, J).',
-      cafe: 'If this helped you, you can buy me a coffee via Pix:', copy: 'Copy', copied: 'Copied!', remove: 'remove',
+      cafe: 'If this helped you, you can buy me a coffee:', kofi: 'Ko-fi', pix: 'Pix (Brazil)', copy: 'Copy', copied: 'Copied!', remove: 'remove',
       disclaimer: 'PTCG Lab is a personal, non-profit project, not affiliated with The Pokémon Company, Nintendo, Creatures or Game Freak. Pokémon and the names and texts of the cards belong to their respective owners. The generated PDFs contain plain text only, with no artwork, and are meant for personal playtesting. Deck lists come from public tournament results on Limitless.',
       deckof: (p, a) => `${p} — ${a}`, warn: 'incomplete'
     },
@@ -35,7 +37,7 @@
       players: 'jogadores', loaded: n => `${n} cartas carregadas.`, imported: n => `${n} cartas importadas.`, missing: l => `Não encontradas / fora do formato atual:\n${l}`,
       e_empty: 'Adicione cartas primeiro.', e_paper: 'Tamanho de papel inválido.', e_scale: 'O tamanho da carta deve ficar entre 20% e 150%.', e_fit: 'A carta neste tamanho não cabe no papel com essa margem.',
       done: (n, p) => `PDF gerado: ${n} cartas, ${p} página(s).`, lang_note: 'Formato Padrão (marcas H, I, J).',
-      cafe: 'Se isto te ajudou, você pode me pagar um café via Pix:', copy: 'Copiar', copied: 'Copiado!', remove: 'remover',
+      cafe: 'Se isto te ajudou, você pode me pagar um café:', kofi: 'Ko-fi (exterior)', pix: 'Pix', copy: 'Copiar', copied: 'Copiado!', remove: 'remover',
       disclaimer: 'O PTCG Lab é um projeto pessoal, sem fins lucrativos e sem nenhuma associação com a The Pokémon Company, a Nintendo, a Creatures ou a Game Freak. Pokémon e os nomes e textos das cartas pertencem aos seus respectivos donos. Os PDFs gerados têm apenas texto, sem arte, e servem para teste pessoal. As listas de deck vêm dos resultados públicos de torneios da Limitless.',
       deckof: (p, a) => `${p} — ${a}`, warn: 'incompleto'
     }
@@ -259,13 +261,25 @@
     $('idioma').value = idiomaPdfManual || lang;
     $('disclaimer').textContent = t('disclaimer');
     const cafe = $('cafe'); cafe.textContent = '';
-    if (PIX_KEY) {
+    if (PIX_KEY || KOFI_URL) {
       const w = document.createElement('span'); w.className = 'pix';
       const txt = document.createElement('span'); txt.textContent = '☕ ' + t('cafe');
-      const code = document.createElement('code'); code.textContent = PIX_KEY;
-      const b = document.createElement('button'); b.className = 'btn'; b.style.padding = '2px 10px'; b.textContent = t('copy');
-      b.onclick = () => { (navigator.clipboard ? navigator.clipboard.writeText(PIX_KEY) : Promise.reject()).then(() => { b.textContent = t('copied'); setTimeout(() => { b.textContent = t('copy'); }, 1500); }, () => { const r = document.createRange(); r.selectNodeContents(code); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }); };
-      w.append(txt, code, b); cafe.appendChild(w);
+      w.appendChild(txt);
+      const kofi = () => {
+        if (!KOFI_URL) return;
+        const a = document.createElement('a'); a.className = 'btn'; a.style.padding = '2px 10px'; a.style.textDecoration = 'none';
+        a.href = KOFI_URL; a.target = '_blank'; a.rel = 'noopener'; a.textContent = t('kofi'); w.appendChild(a);
+      };
+      const pix = () => {
+        if (!PIX_KEY) return;
+        const rot = document.createElement('span'); rot.className = 'mut'; rot.textContent = t('pix') + ':';
+        const code = document.createElement('code'); code.textContent = PIX_KEY;
+        const b = document.createElement('button'); b.className = 'btn'; b.style.padding = '2px 10px'; b.textContent = t('copy');
+        b.onclick = () => { (navigator.clipboard ? navigator.clipboard.writeText(PIX_KEY) : Promise.reject()).then(() => { b.textContent = t('copied'); setTimeout(() => { b.textContent = t('copy'); }, 1500); }, () => { const r = document.createRange(); r.selectNodeContents(code); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }); };
+        w.append(rot, code, b);
+      };
+      (lang === 'pt' ? [pix, kofi] : [kofi, pix]).forEach(f => f());   // Pix primeiro em português; Ko-fi primeiro em inglês
+      cafe.appendChild(w);
     }
     document.title = 'PTCG Lab — ' + t('title');
     preencherTorneios(); render();
