@@ -79,7 +79,7 @@
   "arquivo": "ias/ppo2.pt",
   "origem": "checkpoints/ppo2/latest.pt",
   "descricao": "ppo1 + 400 it (padrões).",
-  "elo": 241,
+  "elo": 240,
   "vs_heuristica": 0.797,
   "partidas_vs_heuristica": 2000,
   "nomes_antigos": [
@@ -108,7 +108,7 @@
   "nomes_antigos": [
    "ias/nivel_9.pt"
   ],
-  "elo": 310,
+  "elo": 308,
   "vs_heuristica": 0.851,
   "partidas_vs_heuristica": 2000
  },
@@ -118,7 +118,7 @@
   "arquivo": "ias/ppo6-lrdec.pt",
   "origem": "checkpoints/ppo6/lrdec/latest.pt",
   "descricao": "ppo5/t4 + 50 it com 1920 partidas/it e lr 5e-5 → 1e-5 (melhor até agora).",
-  "elo": 356,
+  "elo": 358,
   "vs_heuristica": 0.876,
   "partidas_vs_heuristica": 2000
  }

@@ -184,4 +184,10 @@ na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).
   platô com lr 1e-4, baixar a lr destrava mais um degrau (a lr alta ficava "pulando" em volta do ótimo). Virou o
   nível 9 (Elo +356); `ppo5-t4` foi para `ias/antigas.json`.
 
-**Próximo**: em andamento `ppo6/lrdec2` = segunda consolidação (lr 3e-5 → 5e-6) a partir de `ppo6/lrdec`.
+- **`ppo6/lrdec2`** (mais 50 it, lr 3e-5 → 5e-6): × `ppo6/lrdec` **50,4%** ±1,1% (2000 partidas, empate),
+  × `ppo4/t3` 59,5%, heurística 88,8% ±0,7%; Elo +364 contra +358 (ruído). A segunda consolidação já não rende:
+  o PPO com estes adversários estacionou em ~+360. O nível 9 continua com `ppo6-lrdec`.
+
+**Próximo**: em andamento `liga/l1` = adversários mais fortes (5% heurística, 45% pool com `ppo6-lrdec`, `ppo5-t4`,
+`ppo4-t3` fixos + snapshots, 50% self-play), lr 3e-5, a partir de `ppo6/lrdec2`. Se também empatar, o próximo
+passo é estrutural: observação (`encode.py`), rede maior com mais dados, ou busca na hora de jogar.
