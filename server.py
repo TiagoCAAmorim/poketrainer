@@ -8,6 +8,7 @@ import glob
 import json
 import os
 import threading
+import time
 import traceback
 import webbrowser
 from collections import Counter
@@ -18,6 +19,7 @@ from ptcg.agents import make_agent
 from ptcg import deckbuilder as DB
 from ptcg import explorer as EX
 from ptcg import imprimir as IMP
+from ptcg import testdeck as TD
 from ptcg.carddb import db
 from ptcg.decks import DECK_DIR, deck_to_text, list_decks, load_deck, parse_decklist, support_report, validate
 from ptcg.engine import Game
@@ -28,6 +30,67 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 WEB = os.path.join(ROOT, 'web')
 LOCK = threading.Lock()
 S = {'game': None, 'ctrl': ['human', 'heuristic'], 'agents': [None, None], 'decks': [None, None], 'advisor': None}
+
+
+# ---- teste de deck (ptcg/testdeck.py): um trabalho por vez, em thread; a página consulta o andamento
+JOB = {'id': 0, 'estado': 'ocioso'}
+JOB_LOCK = threading.Lock()
+
+
+def _job_prog(rot, feitos, total):
+    JOB.update(rotulo=rot, feitos=feitos, total=total)
+
+
+def _job_run(jid, body):
+    try:
+        ops, _ = TD.listar_oponentes(body['deck'], body.get('contra') or None,
+                                     int(body['maximo']) if body.get('maximo') else None,
+                                     int(body.get('seed') or 0), body.get('oponentes') or None)
+        cand = [x for x in (body.get('candidatas') or [])]
+        with TD.Pool(int(body['workers']) if body.get('workers') else None, body.get('agente') or 'heuristic') as pool:
+            res = TD.testar_deck(body['deck'], int(body.get('partidas') or 20), body.get('contra') or None,
+                                 None, int(body.get('seed') or 0), progresso=_job_prog, pool=pool, oponentes=ops)
+            if JOB['id'] != jid:
+                return
+            JOB.update(resultado=res, estado='sugerindo' if body.get('sugerir') else 'pronto')
+            registrar('teste_deck', f'{body["deck"]}: {res["jogos"]} partidas, {100 * res["winrate"]:.1f}% de vitórias '
+                                    '(interface)', oponentes=res['n_oponentes'])
+            if body.get('sugerir'):
+                JOB.update(feitos=0, total=1)
+                sug = TD.sugerir_trocas(body['deck'], res, rodadas=int(body.get('rodadas') or 3),
+                                        candidatos=int(body.get('candidatos') or 24), progresso=_job_prog,
+                                        pool=pool, travadas=body.get('travar') or [], candidatas=cand or None,
+                                        oponentes=ops)
+                JOB.update(sugestoes=sug, estado='pronto')
+    except Exception as e:      # noqa: BLE001
+        traceback.print_exc()
+        JOB.update(estado='erro', erro=f'{type(e).__name__}: {e}')
+
+
+def job_start(body):
+    with JOB_LOCK:
+        if JOB['estado'] in ('testando', 'sugerindo'):
+            raise ValueError('Já existe um teste em andamento.')
+        if body.get('candidatas'):
+            TD.ids_de_nomes(body['candidatas'])       # ValueError → 400 antes de gastar tempo
+        if body.get('oponentes') is not None and not body['oponentes']:
+            raise ValueError('Nenhum oponente selecionado.')
+        jid = JOB['id'] + 1
+        JOB.clear()
+        JOB.update(id=jid, estado='testando', deck=body['deck'], feitos=0, total=1, rotulo='preparando', t0=time.time())
+    threading.Thread(target=_job_run, args=(jid, body), daemon=True).start()
+    return {'id': jid}
+
+
+def job_status():
+    out = {k: v for k, v in JOB.items() if k not in ('resultado', 'sugestoes')}
+    if 'resultado' in JOB:
+        out['resultado'] = JOB['resultado']
+    if 'sugestoes' in JOB:
+        out['sugestoes'] = JOB['sugestoes']
+    if 't0' in out:
+        out['decorrido'] = time.time() - out['t0']
+    return out
 
 
 def controllers():
@@ -212,6 +275,7 @@ class Handler(BaseHTTPRequestHandler):
         try:
             pages = {'/': 'welcome.html', '/welcome': 'welcome.html', '/jogar': 'index.html', '/index.html': 'index.html',
                      '/decks': 'decks.html', '/decks.html': 'decks.html', '/cartas': 'cartas.html', '/cartas.html': 'cartas.html',
+                     '/testar': 'testar.html', '/testar.html': 'testar.html',
                      '/imprimir': 'imprimir.html', '/imprimir.html': 'imprimir.html'}
             if u.path in pages:
                 with open(os.path.join(WEB, pages[u.path]), 'rb') as f:
@@ -245,6 +309,10 @@ class Handler(BaseHTTPRequestHandler):
             if u.path == '/api/print/init':
                 return self._send(200, {'papeis': IMP.papeis(), 'papel': IMP.PAPEL_PADRAO, 'decks': DB.decks_disponiveis(),
                                         'min_busca': DB.MIN_BUSCA, 'com_imagem': EX.opcoes()['com_imagem']})
+            if u.path == '/api/testdeck/init':
+                return self._send(200, {'decks': DB.decks_disponiveis(), 'agentes': [c for c in controllers() if c['id'] not in ('human', 'random')]})
+            if u.path == '/api/testdeck/status':
+                return self._send(200, job_status())
             if u.path == '/api/meta':
                 D = db()
                 cov = Counter(d.status for d in D.cards.values())
@@ -296,6 +364,19 @@ class Handler(BaseHTTPRequestHandler):
                     self.end_headers()
                     return self.wfile.write(r['pdf'])
                 except (ValueError, KeyError) as e:
+                    return self._send(400, {'error': str(e).strip("'\"")})
+            if u.path == '/api/testdeck/start':
+                try:
+                    return self._send(200, job_start(body))
+                except (ValueError, KeyError) as e:
+                    return self._send(400, {'error': str(e).strip("'\"")})
+            if u.path == '/api/testdeck/save':
+                try:
+                    sug = JOB.get('sugestoes')
+                    if not sug or not sug.get('mudou'):
+                        return self._send(400, {'error': 'não há sugestão de troca para salvar'})
+                    return self._send(200, TD.salvar_versao(sug['deck'], sug['lista'], sug, body.get('nome') or None))
+                except (ValueError, FileExistsError, KeyError) as e:
                     return self._send(400, {'error': str(e).strip("'\"")})
             if u.path.startswith('/api/builder/'):
                 try:

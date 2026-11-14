@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PTCG Lab — Testar um deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1512;--line:#2a3b33;--ink:#e7eee9;--mute:#8ea398;--accent:#f2c94c;--ok:#5bd38a;--warn:#f0a048;--danger:#ff5c5c;--panel:#111a16;--card:#1c2a24;--card2:#22332c;--bar:#4a9fe0}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:14px/1.4 'Space Grotesk',system-ui,sans-serif}
+button,select,input{font:inherit;color:inherit}
+.mono{font-family:'IBM Plex Mono',monospace}
+header{display:flex;gap:10px;align-items:center;padding:8px 16px;border-bottom:1px solid var(--line);background:#0c120f}
+header h1{font-size:17px;margin:0}header h1 b{color:var(--accent)}
+header a{color:var(--mute);text-decoration:none;margin-left:auto}header a:hover{color:var(--accent)}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+.form{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.form label{display:flex;flex-direction:column;gap:3px;color:var(--mute);font-size:12px}
+select,input[type=text],input[type=number]{background:#0b100d;border:1px solid var(--line);border-radius:6px;padding:6px 8px;min-width:0}
+.btn{background:#1c2a24;border:1px solid #33493f;border-radius:7px;padding:7px 14px;cursor:pointer;white-space:nowrap}
+.btn:hover:not(:disabled){border-color:var(--accent)}.btn:disabled{opacity:.45;cursor:default}
+.btn.primary{background:var(--accent);color:#1a1405;border-color:var(--accent);font-weight:700}
+.chk{flex-direction:row!important;align-items:center;gap:6px!important;color:var(--ink)!important;font-size:13px!important}
+.prog{margin:14px 0;display:none}
+.prog .t{color:var(--mute);margin-bottom:4px}
+.prog .b{height:8px;background:#0b100d;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.prog .b i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.err{color:var(--danger);margin:10px 0;white-space:pre-wrap}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;margin:16px 0 10px}
+.tab{padding:5px 13px;border:1px solid var(--line);border-radius:7px;cursor:pointer;background:#101814;color:var(--mute)}
+.tab.on{background:var(--card2);color:var(--ink);border-color:var(--accent)}
+.pane{display:none}.pane.on{display:block}
+.kpis{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 16px;min-width:150px}
+.kpi b{display:block;font-size:24px}.kpi span{color:var(--mute);font-size:12px}
+h3{margin:18px 0 6px;font-size:13px;color:var(--mute);text-transform:uppercase;letter-spacing:.6px;font-weight:500}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:right;padding:4px 8px;border-bottom:1px solid #1e2c25;white-space:nowrap}
+th{color:var(--mute);font-weight:500;cursor:pointer;position:sticky;top:0;background:var(--bg)}
+td:first-child,th:first-child{text-align:left;white-space:normal}
+tr:hover td{background:var(--card)}
+.pos{color:var(--ok)}.neg{color:var(--danger)}.mut{color:var(--mute)}
+.bar{display:inline-block;height:9px;background:var(--bar);border-radius:2px;vertical-align:middle}
+.wr{display:inline-block;width:90px;height:9px;background:#0b100d;border:1px solid var(--line);border-radius:2px;vertical-align:middle;overflow:hidden}
+.wr i{display:block;height:100%;background:var(--ok)}.wr.low i{background:var(--danger)}
+.hist{display:flex;align-items:flex-end;gap:3px;height:120px;margin:8px 0 2px}
+.hist div{flex:1;background:var(--bar);min-width:8px;border-radius:2px 2px 0 0;position:relative}
+.hist div span{position:absolute;top:-15px;left:0;right:0;text-align:center;font-size:10px;color:var(--mute)}
+.axis{display:flex;gap:3px}.axis div{flex:1;text-align:center;font-size:10px;color:var(--mute);min-width:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:10px}
+.swap{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}
+.swap .out{color:var(--danger)}.swap .in{color:var(--ok)}
+.note{color:var(--mute);font-size:12.5px;margin:6px 0 10px}
+details.op{margin-top:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 14px}
+details.op summary{cursor:pointer;color:var(--mute)}
+.oplist{max-height:260px;overflow:auto;margin-top:8px;border:1px solid var(--line);border-radius:6px;padding:4px 8px;background:#0b100d}
+.oplist label{display:flex;gap:6px;align-items:center;padding:1px 0;font-size:12.5px;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.chip{border:1px solid var(--line);border-radius:12px;padding:1px 9px;cursor:pointer;color:var(--mute);font-size:12px;background:#101814}
+.chip.on{border-color:var(--accent);color:var(--ink)}
+textarea{background:#0b100d;border:1px solid var(--line);border-radius:6px;padding:6px 8px;width:100%;font:12.5px 'IBM Plex Mono',monospace;color:var(--ink)}
+#printarea{display:none}
+@media print{
+  :root{--bg:#fff;--ink:#111;--mute:#555;--line:#ccc;--card:#f4f4f4;--card2:#eee;--panel:#fff;--accent:#b8860b;--ok:#157a3a;--danger:#b3261e;--bar:#3b7dbf}
+  html,body{background:#fff;color:#111;font-size:11px}
+  header,.wrap>*:not(#printarea){display:none!important}
+  #printarea{display:block}
+  #printarea h2{font-size:15px;margin:14px 0 4px;break-after:avoid}
+  #printarea h3{break-after:avoid}
+  table{page-break-inside:auto}tr{break-inside:avoid}
+  th{position:static;background:#fff}
+  .card,.kpi{break-inside:avoid}
+  .wr,.hist div,.bar,.chip{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><h1>PTCG <b>Lab</b> — Testar um deck</h1><a href="/">← início</a></header>
+<div class="wrap">
+  <div class="form">
+    <label>Deck a testar<select id="deck" style="min-width:300px"></select></label>
+    <label>Partidas por oponente<input type="number" id="partidas" value="20" min="2" max="200" style="width:90px"></label>
+    <label>Oponentes (filtro, vírgula)<input type="text" id="contra" placeholder="todos · ex.: tests/,meus/ ou dragapult" style="width:270px"></label>
+    <label>Máx. oponentes<input type="number" id="maximo" min="1" placeholder="todos" style="width:90px"></label>
+    <label>IA (CPU)<select id="agente"></select></label>
+    <label>Processos<input type="number" id="workers" min="1" placeholder="auto" style="width:80px"></label>
+    <label class="chk"><input type="checkbox" id="sugerir" checked> sugerir trocas</label>
+    <button class="btn primary" id="go">Testar</button>
+    <button class="btn" id="pdf" disabled title="Abre a impressão do navegador: escolha 'Salvar como PDF'">Exportar PDF</button>
+  </div>
+  <details class="op" id="opdet"><summary id="opsum">Oponentes: todos os decks da base (use o filtro/máximo acima, ou escolha manualmente aqui)</summary>
+    <label class="chk" style="margin-top:8px"><input type="checkbox" id="opman"> escolher manualmente (ignora filtro e máximo)</label>
+    <div id="opbox" style="display:none">
+      <div class="chips" id="opchips"></div>
+      <div class="form" style="border:0;padding:0"><input type="text" id="opbusca" placeholder="buscar deck…" style="width:260px">
+        <button class="btn" id="opmarcar">marcar visíveis</button><button class="btn" id="oplimpar">limpar</button></div>
+      <div class="oplist" id="oplist"></div>
+    </div></details>
+  <details class="op" id="candet"><summary>Trocas de cartas: lista de cartas candidatas a entrar (opcional)</summary>
+    <div class="note">Uma carta por linha (inglês ou português). Vazio = a busca escolhe sozinha entre cartas da mesma linha, Treinadores e Energias do deck. Só vale com "sugerir trocas" marcado.</div>
+    <textarea id="candidatas" rows="4" placeholder="Ex.:&#10;Counter Catcher&#10;Prime Catcher"></textarea></details>
+  <div class="note">Os dois lados jogam com a IA escolhida (redes rodam na CPU, nunca na GPU); assentos alternados. Com a base inteira (centenas de decks) o teste leva alguns minutos; as sugestões, mais alguns.</div>
+  <div class="prog" id="prog"><div class="t" id="progt"></div><div class="b"><i id="progb"></i></div></div>
+  <div class="err" id="err"></div>
+  <div id="out" style="display:none">
+    <div class="tabs" id="tabs"></div>
+    <div id="panes"></div>
+  </div>
+  <div id="printarea"></div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pc=(x,d=0)=>x==null||isNaN(x)?'—':(100*x).toFixed(d)+'%';
+const pp=x=>x==null?'—':`<span class="${x>=0?'pos':'neg'}">${x>=0?'+':''}${(100*x).toFixed(1)} pp</span>`;
+const wrbar=x=>x==null?'':`<span class="wr ${x<.45?'low':''}"><i style="width:${100*x}%"></i></span>`;
+let timer=null, R=null, S=null, DECKS=[], ESC=new Set();
+
+fetch('/api/testdeck/init').then(r=>r.json()).then(d=>{
+  $('deck').innerHTML=d.decks.filter(x=>x.ok).map(x=>`<option value="${esc(x.name)}">${x.meu?'★ ':''}${esc(x.name)} — ${esc(x.label)}</option>`).join('');
+  $('agente').innerHTML=d.agentes.map(a=>`<option value="${esc(a.id)}">${esc(a.label)}</option>`).join('');
+  DECKS=d.decks.filter(x=>x.ok); montarOps();
+  const q=new URLSearchParams(location.search).get('deck'); if(q) $('deck').value=q;
+  poll(true);
+});
+const grupo=n=>{const p=n.split('/');return p[0]==='limitless'&&p[1]?p[0]+'/'+p[1]:p[0]};
+function montarOps(){
+  const gs=[...new Set(DECKS.map(d=>grupo(d.name)))];
+  $('opchips').innerHTML=gs.map(g=>`<span class="chip" data-g="${esc(g)}">${esc(g)} (${DECKS.filter(d=>grupo(d.name)===g).length})</span>`).join('');
+  listaOps();
+}
+function listaOps(){
+  const q=$('opbusca').value.toLowerCase(), cur=$('deck').value;
+  const vis=DECKS.filter(d=>d.name!==cur&&(d.name+' '+d.label).toLowerCase().includes(q));
+  $('oplist').innerHTML=vis.map(d=>`<label><input type="checkbox" data-n="${esc(d.name)}" ${ESC.has(d.name)?'checked':''}> ${esc(d.name)} <span class="mut">${esc(d.label)}</span></label>`).join('')||'<span class="mut">nenhum deck</span>';
+  resumoOps();
+}
+function resumoOps(){
+  $('opsum').textContent=$('opman').checked?`Oponentes: ${ESC.size} deck(s) escolhido(s) manualmente`:'Oponentes: todos os decks da base (use o filtro/máximo acima, ou escolha manualmente aqui)';
+  document.querySelectorAll('#opchips .chip').forEach(c=>c.classList.toggle('on',DECKS.filter(d=>grupo(d.name)===c.dataset.g).every(d=>ESC.has(d.name))));
+}
+$('opman').onchange=()=>{$('opbox').style.display=$('opman').checked?'block':'none';resumoOps()};
+$('opbusca').oninput=listaOps; $('deck').onchange=listaOps;
+$('oplimpar').onclick=()=>{ESC.clear();listaOps()};
+$('opmarcar').onclick=()=>{document.querySelectorAll('#oplist input').forEach(i=>ESC.add(i.dataset.n));listaOps()};
+$('oplist').onchange=e=>{const i=e.target;if(i.dataset.n){i.checked?ESC.add(i.dataset.n):ESC.delete(i.dataset.n);resumoOps()}};
+$('opchips').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;const ns=DECKS.filter(d=>grupo(d.name)===c.dataset.g&&d.name!==$('deck').value).map(d=>d.name);
+  const todos=ns.every(n=>ESC.has(n));ns.forEach(n=>todos?ESC.delete(n):ESC.add(n));listaOps()};
+$('sugerir').onchange=()=>{$('candet').style.opacity=$('sugerir').checked?1:.4};
+$('go').onclick=async()=>{
+  $('err').textContent=''; $('out').style.display='none'; R=null; S=null; $('pdf').disabled=true;
+  const ESCL=$('opman').checked?[...ESC].filter(n=>n!==$('deck').value):null;
+  const body={oponentes:ESCL,candidatas:$('candidatas').value.split('\n').map(x=>x.trim()).filter(Boolean),deck:$('deck').value,partidas:+$('partidas').value||20,contra:$('contra').value.trim(),maximo:$('maximo').value||null,sugerir:$('sugerir').checked,agente:$('agente').value,workers:$('workers').value||null};
+  const r=await fetch('/api/testdeck/start',{method:'POST',body:JSON.stringify(body)});
+  const j=await r.json(); if(j.error){$('err').textContent=j.error;return}
+  poll(false);
+};
+function poll(first){
+  clearTimeout(timer);
+  fetch('/api/testdeck/status').then(r=>r.json()).then(s=>{
+    const ativo=s.estado==='testando'||s.estado==='sugerindo';
+    $('go').disabled=ativo;
+    $('prog').style.display=ativo?'block':'none';
+    if(ativo){
+      $('progt').textContent=`${s.estado==='testando'?'Testando':'Procurando trocas'} ${s.deck} — ${s.rotulo||''} ${s.feitos}/${s.total} · ${Math.round(s.decorrido||0)}s`;
+      $('progb').style.width=(100*s.feitos/Math.max(s.total,1))+'%';
+      timer=setTimeout(()=>poll(false),1000);
+      if(s.resultado && !R){R=s.resultado; render();}      // mostra o teste enquanto as trocas são procuradas
+    }
+    if(s.estado==='erro'){$('err').textContent=s.erro}
+    if(s.estado==='pronto' && s.resultado){R=s.resultado; S=s.sugestoes||null; render();}
+  });
+}
+const TABS=['Resumo','Cartas','Combos','Prêmios','Fases','Matchups','Sugestões'];
+let tab='Resumo';
+function render(){
+  $('out').style.display='block'; $('pdf').disabled=!R;
+  $('tabs').innerHTML=TABS.map(t=>`<div class="tab ${t===tab?'on':''}" onclick="tab='${t}';render()">${t}${t==='Sugestões'&&S&&S.mudou?' ●':''}</div>`).join('');
+  const fn={Resumo:resumo,Cartas:cartas,Combos:combos,'Prêmios':premios,Fases:fases,Matchups:matchups,'Sugestões':sugestoes}[tab];
+  $('panes').innerHTML=fn();
+}
+function resumo(){
+  const o=R.ordem;
+  return `<div class="kpis">
+   <div class="kpi"><b>${pc(R.winrate,1)}</b><span>vitórias (±${(100*R.ic95).toFixed(1)}) em ${R.jogos} partidas</span></div>
+   <div class="kpi"><b>${pc(o.primeiro.winrate,1)}</b><span>começando (${o.primeiro.jogos} partidas)</span></div>
+   <div class="kpi"><b>${pc(o.segundo.winrate,1)}</b><span>jogando em segundo (${o.segundo.jogos})</span></div>
+   <div class="kpi"><b>${R.n_oponentes}</b><span>oponentes · ${R.partidas_por_oponente} partidas cada · ${Math.round(R.segundos)}s</span></div></div>
+   <div class="note">Diferença de ordem de jogo: ${o.diferenca==null?'—':pp(o.diferenca)}. ${R.n_ignorados?R.n_ignorados+' deck(s) ignorados (inválidos).':''} Estatísticas por carta/combo são correlações das partidas simuladas, não causas: use junto com as trocas validadas da aba Sugestões.</div>
+   <h3>Lista testada (IA: ${esc(R.agente||'heuristic')})</h3>
+   ${tabelaCartasSimples()}`;
+}
+function tabelaCartasSimples(){return `<table><tr><th>Carta</th><th>Cópias</th></tr>${R.cartas.slice().sort((a,b)=>b.copias-a.copias||a.carta.localeCompare(b.carta)).map(c=>`<tr><td>${esc(c.carta)}</td><td>${c.copias}</td></tr>`).join('')}</table>`}
+function cartas(){
+  const rows=R.cartas.slice().sort((a,b)=>b.jogadas_por_jogo-a.jogadas_por_jogo);
+  return `<div class="note">"Vista" = saiu do baralho/prêmios em algum momento. "Usada" = jogada/ligada/evoluída/atacou. Impacto = vitória quando usada − quando não usada (encolhido; só com amostra suficiente). Clique no título para ordenar.</div>
+  <table id="tc"><thead><tr><th>Carta</th><th data-k="copias">×</th><th data-k="jogadas_por_jogo">jogadas/jogo</th><th data-k="vista_pct">vista</th><th data-k="usada_pct">usada</th><th data-k="usada_dado_vista">usada | vista</th><th data-k="na_mao_no_fim">na mão ao fim</th><th data-k="impacto_uso">impacto</th></tr></thead><tbody>${linhasCartas(rows)}</tbody></table>`;
+}
+function linhasCartas(rows){return rows.map(c=>`<tr><td>${esc(c.carta)} <span class="mut">${c.tipo}</span></td><td>${c.copias}</td><td>${c.jogadas_por_jogo.toFixed(2)}</td><td>${pc(c.vista_pct)}</td><td>${pc(c.usada_pct)}</td><td>${pc(c.usada_dado_vista)}</td><td>${c.na_mao_no_fim.toFixed(2)}</td><td>${c.impacto_uso==null?'—':pp(c.impacto_uso)}</td></tr>`).join('')}
+document.addEventListener('click',e=>{const th=e.target.closest('#tc th[data-k]');if(!th)return;const k=th.dataset.k;
+  const rows=R.cartas.slice().sort((a,b)=>(b[k]??-9)-(a[k]??-9));document.querySelector('#tc tbody').innerHTML=linhasCartas(rows)});
+function combos(){
+  const t=(l)=>`<table><tr><th>Combo (mesma vez)</th><th>partidas</th><th>vitória</th><th>vs. média</th></tr>${l.map(c=>`<tr><td>${esc(c.combo[0])} + ${esc(c.combo[1])}</td><td>${c.jogos}</td><td>${pc(c.winrate)}</td><td>${pp(c.delta)}</td></tr>`).join('')}</table>`;
+  return `<div class="note">Pares de jogadas feitas na mesma vez do jogador (ataques e Energia Básica ficam de fora). Mínimo ${R.combos.minimo_jogos} partidas; efeito encolhido em direção à média.</div><h3>Combos que funcionaram</h3>${t(R.combos.melhores)}<h3>Combos associados a derrotas</h3>${t(R.combos.piores)}`;
+}
+let kp=1;
+function premios(todos){
+  if(todos){const k0=kp;let o='';for(kp=1;kp<=6;kp++)o+=premios(false).replace(/<div class="tabs">.*?<\/div><\/div>/s,'');kp=k0;return o}
+  const sel=`<div class="tabs">${[1,2,3,4,5,6].map(k=>`<div class="tab ${k===kp?'on':''}" onclick="kp=${k};render()">${k}º prêmio</div>`).join('')}</div>`;
+  const h=(d,tit)=>{const x=d[kp-1];if(!x.media&&x.media!==0)return `<div class="card"><b>${tit}</b><div class="mut">nunca chegou</div></div>`;
+    const keys=[];for(let i=1;i<=20;i++)keys.push(i);const mx=Math.max(...keys.map(i=>x.hist[i]||0),1);
+    return `<div class="card"><b>${tit}</b> <span class="mut">— média vez ${x.media.toFixed(1)} · mediana ${x.mediana} · quartis ${x.p25}–${x.p75} · ${x.jogos_que_chegaram} partidas</span>
+    <div class="hist">${keys.map(i=>{const n=x.hist[i]||0;return `<div style="height:${100*n/mx}%" title="vez ${i}: ${n} partidas"><span>${n||''}</span></div>`}).join('')}</div>
+    <div class="axis">${keys.map(i=>`<div>${i===20?'20+':i}</div>`).join('')}</div></div>`};
+  return `<div class="note">Vez do jogador (cada jogador conta uma vez por rodada) em que o prêmio foi pego. Partidas que terminaram antes não entram.</div>${sel}<div class="grid2">${h(R.premios.meu,'Meu deck pega o '+kp+'º prêmio')}${h(R.premios.oponente,'Oponente pega o '+kp+'º prêmio')}</div>`;
+}
+function fases(){
+  return Object.entries(R.fases).map(([n,f])=>`<h3>${n} — vez ${f.vezes}</h3><div class="grid2">
+   <div class="card"><b>Mais usadas</b><table>${f.mais_usadas.map(x=>`<tr><td>${esc(x.carta)}</td><td>${x.por_jogo.toFixed(2)}/jogo</td></tr>`).join('')}</table></div>
+   <div class="card"><b>Cartas associadas a vitória nesta fase</b><table>${f.melhores_cartas.map(x=>`<tr><td>${esc(x.carta)}</td><td>${x.jogos}</td><td>${pp(x.delta)}</td></tr>`).join('')}</table></div>
+   <div class="card" style="grid-column:1/-1"><b>Melhores combos</b><table>${f.melhores_combos.map(x=>`<tr><td>${esc(x.combo[0])} + ${esc(x.combo[1])}</td><td>${x.jogos}</td><td>${pc(x.winrate)}</td><td>${pp(x.delta)}</td></tr>`).join('')}</table></div></div>`).join('');
+}
+function matchups(){
+  const arq=R.arquetipos.filter(a=>a.jogos>=40);
+  const lin=r=>`<tr><td>${esc(r.deck)} <span class="mut">${esc(r.arquetipo)}</span></td><td>${r.jogos}</td><td>${wrbar(r.winrate)} ${pc(r.winrate)} <span class="mut">±${(100*r.ic95).toFixed(0)}</span></td><td>${pc(r.wr_primeiro)}</td><td>${pc(r.wr_segundo)}</td><td>${r.turnos.toFixed(1)}</td></tr>`;
+  return `<h3>Arquétipos (do mais difícil ao mais fácil; ≥40 partidas)</h3><table><tr><th>Arquétipo</th><th>decks</th><th>partidas</th><th>vitória</th></tr>${arq.map(a=>`<tr><td>${esc(a.arquetipo)}</td><td>${a.decks}</td><td>${a.jogos}</td><td>${wrbar(a.winrate)} ${pc(a.winrate)} <span class="mut">±${(100*a.ic95).toFixed(0)}</span></td></tr>`).join('')}</table>
+  <h3>Decks mais difíceis</h3><table><tr><th>Deck</th><th>partidas</th><th>vitória</th><th>1º</th><th>2º</th><th>turnos</th></tr>${R.oponentes.slice(0,25).map(lin).join('')}</table>
+  <h3>Melhores confrontos</h3><table>${R.oponentes.slice(-10).reverse().map(lin).join('')}</table>`;
+}
+function sugestoes(){
+  if(!S) return `<div class="note">${$('sugerir').checked?'As sugestões aparecem aqui quando a busca terminar.':'Marque "sugerir trocas" e rode o teste de novo.'}</div>`;
+  const tr=S.trocas.map((t,i)=>`<div class="card"><div class="swap"><b>${i+1}.</b><span class="out">−1 ${esc(t.tira)}</span><span class="in">+1 ${esc(t.poe)}</span>
+    <span class="mut">confirmação ${pc(t.conf_antes,1)} → ${pc(t.conf_depois,1)} (${pp(t.delta)} ±${(100*t.ic95).toFixed(1)}; ${t.conf_jogos} partidas)</span></div></div>`).join('');
+  const rej=S.testadas.filter(t=>!t.aceita);
+  return `<div class="kpis"><div class="kpi"><b>${pc(S.antes,1)} → ${pc(S.depois,1)}</b><span>validação final: ${pp(S.delta)} ±${(100*S.ic95).toFixed(1)} em ${S.jogos_validacao} partidas contra ${S.n_confirmacao} oponentes (fora da triagem quando há decks suficientes)</span></div></div>
+  ${S.mudou?tr:'<div class="card">Nenhuma troca testada melhorou o deck com confiança neste conjunto de oponentes.</div>'}
+  ${rej.length?`<div class="note">Promissoras na triagem mas não confirmadas: ${rej.map(t=>`−${esc(t.tira)} +${esc(t.poe)} (${(100*t.delta).toFixed(1)} pp)`).join('; ')}</div>`:''}
+  ${S.mudou?`<div class="form" style="margin-top:10px"><label>Nome da nova versão (opcional)<input type="text" id="nomev" placeholder="padrão: ${esc(S.deck.split('/').pop())}_v2" style="width:280px"></label><button class="btn primary" onclick="salvar()">Salvar nova versão em decks/meus/</button><span id="salvo"></span></div>`:''}`;
+}
+$('pdf').onclick=()=>{
+  if(!R)return;
+  const t0=tab;
+  const parts=[['Resumo',resumo],['Cartas',cartas],['Combos',combos],['Prêmios',()=>premios(true)],['Fases',fases],['Matchups',matchups],['Sugestões',sugestoes]];
+  $('printarea').innerHTML=`<h2 style="font-size:20px">Teste do deck ${esc(R.deck)}</h2><div class="note">${new Date().toLocaleString('pt-BR')} · IA ${esc(R.agente||'heuristic')} · ${R.jogos} partidas contra ${R.n_oponentes} decks</div>`+
+    parts.map(([n,f])=>`<h2>${n}</h2>`+f()).join('');
+  window.print(); $('printarea').innerHTML=''; tab=t0;
+};
+async function salvar(){
+  const r=await fetch('/api/testdeck/save',{method:'POST',body:JSON.stringify({nome:$('nomev').value.trim()})});
+  const j=await r.json();
+  $('salvo').innerHTML=j.error?`<span class="neg">${esc(j.error)}</span>`:`<span class="pos">Salvo: ${esc(j.name)}</span> — <a style="color:var(--accent)" href="/testar?deck=${encodeURIComponent(j.name)}">testar esta versão</a> · <a style="color:var(--accent)" href="/decks">abrir no montador</a>`;
+}
+</script>
+</body>
+</html>

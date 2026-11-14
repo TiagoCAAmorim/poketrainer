@@ -210,3 +210,26 @@ def random_deck(rng: random.Random, statuses=('ok', 'partial'), lines=2, prefer=
     ids = [d.id for d in fixed]
     assert not validate(ids), validate(ids)
     return ids
+
+
+def pool_de_cartas(base):
+    """Ids de cartas candidatas a entrar num deck: as dele, as das mesmas linhas evolutivas, todos os
+    Treinadores com efeito completo e as Energias Básicas dos tipos já usados."""
+    D = db()
+    have = {D.get(i) for i in base}
+    names = {d.name for d in have}
+    families = set()
+    for d in have:
+        if d.kind == 'pokemon':
+            families |= {d.name, d.evolves_from} - {None}
+    pool = set(base)
+    for x in D.cards.values():
+        if x.status == 'missing':
+            continue
+        if x.kind == 'pokemon' and (x.name in families or x.evolves_from in families):
+            pool.add(x.id)
+        elif x.kind == 'trainer' and x.status == 'ok':
+            pool.add(x.id)
+        elif x.basic_energy and x.name in names:
+            pool.add(x.id)
+    return sorted(pool)

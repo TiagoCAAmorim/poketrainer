@@ -31,7 +31,7 @@ Mensagens do motor, logs e CLIs estão em português; nomes de cartas ficam em i
   Ordem: implementação à mão → compilador. Frase não reconhecida → carta `partial`/`missing`.
 - `replay/` — `parse.py` (templates en/pt do log do TCG Live), `replay.py` (`ReplayGame` com cartas ocultas
   "UNKNOWN" que viram a carta certa sob demanda, pontos de ambiguidade com retrocesso, conferência de dano e KO).
-- `decks.py`, `deckbuilder.py` (montador, `web/decks.html`), `imprimir.py` (PDF de cartas p/ imprimir em escala %, simplificado P&B, A4/Office/…; `web/imprimir.html`), `explorer.py` (cartas, `web/cartas.html`; imagens por `baixar_imagens.py` em `imagens/`, no gitignore), `limitless.py`, `logbook.py` (LOG), `agents.py`, `encode.py` (observação p/ rede), `ai/`, `sim.py`, `view.py`.
+- `testdeck.py` (teste de um deck contra a base + sugestões), `decks.py`, `deckbuilder.py` (montador, `web/decks.html`), `imprimir.py` (PDF de cartas p/ imprimir em escala %, simplificado P&B, A4/Office/…; `web/imprimir.html`), `explorer.py` (cartas, `web/cartas.html`; imagens por `baixar_imagens.py` em `imagens/`, no gitignore), `limitless.py`, `logbook.py` (LOG), `agents.py`, `encode.py` (observação p/ rede), `ai/`, `sim.py`, `view.py`.
 
 ## Comandos
 ```
@@ -39,6 +39,7 @@ python cartas.py buscar|mostrar|listar|resumo|atualizar     # biblioteca (gera c
 python gerenciar_decks.py listar|mostrar|criar|montar|importar|editar|copiar|exportar|validar|apagar|limitless
 python gerenciar_logs.py importar|listar|mostrar|rever|atividade|reprocessar|imitacao
 python replay_log.py tests/fixtures/ptcgl_logs/*.log
+python testar_deck.py <deck> [--contra filtro] [--sugerir --salvar]   # 1 deck × todos os outros: estatísticas + trocas (ptcg/testdeck.py, web /testar)
 python simulate.py <deck> <deck> --games 200 [--salvar-log]      python optimize.py <deck> --gauntlet ...
 python melhorar_heuristica.py [--avaliar|--resetar]              # ajusta pesos da heurística vs aleatório → ptcg/data/heuristica.json
 python server.py                                                  # http://localhost:8765 (welcome; /jogar /decks /cartas)
@@ -58,6 +59,7 @@ python tests/test_engine.py     # partidas com os decks reais + invariantes + de
 python tests/test_replay.py     # os 4 logs reais do TCG Live devem reproduzir 100%
 python tests/fuzz.py --games 300  # decks aleatórios legais, invariantes a cada decisão
 python tests/test_limitless.py
+python tests/test_testdeck.py      # teste de deck: instrumentação do motor (Game.plays/prize_turns), estatísticas, salvar versão
 python tests/test_partidas_usuario.py  # partidas da interface SEM comentários (logs/interface + tests/fixtures/partidas) refeitas com invariantes
 python tests/test_efeitos_novos.py # cenários da 2ª leva de cobertura
 python tests/smoke_cartas.py       # todo ataque/Habilidade ativada roda sem erro

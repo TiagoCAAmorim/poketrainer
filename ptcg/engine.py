@@ -62,6 +62,8 @@ class Game:
         self.effects: list[TempEffect] = []
         self.ko_log: list[dict] = []
         self.prize_log: list[tuple] = []   # (turno, quem pegou, quantas)
+        self.plays: list[tuple] = []       # (vez do jogador, jogador, tipo, carta, detalhe) — estatísticas (testar_deck)
+        self.prize_turns: list[tuple] = []  # (vez do jogador que pegou, jogador, quantas)
         self.log: list[dict] = []
         self.history: list[int] = []
         self.winner: Optional[int] = None
@@ -773,6 +775,7 @@ class Game:
             c, s = opt.value
             pl.hand.remove(c)
             s.tools.append(c)
+            self.plays.append((pl.turns_taken, p, 'treinador', c.name, ''))
             self.say(f'{pl.name} ligou {c.name} em {self.slot_label(s)}')
             yield from self.emit('trainer_played', player=p, card=c)
         elif k == 'trainer':
@@ -805,6 +808,7 @@ class Game:
         if ab.impl.shared_key:
             pl.ability_keys.add(ab.impl.shared_key)
         self.say(f'{pl.name} usou {ab.name} ({s.name})', 'ability')
+        self.plays.append((pl.turns_taken, p, 'habilidade', s.name, ab.name))
         yield from run(ab.impl.run(self, p, s))
 
     def play_to_bench(self, p, card, from_hand=False):
@@ -812,6 +816,8 @@ class Game:
         s = PokemonSlot(card, self.turn)
         pl.bench.append(s)
         self.say(f'{pl.name} colocou {card.name} no Banco')
+        if from_hand:
+            self.plays.append((pl.turns_taken, p, 'banco', card.name, ''))
         yield from self.emit('bench_played', player=p, slot=s, from_hand=from_hand)
         if from_hand:
             for ab in card.d.abilities:
@@ -839,6 +845,8 @@ class Game:
             slot.conditions.add('confused')
         self._slot_left(slot, evolved=True)
         self.say(f'{pl.name} evoluiu {old} para {card.name}')
+        if from_hand:
+            self.plays.append((pl.turns_taken, p, 'evolucao', card.name, ''))
         yield from self.emit('evolved', player=p, slot=slot, from_hand=from_hand)
         if from_hand:
             for ab in card.d.abilities:
@@ -870,6 +878,8 @@ class Game:
         pl = self.players[p]
         slot.energy.append(card)
         self.say(f'{pl.name} ligou {card.name} em {self.slot_label(slot)}')
+        if from_hand:
+            self.plays.append((pl.turns_taken, p, 'energia', card.name, ''))
         im = card.d.impl
         if im is not None and im.on_attach is not None:
             yield from run(im.on_attach(self, p, card, slot, from_hand))
@@ -894,6 +904,7 @@ class Game:
             pl.discard.append(c)
             return
         self.say(f'{pl.name} jogou {c.name}', 'trainer')
+        self.plays.append((pl.turns_taken, p, 'treinador', c.name, ''))
         pl.played.append(d.name)
         if d.subtype == 'supporter':
             pl.supporter_played = True
@@ -1030,6 +1041,7 @@ class Game:
             yield from self._resolve_kos()
             return
         att.flags.setdefault('atk_log', []).append((self.turn, atk.name))
+        self.plays.append((pl.turns_taken, p, 'ataque', att.name, atk.name))
         pl.attack_log.append((self.turn, att, atk.name))
         ctx = AttackCtx(self, p, att, op.active, atk)
         ctx.queue = []
@@ -1266,6 +1278,7 @@ class Game:
         pl = self.players[t]
         n = min(n, len(pl.prizes))
         self.prize_log.append((self.turn, t, n))
+        self.prize_turns.append((pl.turns_taken, t, n))
         for _ in range(n):
             pl.hand.append(pl.prizes.pop(0))
         self.say(f'{pl.name} pegou {n} carta(s) de prêmio ({len(pl.prizes)} restantes)', 'prize')

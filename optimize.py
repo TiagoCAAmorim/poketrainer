@@ -20,30 +20,11 @@ import time
 from collections import Counter
 
 from ptcg.carddb import db
-from ptcg.decks import deck_to_text, load_deck, validate
+from ptcg.decks import deck_to_text, load_deck, pool_de_cartas, validate
 from ptcg.sim import run_matchup
 
 
-def auto_pool(base):
-    """Ids de cartas candidatas a entrar no deck."""
-    D = db()
-    have = {D.get(i) for i in base}
-    names = {d.name for d in have}
-    families = set()
-    for d in have:
-        if d.kind == 'pokemon':
-            families |= {d.name, d.evolves_from} - {None}
-    pool = set(base)
-    for x in D.cards.values():
-        if x.status == 'missing':
-            continue
-        if x.kind == 'pokemon' and (x.name in families or x.evolves_from in families):
-            pool.add(x.id)
-        elif x.kind == 'trainer' and x.status == 'ok':
-            pool.add(x.id)
-        elif x.basic_energy and x.name in names:
-            pool.add(x.id)
-    return sorted(pool)
+auto_pool = pool_de_cartas
 
 
 def resolve_name(n):
