@@ -10,6 +10,10 @@ estão implementadas, com textos em inglês e português.
 
 Você usa tudo por uma página no navegador. O terminal só é necessário para instalar e para ligar o programa.
 
+> 🖨️ **Só quer imprimir as cartas de um deck?** Use a página online, sem instalar nada:
+> **[Gerar PDF de cartas simplificadas](https://tiagocaamorim.github.io/poketrainer/)** (inglês ou português,
+> com os 16 melhores decks de cada torneio da temporada).
+
 ---
 
 ## 1. Instalar (uma vez só)
