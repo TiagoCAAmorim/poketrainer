@@ -37,6 +37,8 @@ def pt(d):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--tcgdex', default=None)
+    ap.add_argument('--cards', default=str(ROOT / 'ptcg' / 'data' / 'cards.json'))
+    ap.add_argument('--out', default=str(ROOT / 'ptcg' / 'data' / 'cards_pt.json'))
     a = ap.parse_args()
     tdir = Path(a.tcgdex) if a.tcgdex else git_clone('https://github.com/tcgdex/cards-database', CACHE / 'tcgdex',
                                                      sparse=['data/Scarlet & Violet', 'data/Mega Evolution'])
@@ -44,7 +46,7 @@ def main():
     by = {}
     for (code, num), c in tc.items():
         by[(ALIAS.get(code, code), num)] = c
-    data = json.load(open(ROOT / 'ptcg' / 'data' / 'cards.json', encoding='utf-8'))
+    data = json.load(open(a.cards, encoding='utf-8'))
     out = {}
     for cid, card in data['cards'].items():
         best = None
@@ -68,7 +70,7 @@ def main():
         if pt(best.get('effect')):
             e['text'] = clean_text(pt(best['effect']))
         out[cid] = e
-    dst = ROOT / 'ptcg' / 'data' / 'cards_pt.json'
+    dst = Path(a.out)
     dst.write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     print(f'{len(out)}/{len(data["cards"])} cartas com texto em português → {dst}')
 

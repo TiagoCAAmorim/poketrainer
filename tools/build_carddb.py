@@ -312,7 +312,10 @@ def main():
     ap.add_argument('--ptcgdata', default=None)
     ap.add_argument('--tcgdex', default=None)
     ap.add_argument('--out', default=str(OUT))
+    ap.add_argument('--marks', default=','.join(sorted(LEGAL_MARKS)),
+                    help='marcas de regulação a incluir (padrão H,I,J; a página estática usa G,H,I,J p/ decks da temporada)')
     a = ap.parse_args()
+    marks = set(a.marks.upper().split(','))
     pdir = Path(a.ptcgdata) if a.ptcgdata else git_clone('https://github.com/PokemonTCG/pokemon-tcg-data',
                                                          CACHE / 'pokemon-tcg-data')
     tdir = Path(a.tcgdex) if a.tcgdex else git_clone('https://github.com/tcgdex/cards-database', CACHE / 'tcgdex',
@@ -364,7 +367,7 @@ def main():
         pid = f'{code}-{num}'
         tc = tcg_by_code.get((code, num))
         pt = _l(tc['name'], 'pt') if tc else None
-        legal = (c['regulation'] in LEGAL_MARKS) or (c['kind'] == 'energy' and c.get('subtype') == 'basic')
+        legal = (c['regulation'] in marks) or (c['kind'] == 'energy' and c.get('subtype') == 'basic')
         prints[pid] = {'name': c['name'], 'mark': c['regulation'], 'legal': legal}
         for al in CODE_ALIASES.get(code, []):
             prints[f'{al}-{num}'] = prints[pid]
@@ -393,7 +396,7 @@ def main():
                 p['candidates'] = ids
     for c in cards.values():
         c.pop('regulation', None) if False else None
-    out = {'version': 1, 'legal_marks': sorted(LEGAL_MARKS), 'sets': sets_meta, 'cards': cards, 'prints': prints}
+    out = {'version': 1, 'legal_marks': sorted(marks), 'sets': sets_meta, 'cards': cards, 'prints': prints}
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     with open(a.out, 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, separators=(',', ':'))
