@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PTCG Lab — Proxy PDF</title>
+<meta name="description" content="Generate a printable PDF of simplified, text-only black-and-white Pokémon TCG cards (playtest proxies). Runs entirely in your browser.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>PTCG <b>Lab</b> — <span data-i="title">Proxy PDF</span></h1>
+  <span class="sp"></span>
+  <div class="seg" id="langPage" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="pt">PT</button></div>
+</header>
+
+<div class="wrap">
+  <div>
+    <p class="intro" data-i="intro"></p>
+    <div class="box">
+      <h2 data-i="h_import"></h2>
+      <div class="row"><select id="torneio"></select></div>
+      <div class="row"><select id="deck"></select><button class="btn" id="carregar" data-i="load"></button></div>
+      <details style="margin-top:6px">
+        <summary class="mut" data-i="paste" style="cursor:pointer"></summary>
+        <textarea id="texto" spellcheck="false" placeholder="4 Dreepy TWM 128&#10;3 Dragapult ex TWM 130&#10;4 Ultra Ball MEG 131"></textarea>
+        <div class="row" style="margin-top:6px"><button class="btn" id="importar" data-i="import"></button></div>
+      </details>
+      <div id="msgImp"></div>
+    </div>
+    <div class="box">
+      <h2 data-i="h_add"></h2>
+      <div class="ac">
+        <input type="text" id="busca" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="sug">
+        <ul id="sug" role="listbox" hidden></ul>
+      </div>
+      <div class="mut" style="margin-top:6px;font-size:12px" data-i="add_hint"></div>
+    </div>
+    <div class="box">
+      <h2><span data-i="h_cards"></span> — <span id="total">0</span> <span data-i="copies"></span> <button class="btn" id="limpar" style="float:right;padding:2px 10px" data-i="clear"></button></h2>
+      <div class="list" id="lista"></div>
+    </div>
+  </div>
+  <div>
+    <div class="box">
+      <h2 data-i="h_pdf"></h2>
+      <label><span data-i="pdf_lang"></span><select id="idioma"><option value="en">English</option><option value="pt">Português</option></select></label>
+      <label><span data-i="paper"></span><select id="papel"></select></label>
+      <label id="lblCustom" hidden><span data-i="custom"></span><input type="text" id="custom" placeholder="210x297"></label>
+      <label><span data-i="scale"></span><input type="number" id="escala" value="90" min="20" max="150" step="1"></label>
+      <div class="two">
+        <label><span data-i="margin"></span><input type="number" id="margem" value="6" min="0" max="30" step="0.5"></label>
+        <label><span data-i="gap"></span><input type="number" id="espaco" value="1" min="0" max="10" step="0.5"></label>
+      </div>
+      <div class="mut" id="info" style="margin-bottom:10px"></div>
+      <button class="btn primary" id="gerar" data-i="generate"></button>
+      <div id="msgPdf"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="cafe" id="cafe"></div>
+  <p id="disclaimer"></p>
+</footer>
+
+<script src="vendor/jspdf.umd.min.js"></script>
+<script src="data/cartas.js"></script>
+<script src="data/decks.js"></script>
+<script src="pdf.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

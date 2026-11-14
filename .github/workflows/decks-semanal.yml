@@ -1,0 +1,50 @@
+name: Atualizar decks da temporada (semanal)
+
+# Toda segunda-feira baixa os torneios novos da Limitless (top 16), regera site/data/decks.js (só decks;
+# as cartas são atualizadas à mão),
+# confere com tests/test_site.py e, se mudou algo, faz commit na main e publica a página.
+# Se um deck usar carta que a base do site não conhece, o teste falha e NADA é commitado: é o sinal de que
+# saiu coleção nova (veja docs/ROTEIRO_CARTAS_SITE.md). Também pode ser rodado à mão (Actions → Run workflow).
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit dos dados na main
+  actions: write    # disparar a publicação (push com GITHUB_TOKEN não dispara outros workflows)
+
+concurrency:
+  group: decks-semanal
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Baixar torneios novos (incremental)
+        run: python tools/baixar_temporada.py
+      - name: Regerar dados da página
+        run: python tools/build_site.py --so-decks
+      - name: Conferir
+        run: python tests/test_site.py
+      - name: Commit e publicação
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain -- ptcg/data site/data)" ]; then
+            echo "Sem torneios novos."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ptcg/data/temporada_*.json site/data
+          git commit -m "Decks: novos torneios da temporada (automático)"
+          git push
+          gh workflow run pages.yml
