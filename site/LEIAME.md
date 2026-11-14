@@ -27,7 +27,7 @@ python tools/build_site.py           # cartas + decks → site/data/*.js
 python tools/build_imagens_site.py   # ilustrações (TCGdex) → site/data/imagens.js; precisa de rede (--refazer ignora o cache)
 python tests/test_site.py
 ```
-O modo "ilustração simplificada" busca a imagem da carta na TCGdex pelo navegador (ela libera CORS; a Limitless não) e aplica o mesmo filtro de `arte_economica` (`pdf.js`: `simplificarArte`). Cartas sem imagem (ex.: 30C) saem só com texto.
+O seletor "Estilo das cartas" tem três modos: texto, econômica e originais (imagem inteira da TCGdex, em inglês). O modo econômico busca a imagem da carta na TCGdex pelo navegador (ela libera CORS; a Limitless não) e aplica o mesmo filtro de `arte_economica` (`pdf.js`: `simplificarArte`). Cartas sem imagem (ex.: 30C) saem só com texto.
 Ao mudar `carta_simplificada` em Python, mude também `pdf.js` (os dois devem produzir o mesmo desenho).
 
 ## Quem atualiza o quê

@@ -152,6 +152,8 @@ def load_tcgdex(root: Path):
         for set_ts in sorted(sdir.glob('*.ts')):
             info = parse_ts_object(set_ts)
             code = (info.get('abbreviations') or {}).get('official') or info.get('id')
+            if code in sets and str(info.get('id', '')).endswith('-c'):   # "30th Classic Collection" usa a mesma sigla 30C da "30th Celebration"
+                code += 'C'   # (mesma convenção do ramo pokemontcg.io em main); sem isto, os nºs 1–30 sobrescreviam os da 30C
             sets[code] = {'id': info.get('id'), 'name': info['name'].get('en'), 'date': info.get('releaseDate'),
                           'serie': serie}
             cdir = sdir / set_ts.stem

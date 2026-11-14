@@ -219,6 +219,22 @@
     return arteCache.get(d.id);
   }
 
+  // imagem original (colorida) da carta inteira, como data URL JPEG; null se não houver / falhar
+  const origCache = new Map();
+  function prepararOriginal(d) {
+    const dados = window.DADOS_IMAGENS, ref = dados && dados.cartas[d.id];
+    if (!ref) return Promise.resolve(null);
+    if (!origCache.has(d.id)) {
+      const url = q => dados.base + ref + '/' + q + '.webp';
+      origCache.set(d.id, carregarImagem(url('high')).catch(() => carregarImagem(url('low'))).then(im => {
+        const cv = document.createElement('canvas'); cv.width = im.naturalWidth; cv.height = im.naturalHeight;
+        const cx = cv.getContext('2d'); cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(im, 0, 0);
+        return cv.toDataURL('image/jpeg', 0.9);
+      }).catch(() => null));
+    }
+    return origCache.get(d.id);
+  }
+
   // recorte da ilustração para a proporção w:h (centrado na horizontal, um pouco acima do meio na vertical) → data URL JPEG
   function recorteArte(arte, ar) {
     const { cv, w: W, h: H } = arte;
@@ -351,14 +367,14 @@
   }
 
   /* cartas: lista de objetos de carta (com .id), uma por cópia. Devolve {doc, paginas, porPagina, colunas, linhas}. */
-  async function gerar(cartas, { idioma = 'pt', papel = 'A4', escala = 0.9, margem = 6, espaco = 1, economico = false, progresso } = {}) {
+  async function gerar(cartas, { idioma = 'pt', papel = 'A4', escala = 0.9, margem = 6, espaco = 1, economico = false, original = false, progresso } = {}) {
     if (!cartas.length) throw new Error('empty');
     const L = layout(papel, escala, margem, espaco);
     const artes = new Map();
-    if (economico) {
+    if (economico || original) {
       const unicas = [...new Set(cartas)];
       let feitas = 0;
-      await Promise.all(unicas.map(d => prepararArte(d).then(a => { artes.set(d, a); if (progresso) progresso(++feitas, unicas.length); })));
+      await Promise.all(unicas.map(d => (original ? prepararOriginal(d) : prepararArte(d)).then(a => { artes.set(d, a); if (progresso) progresso(++feitas, unicas.length); })));
     }
     const { jsPDF } = window.jspdf;
     const orient = L.W > L.H ? 'l' : 'p';
@@ -374,9 +390,13 @@
       if (pos === 0) { if (i) doc.addPage([Math.min(PW, PH), Math.max(PW, PH)], orient); paginas++; }
       const col = pos % L.cols, lin = Math.floor(pos / L.cols);
       const c = contexto(doc, gx + col * (cw + gap), gy + lin * (ch + gap), cw / bw, bh);
-      cartaSimplificada(c, d, idioma, bw, bh, artes.get(d) || null);
+      const a = artes.get(d) || null;
+      if (original && a) {
+        c.image(a, 0, 0, bw, bh, `o${d.id}`);
+        c.lw(0.3); doc.setDrawColor(150); c.rect(0, 0, bw, bh); doc.setDrawColor(0);
+      } else cartaSimplificada(c, d, idioma, bw, bh, original ? null : a);
     });
-    const semArte = economico ? [...artes.entries()].filter(([d, a]) => !a && !(d.k === 'e' && d.b)).length : 0;
+    const semArte = (economico || original) ? [...artes.entries()].filter(([d, a]) => !a && (original || !(d.k === 'e' && d.b))).length : 0;
     return { doc, semArte, paginas, porPagina: L.porPagina, colunas: L.cols, linhas: L.lins, orientacao: L.o };
   }
 

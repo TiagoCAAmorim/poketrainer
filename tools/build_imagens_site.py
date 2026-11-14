@@ -36,7 +36,7 @@ def indice(refazer):
         return json.loads(CACHE.read_text(encoding='utf-8'))
     out = {}
     for s in http(f'{API}/sets') or []:
-        if not s['id'].startswith(('sv', 'me')):
+        if not s['id'].startswith(('sv', 'me', '30th')) or s['id'] == '30th-c':   # 30th-c (Classic Collection) repete a sigla 30C
             continue
         d = http(f'{API}/sets/{s["id"]}')
         if not d:

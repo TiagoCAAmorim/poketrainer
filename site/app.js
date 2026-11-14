@@ -13,7 +13,7 @@
   const I18N = {
     en: {
       title: 'Proxy PDF', intro: 'Build a printable PDF of simplified cards: black and white, text only or with a light, simplified artwork, so it saves ink. Great for playtesting a deck. Everything runs in your browser; nothing is uploaded.',
-      eco: 'Include simplified artwork (light gray)', eco_note: 'The card layout is redrawn in black and white; only the illustration is fetched from TCGdex by your browser and simplified. Needs an internet connection and takes a few seconds.', loading: (a, b) => `Fetching artwork… ${a}/${b}`, noart: n => `${n} card(s) had no artwork available and were printed text only.`,
+      style: 'Card style', st_text: 'Simplified: text only (least ink)', st_eco: 'Economy: text + simplified artwork (light gray)', st_orig: 'Original cards (full color images)', note_text: 'Everything is drawn by your browser; nothing is downloaded.', note_eco: 'The layout is redrawn in black and white; only the illustration is fetched from TCGdex by your browser and simplified. Needs internet and takes a few seconds.', note_orig: 'Official card images are fetched from TCGdex by your browser. Full color: uses a lot of ink. Needs internet.', loading: (a, b) => `Fetching artwork… ${a}/${b}`, noart: n => `${n} card(s) had no artwork available and were printed text only.`,
       h_import: '1. Start from a deck', load: 'Load', paste: 'or paste a deck list (TCG Live / Limitless)', import: 'Import list',
       h_add: '2. Add cards', add_hint: 'Start typing a card name (English or Portuguese). ↑ ↓ to choose, Enter to add. Tip: "3 ultra" adds 3 copies.',
       search_ph: 'Card name…', h_cards: 'Cards to print', copies: 'copies', clear: 'Clear', empty: 'Pick a deck above or search for cards.',
@@ -29,7 +29,7 @@
     },
     pt: {
       title: 'PDF de proxies', intro: 'Monte um PDF para imprimir com cartas simplificadas: preto e branco, só texto ou com uma ilustração leve e simplificada, para gastar pouca tinta. Ótimo para testar um deck. Tudo roda no seu navegador; nada é enviado.',
-      eco: 'Incluir ilustração simplificada (cinza claro)', eco_note: 'O layout da carta é redesenhado em preto e branco; só a ilustração é buscada na TCGdex pelo seu navegador e simplificada. Precisa de internet e leva alguns segundos.', loading: (a, b) => `Buscando ilustrações… ${a}/${b}`, noart: n => `${n} carta(s) sem ilustração disponível saíram só com texto.`,
+      style: 'Estilo das cartas', st_text: 'Simplificada: só texto (menos tinta)', st_eco: 'Econômica: texto + ilustração simplificada (cinza claro)', st_orig: 'Cartas originais (imagens coloridas)', note_text: 'Tudo é desenhado pelo seu navegador; nada é baixado.', note_eco: 'O layout é redesenhado em preto e branco; só a ilustração é buscada na TCGdex pelo seu navegador e simplificada. Precisa de internet e leva alguns segundos.', note_orig: 'As imagens oficiais das cartas são buscadas na TCGdex pelo seu navegador. Colorido: gasta muita tinta. Precisa de internet.', loading: (a, b) => `Buscando ilustrações… ${a}/${b}`, noart: n => `${n} carta(s) sem ilustração disponível saíram só com texto.`,
       h_import: '1. Comece por um deck', load: 'Carregar', paste: 'ou cole uma lista de deck (TCG Live / Limitless)', import: 'Importar lista',
       h_add: '2. Adicionar cartas', add_hint: 'Comece a digitar o nome da carta (inglês ou português). ↑ ↓ para escolher, Enter para adicionar. Dica: "3 ultra" adiciona 3 cópias.',
       search_ph: 'Nome da carta…', h_cards: 'Cartas a imprimir', copies: 'cópias', clear: 'Limpar', empty: 'Escolha um deck acima ou busque cartas.',
@@ -231,7 +231,7 @@
   // ------------------------------------------------------------ PDF
   function opcoes() {
     const papel = $('papel').value === 'custom' ? $('custom').value : $('papel').value;
-    return { idioma: $('idioma').value, economico: $('economico').checked, papel, escala: (parseFloat($('escala').value) || 0) / 100, margem: parseFloat($('margem').value) || 0, espaco: parseFloat($('espaco').value) || 0 };
+    return { idioma: $('idioma').value, economico: $('estilo').value === 'eco', original: $('estilo').value === 'orig', papel, escala: (parseFloat($('escala').value) || 0) / 100, margem: parseFloat($('margem').value) || 0, espaco: parseFloat($('espaco').value) || 0 };
   }
   const ERROS = { paper: 'e_paper', scale: 'e_scale', fit: 'e_fit', empty: 'e_empty' };
   function atualizarInfo() {
@@ -255,8 +255,10 @@
   const oc = document.createElement('option'); oc.value = 'custom'; oc.textContent = '…'; $('papel').appendChild(oc);
   $('papel').onchange = () => { $('lblCustom').hidden = $('papel').value !== 'custom'; atualizarInfo(); };
   ['custom', 'escala', 'margem', 'espaco'].forEach(id => $(id).addEventListener('input', atualizarInfo));
-  try { $('economico').checked = store.get('ptcg_eco') === '1'; } catch (e) { /* ok */ }
-  $('economico').onchange = () => store.set('ptcg_eco', $('economico').checked ? '1' : '0');
+  const notaEstilo = () => { $('ecoNota').textContent = t('note_' + { texto: 'text', eco: 'eco', orig: 'orig' }[$('estilo').value]); };
+  $('estilo').value = store.get('ptcg_estilo') || 'texto';
+  if (!$('estilo').value) $('estilo').value = 'texto';
+  $('estilo').onchange = () => { store.set('ptcg_estilo', $('estilo').value); notaEstilo(); };
   $('idioma').onchange = () => { idiomaPdfManual = $('idioma').value; store.set('ptcg_pdflang', idiomaPdfManual); };
 
   // ------------------------------------------------------------ idioma da página, café, aviso
@@ -266,6 +268,7 @@
     document.querySelectorAll('#langPage button').forEach(b => b.classList.toggle('on', b.dataset.l === lang));
     busca.placeholder = t('search_ph');
     $('idioma').value = idiomaPdfManual || lang;
+    notaEstilo();
     $('disclaimer').textContent = t('disclaimer');
     const cafe = $('cafe'); cafe.textContent = '';
     if (PIX_KEY || KOFI_URL) {
