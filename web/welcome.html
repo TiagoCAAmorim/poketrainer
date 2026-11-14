@@ -32,6 +32,13 @@ a.opt .go{margin-top:10px;color:var(--accent);font-size:13px}
 .upd button.p{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700}
 .upd button:disabled{opacity:.6;cursor:wait}
 .verif{padding:0;border:0;background:none;color:var(--mute);text-decoration:underline;font-size:12.5px}
+.imgs{margin-top:18px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:13px;color:var(--mute)}
+.imgs b{color:var(--ink)}.imgs .l{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.imgs button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--card2);color:var(--ink);padding:5px 12px}
+.imgs button.p{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700}
+.imgs button:disabled{opacity:.6;cursor:wait}
+.imgs .bar{height:6px;border-radius:3px;background:var(--line);margin-top:8px;overflow:hidden}.imgs .bar i{display:block;height:100%;background:var(--ok);width:0}
+.imgs .det{margin-top:6px;font-size:12px}
 .mono{font-family:'IBM Plex Mono',monospace}
 @media (max-width:640px){.grid{grid-template-columns:1fr}h1{font-size:28px}}
 </style>
@@ -56,9 +63,10 @@ a.opt .go{margin-top:10px;color:var(--accent);font-size:13px}
       <p>Cole o texto de "Copy Log" de uma partida real e veja o motor reproduzir jogada a jogada, conferindo dano e nocautes.</p><div class="go">Abrir a reprodução →</div></a>
   </div>
   <div class="stats" id="stats"></div>
+  <div class="imgs" id="imgs">Verificando as imagens das cartas…</div>
   <div class="foot" style="margin-bottom:6px">Projeto pessoal, sem fins lucrativos e sem associação com a The Pokémon Company. Pokémon e os nomes e imagens das cartas pertencem aos seus respectivos donos.</div>
   <div class="foot"><span id="ver"></span> <button class="verif" id="verifBtn">Verificar atualizações</button></div>
-  <div class="foot">Imagens das cartas: <span class="mono">python baixar_imagens.py</span> · Guias: <span class="mono">DECKS.md</span>, <span class="mono">INSTALACAO.md</span></div>
+  <div class="foot">Guias: <span class="mono">DECKS.md</span>, <span class="mono">INSTALACAO.md</span></div>
 </div>
 <script>
 fetch('/api/home').then(r=>r.json()).then(h=>{
@@ -101,6 +109,32 @@ function mostrar(v,manual){
 const verificar=(force)=>fetch('/api/update/check'+(force?'?force=1':'')).then(r=>r.json()).then(v=>mostrar(v,force)).catch(()=>{});
 document.getElementById('verifBtn').onclick=()=>verificar(true);
 verificar(false);
+
+let imgTimer=null;
+function imgBaixar(){
+  fetch('/api/images/download',{method:'POST',headers:{'X-Requested-With':'ptcg-lab'}}).then(r=>r.json())
+    .then(r=>{if(r.error)alert(r.error);imgVerificar();}).catch(()=>imgVerificar());
+}
+function imgVerificar(){
+  fetch('/api/images/status').then(r=>r.json()).then(m=>{
+    const box=document.getElementById('imgs'), j=m.job||{}, rodando=j.estado==='baixando';
+    let h=`<div class="l"><span>🖼️ Imagens das cartas: <b>${m.completas}</b> de <b>${m.total}</b> baixadas`+
+      (m.faltam?` · <b style="color:var(--warn)">${m.faltam}</b> faltando`+(m.sem_fonte?` (${m.sem_fonte} sem imagem em nenhuma fonte até agora)`:''):' · ✅ completo')+`</span>`+
+      `<button class="${m.faltam&&!rodando?'p':''}" id="imgBtn"${rodando?' disabled':''}>`+
+      (rodando?'Baixando…':(m.faltam?'Baixar as que faltam':'Verificar novas imagens'))+`</button></div>`;
+    if(rodando){const pc=j.total?Math.round(100*j.feitos/j.total):0;
+      h+=`<div class="bar"><i style="width:${pc}%"></i></div><div class="det">${j.feitos}/${j.total} · ${j.novas} novas · ${j.sem_imagem} sem imagem</div>`;}
+    else if(j.estado==='pronto')h+=`<div class="det">Último download: ${j.novas} novas, ${j.sem_imagem} ainda sem imagem disponível.</div>`;
+    else if(j.estado==='erro')h+=`<div class="det" style="color:var(--danger)">Erro: ${esc(j.erro)}</div>`;
+    if(!rodando&&m.faltam){
+      const cols=Object.entries(m.colecoes||{}).map(([c,n])=>`${esc(c)} (${n})`).join(', ');
+      h+=`<div class="det">Faltam em: ${cols}. Ex.: ${m.exemplos.slice(0,5).map(e=>esc(e.nome)+' <span class="mono">'+esc(e.id)+'</span>').join(', ')}…</div>`;}
+    box.innerHTML=h;
+    const b=document.getElementById('imgBtn'); if(b)b.onclick=()=>{b.disabled=true;imgBaixar();};
+    clearTimeout(imgTimer); if(rodando)imgTimer=setTimeout(imgVerificar,1500);
+  }).catch(()=>{document.getElementById('imgs').textContent='';});
+}
+imgVerificar();
 </script>
 </body>
 </html>

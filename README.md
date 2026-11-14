@@ -18,13 +18,40 @@ Você usa tudo por uma página no navegador. O terminal só é necessário para 
 
 ## 1. Instalar (uma vez só)
 
-Você precisa de **Python 3.10 ou mais novo** ([python.org/downloads](https://www.python.org/downloads/);
-no Windows marque *"Add python.exe to PATH"*) e do **Git** ([git-scm.com](https://git-scm.com/downloads)).
-Abra um terminal (no Windows: *Windows Terminal* ou *PowerShell*) e digite:
+**Caminho rápido (Windows, sem Git):** instale o **Python 3.10 ou mais novo** ([python.org/downloads](https://www.python.org/downloads/);
+marque *"Add python.exe to PATH"*). Crie uma pasta onde o programa ficará, abra o terminal nela
+(botão direito na pasta → *Abrir no Terminal*) e cole **um único comando**:
+
+```
+python -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/TiagoCAAmorim/poketrainer/main/instalar.py').read())"
+```
+
+Ele baixa o programa para a subpasta `poketrainer`, prepara tudo (inclusive o PyTorch para as IAs, versão leve),
+**cria o atalho "PTCG Lab" na área de trabalho** e baixa as imagens das cartas (~190 MB; para pular, acrescente `--sem-imagens` ao comando).
+Depois é só abrir o atalho: o navegador abre sozinho. Pode pular os passos 2 e 3 abaixo.
+(Se `python` não funcionar, troque por `py`.)
+
+<details>
+<summary><b>Instalação manual</b> (Linux/macOS, ou se preferir ver cada passo)</summary>
+
+Você precisa de **Python 3.10 ou mais novo**. Depois, baixe o programa de **um** destes dois jeitos:
+
+**Opção A — com Git** ([git-scm.com](https://git-scm.com/downloads)). Abra um terminal (no Windows: *Windows Terminal*
+ou *PowerShell*) e digite:
 
 ```
 git clone https://github.com/TiagoCAAmorim/poketrainer
 cd poketrainer
+```
+
+**Opção B — sem Git (ZIP).** Em [github.com/TiagoCAAmorim/poketrainer](https://github.com/TiagoCAAmorim/poketrainer)
+clique em **Code → Download ZIP**, extraia a pasta e abra o terminal dentro dela
+(no Windows: botão direito na pasta → *Abrir no Terminal*). O programa se atualiza sozinho depois (veja "Atualizar o programa").
+
+Com o programa baixado, o jeito mais simples é rodar o instalador dentro da pasta: `python instalar.py`
+(cria o ambiente, instala tudo e, no Windows, o atalho na área de trabalho). Ou faça os passos à mão:
+
+```
 python -m venv .venv
 ```
 
@@ -36,20 +63,24 @@ Ative o ambiente (isso é preciso **toda vez** que abrir um terminal novo para u
 | Windows (cmd) | `.venv\Scripts\activate.bat` |
 | Linux / macOS | `source .venv/bin/activate` |
 
-Instale o que o programa usa:
+Instale o que o programa usa, **incluindo o PyTorch** (necessário para jogar contra as **IAs treinadas**, níveis 1 a 9):
 
 ```
-pip install numpy reportlab pillow
+pip install -r requirements.txt
 ```
 
-Opcional, para jogar contra as **IAs treinadas** (níveis 1 a 9): `pip install torch`
-(versão leve, sem placa de vídeo: `pip install torch --index-url https://download.pytorch.org/whl/cpu`).
+Isso instala a versão **leve do PyTorch, sem placa de vídeo**, que basta para jogar. (Quem vai **treinar** IAs
+num PC com placa NVIDIA usa `pip install -r requirements-dev.txt`, que traz o PyTorch com GPU e as ferramentas de teste;
+no instalador, `python instalar.py --gpu`.)
+
 Sem o PyTorch tudo funciona, só não aparecem as IAs treinadas — a IA "heurística" (nível 0) continua disponível.
+No Windows, se `python` não funcionar, use `py`.
 
-> Sem Git? Em github.com/TiagoCAAmorim/poketrainer clique em **Code → Download ZIP**, extraia e abra o terminal dentro da pasta.
-> No Windows, se `python` não funcionar, use `py`.
+</details>
 
 ## 2. Baixar as imagens das cartas (recomendado)
+
+> O instalador rápido já faz este passo; só precisa dele se tiver usado `--sem-imagens` ou o instalador for interrompido.
 
 As imagens não vêm junto com o programa. Sem elas tudo funciona, mas as cartas aparecem como quadros de texto.
 
@@ -61,6 +92,8 @@ Leva alguns minutos e ocupa cerca de 190 MB. Pode ser interrompido e retomado (e
 Quer rápido? `python baixar_imagens.py --qualidade baixa` baixa só as miniaturas. Mais opções em [CARTAS.md](CARTAS.md).
 
 ## 3. Abrir a interface gráfica
+
+Com o instalador rápido: abra o atalho **PTCG Lab** da área de trabalho (ou o arquivo `Iniciar PTCG Lab.bat` da pasta). À mão:
 
 ```
 python server.py
@@ -104,7 +137,7 @@ A página inicial mostra seis atalhos:
 
 | Sintoma | O que fazer |
 |---|---|
-| `ModuleNotFoundError: No module named 'numpy'` | O ambiente não está ativado (veja o passo 1) ou falta `pip install numpy reportlab pillow`. |
+| `ModuleNotFoundError: No module named 'numpy'` | O ambiente não está ativado (veja o passo 1) ou falta `pip install -r requirements.txt`. |
 | `ModuleNotFoundError: No module named 'ptcg'` | Rode os comandos de dentro da pasta `poketrainer`. |
 | A porta 8765 está ocupada | `python server.py --port 9000` e abra `http://localhost:9000`. |
 | O navegador não abre sozinho (no WSL aparecem várias linhas "not found") | Abra `http://localhost:8765` no navegador do Windows. Para abrir automaticamente: `sudo apt install wslu` e `export BROWSER=wslview`; ou use `python server.py --no-browser`. |

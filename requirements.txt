@@ -1,6 +1,8 @@
+# USO (jogar, montar decks, IAs treinadas): PyTorch versão CPU, leve. Instale com:  pip install -r requirements.txt
+# Para desenvolver/treinar com placa de vídeo NVIDIA, use requirements-dev.txt.
+# (No Mac o índice abaixo é ignorado e o pip usa o PyTorch padrão, que já é o certo.)
+--extra-index-url https://download.pytorch.org/whl/cpu
 numpy>=1.24
-torch>=2.1
-wandb>=0.19     # opcional: registro dos treinos da IA no W&B (ptcg/ai/wb.py)
-pytest
+torch>=2.1       # necessário para usar as IAs treinadas (níveis 1 a 9)
 reportlab>=4.0   # PDF de cartas para impressão (ptcg/imprimir.py)
-pillow>=10.0      # leitura das imagens webp das cartas no PDF
+pillow>=10.0     # leitura das imagens webp das cartas no PDF

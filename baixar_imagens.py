@@ -160,6 +160,57 @@ def baixar_carta(card, tdx, setids, quals, refazer, delay):
     return cid, 'sem_imagem', None
 
 
+def faltantes(cards, quals=('baixa', 'alta')):
+    """Cartas a que falta alguma das qualidades pedidas."""
+    return [c for c in cards if not all(existente(q, c.id) for q in quals)]
+
+
+def executar(cards, quals, refazer=False, delay=0.15, threads=4, log=print, progresso=None, abortar=None):
+    """Baixa as imagens de `cards` e atualiza imagens/indice.json. Devolve {'baixada','ja_existia','sem_imagem','sem': [ids]}.
+    `progresso(feitos, total, stats)` é chamado a cada carta; `abortar()` verdadeiro interrompe (o que já veio fica salvo)."""
+    sets_json = json.load(open(ROOT / 'ptcg' / 'data' / 'cards.json', encoding='utf-8'))['sets']
+    setids = {k: v['id'] for k, v in sets_json.items()}
+    log('Lendo o índice de imagens da TCGdex…')
+    tdx = tcgdex_index(delay)
+    log(f'  {sum(len(v) for v in tdx.values())} imagens em {len(tdx)} coleções')
+
+    indice = json.load(open(INDICE, encoding='utf-8')) if INDICE.exists() else {}
+    stats = {'baixada': 0, 'ja_existia': 0, 'sem_imagem': 0}
+    sem = []
+    feitas = set()
+    lock = threading.Lock()
+    log(f'Baixando {len(cards)} cartas ({", ".join(quals)}) para {CARTAS.relative_to(ROOT)}/ …')
+
+    def tarefa(c):
+        if abortar and abortar():
+            return c.id, 'abortada', None
+        return baixar_carta(c, tdx, setids, quals, refazer, delay)
+
+    with ThreadPoolExecutor(max_workers=max(1, threads)) as ex:
+        futs = [ex.submit(tarefa, c) for c in cards]
+        for i, f in enumerate(as_completed(futs), 1):
+            cid, st, info = f.result()
+            with lock:
+                if st != 'abortada':
+                    stats[st] += 1
+                    feitas.add(cid)
+                if info:
+                    indice[cid] = info
+                if st == 'sem_imagem':
+                    sem.append(cid)
+            if progresso:
+                progresso(i, len(futs), dict(stats))
+            if i % 100 == 0 or i == len(futs):
+                log(f'  {i}/{len(futs)}  novas {stats["baixada"]}  já existiam {stats["ja_existia"]}  sem imagem {stats["sem_imagem"]}')
+    IMG_DIR.mkdir(exist_ok=True)
+    indice['_sem_imagem'] = sorted(set(indice.get('_sem_imagem', [])) - feitas | set(sem))
+    INDICE.write_text(json.dumps(indice, ensure_ascii=False, indent=1), encoding='utf-8')
+    log(f'Pronto: {stats["baixada"]} baixadas, {stats["ja_existia"]} já existiam, {stats["sem_imagem"]} sem imagem.')
+    if sem:
+        log('Sem imagem (veja também imagens/indice.json): ' + ', '.join(sorted(sem)[:20]) + (' …' if len(sem) > 20 else ''))
+    return {**stats, 'sem': sorted(sem)}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--qualidade', choices=['baixa', 'alta', 'ambas'], default='ambas')
@@ -201,41 +252,13 @@ def main():
         cols = {c.upper() for c in a.colecao}
         cards = [c for c in cards if any(p.rsplit('-', 1)[0] in cols for p in (c.prints or [c.id]))]
     if a.listar_faltantes:
-        falt = [c for c in cards if not all(existente(q, c.id) for q in quals)]
+        falt = faltantes(cards, quals)
         for c in falt:
             print(f'{c.id}\t{c.name}')
         print(f'{len(falt)} de {len(cards)} cartas sem imagem baixada.')
         return
 
-    sets_json = json.load(open(ROOT / 'ptcg' / 'data' / 'cards.json', encoding='utf-8'))['sets']
-    setids = {k: v['id'] for k, v in sets_json.items()}
-    print('Lendo o índice de imagens da TCGdex…')
-    tdx = tcgdex_index(a.delay)
-    print(f'  {sum(len(v) for v in tdx.values())} imagens em {len(tdx)} coleções')
-
-    indice = json.load(open(INDICE, encoding='utf-8')) if INDICE.exists() else {}
-    stats = {'baixada': 0, 'ja_existia': 0, 'sem_imagem': 0}
-    sem = []
-    lock = threading.Lock()
-    print(f'Baixando {len(cards)} cartas ({", ".join(quals)}) para {CARTAS.relative_to(ROOT)}/ …')
-    with ThreadPoolExecutor(max_workers=max(1, a.threads)) as ex:
-        futs = [ex.submit(baixar_carta, c, tdx, setids, quals, a.refazer, a.delay) for c in cards]
-        for i, f in enumerate(as_completed(futs), 1):
-            cid, st, info = f.result()
-            with lock:
-                stats[st] += 1
-                if info:
-                    indice[cid] = info
-                if st == 'sem_imagem':
-                    sem.append(cid)
-            if i % 100 == 0 or i == len(futs):
-                print(f'  {i}/{len(futs)}  novas {stats["baixada"]}  já existiam {stats["ja_existia"]}  sem imagem {stats["sem_imagem"]}')
-    IMG_DIR.mkdir(exist_ok=True)
-    indice['_sem_imagem'] = sorted(set(indice.get('_sem_imagem', [])) - {c.id for c in cards} | set(sem))
-    INDICE.write_text(json.dumps(indice, ensure_ascii=False, indent=1), encoding='utf-8')
-    print(f'Pronto: {stats["baixada"]} baixadas, {stats["ja_existia"]} já existiam, {stats["sem_imagem"]} sem imagem.')
-    if sem:
-        print('Sem imagem (veja também imagens/indice.json): ' + ', '.join(sorted(sem)[:20]) + (' …' if len(sem) > 20 else ''))
+    executar(cards, quals, a.refazer, a.delay, a.threads)
 
 
 if __name__ == '__main__':

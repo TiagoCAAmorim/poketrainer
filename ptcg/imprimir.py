@@ -10,6 +10,7 @@
 """
 from __future__ import annotations
 
+import math
 import io
 import json
 import re
@@ -30,6 +31,7 @@ _PT_JSON = Path(__file__).resolve().parent / 'data' / 'cards_pt.json'
 _pt_cache: dict | None = None
 _TIPO_PT = {'G': 'Planta', 'R': 'Fogo', 'W': 'Água', 'L': 'Elétrico', 'P': 'Psíquico', 'F': 'Lutador',
             'D': 'Escuridão', 'M': 'Metal', 'N': 'Dragão', 'C': 'Incolor', 'Y': 'Fada'}
+_CAT_PT = {'supporter': 'APOIADOR', 'item': 'ITEM', 'tool': 'FERRAMENTA', 'stadium': 'ESTÁDIO'}
 _SUB_PT = {'supporter': 'Apoiador', 'item': 'Item', 'tool': 'Ferramenta Pokémon', 'stadium': 'Estádio'}
 
 
@@ -145,13 +147,104 @@ def _textos(d, idioma):
             'texto': pt.get('text') or d.text, 'abilities': ab, 'attacks': at}
 
 
+def _estrela(n, ri):
+    return [((ri if i % 2 else 1) * math.cos(math.pi / 2 + i * math.pi / n),
+             (ri if i % 2 else 1) * math.sin(math.pi / 2 + i * math.pi / n)) for i in range(2 * n)]
+
+
+def _lente(a, b, n, larg, vert=1.0):
+    """Forma de folha/olho entre os pontos a e b."""
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    ln = math.hypot(dx, dy)
+    nx, ny = -dy / ln, dx / ln
+
+    def lado(sg):
+        r = []
+        for i in range(n + 1):
+            t = i / n
+            w = sg * larg * math.sin(math.pi * t) ** vert
+            r.append((a[0] + dx * t + nx * w, a[1] + dy * t + ny * w))
+        return r
+    return lado(1) + lado(-1)[::-1][1:-1]
+
+
+# Glifos em coordenadas -1..1 (y para cima), iguais aos de site/pdf.js. g: f=preenche, s=contorno, c=disco preto,
+# b=disco branco, bp=polígono branco, bl=linha branca.
+_GLIFOS = {
+    'R': lambda g: (g.f([(0.1, 1), (0.55, 0.3), (0.8, -0.25), (0.5, -0.85), (0, -1), (-0.5, -0.85), (-0.8, -0.25),
+                         (-0.45, 0.2), (-0.25, -0.15), (-0.2, 0.45)]), g.b(0, -0.5, 0.28)),
+    'W': lambda g: (g.f([(0, 1), (-0.6, -0.05), (0.6, -0.05)]), g.c(0, -0.35, 0.65)),
+    'L': lambda g: g.f([(0.25, 1), (-0.55, -0.1), (-0.05, -0.1), (-0.25, -1), (0.55, 0.15), (0.05, 0.15)]),
+    'G': lambda g: (g.f(_lente((-0.8, -0.8), (0.8, 0.8), 10, 0.55, 0.8)), g.bl((-0.95, -0.95), (0.55, 0.55))),
+    'P': lambda g: (g.s(_lente((-1, 0), (1, 0), 12, 0.6, 0.9)), g.c(0, 0, 0.3)),
+    'F': lambda g: (g.f([(-0.8, -0.5), (-0.5, 0.5), (0.1, 0.85), (0.8, 0.3), (0.7, -0.6), (0, -0.85)]),
+                    g.bl((-0.2, 0.5), (0.05, -0.1)), g.bl((0.05, -0.1), (0.45, -0.25))),
+    'D': lambda g: (g.c(0, 0, 0.85), g.b(0.42, 0.28, 0.72)),
+    'M': lambda g: (g.f(_estrela(6, 0.87)), g.b(0, 0, 0.34)),
+    'N': lambda g: (g.f([(0, 1), (0.7, 0), (0, -1), (-0.7, 0)]), g.bp([(0, 0.5), (0.3, 0), (0, -0.5), (-0.3, 0)])),
+    'C': lambda g: g.f(_estrela(5, 0.42)),
+    'Y': lambda g: g.f(_estrela(4, 0.27)),
+}
+
+
+def _icone(c, t, x, y, R):
+    """Ícone do tipo `t` (círculo com glifo, só preto e branco) com centro (x, y) e raio R."""
+    u = R * 0.72
+
+    def pts(ps):
+        return [(x + a * u, y + b * u) for a, b in ps]
+
+    def poly(ps, fill, stroke):
+        p = c.beginPath()
+        q = pts(ps)
+        p.moveTo(*q[0])
+        for pt in q[1:]:
+            p.lineTo(*pt)
+        p.close()
+        c.drawPath(p, fill=fill, stroke=stroke)
+
+    def cor(v):
+        c.setFillColorRGB(v, v, v)
+        c.setStrokeColorRGB(v, v, v)
+
+    class G:
+        @staticmethod
+        def f(ps):
+            cor(0); poly(ps, 1, 0)
+
+        @staticmethod
+        def s(ps):
+            cor(0); c.setLineWidth(max(0.5, R * 0.13)); poly(ps, 0, 1)
+
+        @staticmethod
+        def c(a, b, r):
+            cor(0); c.circle(x + a * u, y + b * u, r * u, stroke=0, fill=1)
+
+        @staticmethod
+        def b(a, b, r):
+            cor(1); c.circle(x + a * u, y + b * u, r * u, stroke=0, fill=1); cor(0)
+
+        @staticmethod
+        def bp(ps):
+            cor(1); poly(ps, 1, 0); cor(0)
+
+        @staticmethod
+        def bl(p1, p2):
+            cor(1); c.setLineWidth(max(0.5, R * 0.1))
+            c.line(x + p1[0] * u, y + p1[1] * u, x + p2[0] * u, y + p2[1] * u); cor(0)
+
+    c.saveState()
+    cor(0)
+    c.setLineWidth(max(0.4, R * 0.09))
+    c.circle(x, y, R, stroke=1, fill=0)
+    _GLIFOS.get(t, _GLIFOS['C'])(G)
+    c.restoreState()
+
+
 def _custo(c, x, y, custo, r):
-    """Desenha o custo do ataque como círculos com a letra do tipo (sem cor). Devolve o x final."""
-    c.setLineWidth(0.5)
+    """Desenha o custo do ataque como ícones de tipo (sem cor). Devolve o x final."""
     for t in custo:
-        c.circle(x + r, y + r * 0.35, r, stroke=1, fill=0)
-        c.setFont('Helvetica-Bold', r * 1.35)
-        c.drawCentredString(x + r, y + r * 0.35 - r * 0.45, 'C' if t == 'C' else t)
+        _icone(c, t, x + r, y + r * 0.35, r)
         x += 2 * r + 1.2
     return x
 
@@ -167,20 +260,24 @@ def carta_simplificada(c, d, idioma='pt', larg=CARTA_MM[0] * PT, alt=CARTA_MM[1]
     c.roundRect(0.6, 0.6, larg - 1.2, alt - 1.2, 8, stroke=1, fill=0)
     c.setLineWidth(0.4)
     c.roundRect(4, 4, larg - 8, alt - 8, 5, stroke=1, fill=0)
-    # --- cabeçalho
+    # --- cabeçalho: nome, ícone(s) de tipo e PS; depois [CATEGORIA] e subtítulo
     y = alt - m - 9
-    sub = ''
+    tag, sub, hp = '', '', ''
     if d.kind == 'pokemon':
-        est = {0: 'Pokémon Básico', 1: 'Pokémon Fase 1', 2: 'Pokémon Fase 2'}[d.stage]
-        tipos = '/'.join(_TIPO_PT.get(t, t) for t in d.types)
-        sub = f'{est} · {tipos}' + (f' · evolui de {d.evolves_from}' if d.evolves_from else '')
+        tag = 'POKÉMON'
+        sub = {0: 'Básico', 1: 'Fase 1', 2: 'Fase 2'}[d.stage] + (f' · evolui de {d.evolves_from}' if d.evolves_from else '')
         hp = f'PS {d.hp}'
     elif d.kind == 'trainer':
-        sub, hp = f'Treinador · {_SUB_PT.get(d.subtype, "Treinador")}' + (' · ACE SPEC' if d.ace_spec else ''), ''
+        tag = _CAT_PT.get(d.subtype, 'TREINADOR')
+        sub = 'ACE SPEC' if d.ace_spec else ''
     else:
-        sub, hp = ('Energia Básica' if d.basic_energy else 'Energia Especial'), ''
+        tag, sub = 'ENERGIA', ('Básica' if d.basic_energy else 'Especial')
+    R = 5.2
+    tipos = list(d.types) if d.kind == 'pokemon' else []
+    w_ic = len(tipos) * (2 * R + 1.5)
+    w_hp = c.stringWidth(hp, 'Helvetica-Bold', 9) + 5 if hp else 0
     tam = 11.0
-    wmax = iw - (c.stringWidth(hp, 'Helvetica-Bold', 9) + 6 if hp else 0)
+    wmax = iw - w_hp - w_ic - 2
     while tam > 6 and c.stringWidth(_lat(T['nome']), 'Helvetica-Bold', tam) > wmax:
         tam -= 0.5
     c.setFont('Helvetica-Bold', tam)
@@ -188,9 +285,20 @@ def carta_simplificada(c, d, idioma='pt', larg=CARTA_MM[0] * PT, alt=CARTA_MM[1]
     if hp:
         c.setFont('Helvetica-Bold', 9)
         c.drawRightString(larg - m, y, hp)
-    y -= 8
-    c.setFont('Helvetica-Oblique', 5.6)
-    for ln in _quebrar(c, sub, 'Helvetica-Oblique', 5.6, iw):
+    for i, t in enumerate(tipos):
+        _icone(c, t, larg - m - w_hp - R - i * (2 * R + 1.5) - 1, y + 3.1, R)
+    y -= 9.6
+    c.setFont('Helvetica-Bold', 5.8)
+    wt = c.stringWidth(_lat(tag), 'Helvetica-Bold', 5.8) + 5
+    c.setLineWidth(0.5)
+    c.rect(m, y - 1.7, wt, 7.4, stroke=1, fill=0)
+    c.drawString(m + 2.5, y, _lat(tag))
+    c.setFont('Helvetica-Oblique', 5.8)
+    ls = _quebrar(c, sub, 'Helvetica-Oblique', 5.8, iw - wt - 4)
+    if ls:
+        c.drawString(m + wt + 4, y, ls[0])
+    y -= 6.6
+    for ln in ls[1:]:
         c.drawString(m, y, ln)
         y -= 6.4
     if T['nome_pt']:
@@ -215,10 +323,13 @@ def carta_simplificada(c, d, idioma='pt', larg=CARTA_MM[0] * PT, alt=CARTA_MM[1]
     if d.kind == 'pokemon' and T['texto']:
         blocos.append(('txt', '', [], '', T['texto']))
 
+    if d.kind == 'energy' and d.basic_energy and d.provides:
+        _icone(c, d.provides, larg / 2, base + (topo - base) * 0.62, 24)
+
     def montar(tam):
         linhas, h = [], 0.0
         for tipo, nome, custo, dano, texto in blocos:
-            r = tam * 0.62
+            r = tam * 0.7
             ltxt = _quebrar(c, texto, 'Helvetica', tam, iw)
             h += (tam * 1.35 if tipo != 'txt' else 0) + len(ltxt) * tam * 1.2 + tam * 0.9
             linhas.append((tipo, nome, custo, dano, ltxt, r))
@@ -257,11 +368,33 @@ def carta_simplificada(c, d, idioma='pt', larg=CARTA_MM[0] * PT, alt=CARTA_MM[1]
     c.line(m, base - 2, larg - m, base - 2)
     c.setFont('Helvetica', 6)
     if d.kind == 'pokemon':
-        fr = f'Fraqueza: {d.weakness} ×2' if d.weakness else 'Fraqueza: -'
-        rs = f'Resistência: {d.resistance} -{d.resistance_value}' if d.resistance else 'Resistência: -'
-        c.drawString(m, base - 10, _lat(fr))
-        c.drawCentredString(larg / 2 + 6, base - 10, _lat(rs))
-        c.drawRightString(larg - m, base - 10, f'Recuo: {"O" * d.retreat if d.retreat else "-"}')
+        r, yb = 3.5, base - 10
+
+        def txt(x, t):
+            c.setFont('Helvetica', 6)
+            c.drawString(x, yb, _lat(t))
+            return x + c.stringWidth(_lat(t), 'Helvetica', 6)
+
+        def grupo(x0, rot, tp, suf):   # "Fraqueza: [ícone] ×2"
+            x = txt(x0, rot + ':') + 2
+            if tp:
+                _icone(c, tp, x + r, yb + 2, r)
+                txt(x + 2 * r + 2, suf)
+            else:
+                txt(x, '-')
+        grupo(m, 'Fraqueza', d.weakness, '×2')
+        w_res = c.stringWidth('Resistência:', 'Helvetica', 6) + 2 + (
+            2 * r + 2 + c.stringWidth(_lat(f'-{d.resistance_value}'), 'Helvetica', 6) if d.resistance else 4)
+        grupo(larg / 2 + 4 - w_res / 2, 'Resistência', d.resistance, f'-{d.resistance_value}' if d.resistance else '')
+        nr = d.retreat or 0
+        w_rec = c.stringWidth('Recuo:', 'Helvetica', 6) + 2 + (nr * (2 * r + 1.2) if nr else 4)
+        x = txt(larg - m - w_rec, 'Recuo:') + 2
+        if nr:
+            for _ in range(nr):
+                _icone(c, 'C', x + r, yb + 2, r)
+                x += 2 * r + 1.2
+        else:
+            txt(x, '-')
     c.setFont('Helvetica', 5)
     c.drawString(m, 6.5, _lat(d.id.replace('-', ' ', 1)))
     c.drawRightString(larg - m, 6.5, 'cópia para teste')

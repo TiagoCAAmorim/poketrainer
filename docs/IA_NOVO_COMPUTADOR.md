@@ -30,8 +30,8 @@ Antes de sair deste computador: **faça commit e push** (inclusive este document
 ```
 git clone git@github.com:TiagoCAAmorim/poketrainer.git && cd poketrainer   # ou git pull
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt        # numpy, torch, wandb, pytest
-# com GPU NVIDIA: instale o torch com CUDA (https://pytorch.org); confirme:
+pip install -r requirements-dev.txt    # numpy, torch com CUDA 12.8, pytest, playwright, wandb (sem GPU: requirements.txt)
+# confirme que o torch enxerga a GPU:
 python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
 nvidia-smi                              # VRAM livre (o treino precisa de ~1 GB na imitação)
 nproc                                   # o PPO usa 30 workers por padrão (máquina de 32 núcleos)

@@ -11,17 +11,23 @@ Nos comandos, use `python` (Linux/macOS) ou `py` (Windows, se `python` não func
 | O quê | Como conferir | Esperado |
 |---|---|---|
 | Python 3.10 ou mais novo | `python --version` | `Python 3.10.x` ou maior (testado no 3.13) |
-| Git | `git --version` | qualquer versão |
+| Git (opcional) | `git --version` | qualquer versão; sem Git, baixe o ZIP (seção 2) |
 | Navegador | — | Chrome, Edge ou Firefox (para a interface) |
 
 Se não tiver Python: https://www.python.org/downloads/ (no Windows marque **"Add python.exe to PATH"**).
 
 ## 2. Baixar o projeto
 
+**Atalho (Windows):** numa pasta vazia, `python -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/TiagoCAAmorim/poketrainer/main/instalar.py').read())"`
+baixa o ZIP, cria `.venv`, instala `requirements.txt`, cria o atalho "PTCG Lab" na área de trabalho e baixa as imagens das cartas
+(com o projeto já baixado: `python instalar.py [--gpu] [--sem-imagens] [--sem-atalho]`). Nesse caso pule para a seção 4.
+Manualmente:
+
 ```
 git clone https://github.com/TiagoCAAmorim/poketrainer
 cd poketrainer
 ```
+Sem Git: em github.com/TiagoCAAmorim/poketrainer clique em **Code → Download ZIP**, extraia e abra o terminal na pasta.
 
 ## 3. Ambiente virtual (recomendado) e dependências
 
@@ -36,11 +42,12 @@ Ative o ambiente:
 
 Instale:
 ```
-pip install numpy reportlab pillow
+pip install -r requirements.txt        # uso: PyTorch só CPU (leve)
+pip install -r requirements-dev.txt    # desenvolvimento/treino: PyTorch com GPU NVIDIA (CUDA 12.8) + pytest, playwright, wandb
 ```
-O motor, a biblioteca de cartas, os decks, o LOG, os testes e a interface só precisam de **numpy**
-(`reportlab` e `pillow` servem à impressão de cartas em PDF).
-O PyTorch (`pip install torch`) só é necessário para treinar a IA (seção 9); o resto funciona sem ele.
+(Use um dos dois, não ambos.) O motor, a biblioteca de cartas, os decks, o LOG, os testes e a interface só precisam de **numpy**
+(`reportlab` e `pillow` servem à impressão de cartas em PDF). Sem o PyTorch tudo funciona, menos as IAs treinadas
+(a heurística continua) e o treino (seção 9).
 
 ## 4. Testes (nesta ordem)
 

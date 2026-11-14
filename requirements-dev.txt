@@ -1,2 +1,10 @@
--r requirements.txt
+# DESENVOLVIMENTO e TREINO de IA: PyTorch com GPU NVIDIA (CUDA 12.8) + ferramentas de teste.
+# Instale com:  pip install -r requirements-dev.txt     (para uso sem placa de vídeo, use requirements.txt)
+--extra-index-url https://download.pytorch.org/whl/cu128
+numpy>=1.24
+torch>=2.1
+reportlab>=4.0
+pillow>=10.0
+pytest
 playwright>=1.40   # teste de interface: tests/ui_smoke.py (depois: python -m playwright install chromium)
+wandb>=0.19        # opcional: registro dos treinos da IA no W&B (ptcg/ai/wb.py)

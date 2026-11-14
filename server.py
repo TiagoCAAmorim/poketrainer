@@ -36,6 +36,56 @@ LOCK = threading.Lock()
 S = {'game': None, 'ctrl': ['human', 'heuristic'], 'agents': [None, None], 'decks': [None, None], 'advisor': None}
 
 
+# ---- imagens das cartas (baixar_imagens.py): verificação e download em thread, um por vez
+IMG_JOB = {'estado': 'ocioso'}
+IMG_LOCK = threading.Lock()
+
+
+def imagens_status():
+    """Quantas cartas têm imagem (baixa e alta), quais faltam e, por coleção, onde faltam."""
+    import baixar_imagens as BI
+    D = db()
+    cards = list(D.cards.values())
+    falt = BI.faltantes(cards)
+    sem_fonte = set()
+    try:
+        sem_fonte = set(json.load(open(BI.INDICE, encoding='utf-8')).get('_sem_imagem', []))
+    except Exception:
+        pass
+    por_col = {}
+    for c in falt:
+        for col in {p.rsplit('-', 1)[0] for p in (c.prints or [c.id])}:
+            por_col[col] = por_col.get(col, 0) + 1
+    ids = {c.id for c in falt}
+    return {'total': len(cards), 'completas': len(cards) - len(falt), 'faltam': len(falt),
+            'sem_fonte': len(sem_fonte & ids),       # já tentadas e sem imagem em nenhuma fonte
+            'exemplos': [{'id': c.id, 'nome': c.name} for c in falt[:12]],
+            'colecoes': dict(sorted(por_col.items(), key=lambda x: -x[1])[:8]),
+            'job': {k: v for k, v in IMG_JOB.items() if k != 'abortar'}}
+
+
+def imagens_baixar():
+    import baixar_imagens as BI
+    with IMG_LOCK:
+        if IMG_JOB['estado'] == 'baixando':
+            raise ValueError('Já existe um download de imagens em andamento.')
+        cards = BI.faltantes(list(db().cards.values()))
+        IMG_JOB.clear()
+        IMG_JOB.update(estado='baixando', feitos=0, total=len(cards), novas=0, sem_imagem=0, t0=time.time())
+
+    def prog(feitos, total, st):
+        IMG_JOB.update(feitos=feitos, total=total, novas=st['baixada'], sem_imagem=st['sem_imagem'])
+
+    def run():
+        try:
+            r = BI.executar(cards, ['baixa', 'alta'], False, 0.15, 4, log=lambda m: None, progresso=prog)
+            IMG_JOB.update(estado='pronto', novas=r['baixada'], sem_imagem=r['sem_imagem'])
+        except Exception as e:
+            IMG_JOB.update(estado='erro', erro=f'{type(e).__name__}: {e}')
+    threading.Thread(target=run, daemon=True).start()
+    return {'total': len(cards)}
+
+
 # ---- teste de deck (ptcg/testdeck.py): um trabalho por vez, em thread; a página consulta o andamento
 JOB = {'id': 0, 'estado': 'ocioso'}
 JOB_LOCK = threading.Lock()
@@ -336,6 +386,8 @@ class Handler(BaseHTTPRequestHandler):
                 o = EX.opcoes()
                 return self._send(200, {'cartas': o['total'], 'status': o['status'], 'com_imagem': o['com_imagem'],
                                         'decks': len(list_decks()), 'meus': len(list_decks('meus'))})
+            if u.path == '/api/images/status':
+                return self._send(200, imagens_status())
             if u.path == '/api/update/check':
                 return self._send(200, update_check(q.get('force', ['0'])[0] == '1'))
             if u.path == '/api/cards/options':
@@ -389,6 +441,10 @@ class Handler(BaseHTTPRequestHandler):
                 if self.headers.get('X-Requested-With') != 'ptcg-lab':
                     return self._send(403, {'error': 'requisição não permitida'})
                 return self._send(200, update_apply())
+            if u.path == '/api/images/download':
+                if self.headers.get('X-Requested-With') != 'ptcg-lab':
+                    return self._send(403, {'error': 'requisição não permitida'})
+                return self._send(200, imagens_baixar())
             if u.path == '/api/replay':
                 return self._send(200, run_replay(body['log']))
             if u.path in ('/api/print/pdf', '/api/print/layout'):
