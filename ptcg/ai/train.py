@@ -108,7 +108,7 @@ class Rollout:
                     groups.setdefault(gm['ctrl'][g.prompt.player], []).append(gm)
             for key, gms in groups.items():
                 model = net if key == 'learner' else pool[key]
-                obs = [encode(gm['g']) for gm in gms]
+                obs = [encode(gm['g'], versao=model.obs) for gm in gms]
                 logits, values = model(collate(obs))
                 dist = torch.distributions.Categorical(logits=logits)
                 acts = dist.sample()
@@ -250,6 +250,7 @@ def main(argv=None):
     ap.add_argument('--eval-every', type=int, default=10)
     ap.add_argument('--eval-games', type=int, default=200)
     ap.add_argument('--max-decisions', type=int, default=3000)
+    ap.add_argument('--obs', type=int, default=1, choices=(1, 2), help='versão da observação de uma rede NOVA (sem --resume)')
     ap.add_argument('--hidden', type=int, default=256)
     ap.add_argument('--emb', type=int, default=48)
     ap.add_argument('--out', default='checkpoints')
@@ -271,7 +272,7 @@ def main(argv=None):
     if args.resume:
         net, _ = load_checkpoint(args.resume, args.device)
     else:
-        net = PolicyValueNet(emb=args.emb, hidden=args.hidden).to(args.device)
+        net = PolicyValueNet(emb=args.emb, hidden=args.hidden, obs=args.obs).to(args.device)
     net.eval()
     opt = torch.optim.Adam(net.parameters(), lr=args.lr)
     workers = args.workers if args.workers is not None else max(1, (os.cpu_count() or 2) - 2)

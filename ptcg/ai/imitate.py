@@ -63,7 +63,9 @@ def train_imitation(data_dir, out, epochs=8, batch=1024, lr=1e-3, weight_decay=1
     if resume:
         net, _ = load_checkpoint(resume, device)
     else:
-        net = PolicyValueNet(emb=emb, hidden=hidden).to(device)
+        net = PolicyValueNet(emb=emb, hidden=hidden, obs=train.obs).to(device)    # versão dos dados
+    if train.obs != net.obs:
+        raise ValueError(f'dados com observação v{train.obs} e rede v{net.obs}: use dados e rede da mesma versão')
     opt = torch.optim.AdamW(net.parameters(), lr=lr, weight_decay=weight_decay)
     steps = epochs * math.ceil(len(train) / batch)
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=lr, total_steps=steps, pct_start=0.05)
@@ -166,10 +168,10 @@ def _eval_worker(task):
         with T.no_grad():
             while not g.done and g.decisions < max_decisions:
                 if g.prompt.player == me:
-                    logits, _ = net(collate([encode(g)]))
+                    logits, _ = net(collate([encode(g, versao=net.obs)]))
                     g.step(int(logits[0].argmax()))
                 elif opp_net is not None:      # outra rede, também gulosa
-                    logits, _ = opp_net(collate([encode(g)]))
+                    logits, _ = opp_net(collate([encode(g, versao=opp_net.obs)]))
                     g.step(int(logits[0].argmax()))
                 else:
                     g.step(opp.act(g, g.prompt))

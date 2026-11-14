@@ -38,6 +38,9 @@ def main(argv=None):
     p.add_argument('--por-shard', type=int, default=100)
     p.add_argument('--seed', type=int, default=0, help='use sementes diferentes ao acrescentar mais dados')
     p.add_argument('--saida', default='dados/imitacao')
+    p.add_argument('--obs', type=int, default=1, choices=(1, 2),
+                   help='versão da observação (2 = deck restante, descarte como conjunto, dano por ataque); '
+                        'use uma pasta por versão (ex.: --saida dados/imitacao_v2)')
 
     p = sub.add_parser('treinar', help='treino supervisionado nos shards')
     p.add_argument('--dados', default='dados/imitacao')
@@ -78,7 +81,7 @@ def main(argv=None):
             decks = decks_from(a)
             print(f'Gerando {a.partidas} partidas com {len(decks)} decks → {a.saida}')
             st = generate(a.saida, a.partidas, decks, epsilon=a.epsilon, workers=a.processos,
-                          games_per_shard=a.por_shard, seed=a.seed)
+                          games_per_shard=a.por_shard, seed=a.seed, versao=a.obs)
             print(f'Pronto: {st}')
             run.summary({'partidas': st['games'], 'amostras': st['samples'], 'erros_motor': st['errors'],
                          'empates': st['draws'], 'decks': len(decks)})

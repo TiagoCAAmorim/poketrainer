@@ -8,6 +8,11 @@ Observação (perspectiva do jogador `p`):
   discard    f32[2, V]    contagem de cartas no descarte (meu, oponente)
   glob       f32[GLOB_F]  escalares (tamanhos de zonas, prêmios, flags do turno, tipo de decisão)
   ctx_ids    int[2]       estádio em jogo, carta que originou a decisão
+Versão 2 (`encode(g, versao=2)`; a versão 1 continua sendo o padrão e as redes antigas a usam) acrescenta:
+  deck_ids/deck_cnt  int/f32[BAG]   cartas que ainda estão no MEU deck+prêmios (o jogador conhece a própria lista)
+  disc_ids/disc_cnt  int/f32[2*BAG] descarte (meu, oponente) como lista de cartas distintas + contagem
+  slot_x     f32[18, SLOT_X]        por ataque (até 3): pode pagar, dano estimado no ativo oposto, nocauteia
+  glob2      f32[GLOB2_F]           Zona Perdida, prêmios que faltam, ameaças de nocaute dos dois lados
 Opções:
   opt_ids    int[A]       carta envolvida na opção
   opt_tids   int[A]       carta do Pokémon alvo (se houver)
@@ -35,6 +40,11 @@ OPTION_KINDS = ['end', 'play_basic', 'evolve', 'attach', 'tool', 'trainer', 'abi
 SLOT_F = 12 + len(ENERGY_TYPES) + len(CONDITIONS) + 3
 GLOB_F = 22 + len(HINTS)
 OPT_F = len(OPTION_KINDS) + 3 + 7 + 3 + 2
+VERSOES = (1, 2)
+BAG = 60                      # cartas distintas por zona (um deck de 60 tem no máximo 60)
+MAX_ATK = 3
+SLOT_X = 3 * MAX_ATK + 2
+GLOB2_F = 8
 
 
 def _slot_feats(g, s, is_active, p_owner):
@@ -164,8 +174,67 @@ def encode_options(g, p, options):
     return {'opt_ids': ids, 'opt_tids': tids, 'opt_feats': feats}
 
 
-def encode(g, p=None):
+def _bag(cards, n=BAG):
+    ids = np.zeros(n, np.int64)
+    cnt = np.zeros(n, np.float32)
+    tally = {}
+    for c in cards:
+        tally[c.d.idx] = tally.get(c.d.idx, 0) + 1
+    for i, (k, v) in enumerate(sorted(tally.items())[:n]):
+        ids[i], cnt[i] = k, v / 4
+    return ids, cnt
+
+
+def _attack_feats(g, s, target):
+    """Por ataque: pode pagar, dano estimado em `target` (/340), nocauteia; + maior dano pagável, algum nocauteia."""
+    f = np.zeros(SLOT_X, np.float32)
+    left = g.hp_left(target) if target is not None else None
+    best, ko_any = 0, 0.0
+    for i, atk in enumerate(s.d.attacks[:MAX_ATK]):
+        try:
+            pay = g.can_pay(s, g.attack_cost(s, atk))
+            dmg = g.estimate_attack(s, atk, target) if target is not None else atk.damage
+        except Exception:
+            pay, dmg = False, 0
+        dmg = max(0, int(dmg or 0))
+        ko = float(pay and left is not None and dmg >= left > 0)
+        f[3 * i], f[3 * i + 1], f[3 * i + 2] = float(pay), dmg / 340, ko
+        if pay:
+            best = max(best, dmg)
+            ko_any = max(ko_any, ko)
+    f[3 * MAX_ATK], f[3 * MAX_ATK + 1] = best / 340, ko_any
+    return f
+
+
+def encode_v2_extra(g, p):
+    me, op = g.players[p], g.players[1 - p]
+    deck_ids, deck_cnt = _bag(list(me.deck) + list(me.prizes))
+    d0, c0 = _bag(me.discard)
+    d1, c1 = _bag(op.discard)
+    slot_x = np.zeros((N_SLOTS, SLOT_X), np.float32)
+    if g.setup_done:
+        for side, (pl, other) in enumerate(((me, op), (op, me))):
+            slots = ([pl.active] + list(pl.bench))[:PER_SIDE]
+            for j, s in enumerate(slots):
+                if s is not None:
+                    slot_x[side * PER_SIDE + j] = _attack_feats(g, s, other.active)
+    glob2 = np.zeros(GLOB2_F, np.float32)
+    glob2[0] = len(me.lost_zone) / 10
+    glob2[1] = len(op.lost_zone) / 10
+    glob2[2] = float(len(me.prizes) <= 2)
+    glob2[3] = float(len(op.prizes) <= 2)
+    glob2[4] = slot_x[0, 3 * MAX_ATK + 1]                          # meu ativo nocauteia o ativo dele agora
+    glob2[5] = slot_x[PER_SIDE, 3 * MAX_ATK + 1]                   # o ativo dele nocauteia o meu (com o que tem)
+    glob2[6] = float(slot_x[1:PER_SIDE, 3 * MAX_ATK + 1].max(initial=0))   # algum do meu banco nocautearia
+    glob2[7] = float(op.active is not None and op.active.d.base_prizes >= 2)
+    return {'deck_ids': deck_ids, 'deck_cnt': deck_cnt, 'disc_ids': np.concatenate([d0, d1]),
+            'disc_cnt': np.concatenate([c0, c1]), 'slot_x': slot_x, 'glob2': glob2}
+
+
+def encode(g, p=None, versao=1):
     p = g.prompt.player if p is None else p
     obs = encode_state(g, p)
+    if versao >= 2:
+        obs.update(encode_v2_extra(g, p))
     obs.update(encode_options(g, p, g.prompt.options))
     return obs

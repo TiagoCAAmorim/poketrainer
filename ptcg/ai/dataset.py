@@ -24,8 +24,10 @@ import numpy as np
 from ..encode import GLOB_F, MAX_HAND, N_SLOTS, OPT_F, SLOT_F, V, encode
 
 FIXED = ('slot_ids', 'slot_tool', 'slot_feats', 'hand_ids', 'glob', 'ctx_ids')
+FIXED_V2 = ('deck_ids', 'deck_cnt', 'disc_ids', 'disc_cnt', 'slot_x', 'glob2')     # só na observação v2
 _DTYPES = {'slot_ids': np.int16, 'slot_tool': np.int16, 'slot_feats': np.float16, 'hand_ids': np.int16,
-           'glob': np.float16, 'ctx_ids': np.int16}
+           'glob': np.float16, 'ctx_ids': np.int16, 'deck_ids': np.int16, 'deck_cnt': np.float16,
+           'disc_ids': np.int16, 'disc_cnt': np.float16, 'slot_x': np.float16, 'glob2': np.float16}
 
 
 def outcome(g, p) -> float:
@@ -36,7 +38,7 @@ class ObsPacker:
     """Acumula observações de `encode()` no formato compacto + campos escalares por amostra."""
 
     def __init__(self):
-        self.fixed = {k: [] for k in FIXED}
+        self.fixed = {k: [] for k in FIXED}         # + FIXED_V2 quando a primeira observação for v2
         self.disc_idx, self.disc_val, self.disc_len = [], [], []
         self.opt_ids, self.opt_tids, self.opt_feats, self.opt_len = [], [], [], []
         self.scalars: dict = {}
@@ -45,7 +47,9 @@ class ObsPacker:
         return len(self.opt_len)
 
     def add(self, obs, **scalars):
-        for k in FIXED:
+        if not len(self) and 'deck_ids' in obs:
+            self.fixed.update({k: [] for k in FIXED_V2})
+        for k in self.fixed:
             self.fixed[k].append(obs[k].astype(_DTYPES[k]))
         nz = np.flatnonzero(obs['discard'])
         self.disc_idx.append(nz.astype(np.int16))
@@ -84,7 +88,7 @@ def _gen_shard(task):
     from ..agents import HeuristicAgent
     from ..decks import load_deck
     from ..engine import Game
-    path, seed, n_games, deck_names, epsilon, max_decisions = task
+    path, seed, n_games, deck_names, epsilon, max_decisions, versao = task
     rng = random.Random(seed)
     teacher = HeuristicAgent(seed=rng.randrange(2 ** 31))
     decks = {}
@@ -104,7 +108,7 @@ def _gen_shard(task):
                 pr = g.prompt
                 label = teacher.act(g, pr)
                 if len(pr.options) > 1:
-                    w.add(encode(g), action=label, game=k)
+                    w.add(encode(g, versao=versao), action=label, game=k)
                     players.append(pr.player)
                 act = rng.randrange(len(pr.options)) if epsilon and rng.random() < epsilon else label
                 g.step(act)
@@ -127,17 +131,19 @@ def _gen_shard(task):
 
 
 def generate(out_dir, n_games, deck_names, epsilon=0.05, workers=None, games_per_shard=100,
-             max_decisions=3000, seed=0, log=print):
+             max_decisions=3000, seed=0, log=print, versao=1):
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     existing = sorted(out.glob('shard_*.npz'))
     first = len(existing)
     meta_path = out / 'meta.json'
     meta = json.loads(meta_path.read_text()) if meta_path.exists() else {}
+    if meta and meta.get('obs', 1) != versao:
+        raise ValueError(f'{out_dir} tem observação v{meta.get("obs", 1)}; use outra pasta para a v{versao}.')
     if meta and meta.get('vocab') != V:
         raise ValueError(f'{out_dir} foi gerado com vocabulário {meta.get("vocab")}, o pool atual tem {V}. '
                          'Use outra pasta.')
-    meta.update(vocab=V, slot_f=SLOT_F, glob_f=GLOB_F, opt_f=OPT_F, n_slots=N_SLOTS, max_hand=MAX_HAND)
+    meta.update(obs=versao, vocab=V, slot_f=SLOT_F, glob_f=GLOB_F, opt_f=OPT_F, n_slots=N_SLOTS, max_hand=MAX_HAND)
     meta.setdefault('rodadas', []).append({'partidas': n_games, 'epsilon': epsilon, 'decks': deck_names,
                                            'seed': seed, 'quando': time.strftime('%Y-%m-%d %H:%M')})
     n_shards = (n_games + games_per_shard - 1) // games_per_shard
@@ -145,7 +151,7 @@ def generate(out_dir, n_games, deck_names, epsilon=0.05, workers=None, games_per
     for s in range(n_shards):
         n = min(games_per_shard, n_games - s * games_per_shard)
         tasks.append((str(out / f'shard_{first + s:05d}.npz'), seed * 1_000_003 + first + s, n, deck_names,
-                      epsilon, max_decisions))
+                      epsilon, max_decisions, versao))
     workers = workers or max(1, (os.cpu_count() or 2) - 2)
     t0 = time.perf_counter()
     tot = {'games': 0, 'samples': 0, 'draws': 0, 'errors': 0}
@@ -177,9 +183,11 @@ class PackedObs:
             raise FileNotFoundError('nenhuma amostra')
         n_each = [len(p['opt_off']) - 1 for p in parts]
         ragged_keys = {k for ks in self.RAGGED.values() for k in ks} | {'disc_off', 'opt_off'}
-        self.scalar_keys = [k for k in parts[0] if k not in ragged_keys and k not in FIXED
+        self.fixed = FIXED + tuple(k for k in FIXED_V2 if k in parts[0])
+        self.obs = 2 if 'deck_ids' in parts[0] else 1
+        self.scalar_keys = [k for k in parts[0] if k not in ragged_keys and k not in self.fixed
                             and parts[0][k].shape == (n_each[0],)]
-        self.d = {k: np.concatenate([p[k] for p in parts]) for k in (*FIXED, *self.scalar_keys)}
+        self.d = {k: np.concatenate([p[k] for p in parts]) for k in (*self.fixed, *self.scalar_keys)}
         for pre, keys in self.RAGGED.items():
             offs, base = [], 0
             for p in parts:
@@ -212,7 +220,7 @@ class PackedObs:
     def batch(self, idx):
         """Lote em numpy no mesmo formato de `model.collate` (+ os campos escalares)."""
         d, B = self.d, len(idx)
-        out = {k: d[k][idx].astype(np.float32 if d[k].dtype == np.float16 else np.int64) for k in FIXED}
+        out = {k: d[k][idx].astype(np.float32 if d[k].dtype == np.float16 else np.int64) for k in self.fixed}
         rows, _, src, _ = self._ragged('disc', idx)
         disc = np.zeros((B, 2 * V), np.float32)
         disc[rows, d['disc_idx'][src].astype(np.int64)] = d['disc_val'][src]

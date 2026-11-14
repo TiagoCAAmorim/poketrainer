@@ -25,24 +25,24 @@ from ptcg.engine import Game  # noqa: E402
 DECKS = ['tests/01_hedrick_dragapult', 'tests/08_spry_basic_box']
 
 
-def _sample_obs(n=60, seed=3):
+def _sample_obs(n=60, seed=3, versao=1):
     d = [load_deck(x).cards for x in DECKS]
     g = Game(d[0], d[1], seed=seed)
     h = HeuristicAgent(seed=seed)
     obs = []
     while not g.done and len(obs) < n:
         if len(g.prompt.options) > 1:
-            obs.append(encode(g))
+            obs.append(encode(g, versao=versao))
         g.step(h.act(g, g.prompt))
     return obs
 
 
-def test_packed_batch_matches_collate():
+def test_packed_batch_matches_collate(versao=1):
     if torch is None:
         return
     from ptcg.ai.dataset import ObsPacker, PackedObs
     from ptcg.ai.model import collate
-    obs = _sample_obs()
+    obs = _sample_obs(versao=versao)
     pk = ObsPacker()
     for i, o in enumerate(obs):
         pk.add(o, action=i % 2, value=0.5)
@@ -60,15 +60,31 @@ def test_packed_batch_matches_collate():
         assert got.shape == tuple(v.shape), (k, got.shape, v.shape)
         assert np.allclose(got, v.numpy(), atol=2e-3), k
     assert list(b['action']) == [i % 2 for i in idx] and np.allclose(b['value'], 0.5)
+    assert data.obs == versao and (('deck_ids' in b) == (versao == 2))
 
 
-def test_generate_and_train_imitation():
+def test_v2_formato_e_rede():
+    """Observação v2: lote compacto = collate; a rede v2 roda; v1 continua igual (redes antigas)."""
+    test_packed_batch_matches_collate(versao=2)
+    o1, o2 = _sample_obs(5)[-1], _sample_obs(5, versao=2)[-1]
+    assert all(np.array_equal(o1[k], o2[k]) for k in o1)          # v2 só acrescenta campos
+    assert o2['deck_cnt'].sum() * 4 > 0 and o2['slot_x'].shape[1] > 0
+    if torch is None:
+        return
+    from ptcg.ai.model import PolicyValueNet, collate
+    net = PolicyValueNet(hidden=32, emb=8, obs=2)
+    logits, value = net(collate(_sample_obs(8, versao=2)))
+    assert logits.shape[0] == 8 and torch.isfinite(value).all()
+    assert 'obs' not in PolicyValueNet(hidden=32, emb=8).config   # config v1 inalterada
+
+
+def test_generate_and_train_imitation(versao=1):
     if torch is None:
         return
     from ptcg.ai.dataset import PackedObs, generate
     from ptcg.ai.imitate import train_imitation
     with tempfile.TemporaryDirectory() as tmp:
-        st = generate(tmp, 4, DECKS, workers=2, games_per_shard=2, log=lambda *_: None)
+        st = generate(tmp, 4, DECKS, workers=2, games_per_shard=2, log=lambda *_: None, versao=versao)
         assert st['games'] == 4 and st['errors'] == 0 and st['samples'] > 100
         data = PackedObs.from_dir(tmp)
         assert len(data) == st['samples']
@@ -77,16 +93,21 @@ def test_generate_and_train_imitation():
         net, resumo = train_imitation(tmp, out, epochs=1, batch=64, hidden=32, emb=8, device='cpu', log=lambda *_: None)
         assert os.path.exists(out) and resumo['melhor_epoca']['epoca'] == 1
         assert all(torch.isfinite(p).all() for p in net.parameters())
+        assert net.obs == versao
 
 
-def test_rollout_and_ppo_step():
+def test_generate_and_train_imitation_v2():
+    test_generate_and_train_imitation(versao=2)
+
+
+def test_rollout_and_ppo_step(versao=1):
     if torch is None:
         return
     from ptcg.ai.dataset import PackedObs
     from ptcg.ai.model import PolicyValueNet, save_checkpoint
     from ptcg.ai.train import ppo_update, rollout_task
     with tempfile.TemporaryDirectory() as tmp:
-        net = PolicyValueNet(hidden=32, emb=8)
+        net = PolicyValueNet(hidden=32, emb=8, obs=versao)
         path = os.path.join(tmp, 'learner.pt')
         save_checkpoint(path, net)
         cfg = dict(gamma=0.997, lam=0.95, shaping=0.05, p_heuristic=0.5, p_pool=0.0, parallel=2,
@@ -101,6 +122,11 @@ def test_rollout_and_ppo_step():
         assert all(np.isfinite(v) for v in st.values()), st
         # logp gravado no rollout bate com a rede antes da atualização? (só confere a faixa)
         assert (data.d['logp'] <= 0).all()
+        assert data.obs == versao
+
+
+def test_rollout_and_ppo_step_v2():
+    test_rollout_and_ppo_step(versao=2)
 
 
 def test_niveis_elo_e_exportacao():

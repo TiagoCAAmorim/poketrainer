@@ -76,6 +76,14 @@ Ao trocar redes de nível, mantenha o Elo crescendo com o nível e, de preferên
 - **Globais**: tamanho dos decks, Prêmios restantes, turno, Apoiador/Energia/recuo já usados, Estádio, tipo de decisão.
 - **Cada opção**: carta envolvida, Pokémon alvo, tipo de ação, dano estimado (para ataques).
 
+**Observação v2** (`--obs 2` em `imitar.py gerar` / `train.py` sem `--resume`; em teste desde 14/11/2026): acrescenta
+as **cartas que ainda estão no meu deck+Prêmios** (o jogador conhece a própria lista), o **descarte como conjunto de
+cartas** (embeddings ponderados pela contagem, no lugar do vetor denso de 2×V que ocupava 46% dos pesos),
+**dano estimado e nocaute por ataque** em cada posição e ameaças de nocaute dos dois lados. A rede v2 tem 1,6 milhão de
+pesos (v1: 2,3 milhões). O checkpoint guarda a versão (`config['obs']`, ausente = 1) e todo o código chama
+`encode(g, versao=net.obs)`: as redes v1 (todas as de `ias/`) continuam funcionando sem mudança. Dados de imitação
+ficam numa pasta por versão (`dados/imitacao_v2`); o treino recusa misturar versões.
+
 **Rede** (`ptcg/ai/model.py`):
 1. Cada carta vira um vetor aprendido (*embedding*): cartas com papel parecido ficam com vetores parecidos.
 2. O estado é resumido num vetor de 256 números.

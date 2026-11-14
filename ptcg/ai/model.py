@@ -11,14 +11,16 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from ..encode import GLOB_F, OPT_F, PER_SIDE, SLOT_F, V
+from ..encode import GLOB2_F, GLOB_F, OPT_F, PER_SIDE, SLOT_F, SLOT_X, V
 
 STATE_KEYS = ('slot_ids', 'slot_tool', 'slot_feats', 'hand_ids', 'discard', 'glob', 'ctx_ids')
+STATE_KEYS_V2 = ('deck_ids', 'deck_cnt', 'disc_ids', 'disc_cnt', 'slot_x', 'glob2')   # só na observação v2
 NEG = -1e9
 
 
 def collate(obs_list, device='cpu'):
-    out = {k: torch.as_tensor(np.stack([o[k] for o in obs_list])).to(device) for k in STATE_KEYS}
+    keys = STATE_KEYS + tuple(k for k in STATE_KEYS_V2 if k in obs_list[0])
+    out = {k: torch.as_tensor(np.stack([o[k] for o in obs_list])).to(device) for k in keys}
     B = len(obs_list)
     A = max(len(o['opt_ids']) for o in obs_list)
     ids = np.zeros((B, A), np.int64)
@@ -48,23 +50,44 @@ def _mlp(i, h, o, layers=2):
 
 
 class PolicyValueNet(nn.Module):
-    def __init__(self, vocab: int = V, emb: int = 48, hidden: int = 256):
+    """obs=1: observação original (descarte como vetor denso de 2V contagens) — as redes treinadas até nov/2026.
+    obs=2: + cartas restantes no meu deck, descarte como conjunto de cartas (embeddings ponderados pela contagem),
+    dano/nocaute por ataque em cada posição e escalares extras (ver ptcg/encode.py). Use `encode(g, versao=net.obs)`."""
+
+    def __init__(self, vocab: int = V, emb: int = 48, hidden: int = 256, obs: int = 1):
         super().__init__()
-        self.config = dict(vocab=vocab, emb=emb, hidden=hidden)
+        self.config = dict(vocab=vocab, emb=emb, hidden=hidden) | ({'obs': obs} if obs != 1 else {})
+        self.obs = obs
         H, E = hidden, emb
         self.card = nn.Embedding(vocab, E, padding_idx=0)
-        self.slot_mlp = _mlp(2 * E + SLOT_F, H, H)
+        sx, g2 = (SLOT_X, GLOB2_F) if obs >= 2 else (0, 0)
+        self.slot_mlp = _mlp(2 * E + SLOT_F + sx, H, H)
         self.hand_mlp = _mlp(E, H, H)
-        self.disc_mlp = _mlp(2 * vocab, H, H, 1)
-        self.glob_mlp = _mlp(GLOB_F, H, H, 1)
-        self.trunk = _mlp(4 * H + 3 * H + 2 * E, H, H, 3)
+        if obs >= 2:
+            self.deck_mlp = _mlp(E + 1, H, H)        # meu deck restante
+            self.mydisc_mlp = _mlp(E + 1, H, H)      # meu descarte
+            self.opdisc_mlp = _mlp(E + 1, H, H)      # descarte do oponente
+            n_bags = 3
+        else:
+            self.disc_mlp = _mlp(2 * vocab, H, H, 1)
+            n_bags = 1
+        self.glob_mlp = _mlp(GLOB_F + g2, H, H, 1)
+        self.trunk = _mlp(4 * H + (2 + n_bags) * H + 2 * E, H, H, 3)
         self.value_head = nn.Sequential(nn.Linear(H, H // 2), nn.ReLU(), nn.Linear(H // 2, 1))
         self.opt_mlp = _mlp(2 * E + OPT_F, H, H)
         self.score = nn.Sequential(nn.Linear(3 * H, H), nn.ReLU(), nn.Linear(H, 1))
 
+    def _bag(self, mlp, ids, cnt):
+        m = (ids > 0).float().unsqueeze(-1)
+        x = mlp(torch.cat([self.card(ids), cnt.unsqueeze(-1)], -1))
+        return (x * m * cnt.unsqueeze(-1)).sum(1) / 15.0
+
     def state(self, b):
         E = self.card
-        slots = torch.cat([E(b['slot_ids']), E(b['slot_tool']), b['slot_feats']], -1)    # B,18,*
+        parts = [E(b['slot_ids']), E(b['slot_tool']), b['slot_feats']]
+        if self.obs >= 2:
+            parts.append(b['slot_x'])
+        slots = torch.cat(parts, -1)                                                     # B,18,*
         sh = self.slot_mlp(slots)                                                        # B,18,H
         present = b['slot_feats'][..., 0:1]                                              # B,18,1
 
@@ -77,10 +100,17 @@ class PolicyValueNet(nn.Module):
         opp_bench = bench_mean(sh[:, P + 1:], present[:, P + 1:])
         hand_mask = (b['hand_ids'] > 0).float().unsqueeze(-1)
         hand = (self.hand_mlp(E(b['hand_ids'])) * hand_mask).sum(1) / 7.0
-        disc = self.disc_mlp(b['discard'])
-        glob = self.glob_mlp(b['glob'])
+        if self.obs >= 2:
+            n = b['disc_ids'].shape[1] // 2
+            bags = [self._bag(self.deck_mlp, b['deck_ids'], b['deck_cnt']),
+                    self._bag(self.mydisc_mlp, b['disc_ids'][:, :n], b['disc_cnt'][:, :n]),
+                    self._bag(self.opdisc_mlp, b['disc_ids'][:, n:], b['disc_cnt'][:, n:])]
+            glob = self.glob_mlp(torch.cat([b['glob'], b['glob2']], -1))
+        else:
+            bags = [self.disc_mlp(b['discard'])]
+            glob = self.glob_mlp(b['glob'])
         ctx = E(b['ctx_ids']).flatten(1)
-        x = torch.cat([my_act, my_bench, opp_act, opp_bench, hand, disc, glob, ctx], -1)
+        x = torch.cat([my_act, my_bench, opp_act, opp_bench, hand, *bags, glob, ctx], -1)
         return self.trunk(x)
 
     def forward(self, b, detach_value=False):
