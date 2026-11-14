@@ -133,5 +133,12 @@ a ~80 correções de rulings do motor.
   `ppo2` it 200, `sweep1/g480` e `ppo_h512`): heurística 79,3% · × `ppo2` **49,5%** · × `lr_const` 47,4%.
   Conclusão: diversidade de oponentes também não destrava. Hiperparâmetros, capacidade, decaimento da lr e pool
   empatam em janelas de 100 it; o que rende é tempo de treino (~+5 pontos de confronto direto a cada 200 it no `ppo2`).
-- **`ppo3`** (em andamento): 4 trechos de 250 it com os padrões, a partir de `lr_decai/latest.pt`, com confronto
-  direto contra o trecho anterior ao fim de cada um.
+- **`ppo3` — platô**: trecho 1 (250 it com os padrões, a partir de `lr_decai/latest.pt`): × ponto de partida
+  **49,5%**, heurística 78,6% (1000 partidas); `ent` 0,35 → 0,40. Os outros 3 trechos foram cancelados.
+- **Lote grande `plato/lote960`** (60 it com `--games 960` a partir de `ppo3/t1`, mesmo total de partidas que os
+  250 it acima): × `ppo3/t1` **55,5%** ±1,6% (3,4 erros padrão), heurística **84,8%** (1000 partidas; embutida 82,1% →
+  83,5%). `kl` 0,014–0,015, `clip` 0,10, ~34 s/it (21 s rollout + 13 s atualização, ~115 mil transições/it).
+  Conclusão: **no platô, o lote maior destrava** (com 240 partidas/it o mesmo número de partidas empatou). Na
+  varredura do início (`g480`, longe do platô) não fez diferença — o ruído do gradiente só domina quando o sinal fica
+  fraco. O teste `ent0` foi cancelado para dar tempo ao treino longo.
+- **`ppo4`** (em andamento): `--games 960`, 2 trechos de 100 it a partir de `plato/lote960`.
