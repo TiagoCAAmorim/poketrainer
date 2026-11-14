@@ -246,3 +246,4 @@ imagens/
 
 # Execuções locais do Weights & Biases (ptcg/ai/wb.py)
 wandb/
+pdfs/

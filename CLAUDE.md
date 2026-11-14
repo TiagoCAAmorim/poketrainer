@@ -31,7 +31,7 @@ Mensagens do motor, logs e CLIs estão em português; nomes de cartas ficam em i
   Ordem: implementação à mão → compilador. Frase não reconhecida → carta `partial`/`missing`.
 - `replay/` — `parse.py` (templates en/pt do log do TCG Live), `replay.py` (`ReplayGame` com cartas ocultas
   "UNKNOWN" que viram a carta certa sob demanda, pontos de ambiguidade com retrocesso, conferência de dano e KO).
-- `decks.py`, `deckbuilder.py` (montador, `web/decks.html`), `explorer.py` (cartas, `web/cartas.html`; imagens por `baixar_imagens.py` em `imagens/`, no gitignore), `limitless.py`, `logbook.py` (LOG), `agents.py`, `encode.py` (observação p/ rede), `ai/`, `sim.py`, `view.py`.
+- `decks.py`, `deckbuilder.py` (montador, `web/decks.html`), `imprimir.py` (PDF de cartas p/ imprimir em escala %, simplificado P&B, A4/Office/…; `web/imprimir.html`), `explorer.py` (cartas, `web/cartas.html`; imagens por `baixar_imagens.py` em `imagens/`, no gitignore), `limitless.py`, `logbook.py` (LOG), `agents.py`, `encode.py` (observação p/ rede), `ai/`, `sim.py`, `view.py`.
 
 ## Comandos
 ```
@@ -43,6 +43,7 @@ python simulate.py <deck> <deck> --games 200 [--salvar-log]      python optimize
 python melhorar_heuristica.py [--avaliar|--resetar]              # ajusta pesos da heurística vs aleatório → ptcg/data/heuristica.json
 python server.py                                                  # http://localhost:8765 (welcome; /jogar /decks /cartas)
 python baixar_imagens.py                                          # imagens das cartas → imagens/ (fora do git)
+python imprimir_cartas.py <deck> [--adicionar/--remover "2 Ultra Ball"] [--escala 90] [--papel A4|Office|A5|LxA] [--simplificado]   # PDF em pdfs/ (web /imprimir)
 python imitar.py gerar|treinar|avaliar                           # IA: pré-treino imitando a heurística
 python train.py --resume checkpoints/imitacao.pt                 # IA: PPO self-play
 python ia.py historico|acompanhar                                 # IA: treinos registrados / curva do PPO (docs/IA_TREINO.md)
@@ -61,6 +62,7 @@ python tests/test_partidas_usuario.py  # partidas da interface SEM comentários 
 python tests/test_efeitos_novos.py # cenários da 2ª leva de cobertura
 python tests/smoke_cartas.py       # todo ataque/Habilidade ativada roda sem erro
 python tests/fuzz.py --games 300 --novas  # decks favorecendo a 2ª leva
+python tests/test_imprimir.py      # PDF de cartas: escala, papéis, cópias repetidas, simplificado, imagens (precisa de reportlab+pillow)
 python tests/test_explorer.py      # filtros/detalhe da página de cartas (ptcg/explorer.py + web/cartas.html)
 python tests/test_deckbuilder.py   # montador de decks (ptcg/deckbuilder.py + web/decks.html)
 python tests/test_heuristica.py    # heurística ganha ≥85% do aleatório nos decks de decks/tests

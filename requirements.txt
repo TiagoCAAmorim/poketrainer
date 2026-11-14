@@ -2,3 +2,5 @@ numpy>=1.24
 torch>=2.1
 wandb>=0.19     # opcional: registro dos treinos da IA no W&B (ptcg/ai/wb.py)
 pytest
+reportlab>=4.0   # PDF de cartas para impressão (ptcg/imprimir.py)
+pillow>=10.0      # leitura das imagens webp das cartas no PDF

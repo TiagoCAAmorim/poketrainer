@@ -17,6 +17,7 @@ from urllib.parse import parse_qs, urlparse
 from ptcg.agents import make_agent
 from ptcg import deckbuilder as DB
 from ptcg import explorer as EX
+from ptcg import imprimir as IMP
 from ptcg.carddb import db
 from ptcg.decks import DECK_DIR, deck_to_text, list_decks, load_deck, parse_decklist, support_report, validate
 from ptcg.engine import Game
@@ -210,7 +211,8 @@ class Handler(BaseHTTPRequestHandler):
         reveal = q.get('reveal', ['0'])[0] == '1'
         try:
             pages = {'/': 'welcome.html', '/welcome': 'welcome.html', '/jogar': 'index.html', '/index.html': 'index.html',
-                     '/decks': 'decks.html', '/decks.html': 'decks.html', '/cartas': 'cartas.html', '/cartas.html': 'cartas.html'}
+                     '/decks': 'decks.html', '/decks.html': 'decks.html', '/cartas': 'cartas.html', '/cartas.html': 'cartas.html',
+                     '/imprimir': 'imprimir.html', '/imprimir.html': 'imprimir.html'}
             if u.path in pages:
                 with open(os.path.join(WEB, pages[u.path]), 'rb') as f:
                     return self._send(200, f.read(), 'text/html')
@@ -240,6 +242,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, DB.buscar(q.get('q', [''])[0], q.get('grupo', [''])[0], q.get('sub', [''])[0]))
             if u.path == '/api/builder/deck':
                 return self._send(200, DB.ver_deck(q['name'][0]))
+            if u.path == '/api/print/init':
+                return self._send(200, {'papeis': IMP.papeis(), 'papel': IMP.PAPEL_PADRAO, 'decks': DB.decks_disponiveis(),
+                                        'min_busca': DB.MIN_BUSCA, 'com_imagem': EX.opcoes()['com_imagem']})
             if u.path == '/api/meta':
                 D = db()
                 cov = Counter(d.status for d in D.cards.values())
@@ -267,6 +272,31 @@ class Handler(BaseHTTPRequestHandler):
             reveal = bool(body.get('reveal'))
             if u.path == '/api/replay':
                 return self._send(200, run_replay(body['log']))
+            if u.path in ('/api/print/pdf', '/api/print/layout'):
+                try:
+                    cartas = IMP.expandir(body['cards'])
+                    kw = dict(escala=float(body.get('escala', 90)) / 100, papel=body.get('papel') or IMP.PAPEL_PADRAO,
+                              margem=float(body.get('margem', 6)), espaco=float(body.get('espaco', 1)),
+                              orientacao=body.get('orientacao') or 'auto')
+                    if u.path == '/api/print/layout':
+                        L = IMP.layout(**kw)
+                        return self._send(200, {'cartas': len(cartas), 'por_pagina': L['por_pagina'], 'orientacao': L['orientacao'],
+                                                'paginas': -(-len(cartas) // L['por_pagina']),
+                                                'carta_mm': [round(L['cw'], 1), round(L['ch'], 1)]})
+                    if not cartas:
+                        raise ValueError('Nenhuma carta para imprimir.')
+                    r = IMP.gerar_pdf(cartas, simplificado=bool(body.get('simplificado')), idioma=body.get('idioma') or 'pt', **kw)
+                    registrar('decks', f'gerou PDF de {r["cartas"]} cartas ({kw["papel"]}, {kw["escala"] * 100:.0f}%) pela interface')
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/pdf')
+                    self.send_header('Content-Length', str(len(r['pdf'])))
+                    self.send_header('X-Paginas', str(r['paginas']))
+                    self.send_header('X-Sem-Imagem', str(len(r['faltando'])))
+                    self.send_header('Access-Control-Expose-Headers', 'X-Paginas, X-Sem-Imagem')
+                    self.end_headers()
+                    return self.wfile.write(r['pdf'])
+                except (ValueError, KeyError) as e:
+                    return self._send(400, {'error': str(e).strip("'\"")})
             if u.path.startswith('/api/builder/'):
                 try:
                     if u.path == '/api/builder/eval':
