@@ -6,6 +6,9 @@ As versões foram numeradas depois do fato, a partir do histórico do git (ainda
 ## [Não lançado]
 - **Verificação das imagens na página inicial**: mostra quantas cartas têm imagem, onde faltam e um botão "Baixar as que faltam" (com progresso),
   útil depois de uma atualização com coleções novas ou para tentar de novo cartas sem fonte. A lógica de download virou `baixar_imagens.executar()`.
+- **Instalador de um comando** (`instalar.py`, só biblioteca padrão): num Windows com só o Python, um comando baixa o ZIP do programa
+  (sem Git), cria o `.venv`, instala as dependências (PyTorch CPU), gera `Iniciar PTCG Lab.bat`, cria o atalho "PTCG Lab" na área de trabalho
+  e baixa as imagens das cartas (`--sem-imagens` pula). `--gpu` usa `requirements-dev.txt`. `requirements.txt` agora é só CPU e `requirements-dev.txt`, GPU + ferramentas de teste.
 - **Página estática de PDF de cartas** (`site/`): gera no navegador, sem servidor, o PDF de cartas simplificadas em inglês ou
   português, com busca por nome com sugestões, importação de lista e os 16 melhores decks de cada torneio das temporadas 2026 e 2027 (atual)
   (`tools/baixar_temporada.py`, `tools/build_site.py`). Os decks se atualizam sozinhos toda segunda (GitHub Actions);
