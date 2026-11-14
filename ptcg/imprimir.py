@@ -249,8 +249,9 @@ def _custo(c, x, y, custo, r):
     return x
 
 
-def carta_simplificada(c, d, idioma='pt', larg=CARTA_MM[0] * PT, alt=CARTA_MM[1] * PT):
-    """Desenha a carta em (0,0)-(larg,alt), só texto e linhas pretas."""
+def carta_simplificada(c, d, idioma='pt', larg=CARTA_MM[0] * PT, alt=CARTA_MM[1] * PT, arte=None):
+    """Desenha a carta em (0,0)-(larg,alt), só texto e linhas pretas. `arte`: ilustração (PIL, 'L') já simplificada
+    (modo econômico): ocupa o espaço que sobra entre o cabeçalho e o texto, mantendo a proporção (recorta o excesso)."""
     T = _textos(d, idioma)
     m = 7.0
     iw = larg - 2 * m
@@ -334,6 +335,21 @@ def carta_simplificada(c, d, idioma='pt', larg=CARTA_MM[0] * PT, alt=CARTA_MM[1]
             h += (tam * 1.35 if tipo != 'txt' else 0) + len(ltxt) * tam * 1.2 + tam * 0.9
             linhas.append((tipo, nome, custo, dano, ltxt, r))
         return linhas, h
+    if arte is not None and not (d.kind == 'energy' and d.basic_energy):
+        from reportlab.lib.utils import ImageReader
+        precisa = montar(6.4)[1]
+        ah = max(42.0, min(topo - base - precisa - 6, 0.38 * alt))
+        if ah > 0.38 * alt * 0.98 or ah >= 42.0:
+            ar = iw / ah
+            W, H = arte.size
+            cw_, ch_ = (W, int(W / ar)) if W / H < ar else (int(H * ar), H)
+            ch_ = min(ch_, H)
+            cx, cy = (W - cw_) // 2, int(max(0, min(H - ch_, (H - ch_) * 0.45)))
+            rec = arte.crop((cx, cy, cx + cw_, cy + ch_))
+            c.drawImage(ImageReader(rec), m, topo - ah, iw, ah)
+            c.setLineWidth(0.6)
+            c.rect(m, topo - ah, iw, ah, stroke=1, fill=0)
+            topo -= ah + 5
     tam = 8.2
     while True:
         linhas, h = montar(tam)
@@ -405,30 +421,37 @@ def arquivo_imagem(cid: str):
     return _ai('alta', cid)
 
 
-def imagem_economica(origem, forca=1.0):
-    """Versão econômica da arte da carta: escala de cinza, sem fundos coloridos, só os traços (texto, molduras, contornos
-    da ilustração) em tons de cinza sobre papel branco. Mantém a diagramação original. `origem`: caminho ou imagem PIL."""
+# Caixa da ilustração na imagem da carta (frações x0, y0, x1, y1), por tipo de carta (layout Escarlate e Violeta / Mega)
+_CAIXA_ARTE = {'pokemon': (0.07, 0.12, 0.93, 0.475), 'trainer': (0.075, 0.14, 0.925, 0.515),
+               'energy': (0.045, 0.14, 0.955, 0.64)}
+
+
+def arte_economica(origem, kind='pokemon'):
+    """Só a ilustração da carta, recortada e simplificada: escala de cinza clara, poucos tons e contornos escuros.
+    `origem`: caminho ou imagem PIL; `kind`: 'pokemon' | 'trainer' | 'energy' (posição da caixa da arte)."""
     import numpy as np
     from PIL import Image, ImageFilter
     im = origem if hasattr(origem, 'convert') else Image.open(origem)
     im = im.convert('RGBA')
     papel = Image.new('RGBA', im.size, (255, 255, 255, 255))
     papel.alpha_composite(im)
-    g = papel.convert('L')
+    W, H = papel.size
+    x0, y0, x1, y1 = _CAIXA_ARTE.get(kind, _CAIXA_ARTE['pokemon'])
+    g = papel.crop((int(x0 * W), int(y0 * H), int(x1 * W), int(y1 * H))).convert('L')
     a = np.asarray(g, dtype=np.float32)
-    fundo = np.asarray(g.filter(ImageFilter.GaussianBlur(im.size[0] * 0.008)), dtype=np.float32)   # tom local
-    d = a - fundo
-    # em regiões escuras o texto/traço é mais CLARO que o fundo (ex.: texto branco sobre azul-escuro); nas claras, mais escuro
-    w = np.clip((fundo - 90) / 40, 0, 1)
-    tinta = w * np.where(d < 0, -d, 0.8 * d) + (1 - w) * np.where(d > 0, d, -0.35 * d)
-    tinta = np.clip((tinta - 7) * 3.2 / 255 * forca, 0, 1)
-    return Image.fromarray((255 * (1 - 0.9 * tinta)).astype(np.uint8), 'L')
+    suave = np.asarray(g.filter(ImageFilter.GaussianBlur(W * 0.01)), dtype=np.float32)
+    q = np.floor(suave / 256 * 6) / 5                                   # 6 tons
+    base = 255 * (1 - (1 - q) * 0.3)                                    # no máximo ~30% de tinta nos tons
+    local = np.asarray(g.filter(ImageFilter.GaussianBlur(W * 0.012)), dtype=np.float32)
+    tracos = np.clip((np.maximum(local - a, 0) - 8) * 3.0 / 255, 0, 1)  # só traços mais escuros que a vizinhança
+    return Image.fromarray(np.minimum(base, 255 * (1 - 0.9 * tracos)).astype(np.uint8), 'L')
 
 
 def gerar_pdf(cartas: list, saida=None, *, escala=0.9, papel=PAPEL_PADRAO, simplificado=False, margem=6.0,
               espaco=1.0, orientacao='auto', idioma='pt', guias=True, economico=False) -> dict:
     """Gera o PDF. `cartas`: ids, um por cópia. `saida`: caminho, ou None para devolver os bytes em `pdf`.
-    `economico`: usa a arte original em cinza, sem fundos coloridos (menos tinta; `imagem_economica`).
+    `economico`: layout próprio (textos e molduras redesenhados em preto e branco) com só a ilustração da carta, simplificada
+    em cinza claro (`arte_economica`); gasta pouca tinta. Cartas sem imagem saem sem ilustração.
     Retorna {pdf, paginas, cartas, por_pagina, orientacao, faltando(ids sem imagem desenhados simplificados), ...}."""
     from reportlab.lib.utils import ImageReader
     from reportlab.pdfgen import canvas
@@ -464,7 +487,7 @@ def gerar_pdf(cartas: list, saida=None, *, escala=0.9, papel=PAPEL_PADRAO, simpl
             if cid not in imgs:
                 f = arquivo_imagem(cid)
                 try:
-                    imgs[cid] = (ImageReader(imagem_economica(f)) if economico else ImageReader(str(f))) if f else None
+                    imgs[cid] = (arte_economica(f, D.cards[cid].kind) if economico else ImageReader(str(f))) if f else None
                 except Exception:   # imagem corrompida
                     imgs[cid] = None
             img = imgs[cid]
@@ -472,7 +495,7 @@ def gerar_pdf(cartas: list, saida=None, *, escala=0.9, papel=PAPEL_PADRAO, simpl
                 faltando.append(cid)
         c.saveState()
         c.translate(x, y)
-        if img is not None:
+        if img is not None and not economico:
             c.drawImage(img, 0, 0, cw, ch)
             if guias:
                 c.setStrokeColorRGB(.6, .6, .6)
@@ -480,7 +503,7 @@ def gerar_pdf(cartas: list, saida=None, *, escala=0.9, papel=PAPEL_PADRAO, simpl
                 c.rect(0, 0, cw, ch, stroke=1, fill=0)
         else:
             c.scale(cw / base_w, ch / base_h)
-            carta_simplificada(c, d, idioma, base_w, base_h)
+            carta_simplificada(c, d, idioma, base_w, base_h, arte=img if economico else None)
         c.restoreState()
     c.showPage()
     c.save()

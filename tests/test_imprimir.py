@@ -79,15 +79,14 @@ def test_imagens_e_faltantes():
             IMP.arquivo_imagem = original
 
 
-def test_imagem_economica():
-    """Fundo colorido vira papel branco; traços (texto) continuam escuros; o PDF sai em escala de cinza."""
+def test_arte_economica():
+    """Modo econômico: só a ilustração vem da imagem (recortada, cinza clara); o resto é redesenhado (texto vetorial)."""
     from PIL import Image, ImageDraw
-    im = Image.new('RGB', (300, 420), (230, 120, 30))                    # fundo laranja
-    ImageDraw.Draw(im).rectangle((60, 200, 240, 212), fill=(255, 255, 255))   # "texto" claro sobre fundo
-    e = IMP.imagem_economica(im)
-    assert e.mode == 'L' and e.size == im.size
-    assert e.getpixel((10, 10)) > 245                                     # fundo liso → branco
-    assert min(e.crop((55, 195, 245, 217)).getdata()) < 150               # traço continua visível
+    im = Image.new('RGB', (300, 420), (230, 120, 30))                    # carta laranja
+    ImageDraw.Draw(im).ellipse((80, 80, 220, 180), fill=(20, 20, 160))   # "desenho" dentro da caixa da arte
+    e = IMP.arte_economica(im, 'pokemon')
+    assert e.mode == 'L' and 1.4 < e.size[0] / e.size[1] < 2.0           # só a caixa da arte, não a carta inteira
+    assert e.getpixel((3, 3)) > 160                                      # fundo colorido vira cinza bem claro
     from pathlib import Path
     with tempfile.TemporaryDirectory() as t:
         img = os.path.join(t, 'a.png')
@@ -95,8 +94,10 @@ def test_imagem_economica():
         original = IMP.arquivo_imagem
         try:
             IMP.arquivo_imagem = lambda cid: Path(img)
-            r = IMP.gerar_pdf(['TWM-130'], economico=True)
+            r = IMP.gerar_pdf(['TWM-130', 'TWM-130', 'SVE-1'], economico=True)
             assert b'DeviceGray' in r['pdf'] and not r['faltando']
+            assert r['pdf'].count(b'/Subtype /Image') <= 2               # energia básica não usa arte
+            assert len(IMP.gerar_pdf(['TWM-130'], economico=True)['pdf']) < len(IMP.gerar_pdf(['TWM-130'])['pdf']) * 2
         finally:
             IMP.arquivo_imagem = original
 
@@ -106,5 +107,5 @@ if __name__ == '__main__':
     test_conjunto_e_ajuste()
     test_pdf_simplificado()
     test_imagens_e_faltantes()
-    test_imagem_economica()
+    test_arte_economica()
     print('ok')

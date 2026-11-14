@@ -128,7 +128,7 @@ A página inicial mostra seis atalhos:
 | 🃏 **Montar e editar decks** (`/decks`) | Monte um deck buscando cartas por nome e categoria, ou puxando cartas de outro deck. Salve, duplique qualquer deck para a sua coleção e copie a lista no formato do TCG Live. |
 | 🔎 **Explorar as cartas** (`/cartas`) | Filtre as 2.083 cartas (nome em inglês ou português, tipo, estágio, coleção…), veja a imagem grande, ataques, Habilidades, fraqueza, evoluções e todas as impressões. |
 | 🧪 **Testar um deck** (`/testar`) | Seu deck joga contra todos os outros da base e mostra: taxa de vitória (indo em 1º ou em 2º), cartas e combos que mais ajudam, em que vez saem os Prêmios, matchups difíceis e **trocas de cartas sugeridas**. Pode salvar a versão melhorada. |
-| 🖨️ **Imprimir cartas (PDF)** (`/imprimir`) | Parta de um deck, acrescente ou tire cartas e gere um PDF em escala reduzida (ex.: 90%), com imagens, em versão econômica (mesmo layout, em cinza e sem fundos coloridos, gasta bem menos tinta) ou simplificada em preto e branco. Escolha papel A4, Office, A5… |
+| 🖨️ **Imprimir cartas (PDF)** (`/imprimir`) | Parta de um deck, acrescente ou tire cartas e gere um PDF em escala reduzida (ex.: 90%), com imagens, em versão econômica (layout da carta com a ilustração simplificada em cinza e o resto redesenhado em preto e branco, gasta bem menos tinta) ou simplificada em preto e branco. Escolha papel A4, Office, A5… |
 | 📜 **Reproduzir um log do TCG Live** | No TCG Live use **Copy Log** na partida e cole o texto aqui: o simulador refaz cada jogada, confere dano e nocautes e aponta onde as regras divergem. |
 
 ---

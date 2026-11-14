@@ -4,9 +4,9 @@ Principais novidades de cada versão, da mais nova para a mais antiga.
 As versões foram numeradas depois do fato, a partir do histórico do git (ainda não há *tags* nem *releases* no GitHub).
 
 ## [Não lançado]
-- **Impressão econômica** (`/imprimir` → "Estilo das cartas", `imprimir_cartas.py --economico`): mantém o layout e a arte originais, mas em escala de
-  cinza, sem fundos coloridos e só com os traços (texto, molduras, contornos da ilustração). Usa bem menos tinta (cerca de 20–35% da versão em cinza) e
-  o PDF fica ~4× menor. Funciona também com cartas de fundo escuro (texto claro vira traço escuro). `imprimir.imagem_economica()`.
+- **Impressão econômica** (`/imprimir` → "Estilo das cartas", `imprimir_cartas.py --economico`): mantém a diagramação da carta (nome, ícones, PS,
+  ilustração, ataques, rodapé), mas só a ilustração vem da imagem — recortada e simplificada em cinza claro com contornos — e todo o resto é redesenhado
+  em preto e branco, como na versão simplificada. A ilustração ocupa o espaço que sobra e o texto mantém tamanho legível. `imprimir.arte_economica()`.
 - **PDF simplificado** (site e `imprimir.py`): ícones de tipo e custo de energia e a categoria da carta (Pokémon, Apoiador, Item, Ferramenta, Estádio, Energia).
 - **Verificação das imagens na página inicial**: mostra quantas cartas têm imagem, onde faltam e um botão "Baixar as que faltam" (com progresso),
   útil depois de uma atualização com coleções novas ou para tentar de novo cartas sem fonte. A lógica de download virou `baixar_imagens.executar()`.
