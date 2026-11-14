@@ -37,4 +37,4 @@ python baixar_imagens.py --manual PR-ME-93 pikachu.png   # usa uma imagem salva 
 - Estrutura: `imagens/cartas/baixa/<ID>.webp`, `imagens/cartas/alta/<ID>.webp`, `imagens/indice.json` (fonte usada e
   lista `_sem_imagem`). O servidor entrega por `/img/baixa/<ID>` e `/img/alta/<ID>`.
 - Sem imagem baixada a página continua funcionando, com um quadro de texto no lugar.
-- As imagens são material protegido da The Pokémon Company; use só para estudo/uso pessoal.
+- As imagens são material protegido da The Pokémon Company; use só para estudo/uso pessoal. O PTCG Lab é um projeto pessoal, sem fins lucrativos e sem associação com a The Pokémon Company.

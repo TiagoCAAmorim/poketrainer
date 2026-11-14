@@ -2,86 +2,123 @@
   <img src="docs/images/banner.png" alt="PTCG Lab" width="100%">
 </p>
 
-# PTCG Lab — motor de Pokémon TCG (regras do Pokémon TCG Live) para testar e otimizar decks
+# PTCG Lab
 
-Formato: **Padrão TEF–30C** (marcas de regulamento H, I e J) — 2.083 cartas.
+Um simulador de **Pokémon TCG** (com as regras do Pokémon TCG Live) para você **jogar, montar e testar decks**
+no seu computador, sem precisar programar. Cobre o formato **Padrão TEF–30C** (marcas H, I e J): as 2.083 cartas
+estão implementadas, com textos em inglês e português.
 
-- **[INSTALACAO.md](INSTALACAO.md)** — passo a passo para deixar funcionando no computador e testes a rodar
-- **[PLANO.md](PLANO.md)** — plano completo, o que está pronto e os próximos passos
-- **[CARTAS.md](CARTAS.md)** — explorar cartas (filtros, imagens, cartas com problemas) e baixar as imagens
-- **[DECKS.md](DECKS.md)** — importar, limpar (fora da rotação), alterar e criar decks
+Você usa tudo por uma página no navegador. O terminal só é necessário para instalar e para ligar o programa.
 
-## Estrutura
+---
 
-```
-cartas/            BIBLIOTECA DE CARTAS (o que cada carta faz, em inglês e português)
-  cartas.db          banco SQLite com todas as cartas, ataques, Habilidades e impressões
-  Treinadores.json   Pokemon.json   Energias.json        (os 3 arquivos consolidados)
-  Treinadores/Apoiadores | Itens | Ferramentas | Estadios
-  Pokemon/Pokemon_EX/<Tipo>   Pokemon/<Tipo>             (Planta, Fogo, Agua, Eletrico, Psiquico,
-  Energias/<Tipo>   Energias/Especiais                    Lutador, Escuridao, Metal, Dragao, Incolor)
-imagens/           imagens das cartas baixadas (não versionada)
-decks/             DECKS (texto no formato do TCG Live)
-  meus/  importados/  limitless/<torneio>/  tests/ (12 decks fixos dos testes)  _lixeira/  _fora_da_rotacao/
-logs/              LOG: atividade.log, partidas do TCG Live, simulações, partidas da interface
-ptcg/              o motor
-  engine.py          regras (setup, turnos, ações legais, dano, condições, KO, prêmios, vitória)
-  carddb.py          base de cartas (ptcg/data/cards.json + cards_pt.json)
-  effects/           efeitos: Treinadores/Ferramentas/Estádios/Energias escritos à mão,
-                     compilador de texto para ataques e Habilidades
-  decks.py           leitura/validação de listas      limitless.py   importador da Limitless
-  replay/            leitura e reprodução de logs do Pokémon TCG Live
-  logbook.py         LOG               agents.py / ai/   IA (heurística e rede PyTorch)
-cartas.py          consulta à biblioteca de cartas
-gerenciar_decks.py criar / importar / montar / editar / exportar / validar decks
-gerenciar_logs.py  guardar e consultar logs (TCG Live, simulações, atividade)
-import_limitless.py baixar top 8 de torneios da Limitless
-replay_log.py      reproduzir logs do TCG Live no motor
-simulate.py        matriz de confrontos      optimize.py   otimizar uma lista
-server.py + web/   interface local (http://localhost:8765): welcome.html, index.html (/jogar), decks.html, cartas.html
-baixar_imagens.py  baixar as imagens das cartas (TCGdex/pokemontcg.io) para imagens/
-tools/             reconstrução da base de cartas (build_carddb, build_pt_texts, export_cartas)
-tests/             regras, fuzzing, logs reais do TCG Live, importador
-```
+## 1. Instalar (uma vez só)
 
-## Uso rápido
-
-Python 3.10+ e numpy (`pip install -r requirements.txt`; PyTorch só para treinar a rede).
+Você precisa de **Python 3.10 ou mais novo** ([python.org/downloads](https://www.python.org/downloads/);
+no Windows marque *"Add python.exe to PATH"*) e do **Git** ([git-scm.com](https://git-scm.com/downloads)).
+Abra um terminal (no Windows: *Windows Terminal* ou *PowerShell*) e digite:
 
 ```
-python cartas.py buscar "Ultra Bola"                 # consultar cartas
-python cartas.py mostrar TWM-130
-
-python gerenciar_decks.py criar meu_deck --arquivo lista.txt     # lista exportada do TCG Live
-python gerenciar_decks.py montar meu_deck                         # montagem interativa
-python gerenciar_decks.py listar
-python import_limitless.py import --latest 5                      # top 8 dos últimos torneios
-
-python gerenciar_logs.py importar partida.txt        # log do TCG Live ("Copy Log") → guardado e reproduzido
-python simulate.py meus/meu_deck tests/01_hedrick_dragapult --games 200 --salvar-log
-python optimize.py meus/meu_deck --gauntlet 01_hedrick_dragapult 05_heiremans_crustle
-python server.py                                     # http://localhost:8765 → página inicial (escolha o que fazer)
-                                                     #   /jogar simulador · /decks montador · /cartas biblioteca
-python baixar_imagens.py                             # imagens das cartas → imagens/ (fora do git)
+git clone https://github.com/TiagoCAAmorim/poketrainer
+cd poketrainer
+python -m venv .venv
 ```
 
-## Logs do Pokémon TCG Live
+Ative o ambiente (isso é preciso **toda vez** que abrir um terminal novo para usar o programa):
 
-No TCG Live, no histórico da partida, use **Copy Log** e salve o texto em um arquivo (ou cole na interface
-em *Log do TCG Live…*). O motor refaz cada jogada, confere os danos com o log oficial e aponta onde as
-regras divergem. Os 4 logs de exemplo em `tests/fixtures/ptcgl_logs` são reproduzidos 100%
-(`python tests/test_replay.py`). Esses logs também viram dados de treino por imitação
-(`python gerenciar_logs.py imitacao dados/imitacao.pkl`).
+| Sistema | Comando |
+|---|---|
+| Windows (PowerShell) | `.venv\Scripts\Activate.ps1` |
+| Windows (cmd) | `.venv\Scripts\activate.bat` |
+| Linux / macOS | `source .venv/bin/activate` |
 
-## Cobertura de cartas
-
-`python cartas.py resumo` mostra o estado atual. Todos os Treinadores, Ferramentas, Estádios e Energias
-estão implementados, assim como todas as cartas dos decks top 8 importados. Uma parte dos Pokémon tem
-ataques/Habilidades raros ainda parciais — cada ficha (`cartas.py mostrar`, campo `simulador`) diz o que falta.
-
-## Testes
+Instale o que o programa usa:
 
 ```
-python tests/test_rules.py     python tests/test_engine.py     python tests/test_replay.py
-python tests/fuzz.py --games 300                                python tests/test_limitless.py
+pip install numpy reportlab pillow
 ```
+
+Opcional, para jogar contra as **IAs treinadas** (níveis 1 a 9): `pip install torch`
+(versão leve, sem placa de vídeo: `pip install torch --index-url https://download.pytorch.org/whl/cpu`).
+Sem o PyTorch tudo funciona, só não aparecem as IAs treinadas — a IA "heurística" (nível 0) continua disponível.
+
+> Sem Git? Em github.com/TiagoCAAmorim/poketrainer clique em **Code → Download ZIP**, extraia e abra o terminal dentro da pasta.
+> No Windows, se `python` não funcionar, use `py`.
+
+## 2. Baixar as imagens das cartas (recomendado)
+
+As imagens não vêm junto com o programa. Sem elas tudo funciona, mas as cartas aparecem como quadros de texto.
+
+```
+python baixar_imagens.py
+```
+
+Leva alguns minutos e ocupa cerca de 190 MB. Pode ser interrompido e retomado (ele pula o que já baixou).
+Quer rápido? `python baixar_imagens.py --qualidade baixa` baixa só as miniaturas. Mais opções em [CARTAS.md](CARTAS.md).
+
+## 3. Abrir a interface gráfica
+
+```
+python server.py
+```
+
+O navegador abre sozinho em **http://localhost:8765** (se não abrir, digite esse endereço).
+Para encerrar, volte ao terminal e aperte `Ctrl+C`.
+
+**Decks para começar:** já vêm 12 decks de torneio (Mundial 2026 e Regional de Louisville). Para trazer mais
+(top 8 dos últimos torneios da Limitless, precisa de internet), em outro terminal:
+
+```
+python import_limitless.py import --latest 5
+```
+
+---
+
+## O que dá para fazer na interface
+
+A página inicial mostra seis atalhos:
+
+| Atalho | Para quê |
+|---|---|
+| ⚔️ **Jogar / simular** (`/jogar`) | Escolha dois decks e quem controla cada lado: **você**, a **IA heurística**, uma jogada **aleatória** ou uma **IA treinada** (níveis 1–9). Dá para jogar, assistir IA × IA, desfazer jogadas, revelar as mãos, ajustar a velocidade e pedir **sugestões da IA** durante a partida. |
+| 💬 **Comentar** (dentro da partida) | Achou que o simulador errou uma regra? Descreva na hora: o comentário guarda a partida inteira até aquele ponto, para o erro poder ser reproduzido e corrigido. |
+| 🃏 **Montar e editar decks** (`/decks`) | Monte um deck buscando cartas por nome e categoria, ou puxando cartas de outro deck. Salve, duplique qualquer deck para a sua coleção e copie a lista no formato do TCG Live. |
+| 🔎 **Explorar as cartas** (`/cartas`) | Filtre as 2.083 cartas (nome em inglês ou português, tipo, estágio, coleção…), veja a imagem grande, ataques, Habilidades, fraqueza, evoluções e todas as impressões. |
+| 🧪 **Testar um deck** (`/testar`) | Seu deck joga contra todos os outros da base e mostra: taxa de vitória (indo em 1º ou em 2º), cartas e combos que mais ajudam, em que vez saem os Prêmios, matchups difíceis e **trocas de cartas sugeridas**. Pode salvar a versão melhorada. |
+| 🖨️ **Imprimir cartas (PDF)** (`/imprimir`) | Parta de um deck, acrescente ou tire cartas e gere um PDF em escala reduzida (ex.: 90%), com imagens ou em versão simplificada preto e branco. Escolha papel A4, Office, A5… |
+| 📜 **Reproduzir um log do TCG Live** | No TCG Live use **Copy Log** na partida e cole o texto aqui: o simulador refaz cada jogada, confere dano e nocautes e aponta onde as regras divergem. |
+
+---
+
+## Problemas comuns
+
+| Sintoma | O que fazer |
+|---|---|
+| `ModuleNotFoundError: No module named 'numpy'` | O ambiente não está ativado (veja o passo 1) ou falta `pip install numpy reportlab pillow`. |
+| `ModuleNotFoundError: No module named 'ptcg'` | Rode os comandos de dentro da pasta `poketrainer`. |
+| A porta 8765 está ocupada | `python server.py --port 9000` e abra `http://localhost:9000`. |
+| Acentos estranhos no terminal do Windows | Use o Windows Terminal ou digite `chcp 65001` antes. |
+| `import_limitless.py` falha | Sem internet, ou a Limitless mudou o site. |
+
+Mais detalhes e testes de conferência: [INSTALACAO.md](INSTALACAO.md).
+
+---
+
+## Para saber mais
+
+| Documento | Conteúdo |
+|---|---|
+| [CHANGELOG.md](CHANGELOG.md) | Novidades de cada versão |
+| [CARTAS.md](CARTAS.md) | Página de cartas e todas as opções de download de imagens |
+| [DECKS.md](DECKS.md) | Importar, limpar (fora da rotação), alterar e criar decks |
+| [INSTALACAO.md](INSTALACAO.md) | Instalação detalhada, testes de conferência e solução de problemas |
+| [docs/COMANDOS.md](docs/COMANDOS.md) | Todos os comandos de terminal (decks, cartas, logs, simulação, impressão) |
+| [docs/TECNICO.md](docs/TECNICO.md) | Estrutura de pastas, arquitetura do motor, cobertura de cartas, testes |
+| [docs/IA_TREINO.md](docs/IA_TREINO.md) | Como as IAs são treinadas · [progresso](docs/IA_PROGRESSO.md) · [novo computador](docs/IA_NOVO_COMPUTADOR.md) |
+| [PLANO.md](PLANO.md) | Plano do projeto, o que está pronto e os próximos passos |
+
+---
+
+> **Aviso:** o PTCG Lab é um **projeto pessoal, sem fins lucrativos e sem nenhuma associação com a The Pokémon Company**,
+> a Nintendo, a Creatures ou a Game Freak. Pokémon e os nomes, textos e imagens das cartas pertencem aos seus
+> respectivos donos; as imagens são baixadas de sites públicos e devem ser usadas só para estudo e uso pessoal.

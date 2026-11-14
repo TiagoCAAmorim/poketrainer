@@ -127,6 +127,9 @@ pytest não é necessário (cada arquivo roda sozinho), mas os testes são compa
 ## Convenções
 - **Dúvidas de regra/implementação de uma carta**: consulte o Compendium do Pokégym
   (`https://compendium.pokegym.net/category/3-attacks/<ataque>/`; há categorias por tipo de carta) antes de supor bug do cliente.
+- **Documentação**: `README.md` é para não programadores (instalar, imagens, GUI) — mantenha-o curto e sem jargão; o técnico fica em
+  `docs/TECNICO.md` (estrutura, testes) e `docs/COMANDOS.md` (CLIs). Ao entregar algo notável, acrescente em `CHANGELOG.md`
+  (versão nova no topo; hoje sem tags/releases).
 - **Mantenha `PLANO.md` atualizado** (status das fases, números de cobertura, próximos passos) ao concluir uma etapa;
   `INSTALACAO.md` é o guia de instalação/testes do usuário — atualize se comandos ou resultados esperados mudarem.
 - Não reescrever arquivos gerados à mão: `cartas/` vem de `tools/export_cartas.py`; `ptcg/data/*.json` de `tools/`.

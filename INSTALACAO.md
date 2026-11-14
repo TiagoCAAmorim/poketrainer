@@ -1,5 +1,8 @@
 # Instalação e testes — passo a passo
 
+> O caminho rápido (instalar, baixar imagens, abrir a interface) está no [README](README.md).
+> Este guia detalha a instalação e traz os **testes de conferência** com os resultados esperados.
+
 Siga na ordem. Cada passo diz o que deve aparecer; se algo diferente aparecer, anote a mensagem.
 Nos comandos, use `python` (Linux/macOS) ou `py` (Windows, se `python` não funcionar).
 
@@ -33,9 +36,10 @@ Ative o ambiente:
 
 Instale:
 ```
-pip install numpy
+pip install numpy reportlab pillow
 ```
-O motor, a biblioteca de cartas, os decks, o LOG, os testes e a interface só precisam de **numpy**.
+O motor, a biblioteca de cartas, os decks, o LOG, os testes e a interface só precisam de **numpy**
+(`reportlab` e `pillow` servem à impressão de cartas em PDF).
 O PyTorch (`pip install torch`) só é necessário para treinar a IA (seção 9); o resto funciona sem ele.
 
 ## 4. Testes (nesta ordem)
@@ -114,6 +118,8 @@ Explicação completa da lógica e de cada opção: [`docs/IA_TREINO.md`](docs/I
 | 4 | `python train.py --resume checkpoints/imitacao.pt --iterations 300` | ~35–45 min | `checkpoints/best.pt` / `latest.pt`; uma linha JSON por iteração |
 | 5 | `python ia.py acompanhar --seguir` (outro terminal) | — | curva do PPO em andamento (vitórias, KL, entropia…) e alertas |
 | 6 | `python ia.py historico` | — | todos os treinos e avaliações registrados (`logs/ia/treinos.jsonl`) |
+
+As redes já treinadas dos níveis 4–9 vêm no repositório (`ias/`); este passo só é preciso para treinar novas.
 
 Os treinos também aparecem com gráficos no W&B (`pip install wandb` e `wandb login` uma vez):
 https://forge.coreweave.com/wandb/tiago-amorim/poketrainer — `--sem-wandb` desliga.
