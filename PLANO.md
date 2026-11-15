@@ -111,7 +111,9 @@ Guia: `docs/IA_TREINO.md` · diário dos experimentos: `docs/IA_PROGRESSO.md` ·
   relativo à heurística ajustado a todas as avaliações; interface lista "IA nível N"; `python ia.py niveis|nivel|elo|escada`.
 - ✅ `ppo5` com `--games 1920`: **87,3% contra a heurística**, vence o `ppo4/t3` em 55,8% (nível 9); estacionou após 2 trechos
 - ✅ `ppo6/lrdec`: lr 5e-5 → 1e-5 a partir do `ppo5/t4` → 87,6% contra a heurística, vence o `ppo5/t4` em 53,3% (nível 9)
-- ⬜ Passar do platô: mais consolidação com lr baixa (em teste), depois rede/observação (`encode.py`) ou busca na hora de jogar
+- ✅ Testado contra o platô (Elo ~+360), sem ganho: 2ª consolidação com lr baixa, liga de adversários fortes,
+  observação v2 (`--obs 2`, mesma receita e destilada do nível 9 + PPO). Destilação (`imitar.py gerar --professor`) funciona.
+- ⬜ Busca na hora de jogar (simular jogadas candidatas com a rede, cartas ocultas sorteadas)
 - ⬜ Usar a rede treinada no `simulate.py` / `optimize.py` (`--agent model:checkpoints/best.pt`) — a ligação já existe
 
 ---
