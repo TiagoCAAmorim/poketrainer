@@ -199,6 +199,13 @@ na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).
   **49,8%** ±1,6% contra `ppo1`. **Empate**: com o mesmo orçamento, as informações novas não aceleram o aprendizado.
   A rede v2 é menor (1,6 M pesos), mas a observação custa 2,9 ms contra 1,6 ms da v1.
 
-**Próximo**: em andamento `v2n9` = v2 imitando o nível 9 (`imitar.py gerar --obs 2 --professor nivel:9`) e depois
-PPO lote 1920 (lr 5e-5 → 1e-5), para ver se as informações novas rendem quando a rede já joga bem, ou seja, se a v2 passa do
-platô (~+360) da v1. Se não, a próxima opção é busca na hora de jogar.
+- **`v2n9`** = v2 imitando o nível 9 (`imitar.py gerar --obs 2 --professor nivel:9`, 20 mil partidas, 22 min; imitação
+  6 épocas, acerto de validação 0,824): **sem PPO** já faz 88,4% contra a heurística e **50,8%** ±1,6% contra o nível 9 —
+  a destilação copia a rede inteira em ~45 min em vez de ~500 it de PPO. Depois de mais 50 it de PPO (lote 1920,
+  lr 5e-5 → 1e-5; ~2 min/it, contra 70 s na v1): **50,9%** ±1,1% contra o nível 9 (2000 partidas), 88,2% contra a heurística.
+  **Empate de novo**: nem partindo do nível 9 a observação v2 passa do platô. Conclusão: o limite não está no que a rede
+  vê nem no adversário. Está em decidir com uma única leitura da posição, sem olhar adiante.
+
+**Próximo**: busca na hora de jogar (simular algumas jogadas candidatas com a rede como política/valor, com as cartas
+ocultas sorteadas). A v2 fica disponível (`--obs 2`) mas não é usada nos níveis; a destilação (`--professor`) serve
+para levar uma rede boa a outra arquitetura.
