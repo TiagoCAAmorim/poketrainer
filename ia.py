@@ -6,6 +6,7 @@
     python ia.py nivel 9 checkpoints/ppo5/t4/latest.pt --nome ppo5    guarda a rede em ias/ como nível 9
     python ia.py elo                                                  Elo (heurística = 0) de toda rede já avaliada
     python ia.py escada [--partidas 1000]                             confronto direto de cada nível contra o anterior
+    python ia.py busca --agente busca:nivel:9 --oponente nivel:9      avalia a busca na hora de jogar (ptcg/ai/busca.py)
 """
 import argparse
 import json
@@ -125,6 +126,26 @@ def escada(partidas=1000, seed=777):
     mostrar_niveis()
 
 
+def _spec_registro(spec: str) -> str:
+    """'nivel:N' → 'model:ias/<rede>.pt' (ou 'heuristic'), para o Elo reconhecer a rede do nível."""
+    from ptcg.ai.niveis import obter
+    if spec.startswith('nivel:'):
+        n = obter(int(spec[6:]))
+        return f"model:{n['arquivo']}" if n.get('arquivo') else 'heuristic'
+    return spec
+
+
+def avaliar_busca(a):
+    from ptcg.ai.busca import avaliar
+    from ptcg.logbook import registrar_treino
+    r = avaliar(a.agente, a.oponente, a.partidas, a.seed, a.processos)
+    print(json.dumps(r, ensure_ascii=False))
+    agente = a.agente if a.agente.startswith('busca:') else _spec_registro(a.agente)
+    registrar_treino('avaliacao', f'{a.agente}: {r["vitorias"]:.1%} contra {a.oponente} '
+                     f'({r["partidas"]} partidas, ±{r["erro_padrao"]:.1%})', checkpoint=agente, seed=a.seed,
+                     **{**r, 'oponente': _spec_registro(a.oponente)}, **({'nome': a.nome} if a.nome else {}))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest='cmd', required=True)
@@ -145,6 +166,13 @@ def main(argv=None):
     sub.add_parser('elo')
     p = sub.add_parser('escada')
     p.add_argument('--partidas', type=int, default=1000)
+    p = sub.add_parser('busca', help='avalia um agente com busca (ou qualquer agente de make_agent)')
+    p.add_argument('--agente', default='busca:nivel:9', help="ex.: 'busca:nivel:9|mundos=16,limiar=0.8'")
+    p.add_argument('--oponente', default='nivel:9')
+    p.add_argument('--partidas', type=int, default=400)
+    p.add_argument('--seed', type=int, default=777)
+    p.add_argument('--processos', type=int, default=None)
+    p.add_argument('--nome', default=None, help='rótulo no registro (logs/ia/treinos.jsonl)')
     a = ap.parse_args(argv)
     sys.stdout.reconfigure(line_buffering=True)
     if a.cmd == 'historico':
@@ -161,6 +189,8 @@ def main(argv=None):
         mostrar_elo()
     elif a.cmd == 'escada':
         escada(a.partidas)
+    elif a.cmd == 'busca':
+        avaliar_busca(a)
     elif a.cmd == 'acompanhar':
         while True:
             acompanhar(a.arquivo, a.a_cada)

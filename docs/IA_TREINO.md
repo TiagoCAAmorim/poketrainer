@@ -52,6 +52,20 @@ python ia.py escada --partidas 1000        # cada nível contra o anterior (~1 m
 Ao trocar redes de nível, mantenha o Elo crescendo com o nível e, de preferência, ≥ ~25 pontos entre vizinhos
 (55% no confronto direto); avalie a rede nova com ≥ 1000 partidas antes (`imitar.py avaliar ... --oponente model:...`).
 
+### Busca na hora de jogar (`ptcg/ai/busca.py`)
+A rede decide sozinha quando está confiante; numa decisão difícil (melhor opção < 90%), o agente `busca:` testa as
+3 opções mais prováveis em 8 **mundos sorteados** e escolhe a de melhor média. Em cada mundo:
+- **Cartas ocultas sorteadas de novo**, respeitando o que o jogador sabe. Do oponente, mão, deck e Prêmios são embaralhados entre si.
+  O conjunto sorteado é a lista dele **menos as cartas já vistas** (em jogo, descarte, Lost Zone, cartas reveladas).
+  Do próprio jogador, a mão é conhecida, e deck e Prêmios são embaralhados juntos. Supõe que a lista do oponente é conhecida.
+- A jogada candidata é feita e a própria rede continua a partida para os dois lados até o fim do turno do oponente
+  (`horizonte=2`). O valor estimado pela rede nesse ponto é a nota da candidata.
+```
+python ia.py busca --agente 'busca:nivel:9' --oponente nivel:9 --partidas 400     # registra em logs/ia/treinos.jsonl
+python ia.py busca --agente 'busca:nivel:9|mundos=16,candidatos=4,limiar=0.8,horizonte=1'
+```
+Na interface/simulações: `make_agent('busca:nivel:9')`. Custa ~1–1,5 s por busca (≈ 1 em cada 3 decisões).
+
 ### Opções úteis
 - Decks: padrão = todos de `decks/` (inclui `decks/limitless/`). `--pasta tests` usa só os 12 fixos;
   `--decks nome1 nome2` escolhe decks específicos (para especializar a rede num deck).
@@ -213,6 +227,7 @@ https://forge.coreweave.com/wandb/tiago-amorim/poketrainer
 | `ptcg/ai/train.py` | PPO: rollouts em processos, GAE, atualização, avaliações, registro |
 | `ptcg/ai/wb.py` | registro no W&B (no-op se desligado/indisponível) |
 | `ptcg/ai/agent.py` | `TorchAgent` — usa a rede para jogar (`make_agent('model:...')`) |
+| `ptcg/ai/busca.py` | busca na hora de jogar: sorteio das cartas ocultas, simulação das candidatas, `avaliar` |
 | `ptcg/ai/niveis.py`, `ias/` | níveis de dificuldade: redes guardadas, Elo (Bradley–Terry), `make_agent('nivel:N')` |
 | `imitar.py`, `train.py`, `ia.py` | linhas de comando |
 | `tests/test_ai.py` | formato compacto = `collate`, imitação, rollout + passo PPO, níveis/Elo |

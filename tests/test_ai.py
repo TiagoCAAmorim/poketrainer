@@ -149,6 +149,44 @@ def test_rollout_and_ppo_step_v2():
     test_rollout_and_ppo_step(versao=2)
 
 
+def test_busca_sorteio_e_agente():
+    """Busca: o sorteio só mexe nas cartas ocultas (mesmo conjunto, mesmos tamanhos, visíveis e face_up intactas)."""
+    from collections import Counter
+    from ptcg.ai.busca import pode_buscar, sortear_ocultas
+    d = [load_deck(x).cards for x in DECKS]
+    g = Game(d[0], d[1], seed=4)
+    h = HeuristicAgent(seed=4)
+    while not (g.setup_done and g.turn >= 4 and g.prompt.player == 0 and g.prompt.hint == 'main'):
+        g.step(h.act(g, g.prompt))
+    w = g.clone()
+    op, me = w.players[1], w.players[0]
+    op.prizes[0].face_up = True
+    fixa = op.prizes[0]
+
+    def visiveis(G):
+        return [sorted(c.uid for c in p.discard + p.lost_zone + [x for s in p.in_play() for x in s.all_cards()])
+                for p in G.players]
+    antes = (visiveis(w), [c.uid for c in me.hand], [(len(p.hand), len(p.deck), len(p.prizes)) for p in w.players],
+             Counter(c.uid for c in op.hand + op.deck + op.prizes), Counter(c.uid for c in me.deck + me.prizes))
+    mao_op = [c.uid for c in op.hand]
+    sortear_ocultas(w, 0, random.Random(1))
+    depois = (visiveis(w), [c.uid for c in me.hand], [(len(p.hand), len(p.deck), len(p.prizes)) for p in w.players],
+              Counter(c.uid for c in op.hand + op.deck + op.prizes), Counter(c.uid for c in me.deck + me.prizes))
+    assert antes == depois and op.prizes[0] is fixa and [c.uid for c in op.hand] != mao_op
+    assert pode_buscar(g, 0) and not pode_buscar(g, 1)
+    if torch is None:
+        return
+    from ptcg.agents import make_agent
+    from ptcg.ai.model import PolicyValueNet, save_checkpoint
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, 'net.pt')
+        save_checkpoint(path, PolicyValueNet(hidden=32, emb=8))
+        ag = make_agent(f'busca:model:{path}|mundos=2,candidatos=2,limiar=1.1,horizonte=1', seed=0)
+        n = len(g.history)
+        assert 0 <= ag.act(g, g.prompt) < len(g.prompt.options) and len(g.history) == n   # não mexe na partida real
+        assert ag.stats['buscas'] == 1 and ag.stats['simulacoes'] == 4
+
+
 def test_niveis_elo_e_exportacao():
     """Elo por máxima verossimilhança recupera as diferenças; níveis de ias/ carregam e jogam."""
     from ptcg.ai import niveis

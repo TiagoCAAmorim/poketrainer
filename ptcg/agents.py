@@ -446,7 +446,11 @@ AGENTS = {'random': RandomAgent, 'heuristic': HeuristicAgent}
 
 
 def make_agent(spec: str, seed=None) -> Agent:
-    """'random' | 'heuristic' | 'heuristic:{json com pesos}' | 'model:caminho/checkpoint.pt' | 'nivel:N' (ias/)"""
+    """'random' | 'heuristic' | 'heuristic:{json com pesos}' | 'model:caminho/checkpoint.pt' | 'nivel:N' (ias/)
+    | 'busca:<agente com rede>[|mundos=8,...]' (simula as jogadas candidatas; ptcg/ai/busca.py)"""
+    if spec.startswith('busca:'):
+        from .ai.busca import criar
+        return criar(spec, seed=seed)
     if spec.startswith('nivel:'):
         from .ai.niveis import spec as spec_nivel
         spec = spec_nivel(int(spec.split(':', 1)[1]))

@@ -206,6 +206,17 @@ na hora de jogar (a rede como guia de uma busca curta com `Game.clone()`).
   **Empate de novo**: nem partindo do nível 9 a observação v2 passa do platô. Conclusão: o limite não está no que a rede
   vê nem no adversário. Está em decidir com uma única leitura da posição, sem olhar adiante.
 
-**Próximo**: busca na hora de jogar (simular algumas jogadas candidatas com a rede como política/valor, com as cartas
-ocultas sorteadas). A v2 fica disponível (`--obs 2`) mas não é usada nos níveis; a destilação (`--professor`) serve
-para levar uma rede boa a outra arquitetura.
+### Sessão 4 (2026-11-15): busca na hora de jogar
+
+`ptcg/ai/busca.py` (`busca:nivel:9`): quando a rede não está confiante (melhor opção < 90%), testa as 3 opções mais
+prováveis em 8 mundos com as cartas ocultas sorteadas de novo. Do oponente: a lista dele menos as cartas vistas, embaralhadas entre
+mão, deck e Prêmios. Do próprio jogador: deck e Prêmios juntos. Em cada mundo, a rede continua a partida pelos dois lados até o fim do turno do
+oponente, e o valor da rede nesse ponto é a nota.
+
+- **`busca:nivel:9` × nível 9: 62,3%** ±2,4% (400 partidas, seed 777) ≈ **+87 de Elo** sobre o nível 9 — o primeiro
+  ganho depois do platô. Busca em 38% das decisões, muda a jogada da rede em 41% delas, ~2,3 s por busca
+  (~70 s por partida com 18 partidas em paralelo). 3 mundos com erro do motor (IndexError, descartados) — investigar.
+- Confirma a conclusão da sessão 3: o limite era decidir com uma leitura só; olhar adiante rende.
+
+**Próximo**: variantes (16 mundos; horizonte 1), avaliar contra a heurística, investigar os IndexError dos mundos
+sorteados e decidir como oferecer na interface (nível acima de 9, com tempo por jogada).
