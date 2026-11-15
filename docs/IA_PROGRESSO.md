@@ -218,5 +218,10 @@ oponente, e o valor da rede nesse ponto é a nota.
   (~70 s por partida com 18 partidas em paralelo). 3 mundos com erro do motor (IndexError, descartados) — investigar.
 - Confirma a conclusão da sessão 3: o limite era decidir com uma leitura só; olhar adiante rende.
 
-**Próximo**: variantes (16 mundos; horizonte 1), avaliar contra a heurística, investigar os IndexError dos mundos
-sorteados e decidir como oferecer na interface (nível acima de 9, com tempo por jogada).
+- Variantes (400 partidas cada × nível 9): **16 mundos 63,5%** ±2,4% (4,6 s por busca; não compensa o dobro do
+  tempo); **horizonte 1** (só até o fim do meu turno) **60,0%** ±2,4% com 1,2 s por busca, uma opção mais barata para a interface.
+- Erros raros nos mundos sorteados (≈1 em 1000; o mundo é descartado): `stadiums.py:96 _grand_tree` (IndexError) e
+  `abilities.py:679` (list.remove) — efeitos que assumem algo sobre o deck/mão que o sorteio mudou. Corrigir no motor.
+
+**Próximo**: corrigir os dois erros acima; avaliar `busca:nivel:9` contra a heurística (Elo absoluto); oferecer na
+interface como nível 10 (padrão 8 mundos, horizonte 2, ~2 s por busca) ou com horizonte 1 (mais rápido).

@@ -124,7 +124,10 @@ class BuscaAgent(Agent):
             except Exception as e:                           # noqa: BLE001
                 self.stats['mundos_com_erro'] += 1
                 if len(self.erros) < 20:
-                    self.erros.append(f'{type(e).__name__}: {e}'[:200])
+                    import traceback
+                    onde = ' < '.join(f'{os.path.basename(f.filename)}:{f.lineno} {f.name}'
+                                      for f in reversed(traceback.extract_tb(e.__traceback__)[-4:]))
+                    self.erros.append(f'{type(e).__name__}: {e} @ {onde}'[:400])
                 continue
             for a, v in notas.items():
                 soma[a] += v
